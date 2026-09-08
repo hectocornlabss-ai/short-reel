@@ -1,100 +1,100 @@
-# 全局美学基础 · 国风二次元新国潮
+# Global Aesthetic Foundation · Guofeng Anime New Chinese-Chic
 
 ---
-必须严格、完整遵循下方全部风格约束与全局规则，并严格按提示词模板格式生成提示词；仅输出提示词正文，不得附加任何解释、说明、注释、标题或其他额外文本。
+You must strictly and fully follow all style constraints and global rules below, and strictly generate the prompt according to the prompt template format; output ONLY the prompt body — do not append any explanation, description, note, title, or other extra text.
 
-## 一、风格基因
+## 1. Style Genes
 
-| 维度 | 定义 |
+| Dimension | Definition |
 |---|---|
-| **一级风格** | 国风二次元新国潮（Chinese Style Anime Neo-Chic） |
-| **二级风格** | 二次元动画 · 赛璐璐平涂 + 日式渲染 |
-| **情感基调** | 东方古韵、新国潮时尚、电影质感、意境深远 |
-| **质感锚词** | 赛璐璐上色、细腻笔触、现代渲染、电影构图 |
+| **Primary Style** | Guofeng Anime New Chinese-Chic (Chinese Style Anime Neo-Chic) |
+| **Secondary Style** | Anime · Cel-shading (flat color) + Japanese-style rendering |
+| **Emotional Tone** | Classical Eastern charm, New Chinese-Chic fashion, cinematic quality, deep artistic mood |
+| **Texture Anchor Words** | Cel-shaded coloring, delicate brushwork, modern rendering, cinematic composition |
 
 ---
 
-## 二、全局色彩盘（风格基线）
+## 2. Global Color Palette (Style Baseline)
 
-### 色彩使用层级
+### Color Usage Tiers
 
-| 层级 | 约束强度 | 说明 |
+| Tier | Constraint Strength | Description |
 |---|---|---|
-| L1 硬约束 | 高 | 中国传统色基线、二次元配色、日式渲染 |
-| L2 软约束 | 中 | 场景色、服饰色、点缀色可按情绪微调 |
-| L3 例外机制 | 低 | 特殊场景/高光时刻可临时突破局部色彩 |
+| L1 Hard Constraint | High | Traditional Chinese color baseline, anime color scheme, Japanese-style rendering |
+| L2 Soft Constraint | Medium | Scene colors, costume colors, and accent colors may be fine-tuned by mood |
+| L3 Exception Mechanism | Low | Special scenes/highlight moments may temporarily break local color rules |
 
-### 核心色盘
+### Core Palette
 
-| 序号 | 色名 | 色值 | 用途 |
+| No. | Color Name | Hex Value | Usage |
 |---|---|---|---|
-| C1 | 月白 | #E8EAF5 | 天空、云雾、衣物底色 |
-| C2 | 青绿 | #4A9B8A | 山水、植被、青绿山水 |
-| C3 | 朱红 | #C93752 | 建筑、服饰、喜庆场景 |
-| C4 | 靛蓝 | #2B4C7E | 夜空、冷色调、忧郁氛围 |
-| C5 | 金黄 | #D4AF37 | 装饰、纹样、高光点缀 |
-| C6 | 墨黑 | #1A1A2E | 线条、轮廓、暗部阴影 |
-| C7 | 胭脂 | #A94A5F | 人物肤色、腮红、唇色 |
-| C8 | 赭石 | #965E3E | 木质建筑、地面、暖调 |
-| C9 | 藤黄 | #F5E375 | 花饰、暖光、点缀色 |
-| C10 | 灰紫 | #7B6C85 | 阴影、过渡、氛围色 |
+| C1 | Moon White | #E8EAF5 | Sky, clouds/mist, base clothing color |
+| C2 | Cyan Green | #4A9B8A | Mountains and water, vegetation, blue-green landscape painting |
+| C3 | Vermilion Red | #C93752 | Architecture, costumes, festive scenes |
+| C4 | Indigo Blue | #2B4C7E | Night sky, cool tones, melancholic atmosphere |
+| C5 | Golden Yellow | #D4AF37 | Decoration, patterns, highlight accents |
+| C6 | Ink Black | #1A1A2E | Lines, outlines, dark shadow areas |
+| C7 | Rouge Red | #A94A5F | Character skin tone, blush, lip color |
+| C8 | Ochre | #965E3E | Wooden architecture, ground, warm tones |
+| C9 | Rattan Yellow | #F5E375 | Floral decoration, warm light, accent color |
+| C10 | Grayish Purple | #7B6C85 | Shadow, transition, atmospheric color |
 
-### 硬约束色（默认锁定）
+### Hard-Constraint Colors (Locked by Default)
 
-| 色项 | 对应色 | 规则 |
+| Item | Corresponding Color | Rule |
 |---|---|---|
-| 整体色调 | 中国传统色 + 动漫配色 | 禁止高饱和荧光色 |
-| 线条颜色 | 墨黑或深棕 | 禁止纯黑粗线条 |
-| 阴影 | 同色系加深 | 禁止黑色硬阴影 |
-| 赛璐璐色块 | 平滑渐变 | 禁止色块断层/色彩溢出 |
+| Overall Tone | Traditional Chinese colors + anime color scheme | High-saturation fluorescent colors are forbidden |
+| Line Color | Ink black or dark brown | Pure black thick lines are forbidden |
+| Shadow | Deepened within the same color family | Hard black shadows are forbidden |
+| Cel-shaded Color Blocks | Smooth gradients | Color-block banding/color bleed is forbidden |
 
-### 情绪色盘
+### Emotional Color Palettes
 
-| 情绪场景 | 主色 | 辅色 | 光效与对比建议 | 画面关键词 |
+| Emotional Scene | Primary Color | Secondary Color | Lighting & Contrast Suggestion | Visual Keywords |
 |---|---|---|---|---|
-| 仙侠飘逸 | C1 月白 + C2 青绿 | C5 金黄 + C7 胭脂 | 柔和光线，飘逸动态，赛璐璐质感 | 飘逸、仙气、空灵 |
-| 宫廷华贵 | C3 朱红 + C5 金黄 | C1 月白 + C6 墨黑 | 暖光照明，高光强调，景深层次 | 华丽、庄严、气派 |
-| 武侠对决 | C6 墨黑 + C4 靛蓝 | C2 青绿 + C8 赭石 | 冷调阴影，硬光对比，氛围紧张 | 冷峻、凌厉、肃杀 |
-| 少女日常 | C7 胭脂 + C1 月白 | C9 藤黄 + C10 灰紫 | 柔和暖光，近景特写，清新氛围 | 甜美、清新、治愈 |
-| 节日庆典 | C3 朱红 + C9 藤黄 | C5 金黄 + C7 胭脂 | 高饱和暖光，全局高亮，色彩丰富 | 热闹、欢快、盛大 |
-| 月夜诗意 | C4 靛蓝 + C1 月白 | C6 墨黑 + C5 金黄点缀 | 冷色调月光，局部暖光，明暗对比 | 宁静、清冷、唯美 |
+| Xianxia Ethereal | C1 Moon White + C2 Cyan Green | C5 Golden Yellow + C7 Rouge Red | Soft light, flowing motion, cel-shaded texture | Flowing, ethereal, otherworldly |
+| Imperial Court Splendor | C3 Vermilion Red + C5 Golden Yellow | C1 Moon White + C6 Ink Black | Warm lighting, emphasized highlights, layered depth of field | Magnificent, solemn, grand |
+| Wuxia Duel | C6 Ink Black + C4 Indigo Blue | C2 Cyan Green + C8 Ochre | Cool-toned shadows, hard-light contrast, tense atmosphere | Cold, sharp, forbidding |
+| Girlish Daily Life | C7 Rouge Red + C1 Moon White | C9 Rattan Yellow + C10 Grayish Purple | Soft warm light, close-up shots, fresh atmosphere | Sweet, fresh, healing |
+| Festival Celebration | C3 Vermilion Red + C9 Rattan Yellow | C5 Golden Yellow + C7 Rouge Red | High-saturation warm light, overall brightness, rich colors | Lively, joyful, grand |
+| Poetic Moonlit Night | C4 Indigo Blue + C1 Moon White | C6 Ink Black + C5 Golden Yellow accents | Cool-toned moonlight, localized warm light, light-dark contrast | Serene, cool, beautiful |
 
-### 色温约束
+### Color Temperature Constraints
 
-| 参数 | 值 | 说明 |
+| Parameter | Value | Description |
 |---|---|---|
-| 整体色温 | 偏中性 5000-5600K（推荐） | 自然光主基调 |
-| 对比度 | 中 45-65%（建议区间） | 丰富层次感 |
-| 饱和度 | 中高 55-70%（建议区间） | 新国潮色盘饱满 |
+| Overall Color Temperature | Neutral-leaning 5000-5600K (recommended) | Natural-light base tone |
+| Contrast | Medium 45-65% (suggested range) | Rich sense of layering |
+| Saturation | Medium-high 55-70% (suggested range) | Full-bodied New Chinese-Chic palette |
 
-### 容差与例外
+### Tolerance and Exceptions
 
-| 项目 | 建议容差 |
+| Item | Recommended Tolerance |
 |---|---|
-| 色相偏移 | ±8° |
-| 饱和度偏移 | ±10% |
-| 明度偏移 | ±12% |
+| Hue Shift | ±8° |
+| Saturation Shift | ±10% |
+| Lightness Shift | ±12% |
 
 ---
 
-## 三、全局约束规则
+## 3. Global Constraint Rules
 
-### 必守规则（所有技能继承）
+### Mandatory Rules (Inherited by All Skills)
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须包含「国风二次元」风格锚定词 |
-| R2 | 必须声明「赛璐璐平涂 + 日式动画渲染」 |
-| R3 | 必须声明「新国潮美学 + 东方古韵」 |
-| R4 | 必须声明「细腻笔触 + 电影质感」 |
-| R5 | 必须声明「国风二次元电影风格」 |
+| R1 | Must include the "Guofeng Anime" style anchor term |
+| R2 | Must declare "cel-shading (flat color) + Japanese-style anime rendering" |
+| R3 | Must declare "New Chinese-Chic aesthetics + classical Eastern charm" |
+| R4 | Must declare "delicate brushwork + cinematic quality" |
+| R5 | Must declare "Guofeng anime cinematic style" |
 
-### 严禁项（所有技能继承）
+### Strictly Prohibited (Inherited by All Skills)
 
-| 编号 | 严禁内容 |
+| No. | Prohibited Content |
 |---|---|
-| X1 | 严禁「写实摄影/3D写实渲染/照片级真实感」 |
-| X2 | 严禁「高饱和荧光色/霓虹色/数码感强」 |
-| X3 | 严禁「西方奇幻/赛博朋克/过度现代元素」 |
-| X4 | 严禁「粗劣线条/模糊画质/低精度」 |
-| X5 | 严禁「色彩混乱/风格不统一/审美崩坏」 |
+| X1 | Strictly prohibit "photorealistic photography / 3D photorealistic rendering / photo-level realism" |
+| X2 | Strictly prohibit "high-saturation fluorescent colors / neon colors / strong digital look" |
+| X3 | Strictly prohibit "Western fantasy / cyberpunk / overly modern elements" |
+| X4 | Strictly prohibit "crude lines / blurry image quality / low precision" |
+| X5 | Strictly prohibit "chaotic colors / inconsistent style / broken aesthetics" |

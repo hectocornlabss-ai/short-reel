@@ -116275,7 +116275,7 @@ var init_oss = __esm({
         const safePath = normalizeUserPath(userRelPath);
         let url4 = `/${prefix}/`;
         if (process.env.ossURL && process.env.ossURL !== "") url4 = process.env.ossURL + `/${prefix}/`;
-        if (process.env.NODE_ENV == "dev") url4 = `http://localhost:10588/${prefix}/`;
+        if (process.env.NODE_ENV == "dev") url4 = `http://localhost:15980/${prefix}/`;
         if (isEletron()) url4 = `http://localhost:${process.env.PORT}/${prefix}/`;
         return `${url4}${safePath.split(import_node_path2.default.sep).join("/")}`;
       }
@@ -258935,7 +258935,7 @@ async function startServe(randomPort = false) {
     console.error(err);
     res.status(err.status || 500).send(err);
   });
-  const port = randomPort ? 0 : 10588;
+  const port = randomPort ? 0 : 15980;
   return await new Promise((resolve3) => {
     server.listen(port, async () => {
       const address = server.address();

@@ -1,196 +1,196 @@
-# 90年代复古日系动画风格 - 人物基础形象生成 · 约束手册
+# 90s Retro Japanese Anime Style - Character Base Model Generation · Constraint Manual
 
 ---
 
-## 一、基础形象原则
+## 1. Base Model Principles
 
-1. **线条即灵魂** — 手绘流畅线条为角色核心，避免数字化锐利边缘
-2. **角色为本** — 基础着装由角色描述（身份/职业/性别/场景）决定其常规着装；后续特定服化为叠加层
-3. **四视图一致** — 面容/体型/发型/基础服装跨视图高度统一
-4. **情感克制冷静** — 无妆状态需体现角色气质（温柔/忧郁/淡然）
+1. **Line is the soul** — Hand-drawn fluid lines are the core of the character; avoid digital sharp edges
+2. **Character-driven** — The base outfit is determined by the character description (identity/occupation/gender/scene) as their regular clothing; specific costume/makeup details are layered on afterward
+3. **Four-view consistency** — Face/body type/hairstyle/base clothing must be highly consistent across all views
+4. **Restrained, calm emotion** — The no-makeup state must convey the character's temperament (gentle/melancholic/detached)
 
 ---
 
-## 二、面容约束
+## 2. Facial Constraints
 
-> 不再固定五官特征参数，由角色描述（性别/年龄/性格/气质）驱动 AI 自由生成五官，保证人物间外观差异化。
+> Facial feature parameters are not fixed; instead, the character description (gender/age/personality/temperament) drives the AI to freely generate facial features, ensuring visual differentiation between characters.
 
-### 通用要求
+### General Requirements
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 五官 | 由角色描述自然推导，不预设脸型/眼型/眉型/鼻型/唇型 |
-| 风格底色 | 90 年代复古日系动画手绘质感（柔和暖色、流畅线条、块面阴影） |
-| 气质 | 必须从角色描述提炼整体气质关键词（如温柔/忧郁/淡然/阳光），并写入提示词 |
-| 表情 | 中性微表情，符合角色气质 |
+| Facial features | Naturally derived from the character description; face shape/eye shape/eyebrow shape/nose shape/lip shape are not preset |
+| Style base | 90s retro Japanese anime hand-drawn texture (soft warm tones, fluid lines, block shading) |
+| Temperament | Overall temperament keywords (e.g., gentle/melancholic/detached/sunny) must be extracted from the character description and written into the prompt |
+| Expression | Neutral micro-expression matching the character's temperament |
 
 ---
 
-## 三、肤感约束
+## 3. Skin Texture Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 肤色 | 冷白皮、暖调米白 | 冷白皮、暖调米白 |
-| 光泽 | 平涂上色、柔和光泽 | 平涂上色、柔和光泽 |
-| 质感 | 手绘质感、无数字化痕迹 | 手绘质感、无数字化痕迹 |
-| 露肤 | 面部/颈部/手部 | 锁骨可见、颈线清晰 |
+| Skin tone | Cool white skin, warm-toned off-white | cool white skin, warm-toned off-white |
+| Sheen | Flat-shaded coloring, soft sheen | flat-shaded coloring, soft sheen |
+| Texture | Hand-drawn texture, no digital traces | hand-drawn texture, no digital traces |
+| Exposed skin | Face/neck/hands | visible collarbone, clean neckline |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 肤色 | 健康肤色、暖调自然 | 健康肤色、暖调自然 |
-| 光泽 | 平涂上色、自然光泽 | 平涂上色、自然光泽 |
-| 质感 | 手绘质感、简单纹理 | 手绘质感、简单纹理 |
+| Skin tone | Healthy skin tone, natural warmth | healthy skin tone, natural warmth |
+| Sheen | Flat-shaded coloring, natural sheen | flat-shaded coloring, natural sheen |
+| Texture | Hand-drawn texture, simple texture detail | hand-drawn texture, simple texture detail |
 
 ---
 
-## 四、体型约束
+## 4. Body Type Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 身高 | 由角色设定指定，默认155-165cm | {身高}cm、{身高描述} |
-| 头身比 | 六头身至六头半、90年代常见比例 | 6-6.5 heads tall、90年代比例 |
-| 肩颈 | 纤细、肩线柔和 | 纤细肩部、柔美颈线 |
-| 手部 | 纤细、指节分明 | 纤细玉手、手指修长 |
-| 体态 | 优雅/温柔、体态轻盈 | 体态轻盈、身姿优雅 |
+| Height | Specified by character setting, default 155-165cm | {height}cm, {height description} |
+| Head-to-body ratio | 6 to 6.5 heads tall, common 90s proportion | 6-6.5 heads tall, 90s proportion |
+| Shoulders/neck | Slender, soft shoulder line | slender shoulders, graceful neckline |
+| Hands | Slender, defined knuckles | slender delicate hands, long fingers |
+| Posture | Elegant/gentle, light posture | light posture, graceful bearing |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 身高 | 由角色设定指定，默认170-180cm | {身高}cm、{身高描述} |
-| 头身比 | 六头半至七头半 | 6.5-7.5 heads tall、90年代比例 |
-| 肩颈 | 宽肩、颈线有力 | 宽肩、颈部有力 |
-| 手部 | 骨节分明、手掌比例协调 | 手指骨节分明 |
-| 体态 | 挺拔/健壮、体态自然 | 身姿挺拔、体态健壮 |
+| Height | Specified by character setting, default 170-180cm | {height}cm, {height description} |
+| Head-to-body ratio | 6.5 to 7.5 heads tall | 6.5-7.5 heads tall, 90s proportion |
+| Shoulders/neck | Broad shoulders, strong neckline | broad shoulders, strong neck |
+| Hands | Defined knuckles, well-proportioned palms | knuckles clearly defined |
+| Posture | Upright/sturdy, natural posture | upright bearing, sturdy build |
 
 ---
 
-## 五、基础发型约束
+## 5. Base Hairstyle Constraints
 
-> 仅定义自然散发/简单束发，发饰在衍生环节叠加。
+> Only natural loose hair/simple tied hair is defined here; hair accessories are layered on in the derivative asset stage.
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 发色 | 自然发色（黑/棕/金） | 黑发、棕发、金发 |
-| 发长 | 及肩或更长 | 长发、及肩发 |
-| 发质 | 手绘质感、线条流畅 | 发丝流畅、手绘质感 |
-| 造型 | 自然散发、无发饰 | 长发自然散落、无发饰 |
+| Hair color | Natural hair color (black/brown/blonde) | black hair, brown hair, blonde hair |
+| Hair length | Shoulder-length or longer | long hair, shoulder-length hair |
+| Hair texture | Hand-drawn texture, fluid lines | flowing hair strands, hand-drawn texture |
+| Style | Natural loose hair, no accessories | long hair naturally flowing, no hair accessories |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 发色 | 自然发色（黑/棕/灰） | 黑发、棕发、银发 |
-| 发长 | 中长至长发 | 中长发、长发 |
-| 发质 | 手绘质感、线条流畅 | 发丝流畅、手绘质感 |
-| 造型 | 自然散发或半束、无发冠 | 长发自然散落、半束发 |
+| Hair color | Natural hair color (black/brown/gray) | black hair, brown hair, silver hair |
+| Hair length | Medium-long to long | medium-long hair, long hair |
+| Hair texture | Hand-drawn texture, fluid lines | flowing hair strands, hand-drawn texture |
+| Style | Natural loose hair or half-tied, no crown accessories | long hair naturally flowing, half-tied hair |
 
 ---
 
-## 六、基础服装约束
+## 6. Base Clothing Constraints
 
-> 基础服装由角色描述（身份/职业/性别/场景）决定其最自然的常规着装，作为该角色「日常默认态」；正式服饰/特殊衍生在服化衍生环节叠加。**禁止内衣打底**。
+> The base outfit is determined by the character description (identity/occupation/gender/scene) as the most natural regular clothing, serving as the character's "everyday default state"; formal wear/special derivative outfits are layered on during the costume derivative stage. **Underwear-only base is prohibited.**
 
-### 着装选择原则
+### Clothing Selection Principles
 
-| 角色身份 | 默认着装方向 |
+| Character Identity | Default Clothing Direction |
 |---|---|
-| 学生 | 90 年代校服 / 学院制服 |
-| 上班族 | 职业便装（衬衫+裤装/裙装） |
-| 居家/休闲 | 90 年代复古休闲服（针织衫/连衣裙/T恤） |
-| 运动/活泼 | 运动套装 / 校服改良 |
-| 特殊职业 | 对应身份服装（医生/警察/教师等） |
-| 角色描述未明确 | 90 年代复古日常常服 |
+| Student | 90s school uniform / academy uniform |
+| Office worker | Professional casual wear (shirt + pants/skirt) |
+| Home/casual | 90s retro casual wear (knit sweater/dress/T-shirt) |
+| Athletic/lively | Sportswear / modified school uniform |
+| Special occupation | Corresponding identity clothing (doctor/police/teacher, etc.) |
+| Unspecified character description | 90s retro everyday wear |
 
-### 着装统一规则
+### Clothing Consistency Rules
 
-- 服装风格须与 90 年代复古日系动画美学一致（柔和暖色、低饱和、手绘质感）
-- 颜色低饱和，无复杂花纹/装饰，便于后续衍生叠加
-- 四视图服装款式完全一致
-- 基础服装是「日常默认态」，焦点仍在面容与体态
-- 严禁内衣/暴露/性化打底
+- Clothing style must align with the 90s retro Japanese anime aesthetic (soft warm tones, low saturation, hand-drawn texture)
+- Colors are low-saturation, with no complex patterns/decorations, to make later layering easier
+- Clothing style must be completely consistent across all four views
+- Base clothing is the "everyday default state"; the focus remains on the face and posture
+- Underwear/exposure/sexualized base clothing is strictly prohibited
 
 ---
 
-## 七、四视图设定图规范
+## 7. Four-View Reference Sheet Specification
 
-### 视图定义
+### View Definitions
 
-| 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
+| Position | View | Angle | Shot Type | Requirement | Prompt |
 |---|---|---|---|---|---|
-| 左一 | 人像特写 | 正面平视 | 头顶至锁骨 | 从头顶到锁骨完整展示，面部占60%+ | portrait closeup、face detail |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、双臂自然、从头到脚完整 | front view、full body head to toe |
-| 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓清晰、从头到脚完整 | side view、profile、full body head to toe |
-| 右一 | 后视图 | 后方 180° | 全身立像 | 后脑/背部/发尾/脚部清晰 | back view、rear view、full body head to toe |
+| Far left | Portrait close-up | Front, eye-level | Top of head to collarbone | Fully shown from top of head to collarbone, face occupies 60%+ | portrait closeup, face detail |
+| Second left | Front view | Front 0° | Full body standing | Facing camera, arms natural, fully shown head to toe | front view, full body head to toe |
+| Second right | Side view | Right 90° | Full body standing | Pure profile silhouette clear, fully shown head to toe | side view, profile, full body head to toe |
+| Far right | Back view | Rear 180° | Full body standing | Back of head/back/hair ends/feet clearly shown | back view, rear view, full body head to toe |
 
-### 画面规范
+### Frame Specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面从左至右并排四视图 |
-| 背景 | 暖调米白 #F8F4E8 |
-| 站姿 | 自然站立、双脚平行微分、双臂自然下垂 |
-| 全身展示 | 从头到脚完整入画，严禁裁切头顶或脚部 |
-| 特写展示 | 从头顶到锁骨完整入画，严禁裁切头顶 |
-| 表情 | 中性微表情，符合角色气质 |
-| 光线 | 柔和电影光，前方主光 + 双侧补光 |
-| 一致性 | 四视图的肤色/体型/发型/面容/基础服装完全一致 |
-| 画面比例 | 建议 4:1 或 3:1 |
+| Layout | Four views arranged side by side left to right in the same frame |
+| Background | Warm off-white #F8F4E8 |
+| Stance | Natural standing, feet parallel with slight gap, arms hanging naturally |
+| Full body display | Fully shown from head to toe, cropping the top of the head or feet is strictly prohibited |
+| Close-up display | Fully shown from top of head to collarbone, cropping the top of the head is strictly prohibited |
+| Expression | Neutral micro-expression matching the character's temperament |
+| Lighting | Soft cinematic lighting, front key light + dual side fill lights |
+| Consistency | Skin tone/body type/hairstyle/face/base clothing fully consistent across all four views |
+| Aspect ratio | Recommended 4:1 or 3:1 |
 
 ---
 
-## 八、提示词模板
+## 8. Prompt Template
 
 ```
-{性别}角色四视图设定图，90s anime style，复古日系动画风格，手绘平涂上色，柔和暖色调，精细流畅线条，电影感光影，
-character design sheet，character turnaround，
-{角色描述对应的五官特征 - 由角色描述自然推导}，{整体气质}，素颜无妆，
-{肤色}，平涂上色，手绘质感，皮肤细腻，
-{身高描述，如：165cm tall、slender woman}，{头身比，如：6.5 heads tall proportion}，{身材描述}，{体态描述}，
-{发色}{发长}，发丝流畅，{基础造型}，无发饰，
-{角色身份对应的常规着装，如：90年代校服/职业便装/复古连衣裙}，柔和低饱和色调，无复杂花纹，
-同一画面左至右并排：人像特写+正视图+侧视图+后视图，
-人像特写从头顶到锁骨完整展示，head to collarbone complete，
-全身立像从头顶到脚底完整展示，full body head to toe，不裁切头顶和脚部，
-自然站立，纯净中性灰背景，柔和电影光，无硬阴影，
-四视图一致性，面容细腻渲染，发丝细腻渲染
-图中不要有任何文字
+{gender} character four-view reference sheet, 90s anime style, retro Japanese anime style, hand-drawn flat-shaded coloring, soft warm tones, fine fluid lines, cinematic lighting,
+character design sheet, character turnaround,
+{facial features derived from character description - naturally inferred from character description}, {overall temperament}, no makeup, bare face,
+{skin tone}, flat-shaded coloring, hand-drawn texture, delicate skin,
+{height description, e.g.: 165cm tall, slender woman}, {head-to-body ratio, e.g.: 6.5 heads tall proportion}, {body description}, {posture description},
+{hair color}{hair length}, flowing hair strands, {base style}, no hair accessories,
+{regular clothing corresponding to character identity, e.g.: 90s school uniform/professional casual wear/retro dress}, soft low-saturation tones, no complex patterns,
+same frame arranged left to right: portrait closeup + front view + side view + back view,
+portrait closeup fully shown from top of head to collarbone, head to collarbone complete,
+full body standing figure fully shown from top of head to soles of feet, full body head to toe, not cropping the top of the head or feet,
+standing naturally, clean neutral gray background, soft cinematic lighting, no harsh shadows,
+four-view consistency, delicately rendered face, delicately rendered hair strands
+no text of any kind should appear in the image
 ```
 
 ---
 
-## 九、约束规则
+## 9. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须为「素颜无妆」状态 |
-| R2 | 必须根据角色描述声明合适的常规着装作为基础服装（如学生→校服、上班族→职业便装、居家→复古休闲服）；禁止内衣打底 |
-| R3 | 必须声明「无发饰、无配饰」 |
-| R4 | 必须指定「暖调米白背景 #F8F4E8」 |
-| R5 | 必须指定「四视图一致性」 |
-| R6 | 全身立像必须从头到脚完整展示，严禁裁切 |
-| R7 | 必须指定角色身高并通过头身比换算约束全身比例（女性默认155-165cm/6-6.5头身，男性默认170-180cm/6.5-7.5头身） |
-| R8 | 人像特写必须从头顶到锁骨完整展示，严禁裁切头顶 |
+| R1 | Must be in a "bare face, no makeup" state |
+| R2 | Must declare appropriate regular clothing as the base outfit according to the character description (e.g., student → school uniform, office worker → professional casual wear, home → retro casual wear); underwear-only base is prohibited |
+| R3 | Must declare "no hair accessories, no accessories" |
+| R4 | Must specify "warm off-white background #F8F4E8" |
+| R5 | Must specify "four-view consistency" |
+| R6 | The full-body standing figure must be fully shown from head to toe; cropping is strictly prohibited |
+| R7 | Must specify the character's height and constrain full-body proportions via the head-to-body ratio conversion (female default 155-165cm/6-6.5 heads, male default 170-180cm/6.5-7.5 heads) |
+| R8 | The portrait close-up must be fully shown from the top of the head to the collarbone; cropping the top of the head is strictly prohibited |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibition |
 |---|---|
-| X1 | 内衣/暴露/性化打底；与角色描述明显不符的着装；过度复杂花纹/装饰干扰后续服化叠加 |
-| X2 | 数字化锐利边缘、过饱和色彩 |
-| X3 | 过度美白至无血色 |
-| X4 | 复杂场景背景（必须暖色调背景） |
-| X5 | 夸张表情/动态姿势 |
-| X6 | 全身立像裁切头顶或脚底，必须从头到脚完整入画 |
-| X7 | 人像特写裁切头顶，必须从头顶到锁骨完整入画 |
-| X8 | 忽略身高和头身比约束 |
+| X1 | Underwear/exposure/sexualized base clothing; clothing clearly inconsistent with the character description; overly complex patterns/decorations that interfere with later costume layering |
+| X2 | Digital sharp edges, oversaturated colors |
+| X3 | Excessive whitening to the point of looking bloodless |
+| X4 | Complex scene backgrounds (background must be warm-toned) |
+| X5 | Exaggerated expressions/dynamic poses |
+| X6 | Cropping the top of the head or soles of the feet in the full-body standing figure; must be fully shown from head to toe |
+| X7 | Cropping the top of the head in the portrait close-up; must be fully shown from the top of the head to the collarbone |
+| X8 | Ignoring height and head-to-body ratio constraints |

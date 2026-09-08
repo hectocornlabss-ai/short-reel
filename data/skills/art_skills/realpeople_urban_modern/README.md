@@ -1,33 +1,33 @@
-# 真人都市写实风格说明
+# Real-People Urban Modern Style Guide
 
-本风格专为"真人都市写实"题材打造，所有美术提示词、规范和生成内容均严格限定于：
+This style is built specifically for the "real-people urban realism" theme. All art prompts, rules, and generated content are strictly limited to:
 
-- **现代世界观**：以现代都市为背景，涵盖办公室、咖啡厅、居家、街头、商场等，杜绝现代元素缺失。
-- **真人写实**：所有角色、场景、道具均以真人写实摄影为标准，强调五官、皮肤、发丝、材质等极致细节与真实质感。
-- **都市写实纪实**：在写实基础上追求影视级氛围感，画面明暗对比强烈，细节丰富，整体氛围直白温暖、现代生活感。
-- **甜宠氛围**：适合展现温柔、治愈、浪漫的古风恋爱故事，强调现代都市下的情感表达。
+- **Modern setting**: Set against a contemporary urban backdrop, covering offices, cafes, homes, streets, malls, etc. Missing modern elements are not allowed.
+- **Real-people realism**: All characters, scenes, and props are held to the standard of real-person realistic photography, emphasizing extreme detail and authentic texture in facial features, skin, hair, and materials.
+- **Urban realistic documentary feel**: Building on realism, this pursues a cinematic atmosphere — strong light/dark contrast, rich detail, and an overall direct, warm, contemporary-life feel.
+- **Sweet romance atmosphere**: Suited to portraying gentle, healing, romantic love stories, emphasizing emotional expression within a modern urban setting.
 
-## 适用范围
+## Scope of Application
 
-- 真人都市题材的AI美术生成（角色、场景、道具、分镜等）
-- 需要极致写实、细腻质感、现代都市氛围的视觉创作
+- AI art generation for real-people urban themes (characters, scenes, props, storyboards, etc.)
+- Visual creation requiring extreme realism, refined texture, and a modern urban atmosphere
 
-## 严禁内容
+## Strictly Prohibited Content
 
-- 卡通、动漫、插画、二次元风格
-- 现代元素缺失、古风/古装/传统建筑
-- 高饱和荧光色、霓虹色
-- 暗示性、暴露、透视等不适宜内容
+- Cartoon, anime, illustration, or ACG (2D) style
+- Missing modern elements, ancient style/period costume/traditional architecture
+- Highly saturated fluorescent colors, neon colors
+- Suggestive, exposed, revealing, or otherwise inappropriate content
 
-## 风格体验
+## Style Experience
 
-在本风格下，您将体验到：
+Under this style, you will experience:
 
-- 角色面容精致、气质温润或干练，服饰、妆容、发型均为现代都市写实
-- 场景空间层次丰富，材质纹理超清晰，氛围真实且富有生活气息
-- 道具、手机、电脑、办公用品等均为现代造型，工艺精细，质感极致
-- 分镜与视频均以真人写实为基础，强调叙事与情感表达
+- Characters with refined faces and a gentle or capable temperament; clothing, makeup, and hairstyles all rendered as modern urban realism
+- Scenes with rich spatial layering, ultra-clear material texture, and an atmosphere that feels authentic and full of everyday life
+- Props, phones, computers, office supplies, etc. all in modern designs, finely crafted, with an extreme sense of texture
+- Storyboards and videos both grounded in real-people realism, emphasizing narrative and emotional expression
 
 ---
 
-本风格仅适用于"真人都市写实"相关项目。如需其他风格（如古风、插画、动漫、现代等），请勿使用本套提示词。
+This style applies only to "real-people urban realism" related projects. For other styles (such as ancient style, illustration, anime, or general modern), please do not use this prompt set.

@@ -114,12 +114,12 @@ const vendor: VendorConfig = {
   id: "openai",
   version: "2.0",
   author: "Toonflow",
-  name: "OpenAI标准接口",
-  description: "OpenAI标准格式接口，可修改请求地址并手动添加模型。",
+  name: "OpenAI Standard API",
+  description: "อินเทอร์เฟซรูปแบบมาตรฐาน OpenAI สามารถแก้ไขที่อยู่คำขอและเพิ่มโมเดลเองได้",
   icon: "",
   inputs: [
-    { key: "apiKey", label: "API密钥", type: "password", required: true },
-    { key: "baseUrl", label: "请求地址", type: "url", required: true, placeholder: "以v1结束，示例：https://api.openai.com/v1" },
+    { key: "apiKey", label: "API Key", type: "password", required: true },
+    { key: "baseUrl", label: "ที่อยู่คำขอ (Base URL)", type: "url", required: true, placeholder: "ลงท้ายด้วย v1 ตัวอย่าง: https://api.openai.com/v1" },
   ],
   inputValues: {
     apiKey: "",
@@ -137,7 +137,7 @@ const vendor: VendorConfig = {
 // 适配器函数
 // ============================================================
 const textRequest = (model: TextModel, think: boolean, thinkLevel: 0 | 1 | 2 | 3) => {
-  if (!vendor.inputValues.apiKey) throw new Error("缺少API Key");
+  if (!vendor.inputValues.apiKey) throw new Error("ไม่พบ API Key");
   const apiKey = vendor.inputValues.apiKey.replace(/^Bearer\s+/i, "");
   return createOpenAI({ baseURL: vendor.inputValues.baseUrl, apiKey }).chat(model.modelName);
 };

@@ -1,33 +1,33 @@
-# 国风3D风格说明
+# Chinese Traditional 3D Style Guide
 
-本风格专为"国风3D"题材打造，所有美术提示词、规范和生成内容均严格限定于：
+This style is built exclusively for the "Chinese Traditional 3D" theme. All art prompts, rules, and generated content are strictly limited to:
 
-- **国风3D渲染**：以三维建模渲染技术呈现中国传统美学，涵盖古风建筑、山水园林、宫廷服饰等
-- **3D精细质感**：高精度模型、PBR材质渲染、光影层次丰富、细节清晰可辨
-- **中国传统色彩**：青绿、朱红、靛蓝、金黄等传统色盘，色彩和谐典雅
-- **东方美学氛围**：意境深远、虚实相生、留白构图、诗意空间
-- **古风人物造型**：3D古风建模、服饰华丽精致、妆容典雅、发型考究
-- **电影级光影**：体积光、环境光遮蔽、全局光照、景深虚化等电影渲染效果
+- **Chinese-Traditional 3D Rendering**: Presenting traditional Chinese aesthetics through 3D modeling and rendering techniques, covering ancient-style architecture, landscape gardens, palace attire, etc.
+- **Fine 3D Detail**: High-precision models, PBR material rendering, rich light and shadow layering, clearly discernible detail
+- **Traditional Chinese Colors**: Traditional palettes such as blue-green, vermilion, indigo, and gold, with harmonious and elegant color harmony
+- **Oriental Aesthetic Atmosphere**: Deep artistic conception, a blend of the real and the imagined, negative-space composition, poetic space
+- **Ancient-Style Character Design**: Ancient-style 3D modeling, ornate and refined costumes, elegant makeup, meticulous hairstyling
+- **Cinematic Lighting**: Cinematic rendering effects such as volumetric light, ambient occlusion, global illumination, and depth-of-field blur
 
-## 适用范围
+## Scope of Application
 
-- 国风3D题材的AI美术生成（角色、场景、道具、分镜等）
-- 需要3D渲染质感、东方美学、古风意境的视觉创作
-- 游戏美术、影视概念设计、国风动画等应用场景
+- AI art generation for the Chinese Traditional 3D theme (characters, scenes, props, storyboards, etc.)
+- Visual creation requiring 3D render quality, oriental aesthetics, and ancient-style artistic conception
+- Application scenarios such as game art, film/TV concept design, and Chinese-style animation
 
-## 严禁内容
+## Strictly Prohibited Content
 
-- 写实摄影/照片级真实感（除非特别说明）
-- 西方奇幻/哥特/维多利亚风格
-- 赛博朋克/科幻/现代都市元素
-- 低精度模型/粗糙建模/贴图模糊
-- 过度饱和/荧光色/数码感强
+- Photorealistic/photographic-level realism (unless specifically stated)
+- Western fantasy/gothic/Victorian styles
+- Cyberpunk/sci-fi/modern urban elements
+- Low-poly models/crude modeling/blurry textures
+- Over-saturation/fluorescent colors/strong digital feel
 
-## 风格体验
+## Style Experience
 
-在本风格下，您将体验到：
+Under this style, you will experience:
 
-- 角色造型典雅精致，3D建模细腻，服饰纹理清晰，发丝飘逸
-- 场景气势恢宏，建筑细节丰富，材质质感真实，光影氛围诗意
-- 道具器物考究，材质工艺精细，色彩和谐统一
-- 分镜与渲染均强调3D质感、东方意境、电影级光影
+- Elegant and refined character design, delicate 3D modeling, clear costume texture, flowing hair strands
+- Grand and imposing scenes, rich architectural detail, authentic material quality, poetic lighting atmosphere
+- Meticulous props and objects, fine material craftsmanship, harmonious and unified color
+- Storyboards and rendering that both emphasize 3D texture, oriental artistic conception, and cinematic lighting

@@ -1,118 +1,118 @@
-# 全局美学基础 · 真人古风写实
+# Global Aesthetic Foundation · Real-People Ancient-Chinese Photorealistic
 
 ---
-必须严格、完整遵循下方全部风格约束与全局规则，并严格按提示词模板格式生成提示词；仅输出提示词正文，不得附加任何解释、说明、注释、标题或其他额外文本。
-## 一、风格基因
+You must strictly and fully follow all style constraints and global rules below, and generate the prompt strictly according to the prompt template format; output only the prompt text itself, with no explanations, notes, titles, or other extra text.
+## 1. Style Genes
 
-| 维度 | 定义 |
+| Dimension | Definition |
 |---|---|
-| **一级风格** | 真人古风写实（Ancient-Chinese Photorealism） |
-| **二级风格** | 真人写实摄影 · 影视级纪实质感 |
-| **情感基调** | 甜宠向 — 冷中带暖、疏中见密 |
-| **质感锚词** | 强对比度、极致细节、古风写实纪实 |
+| **Primary style** | Real-people ancient-Chinese photorealism (Ancient-Chinese Photorealism) |
+| **Secondary style** | Photorealistic photography of real people · cinematic documentary texture |
+| **Emotional tone** | Sweet romance — cool with touches of warmth, sparse yet layered |
+| **Texture anchor words** | Strong contrast, extreme detail, ancient-style photorealistic documentary feel |
 
 ---
 
-## 二、全局色彩盘（风格基线，不是硬锁）
+## 2. Global Color Palette (style baseline, not a hard lock)
 
-> 目标：统一审美而非限制创作。除「硬约束色」外，其余颜色默认优先使用，可在合理范围内偏移。
+> Goal: unify the aesthetic rather than restrict creativity. Except for "hard-constraint colors," other colors are used preferentially by default and may be shifted within a reasonable range.
 
-### 色彩使用层级
+### Color Usage Tiers
 
-| 层级 | 约束强度 | 说明 |
+| Tier | Constraint strength | Description |
 |---|---|---|
-| L1 硬约束 | 高 | 仅锁定角色识别核心：肤色、发色、主服底色的审美方向 |
-| L2 软约束 | 中 | 场景色、配饰色、点缀色优先参考色盘，可按镜头与剧情微调 |
-| L3 例外机制 | 低 | 节庆/回忆/高潮戏可临时突破局部色彩，但需保留整体冷暖逻辑 |
+| L1 Hard constraint | High | Locks only the core of character recognition: the aesthetic direction of skin tone, hair color, and the base color of the main costume |
+| L2 Soft constraint | Medium | Scene colors, accessory colors, and accent colors preferentially reference the palette, and may be fine-tuned by shot and plot |
+| L3 Exception mechanism | Low | Festival/flashback/climax scenes may temporarily break local color rules, but must preserve the overall cool/warm logic |
 
-| 序号 | 色名 | 色值 | 用途 |
+| No. | Color name | Hex | Usage |
 |---|---|---|---|
-| C1 | 月白 | #D6E4EC | 主服底色、雾气、纱幔 |
-| C2 | 冷白肤 | #F5EDE8 | 女性肤色基准 |
-| C2b | 暖白肤 | #F5E6D8 | 男性肤色基准 |
-| C3 | 珠光金 | #E8D5B0 | 刺绣、配饰高光、头饰 |
-| C4 | 墨玉黑 | #1A1A2E | 发色、眼瞳、描边 |
-| C5 | 烟霞粉 | #F2D7D5 | 唇色、腮红、花瓣 |
-| C6 | 青黛 | #4A6670 | 远景山水、暗部补色 |
-| C7 | 琥珀暖 | #C9A96E | 暖光、烛光、夕照 |
-| C8 | 霜雪银 | #C0C7CE | 兵器、水面反光、银饰 |
-| C9 | 中性灰 | #E8E8E8 | 设定图背景 |
-| C10 | 素白 | #F8F6F0 | 基础中衣色 |
+| C1 | Moon White | #D6E4EC | Main costume base color, mist, gauze curtains |
+| C2 | Cool White Skin | #F5EDE8 | Female skin tone baseline |
+| C2b | Warm White Skin | #F5E6D8 | Male skin tone baseline |
+| C3 | Pearl Gold | #E8D5B0 | Embroidery, accessory highlights, headpieces |
+| C4 | Obsidian Black | #1A1A2E | Hair color, eye color, outlines |
+| C5 | Rosy Mist Pink | #F2D7D5 | Lip color, blush, flower petals |
+| C6 | Indigo Blue-Grey | #4A6670 | Distant landscapes, shadow fill color |
+| C7 | Amber Warmth | #C9A96E | Warm light, candlelight, sunset glow |
+| C8 | Frost Silver | #C0C7CE | Weapons, water reflections, silver ornaments |
+| C9 | Neutral Grey | #E8E8E8 | Reference-sheet backgrounds |
+| C10 | Plain White | #F8F6F0 | Base inner-garment color |
 
-### 硬约束色（默认锁定）
+### Hard-Constraint Colors (locked by default)
 
-| 色项 | 对应色 | 规则 |
+| Item | Corresponding color | Rule |
 |---|---|---|
-| 女性肤色基准 | C2 冷白肤 | 默认优先，允许小幅明度/暖度微调 |
-| 男性肤色基准 | C2b 暖白肤 | 默认优先，避免偏黄或过灰 |
-| 发色/瞳色基准 | C4 墨玉黑 | 默认优先，允许暗蓝/冷棕轻微偏移 |
+| Female skin tone baseline | C2 Cool White Skin | Preferred by default; small adjustments to brightness/warmth allowed |
+| Male skin tone baseline | C2b Warm White Skin | Preferred by default; avoid leaning yellow or overly grey |
+| Hair/eye color baseline | C4 Obsidian Black | Preferred by default; slight shift toward dark blue/cool brown allowed |
 
-### 软约束色（推荐优先）
+### Soft-Constraint Colors (recommended priority)
 
-> C3/C5/C6/C7/C8/C9/C10 为推荐色域，用于刺绣、花瓣、远景、暖光、银饰、背景、中衣等。可根据镜头氛围做同色相邻近调整。
+> C3/C5/C6/C7/C8/C9/C10 are the recommended color range, used for embroidery, flower petals, distant views, warm light, silver ornaments, backgrounds, inner garments, etc. May be adjusted to adjacent hues based on shot mood.
 
-### 情绪色盘（导演对齐版）
+### Emotion Palette (director-aligned version)
 
-| 情绪场景 | 主色 | 辅色 | 光效与对比建议 | 画面关键词 |
+| Emotional scene | Primary color | Secondary color | Lighting & contrast suggestion | Screen keywords |
 |---|---|---|---|---|
-| 初见心动（克制甜） | C1 月白 | C5 烟霞粉 + C8 霜雪银 | 冷基底 + 局部柔暖高光，强对比但不过曝 | 清冷、呼吸感、微甜 |
-| 暧昧升温（亲密拉近） | C5 烟霞粉 | C7 琥珀暖 + C10 素白 | 中近景提暖，肤色微升温，背景保持低饱和 | 软焦、耳语感、贴近 |
-| 守护承诺（稳定安全） | C10 素白 | C3 珠光金 + C4 墨玉黑 | 明暗层次清晰，金色只做边缘点缀 | 安定、仪式感、信任 |
-| 分离误会（冷疏压抑） | C6 青黛 | C1 月白 + C9 中性灰 | 整体降饱和，拉大冷暖反差，阴影加深 | 距离感、克制、静压 |
-| 重逢释怀（泪感回暖） | C1 月白 | C7 琥珀暖 + C5 烟霞粉 | 先冷后暖，人物面部暖光渐进 | 回温、释然、湿润空气 |
-| 大婚喜庆（古典高光） | C3 珠光金 | C7 琥珀暖 + C5 烟霞粉 | 局部可提高饱和，避免荧光红；金色强调礼制纹样 | 华贵、庄重、甜喜 |
-| 夜宴灯会（浪漫流光） | C7 琥珀暖 | C6 青黛 + C8 霜雪银 | 暖光源主导，背景冷色托举，保留暗部细节 | 流光、灯影、人潮中对视 |
-| 梦境回忆（写实化） | C1 月白 | C6 青黛 + C3 珠光金 | 低饱和雾化与真实光位并存，允许轻微偏色但不霓虹 | 空灵、旧忆感、真实可拍 |
+| First love flutter (restrained sweetness) | C1 Moon White | C5 Rosy Mist Pink + C8 Frost Silver | Cool base + localized soft warm highlights, strong contrast without overexposure | Cool, breathable, faintly sweet |
+| Rising ambiguity (growing intimacy) | C5 Rosy Mist Pink | C7 Amber Warmth + C10 Plain White | Warm up in medium/close shots, skin tone slightly warmer, background stays low-saturation | Soft focus, whispering feel, closeness |
+| Vow of protection (stable and safe) | C10 Plain White | C3 Pearl Gold + C4 Obsidian Black | Clear light/dark layering, gold used only as edge accents | Stability, ritual feel, trust |
+| Separation and misunderstanding (cold, distant, oppressive) | C6 Indigo Blue-Grey | C1 Moon White + C9 Neutral Grey | Overall desaturation, widened cool/warm contrast, deepened shadows | Distance, restraint, quiet pressure |
+| Reunion and relief (tearful warmth) | C1 Moon White | C7 Amber Warmth + C5 Rosy Mist Pink | Cold first then warm, warm light progressively rising on the face | Warming, relief, moist air |
+| Grand wedding joy (classical highlight) | C3 Pearl Gold | C7 Amber Warmth + C5 Rosy Mist Pink | Saturation may rise locally, avoid fluorescent red; gold emphasizes ceremonial patterns | Opulence, solemnity, sweet joy |
+| Night banquet lantern festival (romantic flowing light) | C7 Amber Warmth | C6 Indigo Blue-Grey + C8 Frost Silver | Warm light source dominant, cool background supports it, retain shadow detail | Flowing light, lantern glow, eyes meeting in the crowd |
+| Dream/memory (realistic treatment) | C1 Moon White | C6 Indigo Blue-Grey + C3 Pearl Gold | Low-saturation haze coexists with realistic light placement; slight color cast allowed but no neon | Ethereal, nostalgic, believably photographable |
 
-### 情绪色盘使用规则
+### Emotion Palette Usage Rules
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| E1 | 每条提示词至少指定 1 个「情绪场景」并绑定主色+辅色组合 |
-| E2 | 单镜头主色不超过 2 个，避免颜色叙事失焦 |
-| E3 | 情绪切换时优先调整光比与色温，再调整饱和度 |
-| E4 | 甜宠向默认遵循「冷底 + 暖点」：冷色铺底，暖色落在人物关系焦点 |
-| E5 | 若与剧情冲突，以情绪色盘优先于通用推荐色，但不得突破严禁项 |
+| E1 | Each prompt must specify at least 1 "emotional scene" and bind it to a primary + secondary color combination |
+| E2 | A single shot should use no more than 2 primary colors, to avoid losing color-narrative focus |
+| E3 | When switching emotions, adjust light ratio and color temperature first, then adjust saturation |
+| E4 | Sweet romance defaults to "cool base + warm accent": cool colors lay the base, warm colors land on the focal point of the characters' relationship |
+| E5 | If it conflicts with the plot, the emotion palette takes priority over the general recommended colors, but must not violate the strictly forbidden items |
 
-### 色温约束
+### Color Temperature Constraints
 
-| 参数 | 值 | 说明 |
+| Parameter | Value | Description |
 |---|---|---|
-| 整体色温 | 偏冷 5800-7000K（推荐） | 清冷仙气主基调 |
-| 肤色色温 | 微暖 5200-5600K（推荐） | 冷白但有生命感 |
-| 对比度 | 强（建议保持） | 明暗反差鲜明 |
-| 饱和度 | 中低 30-50%（建议区间） | 高级灰调 |
+| Overall color temperature | Leaning cool, 5800-7000K (recommended) | Cool, ethereal base tone |
+| Skin tone temperature | Slightly warm, 5200-5600K (recommended) | Cool white but with a sense of life |
+| Contrast | Strong (recommended to maintain) | Pronounced light/dark contrast |
+| Saturation | Medium-low, 30-50% (recommended range) | Refined grey tone |
 
-### 容差与例外
+### Tolerance and Exceptions
 
-| 项目 | 建议容差 |
+| Item | Recommended tolerance |
 |---|---|
-| 色相偏移 | ±8° |
-| 饱和度偏移 | ±10% |
-| 明度偏移 | ±12% |
+| Hue shift | ±8° |
+| Saturation shift | ±10% |
+| Brightness shift | ±12% |
 
-> 例外场景：婚礼、灯会、回忆、情绪高潮镜头可使用更暖或更高饱和局部色块；但禁止霓虹荧光与现代色彩语言入镜。
+> Exception scenes: weddings, lantern festivals, flashbacks, and emotional-climax shots may use warmer or higher-saturation local color patches; however, neon/fluorescent colors and modern color language are forbidden.
 
 ---
 
-## 三、全局约束规则
+## 3. Global Constraint Rules
 
-### 必守规则（所有技能继承）
+### Mandatory Rules (inherited by all skills)
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须包含「真人写实摄影」风格锚定词 |
-| R2 | 必须声明「强对比度 + 极致细节」 |
-| R3 | 面部必须使用「面容细腻渲染 + 皮肤细腻」 |
-| R4 | 发丝必须使用「根根分明 + 发丝细腻渲染」 |
-| R5 | 纹理必须声明「纹理细节超清晰」 |
+| R1 | Must include the "photorealistic photography of real people" style anchor phrase |
+| R2 | Must declare "strong contrast + extreme detail" |
+| R3 | Faces must use "finely rendered facial features + fine skin detail" |
+| R4 | Hair must use "strand-by-strand definition + finely rendered hair" |
+| R5 | Textures must declare "ultra-clear texture detail" |
 
-### 严禁项（所有技能继承）
+### Strictly Forbidden (inherited by all skills)
 
-| 编号 | 严禁内容 |
+| No. | Forbidden content |
 |---|---|
-| X1 | 严禁「卡通/动漫/二次元/插画风」 |
-| X2 | 严禁「高饱和荧光色/霓虹色」 |
-| X3 | 严禁「现代元素入镜」 |
-| X4 | 严禁「面部变形/多指/肢体异常」倾向词 |
-| X5 | 严禁「裸体/暴露/透视/暗示性描述」 |
+| X1 | "Cartoon/anime/2D-ACG/illustration style" strictly forbidden |
+| X2 | "Highly saturated fluorescent colors/neon colors" strictly forbidden |
+| X3 | "Modern elements in frame" strictly forbidden |
+| X4 | Words tending toward "facial distortion/extra fingers/anatomical abnormalities" strictly forbidden |
+| X5 | "Nudity/exposure/see-through/suggestive descriptions" strictly forbidden |

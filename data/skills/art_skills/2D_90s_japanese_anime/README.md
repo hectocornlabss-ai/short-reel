@@ -1,33 +1,33 @@
-# 90年代日式动画风格说明
+# 90s Japanese Anime Style Guide
 
-本风格专为"90年代日式动画质感"题材打造，所有美术提示词、规范和生成内容均严格限定于：
+This style is built specifically for the "90s Japanese anime texture" theme. All art prompts, standards, and generated content are strictly limited to:
 
-- **90年代动画世界观**：以90年代日式生活为背景，涵盖学校、车站、街道、咖啡馆、住宅等，体现日式生活气息。
-- **手绘平涂质感**：所有角色、场景、道具均以90年代手绘动画为标准，强调线条清晰度、上色均匀度、光影层次感。
-- **怀旧治愈美学**：在平涂基础上追求电影感氛围，画面色调柔和温暖，细节丰富，整体氛围温暖治愈、怀旧感人。
-- **情感表达**：适合展现温柔、治愈、浪漫的日式恋爱故事，强调东方美学下的情感表达。
+- **90s anime worldview**: Set against the backdrop of 90s Japanese daily life, covering schools, train stations, streets, cafes, homes, etc., conveying a Japanese sense of everyday life.
+- **Hand-drawn flat-shaded texture**: All characters, scenes, and props follow 90s hand-drawn animation as the standard, emphasizing line clarity, even coloring, and layered light and shadow.
+- **Nostalgic, healing aesthetic**: Building on flat shading, pursue a cinematic atmosphere, with soft, warm color tones, rich detail, and an overall warm, healing, nostalgic feel.
+- **Emotional expression**: Suited to portraying gentle, healing, romantic Japanese love stories, emphasizing emotional expression through an Eastern aesthetic.
 
-## 适用范围
+## Scope of Application
 
-- 90年代日式动画题材的AI美术生成（角色、场景、道具、分镜等）
-- 需要极致手绘质感、细腻线条、温馨治愈氛围的视觉创作
+- AI art generation for 90s Japanese anime themed content (characters, scenes, props, storyboards, etc.)
+- Visual creation requiring an ultimate hand-drawn texture, delicate linework, and a warm, healing atmosphere
 
-## 严禁内容
+## Strictly Prohibited Content
 
-- 现代日系动画风格、3D渲染、CG动画
-- 现代元素、现代建筑、现代服饰
-- 高饱和荧光色、霓虹色
-- 过度阴影、黑暗暴力、成人向内容
+- Modern Japanese anime style, 3D rendering, CG animation
+- Modern elements, modern architecture, modern clothing
+- Highly saturated fluorescent colors, neon colors
+- Excessive shadow, dark violence, adult content
 
-## 风格体验
+## Style Experience
 
-在本风格下，您将体验到：
+Under this style, you will experience:
 
-- 角色面容精致、气质温柔或清亮，服饰、妆容、发型均为90年代日式动画风格
-- 场景空间层次丰富，线条清晰流畅，氛围真实且富有诗意
-- 道具、日常物品、环境细节均为日式造型，工艺精细，质感细腻
-- 分镜与画面均以手绘平涂为基础，强调叙事与情感表达
+- Characters with delicate faces and a gentle or clear temperament, with clothing, makeup, and hairstyles all in 90s Japanese anime style
+- Scenes with rich spatial layering, clear and fluid lines, and an atmosphere that is authentic and poetic
+- Props, everyday objects, and environmental details all rendered in Japanese style, with fine craftsmanship and delicate texture
+- Storyboards and imagery based on hand-drawn flat shading, emphasizing narrative and emotional expression
 
 ---
 
-本风格仅适用于"90年代日式动画"相关项目。如需其他风格（如现代动画、CG、插画、现代等），请勿使用本套提示词。
+This style is intended only for "90s Japanese anime" related projects. For other styles (such as modern animation, CG, illustration, modern, etc.), please do not use this set of prompts.

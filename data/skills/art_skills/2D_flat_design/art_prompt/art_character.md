@@ -1,197 +1,197 @@
-# 人物基础形象生成 · 扁平风约束手册
+# Character Base Model Generation · Flat Style Constraint Manual
 
 ---
 
-## 一、基础形象原则
+## 1. Base Model Principles
 
-1. **轮廓即灵魂** — 线条是角色唯一锚点，扁平色块分层构建
-2. **角色为本** — 基础着装由角色描述（身份/职业/性别/场景）决定其常规着装；后续特定服化为叠加层
-3. **四视图一致** — 轮廓/体型/发型/基础服装跨视图高度统一
-4. **色块表达** — 无阴影渐变，靠色块对比表达层次
+1. **Silhouette is the soul** — lines are the character's only anchor point; flat color blocks build up the layers
+2. **Character-driven** — the base outfit is determined by the character description (identity/occupation/gender/scene), which dictates their default everyday wear; later specific costume changes are layered on top
+3. **Four-view consistency** — silhouette/body type/hairstyle/base clothing must be highly consistent across all views
+4. **Color block expression** — no shadow gradients; layering is expressed through color block contrast
 
 ---
 
-## 二、面容约束
+## 2. Facial Constraints
 
-> 不再固定五官特征参数，由角色描述（性别/年龄/性格/气质）驱动 AI 自由生成五官，保证人物间外观差异化。
+> Facial feature parameters are no longer fixed; the AI is driven by the character description (gender/age/personality/temperament) to freely generate facial features, ensuring visual differentiation between characters.
 
-### 通用要求
+### General requirements
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 五官 | 由角色描述自然推导，不预设脸型/眼型/眉型/鼻型/唇型 |
-| 风格底色 | 扁平矢量插画、纯色色块、清晰线条、无渐变无光影 |
-| 气质 | 必须从角色描述提炼整体气质关键词，并写入提示词 |
-| 表情 | 中性微表情，符合角色气质 |
+| Facial features | Naturally derived from the character description; no preset face shape/eye shape/eyebrow shape/nose shape/lip shape |
+| Base style | Flat vector illustration, solid color blocks, clean lines, no gradients, no lighting effects |
+| Temperament | The overall temperament keywords must be extracted from the character description and included in the prompt |
+| Expression | Neutral, subtle expression matching the character's temperament |
 
 ---
 
-## 三、肤感约束
+## 3. Skin Texture Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 肤色 | 单色填充、无渐变 | 单色皮肤、扁平肤色、solid skin color |
-| 光泽 | 无高光、无反光 | 无光泽、哑光扁平、matte finish |
-| 质感 | 色块填充、无纹理 | 色块填充、平面质感、no texture |
-| 露肤 | 面部/颈部/锁骨/手部 | 色块肤色、扁平肤表 |
+| Skin tone | Solid color fill, no gradient | solid-color skin, flat skin tone, solid skin color |
+| Sheen | No highlights, no reflections | no gloss, matte flat, matte finish |
+| Texture | Color block fill, no texture | color block fill, flat texture, no texture |
+| Exposed skin | Face/neck/collarbone/hands | flat skin-tone color block, flat skin surface |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 肤色 | 单色填充、无渐变 | 单色皮肤、扁平肤色、solid skin color |
-| 光泽 | 无高光、无反光 | 无光泽、哑光扁平、matte finish |
-| 质感 | 色块填充、无纹理 | 色块填充、平面质感、no texture |
+| Skin tone | Solid color fill, no gradient | solid-color skin, flat skin tone, solid skin color |
+| Sheen | No highlights, no reflections | no gloss, matte flat, matte finish |
+| Texture | Color block fill, no texture | color block fill, flat texture, no texture |
 
 ---
 
-## 四、体型约束
+## 4. Body Type Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 身高 | 由角色设定指定，默认范围 160-170cm，通过头身比体现 | {身高}cm tall、tall slender woman |
-| 头身比 | 七头身至八头身，严格约束全身比例 | 7-8 heads tall proportion、身材修长 |
-| 肩颈 | 简洁线条、色块表达 | 简洁线条、扁平肩颈 |
-| 手部 | 简化的手部轮廓 | 简化手部、色块手部 |
-| 体态 | 简洁体态、无动态 | 简洁体态、正面站姿 |
+| Height | Specified by the character setting, default range 160-170cm, expressed via head-to-body ratio | {height}cm tall, tall slender woman |
+| Head-to-body ratio | 7 to 8 heads tall, strictly constraining the full-body proportions | 7-8 heads tall proportion, slender figure |
+| Shoulders/neck | Clean lines, color block expression | clean lines, flat shoulders and neck |
+| Hands | Simplified hand outlines | simplified hands, color block hands |
+| Posture | Simple posture, no dynamic motion | simple posture, front-facing standing pose |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 身高 | 由角色设定指定，默认范围 175-185cm，通过头身比体现 | {身高}cm tall、tall imposing man |
-| 头身比 | 七头半身至八头半身，严格约束全身比例 | 7.5-8.5 heads tall proportion、身材高挑 |
-| 肩颈 | 简洁线条、色块表达 | 简洁线条、扁平肩颈 |
-| 手部 | 简化的手部轮廓 | 简化手部、色块手部 |
-| 体态 | 简洁体态、无动态 | 简洁体态、正面站姿 |
+| Height | Specified by the character setting, default range 175-185cm, expressed via head-to-body ratio | {height}cm tall, tall imposing man |
+| Head-to-body ratio | 7.5 to 8.5 heads tall, strictly constraining the full-body proportions | 7.5-8.5 heads tall proportion, tall statured figure |
+| Shoulders/neck | Clean lines, color block expression | clean lines, flat shoulders and neck |
+| Hands | Simplified hand outlines | simplified hands, color block hands |
+| Posture | Simple posture, no dynamic motion | simple posture, front-facing standing pose |
 
 ---
 
-## 五、基础发型约束
+## 5. Base Hairstyle Constraints
 
-> 仅定义自然散发/简单束发，发饰在服化衍生环节叠加。
+> Only natural loose hair/simple tied hair is defined here; hair accessories are layered on during the costume derivative stage.
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 发色 | 纯黑单色、无渐变 | 黑色头发、纯色发色 |
-| 发长 | 及腰或更长 | 长发、及腰长发 |
-| 发质 | 线条勾勒、无发丝细节 | 线条发型、扁平发色、no hair strands |
-| 造型 | 自然散发、中分/偏分、无发饰 | 长发自然散落、简单发色 |
+| Hair color | Solid pure black, no gradient | black hair, solid hair color |
+| Hair length | Waist-length or longer | long hair, waist-length hair |
+| Hair texture | Outlined with lines, no strand detail | lined hairstyle, flat hair color, no hair strands |
+| Style | Natural loose hair, center/side part, no hair accessories | long hair naturally flowing, simple hair color |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 发色 | 纯黑或墨色单色 | 黑色头发、墨色发色 |
-| 发长 | 中长至长发 | 长发、及肩长发 |
-| 发质 | 线条勾勒、无发丝细节 | 线条发型、扁平发色、no hair strands |
-| 造型 | 自然散发或半束、无发冠 | 长发自然散落、简单发型 |
+| Hair color | Solid pure black or ink black | black hair, ink-black hair color |
+| Hair length | Medium-long to long | long hair, shoulder-length hair |
+| Hair texture | Outlined with lines, no strand detail | lined hairstyle, flat hair color, no hair strands |
+| Style | Natural loose hair or half-tied, no crown | long hair naturally flowing, simple hairstyle |
 
 ---
 
-## 六、基础服装约束
+## 6. Base Clothing Constraints
 
-> 基础服装由角色描述（身份/职业/性别/场景）决定其最自然的常规着装，作为该角色「日常默认态」；正式服饰/特殊衍生在服化衍生环节叠加。**禁止内衣打底**。
+> Base clothing is determined by the character description (identity/occupation/gender/scene) to reflect the most natural everyday outfit for that character, serving as their "default daily state"; formal wear/special derivatives are layered on during the costume derivative stage. **Underwear-only base layers are prohibited.**
 
-### 着装选择原则
+### Outfit selection principles
 
-| 角色身份 | 默认着装方向 |
+| Character identity | Default clothing direction |
 |---|---|
-| 学生 | 校服 / 学院装 |
-| 上班族 | 职业便装（衬衫+裤装/裙装） |
-| 居家/休闲 | 休闲常服（T恤+裤装/连衣裙） |
-| 运动/活泼 | 运动套装 |
-| 特殊职业 | 对应身份服装（医生/警察/教师等） |
-| 角色描述未明确 | 简洁日常常服 |
+| Student | School uniform / academic wear |
+| Office worker | Professional casual wear (shirt + pants/skirt) |
+| Home/casual | Casual everyday wear (T-shirt + pants/dress) |
+| Sporty/lively | Sportswear set |
+| Special occupation | Corresponding uniform (doctor/police officer/teacher, etc.) |
+| Character description unclear | Simple everyday casual wear |
 
-### 着装统一规则
+### Clothing consistency rules
 
-- 服装风格须与扁平矢量插画美学一致（纯色色块、无渐变、无光影）
-- 颜色低饱和纯色填充，无复杂花纹/装饰，便于后续衍生叠加
-- 四视图服装款式完全一致
-- 基础服装是「日常默认态」，焦点仍在面容与体态
-- 严禁内衣/暴露/性化打底
+- Clothing style must match the flat vector illustration aesthetic (solid color blocks, no gradients, no lighting effects)
+- Colors are low-saturation solid fills, with no complex patterns/decorations, to make later derivative layering easier
+- Clothing style must be completely consistent across the four views
+- Base clothing is the "default daily state"; the focus remains on the face and body
+- Underwear/exposure/sexualized base layers are strictly prohibited
 
 ---
 
-## 七、四视图设定图规范
+## 7. Four-View Reference Sheet Specifications
 
-### 视图定义
+### View definitions
 
-| 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
+| Position | View | Angle | Shot type | Requirement | Prompt |
 |---|---|---|---|---|---|
-| 左一 | 人像特写 | 正面平视 | 头顶至锁骨 | 从头顶到锁骨完整展示不裁切，面部占60%+，五官清晰 | portrait closeup、face detail、head to collarbone complete、no crop |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、双臂自然、从头顶到脚底完整展示 | front view、full body head to toe、height mark |
-| 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓清晰、从头顶到脚底完整展示 | side view、profile、full body head to toe、height mark |
-| 右一 | 后视图 | 后方 180° | 全身立像 | 后脑/背部/发尾/脚部清晰、从头顶到脚底完整展示 | back view、rear view、full body head to toe、height mark |
+| Far left | Portrait close-up | Front, eye-level | Top of head to collarbone | Fully shown from top of head to collarbone with no cropping, face occupies 60%+, facial features clear | portrait closeup, face detail, head to collarbone complete, no crop |
+| Second from left | Front view | Front 0° | Full-body standing | Facing the camera, arms relaxed, fully shown from top of head to soles of feet | front view, full body head to toe, height mark |
+| Second from right | Side view | Right side 90° | Full-body standing | Pure profile silhouette clear, fully shown from top of head to soles of feet | side view, profile, full body head to toe, height mark |
+| Far right | Back view | Rear 180° | Full-body standing | Back of head/back/hair ends/feet clear, fully shown from top of head to soles of feet | back view, rear view, full body head to toe, height mark |
 
-### 画面规范
+### Frame specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面从左至右并排四视图 |
-| 背景 | 纯净中性灰 #E8E8E8 |
-| 站姿 | 自然站立、双脚平行微分、双臂自然下垂或微展 |
-| 全身展示 | 全身立像必须从头顶到脚底完整入画，严禁裁切头顶或脚部 |
-| 特写展示 | 人像特写必须从头顶到锁骨完整入画，严禁裁切头顶，头发、额头、下巴均需完整 |
-| 表情 | 中性微表情，符合角色气质 |
-| 光线 | 无光影，纯平涂色块 |
-| 一致性 | 四视图的肤色/体型/发型/面容/基础服装完全一致 |
-| 画面比例 | 建议 4:1 或 3:1 |
+| Layout | All four views arranged side by side, left to right, in one frame |
+| Background | Clean neutral gray #E8E8E8 |
+| Stance | Natural standing, feet parallel and slightly apart, arms hanging naturally or slightly spread |
+| Full-body display | Full-body standing views must be fully shown from top of head to soles of feet, with no cropping of head or feet |
+| Close-up display | The portrait close-up must be fully shown from top of head to collarbone, with no cropping of the top of the head; hair, forehead, and chin must all be complete |
+| Expression | Neutral, subtle expression matching the character's temperament |
+| Lighting | No lighting effects, purely flat-colored blocks |
+| Consistency | Skin tone/body type/hairstyle/face/base clothing must be completely consistent across all four views |
+| Aspect ratio | 4:1 or 3:1 recommended |
 
 ---
 
-## 八、提示词模板
+## 8. Prompt Template
 
 ```
-{性别}角色四视图扁平风格设定图，
-2d flat design，vector art，flat illustration，
-minimalist，clean lines，solid colors，
-{角色描述对应的五官特征 - 由角色描述自然推导}，{整体气质}，素颜无妆，
-{肤色}，单色皮肤，扁平肤色，solid skin color，
-{身高描述，如：170cm tall、tall slender woman}，{头身比，如：7.5 heads tall proportion}，{身材描述}，{体态描述}，
-{发色}{发长}，线条发型，{基础造型}，无发饰，
-{角色身份对应的常规着装，如：校服/职业便装/休闲常服}，基础色纯色填充，无复杂花纹，
-同一画面左至右并排：人像特写+正视图+侧视图+后视图，
-人像特写从头顶到锁骨完整展示，不裁切头顶，head to collarbone complete，
-全身立像从头顶到脚底完整展示，full body head to toe，不裁切头顶和脚部，
-自然站立，纯净中性灰背景，无光影，无渐变，
-四视图一致性，线条简洁，色块填充，
-图中不要有任何文字
+{gender} character four-view flat-style reference sheet,
+2d flat design, vector art, flat illustration,
+minimalist, clean lines, solid colors,
+{facial features corresponding to the character description - naturally derived from the character description}, {overall temperament}, bare face with no makeup,
+{skin tone}, solid-color skin, flat skin tone, solid skin color,
+{height description, e.g.: 170cm tall, tall slender woman}, {head-to-body ratio, e.g.: 7.5 heads tall proportion}, {body description}, {posture description},
+{hair color}{hair length}, lined hairstyle, {base style}, no hair accessories,
+{everyday clothing corresponding to the character's identity, e.g.: school uniform/professional casual wear/casual everyday wear}, solid color fill for base colors, no complex patterns,
+side by side in one frame, left to right: portrait closeup + front view + side view + back view,
+portrait closeup fully shown from top of head to collarbone, no cropping of the top of the head, head to collarbone complete,
+full-body standing views fully shown from top of head to soles of feet, full body head to toe, no cropping of head or feet,
+standing naturally, clean neutral gray background, no lighting effects, no gradients,
+four-view consistency, clean lines, color block fill,
+no text of any kind in the image
 ```
 
 ---
 
-## 九、约束规则
+## 9. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须为「素颜无妆」状态 |
-| R2 | 必须根据角色描述声明合适的常规着装作为基础服装（如学生→校服、上班族→职业便装、居家→休闲常服）；禁止内衣打底 |
-| R3 | 必须声明「无发饰、无配饰」 |
-| R4 | 必须指定「纯净中性灰背景」 |
-| R5 | 必须指定「四视图一致性」 |
-| R6 | 全身立像必须从头顶到脚底完整展示，严禁裁切 |
-| R7 | 必须指定角色身高并通过头身比换算约束全身比例（女性默认160-170cm/7-8头身，男性默认175-185cm/7.5-8.5头身） |
-| R8 | 人像特写必须从头顶到锁骨完整展示，严禁裁切头顶 |
+| R1 | Must be in a "bare face, no makeup" state |
+| R2 | Must declare an appropriate everyday outfit as the base clothing according to the character description (e.g., student → school uniform, office worker → professional casual wear, home → casual everyday wear); underwear-only base layers are prohibited |
+| R3 | Must declare "no hair accessories, no accessories" |
+| R4 | Must specify a "clean neutral gray background" |
+| R5 | Must specify "four-view consistency" |
+| R6 | Full-body standing views must be fully shown from top of head to soles of feet, with no cropping |
+| R7 | Must specify the character's height and constrain the full-body proportions via head-to-body ratio conversion (female default 160-170cm/7-8 heads, male default 175-185cm/7.5-8.5 heads) |
+| R8 | The portrait close-up must be fully shown from top of head to collarbone, with no cropping of the top of the head |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 内衣/暴露/性化打底；与角色描述明显不符的着装；过度复杂花纹/装饰干扰后续服化叠加 |
-| X2 | 光影/阴影/渐变效果 |
-| X3 | 3D渲染/CG质感 |
-| X4 | 复杂场景背景（必须纯灰底） |
-| X5 | 夸张表情/动态姿势 |
-| X6 | 全身立像裁切头顶或脚底，必须从头到脚完整入画 |
-| X7 | 人像特写裁切头顶，必须从头顶到锁骨完整入画 |
-| X8 | 忽略身高和头身比约束，身高必须明确声明并通过头身比换算体现全身比例 |
+| X1 | Underwear/exposure/sexualized base layers; clothing that clearly does not match the character description; overly complex patterns/decorations that interfere with later costume layering |
+| X2 | Lighting/shadow/gradient effects |
+| X3 | 3D rendering/CG texture |
+| X4 | Complex scene backgrounds (must be a pure gray background) |
+| X5 | Exaggerated expressions/dynamic poses |
+| X6 | Full-body standing views cropping the top of the head or soles of the feet; must be fully shown from head to toe |
+| X7 | Portrait close-up cropping the top of the head; must be fully shown from top of head to collarbone |
+| X8 | Ignoring the height and head-to-body ratio constraints; height must be explicitly declared and the full-body proportions expressed via head-to-body ratio conversion |

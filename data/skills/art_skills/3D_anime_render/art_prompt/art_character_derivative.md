@@ -1,329 +1,329 @@
-# 3D动画渲染都市角色衍生资产生成 · 约束手册
+# 3D Animation Rendering Urban Character Derivative Asset Generation · Constraint Manual
 
 ---
 
-## 一、叠加原则
+## 1. Layering Principles
 
-1. **面容不变** — 叠加后五官必须与底模完全一致，禁止面容偏移
-2. **姿态不变** — 保持底模自然站立姿态，禁止任何姿态/动作/体态变化
-3. **逐层可控** — 每层独立描述，便于按层替换（换装不换妆）
-4. **风格统一** — 所有服化元素服从同一都市动画美学体系
-5. **质感不降** — 叠加后质感标准不低于底模
-6. **纯服化范畴** — 仅叠加妆容/发型/服饰/配饰，禁止引入道具、场景、环境、动作
-
----
-
-## 二、叠加层级
-
-| 层级 | 内容 | 说明 |
-|---|---|---|
-| L0 | 底模 | 基础形象底模，不修改 |
-| L1 | 妆容（决策层） | 先分析用户线索，再决策「基础妆 / 轻妆 / 正式妆」强度 |
-| L2 | 发型造型 | 散发/马尾/盘发/半扎 + 发饰 |
-| L3 | 中衣/内搭 | 替换白色基础中衣 |
-| L4 | 外衣/主服 | 现代都市服饰 |
-| L5 | 配饰 | 头饰/耳饰/项饰/腰饰/手饰 |
-
-> **范畴边界**：人物衍生资产仅包含 L0–L5 层级（服化妆造），不包含道具（伞/手机/电脑/咖啡等手持物）、场景环境（室内/室外/天气等）、姿态动作（行走/回眸/举手等）。这些属于其他资产类型的范畴。
+1. **Face unchanged** — after layering, facial features must exactly match the base model; no facial drift is allowed
+2. **Pose unchanged** — maintain the base model's natural standing pose; no pose/action/posture changes of any kind are allowed
+3. **Layer-by-layer control** — each layer is described independently, allowing replacement layer by layer (change outfit without changing makeup)
+4. **Unified style** — all styling elements follow the same urban animation aesthetic system
+5. **No loss of texture quality** — texture quality after layering must not fall below that of the base model
+6. **Styling-only scope** — only makeup/hairstyle/clothing/accessories may be layered; introducing props, scenes, environments, or actions is prohibited
 
 ---
 
-## 三、妆容约束（L1）
+## 2. Layering Tiers
 
-### 底模到衍生妆造策略（关键）
-
-> 角色底模虽为素颜，但衍生资产默认进入妆造流程。系统应根据用户提供的线索分析妆造需求，并在基础妆、轻妆、正式妆之间决策强度，而不是保持素颜。
-
-### L1 线索分析与妆容决策
-
-| 步骤 | 处理内容 | 决策结果 |
+| Tier | Content | Description |
 |---|---|---|
-| S1 | 提取用户线索：面部状态词、情绪词、强度词 | 形成妆容需求摘要 |
-| S2 | 过滤非妆容线索：道具/场景/动作/姿态词不作为上妆依据 | 防止误判 |
-| S3 | 匹配妆容风格矩阵并给出强度档 | 基础妆 / 轻妆 / 正式妆 |
-| S4 | 生成最终 L1 提示词 | 只输出结论，不输出分析过程 |
+| L0 | Base model | The base design model, not modified |
+| L1 | Makeup (decision layer) | First analyze user cues, then decide the intensity: "base makeup / light makeup / formal makeup" |
+| L2 | Hairstyle | loose hair/ponytail/updo/half-up + hair accessories |
+| L3 | Inner layer/undergarment | replaces the plain white base inner layer |
+| L4 | Outerwear/main outfit | modern urban clothing |
+| L5 | Accessories | headwear/earrings/necklace/waist accessories/hand accessories |
 
-### 线索到妆容映射（执行口径）
-
-| 线索类型 | 典型线索 | L1 决策 |
-|---|---|---|
-| 无明显面部强调线索 | 仅服饰/发型变化，未强调情绪与状态 | 基础妆 |
-| 轻微面部线索 | 轻柔、含笑、睫毛轻颤、气色微提 | 轻妆（极淡） |
-| 明确病弱线索 | 面色苍白、唇色极淡、眼下微红 | 病弱梨妆（轻妆） |
-| 明确正式仪式线索 | 盛装、典礼、华贵亮相 | 正式妆（受控） |
-
-> 判定原则：所有衍生资产都要有妆造；先看面部线索决定强度与风格，道具、场景、姿态变化不得单独抬高妆容强度。
-
-### 女性妆容风格矩阵
-
-| 风格 | 适用场景 | 核心提示词 |
-|---|---|---|
-| 清雅素妆 | 日常、初遇、上班 | 妆容清雅、淡扫蛾眉、素妆清颜 |
-| 冷艳霜妆 | 正式、对峙、权力 | 妆容冷艳、眉眼锋利、薄唇冷冽 |
-| 柔媚桃妆 | 甜宠、暧昧、心动 | 桃花妆、眼尾微红、唇色水润 |
-| 病弱梨妆 | 受伤、虚弱 | 面色苍白、唇色极淡、眼下微红 |
-| 华贵晚宴妆 | 正式晚宴、盛装出席 | 浓妆精致、唇色亮眼 |
-
-### 通用底肤（所有妆容共享）
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 质感 | 赛璐珞渲染、柔和光泽 | 卡通肌肤、柔和皮肤质感 |
-| 白度 | 冷白皮、通透不惨白 | 牛奶肌、milky white skin |
-| 内透光 | 从内向外柔光感 | 内透光感、皮肤通透发光 |
-| 禁止 | 哑光/死白/蜡感/油光/过曝 | — |
-
-### 基础妆细化（默认档）
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 眉部 | 顺着底模眉形轻修，不改变眉型 | 自然修眉、眉形干净 |
-| 眼部 | 极淡眼部修饰，强调清透与有神 | 眼部清透、极淡内眼线 |
-| 面颊 | 极淡气色提亮，不可明显堆色 | 面颊气色自然、微弱提气色 |
-| 唇部 | 裸粉或浅粉润色，保持克制 | 唇色自然润泽、浅粉唇色 |
-| 整体 | 看得出有妆造，但妆感非常轻 | 基础妆、伪素颜妆感、自然精修 |
-
-### 分部位（以清雅素妆为例）
-
-| 部位 | 约束 | 提示词 |
-|---|---|---|
-| 底妆 | 轻薄通透、水光微光泽 | 底妆轻薄、水光奶油肌 |
-| 眉妆 | 远山眉/柳叶眉、灰棕淡扫 | 远山黛眉、淡扫蛾眉 |
-| 眼妆 | 极淡眼影、内眼线、睫毛纤长 | 眼妆清透、睫毛纤长 |
-| 腮红 | 极淡薄粉、苹果肌微扫 | 腮红极淡、薄粉微醺 |
-| 唇妆 | 水润浅粉、微光泽 | 唇色水润浅粉 |
-
-### 男性妆容
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 底肤 | 赛璐珞渲染、白皙透亮、清爽自然 | 卡通肌肤、奶油肌、luminous skin |
-| 原则 | 伪素颜——看着没化妆但皮肤极好 | 伪素颜、天生好皮 |
-| 眉毛 | 自然浓眉、不画眉 | 剑眉自然、眉形英挺 |
-| 唇色 | 自然血色、微润 | 唇色自然、血色感 |
+> **Scope boundary**: character derivative assets include only tiers L0-L5 (styling/makeup/costume), and do not include props (handheld items such as umbrellas/phones/laptops/coffee), scene environments (indoor/outdoor/weather, etc.), or pose/actions (walking/looking back/raising a hand, etc.). Those belong to other asset types.
 
 ---
 
-## 四、发型造型约束（L2）
+## 3. Makeup Constraints (L1)
 
-### 女性造型类型
+### Base Model to Derivative Styling Strategy (key)
 
-| 造型 | 描述 | 适用 | 提示词 |
+> Although the character base model is bare-faced, derivative assets by default go through a styling process. The system should analyze styling needs based on cues provided by the user, and decide the intensity among base makeup, light makeup, and formal makeup — rather than keeping the face bare.
+
+### L1 Cue Analysis and Makeup Decision
+
+| Step | Processing content | Decision outcome |
+|---|---|---|
+| S1 | Extract user cues: facial state words, emotion words, intensity words | Form a makeup requirement summary |
+| S2 | Filter out non-makeup cues: prop/scene/action/pose words are not used as a basis for makeup | Prevent misjudgment |
+| S3 | Match against the makeup style matrix and assign an intensity tier | Base makeup / light makeup / formal makeup |
+| S4 | Generate the final L1 prompt | Output only the conclusion, not the analysis process |
+
+### Cue-to-Makeup Mapping (execution guideline)
+
+| Cue type | Typical cues | L1 decision |
+|---|---|---|
+| No obvious facial-emphasis cues | Only clothing/hairstyle changes, no emphasis on emotion or state | Base makeup |
+| Slight facial cues | Gentle, smiling, lashes fluttering slightly, complexion slightly brightened | Light makeup (very subtle) |
+| Clear frailty/illness cues | Pale complexion, very faint lip color, slight redness under the eyes | Frail/pear-blossom makeup (light makeup) |
+| Clear formal-ceremony cues | Formal attire, ceremony, gorgeous appearance | Formal makeup (restrained) |
+
+> Determination principle: all derivative assets must have some styling; facial cues are examined first to determine intensity and style — props, scenes, and pose changes must not independently raise the makeup intensity.
+
+### Female Makeup Style Matrix
+
+| Style | Applicable scene | Core prompt |
+|---|---|---|
+| Fresh natural makeup | everyday, first meeting, work | fresh elegant makeup, softly swept brows, natural bare-faced-looking makeup |
+| Cool glamorous makeup | formal, confrontation, power | cool glamorous makeup, sharp brows and eyes, cold thin lips |
+| Soft peach makeup | sweet romance, ambiguity, heartfelt moment | peach blossom makeup, slightly reddened outer corners of eyes, dewy lip color |
+| Frail pear-blossom makeup | injured, weak | pale complexion, very faint lip color, slight redness under the eyes |
+| Luxurious evening makeup | formal evening event, gala attire | rich refined makeup, striking lip color |
+
+### Common Base Skin (shared across all makeup styles)
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Texture | Cel-shaded rendering, soft sheen | cartoon skin, soft skin texture |
+| Fairness | Cool fair skin, translucent not pallid | milk skin, milky white skin |
+| Inner glow | Soft glow radiating from within | inner glow, translucent glowing skin |
+| Prohibited | Matte/deathly pale/waxy/oily sheen/overexposed | — |
+
+### Base Makeup Refinement (default tier)
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Brows | Lightly groomed following the base model's brow shape, brow shape unchanged | natural groomed brows, clean brow shape |
+| Eyes | Very subtle eye enhancement, emphasizing clarity and brightness | clear bright eyes, very subtle inner eyeliner |
+| Cheeks | Very subtle complexion brightening, no visible color buildup | natural cheek glow, faint complexion boost |
+| Lips | Nude pink or light pink tint, kept restrained | naturally moist lip color, light pink lips |
+| Overall | Visibly styled, but very light makeup feel | base makeup, natural bare-face-look makeup, natural fine retouch |
+
+### By Feature (using fresh natural makeup as an example)
+
+| Feature | Constraint | Prompt |
+|---|---|---|
+| Base makeup | Light and translucent, dewy subtle sheen | lightweight base makeup, dewy cream skin |
+| Brow makeup | Distant-mountain brows/willow-leaf brows, soft gray-brown | soft distant-mountain brows, softly swept brows |
+| Eye makeup | Very subtle eyeshadow, inner eyeliner, long lashes | clear subtle eye makeup, long lashes |
+| Blush | Very light powder, faint sweep on the apples of the cheeks | very subtle blush, faint rosy flush |
+| Lip makeup | Dewy light pink, subtle sheen | dewy light pink lip color |
+
+### Male Makeup
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Base skin | Cel-shaded rendering, fair and radiant, fresh and natural | cartoon skin, cream skin, luminous skin |
+| Principle | Bare-face-look — appears unmade-up but with excellent skin | natural bare-face look, naturally great skin |
+| Eyebrows | Naturally thick brows, not drawn on | naturally sharp brows, defined brow shape |
+| Lip color | Natural healthy color, slightly moist | natural lip color, healthy flush |
+
+---
+
+## 4. Hairstyle Constraints (L2)
+
+### Female Style Types
+
+| Style | Description | Applicable | Prompt |
 |---|---|---|---|
-| 自然散发 | 长发自然垂落、柔顺有光泽 | 日常、休闲 | 自然散发、柔顺长发 |
-| 高马尾 | 高束马尾、活力干练 | 运动、通勤 | 高马尾、活力马尾 |
-| 低马尾 | 低束马尾、优雅简洁 | 日常、商务 | 低马尾、优雅马尾 |
-| 半扎发 | 上方半扎+下方自然垂落 | 日常、约会 | 半扎发、半束发型 |
-| 双马尾 | 两侧马尾、青春活泼 | 活泼场景 | 双马尾、活泼发型 |
-| 优雅盘发 | 盘发/丸子头、正式感 | 正式场合 | 优雅盘发、低发髻 |
+| Natural loose hair | Long hair falling naturally, smooth and glossy | everyday, casual | natural loose hair, smooth long hair |
+| High ponytail | High-tied ponytail, energetic and crisp | sports, commuting | high ponytail, energetic ponytail |
+| Low ponytail | Low-tied ponytail, elegant and simple | everyday, business | low ponytail, elegant ponytail |
+| Half-up hairstyle | Half tied up on top + naturally flowing below | everyday, date | half-up hairstyle, half-tied style |
+| Twin ponytails | Ponytails on both sides, youthful and lively | lively scenes | twin ponytails, lively hairstyle |
+| Elegant updo | Updo/bun, formal feel | formal occasions | elegant updo, low bun |
 
-### 女性发饰
+### Female Hair Accessories
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 风格 | 现代都市风、简约精致、与服饰配套 | 现代发饰、都市风格 |
-| 材质 | 金属/布艺/亚克力 | 金属发夹、布艺发饰 |
-| 工艺 | 精致工艺、卡通化呈现 | 精细工艺、精致装饰 |
+| Style | Modern urban style, simple and refined, matching the outfit | modern hair accessory, urban style |
+| Material | Metal/fabric/acrylic | metal hairpin, fabric hair accessory |
+| Craftsmanship | Refined craftsmanship, cartoon-styled presentation | fine craftsmanship, refined decoration |
 
-### 男性造型类型
+### Male Style Types
 
-| 造型 | 适用 | 提示词 |
+| Style | Applicable | Prompt |
 |---|---|---|
-| 清爽短发 | 日常、商务 | 清爽短发、整洁发型 |
-| 侧分中分 | 正式、通勤 | 侧分发型、中分发型 |
-| 蓬松凌乱 | 休闲、文艺 | 蓬松发型、凌乱随意 |
-| 中长自然 | 休闲、文艺 | 中长发、自然垂落 |
+| Neat short hair | everyday, business | neat short hair, tidy hairstyle |
+| Side/center part | formal, commuting | side-parted hairstyle, center-parted hairstyle |
+| Tousled and messy | casual, artistic | tousled hairstyle, casually messy |
+| Natural medium-long | casual, artistic | medium-long hair, falling naturally |
 
 ---
 
-## 五、服饰约束（L3+L4）
+## 5. Clothing Constraints (L3+L4)
 
-### 女性服饰矩阵
+### Female Clothing Matrix
 
-| 风格 | 款式 | 适用 | 提示词 |
+| Style | Type | Applicable | Prompt |
 |---|---|---|---|
-| 都市通勤装 | 衬衫/西装/半身裙 | 上班、日常 | 通勤服装、都市职业装 |
-| 休闲常服 | T恤/牛仔裤/卫衣 | 日常、休闲 | 休闲服装、舒适穿搭 |
-| 晚礼服 | 连衣裙/礼服裙 | 宴会、约会 | 晚礼服、优雅裙装 |
-| 运动装 | 运动套装/运动背心 | 运动、健身 | 运动服装、活力穿搭 |
-| 正式礼服 | 高级定制礼服 | 正式场合 | 正式礼服、华贵裙装 |
+| Urban commuter outfit | shirt/suit/skirt | work, everyday | commuter outfit, urban professional wear |
+| Casual everyday wear | T-shirt/jeans/hoodie | everyday, casual | casual clothing, comfortable outfit |
+| Evening gown | dress/gown | banquet, date | evening gown, elegant dress |
+| Sportswear | sports set/sports tank | sports, fitness | sportswear, energetic athletic outfit |
+| Formal gown | high-end custom gown | formal occasions | formal gown, luxurious dress |
 
-### 女性服饰通用约束
+### Female Clothing General Constraints
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 主色 | 暖色调为主、符合都市感 | 暖色调服装、都市配色 |
-| 材质 | 真实材质感 + 赛璐珞渲染 | 衣服质感清晰、赛璐珞材质 |
-| 质感 | 纹理清晰但不过度写实 | 衣服纹理清晰、卡通质感 |
-| 肩部 | 自然肩部、装饰适量 | 自然肩部、适量装饰 |
-| 层次 | 适度层次、不过于繁复 | 适度层次、简洁分明 |
+| Primary color | Mainly warm tones, fitting the urban feel | warm-toned clothing, urban color palette |
+| Material | Realistic material feel + cel-shaded rendering | clear clothing texture, cel-shaded material |
+| Texture | Clear texture without being overly realistic | clear clothing texture, cartoon-styled material |
+| Shoulders | Natural shoulder line, moderate decoration | natural shoulder line, moderate decoration |
+| Layering | Moderate layering, not overly elaborate | moderate layering, clean and distinct |
 
-### 男性服饰矩阵
+### Male Clothing Matrix
 
-| 风格 | 适用 | 提示词 |
+| Style | Applicable | Prompt |
 |---|---|---|
-| 都市休闲装 | 衬衫/牛仔裤/休闲外套 | 日常、休闲 | 休闲服装、都市风格 |
-| 商务正装 | 西装/衬衫/领带 | 上班、正式 | 商务正装、职业造型 |
-| 运动套装 | 运动服/运动套装 | 运动、健身 | 运动服装、活力穿搭 |
-| 日常便装 | T恤/牛仔裤/卫衣 | 休闲、私密 | 日常便装、舒适穿搭 |
-| 正式礼服 | 高级定制西装/礼服 | 正式场合 | 正式礼服、华贵造型 |
+| Urban casual wear | shirt/jeans/casual jacket | everyday, casual | casual clothing, urban style |
+| Business formalwear | suit/shirt/tie | work, formal | business formalwear, professional look |
+| Sportswear set | sportswear/sports set | sports, fitness | sportswear, energetic athletic outfit |
+| Everyday casual wear | T-shirt/jeans/hoodie | casual, private | everyday casual wear, comfortable outfit |
+| Formal gown | high-end custom suit/formal wear | formal occasions | formal wear, luxurious styling |
 
 ---
 
-## 六、配饰约束（L5）
+## 6. Accessory Constraints (L5)
 
-### 女性配饰
+### Female Accessories
 
-| 类型 | 约束 | 提示词 |
+| Type | Constraint | Prompt |
 |---|---|---|
-| 头饰 | 现代都市风、不单薄 | 现代发饰、精致头饰 |
-| 耳饰 | 精致耳钉/垂坠耳环 | 精致耳环、都市风格 |
-| 项饰 | 精致项链/项圈 | 精致项链、简约设计 |
-| 腰饰 | 简约腰带/装饰带 | 简约腰带、都市配饰 |
-| 手饰 | 精致手镯/手表 | 精致手表、都市配饰 |
+| Headwear | Modern urban style, not sparse-looking | modern hair accessory, refined headwear |
+| Earrings | Refined studs/dangling earrings | refined earrings, urban style |
+| Necklace | Refined necklace/choker | refined necklace, minimalist design |
+| Waist accessory | Simple belt/decorative sash | simple belt, urban accessory |
+| Hand accessory | Refined bracelet/watch | refined watch, urban accessory |
 
-### 男性配饰
+### Male Accessories
 
-| 类型 | 约束 | 提示词 |
+| Type | Constraint | Prompt |
 |---|---|---|
-| 眼镜 | 现代眼镜/墨镜 | 现代眼镜、时尚配饰 |
-| 腰带 | 简约腰带/皮带 | 简约腰带、都市风格 |
-| 手表 | 精致手表/运动表 | 精致手表、都市配饰 |
-| 背包 | 都市背包/公文包 | 都市背包、实用配饰 |
-| 钥匙扣 | 简约钥匙扣 | 简约钥匙扣、都市细节 |
+| Glasses | Modern glasses/sunglasses | modern glasses, fashionable accessory |
+| Belt | Simple belt/leather belt | simple belt, urban style |
+| Watch | Refined watch/sports watch | refined watch, urban accessory |
+| Bag | Urban backpack/briefcase | urban backpack, practical accessory |
+| Keychain | Simple keychain | simple keychain, urban detail |
 
 ---
 
-## 七、服化组合速查
+## 7. Styling Combination Quick Reference
 
-| 场景 | 妆容 | 发型 | 服饰 | 配饰 |
+| Scene | Makeup | Hairstyle | Clothing | Accessories |
 |---|---|---|---|---|
-| 日常通勤 | 清雅素妆 | 半扎发/马尾 | 都市通勤装 | 简约 |
-| 休闲约会 | 柔媚桃妆 | 半扎发/散发 | 休闲常服 | 中等 |
-| 商务会议 | 冷艳霜妆 | 半扎发/束发 | 商务正装 | 精致 |
-| 运动健身 | 轻妆 | 马尾/束发 | 运动装 | 简 |
-| 正式晚宴 | 华贵晚宴妆 | 盘发/半扎发 | 晚礼服 | 极繁 |
-| 周末逛街 | 轻妆 | 散发/半扎发 | 休闲常服 | 中等 |
-| 运动比赛 | 轻妆 | 马尾/束发 | 运动装 | 简 |
+| Everyday commute | Fresh natural makeup | half-up/ponytail | urban commuter outfit | minimal |
+| Casual date | Soft peach makeup | half-up/loose hair | casual everyday wear | moderate |
+| Business meeting | Cool glamorous makeup | half-up/tied hair | business formalwear | refined |
+| Sports/fitness | Light makeup | ponytail/tied hair | sportswear | minimal |
+| Formal evening event | Luxurious evening makeup | updo/half-up | evening gown | elaborate |
+| Weekend outing | Light makeup | loose hair/half-up | casual everyday wear | moderate |
+| Sports competition | Light makeup | ponytail/tied hair | sportswear | minimal |
 
 ---
 
-> **🔍 未覆盖场景推断规则**
+> **Inference Rule for Uncovered Scenes**
 >
-> 当用户描述的场景/情境不在上表时，根据本风格核心基因自行推断：
+> When a scene/situation described by the user is not in the table above, infer it based on this style's core DNA:
 >
-> | 推断维度 | 3D动画渲染都市基因 |
+> | Inference dimension | 3D animation rendering urban DNA |
 > |---|---|
-> | 妆容强度 | 默认清雅素妆；正式/商务→冷艳霜妆；甜宠/约会→柔媚桃妆；虚弱/受伤→病弱梨妆；晚宴/盛装→华贵晚宴妆 |
-> | 发型 | 日常/通勤→半扎发或马尾；休闲/约会→自然散发；正式→盘发；运动→高马尾；双马尾用于青春活泼场景 |
-> | 服饰 | 都市场景全覆盖；场合正式度决定服饰精致度（通勤<日常<约会<晚宴）；3D赛璐珞材质始终保持 |
-> | 配饰繁度 | 运动→简；日常/通勤→简约；约会→中等精致；正式晚宴→极繁 |
-> | 质感基准 | 赛璐珞渲染+柔和光影始终锁定；禁止滑向写实摄影或平面二次元质感 |
+> | Makeup intensity | Default fresh natural makeup; formal/business → cool glamorous makeup; sweet/date → soft peach makeup; weak/injured → frail pear-blossom makeup; evening/gala → luxurious evening makeup |
+> | Hairstyle | Everyday/commute → half-up or ponytail; casual/date → natural loose hair; formal → updo; sports → high ponytail; twin ponytails for youthful, lively scenes |
+> | Clothing | Full coverage for urban scenes; the formality of the occasion determines the refinement of the outfit (commute < everyday < date < evening event); 3D cel-shaded material is always maintained |
+> | Accessory elaborateness | sports → minimal; everyday/commute → simple; date → moderately refined; formal evening event → elaborate |
+> | Texture baseline | Cel-shaded rendering + soft lighting is always locked; sliding toward photorealistic photography or flat 2D anime texture is prohibited |
 
-## 八、四视图设定图规范
+## 8. Four-View Design Sheet Specification
 
-> 衍生服化叠加后仍需输出四视图设定图，确保服化妆造在各角度的一致性。
+> Even after derivative styling is layered on, a four-view design sheet must still be output, ensuring consistency of the styling across all angles.
 
-### 视图定义
+### View Definitions
 
-| 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
+| Position | View | Angle | Framing | Requirement | Prompt |
 |---|---|---|---|---|---|
-| 左一 | 人像特写 | 正面平视 | 面部至锁骨 | 面部占60%+，五官/妆容清晰 | portrait closeup、face detail、makeup detail |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、服饰正面全貌 | front view、height mark |
-| 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓、服饰侧面层次 | side view、profile、height mark |
-| 右一 | 后视图 | 后方 180° | 全身立像 | 后脑发饰/背部服饰/发尾清晰 | back view、rear view、height mark |
+| Leftmost | Portrait close-up | Front, eye level | Face to collarbone | Face occupies 60%+, facial features/makeup clear | portrait closeup, face detail, makeup detail |
+| Second from left | Front view | Front 0° | Full-body standing | Facing the camera, full front view of the outfit | front view, height mark |
+| Second from right | Side view | Right 90° | Full-body standing | Pure profile silhouette, side layering of the outfit | side view, profile, height mark |
+| Rightmost | Back view | Rear 180° | Full-body standing | Back-of-head hair accessories/back-of-outfit/hair ends clear | back view, rear view, height mark |
 
-### 画面规范
+### Frame Specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面从左至右并排四视图 |
-| 背景 | 纯净中性灰 #E8E8E8 |
-| 站姿 | 自然站立、双脚平行微分、双臂自然下垂或微展（**禁止任何姿态变化**） |
-| 表情 | 符合妆容风格的微表情（如清雅素妆→淡然、桃妆→含笑），仅限面部微表情，不涉及肢体动作 |
-| 光线 | 均匀柔光，前方主光 + 双侧补光，无硬阴影 |
-| 一致性 | 四视图的面容/妆容/发型/发饰/服饰/配饰完全一致 |
-| 画面比例 | 建议 4:1 或 3:1 |
+| Layout | All four views side by side in a single frame, left to right |
+| Background | Clean neutral gray #E8E8E8 |
+| Stance | Natural standing, feet parallel and slightly apart, arms naturally down or slightly extended (**any pose change is prohibited**) |
+| Expression | A subtle expression matching the makeup style (e.g. fresh natural makeup → composed, peach makeup → smiling), limited to facial micro-expression only, no body movement |
+| Lighting | Even soft lighting, frontal key light + fill light from both sides, no hard shadows |
+| Consistency | Face/makeup/hairstyle/hair accessories/clothing/accessories must be fully consistent across the four views |
+| Frame ratio | Recommended 4:1 or 3:1 |
 
 ---
 
-## 九、提示词模板
+## 9. Prompt Template
 
-### 输出格式约束
+### Output Format Constraints
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 输出内容 | **仅输出提示词文本**，不输出任何其他内容 |
-| 禁止输出 | 速查表、分层构建方案、视觉约束表、禁止事项表、衍生方案、输出建议、核心要素表等一切非提示词内容 |
-| 禁止场景 | 人物衍生资产**不包含场景/环境描述**，不输出任何场景/环境/天气/背景叙事内容（场景属于场景资产范畴） |
-| 禁止道具 | **不包含任何道具交互**，不输出伞/手机/电脑/咖啡等手持物或交互物（道具属于道具资产范畴） |
-| 禁止姿态变化 | **不改变底模姿态**，不输出行走/回眸/举手/侧身/奔跑等任何动作或体态变化，保持自然站立 |
-| 格式 | 直接输出可用的提示词代码块，无需标题、表格、解释、方案对比 |
+| Output content | **Output the prompt text only**, no other content |
+| Prohibited output | Quick-reference tables, layered construction plans, visual constraint tables, prohibition tables, derivative plans, output recommendations, core-element tables, or any other non-prompt content |
+| Prohibited scene content | Character derivative assets **do not include scene/environment descriptions**; do not output any scene/environment/weather/background narrative content (scenes belong to the scene asset category) |
+| Prohibited props | **No prop interaction of any kind**; do not output handheld or interactive items such as umbrellas/phones/laptops/coffee (props belong to the prop asset category) |
+| Prohibited pose changes | **The base model's pose must not change**; do not output any action or posture changes such as walking/looking back/raising a hand/turning sideways/running; maintain the natural standing pose |
+| Format | Output the usable prompt code block directly, with no title, table, explanation, or plan comparison |
 
-### 完整服化叠加（四视图）
+### Full Styling Layer (Four Views)
 
 ```
-以角色基础形象图为底图，img2img叠加服化妆造，
-3D 动画渲染，电影级打光，活力赛璐珞质感，高细节材质，愉悦治愈氛围，卡通都市风，高细节卡通材质，适度卡通比例，暖色调配色，8K 超高清，电影级构图，柔和光影层次，明快卡通渲染风格，温馨治愈，{性别}角色四视图设定图，
+Using the character base design image as the base, img2img layer on styling/makeup,
+3D animation rendering, cinema-grade lighting, vibrant cel-shaded texture, high-detail materials, joyful healing atmosphere, cartoon urban style, high-detail cartoon materials, moderate cartoon proportions, warm color palette, 8K ultra-high-definition, cinema-grade composition, soft lighting layers, bright cartoon rendering style, warm and healing, {gender} character four-view design sheet,
 anime style, cel-shaded, 3D animation render, film lighting,
 character design sheet, character turnaround,
-保持基础形象面容不变，{整体气质}，
-【L1·妆容】根据用户线索决策：{基础妆/轻妆/正式妆}；使用 {妆容风格}，赛璐珞肌肤，{眉妆}，{眼妆}，{唇妆}，
-【L2·发型】{造型类型}，发丝流畅渲染，{发饰描述}，
-【L3+L4·服饰】{主色}{款式}，{材质}，{装饰工艺}，衣服质感清晰、赛璐珞材质，
-【L5·配饰】{头饰}，{耳饰}，{项饰}，{腰饰}，
-同一画面左至右并排：人像特写+正视图+侧视图+后视图，
-自然站立，纯净中性灰背景，均匀柔光，无硬阴影，
-四视图一致性，面容细腻渲染，发丝细腻渲染，纹理细节清晰，
-赛璐珞渲染风格，柔和光影，适度卡通比例，写实材质结合，
-8K 超高清，电影级构图，
-图中不要有任何文字
+keep the base design's face unchanged, {overall temperament},
+[L1 · Makeup] decided based on user cues: {base makeup/light makeup/formal makeup}; use {makeup style}, cel-shaded skin, {brow makeup}, {eye makeup}, {lip makeup},
+[L2 · Hairstyle] {style type}, smoothly rendered hair strands, {hair accessory description},
+[L3+L4 · Clothing] {primary color}{type}, {material}, {decorative craftsmanship}, clear clothing texture, cel-shaded material,
+[L5 · Accessories] {headwear}, {earrings}, {necklace}, {waist accessory},
+side by side in one frame, left to right: portrait closeup + front view + side view + back view,
+natural standing pose, clean neutral gray background, even soft lighting, no hard shadows,
+four-view consistency, finely rendered face, finely rendered hair strands, clear texture detail,
+cel-shaded rendering style, soft lighting, moderate cartoon proportions, combined with realistic material,
+8K ultra-high-definition, cinema-grade composition,
+no text of any kind in the image
 ```
 
 ---
 
-## 十、约束规则
+## 10. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 叠加后面容必须与底模一致 |
-| R2 | 服饰必须用「衣服质感清晰 + 赛璐珞材质」 |
-| R3 | 女性配饰必须「现代都市风 + 精致工艺」 |
-| R4 | 妆容/发型/服饰/配饰风格统一 |
-| R5 | 必须输出四视图设定图（人像特写+正视图+侧视图+后视图） |
-| R6 | 必须指定「纯净中性灰背景」 |
-| R7 | 必须指定「四视图一致性」 |
-| R8 | **仅输出提示词**——禁止输出速查表/分层方案/视觉约束/禁止事项/衍生方案/输出建议等任何非提示词内容 |
-| R9 | **禁止包含场景描述**——人物衍生资产不涉及场景/环境/天气/背景叙事，场景属于独立资产类型 |
-| R10 | **禁止道具交互**——不包含任何手持物/交互物（伞/手机/电脑等），道具属于独立资产类型 |
-| R11 | **姿态保持不变**——必须保持底模自然站立姿态，禁止任何动作/体态/姿势变化 |
-| R12 | **L1 必须先分析再决策**——先解析用户面部线索，再确定基础妆/轻妆/正式妆 |
-| R13 | **所有衍生资产均需妆造**——正常情况不保持素颜，至少使用基础妆 |
-| R14 | **上妆强度受控**——即使上妆也需克制，不得出现现代浓妆/夸张彩妆效果 |
-| R15 | **道具/场景/动作不作强度升级依据**——仅凭道具，环境，动作等信息不得把基础妆抬高为更强妆容 |
-| R16 | 必须包含3D动画渲染关键词（cel-shaded, 3D animation render, anime style） |
-| R17 | 必须包含8K超高清、电影级构图关键词 |
-| R18 | 必须包含电影级打光关键词（film lighting） |
+| R1 | After layering, the face must match the base model exactly |
+| R2 | Clothing must use "clear clothing texture + cel-shaded material" |
+| R3 | Female accessories must be "modern urban style + refined craftsmanship" |
+| R4 | Makeup/hairstyle/clothing/accessory styles must be unified |
+| R5 | A four-view design sheet must be output (portrait closeup + front view + side view + back view) |
+| R6 | A "clean neutral gray background" must be specified |
+| R7 | "Four-view consistency" must be specified |
+| R8 | **Output the prompt only** — quick-reference tables/layered plans/visual constraints/prohibition lists/derivative plans/output recommendations, or any other non-prompt content is prohibited |
+| R9 | **Scene descriptions are prohibited** — character derivative assets do not involve scene/environment/weather/background narrative; scenes belong to a separate asset type |
+| R10 | **Prop interaction is prohibited** — no handheld/interactive items (umbrella/phone/laptop, etc.); props belong to a separate asset type |
+| R11 | **Pose must remain unchanged** — the base model's natural standing pose must be maintained; any action/posture/pose change is prohibited |
+| R12 | **L1 must analyze before deciding** — first parse the user's facial cues, then determine base makeup/light makeup/formal makeup |
+| R13 | **All derivative assets require styling** — normally do not remain bare-faced; at minimum use base makeup |
+| R14 | **Makeup intensity must be controlled** — even when applying makeup, keep it restrained; modern heavy makeup/exaggerated cosmetic effects must not appear |
+| R15 | **Props/scene/action are not grounds for raising intensity** — props, environment, action information alone must not raise base makeup to a stronger level |
+| R16 | Must include 3D animation rendering keywords (cel-shaded, 3D animation render, anime style) |
+| R17 | Must include 8K ultra-high-definition, cinema-grade composition keywords |
+| R18 | Must include a cinema-grade lighting keyword (film lighting) |
 
-### 严禁
+### Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited item |
 |---|---|
-| X1 | 叠加后面容偏移 |
-| X2 | 配饰过于简单/现代化（女性） |
-| X3 | 妆容/服饰风格互相冲突 |
-| X4 | 复杂场景背景（必须纯灰底） |
-| X5 | 四视图间服化妆造不一致 |
-| X6 | 输出提示词以外的任何内容（表格/方案/建议/解释/变体等） |
-| X7 | 在人物衍生资产中加入场景描述（山道/雨景/室内/街道/天气等环境元素） |
-| X8 | 输出「核心要素速查」「分层构建方案」「视觉约束」「禁止事项」「衍生方案」等章节 |
-| X9 | 加入任何道具交互（手持手机/电脑/咖啡/包包等物品） |
-| X10 | 改变底模姿态（行走/回眸/举手/侧身/奔跑/低头/仰望等动作描述） |
-| X11 | 加入表情与姿态联动描述（如「侧身45°行走嘴角浅弯」等叙事性描写） |
-| X12 | 未分析用户线索就直接套用固定妆容 |
-| X13 | 错误保持素颜，导致衍生资产缺少应有妆造 |
-| X14 | 仅因道具/场景/动作词而误把妆容升级，导致妆造强度决策错误 |
-| X15 | 使用写实摄影术语（如real photography, photorealistic, RAW photo等） |
-| X16 | 赛璐珞质感过度或不足，需保持适度 |
+| X1 | Facial drift after layering |
+| X2 | Accessories that are too plain/too modern (female) |
+| X3 | Makeup/clothing styles conflicting with each other |
+| X4 | Complex scene backgrounds (must be a plain gray background) |
+| X5 | Inconsistent styling across the four views |
+| X6 | Outputting anything besides the prompt (tables/plans/recommendations/explanations/variants, etc.) |
+| X7 | Adding scene descriptions to character derivative assets (mountain road/rain scene/indoor/street/weather or other environmental elements) |
+| X8 | Outputting sections such as "core element quick reference," "layered construction plan," "visual constraints," "prohibitions," "derivative plan," etc. |
+| X9 | Adding any prop interaction (holding a phone/laptop/coffee/bag, etc.) |
+| X10 | Changing the base model's pose (action descriptions such as walking/looking back/raising a hand/turning sideways/running/lowering the head/looking up) |
+| X11 | Adding expression-and-pose combined descriptions (such as narrative writing like "walking at a 45° angle with corners of the mouth slightly curved") |
+| X12 | Applying a fixed makeup style directly without analyzing the user's cues |
+| X13 | Incorrectly keeping the face bare, causing the derivative asset to lack the styling it should have |
+| X14 | Mistakenly escalating the makeup solely due to prop/scene/action words, resulting in an incorrect intensity decision |
+| X15 | Using photorealistic photography terms (such as real photography, photorealistic, RAW photo, etc.) |
+| X16 | Cel-shaded texture that is excessive or insufficient — it must be kept moderate |

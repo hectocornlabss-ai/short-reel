@@ -1,116 +1,116 @@
-# 全局美学基础 · 定格动画黏土
+# Global Aesthetic Foundation · Stop-Motion Claymation
 
 ---
-必须严格、完整遵循下方全部风格约束与全局规则，并严格按提示词模板格式生成提示词；仅输出提示词正文，不得附加任何解释、说明、注释、标题或其他额外文本。
-## 一、风格基因
+You must strictly and fully follow all style constraints and global rules below, and generate prompts strictly according to the prompt template format; output only the prompt text itself, with no explanations, notes, comments, titles, or any other extra text.
+## 1. Style Genes
 
-| 维度 | 定义 |
+| Dimension | Definition |
 |---|---|
-| **一级风格** | 定格动画黏土（Stop-Motion Claymation） |
-| **二级风格** | 奇幻3D卡通 · 暖调光影层次 |
-| **情感基调** | 治愈怀旧 · 童真细腻 |
-| **质感锚词** | 黏土肌理、手指压痕、柔和浅景深 |
+| **Primary Style** | Stop-Motion Claymation |
+| **Secondary Style** | Whimsical 3D Cartoon · Warm-Toned Light Layering |
+| **Emotional Tone** | Healing Nostalgia · Childlike Delicacy |
+| **Texture Anchor Words** | Clay grain, fingerprint indentations, soft shallow depth of field |
 
 ---
 
-## 二、全局色彩盘（风格基线，不是硬锁）
+## 2. Global Color Palette (Style Baseline, Not a Hard Lock)
 
-> 目标：统一审美而非限制创作。除「硬约束色」外，其余颜色默认优先使用，可在合理范围内偏移。
+> Goal: unify the aesthetic rather than restrict creativity. Aside from "hard-constraint colors," all other colors are used preferentially by default and may be shifted within a reasonable range.
 
-### 色彩使用层级
+### Color Usage Tiers
 
-| 层级 | 约束强度 | 说明 |
+| Tier | Constraint Strength | Description |
 |---|---|---|
-| L1 硬约束 | 高 | 仅锁定角色识别核心：肤色、发色、主服底色的审美方向 |
-| L2 软约束 | 中 | 场景色、配饰色、点缀色优先参考色盘，可按镜头与剧情微调 |
-| L3 例外机制 | 低 | 奇幻/高潮/特殊场景可临时突破局部色彩，但需保留整体暖调逻辑 |
+| L1 Hard Constraint | High | Locks only the core of character recognition: the aesthetic direction of skin tone, hair color, and primary costume base color |
+| L2 Soft Constraint | Medium | Scene colors, accessory colors, and accent colors preferentially reference the palette, adjustable per shot and story |
+| L3 Exception Mechanism | Low | Fantasy/climactic/special scenes may temporarily break from local colors, but must preserve the overall warm-tone logic |
 
-| 序号 | 色名 | 色值 | 用途 |
+| No. | Color Name | Hex | Usage |
 |---|---|---|---|
-| C1 | 奶油黄 | #F5E6D0 | 肤色基底、暖光、室内 |
-| C2 | 陶土红 | #C96E5A | 黏土本体、暖色点缀 |
-| C3 | 天空蓝 | #87AEC9 | 天空、服装、冷调点缀 |
-| C4 | 深棕发 | #4A3728 | 发色、眼瞳 |
-| C5 | 高级灰 | #8A8A8A | 建筑、阴影、中性色 |
-| C6 | 淡紫 | #D0C4D6 | 夜晚、梦幻、魔法 |
-| C7 | 琥珀暖 | #C9A96E | 黄昏、灯光、温暖感 |
-| C8 | 薄荷绿 | #9DC2A5 | 植物、自然、环境 |
-| C9 | 米白 | #F5F0E8 | 墙面、服装、背景 |
-| C10 | 暖橙 | #E8C890 | 夕阳、火光、温馨感 |
+| C1 | Cream Yellow | #F5E6D0 | Skin tone base, warm light, interiors |
+| C2 | Terracotta Red | #C96E5A | Clay body itself, warm accents |
+| C3 | Sky Blue | #87AEC9 | Sky, clothing, cool accents |
+| C4 | Deep Brown Hair | #4A3728 | Hair color, eye color |
+| C5 | Sophisticated Gray | #8A8A8A | Architecture, shadows, neutral tones |
+| C6 | Pale Purple | #D0C4D6 | Night, dreamlike, magic |
+| C7 | Warm Amber | #C9A96E | Dusk, lighting, warmth |
+| C8 | Mint Green | #9DC2A5 | Plants, nature, environment |
+| C9 | Off-White | #F5F0E8 | Walls, clothing, background |
+| C10 | Warm Orange | #E8C890 | Sunset, firelight, coziness |
 
-### 硬约束色（默认锁定）
+### Hard-Constraint Colors (Locked by Default)
 
-| 色项 | 对应色 | 规则 |
+| Item | Corresponding Color | Rule |
 |---|---|---|
-| 肤色基准 | C1 奶油黄 | 默认优先，允许小幅明度/暖度微调 |
-| 发色/瞳色基准 | C4 深棕发 | 默认优先，允许深棕/深褐轻微偏移 |
+| Skin tone baseline | C1 Cream Yellow | Preferred by default; small adjustments in brightness/warmth allowed |
+| Hair/eye color baseline | C4 Deep Brown Hair | Preferred by default; slight shifts toward deep brown/dark brown allowed |
 
-### 软约束色（推荐优先）
+### Soft-Constraint Colors (Recommended Priority)
 
-> C2/C3/C5/C6/C7/C8/C9/C10 为推荐色域，用于服装、装饰、背景、暖光、环境等。可根据镜头氛围做同色相邻近调整。
+> C2/C3/C5/C6/C7/C8/C9/C10 form the recommended color range, used for clothing, decoration, background, warm lighting, environment, etc. May be adjusted to neighboring hues based on shot atmosphere.
 
-### 情绪色盘（导演对齐版）
+### Emotion Palette (Director-Aligned Version)
 
-| 情绪场景 | 主色 | 辅色 | 光效与对比建议 | 画面关键词 |
+| Emotional Scene | Primary Color | Secondary Color | Lighting & Contrast Suggestion | Key Visual Words |
 |---|---|---|---|---|
-| 日常温馨 | C1 奶油黄 | C9 米白 + C5 高级灰 | 均匀暖调，柔和对比 | 生活感、温暖、平静 |
-| 心动瞬间 | C2 陶土红 | C1 奶油黄 + C10 暖橙 | 中近景提暖，肤色微红 | 羞涩、靠近感、暧昧 |
-| 室内日常 | C9 米白 | C5 高级灰 + C1 奶油黄 | 明暗层次清晰，中性为主 | 居家、舒适、安全 |
-| 奇幻/魔法 | C6 淡紫 | C7 琥珀暖 + C3 天空蓝 | 魔法光点，彩色光晕 | 梦幻、神秘、奇幻 |
-| 户外自然 | C8 薄荷绿 | C1 奶油黄 + C3 天空蓝 | 自然暖调，阴影层次 | 清新、开阔、自由 |
-| 夜晚梦境 | C6 淡紫 | C3 天空蓝 + C1 奶油黄 | 冷调为主，暖色点缀 | 静谧、思考、独处 |
-| 回忆/闪回 | C1 奶油黄 | C5 高级灰 + C7 琥珀暖 | 柔焦雾化，轻微褪色 | 怀旧、旧忆、梦幻 |
-| 离别感伤 | C5 高级灰 | C3 天空蓝 + C1 奶油黄 | 降饱和，拉大冷暖反差 | 距离感、克制、静压 |
+| Everyday warmth | C1 Cream Yellow | C9 Off-White + C5 Sophisticated Gray | Even warm tone, soft contrast | Lived-in feel, warmth, calm |
+| Heartfelt moment | C2 Terracotta Red | C1 Cream Yellow + C10 Warm Orange | Warm boost in medium-close shots, slightly flushed skin | Shyness, closeness, intimacy |
+| Indoor everyday life | C9 Off-White | C5 Sophisticated Gray + C1 Cream Yellow | Clear light/dark layering, mostly neutral | Homey, comfortable, safe |
+| Fantasy/magic | C6 Pale Purple | C7 Warm Amber + C3 Sky Blue | Magic light particles, colorful glow | Dreamlike, mysterious, fantastical |
+| Outdoor nature | C8 Mint Green | C1 Cream Yellow + C3 Sky Blue | Natural warm tone, shadow layering | Fresh, open, free |
+| Nighttime dream | C6 Pale Purple | C3 Sky Blue + C1 Cream Yellow | Mostly cool tone, warm accents | Quiet, contemplative, solitary |
+| Memory/flashback | C1 Cream Yellow | C5 Sophisticated Gray + C7 Warm Amber | Soft-focus haze, slight fading | Nostalgic, reminiscent, dreamlike |
+| Farewell/sorrow | C5 Sophisticated Gray | C3 Sky Blue + C1 Cream Yellow | Reduced saturation, wider warm-cool contrast | Distance, restraint, quiet tension |
 
-### 情绪色盘使用规则
+### Emotion Palette Usage Rules
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| E1 | 每条提示词至少指定 1 个「情绪场景」并绑定主色+辅色组合 |
-| E2 | 单镜头主色不超过 2 个，避免颜色叙事失焦 |
-| E3 | 情绪切换时优先调整光比与色温，再调整饱和度 |
-| E4 | 治愈向默认遵循「暖底 + 冷暖对比」：暖色铺底，冷色用于背景/阴影 |
-| E5 | 若与剧情冲突，以情绪色盘优先于通用推荐色，但不得突破严禁项 |
+| E1 | Each prompt must specify at least 1 "emotional scene" and bind it to a primary + secondary color combination |
+| E2 | No more than 2 primary colors per shot, to avoid losing narrative focus through color |
+| E3 | When switching emotions, prioritize adjusting light ratio and color temperature before adjusting saturation |
+| E4 | Healing-oriented scenes default to "warm base + warm-cool contrast": warm colors as the base, cool colors used for background/shadow |
+| E5 | If in conflict with the story, the emotion palette takes priority over the general recommended colors, but must not breach the prohibited items |
 
-### 色温约束
+### Color Temperature Constraints
 
-| 参数 | 值 | 说明 |
+| Parameter | Value | Description |
 |---|---|---|
-| 整体色温 | 偏暖 4500-5000K（推荐） | 温暖怀旧主基调 |
-| 肤色色温 | 微暖 4800-5200K（推荐） | 奶油黄但有生命感 |
-| 对比度 | 中等（建议保持） | 明暗层次清晰，但不过分强烈 |
-| 饱和度 | 中低 60-75%（建议区间） | 定格动画高级色调 |
+| Overall color temperature | Warm-leaning 4500-5000K (recommended) | Warm nostalgic base tone |
+| Skin tone color temperature | Slightly warm 4800-5200K (recommended) | Cream yellow but with a sense of life |
+| Contrast | Medium (recommended to maintain) | Clear light/dark layering, but not overly strong |
+| Saturation | Medium-low 60-75% (recommended range) | Sophisticated stop-motion animation tone |
 
-### 容差与例外
+### Tolerance and Exceptions
 
-| 项目 | 建议容差 |
+| Item | Recommended Tolerance |
 |---|---|
-| 色相偏移 | ±8° |
-| 饱和度偏移 | ±10% |
-| 明度偏移 | ±12% |
+| Hue shift | ±8° |
+| Saturation shift | ±10% |
+| Brightness shift | ±12% |
 
-> 例外场景：奇幻、魔法、情绪高潮镜头可使用更暖或更高饱和局部色块；但禁止高饱和荧光色与现代色彩语言入镜。
+> Exception scenes: fantasy, magic, and emotionally climactic shots may use warmer or more highly saturated local color blocks; however, highly saturated fluorescent colors and modern color language are prohibited from appearing.
 
 ---
 
-## 三、全局约束规则
+## 3. Global Constraint Rules
 
-### 必守规则（所有技能继承）
+### Mandatory Rules (Inherited by All Skills)
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须包含「定格动画风格 + 黏土质感」风格锚定词 |
-| R2 | 必须声明「手指压痕可见 + 黏土肌理材质」 |
-| R3 | 面部必须使用「3D卡通角色 + 柔和浅景深」 |
-| R4 | 发丝必须使用「黏土造型 + 手工痕迹保留」 |
-| R5 | 光影必须声明「电影感光影层次 + 暖调主导」 |
+| R1 | Must include the style anchor words "stop-motion animation style + clay texture" |
+| R2 | Must state "visible fingerprint indentations + clay grain material" |
+| R3 | Faces must use "3D cartoon character + soft shallow depth of field" |
+| R4 | Hair strands must use "clay sculpting + preserved handcrafted marks" |
+| R5 | Lighting must state "cinematic light and shadow layering + warm-tone dominant" |
 
-### 严禁项（所有技能继承）
+### Prohibited Items (Inherited by All Skills)
 
-| 编号 | 严禁内容 |
+| No. | Prohibited Content |
 |---|---|
-| X1 | 严禁「现代3D动画风格/皮克斯/迪士尼后期风格」 |
-| X2 | 严禁「光滑塑料/现代CG渲染」 |
-| X3 | 严禁「高饱和荧光色/霓虹色」 |
-| X4 | 严禁「面部变形/比例失调/肢体异常」倾向词 |
-| X5 | 严禁「现代场景/现代建筑/现代服饰」 |
+| X1 | Strictly prohibit "modern 3D animation style / Pixar / Disney post-production style" |
+| X2 | Strictly prohibit "smooth plastic / modern CG rendering" |
+| X3 | Strictly prohibit "highly saturated fluorescent colors / neon colors" |
+| X4 | Strictly prohibit tendency words such as "facial deformation / disproportionate features / abnormal limbs" |
+| X5 | Strictly prohibit "modern scenes / modern architecture / modern clothing" |

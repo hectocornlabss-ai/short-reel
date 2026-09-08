@@ -93,11 +93,11 @@ const vendor: VendorConfig = {
   id: "vidu",
   author: "搬砖的Coder",
   description:
-    "Vidu 官方视频生成平台。 [前往平台](https://platform.vidu.cn/login/)",
-  name: "Vidu 开放平台",
+    "แพลตฟอร์มสร้างวิดีโอทางการของ Vidu [ไปที่แพลตฟอร์ม](https://platform.vidu.cn/login/)",
+  name: "Vidu Open Platform",
   inputs: [
-    { key: "apiKey", label: "API密钥", type: "password", required: true, placeholder: "请到Vidu官方申请" },
-    { key: "baseUrl", label: "接口路径", type: "url", required: true, placeholder: "https://api.vidu.cn/ent/v2" },
+    { key: "apiKey", label: "API Key", type: "password", required: true, placeholder: "กรุณาขอที่เว็บไซต์ทางการของ Vidu" },
+    { key: "baseUrl", label: "ที่อยู่ API (Endpoint)", type: "url", required: true, placeholder: "https://api.vidu.cn/ent/v2" },
   ],
   inputValues: {
     apiKey: "",
@@ -196,7 +196,7 @@ exports.vendor = vendor;
 
 // 文本请求函数
 const textRequest: (textModel: TextModel) => { url: string; model: string } = (textModel) => {
-  throw new Error("当前供应商仅支持视频大模型，谢谢！");
+  throw new Error("ผู้ให้บริการนี้รองรับเฉพาะโมเดลวิดีโอเท่านั้น ขอบคุณครับ");
 };
 exports.textRequest = textRequest;
 
@@ -208,7 +208,7 @@ interface ImageConfig {
   aspectRatio: `${number}:${number}`; // 长宽比
 }
 const imageRequest = async (imageConfig: ImageConfig, imageModel: ImageModel) => {
-  if (!vendor.inputValues.apiKey) throw new Error("缺少API Key");
+  if (!vendor.inputValues.apiKey) throw new Error("ไม่พบ API Key");
   const apiKey = vendor.inputValues.apiKey.replace("Token ", "");
 
   const size = imageConfig.size === "1K" ? "2K" : imageConfig.size;
@@ -241,14 +241,14 @@ const imageRequest = async (imageConfig: ImageConfig, imageModel: ImageModel) =>
     body: JSON.stringify(body),
   });
   if (!response.ok) {
-    const errorText = await response.text(); // 获取错误信息
-    console.error("请求失败，状态码:", response.status, ", 错误信息:", errorText);
-    throw new Error(`请求失败，状态码: ${response.status}, 错误信息: ${errorText}`);
+    const errorText = await response.text();
+    console.error("คำขอล้มเหลว, รหัสสถานะ:", response.status, ", ข้อความผิดพลาด:", errorText);
+    throw new Error(`คำขอล้มเหลว, รหัสสถานะ: ${response.status}, ข้อความผิดพลาด: ${errorText}`);
   }
   const data = await response.json();
   const res = await checkTaskResult(data.task_id);
   if (!res.data) {
-    throw new Error("图片未能生成");
+    throw new Error("ไม่สามารถสร้างภาพได้");
   }
   const list = JSON.parse(JSON.stringify(res.data));
   return list[0].url;
@@ -298,9 +298,9 @@ const checkTaskResult = async (taskId: string) => {
       headers: { Authorization: `Token ${apiKey}`, "Content-Type": "application/json" },
     });
     if (!queryResponse.ok) {
-      const errorText = await queryResponse.text(); // 获取错误信息
-      console.error("请求失败，状态码:", queryResponse.status, ", 错误信息:", errorText);
-      throw new Error(`请求失败，状态码: ${queryResponse.status}, 错误信息: ${errorText}`);
+      const errorText = await queryResponse.text();
+      console.error("คำขอล้มเหลว, รหัสสถานะ:", queryResponse.status, ", ข้อความผิดพลาด:", errorText);
+      throw new Error(`คำขอล้มเหลว, รหัสสถานะ: ${queryResponse.status}, ข้อความผิดพลาด: ${errorText}`);
     }
     const queryData = await queryResponse.json();
     const status = queryData?.state ?? queryData?.data?.state;
@@ -312,7 +312,7 @@ const checkTaskResult = async (taskId: string) => {
         return { completed: true, data: queryData.creations };
       case "FAILURE":
       case "failed":
-        return { completed: false, error: fail_reason || "生成失败" };
+        return { completed: false, error: fail_reason || "สร้างล้มเหลว" };
       default:
         return { completed: false };
     }
@@ -322,7 +322,7 @@ const checkTaskResult = async (taskId: string) => {
 };
 
 const videoRequest = async (videoConfig: VideoConfig, videoModel: VideoModel) => {
-  if (!vendor.inputValues.apiKey) throw new Error("缺少API Key");
+  if (!vendor.inputValues.apiKey) throw new Error("ไม่พบ API Key");
   const apiKey = vendor.inputValues.apiKey.replace("Token ", "");
 
   // 构建每个模型对应的附加参数
@@ -345,9 +345,9 @@ const videoRequest = async (videoConfig: VideoConfig, videoModel: VideoModel) =>
     body: JSON.stringify(publicBody),
   });
   if (!response.ok) {
-    const errorText = await response.text(); // 获取错误信息
-    console.error("请求失败，状态码:", response.status, ", 错误信息:", errorText);
-    throw new Error(`请求失败，状态码: ${response.status}, 错误信息: ${errorText}`);
+    const errorText = await response.text();
+    console.error("คำขอล้มเหลว, รหัสสถานะ:", response.status, ", ข้อความผิดพลาด:", errorText);
+    throw new Error(`คำขอล้มเหลว, รหัสสถานะ: ${response.status}, ข้อความผิดพลาด: ${errorText}`);
   }
   const data = await response.json();
   const taskId = data.id;
@@ -364,5 +364,5 @@ interface TTSConfig {
   volume: number;
 }
 const ttsRequest = async (ttsConfig: TTSConfig, ttsModel: TTSModel) => {
-  throw new Error("Vidu 暂不支持语音合成（TTS）");
+  throw new Error("Vidu ยังไม่รองรับการสังเคราะห์เสียง (TTS)");
 };

@@ -1,33 +1,33 @@
-# 定格动画黏土风格说明
+# Stop-Motion Claymation Style Guide
 
-本风格专为"定格动画黏土质感"题材打造，所有美术提示词、规范和生成内容均严格限定于：
+This style is built specifically for "stop-motion claymation texture" subject matter. All art prompts, rules, and generated content are strictly limited to:
 
-- **定格动画世界观**：以复古/奇幻生活为背景，涵盖木屋、森林、街道、咖啡馆、花园等，体现定格动画特有的生活气息。
-- **黏土质感**：所有角色、场景、道具均以定格黏土动画为标准，强调黏土肌理清晰度、手指压痕可见度、材质颗粒感。
-- **治愈怀旧美学**：在黏土质感基础上追求电影感氛围，画面色调温暖柔和，细节丰富，整体氛围温暖治愈、怀旧感人。
-- **情感表达**：适合展现温柔、治愈、浪漫的定格动画故事，强调手工质感下的情感表达。
+- **Stop-motion animation world**: Set against a retro/whimsical everyday backdrop, covering wooden cabins, forests, streets, cafes, gardens, etc., conveying the distinctive lived-in warmth of stop-motion animation.
+- **Clay texture**: All characters, scenes, and props are held to the standard of stop-motion clay animation, emphasizing clear clay grain, visible fingerprint indentations, and a granular material feel.
+- **Healing, nostalgic aesthetic**: Building on the clay texture, the goal is a cinematic atmosphere with a warm, soft color palette, rich detail, and an overall tone that is warm, healing, and nostalgic.
+- **Emotional expression**: Suited to gentle, healing, romantic stop-motion stories, emphasizing emotional expression through a handcrafted feel.
 
-## 适用范围
+## Scope of Application
 
-- 定格动画黏土题材的AI美术生成（角色、场景、道具、分镜等）
-- 需要极致黏土质感、细腻光影、温馨治愈氛围的视觉创作
+- AI art generation for stop-motion claymation subjects (characters, scenes, props, storyboards, etc.)
+- Visual creation requiring an extreme clay texture, delicate lighting and shadow, and a warm, healing atmosphere
 
-## 严禁内容
+## Strictly Prohibited
 
-- 现代3D动画风格、光滑塑料、CG渲染
-- 现代元素、现代建筑、现代服饰
-- 高饱和荧光色、霓虹色
-- 黑暗暴力、成人向内容
+- Modern 3D animation style, smooth plastic, CG rendering
+- Modern elements, modern architecture, modern clothing
+- Highly saturated fluorescent colors, neon colors
+- Dark violence, adult content
 
-## 风格体验
+## Style Experience
 
-在本风格下，您将体验到：
+Under this style, you will experience:
 
-- 角色面容精致、气质温柔或清亮，服饰、造型均为定格黏土动画风格
-- 场景空间层次丰富，黏土肌理清晰，氛围真实且富有诗意
-- 道具、日常物品、环境细节均为复古/奇幻造型，手工质感细腻
-- 分镜与画面均以定格动画为基础，强调叙事与情感表达
+- Characters with refined faces and a gentle or clear-eyed temperament, with clothing and styling all in the stop-motion claymation style
+- Scenes with rich spatial layering, clear clay texture, and an atmosphere that is authentic and poetic
+- Props, everyday objects, and environmental details all in retro/whimsical forms with a delicate handcrafted feel
+- Storyboards and imagery both grounded in stop-motion animation, emphasizing narrative and emotional expression
 
 ---
 
-本风格仅适用于"定格动画黏土"相关项目。如需其他风格（如现代3D、CG、插画、现代等），请勿使用本套提示词。
+This style applies only to "stop-motion claymation" related projects. For other styles (such as modern 3D, CG, illustration, modern, etc.), please do not use this set of prompts.

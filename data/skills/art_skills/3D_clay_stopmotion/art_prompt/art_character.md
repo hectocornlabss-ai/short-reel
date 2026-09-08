@@ -1,190 +1,190 @@
-# 黏土定格动画角色基础形象生成 · 约束手册
+# Claymation Stop-Motion Character Base Model Generation · Constraint Handbook
 
 ---
 
-## 一、基础形象原则
+## 1. Base Model Principles
 
-1. **黏土肌理为魂** — 表面可见手工捏塑痕迹，手指压痕/黏土纹理清晰可辨
-2. **3D卡通底模** — 基础打底为简化造型的黏土角色，后续服化均为叠加层
-3. **四视图一致** — 面容/体型/发型/基础服装跨视图高度统一
-4. **治愈氛围** — 无妆状态仍需体现角色性格（柔和/圆润/亲切）
+1. **Clay texture is the soul** — Visible handcrafted sculpting marks on the surface, fingerprint indentations/clay grain must be clearly distinguishable
+2. **3D cartoon base** — The foundational base is a simplified-form clay character, with all subsequent costume/makeup as overlay layers
+3. **Four-view consistency** — Face/build/hairstyle/base clothing must be highly consistent across views
+4. **Healing atmosphere** — Even without makeup, the character's personality (gentle/soft/approachable) must still come through
 
 ---
 
-## 二、面容约束
+## 2. Facial Constraints
 
-> 不再固定五官特征参数，由角色描述（性别/年龄/性格/气质）驱动 AI 自由生成五官，保证人物间外观差异化。
+> Facial feature parameters are no longer fixed; they are driven by the character description (gender/age/personality/temperament), letting the AI freely generate features while ensuring visual differentiation between characters.
 
-### 通用要求
+### General Requirements
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 五官 | 由角色描述自然推导，不预设脸型/眼型/眉型/鼻型/唇型；整体保持黏土圆润感（无尖锐棱角） |
-| 风格底色 | 黏土定格动画、3D 卡通渲染、哑光黏土质感、暖调光影 |
-| 气质 | 必须从角色描述提炼整体气质关键词（如温暖治愈/稳重可靠/活泼亲切），并写入提示词 |
-| 表情 | 中性微表情，符合角色气质 |
+| Facial features | Naturally derived from the character description; no preset face shape/eye shape/eyebrow shape/nose shape/lip shape; overall must retain a rounded clay feel (no sharp edges) |
+| Style base | Claymation stop-motion, 3D cartoon rendering, matte clay texture, warm-toned lighting |
+| Temperament | Overall temperament keywords must be distilled from the character description (e.g., warm and healing / steady and reliable / lively and approachable) and included in the prompt |
+| Expression | Neutral micro-expression, consistent with the character's temperament |
 
 ---
 
-## 三、肤感约束
+## 3. Skin Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 肤色 | 暖调奶油色、柔和均匀 | 暖奶油色肌肤、柔和肤色 |
-| 光泽 | 哑光黏土质感、无高光 | 哑光黏土质感、matte clay texture |
-| 质感 | 黏土肌理清晰、可见捏塑痕迹 | 黏土表面、手工捏塑痕迹 |
-| 露肤 | 面部/颈部/手部 | 肌肤温润、黏土质感 |
+| Skin tone | Warm cream tone, soft and even | warm cream-colored skin, soft skin tone |
+| Sheen | Matte clay texture, no highlights | matte clay texture, matte clay texture |
+| Texture | Clear clay grain, visible sculpting marks | clay surface, handcrafted sculpting marks |
+| Exposed skin | Face/neck/hands | warm smooth skin, clay texture |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 肤色 | 暖调米色、柔和均匀 | 暖调米色肌肤、柔和肤色 |
-| 光泽 | 哑光黏土质感、无高光 | 哑光黏土质感、matte clay texture |
-| 质感 | 黏土肌理清晰、可见手指压痕 | 黏土表面、手工痕迹清晰 |
+| Skin tone | Warm beige tone, soft and even | warm beige skin, soft skin tone |
+| Sheen | Matte clay texture, no highlights | matte clay texture, matte clay texture |
+| Texture | Clear clay grain, visible fingerprint indentations | clay surface, clear handcrafted marks |
 
 ---
 
-## 四、体型约束
+## 4. Build Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 身高 | 默认155-165cm，头身比体现 | {身高}cm tall |
-| 头身比 | 六头身至七头身，头大身小 | 6-7 heads tall、圆润比例 |
-| 肩颈 | 圆润肩线、无锐利棱角 | 圆润肩颈、柔和线条 |
-| 手部 | 圆润手指、关节简化 | 圆润小手、简化手部细节 |
-| 体态 | 柔和曲线、无攻击性姿态 | 姿态柔和、曲线圆润 |
+| Height | Default 155-165cm, reflected in head-to-body ratio | {height}cm tall |
+| Head-to-body ratio | 6 to 7 heads tall, large head small body | 6-7 heads tall, rounded proportions |
+| Shoulders/neck | Rounded shoulder line, no sharp edges | rounded shoulders and neck, soft lines |
+| Hands | Rounded fingers, simplified joints | small rounded hands, simplified hand detail |
+| Posture | Soft curves, no aggressive poses | soft posture, rounded curves |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 身高 | 默认170-180cm，头身比体现 | {身高}cm tall |
-| 头身比 | 六头身半至七头半 | 6.5-7.5 heads tall、圆润比例 |
-| 肩颈 | 圆润宽肩、肩部柔和 | 圆润肩部、温和肩线 |
-| 手部 | 圆润手掌、指节简化 | 圆润手掌、简化指节 |
-| 体态 | 稳重大方、线条柔和 | 姿态稳重、线条圆润 |
+| Height | Default 170-180cm, reflected in head-to-body ratio | {height}cm tall |
+| Head-to-body ratio | 6.5 to 7.5 heads tall | 6.5-7.5 heads tall, rounded proportions |
+| Shoulders/neck | Rounded broad shoulders, soft shoulder area | rounded shoulders, gentle shoulder line |
+| Hands | Rounded palms, simplified knuckles | rounded palms, simplified knuckles |
+| Posture | Steady and dignified, soft lines | steady posture, rounded lines |
 
 ---
 
-## 五、基础发型约束
+## 5. Base Hairstyle Constraints
 
-### 女性
+### Female
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 发色 | 暖棕、栗色、深褐等自然色系 | 暖棕色长发、栗色秀发 |
-| 发长 | 及肩或及腰 | 及肩长发 |
-| 发质 | 黏土塑形、发束块状化 | 黏土发型、块状发束 |
-| 造型 | 自然散落、简单扎发、无复杂发饰 | 自然发束、简单束发 |
+| Hair color | Warm brown, chestnut, deep brown, and other natural tones | warm brown long hair, chestnut hair |
+| Hair length | Shoulder-length or waist-length | shoulder-length hair |
+| Hair texture | Clay-sculpted, blocky hair strands | clay hairstyle, blocky hair strands |
+| Styling | Naturally loose, simple tied styles, no complex hair accessories | natural hair strands, simple tied hair |
 
-### 男性
+### Male
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 发色 | 暖棕、深褐、黑色 | 暖棕色短发、深色发型 |
-| 发长 | 短发或中长发 | 短发、中长发 |
-| 发质 | 黏土塑形、发束块状化 | 黏土发型、块状发束 |
-| 造型 | 自然散落、简单束发 | 自然发束、简单发型 |
+| Hair color | Warm brown, deep brown, black | warm brown short hair, dark hairstyle |
+| Hair length | Short or medium-length | short hair, medium-length hair |
+| Hair texture | Clay-sculpted, blocky hair strands | clay hairstyle, blocky hair strands |
+| Styling | Naturally loose, simple tied hair | natural hair strands, simple hairstyle |
 
 ---
 
-## 六、基础服装约束
+## 6. Base Clothing Constraints
 
-> 基础服装为简化造型，无复杂细节。
+> Base clothing has a simplified form with no complex detail.
 
-### 女性基础服装
+### Female Base Clothing
 
-简化连衣裙或上衣+裙装，颜色为低饱和暖色调，无花纹装饰。
+Simplified dress or top + skirt, in low-saturation warm tones, with no patterned decoration.
 
-### 男性基础服装
+### Male Base Clothing
 
-简化衬衫+裤装，颜色为低饱和暖色调，无花纹装饰。
+Simplified shirt + pants, in low-saturation warm tones, with no patterned decoration.
 
-### 着装统一规则
+### Outfit Consistency Rules
 
-- 服装风格统一，确保后续服饰叠加无色彩干扰
-- 除面部/手部/颈部外基本覆盖
-- 四视图服装款式完全一致
-- 基础服装仅为安全打底，焦点在面容与体态
+- Clothing style must be unified so that later costume overlays introduce no color interference
+- Coverage is essentially complete except for the face/hands/neck
+- Clothing style must be completely identical across all four views
+- Base clothing is only a safe foundation layer; the focus is on the face and build
 
 ---
 
-## 七、四视图设定图规范
+## 7. Four-View Reference Sheet Specification
 
-### 视图定义
+### View Definitions
 
-| 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
+| Position | View | Angle | Framing | Requirement | Prompt Fragment |
 |---|---|---|---|---|---|
-| 左一 | 人像特写 | 正面平视 | 头顶至锁骨 | 面部占60%+，五官清晰 | portrait closeup、face detail |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、从头顶到脚底完整 | front view、full body |
-| 右二 | 侧视图 | 右侧 90° | 全身立像 | 侧面轮廓清晰、从头到脚完整 | side view、profile、full body |
-| 右一 | 后视图 | 后方 180° | 全身立像 | 后脑/背部/发尾/脚部清晰 | back view、rear view、full body |
+| Far left | Portrait closeup | Front-facing, eye level | Top of head to collarbone | Face occupies 60%+, features clear | portrait closeup, face detail |
+| Second from left | Front view | Front 0° | Full-body standing | Facing camera, complete from top of head to soles of feet | front view, full body |
+| Second from right | Side view | Right side 90° | Full-body standing | Clear side profile, complete from head to toe | side view, profile, full body |
+| Far right | Back view | Rear 180° | Full-body standing | Back of head/back/hair ends/feet all clear | back view, rear view, full body |
 
-### 画面规范
+### Composition Specification
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面从左至右并排四视图 |
-| 背景 | 纯净中性灰 #E8E8E8 |
-| 站姿 | 自然站立、双脚平行微分、双臂自然下垂 |
-| 全身展示 | 全身立像必须从头到脚完整入画，严禁裁切 |
-| 特写展示 | 人像特写必须从头顶到锁骨完整入画，严禁裁切 |
-| 表情 | 中性微表情，符合角色性格 |
-| 光线 | 暖调柔光，前方主光+双侧补光，无硬阴影 |
-| 一致性 | 四视图的肤色/体型/发型/面容/基础服装完全一致 |
-| 画面比例 | 建议 4:1 或 3:1 |
+| Layout | Four views arranged side by side left to right in the same image |
+| Background | Clean neutral gray #E8E8E8 |
+| Pose | Standing naturally, feet parallel and slightly apart, arms hanging naturally |
+| Full-body display | Full-body standing views must be completely shown from head to toe, no cropping allowed |
+| Closeup display | Portrait closeups must be completely shown from top of head to collarbone, no cropping allowed |
+| Expression | Neutral micro-expression, consistent with the character's personality |
+| Lighting | Warm soft light, front key light + dual side fill, no hard shadows |
+| Consistency | Skin tone/build/hairstyle/face/base clothing fully consistent across the four views |
+| Aspect ratio | Recommended 4:1 or 3:1 |
 
 ---
 
-## 八、提示词模板
+## 8. Prompt Template
 
 ```
-黏土定格动画{性别}角色四视图设定图，定格动画风格，3D卡通渲染，暖调光影，
-character design sheet，character turnaround，
-{角色描述对应的五官特征 - 由角色描述自然推导，整体保持黏土圆润感}，{整体气质}，
-{肤色}，哑光黏土质感，黏土肌理清晰，手工捏塑痕迹，
-{身高描述}，{头身比，如：7 heads tall proportion}，{身材描述}，{体态描述}，
-{发色}{发长}，黏土发型，{基础造型}，无复杂发饰，
-（女性：简化连衣裙 / 男性：简化衬衫+裤装），低饱和暖色调，无花纹，
-同一画面左至右并排：人像特写+正视图+侧视图+后视图，
-人像特写从头顶到锁骨完整展示，head to collarbone complete，
-全身立像从头顶到脚底完整展示，full body head to toe，
-自然站立，纯净中性灰背景，暖调柔光，无硬阴影，
-四视图一致性，黏土肌理细腻渲染，表情柔和治愈
-图中不要有任何文字
+Claymation stop-motion {gender} character four-view reference sheet, stop-motion animation style, 3D cartoon rendering, warm-toned lighting,
+character design sheet, character turnaround,
+{facial features corresponding to the character description - naturally derived from the character description, overall retaining a rounded clay feel}, {overall temperament},
+{skin tone}, matte clay texture, clear clay grain, handcrafted sculpting marks,
+{height description}, {head-to-body ratio, e.g.: 7 heads tall proportion}, {body description}, {posture description},
+{hair color}{hair length}, clay hairstyle, {basic styling}, no complex hair accessories,
+(Female: simplified dress / Male: simplified shirt + pants), low-saturation warm tone, no patterns,
+same image arranged left to right: portrait closeup + front view + side view + back view,
+portrait closeup complete from top of head to collarbone, head to collarbone complete,
+full-body standing view complete from top of head to soles of feet, full body head to toe,
+standing naturally, clean neutral gray background, warm soft light, no hard shadows,
+four-view consistency, finely rendered clay grain, soft healing expression
+no text of any kind should appear in the image
 ```
 
 ---
 
-## 九、约束规则
+## 9. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须为「哑光黏土质感」状态 |
-| R2 | 必须声明基础服装（女性：简化连衣裙；男性：简化衬衫+裤装） |
-| R3 | 必须声明「无复杂发饰、无现代配饰」 |
-| R4 | 必须指定「纯净中性灰背景」 |
-| R5 | 必须指定「四视图一致性」 |
-| R6 | 全身立像必须从头到脚完整展示，严禁裁切 |
-| R7 | 必须指定角色身高并通过头身比约束全身比例（默认6-7头身） |
-| R8 | 人像特写必须从头顶到锁骨完整展示，严禁裁切头顶 |
+| R1 | Must be in a "matte clay texture" state |
+| R2 | Must specify base clothing (Female: simplified dress; Male: simplified shirt + pants) |
+| R3 | Must state "no complex hair accessories, no modern accessories" |
+| R4 | Must specify a "clean neutral gray background" |
+| R5 | Must specify "four-view consistency" |
+| R6 | Full-body standing views must be completely shown from head to toe, no cropping allowed |
+| R7 | Must specify the character's height and constrain the full-body proportion via head-to-body ratio (default 6-7 heads tall) |
+| R8 | Portrait closeups must be completely shown from top of head to collarbone, no cropping of the top of the head |
 
-### 严禁
+### Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 真人写实摄影质感/照片级真实 |
-| X2 | 冷硬光线/硬阴影/高对比 |
-| X3 | 尖锐棱角/攻击性姿态 |
-| X4 | 复杂场景背景（必须纯灰底） |
-| X5 | 夸张表情/动态姿势 |
-| X6 | 全身立像裁切头顶或脚底 |
-| X7 | 人像特写裁切头顶 |
-| X8 | 忽略身高和头身比约束 |
+| X1 | Realistic live-action photography texture/photorealistic quality |
+| X2 | Cold hard lighting/hard shadows/high contrast |
+| X3 | Sharp edges/aggressive poses |
+| X4 | Complex scene backgrounds (must be pure gray base) |
+| X5 | Exaggerated expressions/dynamic poses |
+| X6 | Full-body standing views cropping the top of the head or the soles of the feet |
+| X7 | Portrait closeups cropping the top of the head |
+| X8 | Ignoring the height and head-to-body ratio constraints |

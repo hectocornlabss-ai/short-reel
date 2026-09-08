@@ -1,132 +1,132 @@
-# 黏土定格动画道具图像生成 · 约束手册
+# Claymation Stop-Motion Prop Image Generation · Constraint Handbook
 
 ---
 
-## 一、道具设计原则
+## 1. Prop Design Principles
 
-1. **功能可读** — 道具用途一目了然，造型服务于功能
-2. **黏土质感极致** — 材质纹理必须清晰可辨（黏土/木质/布料/纸）
-3. **年代一致** — 所有道具必须符合古风世界观，禁止现代元素
-4. **尺度明确** — 通过参照物或标注暗示道具真实尺寸
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体
-
----
-
-## 二、道具分类与美学约束
-
-### 2.1 兵器类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 剑/刀/弓/枪/扇 | {兵器类型}，古风兵器 |
-| 材质 | 黏土塑形+简单金属装饰+丝绸剑穗 | 黏土质感、金属装饰精致 |
-| 装饰 | 剑鞘/刀柄雕花、流苏、暗纹 | 雕花精致、流苏垂坠 |
-| 光泽 | 哑光黏土质感、金属部分微反光 | 哑光黏土、微金属光泽 |
-| 提示词 | 古风{兵器}，黏土质感，雕花精致 | — |
-
-### 2.2 饰品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 簪/钗/璎珞/玉佩/手镯/耳坠 | {饰品类型}，古风首饰 |
-| 材质 | 黏土+简单金属/珠串/宝石 | 黏土材质、简单金属装饰 |
-| 工艺 | 精致细腻、花纹清晰 | 工艺精致、花纹清晰 |
-| 光泽 | 哑光黏土质感、金属微光 | 哑光黏土、微金属光泽 |
-| 提示词 | 古风{饰品}，{材质}，工艺精致 | — |
-
-### 2.3 生活器物类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 茶具/酒具/香炉/棋盘/书卷/灯笼 | {器物类型}，古风器物 |
-| 材质 | 黏土/木质/陶瓷 | 黏土质感、木质纹理 |
-| 质感 | 釉面/木纹/竹节清晰 | 纹理清晰、质感温润 |
-| 风格 | 素雅/温馨按场景切换 | 素雅古朴 / 温馨精致 |
-| 提示词 | 古风{器物}，{材质}质感，纹理清晰 | — |
-
-### 2.4 信物/关键道具类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 信物/令牌/卷轴/药瓶/玉印 | {道具类型}，古风道具 |
-| 特殊性 | 需有辨识度、叙事象征意义 | 独特造型、寓意深远 |
-| 做旧感 | 可按剧情需要添加年代感 | 古旧斑驳 / 崭新精致 |
-| 提示词 | 古风{道具}，{材质}，{状态}，独特造型 | — |
+1. **Function must be legible** — The prop's purpose must be immediately obvious; form serves function
+2. **Extreme clay texture** — Material texture must be clearly distinguishable (clay/wood/fabric/paper)
+3. **Era consistency** — All props must fit the ancient-style/fantasy world setting; modern elements are prohibited
+4. **Clear scale** — Imply the prop's true size through reference objects or visual cues
+5. **Pure standalone prop display** — Only the prop itself may appear in the image; any person, hand, or limb is strictly prohibited
 
 ---
 
-## 三、多角度设定图规范
+## 2. Prop Categories and Aesthetic Constraints
 
-### 视图定义
+### 2.1 Weapons
 
-| 位置 | 视图 | 角度 | 要求 | 提示词 |
+| Item | Constraint | Prompt Fragment |
+|---|---|---|
+| Type | Sword/blade/bow/spear/fan | {weapon type}, ancient-style weapon |
+| Material | Clay-sculpted + simple metal decoration + silk sword tassel | clay texture, refined metal decoration |
+| Decoration | Sheath/hilt engraving, tassels, subtle patterns | refined engraving, draping tassels |
+| Sheen | Matte clay texture, metal parts slightly reflective | matte clay, slight metallic sheen |
+| Prompt Fragment | Ancient-style {weapon}, clay texture, refined engraving | — |
+
+### 2.2 Jewelry/Accessories
+
+| Item | Constraint | Prompt Fragment |
+|---|---|---|
+| Type | Hairpin/hair stick/tassel necklace/jade pendant/bracelet/earrings | {accessory type}, ancient-style jewelry |
+| Material | Clay + simple metal/beaded strings/gemstones | clay material, simple metal decoration |
+| Craftsmanship | Delicate and refined, clear patterns | refined craftsmanship, clear patterns |
+| Sheen | Matte clay texture, slight metallic shimmer | matte clay, slight metallic sheen |
+| Prompt Fragment | Ancient-style {accessory}, {material}, refined craftsmanship | — |
+
+### 2.3 Everyday Objects
+
+| Item | Constraint | Prompt Fragment |
+|---|---|---|
+| Type | Tea set/wine vessel/incense burner/chessboard/scroll/lantern | {object type}, ancient-style object |
+| Material | Clay/wood/ceramic | clay texture, wood grain texture |
+| Texture | Clear glaze/wood grain/bamboo joints | clear texture, smooth warm feel |
+| Style | Switches between plain/elegant and warm/refined by scene | plain and rustic / warm and refined |
+| Prompt Fragment | Ancient-style {object}, {material} texture, clear texture | — |
+
+### 2.4 Keepsakes/Key Story Props
+
+| Item | Constraint | Prompt Fragment |
+|---|---|---|
+| Type | Keepsake/token/scroll/medicine vial/jade seal | {prop type}, ancient-style prop |
+| Distinctiveness | Must be recognizable, carry narrative/symbolic meaning | unique form, deeply symbolic |
+| Aging | Aged look may be added as needed by the story | worn and weathered / brand new and refined |
+| Prompt Fragment | Ancient-style {prop}, {material}, {condition}, unique form | — |
+
+---
+
+## 3. Multi-Angle Reference Sheet Specification
+
+### View Definitions
+
+| Position | View | Angle | Requirement | Prompt Fragment |
 |---|---|---|---|---|
-| 左上 | 正面图 | 正面 0° | 道具完整正面形态 | front view |
-| 右上 | 侧面图 | 侧面 90° | 厚度/轮廓/结构清晰 | side view |
-| 左下 | 背面图 | 背面 180° | 道具背部结构/装饰 | back view |
-| 右下 | 细节特写 | 局部放大 | 材质纹理/工艺细节 | detail closeup |
+| Top left | Front view | Front 0° | Complete front-facing form of the prop | front view |
+| Top right | Side view | Side 90° | Thickness/outline/structure clear | side view |
+| Bottom left | Back view | Rear 180° | Back structure/decoration of the prop | back view |
+| Bottom right | Detail closeup | Local zoom | Material texture/craftsmanship detail | detail closeup |
 
-### 画面规范
+### Composition Specification
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面四宫格（2×2），上下左右四视角 |
-| 背景 | 纯净中性灰 #E8E8E8 |
-| 光线 | 暖调柔光，无硬阴影 |
-| 比例 | 每格道具占格内主体 70%+ |
-| 投影 | 允许自然地面微投影 |
-| 画面比例 | 建议 1:1 |
+| Layout | Same image in a 2×2 grid, four angles top/bottom/left/right |
+| Background | Clean neutral gray #E8E8E8 |
+| Lighting | Warm soft light, no hard shadows |
+| Proportion | Prop occupies 70%+ of the main subject area in each cell |
+| Shadow | Natural subtle ground shadow allowed |
+| Aspect ratio | Recommended 1:1 |
 
 ---
 
-## 四、材质渲染约束
+## 4. Material Rendering Constraints
 
-| 材质 | 渲染要求 | 提示词 |
+| Material | Rendering Requirement | Prompt Fragment |
 |---|---|---|
-| 黏土 | 哑光质感、手指压痕微可见 | 哑光黏土质感、matte clay |
-| 木质 | 木纹清晰、年轮可见 | 木纹清晰、质感温润 |
-| 金属 | 微反光、无过强高光 | 微金属光泽、哑光金属 |
-| 陶瓷 | 釉面温润、色泽柔和 | 釉面温润、瓷质柔和 |
-| 布/纸 | 纤维质感、边缘自然 | 布料纹理、纸质古朴 |
-| 宝石 | 哑光质感、内部光线 | 宝石哑光、温润质感 |
+| Clay | Matte texture, fingerprint indentations slightly visible | matte clay texture, matte clay |
+| Wood | Clear wood grain, visible growth rings | clear wood grain, smooth warm feel |
+| Metal | Slight reflection, no overly strong highlights | slight metallic sheen, matte metal |
+| Ceramic | Smooth warm glaze, soft coloring | smooth warm glaze, soft porcelain feel |
+| Fabric/paper | Fiber texture, natural edges | fabric texture, rustic paper feel |
+| Gemstone | Matte texture, internal light | matte gemstone, smooth warm texture |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
 ```
-黏土定格动画古风道具设定图，定格动画风格，3D卡通渲染，暖调光影，极致细节，
-{道具类型}，{材质描述}，{工艺/装饰描述}，{状态描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图+右上侧面图+左下背面图+右下细节特写，
-纯净中性灰背景，暖调柔光，无硬阴影，
-材质纹理超清晰，黏土哑光质感，{材质光泽描述}
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+Claymation stop-motion ancient-style prop reference sheet, stop-motion animation style, 3D cartoon rendering, warm-toned lighting, extreme detail,
+{prop type}, {material description}, {craftsmanship/decoration description}, {condition description},
+pure prop still-life display, prop displayed independently, not held by anyone, not worn by anyone,
+same image in a 2×2 grid: top-left front view + top-right side view + bottom-left back view + bottom-right detail closeup,
+clean neutral gray background, warm soft light, no hard shadows,
+ultra-clear material texture, matte clay texture, {material sheen description}
+no text of any kind should appear in the image,
+no person, hand, finger, or limb may appear in the image; the prop must not be in a held or worn state
 ```
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须指定「纯净中性灰背景」 |
-| R2 | 必须明确道具材质与工艺 |
-| R3 | 道具造型必须符合古风世界观 |
-| R4 | 必须指定「哑光黏土质感」 |
-| R5 | 必须指定「暖调柔光」 |
+| R1 | Must specify a "clean neutral gray background" |
+| R2 | Must clearly specify the prop's material and craftsmanship |
+| R3 | Prop form must fit the ancient-style/fantasy world setting |
+| R4 | Must specify "matte clay texture" |
+| R5 | Must specify "warm soft light" |
 
-### 严禁
+### Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 复杂场景背景 |
-| X2 | 道具与人物同画面 |
-| X3 | 出现任何人物形象 |
-| X4 | 道具处于被持有/佩戴/使用中的状态 |
-| X5 | 出现暗示人物存在的元素 |
-| X6 | 冷硬光线/强对比度 |
-| X7 | 过度高光/镜面反光 |
+| X1 | Complex scene backgrounds |
+| X2 | Prop and person appearing in the same image |
+| X3 | Any person appearing |
+| X4 | Prop being in a held/worn/in-use state |
+| X5 | Elements implying a person's presence |
+| X6 | Cold hard lighting/strong contrast |
+| X7 | Excessive highlights/mirror-like reflections |

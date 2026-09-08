@@ -1,315 +1,315 @@
 ---
 name: art_character_derivative
-description: 人物衍生资产生成 · 约束手册
+description: Character derivative asset generation · Constraint manual
 metaData: art_skills
 ---
 
-# 人物衍生资产生成 · 约束手册
+# Character Derivative Asset Generation · Constraint Manual
 
 ---
 
-## 一、叠加原则
+## 1. Overlay Principles
 
-1. **面容不变** — 叠加后五官必须与底模完全一致，禁止面容偏移
-2. **姿态不变** — 保持底模自然站立姿态，禁止任何姿态/动作/体态变化
-3. **逐层可控** — 每层独立描述，便于按层替换（换装不换妆）
-4. **风格统一** — 所有服化元素服从同一美学体系
-5. **质感不降** — 叠加后质感标准不低于底模
-6. **纯服化范畴** — 仅叠加妆容/发型/服饰/配饰，禁止引入道具、场景、环境、动作
-
----
-
-## 二、叠加层级
-
-| 层级 | 内容 | 说明 |
-|---|---|---|
-| L0 | 底模 | 基础形象底模，不修改 |
-| L1 | 妆容（决策层） | 先分析用户线索，再决策「基础妆 / 轻妆 / 正式妆」强度 |
-| L2 | 发型造型 | 发髻/束发/编发 + 发饰 |
-| L3 | 中衣/内搭 | 替换白色基础中衣 |
-| L4 | 外衣/主服 | 古风华服/礼服/常服等 |
-| L5 | 配饰 | 头饰/耳饰/项饰/腰饰/手饰 |
-
-> **范畴边界**：人物衍生资产仅包含 L0–L5 层级（服化妆造），不包含道具（伞/剑/扇/书/灯笼等手持物）、场景环境（室内/室外/天气等）、姿态动作（行走/回眸/举手等）。这些属于其他资产类型的范畴。
+1. **Face unchanged** — After overlay, the facial features must exactly match the base model; no facial drift allowed
+2. **Pose unchanged** — Keep the base model's natural standing pose; no change of pose/action/posture allowed
+3. **Layer-by-layer control** — Each layer is described independently, to allow per-layer replacement (change the outfit without changing the makeup)
+4. **Unified style** — All costume/makeup elements must follow the same aesthetic system
+5. **No texture degradation** — Texture quality after overlay must not fall below that of the base model
+6. **Costume/makeup scope only** — Only overlay makeup/hairstyle/clothing/accessories; introducing props, scenes, environments, or actions is forbidden
 
 ---
 
-## 三、妆容约束（L1）
+## 2. Overlay Layers
 
-### 底模到衍生妆造策略（关键）
-
-> 角色底模虽为素颜，但衍生资产默认进入妆造流程。系统应根据用户提供的线索分析妆造需求，并在基础妆、轻妆、正式妆之间决策强度，而不是保持素颜。
-
-### L1 线索分析与妆容决策
-
-| 步骤 | 处理内容 | 决策结果 |
+| Layer | Content | Description |
 |---|---|---|
-| S1 | 提取用户线索：面部状态词、情绪词、强度词 | 形成妆容需求摘要 |
-| S2 | 过滤非妆容线索：道具/场景/动作/姿态词不作为上妆依据 | 防止误判 |
-| S3 | 匹配妆容风格矩阵并给出强度档 | 基础妆 / 轻妆 / 正式妆 |
-| S4 | 生成最终 L1 提示词 | 只输出结论，不输出分析过程 |
+| L0 | Base model | Base image, not modified |
+| L1 | Makeup (decision layer) | First analyze user cues, then decide the intensity: "base makeup / light makeup / formal makeup" |
+| L2 | Hairstyle | Bun/tied hair/braid + hair ornaments |
+| L3 | Undergarment/inner layer | Replaces the white base undergarment |
+| L4 | Outer garment/main outfit | Traditional formal wear/gown/everyday wear, etc. |
+| L5 | Accessories | Headwear/earrings/necklace/waist ornament/hand jewelry |
 
-### 线索到妆容映射（执行口径）
-
-| 线索类型 | 典型线索 | L1 决策 |
-|---|---|---|
-| 无明显面部强调线索 | 仅服饰/发型变化，未强调情绪与状态 | 基础妆 |
-| 轻微面部线索 | 轻柔、含笑、睫毛轻颤、气色微提 | 轻妆（极淡） |
-| 明确日常线索 | 日常、外出、休闲 | 基础妆（自然清透） |
-| 明确正式仪式线索 | 大婚、典礼、重要场合 | 正式妆（精致华贵） |
-
-> 判定原则：所有衍生资产都要有妆造；先看面部线索决定强度与风格，道具、场景、姿态变化不得单独抬高妆容强度。
-
-### 女性妆容风格矩阵
-
-| 风格 | 适用场景 | 核心提示词 |
-|---|---|---|
-| 清雅素妆 | 日常、初遇、闺中 | 妆容清雅、淡扫蛾眉、素妆清颜 |
-| 宫廷贵气妆 | 宫廷、正式、权力 | 妆容精致、眉形锋利、唇色红润 |
-| 浪漫桃花妆 | 约会、心动、甜蜜 | 桃花妆、眼尾微红、唇色水润 |
-| 大婚盛妆 | 大婚、典礼 | 浓妆华美、朱唇凤眼 |
-| 节日庆典 | 庆典、聚会 | 色彩明亮、粉彩妆容 |
-
-### 通用底肤（所有妆容共享）
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 质感 | 赛璐璐平涂、自然透亮 | 赛璐璐质感、自然光泽、柔和质感 |
-| 白度 | 粉白基调、通透不惨白 | 粉白基调、白皙透亮 |
-| 内透光 | 从内向外柔光感 | 内透光感、皮肤通透发光 |
-| 禁止 | 哑光/死白/蜡感/油光/过曝 | — |
-
-### 基础妆细化（默认档）
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 眉部 | 顺着底模眉形轻修，不改变眉型 | 自然修眉、眉形干净 |
-| 眼部 | 极淡眼部修饰，强调清透与有神 | 眼部清透、极淡眼影 |
-| 面颊 | 极淡气色提亮，粉彩腮红 | 面颊气色自然、粉彩腮红 |
-| 唇部 | 浅粉或朱红润色，保持克制 | 唇色自然润泽、浅粉唇色 |
-| 整体 | 看得出有妆造，但妆感非常轻 | 基础妆、自然妆感、柔和质感 |
-
-### 男性妆容
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 底肤 | 赛璐璐平涂、白皙透亮、清爽自然 | 赛璐璐质感、白皙透亮、自然光泽 |
-| 原则 | 伪素颜——看着没化妆但皮肤极好 | 伪素颜、天生好皮 |
-| 眉毛 | 自然浓眉、不画眉 | 剑眉自然、眉形英挺 |
-| 唇色 | 自然血色、微润 | 唇色自然、血色感 |
+> **Scope boundary**: Character derivative assets only cover layers L0-L5 (costume, makeup, and styling) and do NOT include props (handheld items such as umbrellas/swords/fans/books/lanterns), scene environment (indoor/outdoor/weather, etc.), or pose/action (walking/glancing back/raising a hand, etc.). Those belong to other asset types.
 
 ---
 
-## 四、发型造型约束（L2）
+## 3. Makeup Constraints (L1)
 
-### 女性造型类型
+### Base-Model-to-Derivative Makeup Strategy (Key)
 
-| 造型 | 描述 | 适用 | 提示词 |
+> Although the character base model is bare-faced, derivative assets by default enter a makeup/styling process. The system should analyze makeup needs based on cues provided by the user, and decide on an intensity among base makeup, light makeup, and formal makeup — rather than staying bare-faced.
+
+### L1 Cue Analysis and Makeup Decision
+
+| Step | Processing | Decision Outcome |
+|---|---|---|
+| S1 | Extract user cues: facial-state words, emotion words, intensity words | Form a makeup-requirement summary |
+| S2 | Filter out non-makeup cues: prop/scene/action/pose words are not used as a basis for makeup | Prevents misjudgment |
+| S3 | Match against the makeup style matrix and assign an intensity level | Base makeup / light makeup / formal makeup |
+| S4 | Generate the final L1 prompt | Output only the conclusion, not the analysis process |
+
+### Cue-to-Makeup Mapping (Execution Standard)
+
+| Cue Type | Typical Cue | L1 Decision |
+|---|---|---|
+| No clear facial-emphasis cue | Only clothing/hairstyle change, no emphasis on emotion or state | Base makeup |
+| Slight facial cue | Gentle, smiling, lashes fluttering slightly, complexion slightly brightened | Light makeup (very subtle) |
+| Clear everyday cue | Everyday, going out, casual | Base makeup (natural and fresh) |
+| Clear formal/ceremonial cue | Wedding, ceremony, important occasion | Formal makeup (exquisite and lavish) |
+
+> Determination principle: All derivative assets must have makeup applied; facial cues are examined first to decide intensity and style — props, scenes, and pose changes must not independently raise the makeup intensity.
+
+### Female Makeup Style Matrix
+
+| Style | Applicable Scene | Core Prompt |
+|---|---|---|
+| Elegant plain makeup | Everyday, first meeting, in the boudoir | elegant plain makeup, lightly brushed moth eyebrows, natural fresh complexion |
+| Court noble makeup | Court, formal, power | exquisite makeup, sharp eyebrow shape, rosy lip color |
+| Romantic peach-blossom makeup | Date, heartthrob moment, sweetness | peach-blossom makeup, slightly reddened outer corners of the eyes, moist lip color |
+| Grand wedding makeup | Wedding, ceremony | lavish full makeup, vermilion lips and phoenix eyes |
+| Festival celebration | Celebration, gathering | bright colors, pastel makeup |
+
+### Common Base Skin (Shared Across All Makeup Styles)
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Texture | Cel-shaded flat color, naturally radiant | cel-shaded texture, natural sheen, soft texture |
+| Whiteness | Pinkish-white base tone, translucent, not deathly pale | pinkish-white base tone, fair and radiant |
+| Inner glow | Soft light glowing from within | inner glow, radiant translucent skin |
+| Forbidden | Matte / deathly pale / waxy / oily sheen / overexposed | — |
+
+### Base Makeup Detail (Default Level)
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Eyebrows | Lightly groomed following the base model's eyebrow shape, shape unchanged | naturally groomed eyebrows, clean eyebrow shape |
+| Eyes | Very subtle eye enhancement, emphasizing clarity and brightness | clear bright eyes, very subtle eyeshadow |
+| Cheeks | Very subtle complexion brightening, pastel blush | naturally healthy-looking cheeks, pastel blush |
+| Lips | Light pink or vermilion tint, kept restrained | naturally moist lip color, light pink lips |
+| Overall | Makeup should be noticeable but very light | base makeup, natural makeup look, soft texture |
+
+### Male Makeup
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Base skin | Cel-shaded flat color, fair and radiant, fresh and natural | cel-shaded texture, fair and radiant, natural sheen |
+| Principle | "Fake bare-faced" — looks like no makeup but skin is excellent | fake bare-faced look, naturally flawless skin |
+| Eyebrows | Naturally thick eyebrows, not drawn on | naturally sword-shaped eyebrows, heroic eyebrow shape |
+| Lip color | Naturally healthy color, slightly moist | naturally healthy lip color, blood-color tint |
+
+---
+
+## 4. Hairstyle Constraints (L2)
+
+### Female Style Types
+
+| Style | Description | Applicable To | Prompt |
 |---|---|---|---|
-| 高髻云鬓 | 高髻盘发 + 发饰 | 宫廷、正式 | 高髻云鬓、精致盘发 |
-| 双环髻 | 双环对称、少女 | 年轻角色 | 双环髻、少女风格 |
-| 堕马髻 | 侧偏低髻、慵懒 | 日常、休闲 | 堕马髻、慵懒侧髻 |
-| 披发 | 长发全散、自然 | 闺中、私密 | 长发散落、自然垂落 |
-| 束发高马尾 | 高束干练 | 习武、行动 | 高束马尾、干练利落 |
-| 半扎发 | 发顶半扎 + 后方垂发 | 日常、出行 | 半扎云髻、自然垂发 |
+| High cloud-bun | High bun + hair ornaments | Court, formal | high cloud-bun, exquisite updo |
+| Double-loop bun | Symmetrical double loops, youthful | Younger characters | double-loop bun, youthful style |
+| Falling-horse bun | Low side bun, languid | Everyday, casual | falling-horse bun, languid side bun |
+| Loose hair | All hair let down, natural | Boudoir, private moments | loose flowing hair, naturally cascading |
+| High tied ponytail | High and neat | Martial arts practice, action | high tied ponytail, neat and crisp |
+| Half-up hairstyle | Top half tied + hair hanging behind | Everyday, travel | half-up cloud bun, naturally hanging hair |
 
-### 女性发饰
+### Female Hair Ornaments
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 风格 | 华丽精致、与服饰配套 | 华丽发饰、精致工艺 |
-| 材质 | 金银 + 珠玉 + 流苏 | 金银发簪、珠翠满头 |
-| 工艺 | 细腻线条、细节清晰 | 精细工艺、细腻雕刻 |
+| Style | Ornate and exquisite, matching the outfit | ornate hair ornaments, exquisite craftsmanship |
+| Material | Gold and silver + pearls and jade + tassels | gold and silver hairpins, pearls and jade adornments |
+| Craftsmanship | Delicate lines, clear detail | fine craftsmanship, delicate carving |
 
-### 男性造型类型
+### Male Style Types
 
-| 造型 | 适用 | 提示词 |
+| Style | Applicable To | Prompt |
 |---|---|---|
-| 束发半冠 | 日常、文人 | 束发半冠、玉簪束发 |
-| 全冠高束 | 正式、朝堂 | 全冠高束、玉冠束发 |
-| 散发披肩 | 私密、受伤 | 散发披肩、长发如墨 |
-| 束发高马尾 | 战斗、习武 | 高束战发、马尾利落 |
+| Half-crowned tied hair | Everyday, scholarly | half-crowned tied hair, jade hairpin holding hair |
+| Full-crowned high tie | Formal, court | full-crowned high tie, jade crown holding hair |
+| Loose hair over the shoulders | Private, injured | loose hair over the shoulders, hair like ink |
+| High tied ponytail | Combat, martial arts practice | high combat ponytail, neat ponytail |
 
 ---
 
-## 五、服饰约束（L3+L4）
+## 5. Clothing Constraints (L3+L4)
 
-### 女性服饰矩阵
+### Female Clothing Matrix
 
-| 风格 | 款式 | 适用 | 提示词 |
+| Style | Silhouette | Applicable To | Prompt |
 |---|---|---|---|
-| 古装长裙 | 长裙、飘逸 | 日常、闺中 | 古装长裙、飘逸衣裙 |
-| 宫廷礼服 | 礼服、华丽 | 宫廷、正式 | 宫廷礼服、华贵裙装 |
-| 轻便常服 | 短衫、轻便 | 行动、习武 | 轻便常服、短衫 |
-| 寝衣 | 薄纱内衫、素色 | 室内、夜间 | 寝衣、宽松舒适 |
-| 大婚嫁衣 | 凤冠霞帔、层叠红装 | 婚礼 | 凤冠霞帔、层叠红裳 |
+| Traditional long dress | Long dress, flowing | Everyday, boudoir | traditional long dress, flowing robes |
+| Court gown | Gown, ornate | Court, formal | court gown, luxurious dress |
+| Light everyday wear | Short jacket, lightweight | Action, martial arts practice | light everyday wear, short jacket |
+| Sleepwear | Sheer inner garment, plain-colored | Indoor, nighttime | sleepwear, loose and comfortable |
+| Grand wedding attire | Phoenix coronet and cape, layered red garments | Wedding | phoenix coronet and cape, layered red robes |
 
-### 女性服饰通用约束
+### Female Clothing General Constraints
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 主色 | 中国传统色调为默认 | 中国传统色调衣服、精致服饰 |
-| 材质 | 丝绸 + 刺绣 + 珠光面料 | 丝绸质感、刺绣细节 |
-| 质感 | 纹理必须超清晰 | 衣服质感清晰、纹理超清晰 |
-| 肩部 | 披帛/云肩/装饰 | 云肩华美、肩头有装饰 |
-| 层次 | 多层叠穿、层次分明 | 多层叠穿、层次分明 |
+| Primary color | Traditional Chinese color tones by default | traditional Chinese-toned clothing, exquisite attire |
+| Material | Silk + embroidery + pearlescent fabric | silk texture, embroidery detail |
+| Texture | Fabric texture must be ultra-clear | clear clothing texture, ultra-clear fabric detail |
+| Shoulders | Shawl/cloud-collar/decoration | ornate cloud-collar, shoulder decoration |
+| Layering | Multiple layers, clearly defined layering | multiple layers, clearly defined layering |
 
-### 男性服饰矩阵
+### Male Clothing Matrix
 
-| 风格 | 适用 | 提示词 |
+| Style | Applicable To | Prompt |
 |---|---|---|
-| 文人士子装 | 日常、书房 | 文人士子装、长衫 |
-| 武将劲装 | 战斗、练武 | 武将劲装、战袍 |
-| 朝服 | 朝堂、典礼 | 朝服、正式礼服 |
-| 常服便装 | 休闲、私密 | 常服便装、简约风格 |
-| 礼服 | 正式、庆典 | 礼服、华贵精致 |
+| Scholar's attire | Everyday, study | scholar's attire, long robe |
+| Warrior's fighting garb | Combat, martial arts training | warrior's fighting garb, battle robe |
+| Court attire | Court, ceremony | court attire, formal ceremonial robe |
+| Everyday casual wear | Leisure, private moments | everyday casual wear, simple style |
+| Formal gown | Formal, celebration | formal gown, luxurious and exquisite |
 
 ---
 
-## 六、配饰约束（L5）
+## 6. Accessory Constraints (L5)
 
-### 女性配饰
+### Female Accessories
 
-| 类型 | 约束 | 提示词 |
+| Type | Constraint | Prompt |
 |---|---|---|
-| 头饰 | 华丽精致、不单薄 | 华丽头饰、珠翠满头 |
-| 耳饰 | 垂坠流苏/玉珰 | 流苏耳环、玉珰垂坠 |
-| 项饰 | 璎珞/项圈 | 璎珞华美、精致项圈 |
-| 腰饰 | 宫绦/玉佩 | 宫绦飘逸、腰间玉佩 |
-| 手饰 | 玉镯/臂钏 | 玉镯通透、臂钏精致 |
+| Headwear | Ornate and exquisite, not sparse | ornate headwear, pearls and jade adornments |
+| Earrings | Drooping tassels/jade earrings | tasseled earrings, drooping jade earrings |
+| Necklace | Beaded pendant/collar necklace | ornate beaded pendant, exquisite collar necklace |
+| Waist ornament | Court sash/jade pendant | flowing court sash, jade pendant at the waist |
+| Hand jewelry | Jade bracelet/armlet | translucent jade bracelet, exquisite armlet |
 
-### 男性配饰
+### Male Accessories
 
-| 类型 | 约束 | 提示词 |
+| Type | Constraint | Prompt |
 |---|---|---|
-| 发冠 | 玉冠/金冠、精致 | 玉冠束发 |
-| 腰封 | 宽腰封/革带 | 宽腰封、质感分明 |
-| 玉佩 | 通透温润 | 腰间玉佩 |
-| 兵器 | 佩剑/扇/笛（可选） | 长剑在侧、折扇半掩 |
+| Hair crown | Jade crown/gold crown, exquisite | jade crown holding hair |
+| Waist belt | Wide waist belt/leather belt | wide waist belt, distinct texture |
+| Jade pendant | Translucent and warm | jade pendant at the waist |
+| Weapon | Sword/fan/flute (optional) | long sword at the side, folded fan half-open |
 
 ---
 
-## 七、服化组合速查
+## 7. Costume/Makeup Combination Quick Reference
 
-| 场景 | 妆容 | 发型 | 服饰 | 配饰 |
+| Scene | Makeup | Hairstyle | Clothing | Accessories |
 |---|---|---|---|---|
-| 闺中日常 | 清雅素妆 | 披发/半扎发 | 古装长裙 | 中等 |
-| 初次相遇 | 清雅素妆 | 半扎发/堕马髻 | 古装长裙 | 中偏多 |
-| 浪漫互动 | 浪漫桃花妆 | 半扎发/堕马髻 | 古装长裙/轻便 | 中等 |
-| 正式亮相 | 宫廷贵气妆 | 高髻云鬓 | 宫廷礼服 | 极繁 |
-| 夜间私密 | 清雅/桃花妆 | 披发/堕马髻 | 寝衣 | 极简 |
-| 大婚典礼 | 大婚盛妆 | 高髻云鬓 | 嫁衣 | 极繁 |
-| 习武行动 | 素妆（极淡） | 束发马尾 | 轻便常服 | 简 |
+| Everyday boudoir | Elegant plain makeup | Loose hair / half-up hairstyle | Traditional long dress | Moderate |
+| First meeting | Elegant plain makeup | Half-up hairstyle / falling-horse bun | Traditional long dress | Moderate to slightly heavy |
+| Romantic interaction | Romantic peach-blossom makeup | Half-up hairstyle / falling-horse bun | Traditional long dress / light everyday wear | Moderate |
+| Formal appearance | Court noble makeup | High cloud-bun | Court gown | Very ornate |
+| Private nighttime moment | Elegant / peach-blossom makeup | Loose hair / falling-horse bun | Sleepwear | Minimal |
+| Wedding ceremony | Grand wedding makeup | High cloud-bun | Wedding attire | Very ornate |
+| Martial arts practice/action | Plain makeup (very subtle) | Tied ponytail | Light everyday wear | Simple |
 
 ---
 
-> **🔍 未覆盖场景推断规则**
+> **Rule for inferring uncovered scenes**
 >
-> 当用户描述的场景/情境不在上表时，根据本风格核心基因自行推断：
+> When the scene/situation described by the user is not in the table above, infer based on this style's core genes:
 >
-> | 推断维度 | 国风二次元基因 |
+> | Inference Dimension | Guofeng Anime Genes |
 > |---|---|
-> | 妆容强度 | 默认清雅素妆；有节日/仪式/正式关键词→宫廷贵气妆；有甜宠/心动词→桃花妆 |
-> | 发型 | 日常/闺中→半扎发或堕马髻；正式/亮相→高髻云鬓；私密/夜晚→披发；行动→束发马尾 |
-> | 服饰 | 情感戏/日常→古装长裙（轻柔飘逸）；权力/正式→宫廷礼服；行动/武斗→轻便常服 |
-> | 配饰繁度 | 日常→中等；正式→极繁（珠翠发饰+璎珞+腰饰）；私密/休闲→简；行动→简 |
-> | 色调倾向 | 中国传统色为锚（霜白/月白/朱砂/靛蓝）；夜景/私密→降饱和；喜庆→暖红+金 |
+> | Makeup intensity | Default: elegant plain makeup; festival/ceremonial/formal keywords → court noble makeup; sweet/romantic/heartthrob words → peach-blossom makeup |
+> | Hairstyle | Everyday/boudoir → half-up hairstyle or falling-horse bun; formal/appearance → high cloud-bun; private/nighttime → loose hair; action → tied ponytail |
+> | Clothing | Emotional scenes/everyday → traditional long dress (soft and flowing); power/formal → court gown; action/combat → light everyday wear |
+> | Accessory density | Everyday → moderate; formal → very ornate (pearl/jade hair ornaments + beaded pendant + waist ornament); private/casual → simple; action → simple |
+> | Color tendency | Anchored to traditional Chinese colors (frost white/moon white/cinnabar red/indigo blue); night scenes/private → lower saturation; festive → warm red + gold |
 
-## 八、四视图设定图规范
+## 8. Four-View Reference Sheet Specification
 
-> 衍生服化叠加后仍需输出四视图设定图，确保服化妆造在各角度的一致性。
+> After the derivative costume/makeup overlay, a four-view reference sheet must still be produced, ensuring consistency of the costume/makeup/styling across all angles.
 
-### 视图定义
+### View Definitions
 
-| 位置 | 视图 | 角度 | 景别 | 要求 | 提示词 |
+| Position | View | Angle | Shot Type | Requirement | Prompt |
 |---|---|---|---|---|---|
-| 左一 | 人像特写 | 正面平视 | 面部至锁骨 | 面部占60%+，五官/妆容清晰 | portrait closeup、face detail、makeup detail |
-| 左二 | 正视图 | 正面 0° | 全身立像 | 面对镜头、服饰正面全貌 | front view、height mark |
-| 右二 | 侧视图 | 右侧 90° | 全身立像 | 纯侧面轮廓、服饰侧面层次 | side view、profile、height mark |
-| 右一 | 后视图 | 后方 180° | 全身立像 | 后脑发饰/背部服饰/发尾清晰 | back view、rear view、height mark |
+| Far left | Portrait close-up | Front, eye level | Face to collarbone | Face occupies 60%+, facial features/makeup clear | portrait closeup, face detail, makeup detail |
+| Second from left | Front view | Front 0° | Full-body standing pose | Facing the camera, full front view of the outfit | front view, height mark |
+| Second from right | Side view | Right side 90° | Full-body standing pose | Pure profile silhouette, side-view layering of the outfit | side view, profile, height mark |
+| Far right | Back view | Rear 180° | Full-body standing pose | Back hair ornaments/back of the outfit/hair ends clearly shown | back view, rear view, height mark |
 
-### 画面规范
+### Composition Specification
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面从左至右并排四视图 |
-| 背景 | 月白纯色 #E8EAF5 |
-| 站姿 | 自然站立、双脚平行微分、双臂自然下垂或微展（**禁止任何姿态变化**） |
-| 表情 | 符合妆容风格的微表情（如清雅素妆→淡然、桃花妆→含笑），仅限面部微表情，不涉及肢体动作 |
-| 光线 | 均匀柔光，前方主光 + 双侧补光，无硬阴影 |
-| 一致性 | 四视图的面容/妆容/发型/发饰/服饰/配饰完全一致 |
-| 画面比例 | 建议 4:1 或 3:1 |
+| Layout | Four views arranged side by side, left to right, in one frame |
+| Background | Plain moon-white color #E8EAF5 |
+| Stance | Standing naturally, feet parallel and slightly apart, arms hanging naturally or slightly extended (**any change of pose is forbidden**) |
+| Expression | A subtle expression matching the makeup style (e.g. elegant plain makeup → composed, peach-blossom makeup → smiling); facial micro-expression only, no body movement involved |
+| Lighting | Even soft light, key light from the front + fill light from both sides, no hard shadows |
+| Consistency | Face/makeup/hairstyle/hair ornaments/clothing/accessories must be fully consistent across all four views |
+| Aspect ratio | 4:1 or 3:1 recommended |
 
 ---
 
-## 九、提示词模板
+## 9. Prompt Template
 
-### 输出格式约束
+### Output Format Constraints
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 输出内容 | **仅输出提示词文本**，不输出任何其他内容 |
-| 禁止输出 | 速查表、分层构建方案、视觉约束表、禁止事项表、衍生方案、输出建议、核心要素表等一切非提示词内容 |
-| 禁止场景 | 人物衍生资产**不包含场景/环境描述**，不输出任何场景/环境/天气/背景叙事内容（场景属于场景资产范畴） |
-| 禁止道具 | **不包含任何道具交互**，不输出伞/剑/扇/书/灯笼/酒杯等手持物或交互物（道具属于道具资产范畴） |
-| 禁止姿态变化 | **不改变底模姿态**，不输出行走/回眸/举手/侧身/奔跑等任何动作或体态变化，保持自然站立 |
-| 格式 | 直接输出可用的提示词代码块，无需标题、表格、解释、方案对比 |
+| Output content | **Output only the prompt text**, nothing else |
+| Forbidden output | Quick-reference tables, layered construction plans, visual constraint tables, prohibition tables, derivative plans, output suggestions, core-element tables, or any other non-prompt content |
+| Forbidden scenes | Character derivative assets **do not include scene/environment descriptions** — do not output any scene/environment/weather/background narrative content (scenes belong to the scene asset category) |
+| Forbidden props | **No prop interaction of any kind** — do not output handheld or interactive items such as umbrellas/swords/fans/books/lanterns/wine cups (props belong to the prop asset category) |
+| Forbidden pose changes | **Do not change the base model's pose** — do not output any action or posture change such as walking/glancing back/raising a hand/turning sideways/running; keep the natural standing pose |
+| Format | Output the usable prompt code block directly, with no title, table, explanation, or plan comparison |
 
-### 完整服化叠加（四视图）
+### Full Costume/Makeup Overlay (Four Views)
 
-以角色基础形象图为底图，img2img叠加服化妆造，
-国风二次元，新国潮美学，日式动画渲染，赛璐璐平涂，细腻笔触，
-古风{性别}角色四视图设定图，国风二次元，赛璐璐上色，8K，超保真
+Using the character base image as the base, img2img overlay of costume, makeup, and styling,
+guofeng anime, new Chinese-chic aesthetics, Japanese-style anime rendering, cel-shaded flat color, delicate brushwork,
+traditional {gender} character four-view reference sheet, guofeng anime, cel-shaded coloring, 8K, ultra-high fidelity
 character design sheet, character turnaround,
-保持基础形象面容不变，{整体气质},
-【L1·妆容】根据用户线索决策：{基础妆/轻妆/正式妆}；使用 {妆容风格}, 赛璐璐平涂, {眉妆}, {眼妆}, {唇妆},
-【L2·发型】{造型类型}, 细腻发丝清晰, {发饰描述},
-【L3+L4·服饰】{主色}{款式}, {材质}, {装饰工艺}, 衣服质感清晰, 赛璐璐平涂,
-【L5·配饰】{头饰}, {耳饰}, {项饰}, {腰饰},
-同一画面左至右并排：人像特写+正视图+侧视图+后视图,
-自然站立, 月白纯色背景, 均匀柔光, 无硬阴影,
-四视图一致性, 国风二次元造型清晰, 细腻线条清晰,
-图中不要有任何文字
+keep the base model's face unchanged, {overall temperament},
+[L1 · Makeup] decided based on user cues: {base makeup / light makeup / formal makeup}; use {makeup style}, cel-shaded flat color, {eyebrow makeup}, {eye makeup}, {lip makeup},
+[L2 · Hairstyle] {style type}, delicate clearly-defined hair strands, {hair ornament description},
+[L3+L4 · Clothing] {primary color}{silhouette}, {material}, {decorative craftsmanship}, clear clothing texture, cel-shaded flat color,
+[L5 · Accessories] {headwear}, {earrings}, {necklace}, {waist ornament},
+in one frame, side by side left to right: portrait close-up + front view + side view + back view,
+standing naturally, plain moon-white background, even soft light, no hard shadows,
+four-view consistency, clear guofeng anime design, clear delicate lines,
+no text of any kind in the image
 
 ---
 
-## 十、约束规则
+## 10. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 叠加后面容必须与底模一致 |
-| R2 | 服饰必须用「衣服质感清晰 + 赛璐璐平涂」 |
-| R3 | 女性配饰必须「华丽精致 + 工艺精细」 |
-| R4 | 妆容/发型/服饰/配饰风格统一 |
-| R5 | 必须输出四视图设定图（人像特写+正视图+侧视图+后视图） |
-| R6 | 必须指定「月白纯色背景」 |
-| R7 | 必须指定「四视图一致性」 |
-| R8 | **仅输出提示词**——禁止输出速查表/分层方案/视觉约束/禁止事项/衍生方案/输出建议等任何非提示词内容 |
-| R9 | **禁止包含场景描述**——人物衍生资产不涉及场景/环境/天气/背景叙事，场景属于独立资产类型 |
-| R10 | **禁止道具交互**——不包含任何手持物/交互物（伞/剑/扇/书等），道具属于独立资产类型 |
-| R11 | **姿态保持不变**——必须保持底模自然站立姿态，禁止任何动作/体态/姿势变化 |
-| R12 | **L1 必须先分析再决策**——先解析用户面部线索，再确定基础妆/轻妆/正式妆 |
-| R13 | **所有衍生资产均需妆造**——正常情况不保持素颜，至少使用基础妆 |
-| R14 | **上妆强度受控**——即使上妆也需克制，不得出现现代浓妆/夸张彩妆效果 |
-| R15 | **道具/场景/动作不作强度升级依据**——仅凭道具，环境，动作等信息不得把基础妆抬高为更强妆容 |
+| R1 | The face after overlay must match the base model |
+| R2 | Clothing must use "clear clothing texture + cel-shaded flat color" |
+| R3 | Female accessories must be "ornate and exquisite + finely crafted" |
+| R4 | Makeup/hairstyle/clothing/accessories must share a unified style |
+| R5 | A four-view reference sheet must be output (portrait close-up + front view + side view + back view) |
+| R6 | Must specify a "plain moon-white background" |
+| R7 | Must specify "four-view consistency" |
+| R8 | **Output only the prompt** — outputting quick-reference tables/layered plans/visual constraints/prohibitions/derivative plans/output suggestions or any other non-prompt content is forbidden |
+| R9 | **No scene description allowed** — character derivative assets do not involve scene/environment/weather/background narrative; scenes are a separate asset type |
+| R10 | **No prop interaction allowed** — do not include any handheld/interactive items (umbrella/sword/fan/book, etc.); props are a separate asset type |
+| R11 | **Pose must remain unchanged** — the base model's natural standing pose must be kept; any change of action/posture/pose is forbidden |
+| R12 | **L1 must analyze before deciding** — first parse the user's facial cues, then determine base makeup/light makeup/formal makeup |
+| R13 | **All derivative assets require makeup/styling** — normally do not remain bare-faced; at minimum use base makeup |
+| R14 | **Makeup intensity must be controlled** — even when applying makeup, keep it restrained; modern heavy makeup or exaggerated cosmetic effects must not appear |
+| R15 | **Props/scenes/actions must not be used to escalate intensity** — props, environment, action information alone must not raise base makeup to a stronger makeup level |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibition |
 |---|---|
-| X1 | 叠加后面容偏移 |
-| X2 | 配饰过于简单/现代化（女性） |
-| X3 | 妆容/服饰风格互相冲突 |
-| X4 | 复杂场景背景（必须纯色） |
-| X5 | 四视图间服化妆造不一致 |
-| X6 | 输出提示词以外的任何内容（表格/方案/建议/解释/变体等） |
-| X7 | 在人物衍生资产中加入场景描述（街景/雨景/室内/街道/天气等环境元素） |
-| X8 | 输出「核心要素速查」「分层构建方案」「视觉约束」「禁止事项」「衍生方案」等章节 |
-| X9 | 加入任何道具交互（手持伞/剑/扇/书/灯笼/酒杯等物品） |
-| X10 | 改变底模姿态（行走/回眸/举手/侧身/奔跑/低头/仰望等动作描述） |
-| X11 | 加入表情与姿态联动描述（如「侧身45°行走嘴角浅弯」等叙事性描写） |
-| X12 | 未分析用户线索就直接套用固定妆容 |
-| X13 | 错误保持素颜，导致衍生资产缺少应有妆造 |
-| X14 | 仅因道具/场景/动作词而误把妆容升级，导致妆造强度决策错误 |
+| X1 | Facial drift after overlay |
+| X2 | Accessories that are too simple/modernized (female) |
+| X3 | Makeup/clothing styles that conflict with each other |
+| X4 | Complex scene backgrounds (must be a plain color) |
+| X5 | Inconsistent costume/makeup/styling between the four views |
+| X6 | Outputting anything besides the prompt (tables/plans/suggestions/explanations/variants, etc.) |
+| X7 | Including scene descriptions in character derivative assets (street scenes/rain scenes/interiors/streets/weather or other environmental elements) |
+| X8 | Outputting sections such as "core element quick reference," "layered construction plan," "visual constraints," "prohibitions," or "derivative plans" |
+| X9 | Including any prop interaction (holding an umbrella/sword/fan/book/lantern/wine cup, etc.) |
+| X10 | Changing the base model's pose (action descriptions such as walking/glancing back/raising a hand/turning sideways/running/lowering the head/looking up) |
+| X11 | Including descriptions that link expression with pose (narrative descriptions such as "walking at a 45° angle with a slight smile") |
+| X12 | Applying a fixed makeup style directly without first analyzing the user's cues |
+| X13 | Incorrectly remaining bare-faced, causing the derivative asset to lack the makeup/styling it should have |
+| X14 | Mistakenly escalating the makeup level purely because of prop/scene/action words, resulting in an incorrect makeup-intensity decision |
