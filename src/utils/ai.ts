@@ -161,6 +161,25 @@ async function withTaskRecord<T>(
   }
 }
 
+async function getUserIdForProject(projectId?: number): Promise<number | null> {
+  if (!projectId) return null;
+  const project = await u.db("o_project").where("id", projectId).first();
+  return project?.userId ?? null;
+}
+
+// เช็คเครดิตก่อนยิงงานจริง (กันเปลืองต้นทุนถ้าเครดิตไม่พอ) แล้วหักหลังงานสำเร็จ
+async function chargeCredits(taskRecord: TaskRecord | undefined, estimateCredits: () => Promise<number>, refId: string): Promise<() => Promise<void>> {
+  const userId = await getUserIdForProject(taskRecord?.projectId);
+  if (!userId) return async () => {}; // ไม่มีผู้ใช้ที่ระบุได้ (เช่นเรียกตรงไม่ผ่าน taskRecord) ข้ามระบบเครดิต
+  const cost = await estimateCredits().catch(() => 0);
+  if (cost > 0 && !(await u.credits.hasEnoughCredits(userId, cost))) {
+    throw new Error("เครดิตไม่เพียงพอ กรุณาเติมเครดิตก่อนใช้งาน");
+  }
+  return async () => {
+    if (cost > 0) await u.credits.adjustCredits(userId, -cost, "generation", refId, undefined).catch(() => {});
+  };
+}
+
 async function urlToBase64(url: string, retries = 3, delay = 1000): Promise<string> {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
@@ -251,6 +270,7 @@ class AiImage {
   }
   async run(input: ImageConfig, taskRecord?: TaskRecord) {
     const modelName = await resolveModelName(this.key);
+    const settle = await chargeCredits(taskRecord, () => u.pricing.creditsForImage(modelName.split(/:(.+)/)[1]), modelName);
     const exec = async (mn: `${string}:${string}`) => {
       const fn = await getVendorTemplateFn("imageRequest", mn);
       await referenceList2imageBase642(mn.split(/:(.+)/)[0], input);
@@ -260,9 +280,11 @@ class AiImage {
     };
     if (taskRecord) {
       await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
+      await settle();
       return this;
     }
     await exec(modelName);
+    await settle();
     return this;
   }
   async save(path: string) {
@@ -297,6 +319,11 @@ class AiVideo {
   }
   async run(input: VideoConfig, taskRecord?: TaskRecord) {
     const modelName = await resolveModelName(this.key);
+    const settle = await chargeCredits(
+      taskRecord,
+      () => u.pricing.creditsForVideo(modelName.split(/:(.+)/)[1], input.duration),
+      modelName,
+    );
     try {
       const exec = async (mn: `${string}:${string}`) => {
         const fn = await getVendorTemplateFn("videoRequest", mn);
@@ -308,9 +335,11 @@ class AiVideo {
       };
       if (taskRecord) {
         await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
+        await settle();
         return this;
       }
       await exec(modelName);
+      await settle();
       return this;
     } catch (e) {
       throw e;
@@ -329,6 +358,11 @@ class AiAudio {
   }
   async run(input: VideoConfig, taskRecord?: TaskRecord) {
     const modelName = await resolveModelName(this.key);
+    const settle = await chargeCredits(
+      taskRecord,
+      () => u.pricing.creditsForTts(modelName.split(/:(.+)/)[1], input.prompt?.length ?? 0),
+      modelName,
+    );
     const exec = async (mn: `${string}:${string}`) => {
       try {
         const fn = await getVendorTemplateFn("ttsRequest", mn);
@@ -340,9 +374,13 @@ class AiAudio {
       } catch (e) {}
     };
     if (taskRecord) {
-      return withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
+      const r = await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
+      await settle();
+      return r;
     }
-    return await exec(modelName);
+    const r = await exec(modelName);
+    await settle();
+    return r;
   }
   async save(path: string) {
     await u.oss.writeFile(path, this.result);

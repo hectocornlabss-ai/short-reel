@@ -1,156 +1,156 @@
 ---
 name: director_storyboard
-description: 导演分镜提示词技法 · 90年代日式动画质感
+description: Director storyboard prompt technique · 90s Japanese anime texture
 metaData: director_skills
 ---
 
-# 分镜提示词 · 90年代日式动画 · 风格专属技法
+# Storyboard Prompt · 90s Japanese Anime · Style-Specific Technique
 
 ---
 
-## 适用范围
+## Scope
 
-本 Skill 专用于**90年代日式动画质感**风格的分镜提示词生成。
+This Skill is dedicated to generating storyboard prompts for the **90s Japanese anime texture** style.
 
 ---
 
-## 情绪 → 面容/眼神词映射
+## Emotion → Facial Expression/Eyes Word Mapping
 
-| 情绪输入 | 面容词 | 眼神词 | 微表情补充 |
+| Emotion Input | Facial Words | Eye Words | Micro-expression Supplement |
 |----------|--------|--------|-----------|
-| 心动 / 欣喜 | 嘴角微扬，脸颊微红 | 眼神明亮，目光温柔 | 眼睛弯月形，表情含蓄 |
-| 悲伤 / 失落 | 神情低落，眼眶微红 | 眼神黯淡，目光游离 | 眉心轻蹙，表情内敛 |
-| 惊讶 / 震惊 | 神情微愣，眼睛放大 | 眼神惊讶，目光集中 | 眉毛上扬，表情生动 |
-| 温柔 / 深情 | 神情柔和，眉眼温润 | 眼神专注，目光深情 | 嘴角轻扬，表情克制温暖 |
-| 坚定 / 决绝 | 神情严肃，眼神坚定 | 目光清澈，眼神专注 | 表情坚定，气质清亮 |
-| 害羞 / 羞涩 | 脸颊泛红，眼神躲闪 | 目光低垂，不敢直视 | 手指轻触脸颊，表情自然 |
-| 温暖 / 感动 | 表情柔和，眼角带笑 | 眼神温暖，目光柔和 | 嘴角上扬，表情真诚 |
-| 孤独 / 怀念 | 神情安静，眼神悠远 | 目光放空，若有所思 | 表情平静，气质安静 |
-| 快乐 / 雀跃 | 笑容灿烂，眼睛弯月 | 眼神明亮，表情生动 | 双手张开，动作轻快 |
-| 紧张 / 不安 | 表情略显僵硬，眉头微皱 | 眼神游离，目光不确定 | 手指轻捏衣角，动作自然 |
+| Infatuation / Delight | corners of the mouth slightly raised, cheeks faintly flushed | bright eyes, gentle gaze | crescent-shaped eyes, subtle expression |
+| Sadness / Dejection | downcast expression, eyes slightly reddened | dim gaze, wandering eyes | brow slightly furrowed, restrained expression |
+| Surprise / Shock | stunned expression, eyes widened | surprised gaze, focused eyes | eyebrows raised, vivid expression |
+| Tenderness / Deep affection | soft expression, gentle brow and eyes | focused gaze, affectionate eyes | corners of mouth slightly raised, restrained warm expression |
+| Determination / Resolve | serious expression, resolute eyes | clear gaze, focused eyes | firm expression, bright bearing |
+| Shyness / Bashfulness | flushed cheeks, evasive eyes | downcast gaze, avoiding eye contact | fingers lightly touching cheek, natural expression |
+| Warmth / Being moved | soft expression, smiling eye corners | warm gaze, gentle eyes | corners of mouth raised, sincere expression |
+| Loneliness / Nostalgia | quiet expression, distant gaze | vacant gaze, lost in thought | calm expression, quiet bearing |
+| Happiness / Joy | radiant smile, crescent-shaped eyes | bright eyes, vivid expression | arms spread open, light movements |
+| Nervousness / Unease | slightly stiff expression, brow slightly furrowed | wandering gaze, uncertain eyes | fingers lightly pinching hem of clothing, natural movement |
 
 ---
 
-## 光影氛围词库（90年代日式动画）
+## Lighting Mood Word Library (90s Japanese Anime)
 
-### 时间段光线
+### Time-of-Day Lighting
 
-| 时间段 | 主光词 | 色调词 | 气氛词 |
+| Time of Day | Key Light Words | Tone Words | Mood Words |
 |--------|--------|--------|---------|
-| 清晨 | 柔和晨光，散射光线 | 暖黄调 + 淡蓝点缀 | 清新感，光线透过树叶 |
-| 午后 | 柔和斜侧光，漫射光线 | 暖调为主 | 光影斑驳，温暖感 |
-| 黄昏/日落 | 逆光暖调，橙色余晖 | 琥珀暖 + 粉色点缀 | 长影拉伸，怀旧感 |
-| 夜间 | 月光冷调，局部暖光 | 淡蓝主调 + 暖色点缀 | 静谧感，光影层次 |
-| 雨天 | 漫射冷光，均匀柔和 | 灰蓝调 + 暖色局部 | 湿润感，清新感 |
-| 回忆/闪回 | 柔焦暖光，雾化效果 | 暖黄为主，轻微褪色 | 怀旧感，模糊边缘 |
+| Early morning | soft morning light, diffused light | warm yellow tone + pale blue accents | fresh feel, light filtering through leaves |
+| Afternoon | soft oblique side light, diffused light | predominantly warm tone | dappled light, warm feel |
+| Dusk/sunset | warm backlight, orange afterglow | amber warmth + pink accents | elongated shadows, nostalgic feel |
+| Night | cool moonlight, local warm light | pale blue main tone + warm accents | quiet feel, layered lighting |
+| Rainy day | diffused cool light, evenly soft | gray-blue tone + local warm accents | damp feel, fresh feel |
+| Memory/flashback | soft-focus warm light, hazy effect | predominantly warm yellow, slightly faded | nostalgic feel, blurred edges |
 
-### 情绪光影
+### Emotional Lighting
 
-| 情绪基调 | 光线类型 | 补充约束 |
+| Emotional Tone | Light Type | Supplementary Constraint |
 |----------|----------|---------|
-| 心动/温情 | 柔和侧光，暖调漫射 | 浅景深，背景轻微虚化 |
-| 悲伤/失落 | 冷调侧光，低调打光 | 面部局部暗部留存 |
-| 怀旧/回忆 | 柔焦暖光，雾化效果 | 边缘轻微模糊，整体柔和 |
-| 浪漫/甜蜜 | 逆光暖调，轮廓光 | 暖色光晕，背景轻微过曝 |
-| 日常/温馨 | 均匀漫射光，中性暖调 | 光线柔和，无明显阴影 |
-| 夜晚/静谧 | 月光冷调，局部暖光 | 明暗对比，层次清晰 |
+| Infatuation/tenderness | soft side light, warm diffusion | shallow depth of field, slightly blurred background |
+| Sadness/dejection | cool side light, low-key lighting | localized dark areas retained on the face |
+| Nostalgia/memory | soft-focus warm light, hazy effect | slightly blurred edges, overall softness |
+| Romance/sweetness | warm backlight, rim light | warm light bloom, slightly overexposed background |
+| Everyday/warmth | even diffuse light, neutral warm tone | soft light, no obvious shadows |
+| Night/quiet | cool moonlight, local warm light | light/dark contrast, clear layering |
 
 ---
 
-## 场景质感约束词（按场景类型）
+## Scene Texture Constraint Words (by Scene Type)
 
-| 场景类型 | 必加约束词 |
+| Scene Type | Required Constraint Words |
 |----------|-----------|
-| 日式学校 | 木质地板纹理，黑板粉笔字，窗外绿树，教室窗户格子 |
-| 日式住宅 | 榻榻米纹理，拉门木质边框，暖色灯光，和室布局 |
-| 街道/广场 | 石板路面，电线杆，便利店招牌，自行车停放 |
-| 咖啡馆/餐厅 | 木质桌椅，暖色吊灯，窗外街景，咖啡杯细节 |
-| 公园/绿地 | 草地纹理，树木阴影，长椅，远处建筑 |
-| 电车/车厢 | 座椅布料，车窗反光，窗外风景，拉手细节 |
-| 卧室/私密空间 | 床铺褶皱，台灯暖光，书桌文具，生活气息 |
-| 神社/寺庙 | 鸟居木柱，石板路，枫叶/樱花，香炉烟雾 |
+| Japanese school | wooden floor texture, chalk writing on blackboard, green trees outside window, classroom window grid |
+| Japanese residence | tatami texture, wooden-framed sliding doors, warm-colored lighting, Japanese-style room layout |
+| Street/plaza | stone-paved road, utility poles, convenience store signage, parked bicycles |
+| Cafe/restaurant | wooden tables and chairs, warm-colored pendant lights, street view through the window, coffee cup detail |
+| Park/green space | grass texture, tree shadows, bench, distant buildings |
+| Train/train car | seat fabric, window reflections, scenery outside the window, handstrap detail |
+| Bedroom/private space | rumpled bedding, warm desk-lamp light, desk stationery, lived-in feel |
+| Shrine/temple | torii wooden pillars, stone path, maple leaves/cherry blossoms, incense-burner smoke |
 
 ---
 
-## 固定风格锚定词（所有输出必须包含）
+## Fixed Style Anchor Words (must be included in all outputs)
 
-**90年代动画锚定（必选）：**
+**90s anime anchor (required):**
 
-90年代日式动画风格，手绘质感，平涂上色，清晰流畅线条，柔和暖色调
+90s Japanese anime style, hand-drawn texture, flat coloring, clear fluid lines, soft warm tones
 
-**线条质感（所有输出必选）：**
+**Line texture (required for all outputs):**
 
-精细流畅线条，轮廓线清晰，线条均匀一致，无断线无粗糙边缘
+fine flowing linework, clear outlines, uniform consistent lines, no broken lines or rough edges
 
-**上色质感（含人物镜头时必选）：**
+**Coloring texture (required when characters are in frame):**
 
-平涂上色，色彩均匀，无明显渐变，色彩饱和适中
+flat coloring, even color, no obvious gradients, moderate color saturation
 
-**光影层次（含光影场景时必选）：**
+**Lighting layers (required for scenes with lighting):**
 
-电影感光影层次，明暗对比清晰，光效柔和自然
+cinematic lighting layers, clear light/dark contrast, soft natural light effects
 
-**氛围锚定（必选）：**
+**Mood anchor (required):**
 
-怀旧治愈氛围，日式动画美学，温馨情感表达
+nostalgic healing atmosphere, Japanese anime aesthetic, warm emotional expression
 
-**画质锁定词（所有输出必须包含，置于风格收尾之后）：**
+**Image-quality lock words (required in all outputs, placed after the style closing):**
 
-模式A（中文）——默认：
+Mode A (Chinese — required for the Seedream model, do not translate) — default:
 高清画质，线条清晰，上色均匀，色彩柔和，画面无杂色无噪点
 
-模式A（中文）——画内文字场景（画面描述中含招牌/标识等道具文字时）：
+Mode A (Chinese — required for the Seedream model, do not translate) — scene with in-image text (when the visual description includes prop text such as signs/labels):
 高清画质，线条清晰，上色均匀，色彩柔和，画面无杂色无噪点，招牌/标识等道具文字清晰可读
 
-模式B（英文）——默认：
+Mode B (English) — default:
 high-quality 90s anime style, clear line art, even flat coloring, soft warm tones, no noise, no grain, no digital artifacts
 
-模式B（英文）——画内文字场景：
+Mode B (English) — scene with in-image text:
 high-quality 90s anime style, clear line art, even flat coloring, soft warm tones, no noise, no grain, no digital artifacts, legible text on signs and props
 
-**负向词模板（模式B 必须包含，置于提示词末尾）：**
+**Negative prompt template (required for Mode B, placed at the end of the prompt):**
 
-> ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
+> ⚠️ Seedream (Mode A) **does not support negative prompts** — negative words apply only to Mode B. Mode A relies on the texture anchors and image-quality lock words in the positive prompt to guarantee image quality.
 
-模式B（英文）：
+Mode B (English):
 no modern anime style, no digital 3D rendering, no CG animation, no cel-shading, no heavy shading, no gradient fills, no plastic look, no oversaturated colors, no neon colors, no cyberpunk, no sci-fi elements, no futuristic design
 
 ---
 
-## 美学禁止项（生成时严格规避）
+## Aesthetic Prohibitions (strictly avoid when generating)
 
-以下词汇/风格不得出现于输出提示词中：
+The following words/styles must not appear in generated prompts:
 
-- ❌ 现代日系动画风格（如新海诚后期、MAPPA风格）
-- ❌ 3D渲染/CG动画/数字绘画相关词
-- ❌ 高饱和荧光色/霓虹色系
-- ❌ 现代服饰/现代建筑元素
-- ❌ 重阴影/过度对比/暗调风格
-- ❌ 卡通比例、大眼睛、Q版等变形描述
-- ❌ 赛博朋克/蒸汽朋克/架空西幻元素
-- ❌ 画外叠加文字（字幕、水印、标题卡、旁白叠字等 UI 层文字，画面必须为纯视觉画面）
+- ❌ modern Japanese anime style (e.g., late-period Shinkai style, MAPPA style)
+- ❌ 3D rendering/CG animation/digital-painting-related terms
+- ❌ highly saturated fluorescent colors/neon color schemes
+- ❌ modern clothing/modern architectural elements
+- ❌ heavy shadows/excessive contrast/dark-tone style
+- ❌ cartoonish proportions, big eyes, chibi, or other deformation descriptions
+- ❌ cyberpunk/steampunk/fantasy-world elements
+- ❌ text overlaid on the image (subtitles, watermarks, title cards, narration overlay text, or any UI-layer text — the image must be purely visual)
 
-> 💡 **例外**：故事世界内的道具文字（招牌、路牌、标识、书籍等场景中自然存在的文字）**不属于禁止范围**。当分镜画面描述中包含此类内容时，应如实描写其存在并要求文字清晰。
+> 💡 **Exception**: in-world prop text (signs, street signs, labels, book text, or other text naturally present in the scene) **is not covered by this prohibition**. When the shot description includes such content, depict its presence faithfully and require the text to be clear.
 
 ---
 
-## 完整生成示例
+## Full Generation Example
 
-> 以下为同一输入分别使用模式A和模式B的对照展示，实际使用时**仅输出其中一种**。
+> The following shows the same input generated with Mode A and Mode B side by side for comparison; in actual use, **output only one of the two**.
 
-### 输入（分镜表行数据）
+### Input (storyboard row data)
 
-| 序号 | 画面描述 | 场景 | 关联资产名称 | 时长 | 景别 | 运镜 | 角色动作 | 情绪 | 光影氛围 |
+| # | Visual Description | Scene | Linked Asset Name | Duration | Shot Scale | Camera Move | Character Action | Emotion | Lighting Mood |
 |------|---------|------|-------------|------|------|------|---------|------|----------|
-| 1 | 浅草站台上，夕阳余晖洒在女孩身上 | 车站 | 浅草站 | 5s | 中景 | 缓推 | 手提书包，侧身微笑望向远方 | 期待 / 温暖 | 黄昏逆光暖调 |
+| 1 | On the platform at Asakusa Station, the glow of sunset falls on the girl | Station | Asakusa Station | 5s | Medium shot | slow push-in | carrying a school bag, turned slightly, smiling into the distance | anticipation / warmth | warm dusk backlight |
 
-### 示例输出A（模式A · Seedream）
+### Example Output A (Mode A · Seedream, Chinese — required for this model's quality, do not translate)
 
 [Prompt]
 90年代日式动画风格，手绘质感，平涂上色，清晰流畅线条，柔和暖色调，中景构图，人物半身入镜，精细流畅线条，轮廓线清晰，线条均匀一致，无断线无粗糙边缘，平涂上色，色彩均匀，无明显渐变，色彩饱和适中，女孩立于浅草站台上，手提书包，侧身微笑望向远方，眼神期待又温暖，黄昏逆光暖调，长影拉伸，怀旧氛围，木质站台纹理清晰，电线杆在背景中，电影感光影层次，明暗对比清晰，光效柔和自然，怀旧治愈氛围，日式动画美学，温馨情感表达，高清画质，线条清晰，上色均匀，色彩柔和，画面无杂色无噪点。
 Based on the reference image of 女孩, maintain consistent: face features, hairstyle, costume details. Generate a new scene: standing on a train station platform at sunset, holding a school bag, smiling at the distance. Keep character appearance identical to reference.
 
-### 示例输出B（模式B · Nanobanana）
+### Example Output B (Mode B · Nanobanana)
 
 ```xml
 <role>
@@ -158,7 +158,7 @@ You are a 90s anime storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 女孩 — black long hair in twin tails, gentle eyes, school uniform, slim body shape
+Image [1]: girl — black long hair in twin tails, gentle eyes, school uniform, slim body shape
 </character_reference>
 <continuity_rules>
 - Same wardrobe, hairstyle, face features across ALL shots
@@ -174,16 +174,16 @@ no modern anime style, no digital 3D rendering, no CG animation, no cel-shading,
 </negative>
 ```
 
-## 快速参考卡
+## Quick Reference Card
 
-### 情绪 → 画面词速查
+### Emotion → Visual Word Quick Reference
 
-| 情绪 | 面容关键词 | 光线匹配 |
+| Emotion | Facial Keywords | Lighting Match |
 |------|-----------|---------|
-| 心动 | 脸颊微红，眼睛弯月 | 柔和侧光暖调 |
-| 悲伤 | 神情低落，眼眶微红 | 冷调侧光低调 |
-| 温柔 | 神情柔和，眉眼温润 | 均匀漫射暖光 |
-| 怀旧 | 表情平静，目光悠远 | 柔焦暖光雾化 |
-| 感动 | 眼角带笑，表情真诚 | 逆光暖调光晕 |
-| 孤独 | 神情安静，眼神放空 | 冷调侧光暗部 |
-| 快乐 | 笑容灿烂，眼睛明亮 | 均匀漫射暖光 |
+| Infatuation | cheeks faintly flushed, crescent-shaped eyes | soft side light, warm tone |
+| Sadness | downcast expression, eyes slightly reddened | cool side light, low-key |
+| Tenderness | soft expression, gentle brow and eyes | even diffuse warm light |
+| Nostalgia | calm expression, distant gaze | soft-focus warm light, hazy |
+| Being moved | smiling eye corners, sincere expression | warm backlight glow |
+| Loneliness | quiet expression, vacant gaze | cool side light, dark areas |
+| Happiness | radiant smile, bright eyes | even diffuse warm light |

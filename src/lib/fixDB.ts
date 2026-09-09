@@ -68,6 +68,73 @@ export default async (knex: Knex): Promise<void> => {
   await addColumn("o_assets", "audioBindState", "integer");
   await addColumn("o_modelPrompt", "fileName", "string");
   await addColumn("o_modelPrompt", "path", "string");
+
+  // ระบบเครดิต + LINE Login
+  await addColumn("o_user", "lineUserId", "text");
+  await addColumn("o_user", "displayName", "text");
+  await addColumn("o_user", "avatar", "text");
+  await addColumn("o_user", "credits", "integer");
+  await addColumn("o_user", "isAdmin", "boolean");
+  await addColumn("o_user", "createTime", "integer");
+  if (!(await knex.schema.hasTable("o_creditLedger"))) {
+    await knex.schema.createTable("o_creditLedger", (table) => {
+      table.text("id").notNullable();
+      table.integer("userId").notNullable();
+      table.integer("delta");
+      table.integer("balanceAfter");
+      table.text("reason");
+      table.text("refId");
+      table.text("note");
+      table.integer("createTime");
+      table.primary(["id"]);
+      table.unique(["id"]);
+    });
+  }
+  if (!(await knex.schema.hasTable("o_topupOrder"))) {
+    await knex.schema.createTable("o_topupOrder", (table) => {
+      table.text("id").notNullable();
+      table.integer("userId").notNullable();
+      table.integer("amountThb");
+      table.integer("credits");
+      table.text("status");
+      table.text("slipImageUrl");
+      table.text("slipRef");
+      table.text("providerResponse");
+      table.integer("createTime");
+      table.integer("verifiedTime");
+      table.primary(["id"]);
+      table.unique(["id"]);
+    });
+  }
+  // ผู้ใช้เดิม (admin ที่ seed มาก่อนหน้านี้) ให้เป็น isAdmin เสมอ กันตกหล่นจากการอัปเกรด schema
+  await knex("o_user").where("id", 1).update({ isAdmin: true });
+
+  // ค่าเริ่มต้นของระบบเครดิต (แอดมินปรับได้ภายหลังผ่านหน้าตั้งค่า)
+  const ensureSetting = async (key: string, value: string) => {
+    const exists = await knex("o_setting").where("key", key).first();
+    if (!exists) await knex("o_setting").insert({ key, value });
+  };
+  await ensureSetting("creditUsdPerCredit", "0.01"); // 1 เครดิต = ต้นทุน $0.01
+  await ensureSetting("creditMarginMultiplier", "1.5"); // บวกกำไร 50% จากต้นทุนจริง
+  await ensureSetting("signupBonusCredits", "100"); // เครดิตแจกฟรีตอนสมัครสมาชิกใหม่
+  await ensureSetting("creditPriceThb", "0.5"); // ราคาขายต่อ 1 เครดิต (บาท) — ยังไม่ได้คำนวณต้นทุน/กำไรจริง แอดมินต้องปรับก่อนเปิดขายจริง
+  await ensureSetting("estimateImagesPerEpisode", "15"); // สมมติฐานจำนวนภาพต่อ 1 ตอน สำหรับประเมินเครดิตคร่าวๆ
+  await ensureSetting("estimateVideoSecondsPerEpisode", "40"); // สมมติฐานความยาววิดีโอรวมต่อ 1 ตอน (วินาที) สำหรับประเมินเครดิตคร่าวๆ
+
+  // ถ้าตั้ง OPENROUTER_API_KEY ไว้ใน env (เช่น deploy ผ่าน Coolify) ให้ sync เข้า o_vendorConfig ทุกครั้งที่บูต
+  // ทับค่าที่เคยตั้งผ่านหน้าแอดมิน UI เสมอ เพื่อให้ env vars เป็นแหล่งความจริงเดียวเวลา deploy แบบ infra-as-code
+  if (process.env.OPENROUTER_API_KEY) {
+    const existing = await knex("o_vendorConfig").where("id", "openrouter").first();
+    const inputValues = JSON.stringify({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      baseUrl: process.env.OPENROUTER_BASE_URL || "https://openrouter.ai/api/v1",
+    });
+    if (existing) {
+      await knex("o_vendorConfig").where("id", "openrouter").update({ inputValues, enable: 1 });
+    } else {
+      await knex("o_vendorConfig").insert({ id: "openrouter", inputValues, models: "[]", enable: 1 });
+    }
+  }
   const vendorDataSelect = await u.db("o_vendorConfig").whereIn("id", ["deepseek", "atlascloud"]).select("*");
   if (!vendorDataSelect.find((i) => i.id == "deepseek")) {
     await u.db("o_vendorConfig").insert({

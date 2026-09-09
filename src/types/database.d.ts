@@ -1,4 +1,4 @@
-// @db-hash 1674c3fa6699c6c7fc88d5b3c83ec28e
+// @db-hash 9fc63e56df718bf1db31e7f1126edb71
 //该文件由脚本自动生成，请勿手动修改
 
 export interface memories {
@@ -66,6 +66,16 @@ export interface o_assets2Storyboard {
 export interface o_assetsRole2Audio {
   'assetsAudioId'?: number;
   'assetsRoleId'?: number;
+}
+export interface o_creditLedger {
+  'balanceAfter'?: number | null;
+  'createTime'?: number | null;
+  'delta'?: number | null;
+  'id'?: string;
+  'note'?: string | null;
+  'reason'?: string | null;
+  'refId'?: string | null;
+  'userId': number;
 }
 export interface o_event {
   'createTime'?: number | null;
@@ -195,8 +205,26 @@ export interface o_tasks {
   'state'?: string | null;
   'taskClass'?: string | null;
 }
+export interface o_topupOrder {
+  'amountThb'?: number | null;
+  'createTime'?: number | null;
+  'credits'?: number | null;
+  'id'?: string;
+  'providerResponse'?: string | null;
+  'slipImageUrl'?: string | null;
+  'slipRef'?: string | null;
+  'status'?: string | null;
+  'userId': number;
+  'verifiedTime'?: number | null;
+}
 export interface o_user {
+  'avatar'?: string | null;
+  'createTime'?: number | null;
+  'credits'?: number | null;
+  'displayName'?: string | null;
   'id'?: number;
+  'isAdmin'?: boolean | null;
+  'lineUserId'?: string | null;
   'name'?: string | null;
   'password'?: string | null;
 }
@@ -236,6 +264,7 @@ export interface DB {
   "o_assets": o_assets;
   "o_assets2Storyboard": o_assets2Storyboard;
   "o_assetsRole2Audio": o_assetsRole2Audio;
+  "o_creditLedger": o_creditLedger;
   "o_event": o_event;
   "o_eventChapter": o_eventChapter;
   "o_image": o_image;
@@ -251,6 +280,7 @@ export interface DB {
   "o_skillList": o_skillList;
   "o_storyboard": o_storyboard;
   "o_tasks": o_tasks;
+  "o_topupOrder": o_topupOrder;
   "o_user": o_user;
   "o_vendorConfig": o_vendorConfig;
   "o_video": o_video;

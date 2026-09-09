@@ -1,200 +1,200 @@
 ---
 name: art_scene_derivative
-description: 3D国风赛博场景衍生资产生成 · 约束手册
+description: 3D Guofeng Cyber Scene Derivative Asset Generation - Constraint Manual
 metaData: art_skills
 ---
-# 3D国风赛博场景衍生资产生成 · 约束手册
-（古风场景+现代都市场景 双向全适配）
+# 3D Guofeng Cyber Scene Derivative Asset Generation - Constraint Manual
+(Full bidirectional adaptation: Ancient-Style Scenes + Modern Urban Scenes)
 
 ---
 
-## 一、衍生原则
-（核心约束：古风/都市双场景通用，所有变体严格遵循「风格融合统一、空间逻辑一致」）
+## 1. Derivative Principles
+(Core constraint: shared by both ancient-style and urban scenes — all variants strictly follow "unified style fusion, consistent spatial logic")
 
-1. **空间一致** — 建筑结构/布局/材质、国风赛博核心融合元素在所有变体中保持完全一致
-    - 古风场景：固定古建制式/飞檐斗拱/榫卯结构/院落布局/传统纹样的赛博改造逻辑
-    - 都市场景：固定楼宇结构/街巷路网/城市功能区布局/国风改造元素（中式飞檐/斗拱/纹样）的融合逻辑
-    - 严禁变体间出现元素错位、结构改动、风格割裂
-2. **景别驱动** — 同一场景通过不同景别展示不同叙事功能，精准适配古风/都市场景的空间叙事逻辑
-3. **时段切换** — 同一空间在不同时间段呈现不同光影氛围，同步适配双场景专属光源的亮度、色温与开关逻辑
-    - 古风场景：传统灯笼/符文灯/全息国风投影/霓虹管线
-    - 都市场景：楼宇大屏/路灯/车灯/国风霓虹招牌/全息水墨广告
-4. **天候变化** — 同一空间在不同天气下呈现不同情绪，同步适配双场景材质与元素的物理反馈
-    - 古风场景：雨雾霓虹丁达尔、积雪覆盖飞檐、瓦当滴水、木构湿润肌理
-    - 都市场景：玻璃幕墙雨痕反光、路面积水霓虹倒影、飞雪覆盖楼宇飞檐、金属结构霜花
-5. **3D为锚** — 所有变体必须保持3D渲染质感，拒绝平面贴图/CG动画感/二次元平涂风格；严格保留PBR物理材质、光线追踪全局光照、体积光、环境光遮蔽、景深虚化，强化双场景专属材质质感
-    - 古风专属：风化木构、做旧金属、砖瓦肌理、织物垂褶、漆面磨损、青苔风化
-    - 都市专属：超白玻璃幕墙、阳极氧化铝材、清水混凝土、沥青路面、磨砂金属、LED自发光屏
+1. **Spatial consistency** — Building structure/layout/material and the core guofeng-cyber fusion elements remain fully consistent across all variants
+    - Ancient-style scenes: a fixed cyber-retrofit logic for ancient building forms/flying eaves and dougong brackets/mortise-and-tenon structure/courtyard layout/traditional motifs
+    - Urban scenes: a fixed fusion logic for building structure/street network/urban functional-zone layout/guofeng retrofit elements (Chinese eaves/dougong brackets/motifs)
+    - Element misalignment, structural alteration, or stylistic disconnect between variants is strictly forbidden
+2. **Framing-driven** — The same scene shows different narrative functions through different shot framings, precisely matching the spatial narrative logic of ancient-style/urban scenes
+3. **Time-of-day switching** — The same space presents different lighting moods at different times of day, synchronously adapting the brightness, color temperature, and on/off logic of each scene's exclusive light sources
+    - Ancient-style scenes: traditional lanterns/rune lamps/holographic guofeng projections/neon tubing
+    - Urban scenes: building megascreens/street lamps/car lights/guofeng neon signage/holographic ink-wash advertisements
+4. **Weather variation** — The same space conveys different moods under different weather, synchronously adapting the physical response of materials and elements in each scene type
+    - Ancient-style scenes: rain-and-mist neon Tyndall effect, snow-covered flying eaves, dripping eave tiles, damp wood-structure texture
+    - Urban scenes: rain-streaked reflections on glass curtain walls, neon reflections in road puddles, snow-covered building eaves, frost on metal structures
+5. **3D as the anchor** — All variants must maintain a 3D rendered texture, rejecting flat texture maps/CG-animation feel/anime flat-coloring style; PBR physical materials, ray-traced global illumination, volumetric light, ambient occlusion, and depth-of-field blur must be strictly preserved, reinforcing the exclusive material textures of each scene type
+    - Ancient-style exclusive: weathered wood structure, aged metal, brick-and-tile texture, fabric draping, worn lacquer finish, weathered moss
+    - Urban exclusive: ultra-clear glass curtain walls, anodized aluminum, fair-faced concrete, asphalt road surface, brushed metal, LED self-glow screens
 
 ---
 
-## 二、景别变体
+## 2. Framing Variants
 
-### 景别定义
-（古风/都市双场景全覆盖，适配不同空间的叙事需求）
+### Framing Definitions
+(Full coverage for both ancient-style/urban scenes, adapted to the narrative needs of different spaces)
 
-| 景别 | 范围 | 叙事功能 | 提示词 |
+| Framing | Range | Narrative function | Prompt |
 |---|---|---|---|
-| 大全景 | 场景全貌 + 周围环境 | 建立空间感、全局定位 | extreme wide shot、大全景、国风赛博场景全貌、古风场景：古建群落与赛博改造天际线；都市场景：国风赛博都市天际线、城市全景布局 |
-| 全景 | 场景完整呈现 | 展示整体空间结构与融合逻辑 | wide shot、全景、国风赛博场景完整结构、古风场景：院落/古建完整形制与赛博改造；都市场景：楼宇/街区完整布局与国风融合 |
-| 中景 | 场景局部区域 | 聚焦核心功能区 | medium shot、中景、国风赛博功能区、古风场景：殿宇局部/街巷纵深/园林节点；都市场景：楼宇立面/街巷纵深/商圈节点 |
-| 近景 | 场景细部 | 材质/氛围道具特写 | close shot、近景、国风赛博材质特写、古风场景：榫卯机械结构/纹样霓虹光效/飞檐构件；都市场景：国风纹样幕墙/飞檐造型楼宇结构/霓虹招牌细节 |
-| 特写 | 极局部细节 | 材质纹理/关键道具 | extreme closeup、特写、国风赛博纹理细节、古风场景：传统纹样蚀刻/管线接口/发光符文；都市场景：金属漆面磨损/LED屏像素肌理/玻璃幕墙反光细节 |
+| Extreme wide shot | Full scene + surrounding environment | Establish sense of space, global orientation | extreme wide shot, full guofeng cyber scene view, ancient-style scene: ancient building cluster against a cyber-retrofitted skyline; urban scene: guofeng cyber urban skyline, city-wide layout |
+| Wide shot | Complete scene presentation | Show the overall spatial structure and fusion logic | wide shot, complete guofeng cyber scene structure, ancient-style scene: complete courtyard/ancient-building form with cyber retrofit; urban scene: complete building/block layout with guofeng fusion |
+| Medium shot | A local area of the scene | Focus on core functional zones | medium shot, guofeng cyber functional zone, ancient-style scene: a section of a hall/street depth/garden node; urban scene: a building facade/street depth/commercial-district node |
+| Close shot | Scene detail | Material/atmosphere-prop close-up | close shot, guofeng cyber material close-up, ancient-style scene: mortise-and-tenon mechanical structure/motif with neon light effect/eave component; urban scene: guofeng-motif curtain wall/eave-shaped building structure/neon signage detail |
+| Extreme closeup | Extreme local detail | Material texture/key prop | extreme closeup, guofeng cyber texture detail, ancient-style scene: etched traditional motif/circuit interface/glowing rune; urban scene: worn metal paint/LED-screen pixel texture/glass curtain-wall reflection detail |
 
-### 景别衍生规范
-（古风/都市双场景通用，严格控制变体一致性）
+### Framing Derivation Specification
+(Shared by both ancient-style/urban scenes, with strict variant-consistency control)
 
-| 从基准图衍生 | 保持不变 | 允许变化 |
+| Derived from base image | Kept unchanged | Allowed to change |
 |---|---|---|
-| 大全景 → 全景 | 建筑外观、整体布局、国风赛博核心融合元素、空间路网/院落结构 | 视角收窄、前景增加对应场景专属元素（古风：浮空灯笼/全息投影；都市：浮空国风广告/路灯/行道树） |
-| 全景 → 中景 | 材质、色调、光线、国风赛博元素位置与融合逻辑 | 裁切聚焦、景深变化、聚焦核心功能区 |
-| 中景 → 近景 | 材质、色调、国风赛博核心材质属性 | 景深浅、背景虚化、聚焦材质与道具细节 |
-| 近景 → 特写 | 材质纹理、国风赛博纹理细节 | 极浅景深、微距感、聚焦微观肌理与光效细节 |
+| Extreme wide shot -> Wide shot | Building exterior, overall layout, core guofeng-cyber fusion elements, spatial road network/courtyard structure | Narrower angle, foreground addition of scene-exclusive elements (ancient-style: floating lanterns/holographic projections; urban: floating guofeng advertisements/street lamps/roadside trees) |
+| Wide shot -> Medium shot | Material, tone, lighting, guofeng-cyber element placement and fusion logic | Cropped focus, depth-of-field change, focus on core functional zones |
+| Medium shot -> Close shot | Material, tone, core guofeng-cyber material properties | Shallow depth of field, blurred background, focus on material and prop detail |
+| Close shot -> Extreme closeup | Material texture, guofeng-cyber texture detail | Extremely shallow depth of field, macro feel, focus on microscopic texture and light-effect detail |
 
 ---
 
-## 三、时段变体
+## 3. Time-of-Day Variants
 
-### 时段定义
-（古风/都市双场景光源逻辑全覆盖，光影自洽不冲突）
+### Time-of-Day Definitions
+(Full coverage of light-source logic for both ancient-style/urban scenes, with self-consistent, non-conflicting lighting)
 
-| 时段 | 视觉特征 | 提示词 |
+| Time of day | Visual characteristics | Prompt |
 |---|---|---|
-| 清晨 | 薄雾柔光、冷暖交织色调、冷调霓虹余辉未熄、晨光穿透薄雾与全息投影形成丁达尔光效<br>古风：飞檐镀晨光金边、灯笼余辉<br>都市：楼宇大屏待机微光、路灯余辉、晨光穿透摩天楼群 | 晨光微熹、清晨薄雾、国风赛博清晨、霓虹余辉、晨光穿雾 |
-| 正午 | 明亮高饱和、阴影短而清晰、色彩还原真实<br>古风：古建结构阴影清晰、金属与石材高光自然<br>都市：玻璃幕墙强光反光、楼宇阴影边界清晰、霓虹弱光待机 | 正午阳光、光线明亮、国风赛博正午、硬光质感、材质物理反光 |
-| 黄昏 | 金色暖调、长投影、天空橙紫渐变、金辉与霓虹渐次亮起<br>古风：古建轮廓长影、灯笼初亮<br>都市：楼宇天际线金边、大屏与霓虹招牌渐次开启、车灯光轨 | 暮色金辉、golden hour、国风赛博黄昏、霓虹初亮、天际线渐变 |
-| 夜间（月光） | 冷蓝色调、幽静清冷、低照度高对比<br>古风：冷蓝月光、冷调霓虹、木构与金属清冷反光<br>都市：月光覆盖楼宇群、冷调楼宇轮廓光、冷色霓虹、街道空镜 | 月光清辉、moonlight、国风赛博月夜、冷调霓虹、全息淡光 |
-| 夜间（灯火） | 明暗强对比、暖冷光交织、高动态光影<br>古风：暖黄灯笼与赛博霓虹交织、窗格暖光、全息投影光效<br>都市：楼宇内透暖光、国风霓虹招牌、大屏广告、路灯车灯、街巷灯火 | 灯火阑珊、烛光点点、国风赛博夜景、霓虹灯火、灯笼暖光、全息光效 |
+| Early morning | Soft mist, warm-cool interwoven tones, cool-toned neon afterglow not yet extinguished, morning light penetrating mist and holographic projections to form a Tyndall light effect<br>Ancient-style: flying eaves gilded with morning-light edges, lantern afterglow<br>Urban: building megascreens on standby with faint glow, street-lamp afterglow, morning light penetrating skyscraper clusters | first light of dawn, morning mist, guofeng cyber morning, neon afterglow, morning light through mist |
+| Noon | Bright and highly saturated, short and clear shadows, true color reproduction<br>Ancient-style: clear ancient-building shadows, natural highlights on metal and stone<br>Urban: strong reflections on glass curtain walls, clear building shadow edges, neon in low-power standby | midday sunlight, bright lighting, guofeng cyber noon, hard-light texture, physically accurate material reflection |
+| Dusk | Golden warm tones, long shadows, sky gradient from orange to purple, golden glow and neon lighting up in succession<br>Ancient-style: long shadows from ancient-building silhouettes, lanterns beginning to light up<br>Urban: golden edges on the building skyline, megascreens and neon signs lighting up in succession, car-light trails | golden dusk glow, golden hour, guofeng cyber dusk, neon beginning to glow, gradient skyline |
+| Night (moonlight) | Cool blue tones, quiet and serene, low illumination with high contrast<br>Ancient-style: cool blue moonlight, cool-toned neon, cool reflections off wood structure and metal<br>Urban: moonlight covering the building cluster, cool-toned building outline light, cool-toned neon, empty street shots | moonlight clarity, moonlight, guofeng cyber moonlit night, cool-toned neon, faint holographic light |
+| Night (lit up) | Strong light-dark contrast, warm-cool light interwoven, high dynamic range lighting<br>Ancient-style: warm-yellow lanterns interwoven with cyber neon, warm light through lattice windows, holographic-projection light effects<br>Urban: warm inner glow from buildings, guofeng neon signage, megascreen advertisements, street lamps and car lights, alley lights | lights in the gathering dusk, flickering candlelight, guofeng cyber night scene, neon lights, warm lantern glow, holographic light effects |
 
-### 时段衍生规范
-（古风/都市双场景通用，固定核心结构，只变光影氛围）
+### Time-of-Day Derivation Specification
+(Shared by both ancient-style/urban scenes, fixing the core structure while only changing the lighting mood)
 
-| 从基准时段衍生 | 保持不变 | 变化项 |
+| Derived from base time | Kept unchanged | Change items |
 |---|---|---|
-| 日间 → 黄昏 | 建筑/布局/材质、国风赛博核心元素位置与结构 | 天空色调暖化、影子拉长、霓虹光源渐次开启、全息投影亮度提升、对应场景专属光源同步适配 |
-| 日间 → 夜间 | 建筑/布局/材质、国风赛博核心元素位置与结构 | 整体变暗、增加灯火/月色氛围、开启对应场景专属自发光光源、古风：灯笼/符文灯；都市：大屏/路灯/车灯 |
-| 室内日间 → 室内夜间 | 空间结构、家具、国风赛博改造结构 | 整体色调暖化、增加对应场景专属光源、古风：烛火/灯笼；都市：控制台光源/LED屏/国风壁灯 |
+| Daytime -> Dusk | Building/layout/material, core guofeng-cyber element position and structure | Sky tone warms, shadows lengthen, neon light sources turn on in succession, holographic-projection brightness increases, each scene's exclusive light source adapts synchronously |
+| Daytime -> Night | Building/layout/material, core guofeng-cyber element position and structure | Overall darkening, addition of lantern-light/moonlight mood, turning on each scene's exclusive self-glow light source — ancient-style: lanterns/rune lamps; urban: megascreens/street lamps/car lights |
+| Indoor daytime -> Indoor night | Spatial structure, furniture, guofeng-cyber retrofit structure | Overall tone warms, addition of each scene's exclusive light source — ancient-style: candlelight/lanterns; urban: console light source/LED screen/guofeng wall lamp |
 
 ---
 
-## 四、天候变体
+## 4. Weather Variants
 
-### 天候定义
-（古风/都市双场景物理反馈全覆盖，材质表现符合逻辑）
+### Weather Definitions
+(Full coverage of physical response for both ancient-style/urban scenes, with material behavior conforming to logic)
 
-| 天候 | 视觉特征 | 提示词 |
+| Weather | Visual characteristics | Prompt |
 |---|---|---|
-| 晴天 | 明亮通透、阴影清晰、高对比度<br>古风：阳光与霓虹同亮、木构砖瓦纹理清晰<br>都市：玻璃幕墙高光反光、楼宇阴影清晰、沥青路面质感明确 | 晴空万里、阳光明媚、国风赛博晴天、阳光与霓虹共存 |
-| 阴天 | 柔光漫射、无硬阴影、低对比度、色彩柔和<br>古风：霓虹光效凸显、木构纹理自然<br>都市：金属与混凝土哑光质感、楼宇轮廓柔和、霓虹饱和度提升 | 阴天柔光、overcast、国风赛博阴天、柔光漫射、霓虹凸显 |
-| 薄雾 | 分层雾气、能见度梯度降低、空气朦胧感<br>古风：远景古建朦胧、霓虹光效丁达尔效应、全息投影在雾中散射<br>都市：远景楼宇朦胧、街道路灯与霓虹形成光雾、体积光穿透雾气 | 薄雾弥漫、雾气缭绕、国风赛博薄雾、体积光丁达尔、霓虹光雾 |
-| 细雨 | 雨丝光轨、湿润反光、水洼倒影<br>古风：瓦当滴水、木构湿润肌理、雨丝反射霓虹光效<br>都市：玻璃幕墙雨痕、路面积水反射霓虹与楼宇、金属表面水珠挂壁 | 细雨如丝、雨幕轻纱、国风赛博细雨、雨丝光轨、水面霓虹反射 |
-| 飞雪 | 积雪覆盖、雪花飘落、冷白调、霜花肌理<br>古风：飞檐斗拱挂雪、木构与金属表面霜花、雪花被霓虹染色<br>都市：楼宇国风飞檐积雪、行道树枝挂雪、路面薄雪、金属结构霜花 | 飞雪纷纷、银装素裹、国风赛博飞雪、霓虹染雪、霜花肌理 |
+| Clear | Bright and transparent, clear shadows, high contrast<br>Ancient-style: sunlight and neon equally bright, clear wood-structure and brick-tile texture<br>Urban: strong highlight reflections on glass curtain walls, clear building shadows, distinct asphalt-road texture | clear sky, bright sunshine, guofeng cyber clear day, sunlight and neon coexisting |
+| Overcast | Soft diffuse light, no hard shadows, low contrast, soft colors<br>Ancient-style: neon light effects stand out, natural wood-structure texture<br>Urban: matte texture on metal and concrete, soft building outlines, increased neon saturation | overcast soft light, overcast, guofeng cyber overcast day, soft diffusion, neon standing out |
+| Light mist | Layered fog, gradient visibility decrease, hazy air<br>Ancient-style: distant ancient buildings hazy, neon Tyndall light effect, holographic projections scattering in the mist<br>Urban: distant buildings hazy, street lamps and neon forming a light haze, volumetric light penetrating the mist | drifting light mist, lingering fog, guofeng cyber light mist, Tyndall volumetric light, neon light haze |
+| Light rain | Rain-streak light trails, damp reflections, puddle reflections<br>Ancient-style: dripping eave tiles, damp wood-structure texture, rain streaks reflecting neon light effects<br>Urban: rain streaks on glass curtain walls, road puddles reflecting neon and buildings, water droplets clinging to metal surfaces | fine rain like silk, light rain curtain, guofeng cyber light rain, rain-streak light trails, neon reflection on water |
+| Snowfall | Snow cover, falling snowflakes, cold-white tone, frost texture<br>Ancient-style: snow on flying eaves and dougong brackets, frost on wood and metal surfaces, snowflakes tinted by neon<br>Urban: snow on guofeng eaves atop buildings, snow on roadside-tree branches, thin snow on the road, frost on metal structures | falling snow, silver-clad world, guofeng cyber snowfall, neon-tinted snow, frost texture |
 
-### 天候衍生规范
-（古风/都市双场景通用，固定空间结构，只变天候物理反馈）
+### Weather Derivation Specification
+(Shared by both ancient-style/urban scenes, fixing the spatial structure while only changing the weather's physical response)
 
-| 从基准天候衍生 | 保持不变 | 变化项 |
+| Derived from base weather | Kept unchanged | Change items |
 |---|---|---|
-| 晴 → 薄雾 | 建筑/布局、国风赛博核心元素结构与位置 | 增加雾气层、远景模糊、饱和度降低、霓虹光效形成丁达尔体积光、全息投影散射效果 |
-| 晴 → 细雨 | 建筑/布局、国风赛博核心元素结构与位置 | 增加雨丝、地面反光、色调偏冷、对应场景专属材质湿润质感、水洼倒影同步适配场景元素 |
-| 晴 → 飞雪 | 建筑/布局、国风赛博核心元素结构与位置 | 增加积雪、雪花、色调偏白、对应场景专属结构积雪覆盖、金属表面霜花、雪花被光源染色 |
-| 植被需随天候逻辑适配 | — | 古风：雨中花瓣湿润、雪中松枝挂雪；都市：雨中发光叶片湿润、雪中行道树挂霜，天候变化同步适配植被物理状态与光效反馈 |
+| Clear -> Light mist | Building/layout, core guofeng-cyber element structure and position | Added fog layer, blurred distant view, reduced saturation, neon light effect forming Tyndall volumetric light, holographic-projection scattering effect |
+| Clear -> Light rain | Building/layout, core guofeng-cyber element structure and position | Added rain streaks, ground reflection, cooler tone, each scene's exclusive material gains damp texture, puddle reflections synchronously adapting the scene elements |
+| Clear -> Snowfall | Building/layout, core guofeng-cyber element structure and position | Added snow cover, snowflakes, whiter tone, each scene's exclusive structure gains snow cover, frost on metal surfaces, snowflakes tinted by the light source |
+| Vegetation must adapt to weather logic | — | Ancient-style: damp flower petals in the rain, snow-hung pine branches in the snow; urban: damp glowing leaves in the rain, frost-hung roadside trees in the snow — weather changes synchronously adapt the vegetation's physical state and light-effect response |
 
 ---
 
-## 五、四视图设定图规范
+## 5. Four-View Reference Sheet Specification
 
-### 视图定义
-（古风/都市双场景通用，360°环视空间逻辑完全自洽）
+### View Definitions
+(Shared by both ancient-style/urban scenes, with fully self-consistent 360-degree spatial logic)
 
-> 摄像机固定于场景中心点，分别朝前/后/左/右四个方向平视拍摄，形成 360° 无死角环视，古风院落/都市街区通用。
+> The camera is fixed at the scene's center point, shooting level toward the front/back/left/right in four directions to form a full 360-degree view, applicable to both ancient-style courtyards and urban blocks.
 
-| 位置 | 视图 | 视角方向 | 要求 | 提示词 |
+| Position | View | View direction | Requirement | Prompt |
 |---|---|---|---|---|
-| 左上 | 前视图 | 从中心点向前方平视（0°） | 展示场景正面主体结构与纵深层次，完整呈现国风赛博融合逻辑<br>古风：古建正面形制与赛博改造层级<br>都市：楼宇/街区正面结构与国风改造层级 | front view、eye level、looking forward、国风赛博场景正面结构、古建/都市融合正面呈现 |
-| 右上 | 右视图 | 从中心点向右方平视（90°） | 展示场景右侧空间延伸与侧面结构，完整呈现侧面形制与管线/街巷布局<br>古风：古建右侧结构与纵深院落<br>都市：楼宇右侧立面与纵深街巷 | right side view、eye level、looking right、国风赛博场景右侧结构、古建/都市融合侧面呈现 |
-| 左下 | 后视图 | 从中心点向后方平视（180°） | 展示场景背面结构与空间纵深，完整呈现背面形制与设备/管线排布<br>古风：古建后檐结构与后院布局<br>都市：楼宇背面结构与后街布局 | back view、eye level、looking backward、国风赛博场景背面结构、古建/都市融合背面呈现 |
-| 右下 | 左视图 | 从中心点向左方平视（270°） | 展示场景左侧空间延伸与侧面结构，完整呈现侧面形制与街巷/元素布局<br>古风：古建左侧结构与侧院布局<br>都市：楼宇左侧立面与侧街布局 | left view、eye level、looking left、国风赛博场景左侧结构、古建/都市融合侧面呈现 |
+| Top-left | Front view | Level, facing forward from the center point (0°) | Show the scene's main frontal structure and depth layers, fully presenting the guofeng-cyber fusion logic<br>Ancient-style: front form of ancient buildings with cyber retrofit tiers<br>Urban: front structure of buildings/blocks with guofeng retrofit tiers | front view, eye level, looking forward, guofeng cyber scene front structure, ancient-building/urban fusion front presentation |
+| Top-right | Right view | Level, facing right from the center point (90°) | Show the scene's right-side spatial extension and side structure, fully presenting the side form and pipe-network/street layout<br>Ancient-style: right-side structure of ancient buildings and depth of the courtyard<br>Urban: right-side facade of buildings and depth of the street | right side view, eye level, looking right, guofeng cyber scene right-side structure, ancient-building/urban fusion side presentation |
+| Bottom-left | Back view | Level, facing backward from the center point (180°) | Show the scene's back structure and spatial depth, fully presenting the back form and equipment/pipe arrangement<br>Ancient-style: back-eave structure and rear-courtyard layout of ancient buildings<br>Urban: back structure of buildings and layout of the back street | back view, eye level, looking backward, guofeng cyber scene back structure, ancient-building/urban fusion back presentation |
+| Bottom-right | Left view | Level, facing left from the center point (270°) | Show the scene's left-side spatial extension and side structure, fully presenting the side form and street/element layout<br>Ancient-style: left-side structure of ancient buildings and side-courtyard layout<br>Urban: left-side facade of buildings and side-street layout | left view, eye level, looking left, guofeng cyber scene left-side structure, ancient-building/urban fusion side presentation |
 
-### 画面规范
-（古风/都市双场景通用，严格约束一致性，杜绝AI生成错位）
+### Frame Specification
+(Shared by both ancient-style/urban scenes, with strict consistency control to prevent AI-generated misalignment)
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面四宫格（2×2），左上前视图+右上右视图+左下后视图+右下左视图，形成从中心点环视的四方向视图 |
-| 人物 | **严禁出现任何人物、人影、人体轮廓、动物轮廓** |
-| 视点 | 四视图均从同一中心点出发，视线高度一致（标准人眼平视高度1.6m），无高低偏移 |
-| 一致性 | 四视图的建筑结构/材质/色调/光线/季节/天候完全一致，国风赛博核心融合元素的位置、结构、光效逻辑完全统一，无错位、无遗漏 |
-| 光线 | 四视图光源方向完全统一，光影逻辑100%自洽（主光源/环境光/自发光光源在不同视角下的位置关系、投影方向完全正确） |
-| 画面比例 | 固定1:1正方形画幅（2×2 网格均匀分布） |
+| Layout | Same frame, four-panel grid (2x2), top-left front view + top-right right view + bottom-left back view + bottom-right left view, forming a complete four-direction view circling the center point |
+| People | **Strictly no appearance of any person, human shadow, human outline, or animal outline** |
+| Viewpoint | All four views originate from the same center point at a consistent eye height (standard eye-level height of 1.6m), with no height offset |
+| Consistency | The building structure/material/tone/lighting/season/weather must be fully consistent across the four views; the position, structure, and light-effect logic of the core guofeng-cyber fusion elements must be fully unified, with no misalignment or omission |
+| Lighting | The light-source direction must be fully unified across the four views, with 100% self-consistent lighting logic (the positional relationship and shadow direction of the key light/ambient light/self-glow light source at each viewing angle must be fully correct) |
+| Frame ratio | Fixed 1:1 square format (evenly distributed 2x2 grid) |
 
 ---
 
-## 六、提示词模板
-（古风/都市双场景通用，占位符灵活适配，直接复制可用）
+## 6. Prompt Template
+(Shared by both ancient-style/urban scenes, with flexible placeholders, ready to copy and use directly)
 
-3D国风赛博场景衍生四视图设定图，基于{场景名}概念图，
-{场景类型：古风场景/现代都市场景二选一}，chinoiserie cyberpunk，国风赛博朋克，
-{古风场景专属：传统古建与赛博科技融合，飞檐斗拱搭配霓虹管线，榫卯结构结合机械模组，传统纹样蚀刻与霓虹光效，全息国风投影，赛博化传统匾额}
-{都市场景专属：现代都市与国风文化融合，中式飞檐造型摩天楼，斗拱结构楼宇立面，传统纹样玻璃幕墙，国风霓虹招牌，全息水墨广告，赛博化中式街巷}
-3D渲染风格，高精度硬表面建模，PBR物理材质，国风3D，电影级光影，HDR高动态范围，光线追踪全局光照，
+3D guofeng cyber scene derivative four-view reference sheet, based on the {scene name} concept image,
+{scene type: choose one of ancient-style scene/modern urban scene}, chinoiserie cyberpunk, guofeng cyberpunk,
+{ancient-style scene exclusive: fusion of traditional ancient architecture and cyber technology, flying eaves and dougong brackets paired with neon tubing, mortise-and-tenon structure combined with mechanical modules, traditional motif etching with neon light effects, holographic guofeng projection, cyberized traditional plaque}
+{urban scene exclusive: fusion of modern urban and Chinese culture, Chinese-eave-shaped skyscraper, dougong-structured building facade, traditional-motif glass curtain wall, guofeng neon signage, holographic ink-wash advertisement, cyberized Chinese-style alley}
+3D render style, high-precision hard-surface modeling, PBR physical materials, guofeng 3D, cinematic lighting, HDR high dynamic range, ray-traced global illumination,
 3D rendered, volumetric lighting,
 depth of field, natural lens vignette, subtle chromatic aberration, bokeh,
-3D渲染质感，丁达尔体积光，自然光照，物理光影，霓虹自发光光影，
+3D rendered texture, Tyndall volumetric light, natural lighting, physically accurate lighting, neon self-glow lighting,
 scene derivative design sheet, environment concept art, no people, no characters, no human figures,
-保持场景空间结构与国风赛博核心元素完全一致，
-{景别视角（如有）}, {时段描述（如有）}, {天候描述（如有）},
-{国风赛博核心元素（如有）}, {赛博光源描述（如有）},
-{前景}, {中景}, {后景},
-{色调描述}, {景深描述（如有）}, {天空色调变化（如有）}, {氛围调整（如有）},
-{天候视觉特征（如有）}, {材质表面变化（如有）}, {植被适配描述（如有）},
-材质自然磨损痕迹，岁月包浆，青苔风化，布料自然垂褶，做旧金属质感，风化木构肌理，漆面磨损细节，金属锈蚀肌理，
-体积光，环境光遮蔽，自然光漫射，柔和光影，霓虹光雾，
-空气透视，纹理细节超清晰，8K超高清，超精细细节，
-同一画面四宫格（2×2）：从场景中心点环视，前视图+右视图+后视图+左视图，
-四视图均从同一中心点平视拍摄，建筑结构一致，材质色调一致，光影逻辑一致，国风赛博元素完全统一，
-画面中无任何人物
-图中不要有任何文字
+keep the scene's spatial structure and core guofeng-cyber elements fully consistent,
+{framing angle (if any)}, {time-of-day description (if any)}, {weather description (if any)},
+{core guofeng-cyber element (if any)}, {cyber light-source description (if any)},
+{foreground}, {midground}, {background},
+{tone description}, {depth-of-field description (if any)}, {sky-tone change (if any)}, {mood adjustment (if any)},
+{weather visual characteristics (if any)}, {material surface change (if any)}, {vegetation adaptation description (if any)},
+natural material wear marks, age patina, weathered moss, natural fabric drape creases, aged metal texture, weathered wood-structure texture, worn lacquer detail, corroded metal texture,
+volumetric light, ambient occlusion, natural light diffusion, soft lighting, neon light haze,
+aerial perspective, ultra-clear texture detail, 8K ultra HD, ultra-fine detail,
+same frame, four-panel grid (2x2): 360-degree view from the scene's center point, front view + right view + back view + left view,
+all four views shot level from the same center point, consistent building structure, consistent material tone, consistent lighting logic, fully unified guofeng-cyber elements,
+no person of any kind in the image
+no text in the image
 
-> **使用说明**：根据用户提供的信息自行判断需要应用的变化维度（景别/时段/天候），未提及的维度对应字段留空省略即可。无需为每种变体单独生成模板。古风/都市场景二选一填写，未选场景的专属字段直接删除。
+> **Usage note**: Judge for yourself, based on the information the user provides, which dimensions of change (framing/time-of-day/weather) to apply — for dimensions not mentioned, simply leave the corresponding field blank and omit it. No need to generate a separate template for every variant. Choose one of ancient-style/urban scene, and delete the exclusive fields for the unselected scene type directly.
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守规则
-（古风/都市双场景通用，AI生成强制触发）
+### Mandatory Rules
+(Shared by both ancient-style/urban scenes, mandatory AI-generation triggers)
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 场景空间结构、路网/院落布局在所有变体中保持完全一致 |
-| R2 | 时段变体必须调整天空色调与氛围，同步适配对应场景专属光源的开关、亮度与色温逻辑 |
-| R3 | 天候变体必须适配植被/材质表面，同步适配对应场景专属元素的物理与光影反馈 |
-| R4 | 必须为「四视图设定图」（从中心点环视：前视图 + 右视图 + 后视图 + 左视图），严格遵循2×2四宫格布局 |
-| R5 | 四视图的建筑结构/材质/色调/光线/季节/天候必须完全一致，国风赛博融合元素无错位、无遗漏 |
-| R6 | 场景图中**严禁出现任何人物、人影、人体轮廓、动物轮廓** |
-| R7 | 根据用户提供的信息自行判断变化维度，无需拆分为独立模板 |
-| R8 | 必须包含3D渲染核心关键词（3D rendered / volumetric lighting / PBR materials 至少2项） |
-| R9 | 必须包含镜头光学特征（depth of field / lens vignette / bokeh 至少一项） |
-| R10 | 材质必须带有自然磨损/岁月痕迹，禁止全新无瑕的"塑料感""CG感" |
-| R11 | 所有变体必须保留国风赛博核心融合逻辑，古风场景：传统东方形制为核，赛博科技为表；都市场景：现代都市空间为核，国风文化为魂，禁止元素割裂 |
-| R12 | 必须包含国风赛博专属关键词（chinoiserie cyberpunk、国风赛博、古建赛博改造、都市国风融合 至少2项） |
-| R13 | 所有自发光元素（霓虹/全息/大屏/灯笼）的光影逻辑必须符合物理规则，与环境光、时段、天候完美适配，无光效溢出、无投影错位 |
+| R1 | The scene's spatial structure and road-network/courtyard layout must remain fully consistent across all variants |
+| R2 | Time-of-day variants must adjust the sky tone and mood, synchronously adapting the on/off logic, brightness, and color temperature of each scene's exclusive light source |
+| R3 | Weather variants must adapt the vegetation/material surface, synchronously adapting the physical and lighting response of each scene's exclusive elements |
+| R4 | Must be a "four-view reference sheet" (a view circling the center point: front view + right view + back view + left view), strictly following the 2x2 four-panel grid layout |
+| R5 | The building structure/material/tone/lighting/season/weather must be fully consistent across the four views, with no misalignment or omission in the guofeng-cyber fusion elements |
+| R6 | Scene images must **strictly forbid the appearance of any person, human shadow, human outline, or animal outline** |
+| R7 | Judge the change dimensions for yourself based on the information the user provides — no need to split into separate templates |
+| R8 | Must include core 3D rendering keywords (at least 2 of: 3D rendered / volumetric lighting / PBR materials) |
+| R9 | Must include cinematic lens optical characteristics (at least one of: depth of field / lens vignette / bokeh) |
+| R10 | Materials must show natural wear/age marks — a brand-new, flawless "plastic feel"/"CG feel" is forbidden |
+| R11 | All variants must preserve the core guofeng-cyber fusion logic — ancient-style scenes: traditional Eastern form as the core with cyber technology as the expression; urban scenes: modern urban space as the core with guofeng culture as the soul; element disconnect is forbidden |
+| R12 | Must include guofeng-cyber-exclusive keywords (at least 2 of: chinoiserie cyberpunk, guofeng cyber, ancient-building cyber retrofit, urban guofeng fusion) |
+| R13 | All self-glow elements (neon/holographic/megascreen/lanterns) must have lighting logic that conforms to physical rules, perfectly adapting to the ambient light, time of day, and weather, with no light-effect spill or shadow misalignment |
 
-### 严禁规则
-（古风/都市双场景通用，AI生成强制规避）
+### Strictly Forbidden Rules
+(Shared by both ancient-style/urban scenes, mandatory AI-generation avoidance)
 
-| 编号 | 严禁 |
+| No. | Strictly forbidden |
 |---|---|
-| X1 | 变体间建筑结构/布局/路网/院落不一致 |
-| X2 | 天候与季节矛盾（夏天飞雪、雨季积雪等） |
-| X3 | 变体间材质/色调/风格突变、融合逻辑不一致 |
-| X4 | 出现任何人物、人影、人体剪影、人体轮廓、动物轮廓 |
-| X5 | 四视图之间建筑结构/材质/色调不一致，或视点中心/高度不统一 |
-| X6 | 低精度建模/粗糙贴图/塑料质感/平涂风格（禁用 low-poly、rough modeling、flat color 等词） |
-| X7 | 材质过于干净完美、无任何使用痕迹与岁月感（避免"塑料感""玩具感"） |
-| X8 | 光照过于均匀平坦、无景深虚化、无镜头光学特征、无体积光/环境光遮蔽 |
-| X9 | 国风与赛博元素生硬拼接、无逻辑堆砌（禁止古建与都市楼宇无融合乱搭、禁止传统元素与赛博元素无逻辑摆放） |
-| X10 | 赛博光效溢出、光影逻辑混乱，自发光光源无合理物理支撑、投影方向错误 |
-| X11 | 丢失场景核心特征：古风场景丢失传统东方建筑/文化内核，都市场景丢失现代城市空间逻辑 |
-| X12 | 单一场景风格失衡：古风场景过度赛博化丢失国风内核，都市场景过度国风化丢失赛博未来感 |
+| X1 | Inconsistent building structure/layout/road network/courtyard between variants |
+| X2 | Weather contradicting the season (snowfall in summer, snow accumulation in the rainy season, etc.) |
+| X3 | Sudden material/tone/style shifts or inconsistent fusion logic between variants |
+| X4 | Any appearance of a person, human shadow, human silhouette, human outline, or animal outline |
+| X5 | Inconsistent building structure/material/tone between the four views, or an inconsistent viewpoint center/height |
+| X6 | Low-precision modeling/rough texture maps/plastic texture/flat-shading style (terms such as low-poly, rough modeling, and flat color are forbidden) |
+| X7 | Materials that are too clean and perfect, with no usage marks or sense of age (avoid a "plastic feel" or "toy feel") |
+| X8 | Lighting that is too flat and even, with no depth-of-field blur, no lens optical characteristics, and no volumetric light/ambient occlusion |
+| X9 | Rigid splicing or illogical piling-on of guofeng and cyber elements (forbidding unfused, mismatched combinations of ancient buildings and urban towers, or illogical placement of traditional and cyber elements) |
+| X10 | Cyber light-effect spill or chaotic lighting logic, self-glow light sources with no reasonable physical support, or incorrect shadow direction |
+| X11 | Loss of the scene's core characteristics: an ancient-style scene losing its traditional Eastern architectural/cultural core, or an urban scene losing its modern city spatial logic |
+| X12 | Single-scene stylistic imbalance: an ancient-style scene over-cyberized and losing its guofeng core, or an urban scene over-guofeng-ized and losing its cyber futurism |

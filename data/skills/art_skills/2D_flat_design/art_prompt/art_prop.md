@@ -1,133 +1,133 @@
-# 道具图像生成 · 扁平风约束手册
+# Prop Image Generation · Flat Style Constraint Manual
 
 ---
 
-## 一、道具设计原则
+## 1. Prop Design Principles
 
-1. **功能可读** — 道具用途一目了然，造型服务于功能
-2. **色块极简** — 材质纹理必须色块区分，禁止复杂细节
-3. **年代一致** — 所有道具必须符合古风世界观，禁止现代元素
-4. **尺度明确** — 通过参照物或标注暗示道具真实尺寸
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体，道具不可处于被持有/佩戴/握持状态，必须以静物陈列方式独立呈现
-
----
-
-## 二、道具分类与美学约束
-
-### 2.1 兵器类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 剑/刀/弓/枪/扇 | {兵器类型}，扁平古风兵器 |
-| 材质 | 纯色色块、线条勾勒 | 扁平剑、线条兵器、solid color sword |
-| 装饰 | 线条雕花、色块装饰 | 线条装饰、扁平雕花 |
-| 光泽 | 无光泽、纯色填充 | 无光泽、扁平兵器、matte sword |
-| 提示词 | 扁平古风{兵器}，纯色兵器，线条装饰 | — |
-
-### 2.2 饰品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 簪/钗/璎珞/玉佩/手镯/耳坠 | {饰品类型}，扁平古风首饰 |
-| 材质 | 纯色色块、单色填充 | 扁平首饰、色块首饰、solid color jewelry |
-| 工艺 | 简洁线条、极简工艺 | 扁平工艺、线条首饰 |
-| 光泽 | 无光泽、无反光 | 无光泽、扁平首饰、matte finish |
-| 提示词 | 扁平古风{饰品}，{材质}，简洁工艺，线条首饰 | — |
-
-### 2.3 生活器物类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 茶具/酒具/香炉/棋盘/书卷/灯笼 | {器物类型}，扁平古风器物 |
-| 材质 | 纯色色块、线条勾勒 | 扁平器物、色块器物、solid color object |
-| 质感 | 色块区分、无纹理 | 扁平质感、无纹理、flat texture |
-| 风格 | 素雅/华贵按场景切换 | 扁平素雅 / 扁平华贵 |
-| 提示词 | 扁平古风{器物}，{材质}色块，线条清晰 | — |
-
-### 2.4 信物/关键道具类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 信物/令牌/卷轴/药瓶/玉印 | {道具类型}，扁平古风道具 |
-| 特殊性 | 扁平化造型、简洁辨识度 | 扁平造型、简洁道具 |
-| 状态 | 可添加扁平做旧 | 扁平旧物 / 扁平新物 |
-| 提示词 | 扁平古风{道具}，{材质}色块，扁平状态，简洁造型 | — |
+1. **Function must read clearly** — the prop's purpose should be obvious at a glance; form serves function
+2. **Color blocks kept minimal** — material texture must be differentiated purely through color blocks; complex detail is prohibited
+3. **Period consistency** — all props must fit the ancient-style world setting; modern elements are prohibited
+4. **Clear scale** — hint at the prop's real size through reference objects or annotation
+5. **Pure prop, shown independently** — only the prop itself may appear in frame; no person, hand, or body part of any kind is allowed; the prop must not be shown held/worn/gripped, and must be presented independently as a still-life display
 
 ---
 
-## 三、多角度设定图规范
+## 2. Prop Categories and Aesthetic Constraints
 
-### 视图定义
+### 2.1 Weapons
 
-| 位置 | 视图 | 角度 | 要求 | 提示词 |
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Sword/blade/bow/spear/fan | {weapon type}, flat ancient-style weapon |
+| Material | Solid color blocks, outlined with lines | flat sword, lined weapon, solid color sword |
+| Decoration | Line-drawn engraving, color block decoration | lined decoration, flat engraving |
+| Sheen | No sheen, solid color fill | no gloss, flat weapon, matte sword |
+| Prompt | Flat ancient-style {weapon}, solid-color weapon, lined decoration | — |
+
+### 2.2 Jewelry/Accessories
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Hairpin/hair fork/tassel ornament/jade pendant/bracelet/earrings | {accessory type}, flat ancient-style jewelry |
+| Material | Solid color blocks, single-color fill | flat jewelry, color block jewelry, solid color jewelry |
+| Craftsmanship | Clean lines, minimalist craftsmanship | flat craftsmanship, lined jewelry |
+| Sheen | No sheen, no reflections | no gloss, flat jewelry, matte finish |
+| Prompt | Flat ancient-style {accessory}, {material}, minimalist craftsmanship, lined jewelry | — |
+
+### 2.3 Everyday Objects
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Tea set/wine vessel/incense burner/chessboard/scroll/lantern | {object type}, flat ancient-style object |
+| Material | Solid color blocks, outlined with lines | flat object, color block object, solid color object |
+| Texture | Color block differentiation, no texture | flat texture, no texture, flat texture |
+| Style | Switch between plain/elegant and opulent depending on the scene | flat plain elegance / flat opulence |
+| Prompt | Flat ancient-style {object}, {material} color block, clean lines | — |
+
+### 2.4 Keepsakes/Key Props
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Keepsake/token/scroll/medicine bottle/jade seal | {prop type}, flat ancient-style prop |
+| Special quality | Flattened form, simple and recognizable | flat form, simple prop |
+| Condition | Flat aging effects may be added | flat aged object / flat new object |
+| Prompt | Flat ancient-style {prop}, {material} color block, flat condition, simple form | — |
+
+---
+
+## 3. Multi-Angle Reference Sheet Specifications
+
+### View definitions
+
+| Position | View | Angle | Requirement | Prompt |
 |---|---|---|---|---|
-| 左上 | 正面图 | 正面 0° | 道具完整正面形态 | front view |
-| 右上 | 侧面图 | 侧面 90° | 厚度/轮廓/结构清晰 | side view |
-| 左下 | 背面图 | 背面 180° | 道具背部结构/装饰 | back view |
-| 右下 | 细节特写 | 局部放大 | 线条/色块细节 | detail closeup |
+| Top left | Front view | Front 0° | Prop's full front form | front view |
+| Top right | Side view | Side 90° | Thickness/silhouette/structure clear | side view |
+| Bottom left | Back view | Rear 180° | Prop's back structure/decoration | back view |
+| Bottom right | Detail closeup | Zoomed-in detail | Lines/color block detail | detail closeup |
 
-### 画面规范
+### Frame specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面四宫格（2×2），上下左右四视角 |
-| 背景 | 纯净中性灰 #E8E8E8 |
-| 光线 | 无光影，纯平涂色块 |
-| 比例 | 每格道具占格内主体 70%+ |
-| 投影 | 无投影、纯平面 |
-| 画面比例 | 建议 1:1 |
+| Layout | Same frame, 2x2 grid, four angles arranged top/bottom/left/right |
+| Background | Clean neutral gray #E8E8E8 |
+| Lighting | No lighting effects, purely flat-colored blocks |
+| Proportion | The prop occupies 70%+ of each grid cell |
+| Shadow | No cast shadow, purely flat |
+| Aspect ratio | 1:1 recommended |
 
 ---
 
-## 四、材质渲染约束
+## 4. Material Rendering Constraints
 
-| 材质 | 渲染要求 | 提示词 |
+| Material | Rendering requirement | Prompt |
 |---|---|---|
-| 金属 | 纯色填充、无反光 | 扁平金属、纯色金属、solid metal |
-| 玉石 | 纯色填充、无通透 | 扁平玉石、纯色玉石、solid jade |
-| 木质 | 纯色填充、无木纹 | 扁平木质、纯色木质、solid wood |
-| 瓷器 | 纯色填充、无釉面 | 扁平瓷器、纯色瓷器、solid porcelain |
-| 布/纸 | 纯色填充、无纤维 | 扁平布料、纯色布料、solid fabric |
-| 宝石 | 纯色填充、无折射 | 扁平宝石、纯色宝石、solid gem |
+| Metal | Solid color fill, no reflections | flat metal, solid-color metal, solid metal |
+| Jade | Solid color fill, no translucency | flat jade, solid-color jade, solid jade |
+| Wood | Solid color fill, no wood grain | flat wood, solid-color wood, solid wood |
+| Porcelain | Solid color fill, no glaze sheen | flat porcelain, solid-color porcelain, solid porcelain |
+| Fabric/paper | Solid color fill, no fiber texture | flat fabric, solid-color fabric, solid fabric |
+| Gemstone | Solid color fill, no refraction | flat gem, solid-color gem, solid gem |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
 ```
-扁平古风道具设定图，
-2d flat design，vector art，flat illustration，
-minimalist，clean lines，solid colors，
-{道具类型}，{材质描述}，{工艺/装饰描述}，{状态描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图+右上侧面图+左下背面图+右下细节特写，
-纯净中性灰背景，无光影，无渐变，
-线条清晰，色块分明，{材质光泽描述}
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+flat ancient-style prop reference sheet,
+2d flat design, vector art, flat illustration,
+minimalist, clean lines, solid colors,
+{prop type}, {material description}, {craftsmanship/decoration description}, {condition description},
+pure prop still-life display, prop shown independently, not held by anyone, not worn by anyone,
+same frame 2x2 grid: top left front view + top right side view + bottom left back view + bottom right detail closeup,
+clean neutral gray background, no lighting effects, no gradients,
+clean lines, distinct color blocks, {material sheen description}
+no text of any kind in the image,
+no person, hand, finger, or body part of any kind may appear in the frame, the prop must not be held or worn
 ```
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须指定「纯净中性灰背景」 |
-| R2 | 必须明确道具材质与工艺（扁平化表述） |
-| R3 | 道具造型必须符合古风世界观 |
+| R1 | Must specify a "clean neutral gray background" |
+| R2 | Must clearly state the prop's material and craftsmanship (in flat-style terms) |
+| R3 | The prop's form must fit the ancient-style world setting |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 复杂场景背景 |
-| X2 | 道具与人物同画面（本环节为纯道具图） |
-| X3 | 出现任何人物形象，包括全身、半身、局部（手、手指、手臂等肢体） |
-| X4 | 道具处于被持有、握持、佩戴、使用中的状态 |
-| X5 | 出现暗示人物存在的元素（如手持痕迹、佩戴视角、使用姿态） |
-| X6 | 添加渐变/阴影/高光/立体感效果 |
-| X7 | 材质过于复杂、色块区分不清 |
-| X8 | 现代元素、非古风设计 |
+| X1 | Complex scene backgrounds |
+| X2 | Prop and character appearing in the same frame (this stage is pure prop imagery only) |
+| X3 | Any human figure appearing, including full body, half body, or partial body parts (hand, fingers, arm, etc.) |
+| X4 | The prop being held, gripped, worn, or in use |
+| X5 | Any element implying a person's presence (e.g., handling marks, a wearer's viewpoint, a usage pose) |
+| X6 | Adding gradient/shadow/highlight/3D effects |
+| X7 | Material that is overly complex or color blocks that are not clearly differentiated |
+| X8 | Modern elements, non-ancient-style design |

@@ -13,6 +13,8 @@ import { getArtPrompt } from "@/utils/getArtPrompt";
 import replaceUrl from "@/utils/replaceUrl";
 import writeVersion from "@/utils/writeVersion";
 import * as vendor from "@/utils/vendor";
+import credits from "@/utils/credits";
+import pricing from "@/utils/pricing";
 
 export default {
   db,
@@ -30,4 +32,6 @@ export default {
   replaceUrl,
   writeVersion,
   vendor,
+  credits,
+  pricing,
 };

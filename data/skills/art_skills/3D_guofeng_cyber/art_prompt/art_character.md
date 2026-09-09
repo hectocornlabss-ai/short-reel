@@ -1,12 +1,12 @@
 ---
 name: art_character
-description: 3D超精致建模 通用角色四视图标准手册
+description: 3D Ultra-Detailed Modeling - General Character Four-View Standard Manual
 metaData: art_skills
 ---
 
 ---
 
-# 3D超精致建模 通用角色四视图标准手册
+# 3D Ultra-Detailed Modeling - General Character Four-View Standard Manual
 ---
 
-一位【年龄（数字）】的【性别】，【详细身份】，【20个字的避开同模描述，防止不同提示出现一种脸】，【10个字角色设定】，【性格】，【五官】、【气质】、【4个字角色标签】3D超精致建模，无表情，正对镜头，超特写。
+A [age (number)]-year-old [gender], [detailed identity], [a 20-character description to avoid identical faces across different characters], [a 10-character character concept], [personality], [facial features], [temperament], [4-character character tag], 3D ultra-detailed modeling, expressionless, facing the camera directly, extreme close-up.

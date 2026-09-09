@@ -1,130 +1,130 @@
-# 道具图像生成 · 都市写实约束手册
+# Prop Image Generation · Urban Realistic Constraint Manual
 
 ---
 
-## 一、道具设计原则
+## 1. Prop Design Principles
 
-1. **功能可读** — 道具用途一目了然，造型服务于功能
-2. **质感极致** — 材质纹理必须清晰可辨（金属/玻璃/塑料/皮革/布料）
-3. **年代一致** — 所有道具必须符合现代都市世界观，禁止古代元素
-4. **尺度明确** — 通过参照物或标注暗示道具真实尺寸
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体，道具不可处于被持有/佩戴/握持状态，必须以静物陈列方式独立呈现
-
----
-
-## 二、道具分类与美学约束
-
-### 2.1 电子产品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 手机/笔记本/平板/耳机 | {电子产品类型}，现代电子产品 |
-| 材质 | 金属/玻璃/塑料 + 品牌标识 | 金属质感、玻璃面板 |
-| 装饰 | 接口/屏幕/按钮细节清晰 | 接口清晰、屏幕反光 |
-| 光泽 | 现代工业光泽、金属反光 | 现代光泽、金属质感 |
-| 提示词 | 现代{电子产品}，{材质}，工业设计，细节清晰 | — |
-
-### 2.2 个人饰品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 手表/眼镜/首饰/皮带 | {饰品类型}，现代配饰 |
-| 材质 | 金属/皮革/玻璃/橡胶 | 金属质感、皮质纹理 |
-| 工艺 | 现代工艺、品牌标识清晰 | 现代工艺、品牌精致 |
-| 光泽 | 金属光泽/玻璃反光/皮质光泽 | 金属光泽、玻璃反光 |
-| 提示词 | 现代{饰品}，{材质}，现代工艺，细节清晰 | — |
-
-### 2.3 生活用品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 水杯/咖啡杯/灯具/收纳 | {器物类型}，现代生活 |
-| 材质 | 玻璃/金属/塑料/陶瓷 | 玻璃通透、金属质感 |
-| 质感 | 现代设计、表面工艺清晰 | 表面工艺、设计细节 |
-| 风格 | 现代简约/北欧/工业风 | 现代简约、北欧风格 |
-| 提示词 | 现代{器物}，{材质}质感，设计细节 | — |
-
-### 2.4 办公文具类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 笔/笔记本/文件夹/书签 | {文具类型}，办公文具 |
-| 材质 | 金属/塑料/皮革/纸张 | 金属质感、皮革纹理 |
-| 质感 | 品牌标识/文字清晰可辨 | 文字清晰、品牌标识 |
-| 状态 | 可按剧情需要添加使用痕迹 | 使用痕迹 / 崭新 |
-| 提示词 | 现代{文具}，{材质}，{状态}，品牌标识清晰 | — |
+1. **Function must be legible** — The prop's purpose should be obvious at a glance; form serves function
+2. **Extreme texture fidelity** — Material texture must be clearly distinguishable (metal/glass/plastic/leather/fabric)
+3. **Era consistency** — All props must fit the modern urban setting; ancient elements are prohibited
+4. **Clear scale** — Use reference objects or markers to imply the prop's real-world size
+5. **Pure standalone prop display** — Only the prop itself may appear in frame; any person, hand, or limb is strictly prohibited; the prop must not be held/worn/gripped, and must be presented independently as a still-life display
 
 ---
 
-## 三、多角度设定图规范
+## 2. Prop Categories and Aesthetic Constraints
 
-### 视图定义
+### 2.1 Electronics
 
-| 位置 | 视图 | 角度 | 要求 | 提示词 |
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Phone/laptop/tablet/headphones | {electronics type}, modern electronic device |
+| Material | Metal/glass/plastic + brand markings | metallic texture, glass panel |
+| Detailing | Clear ports/screen/button details | clear ports, screen reflections |
+| Sheen | Modern industrial sheen, metallic reflections | modern sheen, metallic texture |
+| Prompt | modern {electronic device}, {material}, industrial design, clear details | — |
+
+### 2.2 Personal Accessories
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Watch/glasses/jewelry/belt | {accessory type}, modern accessory |
+| Material | Metal/leather/glass/rubber | metallic texture, leather texture |
+| Craftsmanship | Modern craftsmanship, clear brand markings | modern craftsmanship, refined branding |
+| Sheen | Metallic sheen/glass reflection/leather sheen | metallic sheen, glass reflection |
+| Prompt | modern {accessory}, {material}, modern craftsmanship, clear details | — |
+
+### 2.3 Everyday Items
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Water bottle/coffee cup/lamp/storage item | {item type}, modern everyday item |
+| Material | Glass/metal/plastic/ceramic | clear glass, metallic texture |
+| Texture | Modern design, clear surface craftsmanship | surface craftsmanship, design detail |
+| Style | Modern minimalist/Scandinavian/industrial | modern minimalist, Scandinavian style |
+| Prompt | modern {item}, {material} texture, design detail | — |
+
+### 2.4 Office Stationery
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Pen/notebook/folder/bookmark | {stationery type}, office stationery |
+| Material | Metal/plastic/leather/paper | metallic texture, leather texture |
+| Detailing | Brand markings/text clearly legible | clear text, brand markings |
+| Condition | Wear marks may be added as the story requires | wear marks / brand new |
+| Prompt | modern {stationery}, {material}, {condition}, clear brand markings | — |
+
+---
+
+## 3. Multi-Angle Reference Sheet Specification
+
+### View Definitions
+
+| Position | View | Angle | Requirement | Prompt |
 |---|---|---|---|---|
-| 左上 | 正面图 | 正面 0° | 道具完整正面形态 | front view |
-| 右上 | 侧面图 | 侧面 90° | 厚度/轮廓/结构清晰 | side view |
-| 左下 | 背面图 | 背面 180° | 道具背部结构/装饰 | back view |
-| 右下 | 细节特写 | 局部放大 | 材质纹理/工艺细节 | detail closeup |
+| Top left | Front view | Front 0° | Full frontal form of the prop | front view |
+| Top right | Side view | Side 90° | Clear thickness/silhouette/structure | side view |
+| Bottom left | Back view | Rear 180° | Prop's rear structure/decoration | back view |
+| Bottom right | Detail close-up | Local zoom | Material texture/craftsmanship detail | detail closeup |
 
-### 画面规范
+### Frame Specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面四宫格（2×2），上下左右四视角 |
-| 背景 | 纯净中性灰 #E8E8E8 |
-| 光线 | 均匀柔光，无硬阴影 |
-| 比例 | 每格道具占格内主体 70%+ |
-| 投影 | 允许自然地面微投影 |
-| 画面比例 | 建议 1:1 |
+| Layout | Same frame, four-panel grid (2×2), four viewing angles |
+| Background | Clean neutral gray #E8E8E8 |
+| Lighting | Even soft light, no hard shadows |
+| Scale | The prop occupies 70%+ of each panel's subject area |
+| Shadow | A natural subtle ground shadow is allowed |
+| Aspect ratio | Recommended 1:1 |
 
 ---
 
-## 四、材质渲染约束
+## 4. Material Rendering Constraints
 
-| 材质 | 渲染要求 | 提示词 |
+| Material | Rendering Requirement | Prompt |
 |---|---|---|
-| 金属 | 反光/高光/冷光泽、划痕微可见 | 金属质感、冷光泽、反光清晰 |
-| 玻璃 | 透光/反光/折射清晰 | 玻璃通透、反光清晰 |
-| 塑料 | 质感细腻、表面均匀 | 塑料质感、表面细腻 |
-| 皮革 | 纹理清晰、光泽自然 | 皮革纹理、质感细腻 |
-| 陶瓷 | 釉面光泽、色泽均匀 | 釉面光泽、瓷质温润 |
-| 布料 | 纤维质感、边缘自然 | 布料纹理、质感自然 |
-| 木材 | 木纹清晰、表面光滑 | 木纹清晰、质感温润 |
+| Metal | Reflection/highlight/cool sheen, scratches faintly visible | metallic texture, cool sheen, clear reflection |
+| Glass | Clear transparency/reflection/refraction | clear glass, clear reflection |
+| Plastic | Fine texture, even surface | plastic texture, fine surface |
+| Leather | Clear grain, natural sheen | leather grain, fine texture |
+| Ceramic | Glazed sheen, even coloring | glazed sheen, warm ceramic feel |
+| Fabric | Fiber texture, natural edges | fabric texture, natural feel |
+| Wood | Clear wood grain, smooth surface | clear wood grain, warm texture |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
 ```
-现代都市道具设定图，真实摄影风格，都市写实纪实，强对比度，极致细节，
-{道具类型}，{材质描述}，{工艺/装饰描述}，{状态描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图+右上侧面图+左下背面图+右下细节特写，
-纯净中性灰背景，均匀柔光，无硬阴影，
-材质纹理超清晰，质感写实，{材质光泽描述}
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+modern urban prop reference sheet, realistic photography style, urban realistic documentary style, high contrast, extreme detail,
+{prop type}, {material description}, {craftsmanship/decoration description}, {condition description},
+pure prop still-life display, prop displayed independently, not held by anyone, not worn by anyone,
+same frame four-panel grid (2×2): top-left front view + top-right side view + bottom-left back view + bottom-right detail closeup,
+clean neutral gray background, even soft light, no harsh shadows,
+ultra-clear material texture, realistic texture, {material sheen description}
+no text of any kind should appear in the image,
+no person, hands, fingers, or limbs of any kind may appear in the frame, the prop must not be held or worn
 ```
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须指定「纯净中性灰背景」 |
-| R2 | 必须明确道具材质与工艺 |
-| R3 | 道具造型必须符合现代都市世界观 |
+| R1 | Must specify "clean neutral gray background" |
+| R2 | Must clearly specify the prop's material and craftsmanship |
+| R3 | The prop's form must fit the modern urban setting |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibition |
 |---|---|
-| X1 | 复杂场景背景 |
-| X2 | 道具与人物同画面（本环节为纯道具图） |
-| X3 | 出现任何人物形象，包括全身、半身、局部（手、手指、手臂等肢体） |
-| X4 | 道具处于被持有、握持、佩戴、使用中的状态 |
-| X5 | 出现暗示人物存在的元素（如手持痕迹、佩戴视角、使用姿态） |
+| X1 | Complex scene backgrounds |
+| X2 | A prop appearing in the same frame as a person (this stage is a pure prop image) |
+| X3 | Any human figure appearing, including full body, partial body, or body parts (hand, fingers, arm, etc.) |
+| X4 | The prop being held, gripped, worn, or in use |
+| X5 | Any element implying a person's presence (such as handling marks, a wearer's-eye-view, or a usage pose) |

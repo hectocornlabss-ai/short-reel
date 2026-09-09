@@ -1,160 +1,160 @@
 ---
 name: director_storyboard
-description: 导演分镜提示词技法 · 3D 动画渲染
+description: Director storyboard prompt technique · 3D animation rendering
 metaData: director_skills
 ---
 
-# 分镜提示词 · 3D 动画渲染 · 风格专属技法
+# Storyboard Prompts · 3D Animation Rendering · Style-Specific Technique
 
 ---
 
-## 适用范围
+## Scope
 
-本 Skill 专用于**3D 动画渲染**风格的分镜提示词生成。
+This skill is dedicated to generating storyboard prompts for the **3D animation rendering** style.
 
 ---
 
-## 情绪 → 面容/眼神词映射
+## Emotion → Face/Eyes Word Mapping
 
-| 情绪输入 | 面容词 | 眼神词 | 微表情补充 |
+| Emotion input | Facial words | Eye words | Micro-expression supplement |
 |----------|--------|--------|-----------|
-| 心动 / 欣喜 | 嘴角微扬，脸颊微红 | 眼神明亮，目光温柔 | 眼睛弯月形，表情生动 |
-| 悲伤 / 失落 | 神情低落，眼眶微红 | 眼神黯淡，目光游离 | 眉心轻蹙，表情内敛 |
-| 惊讶 / 好奇 | 眼睛放大，表情生动 | 眼神集中，目光好奇 | 嘴巴微张，动作自然 |
-| 温柔 / 深情 | 神情柔和，眉眼温润 | 眼神专注，目光深情 | 嘴角微扬，表情克制温暖 |
-| 坚定 / 勇敢 | 神情严肃，眼神坚定 | 目光清澈，眼神专注 | 表情坚定，气质清亮 |
-| 害羞 / 羞涩 | 脸颊泛红，表情自然 | 目光低垂，不敢直视 | 手指轻触脸颊，动作轻柔 |
-| 温暖 / 感动 | 表情柔和，眼角带笑 | 眼神温暖，目光柔和 | 嘴角上扬，表情真诚 |
-| 孤独 / 怀念 | 神情安静，眼神悠远 | 目光放空，若有所思 | 表情平静，气质安静 |
-| 快乐 / 雀跃 | 笑容灿烂，眼睛明亮 | 眼神灵动，表情生动 | 身体前倾，动作轻快 |
-| 紧张 / 不安 | 表情略显僵硬，眉头微皱 | 眼神游离，目光不确定 | 手指捏紧，动作紧张 |
+| Infatuation / delight | Corners of the mouth slightly raised, cheeks slightly flushed | Bright eyes, gentle gaze | Eyes crescent-shaped, lively expression |
+| Sadness / loss | Downcast expression, eyes slightly reddened | Dim gaze, eyes wandering | Brow slightly furrowed, reserved expression |
+| Surprise / curiosity | Eyes widened, lively expression | Focused gaze, curious eyes | Mouth slightly open, natural movement |
+| Tenderness / deep affection | Soft expression, gentle brow and eyes | Focused gaze, affectionate eyes | Corners of the mouth slightly raised, restrained warm expression |
+| Resolve / courage | Serious expression, determined eyes | Clear gaze, focused eyes | Firm expression, bright bearing |
+| Shy / bashful | Flushed cheeks, natural expression | Downcast gaze, avoiding direct eye contact | Fingers lightly touching the cheek, gentle movement |
+| Warmth / being moved | Soft expression, smiling eyes | Warm gaze, gentle eyes | Corners of the mouth raised, sincere expression |
+| Loneliness / nostalgia | Quiet expression, distant gaze | Gaze unfocused, lost in thought | Calm expression, quiet bearing |
+| Happiness / excitement | Bright smile, sparkling eyes | Lively gaze, vivid expression | Body leaning forward, brisk movement |
+| Nervousness / unease | Slightly stiff expression, brow slightly furrowed | Wandering gaze, uncertain eyes | Fingers clenched, tense movement |
 
 ---
 
-## 光影氛围词库（3D 动画渲染）
+## Lighting Atmosphere Word Bank (3D Animation Rendering)
 
-### 时间段光线
+### Time-of-Day Lighting
 
-| 时间段 | 主光词 | 色调词 | 气氛词 |
+| Time of day | Key light words | Tone words | Mood words |
 |--------|--------|--------|---------|
-| 清晨 | 柔和晨光，散射光线 | 暖黄调 + 淡蓝点缀 | 清新感，光线透过窗户 |
-| 午后 | 柔和斜侧光，漫射光线 | 暖调为主 | 光影斑驳，温暖感 |
-| 黄昏/日落 | 逆光霞光，橙色余晖 | 暖橙 + 粉色点缀 | 长影拉伸，浪漫感 |
-| 夜间 | 霓虹光晕，局部暖光 | 暖橙主调 + 冷色点缀 | 都市感，光影层次 |
-| 室内日常 | 暖调侧光，均匀柔和 | 暖黄为主 | 温馨感，家庭氛围 |
-| 城市空景 | 霞光漫射，柔和光晕 | 暖橙主调 | 开阔感，都市美学 |
+| Morning | Soft morning light, diffused light | Warm yellow tone + pale blue accents | Fresh feel, light through windows |
+| Afternoon | Soft side light, diffused light | Mainly warm tone | Dappled light, warm feel |
+| Dusk/sunset | Backlit glow, orange afterglow | Warm orange + pink accents | Elongated shadows, romantic feel |
+| Night | Neon glow, local warm light | Warm orange dominant + cool accents | Urban feel, layered lighting |
+| Indoor everyday | Warm side light, even and soft | Mainly warm yellow | Cozy feel, homey atmosphere |
+| Urban establishing shot | Diffused glow, soft light haze | Warm orange dominant | Open feel, urban aesthetic |
 
-### 情绪光影
+### Emotional Lighting
 
-| 情绪基调 | 光线类型 | 补充约束 |
+| Emotional tone | Lighting type | Supplementary constraint |
 |----------|----------|---------|
-| 心动/温情 | 柔和侧光，暖调漫射 | 浅景深，背景轻微虚化 |
-| 悲伤/失落 | 冷调侧光，低调打光 | 面部局部暗部留存 |
-| 浪漫/甜蜜 | 逆光霞光，轮廓光 | 暖色光晕，背景轻微过曝 |
-| 怀旧/回忆 | 柔焦暖光，雾化效果 | 边缘轻微模糊，整体柔和 |
-| 日常/温馨 | 均匀漫射光，中性暖调 | 光线柔和，无明显阴影 |
-| 夜晚/都市 | 霓虹光晕，冷暖对比 | 明暗对比，层次清晰 |
+| Infatuation/tenderness | Soft side light, warm diffusion | Shallow depth of field, background slightly blurred |
+| Sadness/loss | Cool side light, low-key lighting | Partial dark areas retained on the face |
+| Romance/sweetness | Backlit glow, rim light | Warm light glow, background slightly overexposed |
+| Nostalgia/memory | Soft-focus warm light, hazy effect | Edges slightly blurred, overall soft |
+| Everyday/warmth | Even diffused light, neutral warm tone | Soft light, no obvious shadows |
+| Night/urban | Neon glow, warm-cool contrast | Clear light-dark contrast, distinct layering |
 
 ---
 
-## 场景质感约束词（按场景类型）
+## Scene Texture Constraint Words (by Scene Type)
 
-| 场景类型 | 必加约束词 |
+| Scene type | Required constraint words |
 |----------|-----------|
-| 现代都市 | 精细建筑结构，高楼大厦，玻璃幕墙，城市天际线 |
-| 咖啡厅/餐厅 | 木质桌椅，暖色灯光，窗外街景，咖啡杯细节 |
-| 居家空间 | 现代家具，暖色台灯，生活杂物细节，温馨氛围 |
-| 办公室 | 玻璃隔断，办公桌，电脑屏幕，现代办公椅 |
-| 街道/广场 | 柏油路面，路灯，行人，现代建筑 |
-| 商场/室内 | 大理石地面，玻璃橱窗，商业空间，照明灯光 |
-| 公园/绿地 | 草地纹理，树木阴影，长椅，远处建筑 |
-| 车内/公共交通 | 座椅布料，车窗反射，仪表盘光，窗外街景虚化 |
+| Modern urban | fine architectural structure, high-rise buildings, glass curtain walls, city skyline |
+| Cafe/restaurant | wooden tables and chairs, warm lighting, street view outside window, coffee cup detail |
+| Home space | modern furniture, warm table lamp, everyday clutter detail, cozy atmosphere |
+| Office | glass partitions, desk, computer screen, modern office chair |
+| Street/plaza | asphalt road surface, streetlights, pedestrians, modern buildings |
+| Mall/indoor | marble flooring, glass display windows, commercial space, lighting fixtures |
+| Park/green space | grass texture, tree shadows, benches, distant buildings |
+| Car interior/public transit | seat fabric, window reflections, dashboard light, blurred street view outside window |
 
 ---
 
-## 固定风格锚定词（所有输出必须包含）
+## Fixed Style Anchor Words (must be included in all outputs)
 
-**3D 动画锚定（必选）：**
+**3D animation anchor (required):**
 
-3D 动画渲染，赛璐珞质感，电影级打光，高细节材质
+3D animation rendering, cel-shaded texture, cinema-grade lighting, high-detail materials
 
-**轮廓线条（所有输出必选）：**
+**Outline/lines (required in all outputs):**
 
-清晰轮廓线，明快卡通渲染，轮廓线均匀一致，无断线无粗糙边缘
+clear outlines, bright cartoon rendering, uniform and consistent outlines, no broken lines or rough edges
 
-**材质质感（含材质镜头时必选）：**
+**Material texture (required when the shot includes material):**
 
-高细节材质，写实材质与卡通比例结合，材质纹理清晰，表面质感细腻
+high-detail materials, realistic material combined with cartoon proportions, clear material texture, fine surface texture
 
-**光影层次（含光影场景时必选）：**
+**Lighting layers (required when the shot includes lighting scenes):**
 
-柔和光影层次，明暗对比清晰，光效柔和自然，暖色调主导
+soft lighting layers, clear light-dark contrast, soft natural lighting effects, warm tone dominant
 
-**氛围锚定（必选）：**
+**Atmosphere anchor (required):**
 
-愉悦治愈氛围，3D 动画美学，温馨情感表达，现代都市风情
+joyful healing atmosphere, 3D animation aesthetic, warm emotional expression, modern urban feel
 
-**画质锁定词（所有输出必须包含，置于风格收尾之后）：**
+**Image quality lock words (must be included in all outputs, placed after the style closing):**
 
-模式A（中文）——默认：
+Mode A (Chinese — required for the Seedream model, do not translate) — default:
 8K 超高清，线条清晰，材质细腻，色彩饱满，画面无杂色无噪点
 
-模式A（中文）——画内文字场景（画面描述中含招牌/标识等道具文字时）：
+Mode A (Chinese — required for the Seedream model, do not translate) — scene with in-frame text (when the description includes signage/labels or other prop text):
 8K 超高清，线条清晰，材质细腻，色彩饱满，画面无杂色无噪点，招牌/标识等道具文字清晰可读
 
-模式B（英文）——默认：
+Mode B (English) — default:
 8K ultra HD, clear cel-shading, detailed materials, warm tones, no digital artifacts, no grain, no noise
 
-模式B（英文）——画内文字场景：
+Mode B (English) — scene with in-frame text:
 
 8K ultra HD, clear cel-shading, detailed materials, warm tones, no digital artifacts, no grain, no noise
 
-模式B（英文）——画内文字场景：
+Mode B (English) — scene with in-frame text:
 
 8K ultra HD, clear cel-shading, detailed materials, warm tones, no digital artifacts, no grain, no noise, legible text on signs and props
 
-**负向词模板（模式B 必须包含，置于提示词末尾）：**
+**Negative prompt template (required for Mode B, placed at the end of the prompt):**
 
-> ⚠️ Seedream（模式A）**不支持负向提示词**，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
+> Note: Seedream (Mode A) **does not support negative prompts**; negative words apply only to Mode B. Mode A ensures image quality through the texture anchors and image-quality lock words in the positive prompt.
 
-模式B（英文）：
+Mode B (English):
 no photorealism, no realistic rendering, no CG realism, no dark tones, no heavy shading, no oversaturated colors, no neon colors, no cyberpunk, no sci-fi elements, no futuristic design, no plastic look, no cartoon flat coloring without depth
 
 ---
 
-## 美学禁止项（生成时严格规避）
+## Aesthetic Prohibitions (strictly avoid when generating)
 
-以下词汇/风格不得出现于输出提示词中：
+The following words/styles must not appear in the output prompt:
 
-- ❌ 写实渲染/照片级真实感风格
-- ❌ 暗调/重阴影/过度对比风格
-- ❌ 高饱和荧光色/霓虹色系
-- ❌ 现代元素缺失（必须明确现代场景）
-- ❌ 卡通比例、大眼睛、Q版等变形描述
-- ❌ 赛博朋克/蒸汽朋克/架空西幻元素
-- ❌ 画外叠加文字（字幕、水印、标题卡、旁白叠字等 UI 层文字，画面必须为纯视觉画面）
+- Photorealistic rendering/photo-real style
+- Dark tone/heavy shadow/overly high-contrast style
+- Highly saturated fluorescent colors/neon color schemes
+- Missing modern elements (the scene must be explicitly modern)
+- Cartoon-proportion, big-eyes, chibi, or other deformation descriptions
+- Cyberpunk/steampunk/fantasy-world elements
+- Overlaid on-screen text (subtitles, watermarks, title cards, narration overlay text, or other UI-layer text; the image must be pure visual content)
 
-> 💡 **例外**：故事世界内的道具文字（招牌、路牌、标识、书籍等场景中自然存在的文字）**不属于禁止范围**。当分镜画面描述中包含此类内容时，应如实描写其存在并要求文字清晰。
+> **Exception**: in-world prop text (signage, road signs, labels, books, or other text naturally present in the scene) **is not subject to this prohibition**. When the storyboard description includes such content, it should be described faithfully and the text requested to be clearly legible.
 
 ---
 
-## 完整生成示例
+## Full Generation Example
 
-> 以下为同一输入分别使用模式A和模式B的对照展示，实际使用时**仅输出其中一种**。
+> The following shows a side-by-side comparison of Mode A and Mode B outputs for the same input; in actual use, **only one mode's output should be produced**.
 
-### 输入（分镜表行数据）
+### Input (storyboard table row data)
 
-| 序号 | 画面描述 | 场景 | 关联资产名称 | 时长 | 景别 | 运镜 | 角色动作 | 情绪 | 光影氛围 |
+| No. | Shot description | Scene | Linked asset name | Duration | Shot size | Camera move | Character action | Emotion | Lighting atmosphere |
 |------|---------|------|-------------|------|------|------|---------|------|----------|
-| 1 | 黄昏街道上，女孩站在路口，晚霞洒在发丝上 | 街道 | 女孩 | 5s | 中景 | 缓推 | 手提购物袋，侧身微笑望向远方 | 期待 / 温暖 | 黄昏霞光 + 暖调侧光 |
+| 1 | On a dusk street, a girl stands at the intersection, sunset glow falling on her hair | Street | Girl | 5s | Medium shot | Slow push-in | Holding a shopping bag, turning sideways with a gentle smile looking into the distance | Anticipation / warmth | Dusk glow + warm side light |
 
-### 示例输出A（模式A · Seedream）
+### Example Output A (Mode A · Seedream, Chinese — required for this model's quality, do not translate)
 
 [Prompt]
 3D 动画渲染，赛璐珞质感，电影级打光，高细节材质，中景构图，人物半身入镜，清晰轮廓线，明快卡通渲染，轮廓线均匀一致，无断线无粗糙边缘，高细节材质，写实材质与卡通比例结合，材质纹理清晰，表面质感细腻，黄昏街道上，女孩站在路口，手提购物袋，侧身微笑望向远方，眼神期待又温暖，晚霞洒在发丝上，逆光霞光，暖橙主调，粉色点缀，柔和光影层次，明暗对比清晰，光效柔和自然，愉悦治愈氛围，3D 动画美学，温馨情感表达，现代都市风情，8K 超高清，线条清晰，材质细腻，色彩饱满，画面无杂色无噪点。
-Based on the reference image of 女孩, maintain consistent: face features, hairstyle, costume details. Generate a new scene: standing on a street corner at sunset, holding a shopping bag, smiling gently at the distance. Keep character appearance identical to reference.
+Based on the reference image of the girl, maintain consistent: face features, hairstyle, costume details. Generate a new scene: standing on a street corner at sunset, holding a shopping bag, smiling gently at the distance. Keep character appearance identical to reference.
 
-### 示例输出B（模式B · Nanobanana）
+### Example Output B (Mode B · Nanobanana)
 
 ```xml
 <role>
@@ -162,7 +162,7 @@ You are a 3D animation storyboard artist.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 女孩 — long brown hair, gentle eyes, modern casual outfit, slim body shape
+Image [1]: girl — long brown hair, gentle eyes, modern casual outfit, slim body shape
 </character_reference>
 <continuity_rules>
 - Same wardrobe, hairstyle, face features across ALL shots
@@ -178,17 +178,17 @@ no photorealism, no realistic rendering, no CG realism, no dark tones, no heavy 
 </negative>
 ```
 
-## 快速参考卡
+## Quick Reference Card
 
-### 情绪 → 画面词速查
+### Emotion → Visual Word Quick Lookup
 
-| 情绪 | 面容关键词 | 光线匹配 |
+| Emotion | Facial keywords | Lighting match |
 |------|-----------|---------|
-| 心动 | 嘴角微扬，脸颊微红 | 逆光霞光暖调 |
-| 悲伤 | 神情低落，眼眶微红 | 冷调侧光低调 |
-| 温柔 | 神情柔和，眉眼温润 | 均匀漫射暖光 |
-| 浪漫 | 眼神专注，目光深情 | 逆光暖调光晕 |
-| 感动 | 眼角带笑，表情真诚 | 暖调侧光柔和 |
-| 孤独 | 神情安静，目光放空 | 冷调侧光暗部 |
-| 快乐 | 笑容灿烂，眼睛明亮 | 暖调漫射光 |
-| 甜蜜 | 眼神明亮，表情生动 | 逆光轮廓光 |
+| Infatuation | Corners of the mouth slightly raised, cheeks slightly flushed | Warm backlit glow |
+| Sadness | Downcast expression, eyes slightly reddened | Cool low-key side light |
+| Tenderness | Soft expression, gentle brow and eyes | Even warm diffused light |
+| Romance | Focused gaze, affectionate eyes | Warm backlit glow |
+| Being moved | Smiling eyes, sincere expression | Soft warm side light |
+| Loneliness | Quiet expression, gaze unfocused | Cool side light, dark areas |
+| Happiness | Bright smile, sparkling eyes | Warm diffused light |
+| Sweetness | Bright eyes, lively expression | Backlit rim light |

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>เครดิตของฉัน - SekClip</title>
+<style>
+  :root {
+    --teal-1: #0f9b8e;
+    --teal-2: #2dd4bf;
+    --teal-3: #a7f3d0;
+    --bg: #f4faf9;
+    --card: #ffffff;
+    --text: #16211f;
+    --muted: #6b7c79;
+    --border: #e3efec;
+    --danger: #e5484d;
+    --success: #12a150;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", "Noto Sans Thai", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: linear-gradient(135deg, var(--teal-1) 0%, var(--teal-2) 45%, var(--teal-3) 100%);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  header .brand { font-size: 1.25rem; font-weight: 700; }
+  header .userBox { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; }
+  header a.backLink { color: #fff; text-decoration: none; font-size: 0.8125rem; opacity: 0.9; }
+  header a.backLink:hover { text-decoration: underline; }
+  main { max-width: 880px; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+  }
+  .balanceCard { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .balanceCard .label { color: var(--muted); font-size: 0.875rem; }
+  .balanceCard .value { font-size: 2.25rem; font-weight: 800; color: var(--teal-1); }
+  h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+  .topupForm { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+  input[type="number"] {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 160px;
+  }
+  button {
+    background: var(--teal-1);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9375rem;
+    cursor: pointer;
+  }
+  button:hover { background: var(--teal-2); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .presetBtns { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .presetBtns button { background: var(--teal-3); color: var(--teal-1); font-weight: 600; }
+  .presetBtns button.active { background: var(--teal-1); color: #fff; }
+  .qrBox { text-align: center; margin-top: 1rem; display: none; }
+  .qrBox img { width: 220px; height: 220px; border: 1px solid var(--border); border-radius: 0.5rem; }
+  .qrBox .amount { font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0; }
+  .uploadBox { margin-top: 0.75rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .statusMsg { font-size: 0.875rem; margin-top: 0.5rem; }
+  .statusMsg.pending { color: #b78103; }
+  .statusMsg.paid { color: var(--success); }
+  .statusMsg.rejected { color: var(--danger); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  th, td { text-align: left; padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; }
+  .delta.pos { color: var(--success); font-weight: 700; }
+  .delta.neg { color: var(--danger); font-weight: 700; }
+  .empty { color: var(--muted); font-size: 0.875rem; padding: 0.5rem 0; }
+  .loginPrompt { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+  .loginPrompt a { color: var(--teal-1); font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">SekClip · เครดิตของฉัน</div>
+  <div class="userBox">
+    <span id="userDisplay"></span>
+    <a class="backLink" href="/">กลับหน้าแอป</a>
+  </div>
+</header>
+
+<main id="app">
+  <div class="loginPrompt" id="loginPrompt" style="display:none">
+    ยังไม่ได้เข้าสู่ระบบ <a href="/">กลับไปเข้าสู่ระบบ</a>
+  </div>
+
+  <div id="content" style="display:none">
+    <div class="card balanceCard">
+      <div>
+        <div class="label">เครดิตคงเหลือ</div>
+        <div class="value" id="balanceValue">-</div>
+      </div>
+      <div style="text-align:right">
+        <div class="label">อัตราปัจจุบัน</div>
+        <div id="rateValue" style="font-size:0.8125rem;color:var(--muted)"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>เติมเครดิต (PromptPay)</h2>
+      <div class="presetBtns" id="presetBtns"></div>
+      <div class="topupForm" style="margin-top:0.75rem">
+        <input type="number" id="amountInput" placeholder="จำนวนเงิน (บาท)" min="1" />
+        <button id="createOrderBtn">สร้าง QR เพื่อชำระเงิน</button>
+      </div>
+      <div class="qrBox" id="qrBox">
+        <img id="qrImg" src="" alt="PromptPay QR" />
+        <div class="amount" id="qrAmount"></div>
+        <div style="font-size:0.8125rem;color:var(--muted)">สแกนจ่ายผ่านแอปธนาคาร แล้วอัปโหลดสลิปด้านล่าง</div>
+        <div class="uploadBox">
+          <input type="file" id="slipInput" accept="image/*" />
+          <button id="uploadSlipBtn">อัปโหลดสลิป</button>
+        </div>
+        <div class="statusMsg" id="statusMsg"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ประวัติการเติมเครดิต</h2>
+      <table id="topupTable">
+        <thead><tr><th>วันที่</th><th>จำนวนเงิน</th><th>เครดิต</th><th>สถานะ</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="topupEmpty" style="display:none">ยังไม่มีประวัติการเติมเครดิต</div>
+    </div>
+
+    <div class="card">
+      <h2>ประวัติการใช้เครดิต</h2>
+      <table id="historyTable">
+        <thead><tr><th>วันที่</th><th>รายการ</th><th>เครดิต</th><th>คงเหลือ</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="historyEmpty" style="display:none">ยังไม่มีประวัติการใช้เครดิต</div>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  if (window.self !== window.top) {
+    var h = document.querySelector("header");
+    if (h) h.style.display = "none";
+    document.body.style.background = "transparent";
+  }
+  var token = localStorage.getItem("token");
+  if (!token) {
+    document.getElementById("loginPrompt").style.display = "block";
+    return;
+  }
+  document.getElementById("content").style.display = "flex";
+  document.getElementById("content").style.flexDirection = "column";
+  document.getElementById("content").style.gap = "1.25rem";
+
+  function api(path, options) {
+    options = options || {};
+    options.headers = Object.assign({ Authorization: token, "Content-Type": "application/json" }, options.headers || {});
+    return fetch("/api" + path, options).then(function (res) {
+      return res.json().then(function (json) {
+        if (!res.ok) throw new Error(json.message || "เกิดข้อผิดพลาด");
+        return json.data;
+      });
+    });
+  }
+
+  function reasonLabel(r) {
+    return { topup: "เติมเครดิต", generation: "สร้างงาน", signupBonus: "โบนัสสมัครสมาชิก", adminAdjust: "แอดมินปรับ", refund: "คืนเครดิต" }[r] || r;
+  }
+  function statusLabel(s) {
+    return { pending: "รอตรวจสอบ", paid: "สำเร็จ", rejected: "ถูกปฏิเสธ", expired: "หมดอายุ" }[s] || s;
+  }
+  function fmtDate(ts) {
+    return new Date(ts).toLocaleString("th-TH");
+  }
+
+  function loadMe() {
+    return api("/user/me").then(function (user) {
+      document.getElementById("userDisplay").textContent = user.displayName + " (" + user.credits + " เครดิต)";
+      document.getElementById("balanceValue").textContent = user.credits + " เครดิต";
+    });
+  }
+
+  function loadTopupHistory() {
+    return api("/credits/topupList").then(function (list) {
+      var tbody = document.querySelector("#topupTable tbody");
+      tbody.innerHTML = "";
+      document.getElementById("topupEmpty").style.display = list.length ? "none" : "block";
+      list.forEach(function (o) {
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + fmtDate(o.createTime) + "</td><td>" + o.amountThb + " บาท</td><td>" + o.credits + "</td><td>" + statusLabel(o.status) + "</td>";
+        tbody.appendChild(tr);
+      });
+    });
+  }
+
+  function loadCreditHistory() {
+    return api("/credits/history?pageSize=30").then(function (res) {
+      var tbody = document.querySelector("#historyTable tbody");
+      tbody.innerHTML = "";
+      document.getElementById("historyEmpty").style.display = res.list.length ? "none" : "block";
+      res.list.forEach(function (row) {
+        var tr = document.createElement("tr");
+        var deltaClass = row.delta >= 0 ? "pos" : "neg";
+        var deltaText = (row.delta >= 0 ? "+" : "") + row.delta;
+        tr.innerHTML =
+          "<td>" + fmtDate(row.createTime) + "</td><td>" + reasonLabel(row.reason) + "</td>" +
+          '<td class="delta ' + deltaClass + '">' + deltaText + "</td><td>" + row.balanceAfter + "</td>";
+        tbody.appendChild(tr);
+      });
+    });
+  }
+
+  var presets = [50, 100, 300, 500, 1000];
+  var presetBtns = document.getElementById("presetBtns");
+  presets.forEach(function (amount) {
+    var btn = document.createElement("button");
+    btn.textContent = amount + " บาท";
+    btn.onclick = function () {
+      document.getElementById("amountInput").value = amount;
+      Array.from(presetBtns.children).forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+    };
+    presetBtns.appendChild(btn);
+  });
+
+  var currentOrderId = null;
+
+  document.getElementById("createOrderBtn").onclick = function () {
+    var amount = parseFloat(document.getElementById("amountInput").value);
+    if (!amount || amount <= 0) return alert("กรุณากรอกจำนวนเงินให้ถูกต้อง");
+    this.disabled = true;
+    var btn = this;
+    api("/credits/topupCreate", { method: "POST", body: JSON.stringify({ amountThb: amount }) })
+      .then(function (data) {
+        currentOrderId = data.orderId;
+        document.getElementById("qrImg").src = data.qrDataUrl;
+        document.getElementById("qrAmount").textContent = data.amountThb + " บาท = " + data.credits + " เครดิต";
+        document.getElementById("qrBox").style.display = "block";
+        document.getElementById("statusMsg").textContent = "";
+      })
+      .catch(function (e) { alert(e.message); })
+      .finally(function () { btn.disabled = false; });
+  };
+
+  document.getElementById("uploadSlipBtn").onclick = function () {
+    var file = document.getElementById("slipInput").files[0];
+    if (!file) return alert("กรุณาเลือกไฟล์สลิป");
+    if (!currentOrderId) return alert("กรุณาสร้าง QR ก่อน");
+    var btn = this;
+    btn.disabled = true;
+    var reader = new FileReader();
+    reader.onload = function () {
+      api("/credits/topup/" + currentOrderId + "/slip", { method: "POST", body: JSON.stringify({ slipImageBase64: reader.result }) })
+        .then(function (data) {
+          var el = document.getElementById("statusMsg");
+          el.className = "statusMsg " + data.status;
+          el.textContent = data.status === "paid" ? "เติมเครดิตสำเร็จแล้ว!" : "อัปโหลดสลิปแล้ว รอแอดมินตรวจสอบ";
+          if (data.status === "paid") {
+            loadMe();
+            loadTopupHistory();
+            loadCreditHistory();
+          }
+        })
+        .catch(function (e) { alert(e.message); })
+        .finally(function () { btn.disabled = false; });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  Promise.all([loadMe(), loadTopupHistory(), loadCreditHistory()]).catch(function (e) {
+    if (String(e.message).indexOf("token") !== -1) {
+      localStorage.removeItem("token");
+      document.getElementById("loginPrompt").style.display = "block";
+      document.getElementById("content").style.display = "none";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

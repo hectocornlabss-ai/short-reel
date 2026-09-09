@@ -1,45 +1,45 @@
 ---
 name: director_storyboard_table_style
-description: 分镜表3D动画渲染约束 — 定义3D卡通渲染在分镜表中的光影氛围规范、光源角度、动作节奏、环境动态、运镜禁忌与转场禁忌。适用于任何叙事类型。
+description: Storyboard table 3D animation rendering constraints — defines lighting-atmosphere norms, light-source angle, action pacing, environmental dynamics, camera-move prohibitions, and transition prohibitions within the storyboard table for 3D cartoon rendering. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 分镜表3D动画渲染约束 · 3D卡通渲染 · 技法参考
+# Storyboard Table 3D Animation Rendering Constraints · 3D Cartoon Rendering · Technique Reference
 
 ---
 
-## 一、分镜表定位
+## 1. Role of the Storyboard Table
 
-分镜表是导演将剧本转化为镜头语言的核心工具。以下仅提供 3D 卡通渲染风格在分镜表层面的约束规范。
-
----
-
-## 二、光影与氛围
-
-- **同场戏光影统一** — 一场戏内不应出现两种以上光影方案，除非有明确的叙事转折（如关台灯→月光冷辉）
-- **情绪色盘绑定** — 每场戏至少绑定 1 个情绪场景（如相遇心动/日常温馨/离别感伤），并在镜头组内保持主色+辅色连续性
-- **光源角度规范** — 默认 45° 侧逆光，模拟黄昏霞光效果。描述光影时须区分正给/侧给的角度差异
-- **冷暖色调与叙事阶段匹配** — 前半段（日常/工作/学习）保持暖色调，冷色调（冷蓝 + 暖色对比）在夜晚或情绪转折后使用
-- **光影转场是高级手段** — 从自然光（A）渐变到室内暖光（B）= 日转夜的时间流逝。在分镜表中标注光影变化点
+The storyboard table is the director's core tool for translating the script into shot language. The following provides only the constraint norms specific to the 3D cartoon rendering style at the storyboard-table level.
 
 ---
 
-## 三、环境动态
+## 2. Lighting and Atmosphere
 
-- **环境动态增加画面呼吸感** — 树叶飘动、云层流动、车流经过、雨滴落下、灯光闪烁。每 3-4 个镜头至少安排一个有环境动态的镜头，避免画面"死"掉
-- **都市环境元素优先** — 环境动态应选用都市世界观内的元素：树叶飘动、云层流动、车流经过、霓虹闪烁、窗帘飘动，禁止出现与 3D 动画风格不兼容的元素
-
----
-
-## 四、3D 动画动作节奏
-
-- **动作要自然** — 所有人物动作默认自然节奏。起身、转身、抬手都应标注"自然"或"轻缓"
-- **甜宠互动用暗示** — 目光交汇、手指轻微触碰、递东西时的指尖接触。不要在分镜表里写大幅度双人交互，拆成暗示性的局部镜头
-- **3D 动画流畅感** — 3D 动画特有的"帧间流畅"风格，动作应连贯自然，避免生硬跳帧
+- **Unified lighting within a scene** — no more than one lighting scheme should appear within a single scene, unless there is a clear narrative turning point (e.g. turning off a table lamp → cool moonlight)
+- **Emotional palette binding** — each scene should bind to at least one emotional setting (e.g. meeting/infatuation, everyday warmth, sorrowful parting), and maintain primary + secondary color continuity within the shot group
+- **Light-source angle norm** — default 45° side-back light, simulating a dusk glow effect. When describing lighting, distinguish clearly between front-lit and side-lit angle differences
+- **Warm/cool tone matched to narrative stage** — the first half (everyday/work/study) maintains a warm tone; cool tones (cool blue + warm contrast) are used at night or after an emotional turning point
+- **Lighting transitions are an advanced technique** — a gradual shift from natural light (A) to indoor warm light (B) = the passage of time from day to night. Mark lighting-change points in the storyboard table
 
 ---
 
-## 五、运镜禁忌
+## 3. Environmental Dynamics
 
-- **禁用快速运镜** — 甩镜、急推、快速切换与 3D 卡通渲染的气质冲突（除非是转场或强调）
-- **禁用花式转场** — 划屏、旋转、百叶窗等与本风格不兼容
+- **Environmental dynamics add a sense of breathing to the frame** — leaves fluttering, clouds drifting, traffic passing, raindrops falling, lights flickering. At least one shot with environmental dynamics should be arranged every 3-4 shots, to avoid the image feeling "dead"
+- **Prioritize urban environmental elements** — environmental dynamics should draw from elements within the urban world setting: leaves fluttering, clouds drifting, traffic passing, neon flickering, curtains blowing; elements incompatible with the 3D animation style are prohibited
+
+---
+
+## 4. 3D Animation Action Pacing
+
+- **Actions should be natural** — all character actions default to a natural pace. Standing up, turning around, raising a hand should all be labeled "natural" or "gentle"
+- **Use suggestion for sweet romantic interaction** — eye contact, a light touch of fingers, fingertip contact when handing something over. Do not write large two-person interactions directly in the storyboard table; break them into suggestive, localized shots instead
+- **3D animation smoothness** — the "smooth in-between frames" feel unique to 3D animation; actions should be coherent and natural, avoiding stiff frame jumps
+
+---
+
+## 5. Camera-Move Prohibitions
+
+- **Fast camera moves prohibited** — whip pans, hard push-ins, quick cuts conflict with the temperament of 3D cartoon rendering (unless used for a transition or emphasis)
+- **Fancy transitions prohibited** — wipes, spins, venetian blinds, and other such transitions are incompatible with this style

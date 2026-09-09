@@ -1,194 +1,198 @@
 ---
 name: liveaction_urban_prop
-description: 真人都市道具图像生成 · 约束手册
+description: Live-Action Urban prop image generation · Constraint manual
 metaData: liveaction_urban_art_skills
 ---
 
-# 真人都市道具图像生成 · 约束手册
+# Live-Action Urban Prop Image Generation · Constraint Manual
 
 ---
 
-## 一、道具设计原则
+## 1. Prop Design Principles
 
-> 真人都市的道具不是"被建模的物体"，而是"被使用过的物品"——它在某个人手里待过、在某个桌面上放过、在某个口袋里装过。摄影机拍下的是它的此刻。
+> A Live-Action Urban prop is not "a modeled object," but "an item that has been used" — it has sat in someone's hand, been placed on some tabletop, been carried in some pocket. What the camera captures is its present moment.
 
-1. **物品即叙事** — 每一件道具都是一个微型的叙事容器。咖啡杯上的口红印暗示刚才有人在喝、手机壳的磨损暗示用了很久、雨伞的折痕暗示被反复开合
-2. **使用痕迹优先于完美品相** — 真人都市的道具必须有"被用过"的证据。全新的、刚拆封的、样板级别的道具一律不出现
-3. **中国当代都市真实物品** — 道具必须是中国都市生活中真实存在的物品：支付宝/微信支付界面、国产手机品牌、中文包装、中国式外卖餐盒——拒绝无国别的架空物品
-4. **材质即真实** — 不是PBR参数渲染出的材质，而是摄影机拍下的真实材质行为：不锈钢的反光、陶瓷的釉面、纸制品的吸光、塑料的注塑纹理
-5. **单视图静物摄影** — 道具以单张静物产品摄影方式独立呈现，非多角度建模展示，非2×2四宫格
-
----
-
-## 二、道具分类与美学约束
-
-### 2.1 通讯与电子设备
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 智能手机/笔记本电脑/平板/无线耳机/智能手表/充电宝/数据线 | {设备类型}，当代都市日常电子设备 |
-| 外观细节 | 屏幕显示中文界面（微信对话/消息弹窗/导航地图/外卖APP）、机身正常使用痕迹（边角轻微磕碰、屏幕细微划痕）、保护壳自然泛旧 | 中文界面显示屏、机身日常使用痕迹、边角轻微磕碰、保护壳自然泛旧 |
-| 材质质感 | 阳极氧化铝中框/玻璃面板/塑料背板，材质反光真实自然，非渲染高光 | 阳极氧化铝质感、玻璃面板自然反光、真实而非CG的材质光泽 |
-| 状态感 | 正常使用中的设备——非全新出厂、非严重损坏 | 日常使用状态、有生活感的使用痕迹、非样品机 |
-| 提示词 | 真人都市{设备}，实物产品摄影，中文界面显示，日常使用痕迹 | — |
-
-### 2.2 餐饮道具
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 咖啡杯/外卖餐盒/奶茶杯/便当盒/保温杯/玻璃水杯/餐具/便利店包装 | {餐饮道具类型}，中国当代都市日常餐饮器皿 |
-| 外观细节 | 杯口残留口红印/水汽凝结/茶渍/食物残余痕迹、外卖包装有中文品牌标识、纸质杯套自然褶皱、保温杯杯底有磨损 | 杯口自然残留痕迹、水汽凝结、中式外卖包装、品牌中文标识、使用后的自然状态 |
-| 材质质感 | 纸杯哑光纸面/陶瓷釉面光泽/不锈钢拉丝/塑料透明餐盒、材质在自然光下的真实表现 | 纸杯表面自然质感、陶瓷釉面微反光、不锈钢拉丝肌理、真实材质而非渲染 |
-| 提示词 | 真人都市{餐饮道具}，实物产品摄影，使用后的自然状态，中国当代日常餐饮 | — |
-
-### 2.3 办公与学习用品
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 笔记本/签字笔/文件夹/便利贴/订书机/工牌/文具袋/台灯/书架/教材 | {办公学习用品类型}，都市日常办公/学习用具 |
-| 外观细节 | 笔记本封面有翻折痕迹/书页有折角和标注/笔身有握持磨损/便利贴边角卷起/工牌卡套有划痕 | 封面翻折痕迹、书页自然折角、握持处磨损、贴纸边角卷翘、卡套表面划痕 |
-| 材质质感 | 纸张纤维纹理/皮革封面肌理/塑料笔杆注塑纹理/金属夹子的电镀光泽 | 纸张自然纹理、皮革真实肌理、塑料注塑质感、自然金属光泽 |
-| 提示词 | 真人都市{办公学习用品}，实物产品摄影，日常使用痕迹，真实材质质感 | — |
-
-### 2.4 随身与出行物品
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 背包/钥匙/雨伞/钱包/地铁卡/共享单车APP界面/身份证/门禁卡/驾照 | {物品类型}，都市日常随身出行物品 |
-| 外观细节 | 皮质钱包自然磨损/钥匙有划痕/雨伞伞面有折痕和雨渍/背包肩带有使用后的变形/卡面边角磨损 | 皮质自然老化、金属钥匙划痕、伞面折痕与残留雨渍、肩带自然变形、卡面使用磨损 |
-| 材质质感 | 皮革/帆布/尼龙/金属/塑料，经日常使用后的真实质感 | 皮革使用后的包浆、帆布自然泛旧、金属氧化痕迹、真实使用质感 |
-| 提示词 | 真人都市{随身物品}，实物产品摄影，日常携带磨损，使用过的真实物品 | — |
-
-### 2.5 饰品与个人配件
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 耳饰/项链/手链/戒指/手表/发夹/眼镜/墨镜/丝巾/围巾 | {饰品配件类型}，当代都市日常个人饰品 |
-| 外观细节 | 银饰轻微氧化/金属表面微划痕/皮质表带弯折痕迹/眼镜鼻托有使用痕迹/丝巾有自然褶皱 | 银饰自然轻微氧化、日常佩戴微划痕、表带弯折自然、镜腿使用痕迹 |
-| 材质质感 | 金属/皮质/织物/板材/珍珠/亚克力，饰品级工艺但在使用中留下了真实痕迹 | 金属微哑光泽、皮质弯折纹理、织物自然毛感、珍珠温润光泽 |
-| 提示词 | 真人都市{饰品}，实物产品摄影，日常佩戴痕迹，真实材质细节 | — |
-
-### 2.6 居家生活杂件
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 遥控器/药盒/眼镜盒/相框/盆栽/烛台/牙刷杯/毛巾/拖鞋/钥匙托盘 | {居家物品类型}，中国当代都市家居日常用品 |
-| 外观细节 | 药盒标签中文说明、遥控器按键有磨损/缝隙有灰尘、相框有落尘、盆栽叶片有黄尖、毛巾有软化起毛 | 中文药品标签、按键日常磨损、自然落尘感、叶片自然枯尖、毛巾使用起毛 |
-| 材质质感 | 塑料/木质/陶瓷/织物/玻璃，家庭环境中的真实材质状态 | 塑料使用油光、木质自然纹路、陶瓷釉面、织物柔软质感 |
-| 提示词 | 真人都市{居家物品}，实物产品摄影，家庭使用痕迹，真实的居家物品状态 | — |
-
-### 2.7 信物与关键道具
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 旧照片/信件/明信片/车票/戒指/挂坠/日记本/录音笔/存折/病历/钥匙扣 | {信物类型}，承载剧情记忆的关键物品 |
-| 外观细节 | 纸张泛黄/字迹微洇/照片边缘卷翘/金属褪色/皮面磨损——年代感与情感痕迹清晰可见 | 纸张自然泛黄、手写字迹墨水微洇、照片边缘卷翘、金属褪色包浆、被反复翻阅的磨损 |
-| 特殊性 | 必须有"被某人珍视/翻阅/携带过"的视觉证据，而非空白道具 | 被反复接触的磨损区域、被翻阅的痕迹、贴身携带的证据 |
-| 状态感 | 旧物感——但不是刻意做旧的，而是"放了很久"的自然老去 | 岁月自然旧化、时光留下的痕迹、非人为刻意做旧 |
-| 提示词 | 真人都市{信物}，实物产品摄影，岁月留下的自然痕迹，承载记忆的物品 | — |
-
-### 2.8 医药与健康物品
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 药盒/药瓶/体温计/创可贴/口罩/消毒液/病历本/体检报告/眼药水/保温杯 | {医药健康物品类型}，中国当代都市日常健康用品 |
-| 外观细节 | 中文药品说明和包装、口罩有佩戴褶皱、体温计有使用痕迹、药盒铝箔板有取药后的空缺 | 中文药品包装标签、口罩使用后的褶皱、开过的药盒、使用过的真实状态 |
-| 材质质感 | 纸盒/塑料瓶/铝箔/玻璃/无纺布，医疗相关的真实材质 | 纸盒质感、塑料药瓶、铝箔反光、无纺布纹理 |
-| 提示词 | 真人都市{医药用品}，实物产品摄影，日常使用状态，中国当代家庭常用 | — |
+1. **Objects as narrative** — Every prop is a miniature narrative vessel. A lipstick mark on a coffee cup hints that someone was just drinking from it; wear on a phone case hints it's been used for a long time; creases in an umbrella hint it's been opened and closed repeatedly
+2. **Signs of use take priority over pristine condition** — Live-Action Urban props must carry evidence of having "been used." Anything brand-new, freshly unboxed, or sample-grade must never appear
+3. **Genuine, contemporary Chinese urban items** — Props must be items that genuinely exist in Chinese urban life: Alipay/WeChat Pay interfaces, domestic phone brands, Chinese-language packaging, Chinese-style takeout containers — reject any nationally unidentifiable, fictional items
+4. **Materials as reality** — Not a material rendered from PBR parameters, but the genuine material behavior captured by a camera: the reflection of stainless steel, the glaze of ceramic, the light absorption of paper products, the injection-molding texture of plastic
+5. **Single-view still-life photography** — Props are presented independently as a single still-life product photograph, not a multi-angle model display, not a 2x2 grid
 
 ---
 
-## 三、单视图静物摄影规范
+## 2. Prop Categories and Aesthetic Constraints
 
-> 真人都市道具仅需单张静物产品摄影，非多角度建模展示。以下为单视图摄影的完整规范。
+### 2.1 Communication and Electronic Devices
 
-### 画面构成
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Smartphone/laptop/tablet/wireless earbuds/smartwatch/power bank/charging cable | {device type}, a contemporary urban everyday electronic device |
+| Appearance Detail | The screen shows a Chinese-language interface (WeChat chat/notification popup/navigation map/food-delivery app), the body shows normal wear from use (slight scuffs at the corners, fine scratches on the screen), the protective case naturally faded | A Chinese-language display interface, everyday wear on the body, slight corner scuffs, a naturally faded protective case |
+| Material Texture | An anodized aluminum frame/glass panel/plastic back panel, with genuine, natural material reflection, not a rendered highlight | An anodized aluminum texture, natural glass-panel reflection, a genuine rather than CG material sheen |
+| Condition | A device in normal use — neither fresh off the factory line nor severely damaged | An everyday-use condition, lived-in wear marks, not a sample unit |
+| Prompt | Live-Action Urban {device}, real-object product photography, a Chinese-language interface displayed, everyday wear marks | — |
 
-| 项目 | 摄影要求 |
+### 2.2 Food and Beverage Props
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Coffee cup/takeout container/milk tea cup/lunch box/thermos/glass water cup/tableware/convenience-store packaging | {food/beverage prop type}, a contemporary Chinese urban everyday food/beverage vessel |
+| Appearance Detail | A lipstick mark left on the cup rim/condensation/tea stains/food residue marks, takeout packaging with Chinese-language brand markings, a naturally creased paper cup sleeve, wear on the base of a thermos | Natural residue marks on the cup rim, condensation, Chinese-style takeout packaging, Chinese-language brand markings, a natural post-use state |
+| Material Texture | A matte paper-cup surface/a glossy ceramic glaze/brushed stainless steel/a transparent plastic container, with genuine material behavior under natural light | A natural paper-cup surface texture, a slightly reflective ceramic glaze, a brushed stainless-steel texture, genuine rather than rendered material |
+| Prompt | Live-Action Urban {food/beverage prop}, real-object product photography, a natural post-use state, contemporary Chinese everyday dining | — |
+
+### 2.3 Office and Study Supplies
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Notebook/gel pen/folder/sticky notes/stapler/work ID badge/pencil case/desk lamp/bookshelf/textbook | {office/study supply type}, an urban everyday office/study item |
+| Appearance Detail | A notebook cover with fold marks/dog-eared, annotated book pages/wear on the pen body from gripping/curled corners on sticky notes/scratches on a badge holder | Fold marks on the cover, naturally dog-eared pages, wear at the grip point, curled sticky-note corners, scratches on the holder surface |
+| Material Texture | Paper fiber texture/leather cover texture/plastic pen-body injection-molding texture/the electroplated sheen of a metal clip | A natural paper texture, a genuine leather texture, a plastic injection-molded texture, a natural metallic sheen |
+| Prompt | Live-Action Urban {office/study supply}, real-object product photography, everyday wear marks, genuine material texture | — |
+
+### 2.4 Personal Carry and Travel Items
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Backpack/keys/umbrella/wallet/subway card/bike-share app interface/ID card/access card/driver's license | {item type}, an urban everyday carry/travel item |
+| Appearance Detail | Natural wear on a leather wallet/scratches on keys/creases and rain marks on an umbrella canopy/deformation in a backpack strap from use/worn corners on a card | Natural leather aging, metal key scratches, canopy creases with residual rain marks, natural strap deformation, worn card edges from use |
+| Material Texture | Leather/canvas/nylon/metal/plastic, with genuine texture after everyday use | Leather patina from use, naturally faded canvas, metal oxidation marks, genuine wear texture |
+| Prompt | Live-Action Urban {carry item}, real-object product photography, everyday carry wear, a genuinely used item | — |
+
+### 2.5 Jewelry and Personal Accessories
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Earrings/necklace/bracelet/ring/watch/hairpin/glasses/sunglasses/silk scarf/scarf | {jewelry/accessory type}, a contemporary urban everyday personal accessory |
+| Appearance Detail | Slight oxidation on silver jewelry/fine scratches on a metal surface/bend marks on a leather watch strap/wear marks on glasses' nose pads/natural creases in a silk scarf | Natural slight silver oxidation, fine everyday-wear scratches, a naturally bent strap, wear marks on the temple arms |
+| Material Texture | Metal/leather/fabric/acetate/pearl/acrylic, jewelry-grade craftsmanship that has still picked up genuine wear marks from use | A slightly matte metal sheen, leather bend-crease texture, a natural fabric fuzziness, a warm pearl luster |
+| Prompt | Live-Action Urban {accessory}, real-object product photography, everyday wear marks, genuine material detail | — |
+
+### 2.6 Household Miscellany
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Remote control/pill box/glasses case/photo frame/potted plant/candlestick/toothbrush cup/towel/slippers/key tray | {household item type}, a contemporary Chinese urban household everyday item |
+| Appearance Detail | Chinese-language instructions on a pill box, worn buttons on a remote/dust in the crevices, dust settled on a photo frame, yellowing leaf tips on a potted plant, a softened, fuzzy towel | A Chinese-language medicine label, everyday wear on buttons, a natural dust-settled feel, naturally dried leaf tips, a fuzzy, well-used towel |
+| Material Texture | Plastic/wood/ceramic/fabric/glass, in a genuine material state within a home environment | A plastic surface sheen from use, natural wood grain, a ceramic glaze, a soft fabric texture |
+| Prompt | Live-Action Urban {household item}, real-object product photography, household wear marks, a genuine domestic item condition | — |
+
+### 2.7 Keepsakes and Key Story Props
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Old photograph/letter/postcard/train ticket/ring/pendant/diary/voice recorder/bankbook/medical record/keychain | {keepsake type}, a key item carrying story memory |
+| Appearance Detail | Yellowed paper/slightly blurred ink/curled photo edges/faded metal/worn leather surface — a clearly visible sense of age and emotional trace | Naturally yellowed paper, slightly bled handwritten ink, curled photo edges, faded, patinated metal, wear from being handled repeatedly |
+| Special Quality | Must carry visual evidence of "having been cherished/read/carried by someone," rather than being a blank prop | Wear areas from repeated contact, marks of having been read through, evidence of being carried close to the body |
+| Condition | A sense of age — not deliberately distressed, but naturally aged from "having sat for a long time" | Natural aging over time, marks left by the passage of time, not artificially distressed |
+| Prompt | Live-Action Urban {keepsake}, real-object product photography, natural traces left by time, an item carrying memory | — |
+
+### 2.8 Medical and Health Items
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Pill box/medicine bottle/thermometer/adhesive bandage/face mask/disinfectant/medical record book/health-check report/eye drops/thermos | {medical/health item type}, a contemporary Chinese urban everyday health item |
+| Appearance Detail | Chinese-language medicine instructions and packaging, crease marks on a worn mask, wear marks on a thermometer, empty slots in a foil pill sheet after pills have been taken | Chinese-language medicine packaging labels, creases on a used mask, an opened pill box, a genuinely used condition |
+| Material Texture | Cardboard box/plastic bottle/foil/glass/non-woven fabric, genuine medical-related materials | A cardboard-box texture, a plastic medicine bottle, foil reflection, a non-woven fabric texture |
+| Prompt | Live-Action Urban {medical/health item}, real-object product photography, an everyday-use condition, common in contemporary Chinese households | — |
+
+---
+
+## 3. Single-View Still-Life Photography Specification
+
+> Live-Action Urban props require only a single still-life product photograph, not a multi-angle model display. Below is the complete specification for single-view photography.
+
+### Frame Composition
+
+| Item | Photographic Requirement |
 |---|---|
-| 道具呈现 | 道具居中或偏三分线位置独立陈列，完整入画，无裁切 |
-| 背景 | 素灰无缝背景纸 #B0B0B0（哑光），或纯白桌面/台面（浅木纹/米白桌面），根据道具属性选择。无多余物体、无装饰、无文字 |
-| 光线 | 自然窗光或单灯柔光。窗光45°侧入（明亮柔和带自然阴影）、或柔光箱顶+侧补（产品摄影级均匀光线）。光影柔和、方向明确、无硬阴影 |
-| 景深 | 浅景深（f/2.8-f/5.6），道具主体清晰锐利，前后微虚化突出主体 |
-| 投影 | 道具底部与承载面之间的自然接触阴影——真实的而非抠图或悬浮。阴影柔软、方向与主光源一致 |
-| 画面比例 | 建议 1:1 正方形或 4:3，适配单件道具展示 |
+| Prop Presentation | The prop displayed independently, centered or positioned along a rule-of-thirds line, fully shown within the frame, no cropping |
+| Background | A plain gray seamless backdrop paper #B0B0B0 (matte), or a plain white tabletop/countertop (light wood grain/off-white tabletop), chosen according to the prop's nature. No extraneous objects, no decoration, no text |
+| Lighting | Natural window light or a single soft light. Window light entering at a 45° angle (bright and soft with a natural shadow), or a soft-box overhead + side fill (product-photography-grade even lighting). Soft, directionally clear lighting, no harsh shadows |
+| Depth of Field | Shallow depth of field (f/2.8-f/5.6), the prop's main body sharp and crisp, with slight blur fore and aft emphasizing the subject |
+| Cast Shadow | A natural contact shadow between the base of the prop and the surface it rests on — genuine, not a cutout or floating object. The shadow should be soft, its direction consistent with the main light source |
+| Aspect Ratio | Recommend 1:1 square or 4:3, suited to displaying a single prop |
 
-### 道具状态准则
+### Prop Condition Guidelines
 
-| 维度 | 要求 |
+| Dimension | Requirement |
 |---|---|
-| 使用痕迹 | 必须有"被使用过"的视觉证据——非全新未拆封、非样板品相 |
-| 中国辨识度 | 中文标识/中国品牌/中国式包装/当代中国日常——拒绝无国别架空物品 |
-| 材质真实感 | 非渲染质感——是摄影机拍下的真实材料行为（光的反射、漫射、透射） |
-| 尺度感 | 通过材质纹理密度、工艺细节暗示实物尺寸，无需参照物 |
+| Signs of Use | Must carry visual evidence of "having been used" — not brand-new/unboxed, not sample-grade condition |
+| Chinese Identifiability | Chinese-language markings/Chinese brands/Chinese-style packaging/contemporary Chinese everyday life — reject nationally unidentifiable, fictional items |
+| Material Realism | Not a rendered texture — the genuine material behavior captured by a camera (light reflection, diffusion, transmission) |
+| Sense of Scale | Suggest the real-world size through material-texture density and craft details, without needing a reference object |
 
 ---
 
-## 四、材质与表面——摄影机下的真实物体
+## 4. Materials and Surfaces — Genuine Objects Under the Camera
 
-> 以下是摄影机对城市日常物品表面行为的描述，不是渲染参数。
+> The following describes how the camera captures the surface behavior of everyday urban objects — it is not a set of render parameters.
 
-| 材质 | 在摄影机下的真实表现 | 提示词 |
+| Material | Genuine Behavior Under the Camera | Prompt |
 |---|---|---|
-| 金属（不锈钢/铝合金） | 拉丝肌理可见、边缘高光锐利但不死白、反射周围的柔和环境色、表面有指纹和微划痕 | 金属拉丝肌理、自然环境反射、表面微划痕与指纹痕迹、非渲染的光泽 |
-| 玻璃 | 通透但有微弱的自身颜色（玻璃断面呈淡绿）、表面有指印或水渍、边缘倒角有光折射 | 玻璃自然通透、表面真实指印/水渍、边缘光折射、非CG完美透明 |
-| 陶瓷 | 釉面柔和反光（非镜面）、表面有细微开片/划痕、杯口杯底有使用磨损 | 陶瓷釉面柔和反光、细微使用划痕、杯底自然磨损 |
-| 塑料 | 注塑纹理/合模线可见、表面有细微划痕、哑光塑料的漫反射质感 | 注塑纹理清晰、合模线自然可见、表面细微使用划痕 |
-| 纸质 | 纤维粗糙度可见、折痕自然（非刻意）、印刷文字微洇、边缘有翻阅磨损 | 纸质纤维纹理、自然折痕、印刷文字真实质感、边缘自然磨损 |
-| 织物（棉/麻/帆布） | 编织纹理可见、表面有起毛/起球、折痕与使用褶皱、颜色有细微不均 | 织物编织纹理、自然起毛起球、使用后的真实褶皱 |
-| 皮革 | 天然纹理/毛孔可见、弯折处有使用痕迹、边缘有自然磨损、五金件有氧化 | 皮革天然纹理、弯折使用痕迹、五金件轻微氧化、真实使用包浆 |
-| 木质 | 木纹自然、表面有划痕/磕碰、漆面有使用磨损、颜色微变 | 木纹自然清晰、表面使用磕碰痕迹、漆面日常磨损 |
+| Metal (stainless steel/aluminum alloy) | A visible brushed texture, sharp but not blown-out edge highlights, reflecting soft surrounding ambient color, fingerprints and fine scratches on the surface | A brushed metal texture, natural ambient reflection, fine surface scratches and fingerprint marks, a non-rendered sheen |
+| Glass | Transparent but with a faint tint of its own (a pale green edge at the glass cross-section), fingerprints or water marks on the surface, light refraction at the beveled edge | Naturally transparent glass, genuine surface fingerprints/water marks, edge light refraction, not a CG-perfect transparency |
+| Ceramic | A soft glaze reflection (not mirror-like), fine crackling/scratches visible on the surface, wear marks on the rim and base from use | A soft ceramic glaze reflection, fine wear scratches, natural wear on the base |
+| Plastic | Visible injection-molding texture/mold-parting lines, fine surface scratches, the matte diffuse quality of matte plastic | Clear injection-molding texture, naturally visible mold-parting lines, fine everyday-wear scratches on the surface |
+| Paper | Visible fiber roughness, natural (not deliberate) creases, slightly bled printed text, edge wear from being handled | Paper fiber texture, natural creases, genuine printed-text texture, natural edge wear |
+| Fabric (cotton/linen/canvas) | A visible weave texture, fuzzing/pilling on the surface, creases and wear folds, slight color unevenness | A woven fabric texture, natural fuzzing and pilling, genuine post-use creases |
+| Leather | Natural grain/visible pores, wear marks at bend points, natural edge wear, oxidized hardware | A natural leather grain, bend-point wear marks, slightly oxidized hardware, genuine use patina |
+| Wood | Natural wood grain, surface scratches/dings, wear on the finish from use, slight color change | A natural, clear wood grain, surface wear dings, everyday wear on the finish |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
-真人都市道具实物产品摄影，单张静物展示，非3D渲染非CG非建模，
-{道具类型}，{材质描述}，{外观细节——使用痕迹、中文标识、日常状态}，
-道具独立展示，{背景描述：素灰背景纸 #B0B0B0 / 浅木纹桌面 / 米白台面}，
-{光源描述：自然窗光45°侧入 / 柔光箱顶光+侧补光}，浅景深 f/2.8-f/5.6，柔和自然阴影，
-{材质真实质感描述：金属拉丝/玻璃通透/陶瓷釉面/纸质纹理/皮革肌理/织物编织}，
-日常使用痕迹可见、非全新样板品相、中国当代都市日常物品，
-画面干净无文字无水印无签名无边框，
-真人写实摄影画质、35mm全画幅摄影质感
+```
+Live-Action Urban prop real-object product photography, a single still-life display, not 3D rendered, not CG, not modeled,
+{prop type}, {material description}, {appearance detail — signs of use, Chinese-language markings, everyday condition},
+the prop displayed independently, {background description: plain gray backdrop paper #B0B0B0 / light wood-grain tabletop / off-white counter},
+{light source description: natural window light entering at 45° / soft-box overhead light + side fill}, shallow depth of field f/2.8-f/5.6, a soft natural shadow,
+{genuine material texture description: brushed metal/transparent glass/ceramic glaze/paper texture/leather grain/woven fabric},
+visible everyday wear marks, not brand-new sample condition, a contemporary Chinese urban everyday item,
+a clean frame with no text, no watermark, no signature, no border,
+live-action realistic photography quality, 35mm full-frame photographic texture
+```
 
-### 负面规避提示词
+### Negative Prompt
 
+```
 3D render, 3D modeling, CGI, Unreal Engine, Blender, PBR material, 8K modeling, game engine, cartoon, anime, 2D, illustration, hand drawn,
 brand new, unboxed, pristine, showroom, sample product, perfect condition, unused,
 floating, shadowless, cut out, white background isolation, clipping path,
 multiple views, grid layout, four views, turnaround, orthographic view, blueprint,
-古风, 古代, 仙侠, 武侠, 民国, 赛博朋克, 科幻, 西方奇幻, 中世纪, 非中国物品,
+period costume, ancient, xianxia, wuxia, Republic era, cyberpunk, sci-fi, Western fantasy, medieval, non-Chinese item,
 person, hand, finger, holding, wearing, using, interacting,
 text on image, watermark, signature, logo, border, frame
+```
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须是「单张静物摄影」——单视图、非多角度、非2×2四宫格、非建模展示 |
-| R2 | 必须指定「素灰背景纸 #B0B0B0」或「浅木纹桌面/米白台面」等真实桌面，禁止复杂场景 |
-| R3 | 必须指定光源逻辑——窗光或柔光箱，光影方向明确、投影自然 |
-| R4 | 道具必须有「使用痕迹」——非全新、非样板品相、非未拆封 |
-| R5 | 道具必须具备中国当代都市辨识度——中文标识/中国品牌/中国式包装 |
-| R6 | 必须声明「实物产品摄影 + 非3D渲染非CG」核心锚定 |
-| R7 | 材质必须描述为摄影机下的真实表现，而非渲染参数 |
+| R1 | Must be "a single still-life photograph" — a single view, not multi-angle, not a 2x2 grid, not a model display |
+| R2 | Must specify "a plain gray backdrop paper #B0B0B0" or a genuine surface such as "a light wood-grain tabletop/off-white counter"; complex scenes are prohibited |
+| R3 | Must specify the lighting logic — window light or a soft box, with a clear light direction and a natural cast shadow |
+| R4 | The prop must show "signs of use" — not brand-new, not sample-grade condition, not unboxed |
+| R5 | The prop must have contemporary Chinese urban identifiability — Chinese-language markings/Chinese brands/Chinese-style packaging |
+| R6 | Must declare the core anchor of "real-object product photography + not 3D rendered, not CG" |
+| R7 | Materials must be described as genuine behavior under the camera, not as render parameters |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 严禁「3D渲染 / 3D建模 / CG / UE引擎 / Blender / PBR材质」等一切CG术语 |
-| X2 | 严禁「2D手绘 / 插画 / 动画 / 二次元」等非摄影媒介 |
-| X3 | 严禁「多角度 / 四视图 / 2×2网格 / 正交视图 / turnaround / blueprint」——仅单张 |
-| X4 | 严禁「全新未拆封 / 样板品相 / 无使用痕迹 / 完美品相」的道具 |
-| X5 | 严禁「古风/古代/仙侠/武侠/民国/赛博朋克/科幻/西方奇幻/架空」等非当代都市物品 |
-| X6 | 严禁「无中国辨识度的架空物品 / 全英文包装 / 非中国品牌」 |
-| X7 | 严禁「出现人物/手部/手指/肢体/义体」 |
-| X8 | 严禁「道具被持有/握持/佩戴/使用中/与人物互动」的状态 |
-| X9 | 严禁「悬浮/抠图白底/无投影/无承载面」——物品必须放在真实表面上 |
-| X10 | 严禁「水印 / 文字 / LOGO / 签名 / 边框 / AI生成痕迹」 |
+| X1 | Strictly prohibit all CG terminology such as "3D rendering / 3D modeling / CG / UE engine / Blender / PBR materials" |
+| X2 | Strictly prohibit non-photographic media such as "2D hand-drawn / illustration / animation / anime" |
+| X3 | Strictly prohibit "multiple angles / four views / 2x2 grid / orthographic view / turnaround / blueprint" — single view only |
+| X4 | Strictly prohibit props that are "brand-new/unboxed / sample-grade condition / with no signs of use / in perfect condition" |
+| X5 | Strictly prohibit non-contemporary-urban items such as "ancient style / period / xianxia / wuxia / Republic-era / cyberpunk / sci-fi / Western fantasy / fictional world" |
+| X6 | Strictly prohibit "nationally unidentifiable fictional items / all-English packaging / non-Chinese brands" |
+| X7 | Strictly prohibit "the appearance of a person/hands/fingers/limbs/prosthetics" |
+| X8 | Strictly prohibit a prop shown "being held/gripped/worn/in use/interacting with a person" |
+| X9 | Strictly prohibit "floating / cutout on a white background / no cast shadow / no supporting surface" — the object must rest on a genuine surface |
+| X10 | Strictly prohibit "watermarks / text / logos / signatures / borders / traces of AI generation" |

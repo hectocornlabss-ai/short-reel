@@ -1,355 +1,359 @@
 ---
 name: liveaction_urban_character_derivative
-description: 真人都市人物衍生资产生成 · 约束手册
+description: Live-Action Urban character derivative asset generation · Constraint manual
 metaData: liveaction_urban_art_skills
 ---
 
-# 真人都市人物衍生资产生成 · 约束手册
+# Live-Action Urban Character Derivative Asset Generation · Constraint Manual
 
 ---
 
-## 一、造型逻辑——给一个真实的人做造型
+## 1. Styling Logic — Styling a Real Person
 
-> 真人都市不讨论"材质叠加"、"PBR渲染"、"建模精度"。这里讨论的是：化妆师在真人脸上工作、发型师用真实工具处理真实头发、造型师从衣架上取下一件被穿过的衣服——然后摄影机拍下这一切。
+> Live-Action Urban does not discuss "material layering," "PBR rendering," or "modeling precision." What's discussed here is: a makeup artist working on a real face, a hairstylist handling real hair with real tools, a stylist taking a worn garment off a hanger — and then the camera capturing all of it.
 
-1. **妆容是"第二层皮肤"，不是"面部贴图"** — 粉底会与皮肤油脂融合、眼线会跟随眼型微偏移、口红会因唇纹呈现不均匀的质感——妆容必须有"刚画上去"的真实感
-2. **头发是活的** — 造型后的头发仍然会散落碎发、发根有自然的蓬度而非假发套、马尾扎紧处有头皮的自然牵拉痕迹
-3. **衣服是"穿在身上"的，不是"穿在模型上"的** — 肩线不一定完全对称（真人站姿不对称）、面料随身体动作产生自然褶皱、领口有穿脱导致的轻微变形
-4. **造型服务于面孔，而不是遮蔽面孔** — 最失败的造型是让人认不出底模是谁。衍生造型应强化而非掩盖角色的核心气质
+1. **Makeup is a "second layer of skin," not a "facial texture map"** — Foundation blends with the skin's natural oil, eyeliner shifts slightly with the eye shape, lipstick shows uneven texture due to lip lines — makeup must feel real, as if it was "just applied"
+2. **Hair is alive** — Even after styling, hair still has loose stray strands, natural volume at the roots rather than a wig-like helmet, and a natural pull mark on the scalp where a ponytail is tied tight
+3. **Clothes are "worn on the body," not "worn on a mannequin"** — The shoulder line isn't necessarily perfectly symmetrical (a real stance is asymmetrical), the fabric creases naturally with body movement, the collar shows slight deformation from being put on and taken off
+4. **Styling serves the face, rather than obscuring it** — The most failed styling is one where the base model becomes unrecognizable. Derivative styling should reinforce, not mask, the character's core essence
 
 ---
 
-## 二、造型层级
+## 2. Styling Layers
 
-| 层级 | 内容 | 真人都市的理解 |
+| Layer | Content | The Live-Action Urban Understanding |
 |---|---|---|
-| L0 | 底模 | 基础形象底模——素颜、基础发型、基础日常服装。不修改 |
-| L1 | 妆容 | 化妆师在真人脸上的工作——底妆→眉眼→面颊→唇。按场景决策强度 |
-| L2 | 发型造型 | 发型师用真实工具做的发型——吹整/扎束/编发/烫卷 + 发饰 |
-| L3 | 内搭 | 贴身层——T恤/衬衫/针织/吊带/打底衫，替换基础款 |
-| L4 | 外套/主服 | 外层——西装/风衣/卫衣/连衣裙/大衣/工装，决定整体穿搭风格 |
-| L5 | 配饰 | 首饰/帽饰/眼镜/围巾/包袋/手表——日常穿搭的最后一步 |
+| L0 | Base Model | The base image — bare face, base hairstyle, base everyday clothing. Not modified |
+| L1 | Makeup | The makeup artist's work on a real face — base makeup → brows/eyes → cheeks → lips. Intensity decided by scene |
+| L2 | Hairstyling | A hairstyle done by a hairstylist with real tools — blow-dried/tied up/braided/curled + hair accessories |
+| L3 | Inner Layer | The layer against the skin — T-shirt/shirt/knitwear/camisole/base layer, replacing the base outfit |
+| L4 | Outer Layer/Main Outfit | The outer layer — suit/trench coat/hoodie/dress/coat/workwear, determining the overall outfit style |
+| L5 | Accessories | Jewelry/headwear/glasses/scarf/bag/watch — the final step of an everyday outfit |
 
-> **范畴边界**：仅造型层面（妆容+发型+着装+配饰）。不包含道具（手机/咖啡杯/雨伞/书本等手持物）、场景环境、姿态动作。
+> **Scope boundary**: Styling layers only (makeup + hair + clothing + accessories). Does not include props (phones/coffee cups/umbrellas/books, or other handheld items), scene environment, or pose/action.
 
 ---
 
-## 三、妆容——化妆师在真人脸上的工作（L1）
+## 3. Makeup — the Makeup Artist's Work on a Real Face (L1)
 
-### 核心原则
+### Core Principle
 
-> 妆容是"第二层皮肤"。摄影机必须能透过妆容看见底下的真实皮肤——毛孔没有被填平、细纹没有被磨掉、粉底没有像面具一样浮在表面。
+> Makeup is a "second layer of skin." The camera must be able to see the real skin underneath the makeup — pores not filled in, fine lines not smoothed away, foundation not sitting on the surface like a mask.
 
-### 线索分析与妆容决策
+### Cue Analysis and Makeup Decision-Making
 
-| 步骤 | 处理内容 |
+| Step | Processing Content |
 |---|---|
-| S1 | 提取用户线索：场景情境、情绪氛围、面部状态描述 |
-| S2 | 过滤非妆容线索：道具/场景/动作词不上妆 |
-| S3 | 匹配场景→妆容强度：素肌级 / 日常级 / 场合级 / 盛典级 |
-| S4 | 生成 L1 提示词——只输出结论 |
+| S1 | Extract user cues: scene context, emotional atmosphere, facial-state description |
+| S2 | Filter out non-makeup cues: prop/scene/action words are not applied as makeup |
+| S3 | Match scene → makeup intensity: bare-skin level / everyday level / occasion level / gala level |
+| S4 | Generate the L1 prompt — output only the conclusion |
 
-### 场景→妆容强度映射
+### Scene → Makeup Intensity Mapping
 
-| 场景 | 妆容强度 | 核心意图 |
+| Scene | Makeup Intensity | Core Intent |
 |---|---|---|
-| 居家/晨起/素颜状态 | 素肌级——无妆容痕迹，仅皮肤本身 | 真实的皮肤质感，未经修饰的面孔 |
-| 日常通勤/超市/散步 | 日常级——轻妆，看起来像"没化妆但气色好" | 职场/生活中的得体，不引人注意的精致 |
-| 约会/聚会/逛街 | 场合级——看得出化了妆，但不过分 | 有存在感的妆容，但仍属于"日常生活"范畴 |
-| 晚宴/婚礼/盛典 | 盛典级——完整精致的妆容 | 为镜头和灯光设计的妆容，但底妆仍可见真实皮肤 |
+| At home/just woken up/bare face | Bare-skin level — no makeup traces, only the skin itself | Genuine skin texture, an unretouched face |
+| Everyday commute/supermarket/walking | Everyday level — light makeup that looks like "no makeup but good complexion" | Appropriate polish for work/life, unobtrusive refinement |
+| Date/gathering/shopping | Occasion level — makeup that's noticeable but not excessive | Makeup with presence, but still within the "everyday life" range |
+| Evening banquet/wedding/gala | Gala level — a full, polished makeup look | Makeup designed for camera and lighting, but the base makeup still shows real skin |
 
-### 女性妆容——按面孔类型适配
+### Female Makeup — Matched to Face Type
 
-#### 清冷克制型
+#### Cool and Reserved
 
-| 强度 | 妆容意图 | 提示词 |
+| Intensity | Makeup Intent | Prompt |
 |---|---|---|
-| 素肌级 | 不化妆——干净的冷白皮肤，眉毛自然未经修饰，唇色是自身血色 | 无妆容痕迹、自然冷白皮肤质感、未经修饰的原生眉、唇色即自身血色 |
-| 日常级 | "我可能涂了一点唇膏"——极淡裸色唇、眉毛轻扫、无眼妆痕迹 | 极淡裸色唇膏、自然眉形轻扫、无眼妆感、皮肤本身的光泽 |
-| 场合级 | 红唇是唯一重点——哑光砖红或棕调口红，眉眼保持克制，强调清冷疏离 | 哑光砖红唇妆（唯一重点）、极细眼线贴眼尾、眉形干净利落、其他部位近乎裸妆 |
-| 盛典级 | 冷调烟熏但不浓——灰棕小烟熏、轮廓修容、哑光暗红唇，保留骨感 | 灰棕小烟熏眼妆、颧骨下方轻修容、哑光暗红唇、保留面部骨感 |
+| Bare-skin Level | No makeup — clean, cool-white skin, naturally unshaped brows, lip color is the natural blood color of the lips | No makeup traces, natural cool-white skin texture, unshaped natural brows, lip color as the skin's natural tone |
+| Everyday Level | "I may have put on a little lip balm" — extremely light nude lips, a light brow brush, no eye makeup traces | Extremely light nude lip balm, naturally brushed brow shape, no visible eye makeup, the skin's own sheen |
+| Occasion Level | Red lips as the sole focal point — matte brick-red or brown-toned lipstick, restrained brows and eyes, emphasizing cool detachment | Matte brick-red lip makeup (sole focal point), a very fine eyeliner at the outer corner, a clean, crisp brow shape, near-bare makeup elsewhere |
+| Gala Level | Cool smoky but not heavy — a small gray-brown smoky eye, contoured features, a matte dark-red lip, retaining bone structure | Small gray-brown smoky eye makeup, light contouring beneath the cheekbones, a matte dark-red lip, retained facial bone structure |
 
-#### 温柔治愈型
+#### Gentle and Healing
 
-| 强度 | 妆容意图 | 提示词 |
+| Intensity | Makeup Intent | Prompt |
 |---|---|---|
-| 素肌级 | 暖白通透皮肤，面颊自带淡粉，眉毛柔和 | 暖白通透素颜皮肤、自然粉嫩面颊、柔和眉形、无妆感 |
-| 日常级 | 水润光泽感——光泽底妆、粉调腮红轻扫、润唇膏质感 | 光泽感底妆、粉调腮红自然晕染、透明感润唇、眼神柔和 |
-| 场合级 | 暖调柔和——杏色眼影、奶油腮红、镜面唇釉，整体温润 | 暖杏色眼影自然晕染、奶油质感腮红、镜面唇釉、温润柔和 |
-| 盛典级 | 暖调精妆——香槟色珠光眼妆、光泽底妆、玫瑰豆沙唇，精致不失温柔 | 香槟珠光眼妆、光泽高光、玫瑰豆沙唇色、精致温柔的完整妆面 |
+| Bare-skin Level | Warm, luminous white skin, naturally pinkish cheeks, soft brows | Warm, luminous bare skin, naturally rosy cheeks, soft brow shape, no makeup look |
+| Everyday Level | A dewy, glossy look — a luminous base, a light pink blush, a balm-like lip texture | Luminous base makeup, naturally blended pink blush, a sheer, glossy lip balm, a soft gaze |
+| Occasion Level | Warm and soft — apricot-toned eyeshadow, cream blush, a mirror-glossy lip tint, an overall warm, gentle look | Naturally blended warm apricot eyeshadow, cream-textured blush, a mirror-glossy lip tint, warm and gentle |
+| Gala Level | A polished warm look — champagne shimmer eye makeup, a luminous base, a rose-taupe lip, refined yet still gentle | Champagne shimmer eye makeup, a luminous highlight, a rose-taupe lip color, a refined and gentle complete makeup look |
 
-#### 都市干练型
+#### Urban Sharp
 
-| 强度 | 妆容意图 | 提示词 |
+| Intensity | Makeup Intent | Prompt |
 |---|---|---|
-| 素肌级 | 中性干净皮肤，眉毛利落但未画 | 中性干净素颜皮肤、利落眉形无修饰、自然唇色、不加修饰的面孔 |
-| 日常级 | "职场淡妆"——哑光底妆、利落眉形、MLBB唇色（my lips but better） | 哑光自然底妆、利落眉形轻描、MLBB唇色、不引人注意的得体 |
-| 场合级 | 锐利但不凶——清晰眼线、轮廓修容、低饱和玫瑰唇 | 锐利清晰眼线、面部轮廓修容、低饱和玫瑰色唇、干练而有力 |
-| 盛典级 | 完整精妆——雾面底妆、结构感修容、正红或梅子色唇，气场全开 | 雾面精致底妆、结构感轮廓修容、正红色/梅子色唇、完整但面部结构仍可辨 |
+| Bare-skin Level | Neutral, clean skin, crisp but unpainted brows | Neutral, clean bare skin, a crisp, unshaped brow, a natural lip color, an unretouched face |
+| Everyday Level | "Office-appropriate light makeup" — a matte base, a crisp brow shape, an MLBB lip color (my lips but better) | Matte, natural base makeup, a crisply drawn brow shape, an MLBB lip color, an unobtrusive polish |
+| Occasion Level | Sharp but not fierce — clearly defined eyeliner, contoured features, a low-saturation rose lip | Sharp, clearly defined eyeliner, contoured facial structure, a low-saturation rose lip, sharp and forceful |
+| Gala Level | A full, polished makeup look — a matte base, structural contouring, a true-red or plum-colored lip, full presence | Matte, polished base makeup, structural contouring, a true-red/plum-colored lip, a complete look with facial structure still discernible |
 
-#### 青春元气型
+#### Youthful and Energetic
 
-| 强度 | 妆容意图 | 提示词 |
+| Intensity | Makeup Intent | Prompt |
 |---|---|---|
-| 素肌级 | 胶原蛋白即妆容——不需要化妆的皮肤本身就很亮 | 饱满胶原蛋白感素颜、自然红润面颊、明亮眼神、无需化妆 |
-| 日常级 | "只是提了一下气色"——有色润唇膏、透明眉胶、极淡膏状腮红 | 有色润唇膏、透明眉胶梳理、膏状腮红淡淡拍开、看不出化了妆 |
-| 场合级 | 明亮活泼——橘调/珊瑚色腮红、亮泽唇釉、轻微珠光眼影 | 橘调元气腮红、亮泽唇釉、轻微珠光眼影、明亮的少女感 |
-| 盛典级 | 精致但不老气——清透底妆、果汁唇釉、微闪眼影、保留幼态感 | 清透底妆保留皮肤质感、果汁唇釉、微闪珠光眼影、精致但不掩盖年轻感 |
+| Bare-skin Level | Collagen fullness as the makeup itself — skin that's bright on its own without needing makeup | Full, collagen-rich bare skin, naturally rosy cheeks, a bright gaze, no need for makeup |
+| Everyday Level | "Just perked up the complexion a bit" — a tinted lip balm, clear brow gel, an extremely light cream blush | A tinted lip balm, clear brow gel grooming, a lightly patted cream blush, an undetectable makeup look |
+| Occasion Level | Bright and lively — an orange/coral-toned blush, a glossy lip tint, a light shimmer eyeshadow | An energetic orange-toned blush, a glossy lip tint, a light shimmer eyeshadow, a bright, youthful look |
+| Gala Level | Polished but not aging — a sheer, luminous base, a juicy lip gloss, a slight shimmer eyeshadow, retaining a youthful quality | A sheer base retaining skin texture, a juicy lip gloss, a subtly shimmering eyeshadow, polished without masking youth |
 
-#### 市井烟火型
+#### Streetwise and Down-to-Earth
 
-| 强度 | 妆容意图 | 提示词 |
+| Intensity | Makeup Intent | Prompt |
 |---|---|---|
-| 素肌级 | 被太阳晒过的脸——日晒痕迹、自然的肤色不均、不化妆 | 日晒痕迹的自然面孔、真实的肤色不均、未经化妆的皮肤、生活本身的面孔 |
-| 日常级 | "抹了点面霜就出门"——极淡润色隔离、自身唇色 | 极淡润色、几乎看不见的底妆、自身唇色、刚洗完脸的自然状态 |
-| 场合级 | 简单体面——自然色唇膏、眉毛稍作整理、轻薄的底妆 | 自然色系唇膏、稍作整理的眉形、轻薄不打底的底妆、朴素的体面 |
-| 盛典级 | 盛装但不造作——偏暖大地色眼影、砖红/棕红唇、底妆可见皮肤质感 | 暖调大地色眼妆、砖红/棕红色唇、保留皮肤质感的底妆、盛装但不失真 |
+| Bare-skin Level | A sun-weathered face — sun-exposure marks, natural skin-tone unevenness, no makeup | A naturally sun-weathered face, genuine skin-tone unevenness, unmade-up skin, a face shaped by life itself |
+| Everyday Level | "Just put on some cream before heading out" — an extremely light tinted moisturizer, natural lip color | Extremely light tinted moisturizer, an almost invisible base, natural lip color, a fresh-washed natural state |
+| Occasion Level | Simple and presentable — a natural-toned lipstick, lightly groomed brows, a thin base | A natural-toned lipstick, a lightly groomed brow shape, a thin, unlayered base, plain but presentable |
+| Gala Level | Dressed up but not affected — warm earth-toned eyeshadow, a brick-red/russet lip, a base that still shows skin texture | Warm earth-toned eye makeup, a brick-red/russet lip, a base retaining skin texture, dressed up without losing authenticity |
 
-### 男性妆容
+### Male Makeup
 
-> 男性妆容的最高标准是"看不出来化了妆"。
+> The highest standard for men's makeup is that it "can't be detected."
 
-| 强度 | 适用场景 | 提示词 |
+| Intensity | Applicable Scene | Prompt |
 |---|---|---|
-| 素肌级 | 所有场景的默认状态 | 未经修饰的真实男性皮肤、自然油脂光泽、毛孔清晰可见、剃须后的下颌真实质感 |
-| 日常级 | 镜头特写/棚拍/重要对话 | 极淡均匀肤色（不可见粉感）、眉毛用透明眉胶轻梳、润唇膏质感的自然唇色——整体看不出化妆 |
-| 场合级 | 婚礼/盛典/镜头特写 | 均匀干净的皮肤（保留毛孔纹理）、眉形轻扫、唇色自然润泽——看得出被认真对待但看不出粉底 |
+| Bare-skin Level | The default state for all scenes | Genuinely unretouched male skin, natural oily sheen, clearly visible pores, real texture on a freshly shaved jaw |
+| Everyday Level | Close-up shots/studio shoots/important dialogue | An extremely light, even skin tone (no visible powder feel), brows lightly groomed with clear brow gel, a natural lip color with a balm-like texture — overall makeup undetectable |
+| Occasion Level | Wedding/gala/close-up shots | Even, clean skin (retaining pore texture), lightly brushed brow shape, a naturally moisturized lip color — noticeably well-groomed but no visible foundation |
 
 ---
 
-## 四、发型造型——发型师手里的真实头发（L2）
+## 4. Hairstyling — Real Hair in a Hairstylist's Hands (L2)
 
-### 女性发型
+### Female Hairstyles
 
-#### 按造型方式分类
+#### By Styling Method
 
-| 造型方式 | 类型 | 发型描述 | 适配面孔类型 |
+| Styling Method | Type | Hairstyle Description | Matching Face Type |
 |---|---|---|---|
-| 自然垂落 | 黑长直 | 自然柔顺直发、发尾轻微内扣、中分发缝或侧分、碎发自然散落额前和颈后 | 清冷克制/温柔治愈/都市干练 |
-| 自然垂落 | 慵懒微卷 | 大弧度慵懒卷发、发根自然蓬松、卷度不均匀（非电卷棒一式一样）、碎发环绕面部 | 温柔治愈/青春元气 |
-| 自然垂落 | 锁骨层次短发 | 齐肩长度、发尾有层次碎剪、一侧拨到耳后露出耳饰、后颈碎发自然 | 都市干练/清冷克制 |
-| 自然垂落 | 羊毛小卷 | 全头中小卷、蓬松有空气感、发根自然站立、卷度有手工感而非机械均匀 | 青春元气/市井烟火 |
-| 扎束造型 | 高马尾 | 高颅顶位置扎起、发根自然蓬松、马尾有自然弧度而非直线垂落、额前和鬓角碎发自然散落 | 青春元气/都市干练/运动场景 |
-| 扎束造型 | 低马尾/低髻 | 后颈或耳后位置束起、松而不散、后颈碎发自然、有"随手扎起来"的松弛感 | 温柔治愈/市井烟火/居家场景 |
-| 扎束造型 | 丸子头 | 头顶或后脑位置盘起、松散不紧绷、碎发环绕面部和颈部 | 居家/日常/运动 |
-| 编发造型 | 单侧麻花辫 | 侧编麻花、松散有手工感、编入自然碎发、辫尾自然毛躁 | 温柔治愈/青春元气 |
-| 编发造型 | 双麻花/双辫 | 两侧对称编发、松紧适中、适合年轻感造型 | 青春元气 |
-| 短发造型 | 齐耳短发 | 耳上或耳下长度、发尾整齐或碎剪、一侧挽耳后、后颈清爽 | 都市干练/清冷克制 |
-| 短发造型 | 少年感碎短发 | 层次碎剪短发、后颈推短、额前碎发自然散落 | 清冷克制/都市干练/中性风 |
+| Natural Loose | Long, straight black hair | Naturally smooth, straight hair, ends slightly curved inward, a center or side part, loose strands naturally scattered on the forehead and behind the neck | Cool and Reserved/Gentle and Healing/Urban Sharp |
+| Natural Loose | Loose, tousled curls | Wide, tousled curls, naturally voluminous roots, uneven curl pattern (not the uniform look of a curling iron), loose strands framing the face | Gentle and Healing/Youthful and Energetic |
+| Natural Loose | Collarbone-length layered bob | Shoulder-length, layered ends with texturized cutting, one side tucked behind the ear revealing an earring, natural loose strands at the nape | Urban Sharp/Cool and Reserved |
+| Natural Loose | Small, fluffy curls | Small-to-medium curls throughout, voluminous and airy, naturally lifted roots, hand-crafted rather than mechanically uniform curl pattern | Youthful and Energetic/Streetwise and Down-to-Earth |
+| Tied Up | High ponytail | Tied high near the crown, naturally voluminous roots, the ponytail has a natural curve rather than falling straight, loose strands naturally scattered at the forehead and temples | Youthful and Energetic/Urban Sharp/athletic scenes |
+| Tied Up | Low ponytail/low bun | Tied at the nape or behind the ear, loose but not undone, natural loose strands at the nape, a relaxed "just tied it up" feel | Gentle and Healing/Streetwise and Down-to-Earth/at-home scenes |
+| Tied Up | Bun | Tied up at the crown or back of the head, loose rather than tight, loose strands framing the face and neck | At-home/everyday/athletic |
+| Braided | Single side braid | A side braid, loose with a hand-crafted feel, natural loose strands woven in, a naturally frizzy braid tail | Gentle and Healing/Youthful and Energetic |
+| Braided | Twin braids/pigtails | Symmetrical braids on both sides, moderate tightness, suited to a youthful look | Youthful and Energetic |
+| Short | Ear-length bob | Above or below ear length, blunt or texturized ends, one side tucked behind the ear, a clean nape | Urban Sharp/Cool and Reserved |
+| Short | Boyish tousled short hair | Layered, texturized short hair, a short-cropped nape, loose strands naturally scattered on the forehead | Cool and Reserved/Urban Sharp/androgynous style |
 
-#### 头发在摄影机前的真实状态（所有发型共享）
+#### Hair's Real State in Front of the Camera (Shared by All Styles)
 
-| 状态 | 提示词 |
+| State | Prompt |
 |---|---|
-| 碎发 | 额前碎发自然散落、鬓角婴儿发、后颈碎发、发际线自然不整齐 |
-| 发根 | 发根自然蓬松而非紧贴头皮、分缝处自然可见头皮 |
-| 发尾 | 发尾自然毛躁/分叉、扎束后发尾有自然弧度 |
-| 光泽 | 健康发质的自然反光——非油光非哑光、逆光下头发半透明暖色轮廓 |
-| 严禁 | 假发套般整齐边界、CG发丝根根分明、无碎发、僵硬定型 |
+| Loose Strands | Naturally scattered loose strands at the forehead, baby hairs at the temples, loose strands at the nape, a naturally uneven hairline |
+| Roots | Naturally voluminous roots rather than lying flat against the scalp, scalp naturally visible at the part |
+| Ends | Naturally frizzy/split ends, a natural curve at the tied-up hair's tail |
+| Sheen | The natural reflective quality of healthy hair — neither greasy nor matte, a translucent, warm-toned rim on backlit hair |
+| Strictly Prohibited | Wig-like uniform boundaries, CG hair with every strand distinct, no loose strands, stiff styling |
 
-### 男性发型
+### Male Hairstyles
 
-| 造型 | 描述 | 适配面孔类型 |
+| Style | Description | Matching Face Type |
 |---|---|---|
-| 利落短发 | 两侧推短、顶部留长可造型、发丝有自然走向、额头可见 | 硬朗成熟/都市干练（对应男性面孔） |
-| 微分碎盖 | 额前碎发微盖眉毛、顶部蓬松有层次、两侧自然过渡 | 阳光少年/温润内敛 |
-| 侧分短发 | 侧分缝、一侧向后梳理、商务整洁但非油头硬壳 | 清冽克制/温润内敛 |
-| 寸头/板寸 | 极短发、头皮可见、发际线自然、头型轮廓清晰 | 硬朗成熟/市井江湖 |
-| 狼尾/鲻鱼头 | 前短后长、后颈发尾留长、层次利落、有"没认真剪"的随性感 | 阳光少年/清冽克制 |
-| 中长发 | 及肩长度、自然垂落或半扎、发质自然 | 清冽克制/艺术气质 |
-| 卷发/纹理 | 自然卷或微烫纹理、蓬松有空气感、不僵硬 | 阳光少年/温润内敛 |
+| Crisp Short Hair | Short on the sides, longer on top for styling, hair with a natural growth direction, forehead visible | Rugged and Mature/Urban Sharp (male face types) |
+| Slightly Parted Fringe | Loose strands slightly covering the eyebrows, voluminous, layered on top, a natural transition on the sides | Sunny Youth/Warm and Reserved |
+| Side-parted Short Hair | A side part, one side combed back, business-neat but not a stiff, slicked-back look | Cold and Reserved/Warm and Reserved |
+| Buzz Cut/Crew Cut | Extremely short hair, scalp visible, a natural hairline, a clearly defined head shape | Rugged and Mature/Streetwise and Worldly |
+| Mullet | Short in front, longer in back, longer hair left at the nape, crisp layering, a casual "didn't bother cutting it carefully" feel | Sunny Youth/Cold and Reserved |
+| Medium-length Hair | Shoulder-length, worn loose or half-tied, a natural hair quality | Cold and Reserved/artistic temperament |
+| Curly/Textured Hair | Naturally curly or lightly permed texture, voluminous and airy, not stiff | Sunny Youth/Warm and Reserved |
 
-#### 头发在摄影机前的真实状态（男性共享）
+#### Hair's Real State in Front of the Camera (Shared, Male)
 
-| 状态 | 提示词 |
+| State | Prompt |
 |---|---|
-| 短发质感 | 短发状态下头皮可见、发丝走向自然、鬓角与胡茬自然过渡 |
-| 日常状态 | 没有发胶硬壳感、头发自然蓬松或微塌（符合日常）、风吹过的自然凌乱 |
-| 发际线 | 自然发际线（允许轻微后退）、额角可能有轻微稀疏、非假发式整齐 |
-| 严禁 | 发胶硬壳反光、假发套整齐边界、CG发丝、不自然的完美发型 |
+| Short Hair Texture | Scalp visible in short-hair states, a natural hair-growth direction, a natural transition between sideburns and stubble |
+| Everyday State | No stiff gel-shell feel, hair naturally voluminous or slightly flattened (consistent with everyday life), natural windblown disarray |
+| Hairline | A natural hairline (allowing slight receding), possible slight thinning at the temples, not wig-like neatness |
+| Strictly Prohibited | A reflective, gel-shell sheen, wig-like uniform boundaries, CG hair strands, an unnaturally perfect hairstyle |
 
 ---
 
-## 五、服饰——真实的穿搭，非建模着装（L3+L4）
+## 5. Clothing — Genuine Outfits, Not Modeled Garments (L3+L4)
 
-### 真人都市的服饰逻辑
+### The Live-Action Urban Clothing Logic
 
-> 3D项目讨论的是"材质渲染"、"PBR物理属性"、"多层结构拼接"。真人都市讨论的是：这件衣服从哪里买的？穿过几次了？今天为什么选了它？
+> 3D projects discuss "material rendering," "PBR physical properties," "multi-layer mesh assembly." Live-Action Urban discusses: where was this garment bought? How many times has it been worn? Why was it chosen today?
 
-- **叠穿来自天气和场合，不是来自"设计层次"**：T恤外面套衬衫因为早晚温差大、风衣因为今天有风、针织开衫因为办公室空调太冷
-- **衣服有穿着痕迹**：领口微微变形、袖口有摩擦痕迹、牛仔裤膝盖有拉伸纹理、白T恤洗涤后微微泛旧
-- **合身而非紧身**：衣服贴合身体但不紧绷，肩线在自然位置（可因体态微偏），裤长刚好或微堆在鞋面
-- **中国当代都市的真实穿搭**——不是韩剧、不是日杂、不是欧美街拍
+- **Layering comes from weather and occasion, not from "design layers"**: a shirt over a T-shirt because of a big morning-evening temperature swing, a trench coat because it's windy today, a knit cardigan because the office air-conditioning is too cold
+- **Clothes show signs of wear**: a slightly deformed collar, friction marks at the cuffs, stretch texture at the knees of jeans, a white T-shirt slightly faded after washing
+- **Fitted, not tight**: clothes hug the body without being tight, the shoulder line sits in a natural position (which may shift slightly with posture), pant length is just right or slightly pools over the shoes
+- **Genuine contemporary Chinese urban outfits** — not Korean drama style, not Japanese street style, not Western street fashion
 
-### 女性服饰矩阵
+### Female Clothing Matrix
 
-| 穿搭风格 | 核心单品 | 适用场景 | 提示词 |
+| Outfit Style | Core Items | Applicable Scene | Prompt |
 |---|---|---|---|
-| 通勤职场 | 西装外套/衬衫/烟管裤/中长半裙/风衣 | 办公室、商务会议、日常通勤 | 通勤职场穿搭、西装外套+衬衫+直筒西裤、驼色/藏蓝/黑色系、面料自然垂坠、合身不紧绷 |
-| 休闲日常 | T恤/卫衣/牛仔裤/阔腿裤/针织开衫 | 周末出街、超市购物、咖啡厅、散步 | 休闲日常穿搭、宽松卫衣+直筒牛仔裤、米白/灰色/卡其色系、棉质自然质感 |
-| 温柔约会 | 针织连衣裙/碎花半裙/羊绒开衫/法式衬衫 | 约会、闺蜜聚会、下午茶 | 温柔约会穿搭、针织连衣裙+短款开衫、奶油/藕粉/浅杏色系、柔软面料质感 |
-| 街头潮范 | Oversize卫衣/工装裤/牛仔外套/棒球帽 | 逛街、潮玩、音乐节、夜生活 | 街头潮范穿搭、oversize连帽卫衣+工装阔腿裤、黑/灰/军绿色系、随性有态度 |
-| 运动户外 | 瑜伽裤/运动bra/速干T恤/冲锋衣/运动鞋 | 健身房、户外跑步、骑行、徒步 | 运动穿搭、瑜伽裤+运动bra+宽松速干T恤、深色系、功能性面料自然质感 |
-| 文艺学院 | 针织背心+衬衫/百褶裙/帆布鞋/毛呢短外套 | 校园、书店、图书馆、展览 | 文艺学院穿搭、针织背心叠穿衬衫+百褶裙、藏蓝/酒红/格纹、书卷气 |
-| 居家慵懒 | 宽松棉质家居服/针织睡袍/毛绒外套 | 家中日常、晨起、深夜 | 居家穿搭、宽松棉质长袖+家居长裤、米白/浅灰/浅蓝、柔软亲肤质感 |
+| Work Commute | Blazer/shirt/cigarette pants/midi skirt/trench coat | Office, business meetings, daily commute | A work-commute outfit, a blazer + shirt + straight-leg dress pants, camel/navy/black tones, natural fabric drape, fitted but not tight |
+| Casual Everyday | T-shirt/hoodie/jeans/wide-leg pants/knit cardigan | Weekend outings, grocery shopping, cafes, walking | A casual everyday outfit, a loose hoodie + straight-leg jeans, off-white/gray/khaki tones, a natural cotton texture |
+| Gentle Date-night | Knit dress/floral skirt/cashmere cardigan/French-style shirt | Dates, friend gatherings, afternoon tea | A gentle date-night outfit, a knit dress + a short cardigan, cream/dusty-pink/pale-apricot tones, a soft fabric texture |
+| Street Trendy | Oversized hoodie/cargo pants/denim jacket/baseball cap | Shopping, trendy hangouts, music festivals, nightlife | A street trendy outfit, an oversized hooded sweatshirt + wide-leg cargo pants, black/gray/army-green tones, casual with attitude |
+| Sporty Outdoor | Yoga pants/sports bra/quick-dry T-shirt/windbreaker/sneakers | Gym, outdoor running, cycling, hiking | An athletic outfit, yoga pants + a sports bra + a loose quick-dry T-shirt, dark tones, a natural functional-fabric texture |
+| Literary Academic | A knit vest over a shirt/pleated skirt/canvas shoes/wool short coat | Campus, bookstore, library, exhibitions | A literary academic outfit, a knit vest layered over a shirt + a pleated skirt, navy/burgundy/plaid, a bookish air |
+| Cozy at Home | Loose cotton loungewear/knit robe/plush jacket | Everyday at home, mornings, late nights | A loungewear outfit, a loose long-sleeve top + lounge pants, off-white/light gray/pale blue, a soft, skin-friendly texture |
 
-### 男性服饰矩阵
+### Male Clothing Matrix
 
-| 穿搭风格 | 核心单品 | 适用场景 | 提示词 |
+| Outfit Style | Core Items | Applicable Scene | Prompt |
 |---|---|---|---|
-| 商务正装 | 西装套装/白衬衫/领带/正装皮鞋 | 商务会议、正式场合、重要会面 | 商务正装穿搭、深灰/藏蓝西装套装+白衬衫、合身剪裁、面料挺括有垂感 |
-| 商务休闲 | 休闲西装+圆领T恤/针织衫+休闲裤 | 日常通勤、轻商务场合 | 商务休闲穿搭、休闲西装+圆领白T+卡其休闲裤、不系领带、松弛有度 |
-| 日常休闲 | 纯色T恤/亨利领长袖/卫衣+直筒牛仔裤 | 周末、日常、所有非正式场合 | 日常休闲穿搭、纯色棉质T恤+直筒牛仔裤、黑/白/灰/藏蓝、面料自然舒适 |
-| 街头潮牌 | 印花卫衣/工装裤/牛仔夹克/帆布鞋 | 逛街、聚会、夜生活 | 街头潮牌穿搭、印花卫衣+工装束脚裤、黑/军绿/灰色系、松弛有态度 |
-| 运动机能 | 速干T恤/运动短裤/运动长裤/运动鞋 | 健身房、跑步、篮球场 | 运动穿搭、速干T恤+运动短裤、黑色/深灰、功能性面料质感 |
-| 文艺清冷 | 落肩衬衫/宽松针织/阔腿西裤/帆布鞋 | 书店、展览、咖啡厅 | 文艺穿搭、落肩棉质衬衫+宽松西裤、大地色/米白/藏蓝、不刻意的质感 |
+| Business Formal | Suit/white shirt/tie/formal leather shoes | Business meetings, formal occasions, important meetings | A business-formal outfit, a dark-gray/navy suit + white shirt, a fitted cut, crisp, well-draping fabric |
+| Business Casual | Casual blazer + crew-neck T-shirt/knitwear + casual trousers | Daily commute, semi-business occasions | A business-casual outfit, a casual blazer + a white crew-neck T-shirt + khaki casual trousers, no tie, relaxed yet composed |
+| Everyday Casual | Solid-color T-shirt/Henley long sleeve/hoodie + straight-leg jeans | Weekends, everyday life, all informal occasions | An everyday casual outfit, a solid cotton T-shirt + straight-leg jeans, black/white/gray/navy, a naturally comfortable fabric |
+| Street Trend | Printed hoodie/cargo pants/denim jacket/canvas shoes | Shopping, gatherings, nightlife | A street-trend outfit, a printed hoodie + cargo joggers, black/army-green/gray tones, relaxed with attitude |
+| Athletic/Functional | Quick-dry T-shirt/athletic shorts/track pants/sneakers | Gym, running, basketball court | An athletic outfit, a quick-dry T-shirt + athletic shorts, black/dark gray, a functional fabric texture |
+| Literary and Cool | Drop-shoulder shirt/loose knitwear/wide-leg dress pants/canvas shoes | Bookstore, exhibitions, cafes | A literary outfit, a drop-shoulder cotton shirt + loose dress pants, earth tones/off-white/navy, an understated texture |
 
 ---
 
-## 六、配饰——日常穿搭的最后一步（L5）
+## 6. Accessories — the Final Step of an Everyday Outfit (L5)
 
-### 女性配饰
+### Female Accessories
 
-| 品类 | 真人都市的配饰逻辑 | 提示词 |
+| Category | The Live-Action Urban Accessory Logic | Prompt |
 |---|---|---|
-| 耳饰 | 不是"金属耳坠"——而是"今天出门前随手拿起的那对"。小巧简约为主，与穿搭风格呼应 | 小巧银质耳钉/金属细圈耳环/珍珠耳钉/亚克力几何耳坠——搭配{穿搭风格} |
-| 项饰 | 锁骨链或中长项链，贴合颈部自然弧度，不悬浮、不嵌进皮肤 | 纤细锁骨链/金属细链吊坠/珍珠短链——自然贴合颈部 |
-| 手表/手饰 | 日常佩戴的表、细手链或戒指，有使用痕迹（表带自然弯折、金属微磨损） | 皮质表带腕表/金属细手链/简约戒指——日常佩戴质感、有使用痕迹 |
-| 帽饰 | 棒球帽/贝雷帽/针织冷帽——帽檐有自然弧度、帽身有佩戴痕迹 | 棒球帽（帽檐自然弧度）/贝雷帽（微微倾斜佩戴）/针织冷帽（松软质感） |
-| 眼镜 | 光学眼镜或墨镜，镜框材质自然，镜片有轻微反光但可看到眼睛 | 金属细框/板材框架眼镜、镜片微反光但仍可见眼神 |
-| 包袋 | 日常通勤/出行的真实包袋——皮质有使用褶皱、帆布有自然泛旧 | 皮质单肩包（自然使用褶皱）/帆布托特包（轻微泛旧）/斜挎小包 |
+| Earrings | Not "metal drop earrings" — but "the pair grabbed on the way out today." Mostly small and simple, matching the outfit style | Small silver stud earrings/thin metal hoop earrings/pearl studs/acrylic geometric drop earrings — paired with {outfit style} |
+| Necklaces | A collarbone chain or medium-length necklace, following the neck's natural curve, neither floating nor digging into the skin | A delicate collarbone chain/thin metal pendant chain/short pearl necklace — naturally resting against the neck |
+| Watch/Hand Jewelry | A daily-wear watch, a thin bracelet, or a ring, with signs of use (a naturally bent watch strap, slight metal wear) | A leather-strap watch/thin metal bracelet/simple ring — a daily-wear texture, with signs of use |
+| Headwear | Baseball cap/beret/knit beanie — a naturally curved brim, signs of wear on the crown | A baseball cap (naturally curved brim)/a beret (worn at a slight tilt)/a knit beanie (soft texture) |
+| Glasses | Optical glasses or sunglasses, a natural frame material, the lenses with slight reflection but the eyes still visible | Thin metal frames/acetate frame glasses, lenses with slight reflection but the eyes still visible |
+| Bags | A genuine everyday commute/travel bag — leather with wear creases, canvas naturally faded | A leather shoulder bag (natural wear creases)/a canvas tote bag (slightly faded)/a small crossbody bag |
 
-### 男性配饰
+### Male Accessories
 
-| 品类 | 提示词 |
+| Category | Prompt |
 |---|---|
-| 手表 | 日常佩戴腕表——金属表带自然磨损/皮质表带弯折痕迹/简约表盘 |
-| 眼镜 | 金属细框/板材框架眼镜、镜片微反光、鼻托自然贴合 |
-| 帽饰 | 棒球帽/冷帽——自然佩戴状态、帽檐微曲、有日常使用感 |
-| 背包 | 双肩包/邮差包——帆布或皮革材质、有使用痕迹、肩带自然弯折 |
+| Watch | A daily-wear watch — a naturally worn metal strap/bent leather strap marks/a simple dial |
+| Glasses | Thin metal frames/acetate frame glasses, slight lens reflection, nose pads naturally fitted |
+| Headwear | Baseball cap/knit beanie — a naturally worn state, a slightly curved brim, an everyday used feel |
+| Backpack | A backpack/messenger bag — canvas or leather material, signs of use, naturally bent straps |
 
 ---
 
-## 七、造型组合速查
+## 7. Styling Combination Quick Reference
 
-| 场景 | 妆容强度 | 发型 | 穿搭风格 | 配饰 |
+| Scene | Makeup Intensity | Hairstyle | Outfit Style | Accessories |
 |---|---|---|---|---|
-| 居家晨起 | 素肌级 | 自然散落/随意扎起 | 居家慵懒 | 极简或无 |
-| 通勤上班 | 日常级 | 利落垂发/低马尾/侧分短发 | 通勤职场/商务休闲 | 手表+简约包袋 |
-| 周末出街 | 日常级 | 慵懒微卷/微分碎盖/狼尾 | 休闲日常/日常休闲 | 包袋+帽子+手表 |
-| 约会见面 | 场合级 | 温柔卷发/锁骨短发/侧分 | 温柔约会/文艺学院 | 耳饰+项饰+包袋 |
-| 咖啡厅/书店 | 日常级 | 自然垂落/层次短发/中长发 | 文艺学院/文艺清冷 | 眼镜+帆布包 |
-| 健身房/户外 | 素肌级 | 高马尾/丸子头/寸头 | 运动户外/运动机能 | 运动手表+发带 |
-| 晚宴/盛典 | 盛典级 | 精致卷发/盘发/侧分油头 | 正式着装（连衣裙/西装） | 耳饰+项饰+手饰+精致包袋 |
-| 深夜独处 | 素肌级 | 随意散落/微乱 | 居家慵懒 | 无 |
-| 街头夜市 | 场合级 | 羊毛卷/拳击辫/狼尾 | 街头潮范/街头潮牌 | 耳饰+棒球帽 |
-| 医院/正式场合 | 日常级 | 利落扎发/利落短发 | 简约素色穿搭 | 极简 |
+| At Home, Just Woken Up | Bare-skin level | Naturally loose/casually tied up | Cozy at home | Minimal or none |
+| Commuting to Work | Everyday level | Crisp loose hair/low ponytail/side-parted short hair | Work commute/business casual | Watch + simple bag |
+| Weekend Outing | Everyday level | Loose tousled curls/slightly parted fringe/mullet | Casual everyday | Bag + hat + watch |
+| Meeting for a Date | Occasion level | Gentle curls/collarbone-length bob/side part | Gentle date-night/literary academic | Earrings + necklace + bag |
+| Cafe/Bookstore | Everyday level | Naturally loose/layered bob/medium-long hair | Literary academic/literary and cool | Glasses + canvas bag |
+| Gym/Outdoors | Bare-skin level | High ponytail/bun/buzz cut | Sporty outdoor/athletic functional | Sports watch + headband |
+| Evening Banquet/Gala | Gala level | Polished curls/updo/side-parted slicked hair | Formal wear (dress/suit) | Earrings + necklace + hand jewelry + a refined bag |
+| Alone Late at Night | Bare-skin level | Casually loose/slightly messy | Cozy at home | None |
+| Street Night Market | Occasion level | Small fluffy curls/boxer braids/mullet | Street trendy/street trend | Earrings + baseball cap |
+| Hospital/Formal Occasion | Everyday level | Crisp tied-up hair/crisp short hair | A simple, plain-colored outfit | Minimal |
 
-> **未覆盖场景推断规则**：先判断场景的私密/公共属性（私密→素肌级，公共→日常级起步）；再判断正式程度（正式场合→场合级/盛典级）；最后判断情调（浪漫/社交→场合级）。妆容适配面孔类型（见第三章），穿搭适配场景温度与氛围。
+> **Rule for inferring uncovered scenes**: first determine whether the scene is private or public (private → bare-skin level, public → start at everyday level); then determine the formality level (formal occasion → occasion level/gala level); finally consider the mood (romantic/social → occasion level). Makeup is matched to face type (see Section 3), and the outfit is matched to the scene's temperature and atmosphere.
 
 ---
 
-## 八、人物肖像系列——四角度摄影规范
+## 8. Character Portrait Series — Four-Angle Photography Specification
 
-> 衍生造型叠加后仍需输出四角度棚拍系列，确保妆容、发型、穿搭在实拍各角度下的一致性与可辨认性。
+> After derivative styling is layered on, a four-angle studio series must still be output, ensuring the makeup, hairstyle, and outfit remain consistent and recognizable across all real-shot angles.
 
-### 四角度定义
+### Four-Angle Definitions
 
-| 位置 | 角度 | 景别 | 摄影要求 |
+| Position | Angle | Shot Type | Photographic Requirement |
 |---|---|---|---|
-| 左一 | 正面近景 | 头顶至锁骨上缘 | 面部占60%+，妆容细节清晰可见（粉底与皮肤的融合、眼线精度、唇色质感）。焦段50-85mm |
-| 左二 | 正面0° | 全身 | 正面穿搭全貌，服装的垂坠、叠穿、配饰完整呈现。头顶到脚底完整 |
-| 右二 | 右侧90° | 全身 | 侧面轮廓+穿搭侧面层次、发型侧面状态。头顶到脚底完整 |
-| 右一 | 后方180° | 全身 | 后脑发型全貌、背部穿搭、包袋/帽饰后侧。头顶到脚底完整 |
+| Far Left | Front close-up | Top of head to upper collarbone | The face occupies 60%+, makeup detail clearly visible (foundation blending with skin, eyeliner precision, lip-color texture). Focal length 50-85mm |
+| Second Left | Front 0° | Full body | The complete front view of the outfit, showing the fabric's drape, layering, and accessories in full. Fully shown from head to toe |
+| Second Right | Right 90° | Full body | The side silhouette + the side layering of the outfit, the hairstyle's side profile. Fully shown from head to toe |
+| Far Right | Rear 180° | Full body | The full back-of-head hairstyle, the back of the outfit, the back of the bag/headwear. Fully shown from head to toe |
 
-### 画面规范
+### Frame Specification
 
-| 项目 | 摄影要求 |
+| Item | Photographic Requirement |
 |---|---|
-| 布局 | 同一画面从左至右并排四个角度，间距均匀。呈现为"造型确认照"排版 |
-| 背景 | 中灰无缝背景纸 #B0B0B0，无光斑无渐变无投影 |
-| 站姿 | 保持底模站姿——重心偏移的自然日常站姿，不是立正不是pose。**禁止因换装而改变体态** |
-| 面部表情 | 符合妆容强度与场景氛围的微表情——素肌级中性自然、场合级微含笑意、盛典级从容自信。**仅限面部微表情，不涉及肢体动作** |
-| 光线 | 棚拍柔光——前方柔光箱主光+双侧补光板。光影柔和、方向明确、光比约1:2至1:3，保留面部立体感。服装配饰材质质感清晰可见 |
-| 一致性 | 四角度为同一人物、同一次造型拍摄的连续摄影记录。面容/妆容/发型/穿搭/配饰完全呈现为同一次拍摄 |
-| 画面比例 | 建议 4:1 或 16:4 宽幅 |
+| Layout | The four angles arranged side by side left to right in the same frame, evenly spaced. Presented as a "styling confirmation photo" layout |
+| Background | Neutral gray seamless backdrop paper #B0B0B0, no light flares, no gradient, no cast shadow |
+| Stance | Maintain the base model's stance — a natural, weight-shifted everyday stance, not at attention, not posed. **Changing the posture due to the outfit change is prohibited** |
+| Facial Expression | A micro-expression matching the makeup intensity and scene mood — neutral and natural at bare-skin level, a faint hint of a smile at occasion level, calm confidence at gala level. **Facial micro-expression only, no body movement involved** |
+| Lighting | Studio soft lighting — a front soft-box key light + dual side fill panels. Soft, directionally clear lighting, a lighting ratio of about 1:2 to 1:3, retaining facial dimensionality. The texture of clothing and accessory materials clearly visible |
+| Consistency | The four angles are a continuous photographic record of the same person, from the same styling shoot. Face/makeup/hairstyle/outfit/accessories all present as the same shoot |
+| Aspect Ratio | Recommend 4:1 or 16:4 widescreen |
 
 ---
 
-## 九、提示词模板
+## 9. Prompt Template
 
-### 输出格式约束
+### Output Format Constraints
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 输出内容 | **仅输出提示词文本**，不输出分析过程、方案对比、速查表、约束说明 |
-| 禁止场景 | 不包含任何场景/环境/天气/背景描述 |
-| 禁止道具 | 不包含任何手持物/交互物（道具属于独立资产） |
-| 禁止姿态变化 | 不改变底模站姿，不输出任何动作/体态变化 |
-| 格式 | 直接输出可用的完整提示词 |
+| Output Content | **Output only the prompt text** — no analysis process, option comparisons, quick-reference tables, or constraint explanations |
+| Prohibited Content | Must not include any scene/environment/weather/background description |
+| Prohibited Props | Must not include any handheld/interactive objects (props are a separate asset category) |
+| Prohibited Pose Changes | Do not change the base model's stance; do not output any action/posture change |
+| Format | Output the complete, usable prompt directly |
 
-### 完整造型叠加提示词模板
+### Full Styling-Layer Prompt Template
 
-以角色基础形象图为底图，img2img叠加造型，
-真人都市人物造型肖像系列，真人实拍摄影，棚拍柔光，中灰无缝背景纸，
-{性别}人物肖像系列，实拍风格，非3D非渲染非CG，
+```
+Using the character's base image as the source, layer styling on top via img2img,
+a Live-Action Urban character styling portrait series, live-action photography, studio soft lighting, seamless grey backdrop,
+{gender} character portrait series, live-action photographic style, not 3D, not rendered, not CG,
 character portrait series, live-action photography, studio soft lighting,
-保持基础形象面容不变，{整体气质}，
-【L1·妆容】{妆容强度——素肌级/日常级/场合级/盛典级}，{妆容描述}，妆容与真实皮肤融合、粉底不假面、皮肤毛孔纹理仍可见，
-【L2·发型】{发型描述}，真实发质纹理，{碎发/发根/发尾真实状态描述}，非假发套非CG发丝，
-【L3+L4·穿搭】{穿搭风格}，{上装描述}+{下装描述}，{颜色}，{面料自然质感}，衣物自然垂坠、有真实穿着褶皱、非样板衣，
-【L5·配饰】{配饰描述}，日常佩戴质感、有使用痕迹、自然贴合身体，
-同一画面从左至右并排：近景特写+正面全身+侧面全身+背面全身，
-自然日常站姿（重心偏移），中灰无缝背景纸 #B0B0B0，棚拍均匀柔光，光比柔和，
-四角度为同一次造型拍摄的连续摄影记录，
-画面干净无文字无水印无签名无边框，
-真人写实摄影画质、35mm全画幅摄影质感
+keep the base model's face unchanged, {overall temperament},
+[L1 · Makeup] {makeup intensity — bare-skin level/everyday level/occasion level/gala level}, {makeup description}, makeup blended into real skin, foundation not mask-like, skin pore texture still visible,
+[L2 · Hairstyle] {hairstyle description}, genuine hair texture, {description of loose strands/roots/ends real-life state}, not a wig, not CG hair strands,
+[L3+L4 · Outfit] {outfit style}, {top description} + {bottom description}, {color}, {natural fabric texture}, natural garment drape, real wear creases, not a sample garment,
+[L5 · Accessories] {accessory description}, a daily-wear texture, signs of use, naturally fitted to the body,
+same frame arranged left to right: close-up + front full body + side full body + back full body,
+a natural everyday stance (weight shifted), a neutral gray seamless backdrop #B0B0B0, even studio soft lighting, a soft lighting ratio,
+the four angles are a continuous photographic record of the same styling shoot,
+a clean frame with no text, no watermark, no signature, no border,
+live-action realistic photography quality, 35mm full-frame photographic texture
+```
 
-### 负面规避提示词
+### Negative Prompt
 
+```
 3D render, 3D modeling, CGI, Unreal Engine, Blender, PBR material, 8K modeling, game engine, cartoon, anime, 2D, illustration, hand drawn, painting,
 plastic skin, wax face, silicone skin, airbrushed skin, perfect smooth skin, poreless, doll-like, mannequin,
 symmetrical pose, mannequin pose, runway pose, model stance, military stance, exaggerated pose, action pose,
 heavy makeup, dramatic makeup, makeup mask, foundation mask, fake lashes, colored contacts,
 wig, fake hair, helmet hair, stiff hair, perfect hairline, CG hair strands,
 brand new clothes, showroom clothes, stiff fabric, unrealistically clean, no wrinkles, mannequin clothes,
-古风, 古装, 汉服, 仙侠, 武侠, 民国, 赛博朋克, 科幻, 西方奇幻, 中世纪,
+period costume, ancient style, hanfu, xianxia, wuxia, Republic era, cyberpunk, sci-fi, Western fantasy, medieval,
 text, watermark, signature, logo, border, frame
+```
 
 ---
 
-## 十、约束规则
+## 10. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 叠加后面容必须与底模一致——造型服务于面孔，不遮蔽面孔 |
-| R2 | 妆容必须与真实皮肤融合——粉底不假面、毛孔纹理仍可见、非AI感平滑 |
-| R3 | 发型必须呈现真实发质——碎发、发根蓬度、发尾毛躁、非假发套非CG发丝 |
-| R4 | 服装必须有真实穿着痕迹——自然褶皱、面料垂坠、非样板衣非全新出厂 |
-| R5 | 配饰必须有日常佩戴感——贴合身体、有使用痕迹、非悬浮非嵌肤 |
-| R6 | 必须输出四角度棚拍系列（近景特写+正面+侧面+背面全身） |
-| R7 | 必须指定「中灰无缝背景纸 #B0B0B0」，禁止添加场景环境 |
-| R8 | 必须指定「四角度为同一次造型拍摄的连续摄影记录」 |
-| R9 | **仅输出提示词**——不输出分析过程、速查表、方案对比等一切非提示词内容 |
-| R10 | **禁止道具交互**——不包含手持物，道具属独立资产 |
-| R11 | **姿态保持不变**——保持底模站姿，不添加任何动作/体态描述 |
-| R12 | **禁止场景/环境描述**——场景属独立资产 |
-| R13 | L1 必须根据场景→妆容强度映射做决策：素肌级 / 日常级 / 场合级 / 盛典级 |
-| R14 | 所有衍生资产均需造型方案——正常情况不保持完全素颜素衣，至少进入日常级 |
+| R1 | The face after layering must be consistent with the base model — styling serves the face, and does not obscure it |
+| R2 | Makeup must blend into real skin — foundation not mask-like, pore texture still visible, not AI-smooth |
+| R3 | The hairstyle must present genuine hair quality — loose strands, root volume, frizzy ends, not a wig, not CG hair strands |
+| R4 | Clothing must show genuine wear marks — natural creases, fabric drape, not a sample garment, not fresh off the factory line |
+| R5 | Accessories must have a daily-wear feel — fitted to the body, signs of use, not floating, not embedded in the skin |
+| R6 | Must output a four-angle studio series (close-up + front + side + back full body) |
+| R7 | Must specify "a neutral gray seamless backdrop paper #B0B0B0"; adding scene environment is prohibited |
+| R8 | Must specify "the four angles are a continuous photographic record of the same styling shoot" |
+| R9 | **Output only the prompt** — no analysis process, quick-reference tables, option comparisons, or any other non-prompt content |
+| R10 | **No prop interaction** — no handheld items; props are a separate asset category |
+| R11 | **Posture remains unchanged** — maintain the base model's stance; do not add any action/posture description |
+| R12 | **No scene/environment description** — scenes are a separate asset category |
+| R13 | L1 must be decided according to the scene → makeup intensity mapping: bare-skin level / everyday level / occasion level / gala level |
+| R14 | All derivative assets require a styling plan — under normal circumstances, do not remain fully bare-faced/bare-clothed; at minimum reach everyday level |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 严禁「3D渲染 / 3D建模 / CG / PBR材质 / 8K建模 / UE引擎 / Blender」等一切CG术语 |
-| X2 | 严禁「2D手绘 / 插画 / 动画 / 二次元」等非摄影媒介 |
-| X3 | 严禁「过度磨皮 / 硅胶脸 / 蜡像假面 / 零毛孔 / AI感平滑皮肤」——妆容之下必须有真实皮肤 |
-| X4 | 严禁「假发套 / CG发丝根根分明 / 头发僵硬整齐 / 无碎发」 |
-| X5 | 严禁「样板衣 / 全新无褶服装 / 悬浮服饰 / 假人模特感着装」 |
-| X6 | 严禁「模特对称站姿 / 走秀pose / 军人立正 / 夸张动作」 |
-| X7 | 严禁「浓妆覆盖底模面容至不可辨认」 |
-| X8 | 严禁「古风 / 汉服 / 仙侠 / 武侠 / 民国 / 赛博朋克 / 科幻 / 西方奇幻」等非当代都市着装 |
-| X9 | 严禁「暴露 / 透视 / 低俗 / 擦边 / 暴力血腥」 |
-| X10 | 严禁「水印 / 文字 / LOGO / 签名 / 边框 / AI生成痕迹」 |
+| X1 | Strictly prohibit all CG terminology such as "3D rendering / 3D modeling / CG / PBR materials / 8K modeling / UE engine / Blender" |
+| X2 | Strictly prohibit non-photographic media such as "2D hand-drawn / illustration / animation / anime" |
+| X3 | Strictly prohibit "over-smoothed skin / silicone face / wax-figure mask / poreless / AI-smooth skin" — real skin must exist beneath the makeup |
+| X4 | Strictly prohibit "wig / CG hair with every strand distinct / stiff, uniform hair / no loose strands" |
+| X5 | Strictly prohibit "sample garments / brand-new, crease-free clothing / floating clothing / mannequin-like outfits" |
+| X6 | Strictly prohibit "model-style symmetrical stances / runway poses / military at-attention / exaggerated actions" |
+| X7 | Strictly prohibit "heavy makeup covering the base model's face to the point of unrecognizability" |
+| X8 | Strictly prohibit non-contemporary-urban clothing such as "ancient style / hanfu / xianxia / wuxia / Republic-era / cyberpunk / sci-fi / Western fantasy" |
+| X9 | Strictly prohibit "exposure / see-through clothing / vulgarity / borderline content / violence and gore" |
+| X10 | Strictly prohibit "watermarks / text / logos / signatures / borders / traces of AI generation" |

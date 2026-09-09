@@ -1,47 +1,47 @@
 ---
 name: director_storyboard_table_style
-description: 分镜表日式动画约束 — 定义90年代日式动画在分镜表中的光影氛围规范、光源角度、动作节奏、环境动态、运镜禁忌与转场禁忌。适用于任何叙事类型。
+description: Storyboard table Japanese anime constraints — defines 90s Japanese anime's lighting/mood conventions, light-source angle, action pacing, environmental motion, camera-movement taboos, and transition taboos within the storyboard table. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 分镜表日式动画约束 · 90年代日式动画 · 技法参考
+# Storyboard Table Japanese Anime Constraints · 90s Japanese Anime · Technique Reference
 
 ---
 
-## 一、分镜表定位
+## 1. Purpose of the Storyboard Table
 
-分镜表是导演将剧本转化为镜头语言的核心工具。以下仅提供90年代日式动画风格在分镜表层面的约束规范。
-
----
-
-## 二、光影与氛围
-
-- **同场戏光影统一** — 一场戏内不应出现两种以上光影方案，除非有明确的叙事转折（如关台灯→月光冷辉）
-- **情绪色盘绑定** — 每场戏至少绑定 1 个情绪场景（如相遇心动/日常温馨/离别感伤），并在镜头组内保持主色+辅色连续性
-- **光源角度规范** — 默认 30-45°斜侧光，模拟自然光效果。描述光影时须区分正给/侧给的角度差异
-- **冷暖色调与叙事阶段匹配** — 前半段（日常/工作/学习）保持暖色调，冷色调（冷蓝+暖色对比）在夜晚或情绪转折后使用
-- **光影转场是高级手段** — 从自然光（A）渐变到室内暖光（B）= 日转夜的时间流逝。在分镜表中标注光影变化点
+The storyboard table is the director's core tool for translating the script into shot language. The following only provides the 90s Japanese anime style's constraints at the storyboard-table level.
 
 ---
 
-## 三、环境动态
+## 2. Lighting & Mood
 
-- **环境动态增加画面呼吸感** — 树叶飘动、云层流动、电车驶过、雨滴落下、烛光摇曳。每 3-4 个镜头至少安排一个有环境动态的镜头，避免画面"死"掉
-- **日式环境元素优先** — 环境动态应选用日式动画世界观内的元素：樱花飘落、树叶飘动、云层流动、电车驶过、雨滴落下，禁止出现与90年代日式动画风格冲突的元素
-
----
-
-## 四、动画动作节奏
-
-- **动画动作要自然** — 所有人物动作默认自然节奏。起身、转身、抬手都应标注"自然"或"轻缓"
-- **表情细节** — 90年代日式动画的微表情是重要的情感表达手段，可在画面描述中加入细微的表情变化（微笑、眼神闪动、轻微低头），增加画面的"活"感
-- **含蓄内敛** — 日式动画人物的举止应含蓄内敛，情感表达靠细节而非夸张动作
+- **Unified lighting within a scene** — a single scene should not contain more than one lighting scheme, unless there is a clear narrative turning point (e.g., turning off a desk lamp → cool moonlight)
+- **Emotional palette binding** — each scene should bind to at least 1 emotional setting (e.g., a heart-fluttering meeting / everyday warmth / sorrowful parting), maintaining continuity of primary + accent color within the shot group
+- **Light-source angle convention** — default 30-45° oblique side light, simulating natural light. When describing lighting, distinguish between front-lit and side-lit angle differences
+- **Warm/cool tone matched to narrative stage** — the first half (everyday life/work/study) stays warm-toned; cool tone (cool blue contrasted with warm) is used at night or after an emotional turning point
+- **Lighting transitions are an advanced technique** — a gradual shift from natural light (A) to warm indoor light (B) = the passage of time from day to night. Mark lighting change points in the storyboard table
 
 ---
 
-## 五、运镜禁忌
+## 3. Environmental Motion
 
-- **禁用快速运镜** — 甩镜、急推、手持晃动与90年代日式动画的气质冲突（除非是转场或强调）
-- **禁用花式转场** — 划屏、旋转、百叶窗等与本风格不兼容
+- **Environmental motion adds a sense of breathing to the frame** — leaves fluttering, clouds drifting, a train passing, raindrops falling, candlelight flickering. Arrange at least one shot with environmental motion every 3-4 shots to avoid the image feeling "dead"
+- **Prioritize Japanese-style environmental elements** — environmental motion should draw on elements within the Japanese anime worldview: cherry blossoms falling, leaves fluttering, clouds drifting, a train passing, raindrops falling; elements that conflict with the 90s Japanese anime style are forbidden
+
+---
+
+## 4. Animation Action Pacing
+
+- **Animated actions should be natural** — all character actions default to a natural pace. Standing up, turning around, raising a hand should all be marked "natural" or "gentle"
+- **Expression detail** — micro-expressions are an important emotional device in 90s Japanese anime; add subtle expression changes (a smile, a flicker of the eyes, a slight lowering of the head) into the visual description to add a sense of "life" to the frame
+- **Restrained and subtle** — characters in Japanese anime should behave in a restrained, subtle manner, expressing emotion through detail rather than exaggerated action
+
+---
+
+## 5. Camera-Movement Taboos
+
+- **No fast camera movement** — whip pans, sudden push-ins, and handheld shake conflict with the temperament of 90s Japanese anime (unless used for a transition or emphasis)
+- **No flashy transitions** — wipes, spins, venetian blinds, and similar effects are incompatible with this style
 
 ---

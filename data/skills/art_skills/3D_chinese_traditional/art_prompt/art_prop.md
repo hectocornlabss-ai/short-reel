@@ -1,132 +1,132 @@
 ---
 name: art_prop
-description: 道具图像生成 · 约束手册
+description: Prop image generation · Constraint manual
 metaData: art_skills
 ---
 
-# 道具图像生成 · 约束手册
+# Prop Image Generation · Constraint Manual
 
 ---
 
-## 一、道具设计原则
+## 1. Prop Design Principles
 
-1. **功能可读** — 道具用途一目了然，造型服务于功能
-2. **质感极致** — 材质纹理必须清晰可辨（金属/玉石/木/布/纸）
-3. **年代一致** — 所有道具必须符合古风世界观，禁止现代元素
-4. **尺度明确** — 通过参照物或标注暗示道具真实尺寸
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体，道具不可处于被持有/佩戴/握持状态，必须以静物陈列方式独立呈现
-
----
-
-## 二、道具分类与美学约束
-
-### 2.1 兵器类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 剑/刀/弓/枪/扇 | {兵器类型}，古风兵器 |
-| 材质 | 精钢/玄铁 + 宝石镶嵌 + 丝绸剑穗 | 精钢锻造、宝石镶嵌 |
-| 装饰 | 剑鞘/刀柄雕花、流苏、暗纹 | 雕花精致、流苏垂坠 |
-| 光泽 | 金属冷光泽、刃口反光 | 冷光泽、金属质感 |
-| 提示词 | 古风{兵器}，精钢锻造，雕花精致 | — |
-
-### 2.2 饰品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 簪/钗/璎珞/玉佩/手镯/耳坠 | {饰品类型}，古风首饰 |
-| 材质 | 金/银/玉/珍珠/宝石 | 金丝编织、玉质通透 |
-| 工艺 | 极致精细、花丝/掐丝/镶嵌 | 工艺精细、精雕细琢 |
-| 光泽 | 珠光/玉润/金属光泽 | 珠光莹润、金属光泽 |
-| 提示词 | 古风{饰品}，{材质}，工艺精细，精雕细琢 | — |
-
-### 2.3 生活器物类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 茶具/酒具/香炉/棋盘/书卷/灯笼 | {器物类型}，古风器物 |
-| 材质 | 瓷/铜/竹/木/纸 | 青瓷温润、紫铜古朴 |
-| 质感 | 釉面/木纹/竹节清晰 | 釉面光泽、木纹清晰 |
-| 风格 | 素雅/华贵按场景切换 | 素雅古朴 / 华贵精致 |
-| 提示词 | 古风{器物}，{材质}质感，纹理清晰 | — |
-
-### 2.4 信物/关键道具类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 信物/令牌/卷轴/药瓶/玉印 | {道具类型}，古风道具 |
-| 特殊性 | 需有辨识度、叙事象征意义 | 独特造型、寓意深远 |
-| 做旧感 | 可按剧情需要添加年代感 | 古旧斑驳 / 崭新精致 |
-| 提示词 | 古风{道具}，{材质}，{状态}，独特造型 | — |
+1. **Legible Function** — The prop's purpose must be instantly clear; form serves function
+2. **Ultimate Texture** — Material texture must be clearly distinguishable (metal/jade/wood/cloth/paper)
+3. **Era Consistency** — All props must fit the ancient-style world setting; modern elements are prohibited
+4. **Clear Scale** — Hint at the prop's true size via reference objects or markers
+5. **Pure Prop, Standalone Display** — Only the prop itself may appear in the frame; any person, hand, or limb is strictly prohibited; the prop must not be held/worn/gripped, and must be presented independently as a still-life display
 
 ---
 
-## 三、多角度设定图规范
+## 2. Prop Categories and Aesthetic Constraints
 
-### 视图定义
+### 2.1 Weapons
 
-| 位置 | 视图 | 角度 | 要求 | 提示词 |
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Sword/blade/bow/spear/fan | {weapon type}, ancient-style weapon |
+| Material | Refined steel/dark iron + gem inlay + silk sword tassel | forged refined steel, gem inlay |
+| Decoration | Carved scabbard/hilt, tassels, subtle patterns | exquisite carving, hanging tassels |
+| Sheen | Cold metallic sheen, reflective blade edge | cold sheen, metallic texture |
+| Prompt | Ancient-style {weapon}, forged refined steel, exquisite carving | — |
+
+### 2.2 Jewelry and Accessories
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Hairpin/hair clasp/beaded pendant/jade pendant/bracelet/earrings | {accessory type}, ancient-style jewelry |
+| Material | Gold/silver/jade/pearl/gemstone | gold filigree, translucent jade |
+| Craftsmanship | Ultra-fine detail, filigree/wire inlay/gem setting | fine craftsmanship, intricate carving |
+| Sheen | Pearlescent/jade luster/metallic sheen | lustrous pearl, metallic sheen |
+| Prompt | Ancient-style {accessory}, {material}, fine craftsmanship, intricate carving | — |
+
+### 2.3 Everyday Objects
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Tea set/wine vessel/incense burner/chessboard/scroll/lantern | {object type}, ancient-style object |
+| Material | Porcelain/bronze/bamboo/wood/paper | warm celadon, rustic bronze |
+| Texture | Clear glaze/wood grain/bamboo joints | glossy glaze, clear wood grain |
+| Style | Plain and elegant / lavish and refined, switched by scene | plain and rustic / lavish and exquisite |
+| Prompt | Ancient-style {object}, {material} texture, clear texture detail | — |
+
+### 2.4 Keepsakes / Key Story Props
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Keepsake/token/scroll/medicine vial/jade seal | {prop type}, ancient-style prop |
+| Specialness | Must be distinctive, carrying narrative symbolism | distinctive design, deep symbolic meaning |
+| Aging | Aged appearance may be added as the story requires | aged and weathered / brand-new and exquisite |
+| Prompt | Ancient-style {prop}, {material}, {condition}, distinctive design | — |
+
+---
+
+## 3. Multi-Angle Reference Sheet Specification
+
+### View Definitions
+
+| Position | View | Angle | Requirement | Prompt |
 |---|---|---|---|---|
-| 左上 | 正面图 | 正面 0° | 道具完整正面形态 | front view |
-| 右上 | 侧面图 | 侧面 90° | 厚度/轮廓/结构清晰 | side view |
-| 左下 | 背面图 | 背面 180° | 道具背部结构/装饰 | back view |
-| 右下 | 细节特写 | 局部放大 | 材质纹理/工艺细节 | detail closeup |
+| Top-left | Front View | Front 0° | Complete front-facing form of the prop | front view |
+| Top-right | Side View | Side 90° | Clear thickness/silhouette/structure | side view |
+| Bottom-left | Back View | Rear 180° | Prop's back structure/decoration | back view |
+| Bottom-right | Detail Closeup | Localized zoom | Material texture/craftsmanship detail | detail closeup |
 
-### 画面规范
+### Composition Specification
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面四宫格（2×2），上下左右四视角 |
-| 背景 | 素灰纯色 #B8B8B8 |
-| 光线 | 均匀柔光，无硬阴影 |
-| 比例 | 每格道具占格内主体 70%+ |
-| 投影 | 允许自然地面微投影 |
-| 画面比例 | 建议 1:1 |
+| Layout | Same frame, 2x2 grid, four angles arranged top/bottom/left/right |
+| Background | Plain gray solid color #B8B8B8 |
+| Lighting | Even soft light, no hard shadows |
+| Proportion | Prop occupies 70%+ of each grid cell |
+| Shadow | A natural, subtle ground shadow is allowed |
+| Aspect Ratio | 1:1 recommended |
 
 ---
 
-## 四、材质渲染约束
+## 4. Material Rendering Constraints
 
-| 材质 | 渲染要求 | 提示词 |
+| Material | Rendering Requirement | Prompt |
 |---|---|---|
-| 金属 | 反光/高光/冷光泽、划痕微可见 | 金属质感、冷光泽、反光清晰 |
-| 玉石 | 内透光、温润、微通透 | 玉质通透、温润如脂 |
-| 木质 | 木纹清晰、年轮可见 | 木纹清晰、质感温润 |
-| 瓷器 | 釉面光泽、色泽均匀 | 釉面光泽、瓷质温润 |
-| 布/纸 | 纤维质感、边缘自然 | 布料纹理、纸质古朴 |
-| 宝石 | 折射/内部光线、切面清晰 | 宝石璀璨、光芒折射 |
+| Metal | Reflection/highlight/cold sheen, faint scratches visible | metallic texture, cold sheen, clear reflection |
+| Jade | Internal light transmission, warm, subtly translucent | translucent jade, warm and lustrous |
+| Wood | Clear wood grain, visible growth rings | clear wood grain, warm texture |
+| Porcelain | Glossy glaze, uniform tone | glossy glaze, warm porcelain texture |
+| Cloth/Paper | Fiber texture, natural edges | fabric texture, rustic paper texture |
+| Gemstone | Refraction/internal light, clear facets | brilliant gemstone, refracted light |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
-古风道具设定图，3D渲染风格，高精度建模，PBR材质，国风3D，电影级光影，
-{道具类型}，{材质描述}，{工艺/装饰描述}，{状态描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图+右上侧面图+左下背面图+右下细节特写，
-素灰纯色背景，均匀柔光，无硬阴影，
-材质纹理超清晰，PBR材质渲染，{材质光泽描述}
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+Ancient-style prop reference sheet, 3D rendering style, high-precision modeling, PBR materials, Chinese Traditional 3D, cinematic-grade lighting,
+{prop type}, {material description}, {craftsmanship/decoration description}, {condition description},
+pure prop still-life display, prop shown independently, not held by anyone, not worn by anyone,
+same frame, 2x2 grid: top-left front view + top-right side view + bottom-left back view + bottom-right detail closeup,
+plain gray solid color background, even soft light, no hard shadows,
+ultra-clear material texture, PBR material rendering, {material sheen description}
+no text of any kind in the image,
+no person, hand, finger, or limb may appear in the frame, the prop must not be held or worn
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须指定「素灰纯色背景」 |
-| R2 | 必须明确道具材质与工艺 |
-| R3 | 道具造型必须符合古风世界观 |
+| R1 | Must specify "plain gray solid color background" |
+| R2 | Must clearly specify the prop's material and craftsmanship |
+| R3 | Prop design must fit the ancient-style world setting |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibition |
 |---|---|
-| X1 | 复杂场景背景 |
-| X2 | 道具与人物同画面（本环节为纯道具图） |
-| X3 | 出现任何人物形象，包括全身、半身、局部（手、手指、手臂等肢体） |
-| X4 | 道具处于被持有、握持、佩戴、使用中的状态 |
-| X5 | 出现暗示人物存在的元素（如手持痕迹、佩戴视角、使用姿态） |
+| X1 | Complex scene backgrounds |
+| X2 | A prop appearing together with a person in the same frame (this stage is pure prop imagery) |
+| X3 | Any appearance of a person, including full body, half body, or partial (hand, finger, arm, or other limb) |
+| X4 | The prop being held, gripped, worn, or in use |
+| X5 | Any element hinting at a person's presence (e.g. handling marks, a wearing-perspective angle, a usage pose) |

@@ -1,46 +1,46 @@
 ---
 name: director_storyboard_table_style
-description: 分镜表扁平风约束 — 定义2D扁平风在分镜表中的色彩氛围规范、色块动态、动作节奏、运镜禁忌与转场禁忌。适用于任何叙事类型。
+description: Storyboard table flat-style constraints — defines the color/mood standards, color-block dynamics, action pacing, camera-move prohibitions, and transition prohibitions of 2D flat design within the storyboard table. Applicable to any narrative genre.
 metaData: director_skills
 ---
 
-# 分镜表扁平风约束 · 2D扁平风（Flat Design） · 技法参考
+# Storyboard Table Flat-Style Constraints · 2D Flat Design · Technique Reference
 
 ---
 
-## 一、分镜表定位
+## 1. Role of the Storyboard Table
 
-分镜表是导演将剧本转化为镜头语言的核心工具。以下仅提供2D扁平风风格在分镜表层面的约束规范。
-
----
-
-## 二、色彩与氛围
-
-- **同场戏色彩统一** — 一场戏内不应出现两种以上色彩方案，除非有明确的叙事转折（如暖色块突然切换为冷色块）
-- **情绪色盘绑定** — 每场戏至少绑定 1 个情绪场景（如日常温馨/心动瞬间/浪漫场景/夜晚静谧），并在镜头组内保持主色+辅色连续性
-- **色彩对比规范** — 默认中对比，描述时须区分高对比/低对比
-- **冷暖色调与叙事阶段匹配** — 日常段落保持暖色调基底，冷色调在夜晚或情绪转折后使用
-- **色彩转场是高级手段** — 从暖色渐变到冷色 = 情绪转变。在分镜表中标注色彩变化点
+The storyboard table is the director's core tool for translating the script into shot language. The following provides only the 2D flat design style's constraints at the storyboard-table level.
 
 ---
 
-## 三、色块动态
+## 2. Color and Mood
 
-- **色块变化增加画面呼吸感** — 色相变化、明度变化、大小变化。每 3-4 个镜头至少安排一个有色块变化的镜头，避免画面"死"掉
-- **扁平风环境元素优先** — 色块动态应选用扁平风格内的元素：色相渐变、色块位移、明度过渡、几何形状变化，禁止出现写实/3D 元素
-
----
-
-## 四、扁平动作节奏
-
-- **动作要简洁** — 所有人物动作默认自然节奏。抬手、转身都应标注"简洁"或"平滑"
-- **单镜头动作不超过两个** — "抬手 + 微笑"可以，"抬手 + 微笑 + 转身 + 行走"会崩
-- **甜宠互动用暗示** — 目光交汇、手势示意、物体递送。不要写"拥抱""接吻"等大幅度双人交互
+- **Unified color within the same scene** — no more than one color scheme should appear within a single scene, unless there is a clear narrative turn (e.g., warm color blocks suddenly switching to cool color blocks)
+- **Emotional palette binding** — each scene should bind to at least 1 emotional setting (e.g., everyday warmth/heartbeat moment/romantic scene/quiet night), maintaining primary + secondary color continuity within the shot group
+- **Color contrast standard** — default to medium contrast; specify high contrast/low contrast explicitly when describing
+- **Warm/cool tone matched to narrative stage** — everyday passages keep a warm-tone base; cool tones are used at night or after an emotional turning point
+- **Color transitions are an advanced technique** — gradually shifting from warm to cool = an emotional shift. Mark color-change points in the storyboard table
 
 ---
 
-## 五、运镜禁忌
+## 3. Color-Block Dynamics
 
-- **禁用复杂运镜** — 旋转、扭曲、快速切换与本风格气质冲突
-- **禁用花式转场** — 旋转、扭曲、擦除等与本风格不兼容
-- **默认静止** — 70% 以上镜头应为固定机位，让画面的色块和构图自己说话
+- **Color-block change adds visual breathing room** — hue change, brightness change, size change. Arrange at least one shot with a color-block change every 3-4 shots to avoid the frame feeling "dead"
+- **Prioritize flat-style environmental elements** — color-block dynamics should draw from elements within the flat style: hue gradient, color-block displacement, brightness transition, geometric shape change; photorealistic/3D elements are prohibited
+
+---
+
+## 4. Flat-Style Action Pacing
+
+- **Actions should be simple** — all character actions default to a natural pace. Raising a hand, turning around should be labeled "simple" or "smooth"
+- **No more than two actions per shot** — "raise hand + smile" is fine; "raise hand + smile + turn around + walk" will fall apart
+- **Suggest sweet interactions rather than depict them directly** — meeting eyes, gesturing, handing over an object. Do not write large two-person interactions such as "hug" or "kiss"
+
+---
+
+## 5. Camera-Move Prohibitions
+
+- **Complex camera moves are prohibited** — rotation, distortion, and rapid switching clash with this style's character
+- **Fancy transitions are prohibited** — rotation, distortion, wipe, and similar effects are incompatible with this style
+- **Default to static** — 70%+ of shots should use a fixed camera position, letting the color blocks and composition speak for themselves

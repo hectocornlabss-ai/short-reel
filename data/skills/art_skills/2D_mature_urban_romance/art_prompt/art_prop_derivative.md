@@ -1,125 +1,125 @@
-# 二次元道具衍生状态生成 · 约束手册
+# Anime Prop Derivative State Generation · Constraint Manual
 
 ---
 
-## 一、衍生原则
+## 1. Derivative Principles
 
-1. **造型锚定** — 道具核心造型/轮廓在所有状态中可识别
-2. **状态可读** — 状态差异必须一目了然，观众能立即区分
-3. **叙事服务** — 每种状态变体服务于特定剧情节点
-4. **渐进退化** — 损伤/老化状态应有合理的物理逻辑
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体，道具不可处于被持有/佩戴/握持状态，必须以静物陈列方式独立呈现
+1. **Silhouette anchoring** — the prop's core form/silhouette must remain recognizable across all states
+2. **State must read clearly** — differences between states must be obvious at a glance, immediately distinguishable to the viewer
+3. **Narrative service** — each state variant serves a specific story beat
+4. **Progressive degradation** — damage/aging states must follow sound physical logic
+5. **Pure prop, shown in isolation** — only the prop itself may appear in frame; any person, hand, or body part is strictly forbidden. The prop must not be held, worn, or gripped — it must be presented independently, as a still-life display
 
 ---
 
-## 二、状态类型
+## 2. State Types
 
-### 2.1 使用状态
+### 2.1 Usage States
 
-| 状态 | 描述 | 适用道具 | 提示词 |
+| State | Description | Applicable props | Prompt |
 |---|---|---|---|
-| 崭新 | 完好无损、光泽如新 | 所有道具 | 崭新、完好无损、光泽如新 |
-| 日常使用 | 微磨损、自然包浆 | 办公用品/器具/个人物品 | 日常使用痕迹、自然磨损 |
-| 陈旧 | 明显年代感、色泽暗淡 | 生活器物/个人物品 | 古旧斑驳、年代感、色泽暗沉 |
+| Brand new | Flawless, glossy as new | All props | brand new, flawless, glossy as new |
+| Everyday use | Slight wear, natural patina | Office supplies/utensils/personal items | everyday wear marks, natural wear |
+| Aged | Clear signs of age, dulled coloring | Everyday objects/personal items | aged and weathered, sense of age, dulled coloring |
 
-### 2.2 损伤状态
+### 2.2 Damage States
 
-| 状态 | 描述 | 适用道具 | 提示词 |
+| State | Description | Applicable props | Prompt |
 |---|---|---|---|
-| 微损 | 小裂纹/小缺口/轻微磨损 | 玻璃杯/手机屏幕/笔记本 | 细微裂纹、轻微缺口 |
-| 破损 | 明显裂缝/断裂/破碎 | 玻璃/陶瓷/塑料 | 裂缝明显、碎裂、断裂 |
-| 残片 | 仅剩部分/碎片 | 玻璃/陶瓷/信物 | 残片、碎片、仅存半块 |
+| Slightly damaged | Small cracks/small chips/light wear | Glass cup/phone screen/notebook | fine cracks, slight chipping |
+| Broken | Visible cracks/breakage/shattering | Glass/ceramic/plastic | visible cracks, shattered, broken |
+| Fragment | Only a partial piece/fragment remains | Glass/ceramic/keepsake | fragment, broken piece, only half remains |
 
-### 2.3 特殊状态
+### 2.3 Special States
 
-| 状态 | 描述 | 适用道具 | 提示词 |
+| State | Description | Applicable props | Prompt |
 |---|---|---|---|
-| 污渍 | 污渍附着/液体残留 | 杯子/衣物/纸张 | 污渍残留、液体痕迹 |
-| 指纹 | 手指印、使用痕迹 | 手机屏幕/玻璃杯/金属表面 | 指纹清晰、使用痕迹 |
-| 磨损 | 边角磨损、掉漆 | 电子设备/家具/饰品 | 边角磨损、掉漆痕迹 |
-| 折叠 | 书卷/纸张折叠痕迹 | 书本/纸张/信物 | 折叠痕迹、折痕明显 |
-| 水渍 | 水渍、湿润反光 | 纸张/衣物/布料 | 水渍残留、湿润反光 |
+| Stain | Stain residue/liquid residue | Cup/clothing/paper | stain residue, liquid trace |
+| Fingerprint | Fingerprints, usage marks | Phone screen/glass cup/metal surface | clear fingerprints, usage marks |
+| Wear | Worn corners, chipped paint | Electronics/furniture/accessories | worn corners, chipped paint marks |
+| Folded | Scroll/paper fold marks | Book/paper/keepsake | fold marks, visible creases |
+| Water marks | Water marks, damp reflection | Paper/clothing/fabric | water mark residue, damp reflection |
 
 ---
 
-## 三、状态变体画面规范
+## 3. State Variant Frame Specifications
 
-### 单状态图
+### Single-State Image
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 背景 | 纯净中性灰 `#E8E8E8`（与设定图一致） |
-| 光线 | 均匀照明，无硬阴影 |
-| 角度 | 与原设定图正面图一致 |
-| 比例 | 道具占画面主体 70%+ |
+| Background | Pure neutral gray `#E8E8E8` (matching the reference sheet) |
+| Lighting | Even lighting, no hard shadows |
+| Angle | Matches the front view of the original reference sheet |
+| Proportion | The prop occupies 70%+ of the frame |
 
-### 状态对比图
+### State Comparison Image
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面并排展示 2-3 种状态 |
-| 标注 | 每种状态下方标注状态名 |
-| 一致性 | 角度/光线/背景完全一致，仅状态不同 |
+| Layout | 2-3 states shown side by side in one frame |
+| Labels | The state name labeled below each state |
+| Consistency | Angle/lighting/background fully consistent; only the state differs |
 
 ---
 
-## 四、材质状态变化规则
+## 4. Material State Change Rules
 
-| 材质 | 崭新 → 日常 | 日常 → 陈旧 | 损伤表现 |
+| Material | New → Everyday | Everyday → Aged | Damage expression |
 |---|---|---|---|
-| 金属 | 亮光泽 → 微划痕 | 划痕 → 氧化斑点 | 缺口/卷边/断裂 |
-| 玻璃 | 通透清晰 → 微划痕 | 划痕 → 裂纹/碎裂 | 裂纹/碎裂/缺口 |
-| 木材 | 新木纹理 → 自然包浆 | 包浆 → 色泽暗沉 | 开裂/虫蛀/磨损 |
-| 塑料 | 崭新平整 → 微划痕 | 划痕 → 老化变色 | 裂纹/变形/褪色 |
-| 纸张 | 崭新平整 → 微折痕 | 折痕 → 发黄变脆 | 撕裂/焦损/污渍 |
-| 陶瓷 | 釉面光泽 → 微划痕 | 划痕 → 釉面暗淡 | 裂纹/碎裂/缺口 |
+| Metal | Bright sheen → faint scratches | Scratches → oxidation spots | Chips/curled edges/breakage |
+| Glass | Translucent and clear → faint scratches | Scratches → cracks/shattering | Cracks/shattering/chips |
+| Wood | Fresh grain → natural patina | Patina → dulled coloring | Cracking/insect damage/wear |
+| Plastic | Brand-new and smooth → faint scratches | Scratches → aging discoloration | Cracks/deformation/fading |
+| Paper | Brand-new and flat → faint creases | Creases → yellowing and brittleness | Tearing/scorch damage/stains |
+| Ceramic | Glazed sheen → faint scratches | Scratches → dulled glaze | Cracks/shattering/chips |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
-### 单状态变体
+### Single State Variant
 
-基于{道具名}设定图，
-anime style，cel shading，modern urban style，
-cinematic composition，ultra detailed，8K，high quality，
-shallow depth of field，画面颗粒感，镜头暗角，
-赛璐璐动画风格，现代都市风，戏剧化低调光影，
-prop derivative design sheet，item concept art，no people，no characters，no human figures，
-{道具类型}，{材质描述}，
-当前状态：{状态名}，{状态视觉描述}，
-{材质表面变化描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图(front view)+右上侧面图(side view)+左下背面图(back view)+右下细节特写(detail closeup)，
-纯净中性灰背景，均匀柔光，无硬阴影，
-材质纹理超清晰，赛璐璐质感，状态细节可辨
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+Based on the {prop name} reference sheet,
+anime style, cel shading, modern urban style,
+cinematic composition, ultra detailed, 8K, high quality,
+shallow depth of field, film grain, lens vignette,
+cel-shaded anime style, modern urban style, dramatic low-key lighting,
+prop derivative design sheet, item concept art, no people, no characters, no human figures,
+{prop type}, {material description},
+current state: {state name}, {state visual description},
+{material surface change description},
+pure prop still-life display, prop shown in isolation, not held by anyone, not worn by anyone,
+four-panel grid (2x2) in one frame: top-left front view (front view) + top-right side view (side view) + bottom-left back view (back view) + bottom-right detail close-up (detail closeup),
+pure neutral gray background, even soft light, no hard shadows,
+ultra-clear material texture, cel-shaded texture, state detail clearly distinguishable
+no text anywhere in the image,
+no person, hand, finger, or body part may appear in the frame; the prop must not be held or worn
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 道具核心造型/轮廓在所有状态中可识别 |
-| R2 | 状态变化须符合物理逻辑 |
-| R3 | 必须使用四宫格（2×2）布局：左上正面图+右上侧面图+左下背面图+右下细节特写 |
-| R4 | 必须指定「纯净中性灰背景」，均匀柔光，无硬阴影 |
-| R5 | 必须包含「二次元动画风格」关键词（anime style / cel shading） |
-| R6 | 必须包含景深特征（shallow depth of field / vignette 至少一项），保持动画赛璐璐风格 |
+| R1 | The prop's core form/silhouette must remain recognizable across all states |
+| R2 | State changes must follow sound physical logic |
+| R3 | Must use a four-panel grid (2x2) layout: top-left front view + top-right side view + bottom-left back view + bottom-right detail close-up |
+| R4 | Must specify a "pure neutral gray background," even soft light, no hard shadows |
+| R5 | Must include an "anime style" keyword (anime style / cel shading) |
+| R6 | Must include a depth-of-field trait (at least one of shallow depth of field / vignette), preserving the cel-shaded anime look |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 状态变化后道具不可识别 |
-| X2 | 违反物理逻辑的损伤（金属生锈等不符合材质的变化） |
-| X3 | 过度血腥/恐怖的损伤描绘 |
-| X4 | 出现任何人物形象，包括全身、半身、局部（手、手指、手臂等肢体） |
-| X5 | 道具处于被持有、握持、佩戴、使用中的状态 |
-| X6 | 出现暗示人物存在的元素（如手持痕迹、佩戴视角、使用姿态） |
-| X7 | 使用真人写实/摄影/3D渲染相关词 |
-| X8 | 高饱和荧光色/霓虹色 |
+| X1 | The prop becomes unrecognizable after a state change |
+| X2 | Damage that violates physical logic (e.g. metal rusting in a way inconsistent with the material) |
+| X3 | Excessively gory/horrifying depictions of damage |
+| X4 | Any depiction of a person, whether full body, half body, or partial (hand, finger, arm, or other body part) |
+| X5 | The prop being held, gripped, worn, or in use |
+| X6 | Elements implying a person's presence (e.g. hold marks, a worn-viewpoint angle, a usage pose) |
+| X7 | Use of photorealistic/photography/3D-render-related terms |
+| X8 | High-saturation fluorescent colors/neon colors |

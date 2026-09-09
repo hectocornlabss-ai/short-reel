@@ -1,152 +1,152 @@
-# 场景图生成 · 扁平风约束手册
+# Scene Image Generation · Flat Style Constraint Manual
 
 ---
 
-## 一、场景美学原则
+## 1. Scene Aesthetic Principles
 
-1. **空间叙事** — 场景承载情绪与叙事功能，不是纯背景板
-2. **层次扁平** — 前/中/后景通过色块区分，无纵深透视
-3. **色块至上** — 所有场景必须通过色块表达，拒绝渐变/光影
-4. **扁平为锚** — 一切画面以扁平矢量插画为标准，拒绝 3D 渲染/CG 动画质感；追求简洁线条、纯色填充
+1. **Spatial narrative** — the scene carries emotional and narrative function; it is not a pure backdrop
+2. **Flattened layering** — foreground/midground/background are differentiated through color blocks, with no depth perspective
+3. **Color blocks above all** — every scene must be expressed through color blocks; gradients/lighting are rejected
+4. **Flat as the anchor** — every frame is held to the standard of flat vector illustration, rejecting 3D rendering/CG animation texture; pursue clean lines and solid color fill
 
 ---
 
-## 二、季节色调映射
+## 2. Seasonal Color Mapping
 
-| 季节 | 主色调 | 辅色调 | 提示词 |
+| Season | Primary tone | Secondary tone | Prompt |
 |---|---|---|---|
-| 春 | 青翠 + 桃粉 | 月白、鹅黄 | 扁平春色、青色桃粉 |
-| 夏 | 碧绿 + 荷粉 | 天青、莲白 | 扁平夏荷、碧绿荷粉 |
-| 秋 | 赤红 + 金黄 | 琥珀、暮灰 | 扁平秋枫、赤红金黄 |
-| 冬 | 素白 + 霜银 | 墨玉黑、冰蓝 | 扁平冬雪、素白霜银 |
+| Spring | Verdant green + peach pink | Moonlight white, goose yellow | flat spring color, verdant peach pink |
+| Summer | Jade green + lotus pink | Sky cyan, lotus white | flat summer lotus, jade green lotus pink |
+| Autumn | Crimson red + golden yellow | Amber, dusk gray | flat autumn maple, crimson gold |
+| Winter | Plain white + frost silver | Ink jade black, ice blue | flat winter snow, plain white frost silver |
 
 ---
 
-## 三、室内场景
+## 3. Indoor Scenes
 
-### 空间规范
+### Spatial specifications
 
-| 维度 | 约束 | 提示词 |
+| Dimension | Constraint | Prompt |
 |---|---|---|
-| 风格 | 古代宅邸/宫殿/书房/闺阁，魏晋至唐宋 | 古代{朝代}风格、扁平古风 |
-| 材质 | 纯色色块、线条勾勒 | 扁平檀木、扁平玉石、扁平绢纱 |
-| 色调 | 低饱和纯色色块 | 扁平暖色、扁平素雅 |
-| 纵深 | 前/中/后景色块区分 | 前景{色块}、中景{色块}、后景{色块} |
-| 质感 | 无质感、纯色填充 | 无纹理、扁平质感、flat texture |
-| 光照 | 无光照、纯平涂色块 | 无光影、扁平光照、no lighting |
-| 镜头感 | 无景深虚化、纯平面 | 无景深、扁平视角、no depth |
-| 瑕疵感 | 无瑕疵、纯色完美 | 无磨损、扁平完美、no wear |
+| Style | Ancient residence/palace/study/boudoir, Wei-Jin to Tang-Song period | ancient {dynasty} style, flat ancient style |
+| Material | Solid color blocks, outlined with lines | flat sandalwood, flat jade, flat gauze silk |
+| Tone | Low-saturation solid color blocks | flat warm tone, flat plain elegance |
+| Depth | Foreground/midground/background color block differentiation | foreground {color block}, midground {color block}, background {color block} |
+| Texture | No texture, solid color fill | no texture, flat texture, flat texture |
+| Lighting | No lighting, purely flat-colored blocks | no lighting effects, flat lighting, no lighting |
+| Lens feel | No depth-of-field blur, purely flat | no depth of field, flat perspective, no depth |
+| Imperfection | No imperfections, perfectly solid color | no wear, flat perfect, no wear |
 
-### 室内类型速查
+### Indoor type quick reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core elements | Mood words |
 |---|---|---|
-| 闺阁/卧房 | 纱帐、梳妆台、铜镜、花瓶 | 扁平温馨、简约私密 |
-| 书房/书斋 | 书架、卷轴、笔墨、棋盘 | 扁平幽静、简约雅致 |
-| 大殿/正厅 | 高柱、匾额、帷幕、烛台 | 扁平庄严、简约华美 |
-| 庭院回廊 | 廊柱、石栏、花木、灯笼 | 扁平曲径、简约灯影 |
-| 厨房/膳堂 | 灶台、蒸笼、食器 | 扁平烟火、简约日常 |
+| Boudoir/bedroom | Gauze curtain, dressing table, bronze mirror, vase | flat cozy, simple and private |
+| Study | Bookshelf, scroll, ink and brush, chessboard | flat tranquil, simple and elegant |
+| Great hall/main hall | Tall pillars, plaque, curtain, candlestick | flat solemn, simple and grand |
+| Courtyard corridor | Corridor pillars, stone railing, flowers and trees, lantern | flat winding path, simple lantern glow |
+| Kitchen/dining hall | Stove, steamer, tableware | flat hearth life, simple everyday |
 
 ---
 
-## 四、室外场景
+## 4. Outdoor Scenes
 
-### 空间规范
+### Spatial specifications
 
-| 维度 | 约束 | 提示词 |
+| Dimension | Constraint | Prompt |
 |---|---|---|
-| 类型 | 庭院/山林/溪畔/古桥/集市 | {场景}、{季节}、{时间}、扁平古风 |
-| 天候 | 晴/阴/薄雾/细雨/飞雪 | 扁平薄雾、扁平细雨 |
-| 植被 | 梅/竹/松/桃花/柳/荷（须符合季节） | 扁平桃花、扁平翠竹 |
-| 水体 | 溪/湖/瀑布需有纯色表现 | 扁平溪流、扁平湖面 |
-| 建筑 | 飞檐斗拱、青瓦白墙、石桥木亭 | 扁平飞檐、扁平石桥 |
-| 空气感 | 无空气透视、纯平面 | 无透视、扁平远景、flat far |
-| 光照 | 无光照、纯平涂色块 | 无光照、扁平日光、no light |
-| 镜头感 | 无景深虚化、纯平面 | 无景深、扁平视角、no depth |
-| 瑕疵感 | 无瑕疵、纯色完美 | 无风化、扁平完美、no weathering |
+| Type | Courtyard/mountain forest/streamside/ancient bridge/market | {scene}, {season}, {time}, flat ancient style |
+| Weather | Clear/overcast/light mist/light rain/falling snow | flat light mist, flat light rain |
+| Vegetation | Plum blossom/bamboo/pine/peach blossom/willow/lotus (must match the season) | flat peach blossom, flat green bamboo |
+| Water | Stream/lake/waterfall must be rendered as solid color | flat stream, flat lake surface |
+| Architecture | Upturned eaves and brackets, gray tile and white wall, stone bridge and wooden pavilion | flat upturned eaves, flat stone bridge |
+| Atmosphere | No aerial perspective, purely flat | no perspective, flat distant view, flat far |
+| Lighting | No lighting, purely flat-colored blocks | no lighting, flat daylight, no light |
+| Lens feel | No depth-of-field blur, purely flat | no depth of field, flat perspective, no depth |
+| Imperfection | No imperfections, perfectly solid color | no weathering, flat perfect, no weathering |
 
-### 室外类型速查
+### Outdoor type quick reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core elements | Mood words |
 |---|---|---|
-| 庭院花园 | 假山、池塘、花木、石径 | 扁平花影、简约曲径 |
-| 山林竹海 | 古木、竹林、山石、云雾 | 扁平层峦、简约云雾 |
-| 溪畔湖边 | 溪流、卵石、垂柳、荷花 | 扁平溪水、简约垂柳 |
-| 古桥长亭 | 石拱桥、长亭、柳树 | 扁平古桥、简约长亭 |
-| 集市街道 | 酒旗、摊贩、灯笼 | 扁平市井、简约热闹 |
-| 屋顶天台 | 瓦片、飞檐、夜空 | 扁平瓦片、简约夜空 |
+| Courtyard garden | Rockery, pond, flowers and trees, stone path | flat flower shadow, simple winding path |
+| Mountain forest/bamboo sea | Ancient trees, bamboo forest, mountain rocks, mist and clouds | flat layered peaks, simple mist and clouds |
+| Streamside/lakeside | Stream, pebbles, weeping willow, lotus flowers | flat stream water, simple weeping willow |
+| Ancient bridge/long pavilion | Stone arch bridge, long pavilion, willow trees | flat ancient bridge, simple long pavilion |
+| Market street | Wine-shop banner, street vendors, lanterns | flat marketplace, simple bustle |
+| Rooftop terrace | Roof tiles, upturned eaves, night sky | flat roof tiles, simple night sky |
 
 ---
 
-## 五、主视图规范
+## 5. Hero-Shot Specifications
 
-### 视图定义
+### View definition
 
-> 单画面主视图，从场景中最具代表性的角度拍摄，承载空间叙事与构图重心。
+> A single-frame hero shot, captured from the most representative angle of the scene, carrying the spatial narrative and compositional focus.
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 视角 | 自然观察视角，构图最能体现场景主体与色块层次 | hero shot、representative angle |
-| 视点高度 | 默认人眼平视高度，特殊场景可俯/仰 | eye level（默认） |
-| 构图 | 主体居中或符合三分法，前/中/后景色块层次清晰 | balanced composition |
+| Viewpoint | Natural observation angle, composed to best express the scene's subject and color block layering | hero shot, representative angle |
+| Viewpoint height | Default eye-level height; special scenes may use high or low angle | eye level (default) |
+| Composition | Subject centered or following the rule of thirds; foreground/midground/background color block layering clear | balanced composition |
 
-### 画面规范
+### Frame specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 单画面（非拼图、非多视图、非分屏） |
-| 人物 | **严禁出现任何人物、人影、人体轮廓** |
-| 一致性 | 风格/材质/色调统一 |
-| 光线 | 无光照、纯色填充、无光影逻辑 |
-| 画面比例 | 默认 1:1（或按调用方设定） |
+| Layout | Single frame (not a collage, not multi-view, not split-screen) |
+| People | **No person, human silhouette, or human outline of any kind may appear** |
+| Consistency | Style/material/tone unified |
+| Lighting | No lighting, solid color fill, no lighting logic |
+| Aspect ratio | Default 1:1 (or as set by the caller) |
 
 ---
 
-## 六、提示词模板
+## 6. Prompt Template
 
 ```
-扁平古风场景主视图概念图，
-2d flat design，vector art，flat illustration，
-minimalist，clean lines，solid colors，
-flat scene，environment design，no people，no characters，no human figures，
-{室内/室外}，{场景类型}，{朝代风格}，{季节+时间}，
-前景：{色块元素}，中景：{色块元素}，后景：{色块元素}，
-{色调描述}，{天候/氛围元素}，
-{材质描述}，无透视，纯色填充，
-无岁月痕迹，无磨损，扁平完美，
-无光照，无阴影，纯色平涂，
-单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景色块层次，
-画面中无任何人物
-图中不要有任何文字
+flat ancient-style scene hero-shot concept art,
+2d flat design, vector art, flat illustration,
+minimalist, clean lines, solid colors,
+flat scene, environment design, no people, no characters, no human figures,
+{indoor/outdoor}, {scene type}, {dynasty style}, {season + time},
+foreground: {color block elements}, midground: {color block elements}, background: {color block elements},
+{tone description}, {weather/atmosphere elements},
+{material description}, no perspective, solid color fill,
+no signs of age, no wear, flat perfect,
+no lighting, no shadows, flat solid color,
+single-frame composition, natural observation angle, composition representative of the scene's subject and showing foreground/midground/background color block layering,
+no people of any kind in the frame
+no text of any kind in the image
 ```
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 场景必须有「前中后景色块层次」 |
-| R2 | 室外必须为「扁平远景」无空气透视 |
-| R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
-| R4 | 构图须能代表场景主体并展示前/中/后景色块层次 |
-| R5 | 场景图中**严禁出现任何人物** |
-| R6 | 必须指定「扁平风格」关键词（2d flat design、vector art） |
-| R7 | 必须指定「无光影无渐变」 |
-| R8 | 材质必须为纯色填充，禁止复杂纹理/岁月感 |
+| R1 | The scene must have "foreground/midground/background color block layering" |
+| R2 | Outdoor scenes must have a "flat distant view" with no aerial perspective |
+| R3 | The scene image must be a "single-frame hero shot" — no collaging of multiple views/split-screen/grid |
+| R4 | The composition must represent the scene's subject and show foreground/midground/background color block layering |
+| R5 | **No person may appear** in the scene image |
+| R6 | Must specify "flat style" keywords (2d flat design, vector art) |
+| R7 | Must specify "no lighting, no gradients" |
+| R8 | Materials must be solid color fill; complex texture/sense of age is prohibited |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 背景纯白/纯黑/无场景 |
-| X2 | 极端天候（暴风雨/雷电/暴雪，除非剧情需要） |
-| X3 | 场景无层次/无色块区分 |
-| X4 | 植被/天候与季节矛盾 |
-| X5 | 出现任何人物、人影、人体剪影或人体轮廓 |
-| X6 | 画面被拼接成多视图/网格/分屏布局 |
-| X7 | 3D 渲染/CG 动画/卡通/游戏引擎质感（禁用 3D render、CGI、Unreal Engine、Unity 等词） |
-| X8 | 材质过于复杂、色块区分不清 |
-| X9 | 添加光影/阴影/渐变/立体感效果 |
+| X1 | Pure white/pure black background, or no scene at all |
+| X2 | Extreme weather (storm/lightning/blizzard, unless required by the story) |
+| X3 | A scene with no layering/no color block differentiation |
+| X4 | Vegetation/weather that contradicts the season |
+| X5 | Any person, human silhouette, or human outline appearing |
+| X6 | The frame being collaged into multi-view/grid/split-screen layout |
+| X7 | 3D rendering/CG animation/cartoon/game-engine texture (words like 3D render, CGI, Unreal Engine, Unity are prohibited) |
+| X8 | Material that is overly complex or color blocks that are not clearly differentiated |
+| X9 | Adding lighting/shadow/gradient/3D effects |

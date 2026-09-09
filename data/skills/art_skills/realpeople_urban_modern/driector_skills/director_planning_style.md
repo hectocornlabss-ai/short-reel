@@ -1,88 +1,88 @@
 ---
 name: director_planning_style
-description: 都市写实风格约束 — 定义真人都市写实在色调体系、光影方案、质感方向、场景空间元素、乐器选择与环境音上的全局约束。适用于任何叙事类型。
+description: Urban realistic style constraints — defines global constraints for live-action urban realism in color palette system, lighting scheme, texture direction, scene spatial elements, instrument choice, and ambient sound. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 都市风格约束 · 真人都市写实 · 技法参考
+# Urban Style Constraints · Live-Action Urban Realism · Technique Reference
 
 ---
 
-## 一、色调体系与画面基调
+## 1. Color Palette System & Overall Tone
 
-- **色调基底** — 全片以米白（C1）、暖肤色（C2）、高级灰（C6）为基底色，整体色温偏暖（5200-5800K），饱和度中低（40-60%），呈现温暖明亮的都市生活感
-- **冷暖叙事对比** — 暖色（琥珀暖 C7、奶油粉 C5、金属银 C8）作为情感升温与关系确认的视觉信号，冷色用于压力、误会、疏离等段落。冷暖切换应与情绪弧线同步
-- **冷暖分配策略** — 日常与工作段落以中性/微冷为主，亲密与和解段落释放暖色；避免全程高暖导致情绪层次塌陷
-- **色盘先行原则** — 段落规划先绑定情绪场景（相遇/暧昧/约会/争执/和解等），再确定主色+辅色与光影方案，避免“剧情对了但情绪不对色”
-- **禁用色域** — 高饱和荧光色、强霓虹污染、过度赛博色彩与本风格不兼容
+- **Palette base** — the entire piece is grounded in off-white (C1), warm skin tone (C2), and refined gray (C6) as base colors, with an overall warm color temperature (5200-5800K) and mid-to-low saturation (40-60%), conveying a warm, bright sense of urban life
+- **Warm/cool narrative contrast** — warm colors (amber warmth C7, creamy pink C5, metallic silver C8) serve as the visual signal for emotional warming and relationship confirmation, while cool colors are used for passages of pressure, misunderstanding, and estrangement. Warm/cool switching should sync with the emotional arc
+- **Warm/cool allocation strategy** — everyday and work passages lean neutral/slightly cool; intimate and reconciliation passages release warm tones; avoid staying high-warmth throughout, which collapses emotional layering
+- **Palette-first principle** — sequence planning should first bind the emotional scene (meeting/budding romance/dating/conflict/reconciliation, etc.), then determine the primary + accent colors and lighting scheme, avoiding "the plot is right but the emotional color isn't"
+- **Forbidden color gamut** — highly saturated fluorescent colors, heavy neon pollution, and overly cyberpunk colors are incompatible with this style
 
 
 ---
 
-## 二、光影方案体系
+## 2. Lighting Scheme System
 
-- **光影即叙事** — 6 套光影方案对应不同情绪段落，导演规划阶段应在段落层面确定光影基调方向，而非逐镜指定
-- **光源角度** — 正给镜头默认 30° 斜射（较柔和），侧给镜头根据场景与人物关系微调
+- **Lighting is narrative** — 6 lighting schemes correspond to different emotional passages; the director's planning stage should determine the lighting direction at the sequence level, not shot by shot
+- **Light source angle** — key-light shots default to a 30° oblique angle (softer); side-light shots are fine-tuned according to the scene and character relationship
 
-| 光影方案 | 方案名 | 色调倾向 | 适用情绪 |
+| Scheme | Scheme Name | Tone Tendency | Applicable Mood |
 |---|---|---|---|
-| A | 自然漫射 | 米白底 + 均匀柔和光 | 日常通勤、生活流叙事 |
-| B | 暖调侧光 | 奶油暖 + 局部暖光 | 升温互动、居家松弛 |
-| C | 顶光环境混合 | 中性灰 + 柔和冷白 | 职场节奏、理性沟通 |
-| D | 窗光点光源 | 琥珀暖主导 + 冷蓝背景 | 夜晚暧昧、亲密推进 |
-| E | 街头霓虹晕光 | 冷色背景 + 暖色点缀 | 都市夜景、浪漫游走 |
-| F | 阴天漫射冷光 | 灰蓝主调 + 暖色局部 | 过渡段、低潮段 |
+| A | Natural diffuse light | Off-white base + even soft light | Daily commute, slice-of-life narrative |
+| B | Warm-toned side light | Creamy warmth + local warm light | Warming interactions, relaxed home life |
+| C | Overhead + ambient mix | Neutral gray + soft cool white | Workplace rhythm, rational communication |
+| D | Window light point source | Amber warmth dominant + cool blue background | Night-time budding romance, intimacy building |
+| E | Street neon glow | Cool background + warm accents | Urban night scene, romantic wandering |
+| F | Overcast diffuse cool light | Gray-blue main tone + local warmth | Transitional passages, low points |
 
-- **冷暖光分配** — 暖色光可全片使用但需分层控制；冲突/疏离段落降低暖光占比，避免情绪与光色冲突
-- **氛围方向映射** — 每场戏氛围方向应映射到上述光影方案（A-F）的某一方向，确保视觉一致性
+- **Warm/cool light allocation** — warm light can be used throughout the piece but must be controlled in layers; conflict/estrangement passages should reduce the proportion of warm light to avoid clashing with the emotional tone
+- **Mood-direction mapping** — each scene's mood direction should map to one of the lighting schemes (A-F) above, ensuring visual consistency
 
-## 三、质感方向
+## 3. Texture Direction
 
-- **超清纪实感** — 真人写实摄影核心：皮肤纹理可见、发丝根根分明、材质细节清晰可信
-- **强对比度 + 极致细节** — 作为画面质感锚点。不是低对比小清新，不是重滤镜氛围化，而是可拍可落地的影视纪实感
-- **材质真实** — 服化道需具备现实可信度：西装面料、玻璃反射、金属器件、木质家具、电子屏幕高光都应符合都市实拍逻辑
-- **皮肤质感** — 保留真实毛孔与细微瑕疵，控制磨皮强度，追求“真实但好看”
-- **写实不等于平淡** — 通过构图、景别、运动节奏放大情绪感染力，而非依赖夸张特效与过度后期
-
----
-
-## 四、都市场景空间元素
-
-都市世界观特有的场景元素及其视觉叙事功能：
-
-- **窗框/玻璃/门洞** — 天然框架式构图道具，制造空间分层与人物关系距离感
-- **街道/地铁/电梯/写字楼走廊** — 都市节奏载体，通勤与停顿的切换可直接映射角色心理状态
-- **咖啡厅/办公室/居家客厅** — 情绪容器：咖啡厅偏试探，办公室偏克制，居家偏安全与松弛
-- **天气与时段作为转场** — 日转夜、晴转雨、黄昏入夜可用于段落情绪缓冲，避免硬切
-- **转折点用视觉而非解释** — 优先使用画面手段（景别突变、视线错位、空间阻隔）承接情绪转折，减少对白解释负担
+- **Ultra-clear documentary feel** — the core of live-action realistic photography: visible skin texture, clearly defined hair strands, credible material detail
+- **High contrast + extreme detail** — this is the anchor of the visual texture. Not a low-contrast soft-focus look, not a heavily filtered mood piece, but a shootable, grounded documentary-realism feel
+- **Authentic materials** — costumes/props/sets must have real-world credibility: suit fabric, glass reflections, metal fittings, wood furniture, and screen highlights should all follow the logic of real urban photography
+- **Skin texture** — preserve real pores and minor blemishes, control the degree of skin-smoothing, aiming for "real but attractive"
+- **Realism does not mean flat** — amplify emotional impact through composition, shot scale, and movement rhythm, rather than relying on exaggerated effects or heavy post-production
 
 ---
 
-## 五、都市乐器与环境音
+## 4. Urban Scene Spatial Elements
 
-都市世界观下的声音元素约束：
+Scene elements unique to the urban worldview and their visual narrative function:
 
-### 乐器选择
+- **Window frames/glass/doorways** — a natural framing-composition device, creating spatial layering and a sense of distance in character relationships
+- **Streets/subway/elevators/office corridors** — carriers of urban rhythm; switching between commuting and pausing can directly map onto the character's psychological state
+- **Cafes/offices/home living rooms** — emotional containers: cafes lean toward tentative exploration, offices lean toward restraint, home leans toward safety and relaxation
+- **Weather and time of day as transitions** — day-to-night, clear-to-rain, dusk-into-night can be used as emotional buffers between sequences, avoiding hard cuts
+- **Use visuals rather than explanation at turning points** — prioritize visual means (sudden shift in shot scale, misaligned eyelines, spatial obstruction) to carry emotional turns, reducing the burden on dialogue explanation
 
-- **钢琴** — 日常、温馨、回忆段落核心乐器，最能体现都市生活质感
-- **吉他** — 轻松、街头、慢节奏浪漫段落的有效主导
-- **弦乐** — 情绪抬升与情感爆发段落的主力铺底
-- **Lo-fi/轻电子** — 年轻化、城市夜生活、节奏切换段落的风格增强器
-- **环境音优先级高** — 都市剧中真实环境声是沉浸感关键，配乐不应压过对白
+---
 
-### 乐器组合策略
+## 5. Urban Instruments & Ambient Sound
 
-| 情绪阶段 | 乐器组合 |
+Sound-element constraints within the urban worldview:
+
+### Instrument Choice
+
+- **Piano** — the core instrument for everyday, warm, and memory passages, best expressing the texture of urban life
+- **Guitar** — an effective lead for relaxed, street-level, slow-paced romantic passages
+- **Strings** — the main bed for emotional-rise and emotional-climax passages
+- **Lo-fi/light electronic** — a style enhancer for youthful, city nightlife, and rhythm-switching passages
+- **Ambient sound has high priority** — in urban drama, authentic ambient sound is key to immersion; the score should not overpower dialogue
+
+### Instrument Combination Strategy
+
+| Emotional Stage | Instrument Combination |
 |---|---|
-| 平稳/开场/收尾 | 钢琴独奏 或 吉他独奏 |
-| 日常推进 | 钢琴 + 轻打击 |
-| 暧昧升温/浪漫 | 钢琴 + 弦乐 |
-| 情绪爆发/冲突 | 弦乐主导 + 低频铺底 |
-| 夜景/转场 | Lo-fi/轻电子 + 环境声 |
+| Calm/opening/closing | Piano solo or guitar solo |
+| Everyday progression | Piano + light percussion |
+| Romantic warming | Piano + strings |
+| Emotional climax/conflict | Strings-led + low-frequency bed |
+| Night scene/transition | Lo-fi/light electronic + ambient sound |
 
-### 都市环境音
+### Urban Ambient Sound
 
-- **典型环境音层次** — 车流声 / 地铁进站提示 / 电梯提示音 / 咖啡机声 / 键盘敲击 / 雨声 / 空调底噪 / 城市远景噪声
-- **每场戏标注 1-2 个核心环境音**，帮助后续音效设计。环境音层次越准确，都市写实质感越强
+- **Typical ambient sound layers** — traffic noise / subway arrival announcements / elevator chime / coffee machine sounds / keyboard typing / rain sounds / air conditioner hum / distant city noise
+- **Mark 1-2 core ambient sounds per scene** to aid subsequent sound design. The more accurate the ambient sound layering, the stronger the urban realism feel
 
 ---

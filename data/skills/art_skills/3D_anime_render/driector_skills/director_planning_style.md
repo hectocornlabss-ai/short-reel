@@ -1,85 +1,85 @@
 ---
 name: director_planning_style
-description: 3D动画渲染约束 — 定义3D卡通渲染在色调体系、光影方案、质感方向、都市场景空间元素、乐器选择与环境音上的全局约束。适用于任何叙事类型。
+description: 3D animation rendering constraints — defines the global constraints for 3D cartoon rendering across color-tone system, lighting scheme, texture direction, urban scene spatial elements, instrument selection, and ambient sound. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 3D动画渲染约束 · 3D卡通渲染 · 技法参考
+# 3D Animation Rendering Constraints · 3D Cartoon Rendering · Technique Reference
 
 ---
 
-## 一、色调体系与画面基调
+## 1. Color-Tone System and Overall Look
 
-- **色调基底** — 全片以暖橙（C1）、天空蓝（C3）、樱花粉（C5）为基底色，整体色温偏暖（4800-5200K），饱和度中高（65-80%），呈现明快 3D 动画的温暖治愈感
-- **冷暖叙事对比** — 暖色（暖橙 C1、琥珀暖、暖粉）贯穿全片作为基调，冷色（淡蓝 C3、淡紫 C6）作为局部点缀增加层次感。冷暖切换应与故事弧线同步，而非随意混用
-- **冷暖分配策略** — 全片保持暖调基底，冷色调仅在夜晚或情绪转折段落使用，形成冷暖对比
-- **色盘先行原则** — 段落规划需先绑定情绪场景（相遇/日常/冒险/离别等），再确定主色+辅色与光影方案，避免"剧情对了但情绪不对色"
-- **禁用色域** — 暗沉灰暗色系、过度饱和的脏色、与 3D 动画明快气质不匹配的色彩体系均不兼容
+- **Tone base** — the entire piece is grounded in warm orange (C1), sky blue (C3), and cherry-blossom pink (C5) as base colors, with an overall warm color temperature (4800-5200K) and medium-high saturation (65-80%), presenting the bright, warm, healing feel of 3D animation
+- **Warm/cool narrative contrast** — warm colors (warm orange C1, warm amber, warm pink) run throughout the piece as the base tone, with cool colors (pale blue C3, pale purple C6) used as local accents to add depth. Warm/cool switches should sync with the story arc rather than being mixed arbitrarily
+- **Warm/cool allocation strategy** — the whole piece maintains a warm base tone; cool tones are used only at night or during emotional turning points, creating warm/cool contrast
+- **Palette-first principle** — segment planning should first bind the emotional scene (meeting/daily life/adventure/parting, etc.), then determine the primary + secondary colors and lighting scheme, avoiding "the story fits but the emotional color doesn't"
+- **Prohibited color gamut** — dull gray-dark color systems, overly saturated muddy colors, and any color system incompatible with the bright 3D animation temperament are not compatible
 
 ---
 
-## 二、光影方案体系
+## 2. Lighting Scheme System
 
-- **光影即叙事** — 6 套光影方案对应不同情绪段落，导演规划阶段应在段落层面确定光影基调方向，而非逐镜指定
-- **光源角度** — 默认 45° 侧逆光，模拟黄昏霞光效果
+- **Lighting is narrative** — 6 lighting schemes correspond to different emotional segments; the director's planning stage should determine the lighting tone direction at the segment level, not shot by shot
+- **Light source angle** — default 45° side-back light, simulating a dusk glow effect
 
-| 光影方案 | 方案名 | 色调倾向 | 适用情绪 |
+| Lighting scheme | Scheme name | Tone tendency | Applicable emotion |
 |---|---|---|---|
-| A | 柔和晨光 | 暖黄底 + 均匀柔和光 | 全片开场、都市清晨 |
-| B | 暖调侧光 | 暖橙主调 + 局部暖光 | 日常温馨、咖啡厅/居家 |
-| C | 顶光 + 环境光 | 中性暖 + 柔和冷白 | 工作/学习段落 |
-| D | 逆光霞光 | 琥珀暖主导 + 暖粉点缀 | 黄昏浪漫、甜蜜段落 |
-| E | 霓虹光晕 | 暖橙 + 冷蓝背景 | 夜晚街景、浪漫段落 |
-| F | 暖光柔焦 | 暖黄主调 + 雾化效果 | 回忆/情感段落 |
+| A | Soft morning light | Warm yellow base + even soft light | Overall opening, urban morning |
+| B | Warm side light | Warm orange dominant + local warm light | Everyday warmth, cafe/home |
+| C | Top light + ambient light | Neutral warm + soft cool white | Work/study segments |
+| D | Backlit glow | Amber warm dominant + warm pink accents | Dusk romance, sweet segments |
+| E | Neon glow | Warm orange + cool blue background | Night street scenes, romantic segments |
+| F | Warm soft focus | Warm yellow dominant + hazy effect | Memory/emotional segments |
 
-- **冷暖光分配** — 暖色调贯穿全片可用，冷色调（冷蓝 + 暖色对比）在夜晚或情绪转折后使用。导演可根据叙事需要调整冷暖切换点
-- **氛围方向映射** — 每场戏的氛围方向应能映射到上述光影方案（A-F）的某一方向，确保视觉一致性
-
----
-
-## 三、质感方向
-
-- **赛璐珞纪实感** — 3D 动画渲染的核心：轮廓线清晰、上色明快、柔和光影层次
-- **高细节材质 + 柔和光影** — 这是画面质感的锚点。不是过度平滑，不是现代写实渲染，是 3D 动画特有的赛璐珞质感
-- **材质细节丰富** — 所有服化道的材质细节应可信：衣料的褶皱纹理、金属的卡通高光、食物的温暖光泽。禁止"过度写实"和"粗糙低模感"
-- **赛璐珞不等于扁平** — 3D 动画强调赛璐珞质感表达（清晰轮廓线、明快上色、柔和光影层次），通过光影与构图设计放大感染力，而非依赖过度复杂特效
+- **Warm/cool light allocation** — warm tones may run throughout the piece; cool tones (cool blue + warm contrast) are used at night or after an emotional turning point. The director may adjust the warm/cool switch point as the narrative requires
+- **Mood-direction mapping** — the mood direction of each scene should map to one of the lighting schemes (A-F) above, ensuring visual consistency
 
 ---
 
-## 四、都市场景空间元素
+## 3. Texture Direction
 
-3D 动画都市世界观特有的场景元素及其视觉叙事功能：
-
-- **门窗框/走廊/楼梯** — 天然的框架式构图道具，制造空间纵深与层次感
-- **街道/公园/天空** — 留白构图的天然载体，景即情：黄昏街道的长影 = 浪漫感、咖啡厅暖光 = 安全感、高楼窗景 = 都市距离感
-- **台灯/霓虹/窗光** — 都市世界的光源载体，台灯 = 暖/私密（方案 B）、霓虹 = 活力/浪漫（方案 E）、窗光 = 日常/静谧（方案 A）
-- **段落间用场景空镜过渡** — 本风格有丰富的场景资产（不同时段/天候/天气变体），段落衔接建议用场景空镜做情绪缓冲，不要硬切
-- **转折点用画面 + 动作** — 优先使用画面手段（光影变化、场景转换）配合动作设计，而非依赖对白解释
+- **Cel-shaded documentary feel** — the core of 3D animation rendering: clear outlines, bright coloring, soft lighting layers
+- **High-detail materials + soft lighting** — this is the anchor of the visual texture. Not overly smooth, not modern photorealistic rendering, but the cel-shaded texture unique to 3D animation
+- **Rich material detail** — the material detail of all costumes, makeup, and props should be believable: fabric crease texture, cartoon highlights on metal, the warm sheen of food. "Overly photorealistic" and "rough low-poly feel" are prohibited
+- **Cel-shading does not mean flat** — 3D animation emphasizes cel-shaded texture expression (clear outlines, bright coloring, soft lighting layers), amplifying impact through lighting and composition design rather than relying on overly complex effects
 
 ---
 
-## 五、都市乐器与环境音
+## 4. Urban Scene Spatial Elements
 
-3D 动画都市世界观下的声音元素约束：
+Scene elements unique to the 3D animation urban world setting and their visual narrative function:
 
-### 乐器选择
+- **Door/window frames, corridors, staircases** — natural framing-composition props, creating spatial depth and layering
+- **Streets/parks/sky** — natural carriers for negative-space composition; the scene is the mood: long shadows on a dusk street = romance, warm cafe light = a sense of safety, high-rise window views = urban distance
+- **Table lamps/neon/window light** — light-source carriers of the urban world: table lamp = warm/intimate (scheme B), neon = energetic/romantic (scheme E), window light = everyday/quiet (scheme A)
+- **Use scene establishing shots to transition between segments** — this style has abundant scene assets (variants of time of day/weather), so segment transitions should use scene establishing shots as an emotional buffer rather than a hard cut
+- **Use visuals + action for turning points** — prioritize visual means (lighting changes, scene transitions) paired with action design, rather than relying on dialogue to explain
 
-- **钢琴** — 日常/温馨/回忆段落的核心乐器，最能表现 3D 动画的质感
-- **吉他** — 轻松/浪漫/街头段落，扫弦的温柔感适合都市氛围
-- **弦乐铺底** — 情感升华/离别段落，拉弦的细腻感适合情绪过渡
-- **电子音效** — 年轻感/节奏感段落，适合现代都市场景
-- 环境音是重要元素但不宜喧宾夺主
+---
 
-### 乐器组合策略
+## 5. Urban Instruments and Ambient Sound
 
-| 情绪阶段 | 乐器组合 |
+Sound element constraints under the 3D animation urban world setting:
+
+### Instrument Selection
+
+- **Piano** — the core instrument for everyday/warm/memory segments, best expressing the texture of 3D animation
+- **Guitar** — relaxed/romantic/street segments; the gentle feel of strumming suits the urban atmosphere
+- **String underlay** — emotional-climax/parting segments; the delicate feel of bowed strings suits emotional transitions
+- **Electronic sound effects** — youthful/rhythmic segments, suited to modern urban scenes
+- Ambient sound is an important element but should not overpower the music
+
+### Instrument Combination Strategy
+
+| Emotional stage | Instrument combination |
 |---|---|
-| 平稳/开场/收尾 | 吉他独奏 或 电子音效 |
-| 日常温馨 | 钢琴 + 轻吉他 |
-| 情绪升华/浪漫 | 弦乐 + 钢琴 |
-| 紧张/急促 | 电子音效 + 弦乐衬底 |
+| Calm/opening/ending | Solo guitar or electronic sound effects |
+| Everyday warmth | Piano + light guitar |
+| Emotional climax/romance | Strings + piano |
+| Tense/urgent | Electronic sound effects + string underlay |
 
-### 都市环境音
+### Urban Ambient Sound
 
-- **典型环境音层次** — 城市车流声 / 咖啡店背景音 / 地铁提示音 / 风吹树叶声 / 人群交谈声 / 脚步声 / 电梯声
-- **每场戏标注 1-2 个核心环境音**，帮助后续音效设计。环境音层次越丰富，都市场景越有沉浸感
+- **Typical ambient sound layers** — city traffic noise / cafe background sound / subway announcement chime / wind through leaves / crowd chatter / footsteps / elevator sound
+- **Label 1-2 core ambient sounds per scene** to assist later sound design. The richer the ambient sound layers, the more immersive the urban scene

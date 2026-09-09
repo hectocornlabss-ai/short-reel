@@ -1,117 +1,117 @@
 ---
 name: director_planning_style
-description: 3D国风赛博约束 · 国风赛博3D · 技法参考
+description: 3D Guofeng Cyber Constraints - Guofeng Cyber 3D - Technique Reference
 metaData: director_skills
 ---
 
-# 3D国风赛博约束 · 国风赛博3D · 技法参考
-（古风+都市双场景全适配）
+# 3D Guofeng Cyber Constraints - Guofeng Cyber 3D - Technique Reference
+(Full dual-scene adaptation: Ancient-Style + Urban)
 
 ---
 
-## 一、色调体系与画面基调
-（双场景自检：古风场景/都市场景均有明确执行标准，无适配盲区）
+## 1. Color-Tone System and Overall Mood
+(Dual-scene self-check: both ancient-style and urban scenes have clear execution standards, with no adaptation blind spots)
 
-- **色调基底** — 全片以月白（C1）、青绿（C2）、靛蓝（C4）为东方传统基底色，叠加国风适配的赛博核心色（朱红霓虹、青绿荧光、靛蓝赛博光、鎏金全息色）；整体色温中性偏冷（4500-5800K），传统基底饱和度中高（55-75%），赛博叠加色饱和度可控拉高（70-90%）。【古风场景】以基底色为建筑、服化道核心色；【都市场景】以同色系为摩天楼外立面、城市景观、公共空间、服化道基底色，赛博叠加色统一锚定东方传统色体系，杜绝无国风锚点的杂乱都市霓虹。
-- **情绪色盘驱动** — 六套双场景通用情绪色盘对应不同叙事段落，每套色盘均设置「传统基底层+赛博叠加层」双轨体系，色盘切换应与故事弧线完全同步：
-  1. 宫廷华贵/都市权力中心
-  2. 山水意境/都市空中园林
-  3. 闺阁温婉/都市私密居所
-  4. 武侠肃杀/都市职场对抗/刑侦博弈
-  5. 节日喜庆/都市市井节庆/夜生活叙事
-  6. 月夜清幽/都市夜景独处/城市空镜
-- **冷暖叙事对比** — 传统暖色（朱红 C3、金黄 C5、胭脂 C7、藤黄 C9）+ 赛博暖光（霓虹朱红、全息鎏金）作为叙事转折的视觉信号，用于情感升温与喜庆段落；传统冷色（靛蓝 C4、墨黑 C6）+ 赛博冷光（荧光青绿、赛博靛蓝）用于肃杀、忧郁、清幽段落；赛博光的明暗/色彩切换可作为强叙事转折的视觉锚点，【古风场景】以传统色为主、赛博色为辅，【都市场景】可根据叙事需求平衡双轨色彩权重。
-- **色盘先行原则** — 段落规划需先绑定情绪场景，再确定「传统主色+辅色+赛博叠加色」与光影方案，避免"剧情对了但情绪不对色"，确保古风/都市场景的色彩逻辑完全统一。
-- **禁用色域** — 无国风适配的高饱和杂乱荧光色、违和现代数码色彩、低质廉价霓虹色、西方赛博朋克无逻辑撞色均与本风格不兼容；【都市场景】额外禁用：无国风锚点的街头广告跳色、杂乱市井霓虹、纯工业风冷灰色系。
+- **Tonal base** — The entire piece uses moon white (C1), green (C2), and indigo (C4) as the Eastern traditional base colors, layered with guofeng-adapted cyber core colors (vermilion neon, fluorescent green, indigo cyber light, gilded holographic color); overall color temperature is neutral-to-cool (4500-5800K), traditional base saturation is medium-high (55-75%), and cyber overlay saturation can be pushed high in a controlled way (70-90%). 【Ancient-style scenes】use the base colors as the core color for architecture and costume/makeup/props; 【urban scenes】use the same color family as the base color for skyscraper facades, cityscape, public spaces, and costume/makeup/props, with cyber overlay colors always anchored to the Eastern traditional color system, avoiding chaotic urban neon with no guofeng anchor.
+- **Mood-palette driven approach** — Six universal dual-scene mood palettes correspond to different narrative passages, each set up with a dual-track system of "traditional base layer + cyber overlay layer," and palette switching should fully sync with the story arc:
+  1. Courtly luxury / urban seat of power
+  2. Landscape mood / urban sky garden
+  3. Boudoir tenderness / urban private residence
+  4. Wuxia severity / urban workplace conflict / criminal-investigation standoff
+  5. Festive celebration / urban street-market festival / nightlife narrative
+  6. Moonlit serenity / urban night solitude / city establishing shots
+- **Cool-warm narrative contrast** — Traditional warm colors (vermilion C3, golden yellow C5, rouge C7, gamboge C9) + cyber warm light (neon vermilion, holographic gilding) serve as visual signals for narrative turning points, used for emotional warming and celebratory passages; traditional cool colors (indigo C4, ink black C6) + cyber cool light (fluorescent green, cyber indigo) are used for severe, melancholic, and serene passages; the brightening/dimming and color shift of cyber light can serve as a visual anchor for strong narrative turns — 【ancient-style scenes】lead with traditional color and cyber color as a supporting accent, 【urban scenes】may balance the weight of both tracks according to narrative needs
+- **Palette-first principle** — Passage planning should first bind the mood scene, then determine the "traditional primary + secondary color + cyber overlay color" together with the lighting scheme, avoiding a mismatch between the story's tone and its color mood, ensuring the color logic is fully unified across ancient-style and urban scenes
+- **Forbidden color gamut** — High-saturation chaotic fluorescent colors with no guofeng adaptation, jarring modern digital colors, cheap low-quality neon colors, and illogical Western-cyberpunk color clashes are all incompatible with this style; 【urban scenes】additionally forbid: street-advertising jump-colors with no guofeng anchor, chaotic street-market neon, and pure industrial cool-gray color schemes
 
 ---
 
-## 二、光影方案体系
-（双场景自检：7套方案全适配古风+都市，每套均明确双场景用法，无执行盲区）
+## 2. Lighting and Shadow Scheme System
+(Dual-scene self-check: all 7 schemes fully apply to both ancient-style and urban scenes, each with a clear dual-scene usage note, no execution blind spots)
 
-- **光影即叙事** — 7套国风赛博双轨光影方案对应不同情绪段落，导演规划阶段应在段落层面确定「传统基底光+赛博叠加光」的基调方向，而非逐镜无逻辑指定，古风/都市场景可直接复用同一套方案框架。
-- **3D渲染光影核心特征** — 体积光、环境光遮蔽（AO）、景深虚化为国风基底的核心光影手段，新增全息光效、霓虹轮廓光、赛博屏面反光、能量体积光为赛博层核心光影手段；【都市场景】额外适配：楼体霓虹轮廓光、玻璃幕墙多层反光、都市峡谷街巷体积光、全息广告面光源、摩天楼天际线逆光、地下空间数控光源。所有光影方案均须体现PBR物理材质渲染质感，确保传统层与赛博层光影逻辑统一、物理可信。
+- **Lighting as narrative** — 7 guofeng-cyber dual-track lighting schemes correspond to different mood passages. At the planning stage, the director should determine the "traditional base light + cyber overlay light" tonal direction at the passage level, rather than assigning it shot by shot with no overarching logic; ancient-style and urban scenes can directly reuse the same scheme framework
+- **Core 3D rendering lighting features** — Volumetric light, ambient occlusion (AO), and depth-of-field blur are the core lighting techniques for the guofeng base layer; holographic light effects, neon outline light, cyber-screen reflection, and energy volumetric light are added as the core lighting techniques for the cyber layer; 【urban scenes】additionally adapt: building neon outline light, multi-layer glass curtain-wall reflection, urban-canyon-street volumetric light, holographic-advertisement panel light source, skyscraper-skyline backlight, and underground-space digital lighting. All lighting schemes must express PBR physical material rendering texture, ensuring the traditional layer and cyber layer are unified and physically believable in their lighting logic
 
-| 光影方案 | 方案名 | 色调倾向 | 双场景适用情绪与场景 |
+| Lighting scheme | Scheme name | Tone tendency | Dual-scene applicable mood and scenario |
 |---|---|---|---|
-| A | 赛博暖光华彩 | 朱红传统基底 + 金黄全息高光 + 月白底 + 朱红霓虹轮廓光 | 【古风场景】宫廷华贵、庄严气派、喜庆盛大、权力叙事<br>【都市场景】顶层权力空间、摩天楼企业总部、城市地标庆典、核心叙事高潮 |
-| B | 全息青绿意境 | 青绿传统基底 + 月白雾气体积光 + 青绿荧光漫射 + 全息山水光影 | 【古风场景】山水意境、诗意悠远、空灵飘逸、赛博禅意<br>【都市场景】空中国风园林、城市生态地标、全息山水景观、禅意办公空间 |
-| C | 数控柔光暖影 | 胭脂暖调基底 + 金黄点缀 + 柔和阴影 + 暖调全息氛围光 | 【古风场景】闺阁温婉、柔美细腻、日常温馨、私密叙事<br>【都市场景】高端私密居所、生活化居家场景、温柔情感段落、独处叙事 |
-| D | 义体冷调肃杀 | 墨黑传统基底 + 靛蓝硬光 + 高对比明暗切割 + 冷色赛博能量光 | 【古风场景】武侠肃杀、冷峻凌厉、氛围压抑、冲突对抗<br>【都市场景】职场博弈、刑侦对抗、地下空间叙事、高张力冲突段落 |
-| E | 数控窗纱漫射 | 月白底 + 自然侧光 + 环境光遮蔽 + 窗格全息投影光 | 【古风场景】室内日间、日常起居、幽静雅致、生活化叙事<br>【都市场景】日间办公空间、城市居所日间场景、茶室/书房等静谧空间 |
-| F | 赛博月夜清辉 | 靛蓝传统基底 + 月白冷光 + 金黄暖光点缀 + 人造月色全息光 | 【古风场景】月夜清幽、宁静唯美、思念独处、氛围感叙事<br>【都市场景】城市夜景、摩天楼夜景空镜、街巷夜拍、独处情感段落 |
-| G | 霓虹节庆暖光 | 朱红传统基底 + 藤黄暖光 + 高饱和国风霓虹光 + 全息节庆投影光 | 【古风场景】节日庆典、热闹欢快、市井烟火、群像叙事<br>【都市场景】都市节庆、国风市井夜市、城市夜生活、群像热闹段落 |
+| A | Cyber Warm Radiance | Vermilion traditional base + golden holographic highlight + moon-white ground + vermilion neon outline light | 【Ancient-style】courtly luxury, dignified grandeur, festive and grand, power narrative<br>【Urban】top-of-the-tower seat of power, skyscraper corporate headquarters, city landmark celebration, core narrative climax |
+| B | Holographic Green Landscape | Green traditional base + moon-white mist volumetric light + green fluorescent diffusion + holographic landscape lighting | 【Ancient-style】landscape mood, poetic and distant, ethereal, cyber Zen<br>【Urban】sky guofeng garden, urban ecological landmark, holographic landscape view, Zen office space |
+| C | Digital Soft Warm Glow | Rouge warm tone base + golden accents + soft shadow + warm-toned holographic ambient light | 【Ancient-style】boudoir tenderness, soft and delicate, everyday warmth, private narrative<br>【Urban】high-end private residence, everyday home-life scenes, tender emotional passages, solitary narrative |
+| D | Cybernetic Cool Severity | Ink-black traditional base + indigo hard light + high-contrast light-dark cut, cool-toned cyber energy light | 【Ancient-style】wuxia severity, cold and sharp, oppressive atmosphere, conflict and confrontation<br>【Urban】workplace power struggle, criminal-investigation standoff, underground-space narrative, high-tension conflict passages |
+| E | Digital Lattice-Window Diffusion | Moon-white ground + natural side light + ambient occlusion + lattice-window holographic projection light | 【Ancient-style】indoor daytime, everyday life, quiet and elegant, life-oriented narrative<br>【Urban】daytime office space, urban residence daytime scenes, teahouse/study and other tranquil spaces |
+| F | Cyber Moonlit Serenity | Indigo traditional base + moon-white cool light + golden warm accents + artificial-moonlight holographic light | 【Ancient-style】moonlit serenity, tranquil and beautiful, longing solitude, mood narrative<br>【Urban】city night view, skyscraper night establishing shots, street night shots, solitary emotional passages |
+| G | Neon Festive Warmth | Vermilion traditional base + gamboge warm light + high-saturation guofeng neon light + holographic festive projection light | 【Ancient-style】festival celebration, lively and joyful, street-market life, ensemble narrative<br>【Urban】urban festivals, guofeng street-market night market, urban nightlife, lively ensemble passages |
 
-- **冷暖光分配** — 传统暖色光（朱红/金黄/藤黄）+ 赛博暖光（霓虹朱红/全息鎏金）适用于华贵、温婉、喜庆段落；传统冷色光（靛蓝/墨黑）+ 赛博冷光（荧光青绿/赛博靛蓝）适用于肃杀、忧郁、清幽段落。导演可根据叙事需要调整冷暖切换点，赛博光的亮灭可作为强叙事节点的视觉信号，古风/都市场景遵循同一套冷暖逻辑。
-- **氛围方向映射** — 每场戏的氛围方向应能映射到上述光影方案（A-G）的某一方向，确保传统层与赛博层视觉逻辑完全一致，古风/都市场景全程风格统一。
-
----
-
-## 三、质感方向
-（双场景自检：古风/都市材质全覆盖，双场景岁月质感标准明确，杜绝塑料感/CG感）
-
-- **3D渲染为双轨锚点** — 国风赛博3D的核心：高精度双轨建模、PBR物理材质渲染、传统层体积光+赛博层全息光、环境光遮蔽、景深虚化，全程呈现电影级3D渲染画面。【古风场景】聚焦古建、传统服化道、自然景观的高精度建模；【都市场景】聚焦新中式摩天楼、城市公共空间、国风赛博载具、都市服化道的高精度双轨建模，两套场景均严格遵循同一套PBR渲染标准。
-- **PBR材质双轨融合** — 所有服化道、场景资产必须通过PBR物理渲染实现可信质感，核心为「传统材质+赛博材质的有机融合」，双场景全覆盖：
-  - 【古风核心材质】丝绸的光泽与垂感、木质的纹理与包浆、金属的反光与质感、玉石的通透与温润、瓷器的釉面光泽
-  - 【都市核心材质】玻璃幕墙的通透反射与中式格栅的光影切割、钢筋混凝土的肌理与传统石材的纹理融合、金属铝板的哑光质感与传统铜饰的做旧反光、沥青路面的磨损痕迹与青石板的风化纹理呼应、光纤面料的流光与传统丝绸的垂感统一
-  - 所有融合材质必须物理逻辑自洽，禁止无意义的赛博材质堆砌。
-- **体积光与景深双轨强化** — 体积光是国风赛博画面的灵魂：【古风场景】室外场景必须有空气透视与传统天光+赛博霓虹的双重体积光散射，室内场景通过窗光/烛光/全息投影制造多层体积光效果；【都市场景】室外必须有都市峡谷街巷的体积光、摩天楼群的天光漫射、霓虹灯光的体积散射，室内场景通过窗格投影/全息屏/数控光源制造多层体积光效果。景深虚化同步强化双场景的空间纵深，适配古风/都市的不同空间尺度。
-- **岁月质感双轨统一** — 材质不可过于干净完美，双场景均需体现生活痕迹与岁月感：
-  - 【古风场景】木面有使用痕迹、石面有风化纹与青苔、布料有自然褶皱、瓦片有苔痕残缺
-  - 【都市场景】沥青路面有车辙磨损、玻璃幕墙有水渍与风化痕迹、金属外立面有氧化与划痕、街头设施有使用痕迹、霓虹招牌有局部频闪瑕疵
-  - 全程禁止"塑料感"、全新无瑕的"廉价CG感"、无生活痕迹的"样板间式"都市画面。
-- **赛博不等于冰冷** — 国风赛博3D强调东方美学的温度感与赛博科幻的先锋感的平衡，通过双轨材质质感、分层光影层次、传统+赛博融合的色彩搭配传达情感，而非依赖无意义的奇观特效与暴力赛博元素堆砌，古风/都市场景均需坚守东方美学内核。
+- **Cool-warm light allocation** — Traditional warm-color light (vermilion/golden/gamboge) + cyber warm light (neon vermilion/holographic gilding) suits luxurious, tender, and celebratory passages; traditional cool-color light (indigo/ink black) + cyber cool light (fluorescent green/cyber indigo) suits severe, melancholic, and serene passages. The director may adjust the warm-cool switch point according to narrative needs; the brightening/dimming of cyber light can serve as a visual signal for strong narrative beats, with ancient-style and urban scenes following the same warm-cool logic
+- **Mood-direction mapping** — Each scene's mood direction should map to one of the lighting schemes above (A-G), ensuring the traditional layer and cyber layer are fully consistent in visual logic, with a unified style throughout ancient-style and urban scenes
 
 ---
 
-## 四、国风赛博场景空间元素
-（双场景自检：全元素双场景适配，新增都市专属国风赛博元素，古风/都市叙事功能全覆盖）
+## 3. Texture Direction
+(Dual-scene self-check: full material coverage for both ancient-style/urban scenes, with clear dual-scene aging-texture standards, avoiding a plastic/CG feel)
 
-古风赛博世界观特有的双轨场景元素及其视觉叙事功能，核心为「传统东方空间逻辑+赛博科幻元素的有机融合」，**100%适配古风传统场景与国风赛博都市场景**，禁止无逻辑元素堆砌：
-
-- **框架式构图元素** — 【古风场景】纱帘/屏风/中式门框；【都市场景】全息纱帘隔断/数控中式屏风/AR中式门框/半透数控玻璃幕墙。天然的框架式构图道具，制造"虚实相生"的层次感与空间纵深。3D渲染中，半透明材质的光线穿透效果、全息投影的虚实切换、框架的叙事边界切割是画面核心亮点，可用于叙事中的虚实转换、记忆闪回、身份隐喻。
-- **留白意境元素** — 【古风场景】中式庭院/传统花树/自然雨幕/风过竹林；【都市场景】空中国风园林/屋顶全息花树/垂直绿化景观/数控雨幕/都市街巷雨景/摩天楼间云海。留白构图的天然载体，景即情：满庭花开 = 释然、独坐雨中 = 孤寂、落叶纷飞 = 离愁。3D场景中，植被的体积感与光影交互、雨幕的光线折射、虚实场景的叠加效果尤为重要。
-- **光源载体元素** — 【古风场景】烛火/自然月色/木格窗光/灯笼；【都市场景】全息中式烛火/人造赛博月色/数控中式窗格投影光/摩天楼窗格面光源/国风霓虹灯笼。国风赛博世界的双轨光源载体，传统光源与赛博光源一一对应：烛光/全息烛火 = 暖/私密（方案C）、月色/人造赛博月色 = 冷/清幽（方案F）、窗光/数控窗格光 = 日常/静谧（方案E）。3D渲染中，光源的双重体积光效果、PBR材质的传统+赛博双重反射是画面质感核心。
-- **建筑标志性元素** — 【古风场景】传统飞檐/木质斗拱/青瓦屋面/榫卯结构；【都市场景】新中式摩天楼飞檐/钢结构机械斗拱/中式元素外立面/青瓦肌理金属屋面/榫卯结构钢结构。国风赛博建筑的标志性元素，3D建模需同步体现传统雕梁画栋的精致细节与赛博机械结构的工业美感，材质需同步呈现传统层的岁月痕迹与赛博层的磨损氧化，禁止脱离古建形制的无逻辑机械改造。
-- **市井叙事核心元素** — 【古风场景】古街古巷/市井商铺/牌坊；【都市场景】国风赛博街巷/摩天楼峡谷/新中式市井商铺/国风霓虹招牌街巷/全息中式牌楼。双场景市井叙事的核心空间载体，3D渲染中需体现街巷的空间纵深、国风元素的统一、市井烟火的生活感，是群像叙事、日常段落的核心场景。
-- **段落过渡规则** — 本风格有丰富的双场景场景资产（不同时段/天候/季节/赛博化程度变体），段落衔接建议用场景空镜做情绪缓冲，不要硬切。【古风场景】适配庭院/山水/建筑空镜；【都市场景】适配摩天楼天际线/空中园林/城市地标/街巷空镜/地铁/空中连廊空镜。
-- **叙事优先级规则** — 转折点用视觉而非台词，优先使用画面手段（光影突变、景别跳切、虚实空镜隐喻、全息投影内容切换、赛博元素亮灭）而非依赖对白解释，古风/都市场景遵循同一套叙事逻辑。
+- **3D rendering as the dual-track anchor** — The core of guofeng cyber 3D: high-precision dual-track modeling, PBR physical material rendering, traditional-layer volumetric light + cyber-layer holographic light, ambient occlusion, depth-of-field blur, presenting a cinema-grade 3D rendered image throughout. 【Ancient-style scenes】focus on high-precision modeling of ancient buildings, traditional costume/makeup/props, and natural landscapes; 【urban scenes】focus on high-precision dual-track modeling of new-Chinese skyscrapers, urban public spaces, guofeng cyber vehicles, and urban costume/makeup/props — both scene types strictly follow the same PBR rendering standard
+- **Dual-track PBR material fusion** — All costume/makeup/props and scene assets must achieve believable texture through PBR physical rendering, with the core being an "organic fusion of traditional material and cyber material," fully covering both scenes:
+  - 【Ancient-style core materials】the sheen and drape of silk, the grain and patina of wood, the reflection and texture of metal, the translucency and warmth of jade, the glaze sheen of porcelain
+  - 【Urban core materials】the transparent reflection of glass curtain walls paired with the light-and-shadow cutting of Chinese lattice screens, the texture of reinforced concrete fused with traditional stone texture, the matte finish of metal aluminum paired with the aged reflection of traditional bronze fittings, the wear marks of asphalt paving echoing the weathering texture of bluestone slabs, the flowing sheen of fiber-optic fabric unified with the drape of traditional silk
+  - All fused materials must be physically self-consistent; meaningless piling-on of cyber materials is forbidden
+- **Dual-track reinforcement of volumetric light and depth of field** — Volumetric light is the soul of the guofeng cyber image: 【ancient-style scenes】outdoor scenes must have aerial perspective and dual volumetric-light scattering from traditional skylight + cyber neon, indoor scenes create multi-layer volumetric light effects through window light/candlelight/holographic projection; 【urban scenes】outdoor scenes must have volumetric light in the urban canyon streets, sky-light diffusion across the skyscraper cluster, and volumetric scattering of neon lighting, while indoor scenes create multi-layer volumetric light effects through lattice-window projection/holographic screens/digital light sources. Depth-of-field blur simultaneously reinforces the spatial depth of both scene types, adapting to the different spatial scales of ancient-style versus urban settings
+- **Dual-track unified sense of age** — Materials must not be too clean and perfect; both scene types need to convey a sense of lived-in life and age:
+  - 【Ancient-style scenes】wood surfaces show usage marks, stone surfaces show weathering texture and moss, fabric has natural creases, roof tiles show moss stains and chipping
+  - 【Urban scenes】asphalt roads show tire-track wear, glass curtain walls show water stains and weathering marks, metal facades show oxidation and scratches, street furniture shows usage marks, neon signage has localized flicker imperfections
+  - A "plastic feel," a brand-new flawless "cheap CG feel," and a "show-home" urban image lacking any sign of life are forbidden throughout
+- **Cyber does not mean cold** — Guofeng cyber 3D emphasizes the balance between the warmth of Eastern aesthetics and the pioneering spirit of cyber sci-fi, conveying emotion through dual-track material texture, layered lighting, and a traditional-plus-cyber color palette, rather than relying on meaningless spectacle effects or a pile of violent cyber elements — both ancient-style and urban scenes must hold to the Eastern aesthetic core
 
 ---
 
-## 五、国风赛博乐器与环境音
-（双场景自检：双场景声音体系全覆盖，古风/都市情绪均有明确适配方案，无违和感）
+## 4. Guofeng Cyber Scene Spatial Elements
+(Dual-scene self-check: all elements are dual-scene adapted, with newly added urban-exclusive guofeng cyber elements, full narrative-function coverage for both ancient-style/urban settings)
 
-国风赛博世界观下的双轨声音元素约束，核心为「传统东方乐器内核+赛博电子乐的有机融合」，**同步适配古风场景与国风赛博都市场景**，禁止违和的电子乐堆砌：
+The exclusive dual-track scene elements of the guofeng cyber worldview and their visual narrative function, with the core being an "organic fusion of traditional Eastern spatial logic and cyber sci-fi elements," **100% adapted to both traditional ancient-style scenes and guofeng cyber urban scenes**, with illogical element piling-on forbidden:
 
-### 乐器选择
-（双场景通用，古风/都市叙事均可直接复用）
-- **箫** — 凄凉、孤寂、悲戚段落的核心乐器，可搭配电音延迟效果器，强化清冷哀婉的赛博氛围感，最能表现冷清哀婉
-- **二胡** — 情感激荡、悲痛、思念段落，拉弦的哭腔感适合情绪爆发，可搭配失真效果器，强化命运感的赛博叙事张力
-- **唢呐** — 情感波动剧烈段落（大悲大喜、命运转折、高潮），慎用但一用即核弹，可搭配合成器底噪，强化赛博世界的极致情绪冲击
-- **古琴** — 开场定调 / 平稳段落，与箫搭配使用，体现山水意境，可搭配氛围电子垫音，强化赛博禅意的空灵感
-- **琵琶** — 紧张、急促段落的点缀，武侠肃杀/都市博弈场景适用，可搭配工业电子鼓点，强化凌厉节奏感
-- **古筝** — 宫廷华贵/都市节庆段落的氛围乐器，华丽优雅，可搭配电子合成器琶音，强化盛大氛围感
-- 弦乐铺底可增加电影感但不宜喧宾夺主，电子合成器垫音需锚定传统乐器的调性，禁止脱离国风内核的无逻辑电子音效
+- **Frame-composition elements** — 【Ancient-style scenes】gauze curtain/screen/Chinese door frame; 【urban scenes】holographic gauze-curtain partition/digitally controlled Chinese screen/AR Chinese door frame/semi-transparent digital glass curtain wall. A natural frame-composition prop that creates the layered depth of "the real and the illusory giving rise to each other." In 3D rendering, the light-penetration effect of translucent materials, the real-illusory switching of holographic projection, and the narrative-boundary cutting of the frame are the core visual highlights, usable for reality-illusion transitions, memory flashbacks, and identity metaphors in the narrative
+- **Negative-space mood elements** — 【Ancient-style scenes】Chinese courtyard/traditional flowering trees/natural rain curtain/wind through bamboo forest; 【urban scenes】sky guofeng garden/rooftop holographic flowering trees/vertical greenery landscape/digitally controlled rain curtain/urban street rain scene/sea of clouds between skyscrapers. A natural carrier for negative-space composition, where the scenery is the emotion: a courtyard full of blossoms = relief, sitting alone in the rain = solitude, falling leaves drifting = parting sorrow. In 3D scenes, the volumetric feel and light interaction of vegetation, the light refraction of the rain curtain, and the overlay effect of real-and-virtual scenes are especially important
+- **Light-source-carrier elements** — 【Ancient-style scenes】candlelight/natural moonlight/wood-lattice window light/lanterns; 【urban scenes】holographic Chinese candlelight/artificial cyber moonlight/digitally controlled Chinese lattice-window projection light/skyscraper window panel light source/guofeng neon lanterns. The dual-track light-source carriers of the guofeng cyber world, with traditional and cyber light sources corresponding one-to-one: candlelight/holographic candlelight = warm/intimate (scheme C), moonlight/artificial cyber moonlight = cool/serene (scheme F), window light/digitally controlled lattice light = everyday/quiet (scheme E). In 3D rendering, the dual volumetric-light effect of the light source and the traditional-plus-cyber dual reflection of PBR material are the core of the image's texture quality
+- **Iconic architectural elements** — 【Ancient-style scenes】traditional flying eaves/wooden dougong brackets/gray-tile roofing/mortise-and-tenon structure; 【urban scenes】new-Chinese skyscraper flying eaves/mechanical steel-structure dougong brackets/Chinese-element facade/gray-tile-textured metal roofing/mortise-and-tenon structure rendered in steel. The iconic elements of guofeng cyber architecture — 3D modeling must simultaneously express the refined detail of traditional carved beams and painted rafters and the industrial aesthetic of the cyber mechanical structure, with materials simultaneously showing the traditional layer's age marks and the cyber layer's wear and oxidation; illogical mechanical retrofits detached from the ancient building's form are forbidden
+- **Street-market narrative core elements** — 【Ancient-style scenes】ancient streets and alleys/street-market shops/memorial archways; 【urban scenes】guofeng cyber streets and alleys/skyscraper canyon/new-Chinese street-market shops/guofeng neon-signage streets/holographic Chinese memorial gate. The core spatial carrier of dual-scene street-market narrative — 3D rendering must express the spatial depth of the streets and alleys, the unity of guofeng elements, and the lived-in feel of street-market life; this is the core scene for ensemble narrative and everyday passages
+- **Passage-transition rule** — This style has rich dual-scene scene assets (variants by time of day/weather/season/degree of cyberization); passage transitions are recommended to use scene establishing shots as an emotional buffer rather than a hard cut. 【Ancient-style scenes】adapt with courtyard/landscape/architectural establishing shots; 【urban scenes】adapt with skyscraper-skyline/sky-garden/city-landmark/street/subway/aerial-corridor establishing shots
+- **Narrative priority rule** — Turning points should be conveyed visually rather than through dialogue; prioritize visual means (sudden lighting shifts, framing jump cuts, real-illusion establishing-shot metaphors, holographic-projection content switches, cyber elements lighting up or going dark) over relying on dialogue explanation, with ancient-style and urban scenes following the same narrative logic
 
-### 乐器组合策略
-（双场景全适配，每套组合均明确古风/都市适用场景）
+---
 
-| 情绪阶段 | 乐器组合 | 双场景适配说明 |
+## 5. Guofeng Cyber Instruments and Ambient Sound
+(Dual-scene self-check: full coverage of the dual-scene sound system, with clear adaptation plans for both ancient-style/urban moods, no sense of dissonance)
+
+The dual-track sound-element constraints under the guofeng cyber worldview, with the core being an "organic fusion of the traditional Eastern instrumental core and cyber electronic music," **simultaneously adapted to both ancient-style scenes and guofeng cyber urban scenes**, with jarring piling-on of electronic music forbidden:
+
+### Instrument Selection
+(Shared by both scenes, directly reusable in both ancient-style and urban narratives)
+- **Xiao (vertical flute)** — The core instrument for desolate, lonely, and sorrowful passages; can pair with a delay effect to reinforce the cold, mournful cyber mood — best at conveying cold, mournful, wistful emotion
+- **Erhu** — For passages of surging emotion, grief, and longing; the crying quality of the bowed strings suits emotional outbursts; can pair with a distortion effect to reinforce the sense of fate in the cyber narrative
+- **Suona (Chinese horn)** — For passages of intense emotional swings (extreme joy and sorrow, turns of fate, climaxes); use sparingly but it lands like a bomb when used; can pair with synthesizer undertone noise to reinforce the extreme emotional impact of the cyber world
+- **Guqin (seven-string zither)** — For setting the tone at the opening / steady passages, paired with the xiao to convey a landscape mood; can pair with ambient electronic pad tones to reinforce the ethereal feel of cyber Zen
+- **Pipa (lute)** — An accent for tense, urgent passages, suited to wuxia severity/urban power-struggle scenes; can pair with industrial electronic drum beats to reinforce a sharp rhythmic feel
+- **Guzheng (zither)** — The ambient instrument for courtly luxury/urban festival passages, gorgeous and elegant; can pair with electronic synthesizer arpeggios to reinforce a grand atmosphere
+- String-section underlay can add a cinematic feel but should not overwhelm; synthesizer pad tones must anchor to the tonality of the traditional instrument, with illogical electronic sound effects detached from the guofeng core forbidden
+
+### Instrument Combination Strategy
+(Fully dual-scene adapted, each combination with a clear ancient-style/urban applicable scenario)
+
+| Emotional stage | Instrument combination | Dual-scene adaptation notes |
 |---|---|---|
-| 平稳/开场/收尾 | 古琴独奏 或 古琴 + 箫 + 轻氛围电子垫音 | 【古风场景】山水/庭院开场、全片收尾<br>【都市场景】城市全景/天际线开场、通勤日常、全片收尾 |
-| 山水意境/空灵 | 箫 + 古琴 + 笛 + 合成器氛围音 | 【古风场景】山水游历、禅意段落、空镜叙事<br>【都市场景】空中园林、城市生态景观、禅意空间段落 |
-| 宫廷华贵/喜庆 | 古筝 + 编钟 + 弦乐 + 电子琶音点缀 | 【古风场景】宫廷叙事、节庆盛典、盛大仪式<br>【都市场景】顶层权力叙事、都市节庆、城市盛典、高光时刻 |
-| 悲戚渐浓 | 箫 + 二胡 + 延迟效果器 + 低饱和电子底噪 | 【古风场景】离别、思念、悲戚情绪递进段落<br>【都市场景】都市独处、失意段落、情绪下沉叙事 |
-| 情绪爆发/命运转折 | 唢呐独奏 或 唢呐 + 二胡 + 失真合成器 | 【古风场景】生死离别、命运转折、全片高潮<br>【都市场景】人生转折、极致冲突、全片核心高潮 |
-| 武侠肃杀/紧张 | 琵琶点缀 + 弦乐衬底 + 工业电子鼓点 | 【古风场景】武侠对抗、追杀博弈、紧张追击段落<br>【都市场景】职场博弈、刑侦对抗、高张力冲突段落 |
-| 温婉日常 | 古琴 + 笛 + 轻弦乐 + 极简电子白噪音 | 【古风场景】居家日常、闺阁叙事、温馨生活化段落<br>【都市场景】都市居家、办公室日常、温柔生活化叙事 |
+| Steady / opening / closing | Solo guqin, or guqin + xiao + light ambient electronic pad | 【Ancient-style】landscape/courtyard opening, film ending<br>【Urban】city-panorama/skyline opening, daily commute, film ending |
+| Landscape mood / ethereal | Xiao + guqin + dizi (flute) + synthesizer ambient tone | 【Ancient-style】landscape travel, Zen passages, establishing-shot narrative<br>【Urban】sky garden, urban ecological landscape, Zen spatial passages |
+| Courtly luxury / celebration | Guzheng + bianzhong (chime bells) + strings + electronic arpeggio accent | 【Ancient-style】courtly narrative, festival gala, grand ceremony<br>【Urban】top-of-the-tower power narrative, urban festival, city gala, highlight moment |
+| Deepening sorrow | Xiao + erhu + delay effect + low-saturation electronic undertone noise | 【Ancient-style】parting, longing, progressively deepening sorrow<br>【Urban】urban solitude, passage of setback, emotionally descending narrative |
+| Emotional outburst / turn of fate | Solo suona, or suona + erhu + distortion synthesizer | 【Ancient-style】life-and-death parting, turn of fate, film climax<br>【Urban】life turning point, extreme conflict, core film climax |
+| Wuxia severity / tension | Pipa accent + string underlay + industrial electronic drum beat | 【Ancient-style】wuxia confrontation, chase and standoff, tense pursuit passage<br>【Urban】workplace power struggle, criminal-investigation standoff, high-tension conflict passage |
+| Tender everyday | Guqin + dizi + light strings + minimalist electronic white noise | 【Ancient-style】home life, boudoir narrative, warm life-oriented passage<br>【Urban】urban home life, office daily life, tender life-oriented narrative |
 
-### 国风赛博环境音
-（双场景分层设计，古风/都市场景均有明确执行标准）
+### Guofeng Cyber Ambient Sound
+(Layered design for both scenes, with clear execution standards for both ancient-style/urban settings)
 
-- **双场景通用环境音基础层** — 蝉鸣虫唱 / 溪水潺潺 / 风过竹林 / 国风市井叫卖 / 夜雨滴檐 / 衣料摩擦 / 中式风铃轻响 / 鸟鸣啁啾 / 落花簌簌
-- **国风赛博都市专属环境音分层** — 【传统层】街头民乐背景音、风过中式格栅、国风招牌风铃声、市井叫卖声；【赛博层】摩天楼风噪、车流低鸣、地铁运行低频声、霓虹招牌嗡鸣、全息广告轻人声、数控设备轻响、玻璃幕墙风噪
-- **执行标准** — 【古风场景】每场戏标注 1-2 个传统核心环境音；【都市场景】每场戏标注 1个传统核心环境音 + 1个都市赛博核心环境音，帮助后续音效设计。双轨环境音层次越匹配叙事，国风赛博场景的沉浸感越强。
+- **Shared base-layer ambient sound for both scenes** — Cicada and insect song / murmuring stream / wind through bamboo forest / guofeng street-market hawking / night rain dripping on the eaves / fabric rustling / Chinese wind-chime tinkling / bird calls / falling petals rustling
+- **Guofeng cyber urban-exclusive layered ambient sound** — 【Traditional layer】background street folk music, wind through Chinese lattice screens, guofeng signage wind-chime sound, street-market hawking; 【cyber layer】skyscraper wind noise, low hum of traffic flow, subway running low-frequency sound, neon-signage buzz, faint voice from holographic advertisements, soft click of digital devices, glass-curtain-wall wind noise
+- **Execution standard** — 【Ancient-style scenes】mark 1-2 traditional core ambient sounds per scene; 【urban scenes】mark 1 traditional core ambient sound + 1 urban cyber core ambient sound per scene, to assist subsequent sound-effect design. The better matched the dual-track ambient sound layers are to the narrative, the stronger the immersive feel of the guofeng cyber scene.
 
 ---

@@ -1,198 +1,202 @@
 ---
 name: liveaction_urban_scene
-description: 真人都市场景图像生成 · 约束手册
+description: Live-Action Urban scene image generation · Constraint manual
 metaData: liveaction_urban_art_skills
 ---
 
-# 真人都市场景图像生成 · 约束手册
+# Live-Action Urban Scene Image Generation · Constraint Manual
 
 ---
 
-## 一、场景美学原则
+## 1. Scene Aesthetic Principles
 
-> 真人都市的场景不是"被建模的空间"，而是"被摄影机选中的真实场所"。没有渲染引擎、没有贴图、没有体积光参数——只有实际存在的光、真实的材料、以及中国城市的日常。
+> A Live-Action Urban scene is not "a modeled space," but "a genuine location chosen by the camera." No render engine, no textures, no volumetric-light parameters — only light that actually exists, genuine materials, and the everyday life of a Chinese city.
 
-1. **空间即叙事** — 一个空无一人的办公室不是"空的"，是刚下班。一把歪放的椅子、一杯半凉的咖啡、屏幕上还没关的文档——空间自己会讲故事
-2. **真实的光，不是渲染的光** — 场景的光只有一个来源：实际的日光（通过窗户、门洞）、实际的灯光（日光灯管、台灯、街灯、霓虹招牌）。光的色温和方向必须在物理上说得通
-3. **被使用过的空间** — 真实的场景不整洁。桌上有杂物、墙角有灰尘、玻璃上有手印、地面有磨损。一个完全没有生活痕迹的空间是售楼处的样板间，不是真人都市
-4. **中国当代都市的真实场所** — 场景必须有中文标识、中国城市特征（店招、路牌、建筑风格、绿化树种）。这不是"generic urban"，这是"当代中国都市的一个具体角落"
-5. **单视图全景全貌** — 一张照片装下整个场地的完整信息。广角或标准焦段，全景深，正面展示空间的全貌与纵深——不是四视图分割，不是多角度拼贴
+1. **Space as narrative** — An empty office isn't "empty," it's just after everyone left. A chair pushed askew, a half-cold cup of coffee, a document still open on a screen — the space tells its own story
+2. **Real light, not rendered light** — A scene's light has only one source: actual daylight (through windows, doorways) or actual artificial light (fluorescent tubes, table lamps, streetlights, neon signs). The light's color temperature and direction must be physically plausible
+3. **A space that has been used** — A genuine scene is not tidy. There's clutter on the table, dust in the corners, handprints on the glass, wear on the floor. A space with absolutely no signs of life is a real-estate showroom, not Live-Action Urban
+4. **Genuine contemporary Chinese urban locations** — Scenes must have Chinese-language markings, Chinese city characteristics (shop signs, street signs, architectural style, greenery species). This is not "generic urban," this is "a specific corner of a contemporary Chinese city"
+5. **Single-view full panorama** — One photo contains the complete information of the entire location. Wide-angle or standard focal length, full depth of field, presenting the space's full scope and depth head-on — not a four-view split, not a multi-angle collage
 
 ---
 
-## 二、季节与时刻——自然光的导演
+## 2. Season and Time of Day — the Director of Natural Light
 
-> 真人都市场景的光，首先由季节和时刻决定。以下是真实光源在四个季节、五个时段的摄影行为。
+> The light of a Live-Action Urban scene is first determined by season and time of day. Below is the photographic behavior of real light sources across four seasons and five time periods.
 
-| 季节 | 时段 | 光的行为 | 场景氛围词 |
+| Season | Time Period | Light Behavior | Scene Mood Words |
 |---|---|---|---|
-| 春 | 清晨 6:00-8:00 | 低角度暖白日光、空气中有薄雾的漫射、建筑物表面柔和 | 通透清冽、新绿初绽、晨雾未散 |
-| 春 | 正午 11:00-13:00 | 日光近乎垂直、阴影短、建筑表面材质清晰、光线偏冷白 | 明亮清爽、春暖花开、街区明媚 |
-| 春 | 午后 14:00-16:00 | 日光偏西、暖调逐渐增强、长阴影开始形成 | 慵懒温暖、午后光影、春日融融 |
-| 春 | 金色时刻 17:00-18:30 | 暖金低角度光、长阴影、一切表面镀金边、最珍贵的自然光 | 金色春光、温暖治愈、时光缓慢 |
-| 春 | 夜晚 19:00-次日 | 路灯为主、商铺橱窗光为辅、冷暖光并存 | 春夜微凉、街灯初上、夜色温柔 |
-| 夏 | 清晨 5:00-7:00 | 极早的暖光、空气清澈、长阴影、城市尚未完全醒来 | 夏日晨光、空气清澈、城市苏醒前 |
-| 夏 | 正午 11:00-14:00 | 顶光强、阴影浓重短促、建筑表面反光强烈、路面热浪隐约 | 盛夏烈日、浓荫蔽日、蝉鸣午后的寂静 |
-| 夏 | 午后 15:00-17:00 | 日光偏西、热度稍减、斜光穿过行道树形成光斑 | 午后光影斑驳、暑气渐消、长日将尽 |
-| 夏 | 金色时刻 18:00-19:30 | 极暖调低角度光、长阴影、城市镀上暖橙金 | 夏日黄昏、金色漫溢、一天中最温柔的时刻 |
-| 夏 | 夜晚 20:00-次日 | 霓虹/街灯/车灯为主、路面可能反射雨后光影、暖光与冷光并存 | 夏夜迷离、霓虹倒影、暖风中的城市 |
-| 秋 | 清晨 6:30-8:00 | 清冷暖白日光、空气干燥通透、可能薄雾、行道树变色 | 秋高气爽、晨光清冽、金黄枝叶衬蓝天 |
-| 秋 | 正午 11:00-13:00 | 日光高度适中、光线干净通透、天空深蓝 | 秋日明净、天高云淡、光影清澈 |
-| 秋 | 午后 14:00-16:00 | 偏暖日光、树影斑驳、落叶在地面被光照亮 | 秋日午后、落叶被光打亮、静谧温暖 |
-| 秋 | 金色时刻 16:30-18:00 | 极暖金橙光、落叶与建筑同色系、一年中最浓郁的金色 | 熔金秋色、满城尽带黄金甲、诗意浓郁 |
-| 秋 | 夜晚 18:30-次日 | 入夜早、街灯+车灯为主、冷风中的暖光点 | 秋夜微寒、万家灯火、冷暖交织 |
-| 冬 | 清晨 7:00-8:30 | 低角度冷白日光、可能带薄雾、建筑表面冷硬、呵气可见 | 冬日晨光、清冷晨雾、城市裹着寒意 |
-| 冬 | 正午 11:00-13:00 | 日光偏南低角度、全天最暖的时刻、光量偏弱、阴影偏长 | 冬日暖阳、难得的温暖、长阴影 |
-| 冬 | 午后 14:00-16:00 | 日光衰减快、阴影迅速拉长、光偏冷 | 冬日午后、日影西斜、天色渐沉 |
-| 冬 | 金色时刻 16:00-17:00 | 短暂的暖调、低角度斜光、长到极致的阴影 | 冬日残阳、最后一抹暖、时光珍贵 |
-| 冬 | 夜晚 17:00-次日 | 入夜极早、街灯/橱窗光/车灯为主、可能有积雪反光 | 冬夜漫长、暖光在寒夜中格外珍贵、雪花飘落 |
+| Spring | Early Morning 6:00-8:00 | Low-angle warm-white daylight, hazy diffusion in the air, soft building surfaces | Clear and crisp, fresh new green just budding, morning mist not yet dispersed |
+| Spring | Midday 11:00-13:00 | Near-vertical daylight, short shadows, clear building surface textures, slightly cool-white light | Bright and refreshing, spring in full bloom, a radiant neighborhood |
+| Spring | Afternoon 14:00-16:00 | Daylight leaning westward, warm tones gradually intensifying, long shadows beginning to form | Languid warmth, afternoon light and shadow, a mellow spring day |
+| Spring | Golden Hour 17:00-18:30 | Warm, low-angle golden light, long shadows, every surface gilded, the most precious natural light | Golden spring light, warm and healing, time slowing down |
+| Spring | Night 19:00-next day | Streetlights dominant, shopfront window light secondary, cool and warm light coexisting | A slightly chilly spring night, streetlights just coming on, a gentle night atmosphere |
+| Summer | Early Morning 5:00-7:00 | Very early warm light, clear air, long shadows, the city not yet fully awake | Summer morning light, clear air, before the city wakes |
+| Summer | Midday 11:00-14:00 | Strong overhead light, dense, short shadows, strong reflections off building surfaces, a faint heat haze on the road | The blazing height of summer, dense shade blocking the sun, the silence of a cicada-filled afternoon |
+| Summer | Afternoon 15:00-17:00 | Daylight leaning westward, heat slightly subsiding, slanted light through street trees forming light patches | Dappled afternoon light and shadow, the heat gradually fading, a long day drawing to a close |
+| Summer | Golden Hour 18:00-19:30 | Extremely warm, low-angle light, long shadows, the city gilded in warm orange-gold | Summer dusk, golden light overflowing, the gentlest moment of the day |
+| Summer | Night 20:00-next day | Neon/streetlights/car lights dominant, road surfaces possibly reflecting post-rain light, warm and cool light coexisting | A hazy summer night, neon reflections, a city in the warm wind |
+| Autumn | Early Morning 6:30-8:00 | Cool, warm-white daylight, dry, clear air, possible light mist, street trees changing color | Crisp autumn air, cool morning light, golden branches against a blue sky |
+| Autumn | Midday 11:00-13:00 | Moderate daylight height, clean, clear light, a deep blue sky | A clear autumn day, high skies and thin clouds, clear light and shadow |
+| Autumn | Afternoon 14:00-16:00 | Slightly warm daylight, dappled tree shadows, fallen leaves lit up on the ground | Autumn afternoon, fallen leaves lit by the light, quiet and warm |
+| Autumn | Golden Hour 16:30-18:00 | Extremely warm golden-orange light, fallen leaves matching the buildings' tones, the richest gold of the year | Molten autumn colors, the whole city clad in gold, richly poetic |
+| Autumn | Night 18:30-next day | Nightfall arrives early, streetlights + car lights dominant, warm points of light amid the cold wind | A slightly cold autumn night, lights in every household, warm and cool intertwined |
+| Winter | Early Morning 7:00-8:30 | Low-angle cool-white daylight, possible light mist, cold, hard building surfaces, visible breath in the air | Winter morning light, a cold morning mist, the city wrapped in chill |
+| Winter | Midday 11:00-13:00 | Daylight low in the south, the warmest moment of the day, weaker light volume, longer shadows | Winter sun, a rare warmth, long shadows |
+| Winter | Afternoon 14:00-16:00 | Daylight fading fast, shadows lengthening rapidly, slightly cool light | Winter afternoon, the sun slanting west, the sky gradually darkening |
+| Winter | Golden Hour 16:00-17:00 | A brief warm tone, low-angle slanted light, shadows stretched to their longest | The last glow of winter sun, a final touch of warmth, precious time |
+| Winter | Night 17:00-next day | Nightfall arrives very early, streetlights/shopfront light/car lights dominant, possible reflections off accumulated snow | A long winter night, warm light especially precious in the cold darkness, falling snow |
 
 ---
 
-## 三、室内场景
+## 3. Interior Scenes
 
-### 空间摄影规范
+### Space Photography Specification
 
-| 维度 | 摄影要求 | 提示词 |
+| Dimension | Photographic Requirement | Prompt |
 |---|---|---|
-| 风格 | 真实的中国当代都市室内空间——不是效果图、不是样板间、不是渲染。是有生活痕迹的真实室内 | 真实的中国当代都市{空间类型}、真人实拍摄影、非效果图非样板间 |
-| 光源逻辑 | 必须有明确的光源来源——窗光是哪个方向的窗、人工光是哪盏灯。光的方向和色温必须自洽 | {窗光方向}自然光为主、{人工光源}为辅、光的方向明确可追溯 |
-| 空间层次 | 单张全景照片必须呈现前/中/后景——前景（门框/家具边缘/窗帘）形成画框感、中景是空间主体、后景是空间延伸（另一个房间/窗外/走廊尽头） | 前景{画框元素}、中景{空间主体}、后景{空间延伸}、广角镜头捕捉完整空间纵深 |
-| 材质与表面 | 墙面有居住痕迹（污渍/贴纸残留/钉子孔）、地面有正常磨损、家具表面有使用包浆——一切材质呈现在摄影机下，非渲染 | 真实墙面使用痕迹、地面正常磨损、家具表面使用包浆、非全新非样板间 |
-| 镜头选择 | 24-28mm广角——装下整个空间的广度、前景到后景的纵深全部清晰（全景深 f/8-f/11）、轻微桶形畸变增加空间感 | 广角24-28mm、全景深f/8-f/11、空间纵深完整、轻微透视增加空间感 |
+| Style | A genuine contemporary Chinese urban interior space — not a rendering, not a showroom, not CG. A real interior with signs of life | A genuine contemporary Chinese urban {space type}, live-action photography, not a rendering, not a showroom |
+| Lighting Logic | Must have a clear light source — which direction the window light comes from, which lamp the artificial light comes from. The light's direction and color temperature must be internally consistent | {window light direction} natural light as the main source, {artificial light source} as a secondary source, the light's direction clearly traceable |
+| Spatial Layering | A single panoramic photo must present foreground/midground/background — the foreground (a door frame/furniture edge/curtain) forms a framing effect, the midground is the main subject of the space, the background is the space's extension (another room/outside the window/the end of a hallway) | Foreground {framing element}, midground {main subject of the space}, background {extension of the space}, a wide-angle lens capturing the space's full depth |
+| Materials and Surfaces | Walls show signs of habitation (stains/sticker residue/nail holes), the floor shows normal wear, furniture surfaces show use patina — every material presented as under a camera, not rendered | Genuine wall use marks, normal floor wear, use patina on furniture surfaces, not brand new, not a showroom |
+| Lens Choice | A 24-28mm wide angle — capturing the full breadth of the entire space, sharpness from foreground to background all in focus (full depth of field f/8-f/11), slight barrel distortion adding a sense of space | A 24-28mm wide angle, full depth of field f/8-f/11, complete spatial depth, a slight perspective effect enhancing the sense of space |
 
-### 室内类型速查
+### Interior Type Quick Reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core Elements | Mood Words |
 |---|---|---|
-| 出租屋/单身公寓 | 单人床+床品、小书桌+椅子、简易衣柜/挂衣架、落地窗/小阳台、床头柜+台灯、杂物自然散落 | 温馨私密、独居的真实、空间虽小但有自己的秩序 |
-| 老小区客厅 | 沙发+茶几、电视柜+电视、餐桌+餐椅、窗帘+窗台杂物、地面拖鞋、墙上挂历/照片 | 市井日常、几代人的生活痕迹、真实不矫饰 |
-| 高层公寓客厅 | 大面积落地窗+城市窗景、沙发组+茶几、电视背景墙、开放式厨房吧台、绿植 | 开阔通透、都市中产日常、窗外的城市是另一个角色 |
-| 写字楼办公室 | 玻璃隔断、开放式工位+电脑、文件柜+打印机、会议桌+白板、百叶窗+窗外楼景 | 秩序井然、冷调专业、加班后的凌乱工位 |
-| 会议室 | 长会议桌+椅子、投影幕布/大屏、白板+马克笔、玻璃墙+百叶帘、水杯+文件散落 | 严肃高效、刚散会或即将开会的状态 |
-| 茶水间 | 饮水机+咖啡机、微波炉+冰箱、吧台+高脚凳、杯具+茶包散落 | 公司里的喘息之地、短暂的松弛 |
-| 咖啡厅/奶茶店 | 吧台+咖啡机、卡座/散座、落地窗+街景、暖调灯光、杯具+菜单 | 都市第三空间、松弛氛围、窗边座位的光 |
-| 便利店 | 货架+商品、收银台+店员区域、冰柜+冷饮、落地玻璃+街景、深夜的孤岛式照明 | 深夜便利店——城市里的安全屋 |
-| 面馆/小餐馆 | 餐桌+调味瓶、开放式厨房+蒸汽、墙上的菜单牌、地面的使用痕迹、暖调灯光 | 市井烟火、热腾腾的真实、人情味 |
-| 校园教室 | 课桌椅排列、黑板+板书痕迹、讲台+粉笔、窗户+走廊、墙上的通知栏 | 青春记忆、午后的教室、阳光洒在桌面上 |
-| 图书馆/书店 | 书架排列、阅读区+台灯、窗边座位、安静的氛围、翻旧的书籍 | 静谧安宁、翻书的声音、时间变慢 |
-| 医院走廊/病房 | 长走廊+日光灯、护士站、病房门、座椅、白墙+扶手、消毒感 | 清冷肃穆、漫长的等待、生命的中转站 |
-| 地下车库 | 环氧地坪+车位线、承重柱、消防设施、昏暗+日光灯冷光、空旷 | 冷硬、孤寂、脚步声有回音、犯罪悬疑感 |
+| Rented Apartment/Studio | A single bed with bedding, a small desk + chair, a simple wardrobe/clothes rack, a floor-to-ceiling window/small balcony, a nightstand + table lamp, naturally scattered clutter | Cozy and private, the reality of living alone, a small space with its own order |
+| Old Residential Compound Living Room | A sofa + coffee table, a TV cabinet + TV, a dining table + chairs, curtains + clutter on the windowsill, floor slippers, a wall calendar/photos | Everyday street-life feel, marks of several generations' lives, genuine and unpolished |
+| High-Rise Apartment Living Room | Large floor-to-ceiling windows + a city view, a sofa set + coffee table, a TV feature wall, an open kitchen bar, potted plants | Open and airy, the everyday life of the urban middle class, the city outside the window as another character |
+| Office Tower Workspace | Glass partitions, an open-plan desk + computer, filing cabinets + a printer, a conference table + whiteboard, blinds + a view of buildings outside | Orderly, cool and professional, a cluttered desk after working overtime |
+| Meeting Room | A long conference table + chairs, a projection screen/large display, a whiteboard + markers, a glass wall + blinds, water cups + scattered documents | Serious and efficient, a state just after or about to start a meeting |
+| Pantry/Break Room | A water dispenser + coffee machine, a microwave + fridge, a bar counter + stools, scattered cups + tea bags | A breathing space in the office, a brief moment of relaxation |
+| Cafe/Milk Tea Shop | A bar counter + coffee machine, booth/loose seating, a floor-to-ceiling window + street view, warm lighting, cups + a menu | The city's third space, a relaxed atmosphere, light at a window-side seat |
+| Convenience Store | Shelves + goods, a checkout counter + staff area, a freezer + cold drinks, a floor-to-ceiling glass front + street view, isolated late-night lighting | A late-night convenience store — a safe haven in the city |
+| Noodle Shop/Small Restaurant | Dining tables + condiment bottles, an open kitchen + steam, a menu board on the wall, floor wear marks, warm lighting | The bustle of street life, steaming-hot authenticity, human warmth |
+| School Classroom | Rows of desks and chairs, a blackboard + writing on it, a lectern + chalk, windows + a hallway, a notice board on the wall | Memories of youth, an afternoon classroom, sunlight spilling onto the desks |
+| Library/Bookstore | Rows of bookshelves, a reading area + table lamps, a window-side seat, a quiet atmosphere, well-thumbed books | Quiet and peaceful, the sound of turning pages, time slowing down |
+| Hospital Hallway/Ward | A long hallway + fluorescent lights, a nurses' station, ward doors, chairs, white walls + handrails, a sense of sterility | Cold and solemn, a long wait, a way station of life |
+| Underground Parking Garage | Epoxy flooring + parking-space lines, load-bearing columns, fire-safety equipment, dim, cold fluorescent light, emptiness | Cold and hard, solitary, echoing footsteps, a sense of crime-thriller suspense |
 
 ---
 
-## 四、室外场景
+## 4. Outdoor Scenes
 
-### 空间摄影规范
+### Space Photography Specification
 
-| 维度 | 摄影要求 | 提示词 |
+| Dimension | Photographic Requirement | Prompt |
 |---|---|---|
-| 类型 | 中国当代都市真实室外空间。不是概念图、不是鸟瞰效果图、是站在地面用摄影机拍到的真实场所 | {场景类型}，{季节+时刻+天气}，中国当代都市实拍摄影 |
-| 天气 | 晴/多云/阴/薄雾/细雨/雨后/小雪。极端天气仅剧情需要时使用 | {天气}，真实天气质感，非特效非后期合 |
-| 植被 | 中国城市真实行道树/绿化——悬铃木、香樟、银杏、樱花、玉兰、梧桐、榕树、柳树。树种与季节严格匹配 | 沿街{树种}、季节性状态（新绿/浓荫/金黄/枯枝）、真实植被 |
-| 建筑 | 真实的中国城市建筑——玻璃幕墙写字楼、小高层居民楼、老式六层楼、骑楼商铺、钢结构天桥、地铁口。建筑结构符合真实物理 | {建筑类型}、真实的中国城市建筑、非架空风格 |
-| 空气感 | 真实的大气透视——远景自然虚化、近景清晰、空气中有湿度/尘埃/薄雾的微弱散射 | 远景自然虚化、大气透视、真实空气质感 |
-| 光源逻辑 | 光源必须可追溯——日光/月光的方向与时刻匹配、街灯/霓虹/车灯的位置和色温合理 | {自然光源} + {城市人工光源}、光的方向和色温可追溯 |
-| 镜头选择 | 24-28mm广角（空间感强）或35mm（人眼感），全景深 f/8-f/11，画面包含完整的空间纵深，前景到后景全部清晰 | 广角24-35mm、全景深f/8-f/11、完整空间纵深、单张全景 |
-| 都市瑕疵 | 路面磨损、墙面斑驳、路牌掉漆、井盖、涂鸦、落叶、积水——真实城市的皮肤 | 真实路面磨损、墙面岁月痕迹、城市皮肤的瑕疵、非效果图 |
+| Type | A genuine contemporary Chinese urban outdoor space. Not a concept image, not an aerial-view rendering — a real location captured by a camera at ground level | {scene type}, {season + time of day + weather}, contemporary Chinese urban live-action photography |
+| Weather | Clear/cloudy/overcast/light mist/light rain/post-rain/light snow. Extreme weather only when the story requires it | {weather}, a genuine weather texture, not a special effect, not post-composited |
+| Vegetation | Genuine street trees/greenery of Chinese cities — plane trees (sycamore), camphor trees, ginkgo, cherry blossom, magnolia, wutong (Chinese parasol tree), banyan, willow. Tree species must strictly match the season | Roadside {tree species}, a seasonally appropriate state (fresh green/dense shade/golden/bare branches), genuine vegetation |
+| Architecture | Genuine Chinese urban architecture — glass-curtain-wall office towers, mid-rise residential buildings, old six-story buildings, arcade-style shopfronts (qilou), steel-structure pedestrian bridges, subway entrances. Building structures must be physically plausible | {building type}, genuine Chinese urban architecture, not a fictional style |
+| Atmospheric Feel | Genuine aerial perspective — natural blur in the distance, sharpness up close, faint scattering from humidity/dust/mist in the air | Natural blur in the background, aerial perspective, a genuine sense of atmosphere |
+| Lighting Logic | The light source must be traceable — the direction of sunlight/moonlight matching the time of day, streetlight/neon/car-light positions and color temperatures plausible | {natural light source} + {urban artificial light source}, the light's direction and color temperature traceable |
+| Lens Choice | A 24-28mm wide angle (a strong sense of space) or 35mm (an eye-level feel), full depth of field f/8-f/11, the frame containing the full spatial depth, sharp from foreground to background | A 24-35mm wide angle, full depth of field f/8-f/11, complete spatial depth, a single panoramic shot |
+| Urban Imperfections | Worn road surfaces, mottled walls, peeling street-sign paint, manhole covers, graffiti, fallen leaves, standing water — the genuine skin of a city | Genuine road-surface wear, age marks on walls, the imperfections of a city's skin, not a rendering |
 
-### 室外类型速查
+### Outdoor Type Quick Reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core Elements | Mood Words |
 |---|---|---|
-| 城市商圈/步行街 | 玻璃幕墙建筑+商铺店面、霓虹招牌+LED大屏、步行街地砖、路灯+行道树、人流导视牌 | 繁华热闹、都市活力、霓虹璀璨、现代商业 |
-| 老城区/巷弄 | 骑楼商铺、斑驳墙面、电线杆+架空线、老式路灯、晾晒衣物、沿街摊贩、石阶 | 市井烟火、岁月质感、人间日常、怀旧温暖 |
-| 居民小区 | 居民楼+阳台、健身器材+长椅、行道树+绿化、路灯+单元门、停放的电动车/自行车 | 日常静谧、邻里生活、最真实的都市底色 |
-| 校园/大学园区 | 教学楼+林荫道、操场+跑道、图书馆+台阶、自行车停放、宣传栏、学生穿梭的日常感 | 青春、书卷气、午后的校园、记忆里的场景 |
-| 城市公园 | 草坪+长椅、景观湖+步道、树木+花境、凉亭+健身区、城市天际线远景 | 松弛治愈、都市绿洲、阳光穿过树叶 |
-| 天台/屋顶 | 楼顶设备+通风管道、护栏+城市天际线、地面防水层、杂物、晾衣绳 | 开阔孤寂、俯瞰全城、风吹过的感觉、一个人的高处 |
-| 地铁站/车厢 | 闸机+安检、站台+屏蔽门、广告灯箱、自动扶梯、车厢座椅+扶手、隧道 | 都市通勤、地下流动的城市血液、冷光+人潮 |
-| 城市街道/十字路口 | 斑马线+红绿灯、行道树+路灯、沿街建筑+店铺、路面标线、可能的路面积水反光 | 都市日常的十字路口、人潮车流、城市的心跳 |
-| 高架桥/立交桥 | 桥体结构+车道、隔音屏、承重墩、城市天际线背景、桥下空间+阴影 | 都市立体交通、巨大结构下的渺小感 |
-| 江/河边步道 | 水面+倒影、步道+栏杆、路灯+长椅、对岸城市天际线、垂柳/芦苇 | 开阔宁静、水面的反光、城市的另一面 |
-| 公交站台 | 候车亭+座椅、公交线路牌、广告灯箱、行道树+路灯、等车的人日常状态 | 等待的瞬间、城市的停顿、日常的驿站 |
-| 深夜街道 | 空荡的街道+街灯、打烊的店铺+卷帘门、便利店灯光、湿路面反光（如雨后）、安静 | 深夜城市的另一面、孤独但不危险、安静的力量 |
+| City Commercial District/Pedestrian Street | Glass-curtain-wall buildings + storefronts, neon signs + LED screens, pedestrian-street paving, streetlights + street trees, crowd-directional signage | Bustling and lively, urban vitality, dazzling neon, modern commerce |
+| Old Town/Alleyway | Arcade shopfronts, mottled walls, utility poles + overhead wires, old-style streetlights, laundry hung to dry, street vendors, stone steps | Everyday street life, a texture of time, human life, nostalgic warmth |
+| Residential Compound | Residential buildings + balconies, fitness equipment + benches, street trees + greenery, streetlights + building entrances, parked e-bikes/bicycles | Everyday quiet, neighborhood life, the most genuine backdrop of a city |
+| Campus/University Grounds | Teaching buildings + tree-lined paths, a sports field + track, a library + steps, bicycle parking, notice boards, the everyday feel of students passing through | Youth, a bookish air, an afternoon campus, a scene out of memory |
+| City Park | Lawns + benches, a scenic lake + walking path, trees + flower beds, a pavilion + fitness area, a distant city skyline | Relaxing and healing, an urban oasis, sunlight filtering through leaves |
+| Rooftop | Rooftop equipment + ventilation ducts, railings + a city skyline, waterproof flooring, clutter, a clothesline | Open and solitary, overlooking the whole city, the feeling of wind blowing through, a high place for one person |
+| Subway Station/Car | Turnstiles + security check, a platform + screen doors, ad light boxes, an escalator, train seats + handrails, a tunnel | Urban commuting, the city's flowing underground bloodstream, cool light + crowds |
+| City Street/Intersection | A crosswalk + traffic lights, street trees + streetlights, roadside buildings + shops, road markings, possible reflections in standing water | An everyday urban intersection, crowds and traffic, the city's heartbeat |
+| Overpass/Interchange | The bridge structure + lanes, sound barriers, load-bearing piers, a city skyline backdrop, the space and shadow beneath the bridge | Multi-layered urban transit, a sense of smallness beneath a massive structure |
+| Riverside/Waterfront Walkway | Water surface + reflections, a walkway + railings, streetlights + benches, the opposite bank's skyline, weeping willows/reeds | Open and tranquil, reflections on the water, another side of the city |
+| Bus Stop | A shelter + seating, a bus-route sign, an ad light box, street trees + streetlights, the everyday state of people waiting for a bus | A moment of waiting, a pause in the city, an everyday way station |
+| Late-Night Street | An empty street + streetlights, closed shops + shutters, convenience-store lighting, wet road-surface reflections (e.g. post-rain), quiet | Another side of the late-night city, lonely but not dangerous, a quiet strength |
 
 ---
 
-## 五、单视图全景摄影规范
+## 5. Single-View Panoramic Photography Specification
 
-> 真人都市场景仅需**单张**全景摄影——一张照片装下整个空间的完整信息。不是2×2四视图，不是多角度拼接。
+> A Live-Action Urban scene requires only a **single** panoramic photograph — one photo containing the complete information of the entire space. Not a 2x2 four-view grid, not a multi-angle collage.
 
-### 画面构成
+### Frame Composition
 
-| 项目 | 摄影要求 |
+| Item | Photographic Requirement |
 |---|---|
-| 空间呈现 | 单张照片完整呈现场景的空间全貌。使用24-28mm广角或35mm，全场地的纵深、宽度、高度在一张画面中全部可见 |
-| 构图 | 全景深大景别——前景（门框/家具/护栏/树木/窗框）形成天然画框→中景是场地主体→后景向空间纵深或窗外/天际线延伸 |
-| 景深 | 全景深 f/8-f/11，从前到后全部清晰。这不是人像摄影——场景的每一个角落都应该能被看见 |
-| 人物 | **严禁出现任何人物、人影、人体轮廓。** 场景是空的——但这种"空"有叙事：刚下班/即将开场/人去楼空/日常的静止瞬间 |
-| 比例 | 建议 16:9 或 3:2 宽幅——匹配全景空间展示的横向视觉习惯 |
-| 色彩 | 由实际光源的色温驱动，不套滤镜。色彩科学参考ARRI Alexa/Sony Venice电影色调 |
+| Space Presentation | A single photo fully presenting the scene's full spatial scope. Using a 24-28mm wide angle or 35mm, with the entire location's depth, width, and height all visible within one frame |
+| Composition | A full-depth-of-field wide shot — the foreground (a door frame/furniture/railing/tree/window frame) forms a natural frame → the midground is the location's main subject → the background extends into the space's depth or outside the window/toward the skyline |
+| Depth of Field | Full depth of field f/8-f/11, sharp from front to back. This is not portrait photography — every corner of the scene should be visible |
+| People | **Strictly prohibit the appearance of any person, human silhouette, or human-shaped outline.** The scene is empty — but this "emptiness" carries narrative: just after work/about to begin/the place vacated/a still moment of everyday life | — |
+| Aspect Ratio | Recommend 16:9 or 3:2 widescreen — matching the horizontal viewing habit for panoramic space display |
+| Color | Driven by the actual light source's color temperature, no filter applied. Color science referencing ARRI Alexa/Sony Venice cinematic tones | — |
 
-### 空的场景如何叙事
+### How an Empty Scene Tells a Story
 
-| "空"的类型 | 画面线索 | 叙事暗示 |
+| Type of "Emptiness" | Visual Clues | Narrative Implication |
 |---|---|---|
-| 刚下班 | 电脑屏幕暗了但电源灯亮、椅子没有推回原位、桌上一杯没喝完的水 | 刚才有人在这里，现在走了 |
-| 即将开场 | 椅子摆好、桌面整洁、投影仪已开、窗帘拉好、矿泉水已摆好 | 有人马上要来，现在是开始前的静止 |
-| 人去楼空 | 搬家后的空房间、墙上挂钩和钉子留下的痕迹、地面积尘的轮廓 | 曾经有人住过，现在已经搬走了 |
-| 日常的静止 | 沙发上的毛毯随意搭着、茶几上的遥控器和半杯茶、窗外的光打在地板上 | 生活的常态、只是此刻没有人入镜 |
-| 深夜的场所 | 空荡的走廊只有日光灯亮着、便利店货架间的安静、地铁末班车后的站台 | 城市睡着了、但空间还醒着 |
+| Just After Work | The computer screen dark but the power light on, the chair not pushed back in, an unfinished glass of water on the desk | Someone was just here, and has now left |
+| About to Begin | Chairs arranged, a tidy desktop, the projector already on, curtains drawn, bottled water already set out | Someone is about to arrive; this is the stillness before it starts |
+| The Place Vacated | An empty room after moving out, marks left by wall hooks and nails, the outline of settled dust on the floor | Someone used to live here, and has now moved away |
+| Everyday Stillness | A blanket casually draped over the sofa, a remote control and a half-cup of tea on the coffee table, light from outside falling on the floor | The ordinary state of life, simply no one is in frame at this moment |
+| A Late-Night Location | An empty hallway lit only by fluorescent light, the quiet between convenience-store shelves, a platform after the last subway train | The city has fallen asleep, but the space is still awake |
 
 ---
 
-## 六、提示词模板
+## 6. Prompt Template
 
-真人都市场景全景摄影，单张广角全景，非3D渲染非CG非建模，
-{室内/室外}场景，中国当代都市真实{场景类型}，
-{季节}，{时段}，{天气}，
-{光源逻辑：窗光方向+人工光源/日光方向+城市光源}、光的方向和色温可追溯、非全局均匀光，
-广角24-28mm镜头、全景深f/8-f/11、空间纵深完整、前景到后景全部清晰，
-前景{画框元素}、中景{空间主体结构}、后景{空间延伸/窗外/远景}，
-{材质与表面：墙面/地面/家具的真实使用痕迹}，
-{都市瑕疵：磨损/斑驳/灰尘/落叶/积水——被使用过的痕迹}，
-场景无人——{空场叙事线索}、严禁出现任何人物人影人体轮廓，
-真实摄影画质、35mm全画幅摄影质感、单张全景空间摄影，
-画面干净无文字无水印无签名无边框
+```
+Live-Action Urban scene panoramic photography, a single wide-angle panorama, not 3D rendered, not CG, not modeled,
+{interior/outdoor} scene, a genuine contemporary Chinese urban {scene type},
+{season}, {time of day}, {weather},
+{lighting logic: window-light direction + artificial light source / sunlight direction + urban light source}, the light's direction and color temperature traceable, not globally uniform light,
+a 24-28mm wide-angle lens, full depth of field f/8-f/11, complete spatial depth, sharp from foreground to background,
+foreground {framing element}, midground {main structure of the space}, background {extension of the space/outside the window/distant view},
+{materials and surfaces: genuine use marks on walls/floor/furniture},
+{urban imperfections: wear/mottling/dust/fallen leaves/standing water — marks of a space that has been used},
+the scene is unpopulated — {empty-scene narrative clue}, strictly no person, human silhouette, or human-shaped outline of any kind,
+genuine photographic quality, 35mm full-frame photographic texture, single-panorama space photography,
+a clean frame with no text, no watermark, no signature, no border
+```
 
-### 负面规避提示词
+### Negative Prompt
 
+```
 3D render, 3D modeling, CGI, Unreal Engine, Blender, PBR material, volumetric lighting, ambient occlusion, ray tracing, game engine, cartoon, anime, 2D, illustration, hand drawn, painting,
 four views, grid layout, 2x2, turnaround, orthographic view, blueprint, multiple angles,
 showroom, brand new, pristine, perfect, unrealistically clean, sterile, empty without story,
 people, person, human figure, silhouette, shadow figure, body, crowd,
-古风, 古代, 仙侠, 武侠, 民国, 赛博朋克, 科幻, 西方奇幻, 中世纪, 异世界, 非中国城市,
+period costume, ancient, xianxia, wuxia, Republic era, cyberpunk, sci-fi, Western fantasy, medieval, alternate world, non-Chinese city,
 text, watermark, signature, logo, border, frame, UI element, HUD
+```
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须是**单张**全景摄影——单视图、非2×2四视图、非多角度、非turnaround |
-| R2 | 必须使用广角镜头（24-28mm）或标准焦段（35mm），全景深 f/8-f/11，完整空间纵深 |
-| R3 | 光源必须可追溯——自然光的方向与时刻匹配、人工光源的位置和色温合理 |
-| R4 | 场景必须有前/中/后景空间层次，前景画框→中景主体→后景延伸 |
-| R5 | 必须有中国当代都市辨识度——中文标识/中国建筑风格/中国城市特征 |
-| R6 | 必须有使用痕迹——墙面/地面/家具的自然磨损、非样板间非全新非效果图 |
-| R7 | **严禁出现任何人物、人影、人体轮廓、剪影** |
-| R8 | 必须声明"真人实拍摄影 + 非3D渲染非CG"核心锚定 |
+| R1 | Must be a **single** panoramic photograph — a single view, not a 2x2 four-view grid, not multiple angles, not a turnaround |
+| R2 | Must use a wide-angle lens (24-28mm) or standard focal length (35mm), full depth of field f/8-f/11, complete spatial depth |
+| R3 | The light source must be traceable — natural light's direction matching the time of day, artificial light sources' position and color temperature plausible |
+| R4 | The scene must have foreground/midground/background spatial layering: a foreground frame → a midground subject → a background extension |
+| R5 | Must have contemporary Chinese urban identifiability — Chinese-language markings/Chinese architectural style/Chinese city characteristics |
+| R6 | Must show signs of use — natural wear on walls/floor/furniture, not a showroom, not brand new, not a rendering |
+| R7 | **Strictly prohibit the appearance of any person, human silhouette, human-shaped outline, or shadow figure** |
+| R8 | Must declare the core anchor of "live-action photography + not 3D rendered, not CG" |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 严禁「3D渲染 / 3D建模 / CG / UE引擎 / Blender / PBR材质 / 体积光 / AO」等一切CG术语 |
-| X2 | 严禁「2D手绘 / 插画 / 动画 / 二次元」等非摄影媒介 |
-| X3 | 严禁「四视图 / 2×2网格 / 多角度 / turnaround / orthographic view / blueprint」——仅单张 |
-| X4 | 严禁「古风/古代/仙侠/武侠/民国/赛博朋克/科幻/西方奇幻/异世界」等非当代都市场景 |
-| X5 | 严禁「无中国辨识度的架空城市 / 全英文标识」 |
-| X6 | 严禁「出现任何人物/人影/人体轮廓/剪影/肢体」 |
-| X7 | 严禁「样板间/售楼处效果图/全新无痕/完美品相/无生活痕迹」的场景 |
-| X8 | 严禁「光源来源不明/全局均匀照明/无方向的光」 |
-| X9 | 严禁「过曝死白/暗部死黑/无景深/画面扁平」 |
-| X10 | 严禁「水印 / 文字 / LOGO / 签名 / 边框 / AI生成痕迹」 |
+| X1 | Strictly prohibit all CG terminology such as "3D rendering / 3D modeling / CG / UE engine / Blender / PBR materials / volumetric light / AO" |
+| X2 | Strictly prohibit non-photographic media such as "2D hand-drawn / illustration / animation / anime" |
+| X3 | Strictly prohibit "four views / 2x2 grid / multiple angles / turnaround / orthographic view / blueprint" — single image only |
+| X4 | Strictly prohibit non-contemporary-urban scenes such as "ancient style / period / xianxia / wuxia / Republic-era / cyberpunk / sci-fi / Western fantasy / alternate world" |
+| X5 | Strictly prohibit "a nationally unidentifiable fictional city / all-English signage" |
+| X6 | Strictly prohibit "the appearance of any person/human silhouette/human-shaped outline/shadow figure/limbs" |
+| X7 | Strictly prohibit scenes that are a "showroom/real-estate rendering / brand new and traceless / perfect condition / with no signs of life" |
+| X8 | Strictly prohibit "an unclear light source / globally uniform lighting / undirected light" |
+| X9 | Strictly prohibit "blown-out highlights / crushed black shadows / no depth of field / a flat-looking image" |
+| X10 | Strictly prohibit "watermarks / text / logos / signatures / borders / traces of AI generation" |

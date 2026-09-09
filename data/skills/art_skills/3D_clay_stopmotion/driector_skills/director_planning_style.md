@@ -1,84 +1,84 @@
 ---
 name: director_planning_style
-description: 粘土约束 — 定义定格动画黏土在色调体系、光影方案、质感方向、场景空间元素、乐器选择与环境音上的全局约束。适用于任何叙事类型。
+description: Clay constraints — defines the global constraints for stop-motion claymation on tone system, lighting scheme, texture direction, scene spatial elements, instrument choice, and ambient sound. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 粘土约束 · 定格动画黏土 · 技法参考
+# Clay Constraints · Stop-Motion Claymation · Technique Reference
 
 ---
 
-## 一、色调体系与画面基调
+## 1. Tone System and Overall Look
 
-- **色调基底** — 全片以奶油黄（C1）、陶土红（C4）、天空蓝（C6）为基底色，整体色温偏暖（4500-5000K），饱和度中低（60-75%），呈现复古定格动画的温暖怀旧感
-- **暖调贯穿全片** — 全片保持暖调基底，局部点缀冷色（淡紫 C7、薄荷绿 C8）增加层次感。冷暖切换应与故事弧线同步，而非随意混用
-- **色盘先行原则** — 段落规划需先绑定情绪场景（相遇/日常/冒险/离别等），再确定主色+辅色与光影方案，避免"剧情对了但情绪不对色"
-- **禁用色域** — 高饱和荧光色、霓虹色、暗黑色彩体系均与本风格不兼容
+- **Tonal base** — The entire piece is grounded in cream yellow (C1), terracotta red (C4), and sky blue (C6), with an overall warm color temperature (4500-5000K) and low-to-medium saturation (60-75%), evoking the warm nostalgic feel of vintage stop-motion animation
+- **Warm tone throughout** — The piece maintains a warm tonal base throughout, with cool colors (pale purple C7, mint green C8) used sparingly for added depth. Warm/cool switches should sync with the story arc, not be mixed arbitrarily
+- **Palette-first principle** — Sequence planning should bind the emotional scene first (meeting/daily life/adventure/farewell, etc.), then determine primary + secondary colors and the lighting scheme, avoiding a mismatch where "the plot is right but the emotional color is wrong"
+- **Prohibited color gamut** — Highly saturated fluorescent colors, neon colors, and dark/black color systems are all incompatible with this style
 
 ---
 
-## 二、光影方案体系
+## 2. Lighting Scheme System
 
-- **光影即叙事** — 6 套光影方案对应不同情绪段落，导演规划阶段应在段落层面确定光影基调方向，而非逐镜指定
-- **光源角度** — 默认 30-45° 侧光，模拟小剧场灯光效果
+- **Lighting as narrative** — 6 lighting schemes correspond to different emotional segments; the director's planning stage should determine the lighting mood direction at the segment level, not shot by shot
+- **Light source angle** — Default 30-45° side light, simulating small-theater stage lighting
 
-| 光影方案 | 方案名 | 色调倾向 | 适用情绪 |
+| Lighting Scheme | Scheme Name | Tonal Tendency | Suited Emotion |
 |---|---|---|---|
-| A | 柔光漫射 | 奶油黄底 + 均匀柔和光 | 日常温馨 |
-| B | 奇幻暖光 | 琥珀暖 + 魔法光点 | 奇幻登场 |
-| C | 暖调侧光 | 暖黄主调 + 局部暖光 | 室内日常 |
-| D | 日光漫射 | 自然暖调 + 阴影层次 | 户外自然 |
-| E | 月光冷调 | 淡蓝主调 + 暖色点缀 | 夜晚梦境 |
-| F | 柔焦暖光 | 暖黄主调 + 雾化效果 | 回忆/闪回 |
+| A | Soft diffused light | Cream-yellow base + even soft light | Everyday warmth |
+| B | Fantasy warm light | Amber warmth + magical light spots | Fantasy entrance |
+| C | Warm side light | Warm yellow dominant + local warm light | Indoor daily life |
+| D | Diffused daylight | Natural warm tone + shadow layering | Outdoor nature |
+| E | Cool moonlight | Pale blue dominant + warm accents | Nighttime dream |
+| F | Soft-focus warm light | Warm yellow dominant + haze effect | Memory/flashback |
 
-- **暖色调贯穿全片** — 根据场景需要灵活调整，冷色调（淡蓝+暖色对比）仅在夜晚/梦境段落使用
-- **氛围方向映射** — 每场戏的氛围方向应能映射到上述光影方案（A-F）的某一方向，确保视觉一致性
-
----
-
-## 三、质感方向
-
-- **定格黏土肌理纪实感** — 定格动画黏土写实的核心：手指压痕可见、黏土褶皱清晰、材质颗粒感明显
-- **黏土肌理 + 细腻光影** — 这是画面质感的锚点。不是光滑塑料，不是现代CG渲染，是定格动画的手工质感
-- **材质真实** — 所有服化道的材质必须可信：黏土的颗粒感、布料的褶皱、木质的纹理、金属的光泽。禁止"塑料感"和"光滑CG感"
-- **黏土不等于粗糙** — 本风格强调定格动画的黏土质感表达（清晰肌理、手指压痕、黏土褶皱），通过光影与动作设计放大感染力，而非依赖复杂特效
+- **Warm tone throughout the piece** — Adjust flexibly per scene need; cool tones (pale blue + warm contrast) are used only in nighttime/dream segments
+- **Mood-direction mapping** — Each scene's mood direction should map to one of the above lighting schemes (A-F) to ensure visual consistency
 
 ---
 
-## 四、粘土风场景空间元素
+## 3. Texture Direction
 
-粘土风世界观特有的场景元素及其视觉叙事功能：
-
-- **微缩场景/小道具** — 天然的框架式构图道具，小比例场景制造"可爱微缩世界"的独特层次感与空间纵深
-- **暖色室内/手工道具** — 留白构图的天然载体，手工质感道具增加"真实触感"：木桌 = 家的温暖、花盆 = 生活气息、书本 = 知识/成长
-- **灯光/窗光/烛光** — 粘土风世界的光源载体，暖黄灯光 = 温馨/安全（方案A/C）、月光 = 梦幻/冷调（方案E）、窗光 = 日常/自然（方案D）
-- **段落间用场景空镜过渡** — 本风格有丰富的场景资产（不同时段/天候变体），段落衔接建议用场景空镜做情绪缓冲，不要硬切
-- **转折点用视觉而非台词** — 优先使用画面手段（光影变化、景别跳切、空镜隐喻）配合动作设计，而非依赖对白解释
+- **Documentary-grade stop-motion clay texture** — The core of realistic stop-motion clay: visible finger imprints, clear clay creases, pronounced material grain
+- **Clay texture + refined lighting** — This is the anchor of the visual texture. Not smooth plastic, not modern CG rendering — it is the handcrafted texture of stop-motion animation
+- **Material authenticity** — All costumes, makeup, and props must have believable materials: the grain of clay, the creases of fabric, the grain of wood, the sheen of metal. "Plastic feel" and "smooth CG feel" are prohibited
+- **Clay does not mean rough** — This style emphasizes the clay-texture expression of stop-motion animation (clear grain, finger imprints, clay creases), amplifying impact through lighting and motion design rather than relying on complex effects
 
 ---
 
-## 五、粘土风乐器与环境音
+## 4. Clay-Style Scene Spatial Elements
 
-粘土风世界观下的声音元素约束：
+Scene elements unique to the clay-style world and their visual storytelling function:
 
-### 乐器选择
+- **Miniature scenes/small props** — A natural framing-composition prop; small-scale scenes create a distinctive layering and spatial depth of a "cute miniature world"
+- **Warm indoor settings/handcrafted props** — A natural carrier for negative-space composition; handcrafted-texture props add "genuine tactility": wooden table = warmth of home, flowerpot = sense of life, book = knowledge/growth
+- **Lamp light/window light/candlelight** — The light-source carrier of the clay-style world; warm yellow light = warmth/safety (Scheme A/C), moonlight = dreamy/cool (Scheme E), window light = everyday/natural (Scheme D)
+- **Use scene establishing shots as transitions between segments** — This style has a rich set of scene assets (variants for different times of day/weather); use empty scene shots as an emotional buffer between segments rather than hard cuts
+- **Use visuals rather than dialogue for turning points** — Prioritize visual means (lighting changes, shot-size jump cuts, empty-shot metaphors) paired with motion design, rather than relying on dialogue to explain
 
-- **八音盒/音乐盒** — 日常/温馨/回忆段落的核心乐器，最能表现定格动画的质感
-- **手风琴** — 轻松/浪漫/街头段落，扫弦的温柔感适合日常氛围
-- **弦乐铺底** — 情感升华/离别段落，拉弦的细腻感适合情绪过渡
-- **木琴/钟琴** — 奇幻/魔法段落，清脆音色适合梦幻氛围
-- 弦乐铺底可增加电影感但不宜喧宾夺主
+---
 
-### 乐器组合策略
+## 5. Clay-Style Instruments and Ambient Sound
 
-| 情绪阶段 | 乐器组合 |
+Sound element constraints for the clay-style world:
+
+### Instrument Selection
+
+- **Music box** — The core instrument for everyday/warm/memory segments, best expressing the texture of stop-motion animation
+- **Accordion** — For relaxed/romantic/street segments; the gentle feel of strumming suits an everyday atmosphere
+- **String bed** — For emotional climax/farewell segments; the delicate feel of bowed strings suits emotional transitions
+- **Xylophone/glockenspiel** — For fantasy/magic segments; the crisp timbre suits a dreamlike atmosphere
+- Strings as a bed can add cinematic feel but should not overpower
+
+### Instrument Combination Strategy
+
+| Emotional Stage | Instrument Combination |
 |---|---|
-| 平稳/开场/收尾 | 木琴独奏 或 钟琴独奏 |
-| 日常温馨 | 音乐盒 + 手风琴 |
-| 情绪升华/浪漫 | 弦乐 + 音乐盒 |
-| 情感平稳 | 音乐盒独奏 |
+| Calm/opening/closing | Solo xylophone or solo glockenspiel |
+| Everyday warmth | Music box + accordion |
+| Emotional climax/romance | Strings + music box |
+| Emotional stability | Solo music box |
 
-### 粘土风环境音
+### Clay-Style Ambient Sound
 
-- **典型环境音层次** — 脚步声（黏土质感） / 翻书声 / 餐具碰撞 / 风声 / 钟表滴答声 / 衣料摩擦
-- **每场戏标注 1-2 个核心环境音**，帮助后续音效设计。环境音层次越丰富，粘土风场景越有沉浸感
+- **Typical ambient sound layers** — Footsteps (clay texture) / page turning / tableware clinking / wind / clock ticking / fabric rustling
+- **Annotate 1-2 core ambient sounds per scene** to aid subsequent sound design. The richer the ambient sound layering, the more immersive the clay-style scene

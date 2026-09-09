@@ -158,11 +158,20 @@ export default async function startServe(randomPort: Boolean = false) {
     const token = rawToken.replace("Bearer ", "");
     // 白名单路径
     if (req.path === "/api/login/login") return next();
+    if (req.path === "/api/auth/line/login" || req.path === "/api/auth/line/callback") return next();
 
     if (!token) return res.status(401).send({ message: "未提供token" });
     try {
-      const decoded = jwt.verify(token, tokenKey as string);
+      const decoded = jwt.verify(token, tokenKey as string) as { id: number; name: string };
       (req as any).user = decoded;
+
+      // เส้นทางตั้งค่า vendor/agent เป็นของแอดมินเท่านั้น ผู้ใช้ทั่วไป (สมัครผ่าน LINE) ห้ามเข้าถึง
+      const adminOnlyPrefixes = ["/api/setting/vendorConfig", "/api/setting/agentDeploy"];
+      if (adminOnlyPrefixes.some((p) => req.path.startsWith(p))) {
+        const user = await u.db("o_user").where("id", decoded.id).first();
+        if (!user?.isAdmin) return res.status(403).send({ message: "เฉพาะแอดมินเท่านั้น" });
+      }
+
       next();
     } catch (err) {
       return res.status(401).send({ message: "无效的token" });

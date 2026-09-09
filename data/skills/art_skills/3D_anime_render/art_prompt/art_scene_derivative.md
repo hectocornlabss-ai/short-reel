@@ -1,175 +1,175 @@
-# 3D动画渲染都市场景衍生资产生成 · 约束手册
+# 3D Animation Rendering Urban Scene Derivative Asset Generation · Constraint Manual
 
 ---
 
-## 一、衍生原则
+## 1. Derivative Principles
 
-1. **空间一致** — 建筑结构/布局/材质在所有变体中保持一致
-2. **景别驱动** — 同一场景通过不同景别展示不同叙事功能
-3. **时段切换** — 同一空间在不同时间段呈现不同光影氛围
-4. **天候变化** — 同一空间在不同天气下呈现不同情绪
-5. **赛璐珞为锚** — 所有变体必须保持3D动画渲染+赛璐珞风格，拒绝写实摄影/CG 动画感；保持镜头特征与光影一致性
-6. **都市氛围统一** — 所有变体需保持现代都市风格、暖色调配色
+1. **Spatial consistency** — the architectural structure/layout/material must remain consistent across all variants
+2. **Shot-size driven** — the same scene shows different narrative functions through different shot sizes
+3. **Time-of-day switching** — the same space presents different lighting atmospheres at different times of day
+4. **Weather variation** — the same space presents different moods under different weather
+5. **Cel-shading as anchor** — all variants must maintain the 3D animation rendering + cel-shaded style, rejecting photorealistic photography/CG animation feel; maintain lens characteristics and lighting consistency
+6. **Unified urban atmosphere** — all variants must maintain a modern urban style and warm color palette
 
 ---
 
-## 二、景别变体
+## 2. Shot-Size Variants
 
-### 景别定义
+### Shot-Size Definitions
 
-| 景别 | 范围 | 叙事功能 | 提示词 |
+| Shot size | Range | Narrative function | Prompt |
 |---|---|---|---|
-| 大全景 | 场景全貌 + 周围环境 | 建立空间感、定位 | extreme wide shot、大全景 |
-| 全景 | 场景完整呈现 | 展示空间结构 | wide shot、全景 |
-| 中景 | 场景局部区域 | 聚焦功能区 | medium shot、中景 |
-| 近景 | 场景细部 | 材质/氛围道具特写 | close shot、近景 |
-| 特写 | 极局部细节 | 材质纹理/关键道具 | extreme closeup、特写 |
+| Extreme wide shot | Full scene + surrounding environment | Establish spatial sense, orientation | extreme wide shot, establishing shot |
+| Wide shot | Full scene presentation | Show spatial structure | wide shot, full scene |
+| Medium shot | A local area of the scene | Focus on a functional area | medium shot |
+| Close shot | Scene detail | Material/atmosphere prop closeup | close shot |
+| Extreme closeup | Extreme local detail | Material texture/key prop | extreme closeup |
 
-### 景别衍生规范
+### Shot-Size Derivative Specification
 
-| 从基准图衍生 | 保持不变 | 允许变化 |
+| Deriving from base image | Keep unchanged | Allowed to change |
 |---|---|---|
-| 大全景 → 全景 | 建筑外观、整体布局 | 视角收窄、前景增加 |
-| 全景 → 中景 | 材质、色调、光线 | 裁切聚焦、景深变化 |
-| 中景 → 近景 | 材质、色调 | 景深浅、背景虚化 |
-| 近景 → 特写 | 材质纹理 | 极浅景深、微距感 |
+| Extreme wide → Wide | building exterior, overall layout | narrower angle, added foreground |
+| Wide → Medium | material, tone, lighting | crop/focus, depth-of-field change |
+| Medium → Close | material, tone | shallow depth of field, blurred background |
+| Close → Extreme closeup | material texture | extremely shallow depth of field, macro feel |
 
 ---
 
-## 三、时段变体
+## 3. Time-of-Day Variants
 
-### 时段定义
+### Time-of-Day Definitions
 
-| 时段 | 视觉特征 | 提示词 |
+| Time of day | Visual characteristics | Prompt |
 |---|---|---|
-| 清晨 | 薄雾柔光、色调偏冷暖交织（赛璐珞化） | 晨光微熹、清晨薄雾 |
-| 正午 | 明亮、阴影短、色彩鲜明（赛璐珞化） | 正午阳光、光线明亮 |
-| 黄昏 | 金色色调、长影、天空渐变（赛璐珞化） | 暮色金辉、golden hour |
-| 夜间（月光） | 冷蓝色调、幽静清冷（赛璐珞化） | 月光清辉、moonlight |
-| 夜间（灯火） | 暖黄点缀、明暗对比（赛璐珞化） | 灯火阑珊、烛光点点 |
+| Early morning | Light mist, soft light, tone mixing cool and warm (cel-shaded) | faint morning light, early morning mist |
+| Midday | Bright, short shadows, vivid colors (cel-shaded) | midday sun, bright light |
+| Dusk | Golden tone, long shadows, gradient sky (cel-shaded) | golden dusk glow, golden hour |
+| Night (moonlight) | Cool blue tone, quiet and cool (cel-shaded) | clear moonlight, moonlight |
+| Night (city lights) | Warm yellow accents, light-dark contrast (cel-shaded) | scattered city lights, flickering candlelight |
 
-### 时段衍生规范
+### Time-of-Day Derivative Specification
 
-| 从基准时段衍生 | 保持不变 | 变化项 |
+| Deriving from base time | Keep unchanged | Change items |
 |---|---|---|
-| 日间 → 黄昏 | 建筑/布局/材质 | 天空色调暖化、影子拉长（赛璐珞化） |
-| 日间 → 夜间 | 建筑/布局/材质 | 整体变暗、增加灯火/月色氛围（赛璐珞化） |
-| 室内日间 → 室内夜间 | 空间结构、家具 | 整体色调暖化、增加烛火/灯笼元素（赛璐珞化） |
+| Day → Dusk | building/layout/material | sky tone warms, shadows lengthen (cel-shaded) |
+| Day → Night | building/layout/material | overall darkens, adds city-light/moonlight atmosphere (cel-shaded) |
+| Indoor day → Indoor night | spatial structure, furniture | overall tone warms, adds candlelight/lantern elements (cel-shaded) |
 
 ---
 
-## 四、天候变体
+## 4. Weather Variants
 
-### 天候定义
+### Weather Definitions
 
-| 天候 | 视觉特征 | 提示词 |
+| Weather | Visual characteristics | Prompt |
 |---|---|---|
-| 晴天 | 明亮、阴影清晰（赛璐珞化） | 晴空万里、阳光明媚 |
-| 阴天 | 光线均匀、无硬影（赛璐珞化） | 阴天柔光、overcast |
-| 薄雾 | 能见度降低、空气朦胧（赛璐珞化） | 薄雾弥漫、雾气缭绕 |
-| 细雨 | 水珠、湿润反光、雨丝（赛璐珞化） | 细雨如丝、雨幕轻纱 |
-| 飞雪 | 白色覆盖、雪花飘落（赛璐珞化） | 飞雪纷纷、银装素裹 |
+| Sunny | Bright, clear shadows (cel-shaded) | clear sunny sky, bright sunshine |
+| Overcast | Even light, no hard shadows (cel-shaded) | overcast soft light, overcast |
+| Light mist | Reduced visibility, hazy air (cel-shaded) | drifting mist, hazy fog |
+| Light rain | Water droplets, wet reflections, rain streaks (cel-shaded) | fine silky rain, light rain veil |
+| Falling snow | White covering, falling snowflakes (cel-shaded) | falling snow, silver-clad landscape |
 
-### 天候衍生规范
+### Weather Derivative Specification
 
-| 从基准天候衍生 | 保持不变 | 变化项 |
+| Deriving from base weather | Keep unchanged | Change items |
 |---|---|---|
-| 晴 → 薄雾 | 建筑/布局 | 增加雾气层、远景模糊、饱和度降低（赛璐珞化） |
-| 晴 → 细雨 | 建筑/布局 | 增加雨丝、地面反光、色调偏冷（赛璐珞化） |
-| 晴 → 飞雪 | 建筑/布局 | 增加积雪、雪花、色调偏白（赛璐珞化） |
-| 植被需随天候逻辑适配 | — | 雨中花瓣湿润、雪中枯枝挂霜（赛璐珞化） |
+| Sunny → Light mist | building/layout | add mist layer, blurred distance, reduced saturation (cel-shaded) |
+| Sunny → Light rain | building/layout | add rain streaks, wet ground reflections, cooler tone (cel-shaded) |
+| Sunny → Falling snow | building/layout | add snow accumulation, snowflakes, whiter tone (cel-shaded) |
+| Vegetation must adapt to weather logic | — | rain-wet petals, frost-covered bare branches in snow (cel-shaded) |
 
 ---
 
-## 五、角度变体
+## 5. Angle Variants
 
-### 角度定义
+### Angle Definitions
 
-> 衍生图相对参考图，可在以下角度维度上进行切换。调用方会传入参考图 + 目标角度描述，本文件只定义角度语汇与一致性约束。
+> Derivative images can switch along the following angle dimensions relative to a reference image. The caller supplies the reference image + target angle description; this document only defines the angle vocabulary and consistency constraints.
 
-| 角度 | 描述 | 提示词 |
+| Angle | Description | Prompt |
 |---|---|---|
-| 正面/前视 | 与参考图相比，视线朝向场景正面 | front view、eye level |
-| 侧面（左/右） | 朝场景左/右侧 90° 平视 | left side view / right side view |
-| 背面/后视 | 朝场景背面 180° | back view |
-| 俯视 | 高位俯瞰，呈现整体布局 | high angle、bird's eye view |
-| 仰视 | 低位仰望，强调高大主体 | low angle、worm's eye view |
-| 近景推进 | 同方向但镜头推进，聚焦局部 | push-in、closer angle |
-| 自由角度 | 调用方自定义的任意角度描述 | 按 `{目标角度}` 注入 |
+| Front view | Facing the front of the scene compared to the reference image | front view, eye level |
+| Side (left/right) | 90° eye-level toward the scene's left/right | left side view / right side view |
+| Back view | 180° toward the back of the scene | back view |
+| High angle | High vantage point, showing overall layout | high angle, bird's eye view |
+| Low angle | Low vantage point, emphasizing a tall subject | low angle, worm's eye view |
+| Push-in | Same direction but the camera pushes in, focusing on a local area | push-in, closer angle |
+| Free angle | Any angle description custom-defined by the caller | injected as `{target angle}` |
 
-### 角度衍生规范
+### Angle Derivative Specification
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 参考一致性 | 建筑结构/布局/材质/色调/光线/季节/天候必须与参考图一致（赛璐珞化处理） |
-| 视点 | 同一场景中心点，仅角度切换；视线高度可随角度调整 |
-| 光照逻辑 | 参考图光源方向不变，角度切换后光影投射方向需同步重算（赛璐珞化处理） |
-| 布局 | 单画面（非拼图、非多视图、非分屏） |
-| 人物 | **严禁出现任何人物、人影、人体轮廓** |
-| 画面比例 | 默认 16:9（或按调用方设定） |
+| Reference consistency | Architectural structure/layout/material/tone/lighting/season/weather must match the reference image (cel-shaded treatment) |
+| Viewpoint | Same scene center point, only the angle switches; viewing height may adjust with the angle |
+| Lighting logic | The reference image's light-source direction stays fixed; after switching angles the light-and-shadow projection direction must be recalculated accordingly (cel-shaded treatment) |
+| Layout | Single frame (not a collage, not multi-view, not split-screen) |
+| People | **Strictly prohibit any person, human shadow, or human silhouette** |
+| Frame ratio | Default 16:9 (or as set by the caller) |
 
 ---
 
-## 六、提示词模板
+## 6. Prompt Template
 ```
-3D 动画渲染，电影级打光，活力赛璐珞质感，高细节材质，愉悦治愈氛围，卡通都市风，高细节卡通材质，适度卡通比例，暖色调配色，8K 超高清，电影级构图，柔和光影层次，明快卡通渲染风格，温馨治愈，衍生场景图，基于参考图，
+3D animation rendering, cinema-grade lighting, vibrant cel-shaded texture, high-detail materials, joyful healing atmosphere, cartoon urban style, high-detail cartoon materials, moderate cartoon proportions, warm color palette, 8K ultra-high-definition, cinema-grade composition, soft lighting layers, bright cartoon rendering style, warm and healing, derivative scene image, based on the reference image,
 anime style, cel-shaded, 3D animation render,
 film lighting, warm sunset lighting,
 scene derivative design sheet, environment concept art, no people, no characters, no human figures,
-保持场景空间结构一致，
-{目标角度（如有）}，{景别视角（如有）}，{时段描述（如有）}，{天候描述（如有）}，
-{前景}，{中景}，{后景}，
-{色调描述}，{景深描述（如有）}，{天空色调变化（如有）}，{氛围调整（如有）}，
-{天候视觉特征（如有）}，{材质表面变化（如有）}，{植被适配描述（如有）}，
-材质自然使用痕迹，生活感磨损，布料自然垂褶（赛璐珞化），
-自然光漫射，体积光，赛璐珞光效，赛璐珞投影，
-空气透视，纹理清晰，赛璐珞化处理，
-单画面构图，与参考图保持建筑结构/材质/色调/光线一致，仅按目标角度切换视点，
-画面中无任何人物，
-赛璐珞渲染风格，柔和光影，适度卡通比例，高细节卡通材质，
-暖色调配色，黄昏霞光氛围，愉悦治愈氛围，
-8K 超高清，电影级构图，
-图中不要有任何文字
+maintain consistent spatial structure of the scene,
+{target angle (if any)}, {shot-size viewpoint (if any)}, {time-of-day description (if any)}, {weather description (if any)},
+{foreground}, {midground}, {background},
+{tone description}, {depth-of-field description (if any)}, {sky tone change (if any)}, {atmosphere adjustment (if any)},
+{weather visual characteristics (if any)}, {material surface change (if any)}, {vegetation adaptation description (if any)},
+natural wear on materials, lived-in wear, natural fabric draping (cel-shaded),
+diffused natural light, volumetric light, cel-shaded lighting effects, cel-shaded shadows,
+aerial perspective, clear texture, cel-shaded treatment,
+single-frame composition, matching the reference image's architectural structure/material/tone/lighting, switching viewpoint only by the target angle,
+no people appear in the frame,
+cel-shaded rendering style, soft lighting, moderate cartoon proportions, high-detail cartoon materials,
+warm color palette, dusk glow atmosphere, joyful healing atmosphere,
+8K ultra-high-definition, cinema-grade composition,
+no text of any kind in the image
 ```
 
-> **使用说明**：根据用户提供的信息自行判断需要应用的变化维度（角度/景别/时段/天候），未提及的维度对应字段留空省略即可。无需为每种变体单独生成模板。
+> **Usage note**: judge which dimensions of variation (angle/shot-size/time-of-day/weather) apply based on the information provided by the user; leave the corresponding field blank/omitted for any dimension not mentioned. There is no need to generate a separate template for every variant.
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 场景空间结构在所有变体中保持一致 |
-| R2 | 时段变体必须调整天空色调与氛围（赛璐珞化） |
-| R3 | 天候变体必须适配植被/材质表面（赛璐珞化） |
-| R4 | 衍生图必须为「单画面」，不得拼接多视图/网格/分屏 |
-| R5 | 衍生图必须与参考图保持建筑结构/材质/色调/光线一致，仅按指定角度切换视点 |
-| R6 | 场景图中**严禁出现任何人物** |
-| R7 | 根据用户提供的信息自行判断变化维度（角度/景别/时段/天候），未提及维度留空省略 |
-| R8 | 必须包含3D动画渲染关键词（cel-shaded, 3D animation render, anime style） |
-| R9 | 必须包含镜头光学特征（shallow depth of field / lens vignette / bokeh 至少一项，赛璐珞化处理） |
-| R10 | 材质必须带有自然磨损/岁月痕迹，禁止全新无瑕的"CG 感"，但赛璐珞化呈现 |
-| R11 | 必须保持赛璐珞渲染风格一致性，不得混搭写实元素 |
-| R12 | 必须包含暖色调配色、黄昏霞光氛围关键词 |
-| R13 | 必须包含8K超高清、电影级构图关键词 |
-| R14 | 必须包含电影级打光、愉悦治愈氛围关键词 |
+| R1 | The scene's spatial structure must remain consistent across all variants |
+| R2 | Time-of-day variants must adjust the sky tone and atmosphere (cel-shaded) |
+| R3 | Weather variants must adapt vegetation/material surfaces (cel-shaded) |
+| R4 | The derivative image must be "single-frame"; multi-view/grid/split-screen collages are prohibited |
+| R5 | The derivative image must match the reference image's architectural structure/material/tone/lighting, switching viewpoint only by the specified angle |
+| R6 | **Strictly prohibit any person** appearing in the scene image |
+| R7 | Judge the dimension(s) of variation (angle/shot-size/time-of-day/weather) based on user-provided information; leave unmentioned dimensions blank/omitted |
+| R8 | Must include 3D animation rendering keywords (cel-shaded, 3D animation render, anime style) |
+| R9 | Must include a lens optical characteristic (at least one of shallow depth of field / lens vignette / bokeh, cel-shaded treatment) |
+| R10 | Materials must carry natural wear/signs of age; a pristine flawless "CG feel" is prohibited, but must be presented in cel-shaded form |
+| R11 | Must maintain cel-shaded rendering style consistency; mixing in photorealistic elements is prohibited |
+| R12 | Must include warm color palette, dusk glow atmosphere keywords |
+| R13 | Must include 8K ultra-high-definition, cinema-grade composition keywords |
+| R14 | Must include cinema-grade lighting, joyful healing atmosphere keywords |
 
-### 严禁
+### Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited item |
 |---|---|
-| X1 | 变体间建筑结构/布局不一致 |
-| X2 | 天候与季节矛盾（夏天飞雪等，赛璐珞化限度内） |
-| X3 | 变体间材质/风格突变 |
-| X4 | 出现任何人物、人影、人体剪影或人体轮廓 |
-| X5 | 画面被拼接成多视图/网格/分屏布局 |
-| X6 | 3D 渲染/CG 动画/卡通/游戏引擎质感（禁用 3D render、CGI、Unreal Engine、Unity 等词），但需明确赛璐珞动画渲染 |
-| X7 | 材质过于干净完美、无任何使用痕迹与岁月感（避免"塑料感"），需赛璐珞化处理 |
-| X8 | 光照过于均匀平坦、无景深虚化、无镜头光学特征 |
-| X9 | 使用写实摄影术语（如real photography, photorealistic, RAW photo等） |
-| X10 | 古代/未来元素、非现代都市风格 |
-| X11 | 冷色调/夜间主色调、非暖色调/黄昏氛围 |
-| X12 | 缺少愉悦治愈氛围关键词 |
+| X1 | Inconsistent architectural structure/layout between variants |
+| X2 | Weather contradicting the season (e.g. snow in summer, within cel-shaded limits) |
+| X3 | Abrupt material/style shifts between variants |
+| X4 | Any person, human shadow, human silhouette, or human outline appearing |
+| X5 | The image collaged into multi-view/grid/split-screen layout |
+| X6 | 3D rendering/CG animation/cartoon/game engine texture (terms such as 3D render, CGI, Unreal Engine, Unity are prohibited); must clearly read as cel-shaded animation rendering |
+| X7 | Material that is overly clean and perfect, with no signs of use or age (avoid a "plasticky feel"); must be cel-shaded |
+| X8 | Lighting that is overly flat and even, with no depth-of-field blur or lens optical characteristics |
+| X9 | Using photorealistic photography terms (such as real photography, photorealistic, RAW photo, etc.) |
+| X10 | Ancient/futuristic elements, non-modern urban style |
+| X11 | Cool-toned/night-dominant color palette, not a warm-toned/dusk atmosphere |
+| X12 | Missing the joyful healing atmosphere keywords |

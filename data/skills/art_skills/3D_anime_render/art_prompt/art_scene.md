@@ -1,161 +1,161 @@
-# 3D动画渲染都市场景图生成 · 约束手册
+# 3D Animation Rendering Urban Scene Image Generation · Constraint Manual
 
 ---
 
-## 一、场景美学原则
+## 1. Scene Aesthetic Principles
 
-1. **空间叙事** — 场景承载情绪与叙事功能，不是纯背景板
-2. **层次纵深** — 所有场景必须具备前/中/后景，杜绝扁平
-3. **质感至上** — 木纹/石质/布料/水面等材质纹理清晰，但赛璐珞渲染简化
-4. **赛璐珞为锚** — 一切画面以3D动画渲染+赛璐珞为标准，拒绝写实摄影/CG 动画质感；保持动画风格一致性与镜头特征
-5. **都市氛围** — 现代都市景观、建筑风格、色调统一
+1. **Spatial narrative** — the scene carries emotion and narrative function, not just a plain backdrop
+2. **Layered depth** — every scene must have foreground/midground/background layers; flatness is prohibited
+3. **Texture above all** — wood grain/stone/fabric/water surface and other material textures must be clear, though cel-shaded rendering simplifies them
+4. **Cel-shading as anchor** — every frame must be standardized on 3D animation rendering + cel-shading, rejecting photorealistic photography/CG animation texture; maintain animation style consistency and lens characteristics
+5. **Urban atmosphere** — modern urban scenery, architectural style, and unified color tone
 
 ---
 
-## 二、季节色调映射
+## 2. Seasonal Color Tone Mapping
 
-| 季节 | 主色调 | 辅色调 | 提示词 |
+| Season | Primary tone | Secondary tone | Prompt |
 |---|---|---|---|
-| 春 | 青翠 + 桃粉 | 浅蓝、鹅黄 | 春色青翠、花开满枝 |
-| 夏 | 碧绿 + 荷粉 | 天青、白色 | 夏意盎然、绿树成荫 |
-| 秋 | 赤红 + 金黄 | 琥珀、浅灰 | 秋意浓、红叶飘落 |
-| 冬 | 素白 + 霜银 | 深蓝、浅灰 | 冬雪覆盖、冬日宁静 |
+| Spring | verdant green + peach pink | light blue, pale yellow | verdant spring color, flowers in full bloom |
+| Summer | jade green + lotus pink | sky blue, white | lush summer feel, shady green trees |
+| Autumn | crimson red + golden yellow | amber, pale gray | deep autumn feel, falling red leaves |
+| Winter | plain white + frost silver | deep blue, pale gray | winter snow cover, quiet winter day |
 
 ---
 
-## 三、城市建筑
+## 3. City Architecture
 
-### 空间规范
+### Spatial Specifications
 
-| 维度 | 约束 | 提示词 |
+| Dimension | Constraint | Prompt |
 |---|---|---|
-| 风格 | 现代都市、写字楼/住宅/商业区 | 现代都市建筑 |
-| 材质 | 玻璃/混凝土/金属为主（赛璐珞化） | 现代材质、赛璐珞渲染 |
-| 色调 | 暖色调为主、黄昏霞光氛围 | 暖色调、黄昏氛围 |
-| 纵深 | 前/中/后景层次（赛璐珞纵深） | 前景{元素}、中景{元素}、后景{元素} |
-| 质感 | 建筑纹理清晰（赛璐珞化） | 纹理清晰、赛璐珞质感 |
-| 光照 | 自然光为主（窗光/路灯），光线柔和 | 自然光、柔和光照 |
-| 镜头感 | 浅景深虚化前后景、赛璐珞镜头效果 | shallow depth of field、赛璐珞镜头 |
-| 瑕疵感 | 建筑有使用痕迹、自然磨损（赛璐珞化） | 自然磨损、赛璐珞处理 |
+| Style | Modern urban, office towers/residential/commercial district | modern urban architecture |
+| Material | Mainly glass/concrete/metal (cel-shaded) | modern material, cel-shaded rendering |
+| Tone | Mainly warm tones, dusk glow atmosphere | warm tones, dusk atmosphere |
+| Depth | Foreground/midground/background layers (cel-shaded depth) | foreground {element}, midground {element}, background {element} |
+| Texture | Clear architectural texture (cel-shaded) | clear texture, cel-shaded texture |
+| Lighting | Mainly natural light (window light/streetlight), soft light | natural light, soft lighting |
+| Lens feel | Shallow depth of field blurring foreground/background, cel-shaded lens effect | shallow depth of field, cel-shaded lens |
+| Imperfection | Buildings show signs of use, natural wear (cel-shaded) | natural wear, cel-shaded treatment |
 
-### 城市类型速查
+### City Type Quick Reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core elements | Atmosphere words |
 |---|---|---|
-| 商业街区 | 高楼大厦/商铺/广告牌 | 繁华热闹、现代都市 |
-| 住宅区 | 公寓楼/花园/街道 | 温馨生活、宁静社区 |
-| 办公区 | 写字楼/停车场/咖啡区 | 职场氛围、商务气息 |
-| 公园绿地 | 树木/步道/长椅 | 休闲放松、绿意盎然 |
-| 交通枢纽 | 地铁站/公交站/人行天桥 | 繁忙交通、都市脉搏 |
-| 河滨/湖畔 | 水域/步道/灯光 | 浪漫氛围、水景优美 |
+| Commercial district | high-rises/shops/billboards | bustling and lively, modern urban |
+| Residential area | apartment buildings/gardens/streets | warm living feel, quiet community |
+| Office district | office towers/parking lot/coffee area | workplace atmosphere, business feel |
+| Park/green space | trees/paths/benches | relaxed and leisurely, lush greenery |
+| Transit hub | subway station/bus stop/pedestrian overpass | busy traffic, urban pulse |
+| Riverside/lakeside | water/paths/lighting | romantic atmosphere, beautiful waterscape |
 
 ---
 
-## 四、室内外场景
+## 4. Indoor and Outdoor Scenes
 
-### 室内空间规范
+### Indoor Space Specifications
 
-| 维度 | 约束 | 提示词 |
+| Dimension | Constraint | Prompt |
 |---|---|---|
-| 风格 | 办公室/咖啡厅/公寓/便利店 | 现代室内风格 |
-| 材质 | 地板/墙面/家具（赛璐珞化） | 现代材质、赛璐珞渲染 |
-| 色调 | 暖色调为主、黄昏氛围 | 暖色调、温馨氛围 |
-| 纵深 | 前/中/后景层次 | 前景{元素}、中景{元素}、后景{元素} |
-| 质感 | 材质纹理清晰（赛璐珞化） | 纹理清晰、赛璐珞质感 |
-| 光照 | 自然光+室内灯光，光线柔和 | 自然光、室内灯光、柔和 |
-| 镜头感 | 浅景深虚化前后景 | shallow depth of field、室内镜头 |
-| 瑕疵感 | 家具有使用痕迹、自然磨损 | 自然磨损、赛璐珞处理 |
+| Style | Office/cafe/apartment/convenience store | modern indoor style |
+| Material | Flooring/walls/furniture (cel-shaded) | modern material, cel-shaded rendering |
+| Tone | Mainly warm tones, dusk atmosphere | warm tones, cozy atmosphere |
+| Depth | Foreground/midground/background layers | foreground {element}, midground {element}, background {element} |
+| Texture | Clear material texture (cel-shaded) | clear texture, cel-shaded texture |
+| Lighting | Natural light + indoor lighting, soft light | natural light, indoor lighting, soft |
+| Lens feel | Shallow depth of field blurring foreground/background | shallow depth of field, indoor lens |
+| Imperfection | Furniture shows signs of use, natural wear | natural wear, cel-shaded treatment |
 
-### 室内类型速查
+### Indoor Type Quick Reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core elements | Atmosphere words |
 |---|---|---|
-| 办公室 | 办公桌/电脑/文件/椅子 | 职场氛围、商务气息 |
-| 咖啡厅 | 咖啡桌/座椅/吧台/装饰 | 温馨惬意、休闲氛围 |
-| 公寓 | 沙发/床/书架/装饰 | 居家温馨、舒适空间 |
-| 便利店 | 货架/收银台/饮料 | 生活便利、日常感 |
-| 餐厅 | 餐桌/椅子/厨房 | 餐饮氛围、温馨就餐 |
-| 健身房 | 跑步机/器械/镜子 | 运动氛围、活力空间 |
+| Office | desk/computer/documents/chair | workplace atmosphere, business feel |
+| Cafe | coffee table/seating/bar counter/decor | cozy and relaxed, casual atmosphere |
+| Apartment | sofa/bed/bookshelf/decor | homey warmth, comfortable space |
+| Convenience store | shelves/checkout counter/drinks | everyday convenience, daily life feel |
+| Restaurant | dining table/chairs/kitchen | dining atmosphere, warm mealtime |
+| Gym | treadmill/equipment/mirror | athletic atmosphere, energetic space |
 
 ---
 
-## 五、主视图规范
+## 5. Hero View Specification
 
-### 视图定义
+### View Definition
 
-> 单画面主视图，从场景中最具代表性的角度拍摄，承载空间叙事与构图重心。
+> A single hero view, shot from the scene's most representative angle, carrying the spatial narrative and compositional focus.
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt |
 |---|---|---|
-| 视角 | 自然观察视角，构图最能体现场景主体与纵深 | hero shot、representative angle |
-| 视点高度 | 默认人眼平视高度，特殊场景可俯/仰 | eye level（默认） |
-| 构图 | 主体居中或符合三分法，前/中/后景层次清晰 | balanced composition |
+| Viewpoint | Natural observation angle, composition that best conveys the scene's subject and depth | hero shot, representative angle |
+| Viewpoint height | Default eye-level height, high/low angle allowed for special scenes | eye level (default) |
+| Composition | Subject centered or following the rule of thirds, foreground/midground/background layers clear | balanced composition |
 
-### 画面规范
+### Frame Specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 单画面（非拼图、非多视图、非分屏） |
-| 人物 | **严禁出现任何人物、人影、人体轮廓** |
-| 一致性 | 风格/材质/色调/光线统一（赛璐珞化处理） |
-| 光线 | 单一光源逻辑，光影方向一致（赛璐珞化处理） |
-| 画面比例 | 默认 16:9（或按调用方设定） |
+| Layout | Single frame (not a collage, not multi-view, not split-screen) |
+| People | **Strictly prohibit any person, human shadow, or human silhouette** |
+| Consistency | Unified style/material/tone/lighting (cel-shaded treatment) |
+| Lighting | Single light-source logic, consistent light-and-shadow direction (cel-shaded treatment) |
+| Frame ratio | Default 16:9 (or as set by the caller) |
 
 ---
 
-## 六、提示词模板
+## 6. Prompt Template
 ```
-3D 动画渲染，电影级打光，活力赛璐珞质感，高细节材质，愉悦治愈氛围，卡通都市风，高细节卡通材质，适度卡通比例，暖色调配色，8K 超高清，电影级构图，柔和光影层次，明快卡通渲染风格，温馨治愈，都市场景主视图概念图，
+3D animation rendering, cinema-grade lighting, vibrant cel-shaded texture, high-detail materials, joyful healing atmosphere, cartoon urban style, high-detail cartoon materials, moderate cartoon proportions, warm color palette, 8K ultra-high-definition, cinema-grade composition, soft lighting layers, bright cartoon rendering style, warm and healing, urban scene hero-view concept art,
 anime style, cel-shaded, 3D animation render,
 film lighting, warm sunset lighting,
 scene design sheet, environment concept art, no people, no characters, no human figures,
-{室内/室外}，{场景类型}，{建筑风格}，{季节+时间}，
-前景：{元素}，中景：{元素}，后景：{元素}，
-{色调描述}，{天候/氛围元素}，
-{材质描述}，空气透视，纹理清晰，赛璐珞化处理，
-材质自然使用痕迹，生活感磨损，布料自然垂褶（赛璐珞化），
-自然光漫射，体积光，赛璐珞光效，赛璐珞投影，
-单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景层次，
-画面中无任何人物，
-赛璐珞渲染风格，柔和光影，适度卡通比例，高细节卡通材质，
-暖色调配色，黄昏霞光氛围，愉悦治愈氛围，
-8K 超高清，电影级构图，
-图中不要有任何文字
+{indoor/outdoor}, {scene type}, {architectural style}, {season + time},
+foreground: {element}, midground: {element}, background: {element},
+{tone description}, {weather/atmosphere elements},
+{material description}, aerial perspective, clear texture, cel-shaded treatment,
+natural wear on materials, lived-in wear, natural fabric draping (cel-shaded),
+diffused natural light, volumetric light, cel-shaded lighting effects, cel-shaded shadows,
+single-frame composition, natural observation angle, composition representative of the scene's subject showing foreground/midground/background layers,
+no people appear in the frame,
+cel-shaded rendering style, soft lighting, moderate cartoon proportions, high-detail cartoon materials,
+warm color palette, dusk glow atmosphere, joyful healing atmosphere,
+8K ultra-high-definition, cinema-grade composition,
+no text of any kind in the image
 ```
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 场景必须有「前中后景层次」 |
-| R2 | 室外必须包含「空气透视」 |
-| R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
-| R4 | 构图须能代表场景主体并展示前/中/后景层次 |
-| R5 | 场景图中**严禁出现任何人物** |
-| R6 | 必须包含3D动画渲染关键词（cel-shaded, 3D animation render, anime style） |
-| R7 | 必须包含镜头光学特征（shallow depth of field / lens vignette / bokeh 至少一项，赛璐珞化处理） |
-| R8 | 材质必须带有自然磨损/岁月痕迹，禁止全新无瑕的"CG 感"，但赛璐珞化呈现 |
-| R9 | 必须保持赛璐珞渲染风格一致性，不得混搭写实元素 |
-| R10 | 必须包含暖色调配色、黄昏霞光氛围关键词 |
-| R11 | 必须包含8K超高清、电影级构图关键词 |
+| R1 | The scene must have "foreground/midground/background layers" |
+| R2 | Outdoor scenes must include "aerial perspective" |
+| R3 | The scene image must be a "single hero view"; multi-view/split-screen/grid collages are prohibited |
+| R4 | The composition must represent the scene's subject and show foreground/midground/background layers |
+| R5 | **Strictly prohibit any person** appearing in the scene image |
+| R6 | Must include 3D animation rendering keywords (cel-shaded, 3D animation render, anime style) |
+| R7 | Must include a lens optical characteristic (at least one of shallow depth of field / lens vignette / bokeh, cel-shaded treatment) |
+| R8 | Materials must carry natural wear/signs of age; a pristine flawless "CG feel" is prohibited, but must be presented in cel-shaded form |
+| R9 | Must maintain cel-shaded rendering style consistency; mixing in photorealistic elements is prohibited |
+| R10 | Must include warm color palette, dusk glow atmosphere keywords |
+| R11 | Must include 8K ultra-high-definition, cinema-grade composition keywords |
 
-### 严禁
+### Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited item |
 |---|---|
-| X1 | 背景纯白/纯黑/无场景 |
-| X2 | 极端天候（暴风雨/雷电/暴雪，除非剧情需要，且需赛璐珞化） |
-| X3 | 场景无纵深/无层次 |
-| X4 | 植被/天候与季节矛盾 |
-| X5 | 出现任何人物、人影、人体剪影或人体轮廓 |
-| X6 | 画面被拼接成多视图/网格/分屏布局 |
-| X7 | 3D 渲染/CG 动画/游戏引擎质感（禁用 3D render、CGI、Unreal Engine、Unity 等词），但需明确赛璐珞动画渲染 |
-| X8 | 材质过于干净完美、无任何使用痕迹与岁月感（避免"塑料感"），需赛璐珞化处理 |
-| X9 | 光照过于均匀平坦、无景深虚化、无镜头光学特征 |
-| X10 | 使用写实摄影术语（如real photography, photorealistic, RAW photo等） |
-| X11 | 古代/未来元素、非现代都市风格 |
-| X12 | 冷色调/夜间主色调、非暖色调/黄昏氛围 |
+| X1 | Pure white/pure black background, or no scene at all |
+| X2 | Extreme weather (storm/thunder/blizzard, unless narratively required, and must be cel-shaded) |
+| X3 | Scene lacking depth/layers |
+| X4 | Vegetation/weather contradicting the season |
+| X5 | Any person, human shadow, human silhouette, or human outline appearing |
+| X6 | The image collaged into multi-view/grid/split-screen layout |
+| X7 | 3D rendering/CG animation/game engine texture (terms such as 3D render, CGI, Unreal Engine, Unity are prohibited); must clearly read as cel-shaded animation rendering |
+| X8 | Material that is overly clean and perfect, with no signs of use or age (avoid a "plasticky feel"); must be cel-shaded |
+| X9 | Lighting that is overly flat and even, with no depth-of-field blur or lens optical characteristics |
+| X10 | Using photorealistic photography terms (such as real photography, photorealistic, RAW photo, etc.) |
+| X11 | Ancient/futuristic elements, non-modern urban style |
+| X12 | Cool-toned/night-dominant color palette, not a warm-toned/dusk atmosphere |

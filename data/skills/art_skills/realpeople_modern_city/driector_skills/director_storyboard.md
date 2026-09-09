@@ -1,196 +1,196 @@
 ---
 name: liveaction_urban_storyboard
-description: 导演分镜提示词技法 · 真人都市
+description: Director storyboard prompt technique · Live-Action Urban
 metaData: director_liveaction_urban_skills
 ---
 
-# 分镜提示词 · 真人都市 · 风格专属技法
+# Storyboard Prompt · Live-Action Urban · Style-Specific Technique
 
 ---
 
-## 适用范围
+## Scope
 
-本 Skill 专用于**真人都市**风格的分镜提示词生成，适配都市剧情、职场成长、青春治愈、市井生活、都市悬疑等真人实拍影视题材的分镜创作。
+This Skill is dedicated to generating storyboard prompts for the **Live-Action Urban** style, adapted for creating storyboards for live-action urban-drama, workplace-growth, youthful-healing, street-life, and urban-suspense film/video subject matter.
 
 ---
 
-## 一、摄影机前的情绪——面孔、眼神、微表情
+## 1. Emotion in Front of the Camera — Face, Eyes, Micro-expression
 
-> 真人都市的情绪不来自"义体光效"或"渲染参数"，而来自真人演员在摄影机前的微表情。以下映射面向摄影机捕捉真实人物的方式。
+> Live-Action Urban's emotion doesn't come from "prosthetic lighting effects" or "render parameters," but from a real actor's micro-expressions in front of the camera. The following mapping addresses how the camera captures a genuine person.
 
-| 情绪输入 | 面容描述 | 眼神描述 | 微表情补充 |
+| Emotion Input | Facial Description | Eye Description | Micro-expression Supplement |
 |---|---|---|---|
-| 干练 / 沉稳 | 神情利落，面部线条自然不紧绷 | 眼神笃定，直视前方不飘忽 | 唇线平直，下颌微收，气场沉稳克制 |
-| 忧伤 / 落寞 | 眉眼低垂，面部肌肉松弛 | 目光涣散失焦，望向窗外或地面 | 嘴角自然下沉，表情怅然，不刻意 |
-| 温柔 / 治愈 | 眉目舒展，面部柔和 | 眼神温润专注，像在认真听对方说话 | 嘴角自然微扬，不是笑，是有温度 |
-| 冷峻 / 戒备 | 面部线条微微绷紧，不夸张 | 眼神锐利但不过度，注视有力 | 下颌收紧，表情克制，身体语言防御 |
-| 惊讶 / 触动 | 眼尾微抬，眉毛自然上扬 | 眼神骤然聚焦，瞳孔微扩 | 嘴角微启，表情鲜活不夸张 |
-| 沉思 / 内省 | 神情淡然，眼部周围肌肉放松 | 目光放远失焦，像在看但不在看 | 表情平静，可能单手托腮或手指轻点 |
-| 喜悦 / 鲜活 | 眼角出现自然笑纹，眼型微弯 | 眼神明亮有光，眼角有笑意牵动 | 嘴角上扬，面颊微红，表情生动但不夸张 |
-| 疲惫 / 倦怠 | 眼窝微陷，面部整体松弛 | 目光朦胧，眼皮微沉 | 眉眼低垂，可能的黑眼圈，表情松弛 |
-| 期待 / 憧憬 | 眉眼微扬，面部有克制的小幅度活动 | 眼神发亮，瞳孔有光 | 嘴角微微上扬，面部有压抑的笑意 |
-| 决绝 / 坚定 | 面部线条清晰，下颌微抬 | 眼神笔直向前，不回避不躲闪 | 下巴微收或微抬，表情果敢但不凶悍 |
+| Sharp / Composed | A crisp expression, facial lines natural and not tense | A resolute gaze, looking straight ahead without wandering | A level lip line, the jaw slightly drawn in, a calm, restrained presence |
+| Sorrowful / Downcast | Lowered brow and eyes, relaxed facial muscles | An unfocused, wandering gaze, looking out a window or at the ground | The corners of the mouth naturally drooping, a wistful, unforced expression |
+| Gentle / Healing | Relaxed brow and eyes, a soft face | A warm, attentive gaze, as if listening carefully to someone | The corners of the mouth naturally slightly raised — not a smile, but with warmth |
+| Cold / Guarded | Facial lines slightly tense, not exaggerated | A sharp but not excessive gaze, a forceful look | The jaw tightened, a restrained expression, defensive body language |
+| Surprised / Moved | The outer eye corners slightly raised, brows naturally lifted | The gaze suddenly focusing, pupils slightly dilated | Lips slightly parted, an expression that's lively but not exaggerated |
+| Reflective / Introspective | A calm expression, the muscles around the eyes relaxed | The gaze distant and unfocused, as if looking but not really seeing | A calm expression, possibly resting the chin on one hand or lightly tapping a finger |
+| Joyful / Vibrant | Natural smile lines at the eye corners, the eyes slightly curved | A bright, glowing gaze, a hint of a smile at the eye corners | The corners of the mouth raised, a slight flush on the cheeks, an expression that's lively but not exaggerated |
+| Exhausted / Weary | Slightly sunken eye sockets, an overall relaxed face | A hazy gaze, heavy eyelids | Lowered brow and eyes, possible dark circles, a relaxed expression |
+| Hopeful / Longing | Brow and eyes slightly raised, restrained small facial movements | A glowing gaze, a light in the pupils | The corners of the mouth slightly raised, a suppressed hint of a smile on the face |
+| Resolute / Determined | Clear facial lines, the jaw slightly lifted | A gaze fixed straight ahead, neither avoiding nor flinching | The chin slightly drawn in or slightly raised, an expression that's bold but not fierce |
 
 ---
 
-## 二、摄影机前的光——光源逻辑与氛围
+## 2. Light in Front of the Camera — Light-Source Logic and Mood
 
-### 2.1 自然光时刻
+### 2.1 Natural Light Moments
 
-| 时刻 | 光源行为 | 色温与色调 | 空间氛围 |
+| Time | Light Behavior | Color Temperature and Tone | Spatial Mood |
 |---|---|---|---|
-| 清晨 | 低角度暖白日光，通过窗户斜入室内；室外街道阳光刚越过建筑、长阴影 | 3500-4500K暖白，空气微冷 | 静谧未醒、晨雾清冽、一切尚未开始 |
-| 上午 | 日光升高，冷白清澈，阴影锐利；室外建筑表面材质清晰；室内窗光面积最大 | 5000-6000K中性偏冷 | 秩序建立、日常运转、高效清晰 |
-| 正午 | 顶光或近乎顶光，阴影短而浓重；室外材质反光强；室内窗光从上方入射 | 5500-6500K冷调 | 暂停感、午间空隙、日复一日的顶点 |
-| 午后 | 日光偏西，暖调渐强，斜光穿过窗或树形成长阴影和光斑 | 4000-5000K渐暖 | 慵懒、时间变慢、一天中最长的那一段 |
-| 金色时刻 | 极低角度暖金漫射，长阴影到极致，一切表面镀上金边 | 2800-3500K极暖 | 转瞬即逝的珍貴、温情回忆段落的唯一光源 |
-| 蓝调时刻 | 太阳沉入地平线后，天空深蓝紫，自然光极暗极冷，人工光源刚刚亮起 | 8000-10000K天空+暖点人工光 | 过渡、诗意、白天已尽夜晚尚未接管 |
-| 深夜 | 仅靠人工光源——街灯、台灯、屏幕光、车灯。大部分区域沉入暗部 | 暖光源2800-3200K / 冷光源4000-6500K | 孤独或私密、世界安静了 |
+| Early Morning | Low-angle warm-white daylight entering the room at a slant through windows; outdoor sunlight has just crossed over the buildings, long shadows | 3500-4500K warm white, the air slightly cool | Quiet and not yet awake, a crisp morning mist, everything yet to begin |
+| Morning | Daylight risen higher, cool, clear white, sharp shadows; outdoor building surface materials clear; indoors the window-light area is largest | 5000-6000K neutral-leaning-cool | The establishment of order, everyday operation, efficient clarity |
+| Midday | Overhead or near-overhead light, short, dense shadows; strong material reflection outdoors; window light entering from above indoors | 5500-6500K cool tone | A sense of pause, the midday gap, the peak of the daily repetition |
+| Afternoon | Daylight leaning westward, warm tones intensifying, slanted light through windows or trees forming long shadows and light patches | 4000-5000K gradually warming | Languid, time slowing down, the longest stretch of the day |
+| Golden Hour | Extremely low-angle warm-gold diffusion, shadows stretched to their longest, every surface gilded | 2800-3500K extremely warm | A fleeting preciousness, the sole light source for warm-memory passages |
+| Blue Hour | After the sun sinks below the horizon, the sky deep blue-violet, natural light extremely dim and cool, artificial light sources just turning on | 8000-10000K sky + warm artificial points | Transition, poetry, the day has ended but the night has not yet taken over |
+| Late Night | Relying only on artificial light sources — streetlights, table lamps, screen light, car lights. Most of the area sunk into darkness | Warm light sources 2800-3200K / cool light sources 4000-6500K | Loneliness or intimacy, the world has gone quiet |
 
-### 2.2 情绪光影
+### 2.2 Emotional Lighting
 
-| 情绪基调 | 光线配方 | 摄影约束 |
+| Emotional Tone | Light Recipe | Photographic Constraint |
 |---|---|---|
-| 职场克制 | 窗光冷白主光（5000-5500K），可能伴随屏幕冷光补面，暗部保留细节 | 光比适中约1:3，保留空间纵深，玻璃隔断产生多层反射 |
-| 日常松弛 | 大面积窗光漫射（4500-5000K），窗帘柔化，无硬阴影 | 低反差通透感，浅景深突出人物 |
-| 温馨居家 | 暖调台灯/落地灯侧光（2800-3200K），窗光为辅（若日间），阴影柔和 | 暖调包裹，单点暖光源为主，暗部温暖有细节 |
-| 都市烟火 | 多光源混杂——街灯暖（2800K）+店铺冷白（4000K）+车灯扫过 | 暖调主导，冷光局部对冲，手持摄影的临场感 |
-| 雨夜独处 | 湿地面反射街灯（冷基底6000K环境+暖2800K光斑），窗玻璃雨痕散射 | 冷暖共存，单点暖光源在人脸上，其余沉入冷暗 |
-| 悬疑紧张 | 硬光侧打，深阴影，光比大幅拉大，冷暖光对冲（如窗外冷蓝+室内暖黄） | 大光比1:8以上，硬光勾勒轮廓，暗部压深但有细节 |
-| 青春治愈 | 充足自然光（5000-5500K），大面积漫射，天空光+地面反射补光 | 低反差高调，通透清新，浅景深柔化背景 |
-| 深夜脆弱 | 单一暖光源（台灯2800-3200K或窗外路灯）形成孤岛式照明，面部一侧亮一侧暗 | 极简光源，暗部丰富有细节，光比可到1:8 |
+| Workplace Restraint | Cool-white window light as the main source (5000-5500K), possibly with cool screen-light fill, shadows retaining detail | A moderate lighting ratio of about 1:3, retaining spatial depth, glass partitions producing multi-layer reflections |
+| Everyday Relaxation | Large-area diffused window light (4500-5000K), curtain-softened, no hard shadows | A low-contrast, luminous feel, shallow depth of field emphasizing the subject |
+| Cozy at Home | Warm table-lamp/floor-lamp side light (2800-3200K), window light as a secondary source (if daytime), soft shadows | A warm-toned wrap, a single warm point light source as the main light, shadows warm and detailed |
+| Urban Street Life | Mixed light sources — warm streetlights (2800K) + cool-white shopfronts (4000K) + passing car lights | Warm-tone dominant, cool light as a localized counterpoint, the immediacy of handheld camerawork |
+| Alone in a Rainy Night | Streetlights reflected on wet ground (a cool 6000K ambient base + warm 2800K light pools), scattered light through rain-marked window glass | Cool and warm coexisting, a single warm light source on the face, everything else sunk into cool darkness |
+| Suspenseful Tension | Hard side light, deep shadows, a greatly widened lighting ratio, cool/warm light counterpoint (e.g. cool blue outside the window + warm yellow indoors) | A high lighting ratio of 1:8 or more, hard light carving out the contour, shadows pushed deep but with detail |
+| Youthful Healing | Ample natural light (5000-5500K), large-area diffusion, sky light + ground-reflection fill | A low-contrast, high-key look, luminous and fresh, shallow depth of field softening the background |
+| Late-Night Vulnerability | A single warm light source (a table lamp at 2800-3200K or a streetlight outside the window) forming island-style lighting, one side of the face lit, the other dark | A minimal light source, shadows rich in detail, the lighting ratio can reach 1:8 |
 
 ---
 
-## 三、摄影机前的场景——真实地点的实拍质感
+## 3. The Scene in Front of the Camera — the Live-Action Texture of Real Locations
 
-| 场景类型 | 摄影必须捕捉的元素 |
+| Scene Type | Elements the Photography Must Capture |
 |---|---|
-| 写字楼/办公室 | 玻璃隔断多层反射和透射、百叶窗条纹光影、工位桌面的个人物品散落、会议桌上打开的半瓶矿泉水、屏幕冷光映在脸上 |
-| 出租屋/公寓 | 落地窗或小窗的自然光方向明确、墙面的贴纸残留和钉子孔、沙发上的毯子随意搭着、茶几上的遥控器和半杯水、地板轻微磨损 |
-| 咖啡厅/奶茶店 | 吧台暖光和咖啡机蒸汽、窗边座位的光最珍贵、杯具和托盘的使用痕迹、落地玻璃上的手印、窗外的街景是另一个图层 |
-| 老城区/巷弄 | 斑驳墙面和爬墙青苔、电线杆和架空线的真实城市肌理、老式路灯的暖黄光、晾晒的衣物、沿街摊贩和手写招牌 |
-| 城市街道/路口 | 斑马线和红绿灯、行道树和路灯、路面标线和磨损、店铺橱窗和霓虹招牌、公交站牌和等车的人的空位 |
-| 便利店（深夜） | 荧光灯管的冷白孤岛式照明、货架的秩序感、冰柜的冷光和雾面玻璃、落地窗外深黑的街道、店员区域的暖光小角落 |
-| 地铁站/车厢 | 日光灯冷白照明、广告灯箱的发光、屏蔽门的反光、车厢座椅的磨损、隧道里的流动光影 |
-| 天台/屋顶 | 城市天际线全景、护栏和通风管道、地面防水层的磨损、晾衣绳和杂物、天空的色温和云的状态 |
-| 医院走廊/病房 | 长走廊的日光灯冷光、地面的反光、白墙和扶手的洁净感与冷感、窗外的自然光是唯一的暖色 |
-| 校园/教室 | 课桌椅的排列和使用痕迹、黑板上的粉笔字残留、窗户的自然光打进教室、走廊的纵深透视 |
+| Office Tower/Office | Multi-layer reflection and transmission through glass partitions, striped light and shadow from blinds, personal items scattered on a workstation desk, a half-open bottle of mineral water on the conference table, cool screen light reflected on faces |
+| Rented Apartment/Studio | A clear direction of natural light from a floor-to-ceiling window or small window, sticker residue and nail holes on the wall, a blanket casually draped over the sofa, a remote control and half a glass of water on the coffee table, slight floor wear |
+| Cafe/Milk Tea Shop | Warm bar-counter light and coffee-machine steam, the most precious light at a window-side seat, use marks on cups and trays, handprints on the floor-to-ceiling glass, the street view outside the window as another visual layer |
+| Old Town/Alleyway | Mottled walls and creeping moss, the genuine urban texture of utility poles and overhead wires, the warm-yellow glow of old-style streetlights, laundry hung to dry, roadside vendors and handwritten signs |
+| City Street/Intersection | A crosswalk and traffic lights, street trees and streetlights, road markings and wear, shop windows and neon signs, a bus-stop sign and the empty space where someone waiting would stand |
+| Convenience Store (Late Night) | Cold-white island-style lighting from fluorescent tubes, the orderliness of the shelves, the cold light and frosted glass of a freezer, the pitch-black street outside the floor-to-ceiling window, a small warm-lit corner at the staff area |
+| Subway Station/Car | Cold-white fluorescent lighting, glowing ad light boxes, reflections off the platform screen doors, worn train seats, flowing light and shadow in the tunnel |
+| Rooftop | A full panorama of the city skyline, railings and ventilation ducts, wear on the waterproof flooring, a clothesline and clutter, the sky's color temperature and the state of the clouds |
+| Hospital Hallway/Ward | Cold fluorescent light in a long hallway, reflections on the floor, the clean, cold feel of white walls and handrails, the natural light outside the window as the only warm color |
+| Campus/Classroom | The arrangement and use marks of desks and chairs, residual chalk writing on the blackboard, natural light streaming into the classroom through the windows, the depth perspective of the hallway |
 
 ---
 
-## 四、摄影机语法——镜头选择与运动
+## 4. Camera Grammar — Lens Choice and Movement
 
-### 4.1 焦段选择
+### 4.1 Focal Length Choice
 
-| 焦段 | 叙事性格 | 适用场景 |
+| Focal Length | Narrative Character | Applicable Scene |
 |---|---|---|
-| 24-28mm广角 | 环境包围人物，空间疏离感，城市宏大与个体渺小 | 都市空镜、天台俯瞰、人群中独自一人 |
-| 35mm小广角 | 主观视点，身临其境的纪实感，人与环境共存 | 街头行走、室内对话、日常跟随 |
-| 50mm标准 | 人眼等价，客观中立的注视，最诚实的镜头 | 人物肖像、双人对话、情感凝视 |
-| 85mm中长焦 | 压缩空间，拉近情感距离，背景虚化突出人物 | 特写、街对面远远望见、偷窥视角 |
-| 135mm+长焦 | 将人物从环境中剥离，极端的注视或窥视 | 城市中隔离的个体、远眺、叙事的距离感 |
+| 24-28mm Wide Angle | The environment surrounds the subject, spatial detachment, the city's vastness against the individual's smallness | Urban establishing shots, a rooftop overlook, a lone figure in a crowd |
+| 35mm Slight Wide | A subjective viewpoint, an immersive documentary feel, the coexistence of person and environment | Walking on the street, indoor dialogue, everyday following |
+| 50mm Standard | Equivalent to the human eye, an objective, neutral gaze, the most honest lens | Character portraits, two-person dialogue, emotional gazes |
+| 85mm Short Telephoto | Compresses space, draws in emotional distance, a blurred background emphasizing the subject | Close-ups, glimpsing someone across the street, a voyeuristic angle |
+| 135mm+ Telephoto | Isolates the subject from the environment, an extreme gaze or a sense of peeping | An individual isolated in the city, gazing into the distance, a narrative sense of distance |
 
-### 4.2 景别选择
+### 4.2 Shot Scale Choice
 
-| 景别 | 取景范围 | 叙事功能 |
+| Shot Scale | Framing Range | Narrative Function |
 |---|---|---|
-| 大特写 | 眼睛/嘴唇/手指/物件细节 | 情绪爆发点、关键信息揭示、感官聚焦 |
-| 近景 | 头顶至胸部以上 | 人物情感、对话反应、面部微表情 |
-| 中近景 | 头顶至腰部 | 人物互动、手势动作、对话中的身体语言 |
-| 中景 | 头顶至膝盖上下 | 人物与空间的初级关系、多人同框 |
-| 全景 | 人物全身+部分环境 | 人物在空间中的位置、行动路线 |
-| 大全景/空镜 | 空间全貌，人物极小或无人物 | 空间叙事、情绪缓冲、隐喻留白 |
+| Extreme Close-up | Eyes/lips/fingers/object detail | An emotional breaking point, revealing key information, sensory focus |
+| Close-up | Top of the head to above the chest | Character emotion, dialogue reaction, facial micro-expression |
+| Medium Close-up | Top of the head to the waist | Character interaction, hand gestures, body language during dialogue |
+| Medium Shot | Top of the head to around the knees | The character's basic relationship with the space, multiple people in frame |
+| Full Shot | The character's whole body + part of the environment | The character's position within the space, the path of movement |
+| Wide Shot/Cutaway | The full space, the character very small or absent | Spatial narrative, an emotional buffer, metaphorical negative space |
 
-### 4.3 摄影机运动
+### 4.3 Camera Movement
 
-| 运动方式 | 视觉心理 | 使用场景 |
+| Movement | Visual Psychology | Usage Scenario |
 |---|---|---|
-| 固定 | 冷静观察，让时间自己说话 | 日常场景、对话、空镜留白 |
-| 手持微晃 | 在场感，呼吸感，主观介入 | 情绪波动、街头行走、亲密跟随 |
-| 稳定器流动 | 优雅的城市漫游，诗意 | 重要场景过渡、人物登场、空间展示 |
-| 缓推 | 注意力逐渐聚焦、情绪趋近 | 对话升温、真相逼近、情感推进 |
-| 缓拉 | 拉开距离、揭示全貌、情绪抽离 | 离别、章节收束、空间展示 |
-| 跟拍 | 与人物同行、主观陪同 | 城市行走、追踪、日常跟随 |
-| 摇镜 | 视线转移、空间关系交代 | 人物视线引导、空间与空间的关系 |
+| Locked-off | Calm observation, letting time speak for itself | Everyday scenes, dialogue, empty-frame pauses |
+| Slight Handheld Sway | A sense of presence, of breathing, subjective involvement | Emotional turbulence, walking on the street, intimate following |
+| Gimbal Flow | An elegant urban wander, poetic | Key scene transitions, character entrances, revealing space |
+| Slow Push-in | Attention gradually focusing, an emotion drawing near | A dialogue heating up, the truth closing in, an emotional progression |
+| Slow Pull-out | Creating distance, revealing the full scope, emotional detachment | A farewell, a chapter's close, revealing a space |
+| Tracking Shot | Moving alongside the character, subjective companionship | Walking through the city, a chase, everyday following |
+| Pan | A shift in gaze, establishing a spatial relationship | Guiding the character's line of sight, the relationship between spaces |
 
 ---
 
-## 五、固定风格锚定词
+## 5. Fixed Style Anchor Words
 
-**摄影锚定（必选）：**
+**Photographic Anchor (Required):**
 
-真人实拍摄影，真人电影剧照，当代中国都市，电影级摄影，自然光与人造光调度，真实色彩科学
+Live-action photography, real-life film still, contemporary Chinese urban setting, cinematic-grade photography, natural and artificial light scheduling, genuine color science
 
-**人物质感（含人物镜头时必选）：**
+**Character Texture (Required When Characters Are in Frame):**
 
-真人写实摄影质感，真实皮肤纹理毛孔可见，不磨皮不硅胶脸，发丝自然质感有碎发，服饰面料纹理可见有穿着褶皱，自然微表情，真实肢体语言
+Live-action realistic photographic texture, genuine skin texture with visible pores, not smoothed, not silicone-like, natural hair texture with loose strands, fabric texture visible with wear creases, natural micro-expression, genuine body language
 
-**场景质感（含场景镜头时必选）：**
+**Scene Texture (Required When a Scene Is in Frame):**
 
-真人实拍都市场景摄影，真实建筑材质和岁月痕迹（墙面斑驳/地面磨损/玻璃指印），光源方向明确可追溯，大气透视自然，非样板间非效果图
+Live-action urban scene photography, genuine architectural material and age marks (mottled walls/floor wear/glass fingerprints), a clearly traceable light-source direction, natural aerial perspective, not a showroom, not a rendering
 
-**参考图一致性锚定（参考图模式必选）：**
+**Reference-Image Consistency Anchor (Required in Reference-Image Mode):**
 
-保持人物造型、面容、发型、服饰与参考图完全一致，保持场景风格与参考图一致，保持光影色彩基调统一，所有镜头呈现为同一人物的连续摄影记录
+Maintain the character's styling, face, hairstyle, and clothing fully consistent with the reference image, maintain the scene style consistent with the reference image, maintain a unified lighting and color tone, all shots presenting as a continuous photographic record of the same person
 
-**风格收尾（固定）：**
+**Style Closing (Fixed):**
 
-真人写实摄影，当代中国都市电影质感，电影级摄影画面，非3D非渲染非CG
+Live-action realistic photography, contemporary Chinese urban cinematic texture, cinematic-grade photographic image, not 3D, not rendered, not CG
 
-**画质锁定词：**
+**Image-Quality Lock Words:**
 
-模式A（中文）——默认：
+Mode A (Chinese — required for the Seedream model, do not translate) — default:
 真人摄影高清画质，电影级画面质感，画面无字幕、无水印、无标题叠字、无UI元素
 
-模式A（中文）——画内文字场景（画面中含招牌/路牌/屏幕/书籍等道具文字时）：
+Mode A (Chinese — required for the Seedream model, do not translate) — in-image text scene (when the frame includes prop text such as signs/street signs/screens/books):
 真人摄影高清画质，电影级画面质感，画面无字幕、无水印、无标题叠字、无UI元素，招牌/路牌/屏幕/书本等场景道具上的文字清晰可辨
 
-模式B（英文）——默认：
+Mode B (English) — default:
 live-action cinematic photography, real human skin texture, contemporary urban China, cinematic color science, natural light photography, high detail, no subtitles, no captions, no watermark, no title overlay, no UI elements
 
-模式B（英文）——画内文字场景：
+Mode B (English) — in-image text scene:
 live-action cinematic photography, real human skin texture, contemporary urban China, cinematic color science, natural light photography, high detail, no subtitles, no captions, no watermark, no title overlay, no UI elements, legible text on in-scene props such as signboards, street signs, screens and books
 
-**负向词模板（模式B 必须包含，置于提示词末尾）：**
+**Negative Prompt Template (Required for Mode B, Placed at the End of the Prompt):**
 
-> ⚠️ Seedream（模式A）不支持负向提示词，负向词仅适用于模式B。模式A 通过正向词中的质感锚定和画质锁定来保证画面质量。
+> ⚠️ Seedream (Mode A) does not support negative prompts — negative words apply only to Mode B. Mode A relies on the texture anchors and image-quality lock words in the positive prompt to guarantee image quality.
 
-模式B（英文）：
+Mode B (English):
 no 3D render, no CGI, no Unreal Engine, no Blender, no PBR material, no game engine, no 2D cartoon, no anime, no illustration, no hand drawn, no painting, no plastic skin, no wax face, no airbrushed, no poreless skin, no silicone face, no ancient Chinese style, no traditional costume, no cyberpunk, no sci-fi, no western fantasy, no medieval, no non-Chinese urban, no plastic mannequin, no symmetrical model pose, no branded new clothes, no showroom, no wrong anatomy, no deformed face, no broken limbs, no distorted body, no subtitles, no captions, no watermark, no title overlay, no UI text
 
 ---
 
-## 六、美学禁止项
+## 6. Aesthetic Prohibitions
 
-以下词汇/风格不得出现于输出提示词中：
+The following terms/styles must not appear in the output prompt:
 
-- ❌ 3D渲染 / 3D建模 / CG / UE引擎 / Blender / PBR材质 / 次世代建模 / 体积光 / 环境光遮蔽 / 光线追踪
-- ❌ 2D手绘 / 插画 / 动画 / 二次元 / 漫画 / Q版 / 低多边形
-- ❌ 写实摄影（英文禁止 photorealistic / realistic photography——真人都市是"真人实拍摄影"live-action cinematic photography，不是"拟真渲染"）
-- ❌ 过度磨皮 / 塑料假面 / 零毛孔 / 硅胶脸 / 蜡像感 / AI感平滑
-- ❌ 古风 / 古装 / 汉服 / 仙侠 / 武侠 / 民国 / 赛博朋克 / 科幻 / 西方奇幻 / 中世纪
-- ❌ 人体结构错误 / 肢体畸形 / 面部崩坏 / 比例失调
-- ❌ 高饱和荧光色 / 霓虹溢色 / 廉价滤镜感
-- ❌ 非中国当代都市的架空场景 / 无中文标识的 generic city
+- ❌ 3D rendering / 3D modeling / CG / UE engine / Blender / PBR materials / next-gen modeling / volumetric light / ambient occlusion / ray tracing
+- ❌ 2D hand-drawn / illustration / animation / anime / manga / chibi / low-poly
+- ❌ Photorealistic rendering (prohibit the English "photorealistic / realistic photography" — Live-Action Urban is "live-action cinematic photography," not "photoreal rendering")
+- ❌ Over-smoothed skin / plastic mask look / poreless / silicone face / wax-figure feel / AI-smooth look
+- ❌ Ancient style / period costume / hanfu / xianxia / wuxia / Republic-era / cyberpunk / sci-fi / Western fantasy / medieval
+- ❌ Incorrect human anatomy / malformed limbs / distorted face / disproportion
+- ❌ Highly saturated fluorescent colors / neon oversaturation / a cheap-filter feel
+- ❌ A fictional scene that isn't contemporary Chinese urban / a generic city with no Chinese-language markings
 
 ---
 
-## 七、完整生成示例
+## 7. Full Generation Example
 
-### 输入（分镜表行数据）
+### Input (Storyboard Row Data)
 
-| 序号 | 画面描述 | 场景 | 关联资产名称 | 时长 | 景别 | 运镜 | 角色动作 | 情绪 | 光影氛围 |
+| No. | Visual Description | Scene | Linked Asset Name | Duration | Shot Scale | Camera Move | Character Action | Emotion | Lighting Mood |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 年轻职场女性身着西装站在写字楼落地窗前，手持咖啡杯望向窗外 | 现代写字楼 | 职场女性 | 6s | 中景 | 缓推 | 侧身持杯，目光望向窗外城市天际线 | 干练/沉稳 | 窗光冷白主光，午后斜光 |
+| 1 | A young professional woman in a suit stands in front of an office tower's floor-to-ceiling window, holding a coffee cup and looking outside | Modern Office Tower | Professional Woman | 6s | Medium Shot | Slow Push-in | Standing sideways holding the cup, gaze directed at the city skyline outside the window | Sharp/Composed | Cool-white window light as the key, slanted afternoon light |
 
-### 示例输出A（模式A · Seedream）
+### Example Output A (Mode A · Seedream, Chinese — required for this model's quality, do not translate)
 
 [Prompt]
 真人实拍摄影，真人电影剧照，当代中国都市，电影级摄影，自然光与人造光调度，真实色彩科学，真人写实摄影质感，真实皮肤纹理毛孔可见，不磨皮不硅胶脸，发丝自然质感有碎发，服饰面料纹理可见有穿着褶皱，自然微表情，真实肢体语言，中景构图，年轻职场女性身着西装站在写字楼落地窗前，手持咖啡杯侧身而立，神情利落，眼神笃定直视窗外，午后窗光从侧方斜入（约45°），冷白自然光（5000-5500K）为主光，长阴影穿过地面，玻璃幕墙呈现多层反射和城市天际线倒影，浅景深虚化窗外远景，真人写实摄影，当代中国都市电影质感，电影级摄影画面，非3D非渲染非CG，真人摄影高清画质，电影级画面质感，画面无字幕、无水印、无标题叠字、无UI元素。
-Based on the reference image of 职场女性，maintain consistent: face features, hairstyle, costume details. Generate a new scene: standing in front of the floor-to-ceiling window of a modern office building, holding a coffee cup. Keep visual style identical to reference.
+Based on the reference image of the professional woman, maintain consistent: face features, hairstyle, costume details. Generate a new scene: standing in front of the floor-to-ceiling window of a modern office building, holding a coffee cup. Keep visual style identical to reference.
 
-### 示例输出B（模式B · Nanobanana）
+### Example Output B (Mode B · Nanobanana)
 
 ```xml
 <role>
@@ -198,7 +198,7 @@ You are a live-action urban cinema storyboard photographer.
 Maintain strict visual continuity across all shots.
 </role>
 <character_reference>
-Image [1]: 职场女性 — 真人写实摄影，职场西装，干练气质，真人都市风格
+Image [1]: professional woman — live-action realistic photography, business suit, a sharp, composed presence, Live-Action Urban style
 </character_reference>
 <continuity_rules>
 - Same outfit, hairstyle, face features across ALL shots
@@ -216,30 +216,30 @@ no 3D render, no CGI, no Unreal Engine, no Blender, no PBR material, no game eng
 
 ---
 
-## 八、快速参考卡
+## 8. Quick Reference Card
 
-### 情绪 → 画面词速查
+### Emotion → Visual Word Quick Reference
 
-| 情绪 | 面容关键词 | 光线匹配 |
+| Emotion | Facial Keywords | Lighting Match |
 |---|---|---|
-| 干练/沉稳 | 神情利落，目光笃定 | 窗光冷白主光 + 轮廓自然反差 |
-| 忧伤/落寞 | 眉眼低垂，目光涣散 | 冷调漫射光 + 低反差，单光源侧打 |
-| 温柔/治愈 | 眉目舒展，眼神温润 | 大面积柔光漫射 + 暖调窗光 |
-| 冷峻/戒备 | 面部微绷，眼神锐利 | 硬光侧打 + 大光比冷暖对冲 |
-| 喜悦/鲜活 | 眼角笑纹，眼神明亮 | 充足自然光 + 高调通透 |
-| 沉思/内省 | 神情淡然，目光放远 | 单点暖光源 + 弱环境光 |
-| 疲惫/倦怠 | 眼窝微陷，目光朦胧 | 柔和漫射光 + 低反差低饱和 |
-| 坚定/决绝 | 下颌微抬，目光笔直 | 侧射硬光 + 清晰轮廓光 |
+| Sharp/Composed | A crisp expression, a resolute gaze | Cool-white window light as the key + a natural contour contrast |
+| Sorrowful/Downcast | Lowered brow and eyes, an unfocused gaze | Cool diffused light + low contrast, a single light source at the side |
+| Gentle/Healing | Relaxed brow and eyes, a warm gaze | Large-area soft diffusion + warm-toned window light |
+| Cold/Guarded | Facial lines slightly tense, a sharp gaze | Hard side light + a high lighting ratio with cool/warm counterpoint |
+| Joyful/Vibrant | Smile lines at the eye corners, a bright gaze | Ample natural light + a high-key, luminous look |
+| Reflective/Introspective | A calm expression, a distant gaze | A single warm point light source + weak ambient light |
+| Exhausted/Weary | Slightly sunken eye sockets, a hazy gaze | Soft diffused light + low contrast, low saturation |
+| Determined/Resolute | The jaw slightly lifted, a gaze fixed straight ahead | Hard side light + a clear rim light |
 
-### 场景 → 光源速查
+### Scene → Light Source Quick Reference
 
-| 场景 | 默认光源 | 色温 |
+| Scene | Default Light Source | Color Temperature |
 |---|---|---|
-| 写字楼办公室 | 窗光（日间）+ 屏幕冷光补面 | 5000-5500K主 / 6500K屏光 |
-| 咖啡厅 | 暖调顶灯/吊灯 + 窗光 | 2800-3200K主 |
-| 出租屋/公寓 | 窗光（日间）/ 台灯+窗外街灯（夜间） | 4500K日 / 2800K夜 |
-| 城市街道 | 日光（日间）/ 街灯+霓虹+车灯（夜间） | 按时刻变 |
-| 便利店（深夜） | 荧光灯管冷白 + 冰柜冷光 | 4000-5000K |
-| 天台 | 天空光为主，日光/月光/蓝调时刻 | 按时刻变 |
-| 地铁站 | 日光灯冷白 + 广告灯箱 | 4000-5000K |
-| 老城区巷弄 | 街灯暖（夜间）/ 天光+路面反射（日间） | 2000-2800K夜 |
+| Office Tower Office | Window light (daytime) + cool screen-light fill | 5000-5500K main / 6500K screen light |
+| Cafe | Warm overhead/pendant light + window light | 2800-3200K main |
+| Rented Apartment/Studio | Window light (daytime) / table lamp + streetlight outside (nighttime) | 4500K day / 2800K night |
+| City Street | Daylight (daytime) / streetlights + neon + car lights (nighttime) | Varies by time of day |
+| Convenience Store (Late Night) | Cold-white fluorescent tubes + freezer cold light | 4000-5000K |
+| Rooftop | Sky light dominant, sunlight/moonlight/blue hour | Varies by time of day |
+| Subway Station | Cold-white fluorescent light + ad light boxes | 4000-5000K |
+| Old-Town Alleyway | Warm streetlights (night) / sky light + ground reflection (day) | 2000-2800K night |

@@ -1,138 +1,138 @@
-# 二次元道具图像生成 · 约束手册
+# Anime Prop Image Generation · Constraint Manual
 
 ---
 
-## 一、道具设计原则
+## 1. Prop Design Principles
 
-1. **功能可读** — 道具用途一目了然，造型服务于功能
-2. **质感极致** — 材质纹理必须清晰可辨（金属/塑料/木材/玻璃/布料）
-3. **风格统一** — 所有道具必须符合现代都市言情世界观，无违和元素
-4. **尺度明确** — 通过参照物或标注暗示道具真实尺寸
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体，道具不可处于被持有/佩戴/握持状态，必须以静物陈列方式独立呈现
-
----
-
-## 二、道具分类与美学约束
-
-### 2.1 办公用品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 笔/笔记本/文件夹/眼镜 | 办公{类型}，现代办公用品 |
-| 材质 | 金属/塑料/皮革/纸张 | 金属笔夹、皮革笔记本 |
-| 装饰 | 简约设计、品牌标识（可选） | 简约设计、精致品牌标识 |
-| 光泽 | 哑光/微光/金属反光 | 哑光质感、金属反光 |
-| 提示词 | 现代{道具}，简约设计，质感清晰 | — |
-
-### 2.2 饮品器具类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 咖啡杯/玻璃杯/保温杯 | 咖啡杯，玻璃杯，保温杯 |
-| 材质 | 玻璃/陶瓷/金属/塑料 | 透明玻璃杯、陶瓷咖啡杯 |
-| 装饰 | 品牌标识/图案（可选） | 简约品牌标识、无图案 |
-| 光泽 | 玻璃反光、陶瓷釉光、金属光泽 | 玻璃反光清晰、陶瓷温润 |
-| 提示词 | 现代{道具}，材质清晰，赛璐璐质感 | — |
-
-### 2.3 个人物品类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 手机/手表/眼镜/钥匙 | 现代{道具}，个人物品 |
-| 材质 | 金属/玻璃/塑料/皮革 | 玻璃屏幕、金属边框 |
-| 装饰 | 简约设计、品牌标识（可选） | 简约设计、精致标识 |
-| 光泽 | 玻璃反光、金属光泽 | 玻璃清晰反光、金属质感 |
-| 提示词 | 现代{道具}，材质清晰，细节精致 | — |
-
-### 2.4 生活器物类
-
-| 项目 | 约束 | 提示词 |
-|---|---|---|
-| 类型 | 书卷/装饰画/香薰/台灯 | 现代{道具}，生活器物 |
-| 材质 | 木材/玻璃/金属/布料 | 木质书套、玻璃灯罩 |
-| 质感 | 材质纹理清晰、边缘自然 | 木纹清晰、玻璃通透 |
-| 风格 | 简约现代/温馨居家 | 简约现代、温馨居家 |
-| 提示词 | 现代{道具}，材质清晰，氛围协调 | — |
+1. **Function must read clearly** — the prop's purpose must be obvious at a glance, with form serving function
+2. **Extreme texture fidelity** — material texture must be clearly distinguishable (metal/plastic/wood/glass/fabric)
+3. **Unified style** — all props must fit the modern urban romance world setting, with no jarring elements
+4. **Explicit scale** — reference objects or annotations should hint at the prop's real-world size
+5. **Pure prop, shown in isolation** — only the prop itself may appear in frame; any person, hand, or body part is strictly forbidden. The prop must not be held, worn, or gripped — it must be presented independently, as a still-life display
 
 ---
 
-## 三、多角度设定图规范
+## 2. Prop Categories and Aesthetic Constraints
 
-### 视图定义
+### 2.1 Office Supplies
 
-| 位置 | 视图 | 角度 | 要求 | 提示词 |
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Pen/notebook/folder/glasses | office {type}, modern office supplies |
+| Material | Metal/plastic/leather/paper | metal pen clip, leather notebook |
+| Decoration | Minimalist design, brand mark (optional) | minimalist design, refined brand mark |
+| Sheen | Matte/subtle sheen/metallic reflection | matte texture, metallic reflection |
+| Prompt | modern {prop}, minimalist design, clear texture | — |
+
+### 2.2 Drinkware
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Coffee cup/glass/thermos | coffee cup, drinking glass, thermos |
+| Material | Glass/ceramic/metal/plastic | transparent glass cup, ceramic coffee cup |
+| Decoration | Brand mark/pattern (optional) | minimalist brand mark, no pattern |
+| Sheen | Glass reflection, ceramic glaze sheen, metallic sheen | clear glass reflection, warm ceramic glaze |
+| Prompt | modern {prop}, clear material, cel-shaded texture | — |
+
+### 2.3 Personal Items
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Phone/watch/glasses/keys | modern {prop}, personal item |
+| Material | Metal/glass/plastic/leather | glass screen, metal frame |
+| Decoration | Minimalist design, brand mark (optional) | minimalist design, refined mark |
+| Sheen | Glass reflection, metallic sheen | clear glass reflection, metallic texture |
+| Prompt | modern {prop}, clear material, refined detail | — |
+
+### 2.4 Everyday Objects
+
+| Item | Constraint | Prompt |
+|---|---|---|
+| Type | Scroll/framed art/diffuser/table lamp | modern {prop}, everyday object |
+| Material | Wood/glass/metal/fabric | wooden book cover, glass lampshade |
+| Texture | Clear material texture, natural edges | clear wood grain, translucent glass |
+| Style | Minimalist modern/cozy homey | minimalist modern, cozy homey |
+| Prompt | modern {prop}, clear material, coherent atmosphere | — |
+
+---
+
+## 3. Multi-Angle Reference Sheet Specification
+
+### View Definitions
+
+| Position | View | Angle | Requirement | Prompt |
 |---|---|---|---|---|
-| 左上 | 正面图 | 正面 0° | 道具完整正面形态 | front view |
-| 右上 | 侧面图 | 侧面 90° | 厚度/轮廓/结构清晰 | side view |
-| 左下 | 背面图 | 背面 180° | 道具背部结构/装饰 | back view |
-| 右下 | 细节特写 | 局部放大 | 材质纹理/工艺细节 | detail closeup |
+| Top left | Front view | Front 0° | Full frontal form of the prop | front view |
+| Top right | Side view | Side 90° | Clear thickness/silhouette/structure | side view |
+| Bottom left | Back view | Rear 180° | Back structure/decoration of the prop | back view |
+| Bottom right | Detail close-up | Local zoom | Material texture/craftsmanship detail | detail closeup |
 
-### 画面规范
+### Frame Specifications
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面四宫格（2×2），上下左右四视角 |
-| 背景 | 纯净中性灰 `#E8E8E8` |
-| 光线 | 均匀柔光，无硬阴影 |
-| 比例 | 每格道具占格内主体 70%+ |
-| 投影 | 允许自然地面微投影 |
-| 画面比例 | 建议 1:1 |
+| Layout | Four-panel grid (2x2) in one frame, four angles arranged top/bottom/left/right |
+| Background | Pure neutral gray `#E8E8E8` |
+| Lighting | Even soft light, no hard shadows |
+| Proportion | The prop occupies 70%+ of each panel |
+| Shadow | A natural, subtle ground shadow is allowed |
+| Aspect ratio | 1:1 recommended |
 
 ---
 
-## 四、材质渲染约束
+## 4. Material Rendering Constraints
 
-| 材质 | 渲染要求 | 提示词 |
+| Material | Rendering requirement | Prompt |
 |---|---|---|
-| 金属 | 反光/高光/光泽、划痕微可见 | 金属质感、反光清晰、划痕微可见 |
-| 玻璃 | 通透、反光、折射效果 | 玻璃通透、反光清晰、折射自然 |
-| 木材 | 木纹清晰、年轮可见 | 木纹清晰、质感自然 |
-| 陶瓷 | 釉面光泽、色泽均匀 | 釉面光滑、色泽均匀 |
-| 塑料 | 哑光/微光、边缘清晰 | 塑料质感、边缘清晰 |
-| 布料 | 纤维质感、边缘自然 | 布料纹理、纤维自然 |
-| 皮革 | 纹理清晰、光泽柔和 | 皮革纹理、光泽自然 |
+| Metal | Reflection/highlight/sheen, faint visible scratches | metallic texture, clear reflection, faint scratches visible |
+| Glass | Translucent, reflective, refraction effect | translucent glass, clear reflection, natural refraction |
+| Wood | Clear wood grain, visible growth rings | clear wood grain, natural texture |
+| Ceramic | Glazed sheen, even coloring | smooth glaze, even coloring |
+| Plastic | Matte/subtle sheen, clean edges | plastic texture, clean edges |
+| Fabric | Fiber texture, natural edges | fabric texture, natural fibers |
+| Leather | Clear grain, soft sheen | leather grain, natural sheen |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
-二次元道具设定图，
-anime style，cel shading，modern urban style，
-cinematic composition，ultra detailed，8K，high quality，
-shallow depth of field，画面颗粒感，镜头暗角，
-赛璐璐动画风格，现代都市风，戏剧化低调光影，
-prop design sheet，item concept art，no people，no characters，no human figures，
-{道具类型}，{材质描述}，{工艺/装饰描述}，{状态描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图+右上侧面图+左下背面图+右下细节特写，
-纯净中性灰背景，均匀柔光，无硬阴影，
-材质纹理超清晰，赛璐璐质感，{材质光泽描述}
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+anime prop reference sheet,
+anime style, cel shading, modern urban style,
+cinematic composition, ultra detailed, 8K, high quality,
+shallow depth of field, film grain, lens vignette,
+cel-shaded anime style, modern urban style, dramatic low-key lighting,
+prop design sheet, item concept art, no people, no characters, no human figures,
+{prop type}, {material description}, {craftsmanship/decoration description}, {state description},
+pure prop still-life display, prop shown in isolation, not held by anyone, not worn by anyone,
+four-panel grid (2x2) in one frame: top-left front view + top-right side view + bottom-left back view + bottom-right detail close-up,
+pure neutral gray background, even soft light, no hard shadows,
+ultra-clear material texture, cel-shaded texture, {material sheen description}
+no text anywhere in the image,
+no person, hand, finger, or body part may appear in the frame; the prop must not be held or worn
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须指定「纯净中性灰背景」 |
-| R2 | 必须明确道具材质与工艺 |
-| R3 | 道具造型必须符合现代都市言情世界观 |
-| R4 | 必须包含「二次元动画风格」关键词（anime style / cel shading） |
-| R5 | 必须包含景深特征（shallow depth of field / vignette 至少一项），保持动画赛璐璐风格 |
+| R1 | Must specify a "pure neutral gray background" |
+| R2 | Must clearly specify the prop's material and craftsmanship |
+| R3 | The prop's design must fit the modern urban romance world setting |
+| R4 | Must include an "anime style" keyword (anime style / cel shading) |
+| R5 | Must include a depth-of-field trait (at least one of shallow depth of field / vignette), preserving the cel-shaded anime look |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 复杂场景背景 |
-| X2 | 道具与人物同画面（本环节为纯道具图） |
-| X3 | 出现任何人物形象，包括全身、半身、局部（手、手指、手臂等肢体） |
-| X4 | 道具处于被持有、握持、佩戴、使用中的状态 |
-| X5 | 出现暗示人物存在的元素（如手持痕迹、佩戴视角、使用姿态） |
-| X6 | 使用真人写实/摄影/3D渲染相关词 |
-| X7 | 高饱和荧光色/霓虹色 |
-| X8 | 古风/奇幻/科幻等与现代都市言情世界观冲突的元素 |
+| X1 | Complex scene backgrounds |
+| X2 | Prop and person appearing in the same frame (this stage is pure prop imagery) |
+| X3 | Any depiction of a person, whether full body, half body, or partial (hand, finger, arm, or other body part) |
+| X4 | The prop being held, gripped, worn, or in use |
+| X5 | Elements implying a person's presence (e.g. hold marks, a worn-viewpoint angle, a usage pose) |
+| X6 | Use of photorealistic/photography/3D-render-related terms |
+| X7 | High-saturation fluorescent colors/neon colors |
+| X8 | Ancient/fantasy/sci-fi or other elements conflicting with the modern urban romance world setting |

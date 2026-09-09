@@ -1,48 +1,48 @@
 ---
 name: director_storyboard_table_style
-description: 分镜表国风3D约束 — 定义国风3D风格在分镜表中的光影氛围规范、3D渲染质感、动作节奏、环境动态、运镜禁忌与转场禁忌。适用于任何叙事类型。
+description: Storyboard-table Chinese Traditional 3D constraints — defines the lighting-mood specification, 3D rendering texture, action pacing, environmental dynamics, camera-move taboos, and transition taboos for the Chinese Traditional 3D style within the storyboard table. Applicable to any narrative genre.
 metaData: director_skills
 ---
 
-# 分镜表国风3D约束 · 国风3D · 技法参考
+# Storyboard-Table Chinese Traditional 3D Constraints · Chinese Traditional 3D · Technique Reference
 
 ---
 
-## 一、分镜表定位
+## 1. Role of the Storyboard Table
 
-分镜表是导演将剧本转化为镜头语言的核心工具。以下仅提供国风3D风格在分镜表层面的约束规范。
-
----
-
-## 二、光影与氛围
-
-- **同场戏光影统一** — 一场戏内不应出现两种以上光影方案，除非有明确的叙事转折（如日转夜、晴转雨等自然光变化）
-- **情绪色盘绑定** — 每场戏至少绑定 1 个情绪场景（宫廷华贵/山水意境/闺阁温婉/武侠肃杀/节日喜庆/月夜清幽），并在镜头组内保持主色+辅色连续性
-- **3D渲染光影规范** — 描述光影时须明确体积光方向与强度、环境光遮蔽层次、景深虚化范围。PBR材质在不同光影下的反射/折射效果是画面质感的关键
-- **冷暖色调与叙事阶段匹配** — 肃杀/忧郁/压抑段落使用冷色光（靛蓝+墨黑），禁用朱红/金黄等暖色调；暖色调（朱红+金黄+胭脂）仅在华贵、温婉、喜庆段落使用
-- **光影转场是高级手段** — 从窗纱漫射（E）渐变到月夜清辉（F）= 日转夜的时间流逝。在分镜表中标注光影变化点
+The storyboard table is the director's core tool for translating the script into shot language. The following only provides the Chinese Traditional 3D style's constraint specification at the storyboard-table level.
 
 ---
 
-## 三、环境动态
+## 2. Lighting and Mood
 
-- **环境动态增加画面呼吸感** — 花瓣飘落、烟雾升腾、水波荡漾、纱帘飘动、体积光中的尘埃微粒。每 3-4 个镜头至少安排一个有环境动态的镜头，避免画面"死"掉
-- **古风环境元素优先** — 环境动态应选用古风世界观内的元素：落花、飞絮、轻烟、流水、风过竹林、烛火摇曳，禁止出现现代元素
-- **3D粒子与体积效果** — 国风3D的环境动态应充分利用3D渲染优势：雾气的体积光散射、水面的PBR反射、落花的物理飘落轨迹、烟雾的体积渲染
-
----
-
-## 四、古风动作节奏
-
-- **古风动作要慢** — 所有人物动作默认慢速。起身、转身、抬手都应标注"缓慢"
-- **服饰动态** — 古风服饰（宽袖、裙摆、披帛）的飘动是天然的动态资产，3D渲染中布料模拟的垂感与飘动效果应在画面描述中体现，增加画面的"活"感
-- **仪态约束** — 古风人物的举止应符合时代气质：行走稳缓、举手投足含蓄内敛、不出现现代化的肢体语言（如耸肩、摊手）
-- **3D动画质感** — 动作过渡应自然流畅，体现3D动画的精致感。避免僵硬的姿态切换，注意关节的自然弧度与重心转移
+- **Unified Lighting Within a Scene** — No more than one lighting scheme should appear within a single scene, unless there is a clear narrative turning point (e.g. day turning to night, clear turning to rain, or other natural lighting changes)
+- **Emotional Palette Binding** — Each scene should bind at least 1 emotional setting (palace splendor / landscape mood / boudoir tenderness / martial-arts severity / festive celebration / moonlit night serenity), and maintain primary + secondary color continuity within the shot group
+- **3D Rendering Lighting Specification** — When describing lighting, the volumetric-light direction and intensity, ambient-occlusion layering, and depth-of-field blur range must be made explicit. The reflection/refraction effect of PBR materials under different lighting is key to the image's texture
+- **Cool-Warm Tone Matched to Narrative Stage** — Severe/melancholic/oppressive passages use cool light (indigo + ink black), with warm tones such as vermilion/golden-yellow forbidden; warm tones (vermilion + golden-yellow + rouge) are used only in splendor, tenderness, and festive passages
+- **Lighting Transitions Are an Advanced Technique** — Gradually shifting from gauze-diffused window light (E) to moonlit clarity (F) = the passage of time from day to night. Mark lighting-change points in the storyboard table
 
 ---
 
-## 五、运镜禁忌
+## 3. Environmental Dynamics
 
-- **禁用快速运镜** — 甩镜、急推、手持晃动与国风3D的典雅气质冲突
-- **禁用花式转场** — 划屏、旋转、百叶窗等与本风格不兼容
-- **善用3D空间运镜** — 可利用3D场景的空间纵深做缓慢的推拉/环绕运镜，但须保持沉稳优雅的节奏，禁止炫技式的穿越/飞行运镜
+- **Environmental Dynamics Add a Sense of Breath to the Frame** — Falling petals, rising mist, rippling water, fluttering gauze curtains, dust motes within volumetric light. Arrange at least one shot with environmental dynamics every 3-4 shots, to avoid the image feeling "dead"
+- **Ancient-Style Environmental Elements Preferred** — Environmental dynamics should draw from elements within the ancient-style world setting: falling flowers, drifting catkins, thin wisps of smoke, flowing water, wind through bamboo, flickering candlelight; modern elements are forbidden
+- **3D Particle and Volumetric Effects** — Environmental dynamics in Chinese Traditional 3D should fully leverage the advantages of 3D rendering: volumetric light scattering in mist, PBR reflection on water surfaces, the physical falling trajectory of petals, volumetric rendering of smoke
+
+---
+
+## 4. Ancient-Style Action Pacing
+
+- **Ancient-Style Actions Should Be Slow** — All character actions default to a slow pace. Rising, turning, and raising a hand should all be marked "slow"
+- **Costume Dynamics** — The fluttering of ancient-style garments (wide sleeves, skirts, pibo sashes) is a natural source of motion; in 3D rendering, the drape and fluttering effect of cloth simulation should be reflected in the frame description, adding a sense of "life" to the image
+- **Bearing Constraints** — Ancient-style characters' conduct should match the temperament of the era: steady, unhurried walking, reserved and restrained gestures, and no modern body language (e.g. shrugging, palms-up gestures)
+- **3D Animation Texture** — Action transitions should be natural and fluid, reflecting the refinement of 3D animation. Avoid stiff pose switches; pay attention to the natural arc of joints and the shift of the center of gravity
+
+---
+
+## 5. Camera-Move Taboos
+
+- **Fast Camera Moves Forbidden** — Whip pans, sudden push-ins, and handheld shake conflict with the elegant temperament of Chinese Traditional 3D
+- **Flashy Transitions Forbidden** — Wipe transitions, spins, venetian-blind transitions, and the like are incompatible with this style
+- **Make Good Use of 3D Spatial Camera Moves** — The spatial depth of the 3D scene may be used for slow push/pull or orbiting camera moves, but a steady, elegant pace must be maintained; showy fly-through/flying camera moves are prohibited

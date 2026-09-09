@@ -17,11 +17,53 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
         table.integer("id").notNullable();
         table.text("name");
         table.text("password");
+        table.text("lineUserId");
+        table.text("displayName");
+        table.text("avatar");
+        table.integer("credits").defaultTo(0);
+        table.boolean("isAdmin").defaultTo(false);
+        table.integer("createTime");
         table.primary(["id"]);
         table.unique(["id"]);
       },
       initData: async (knex) => {
-        await knex("o_user").insert([{ id: 1, name: "admin", password: "admin123" }]);
+        await knex("o_user").insert([
+          { id: 1, name: "admin", password: "admin123", isAdmin: true, credits: 0, createTime: Date.now() },
+        ]);
+      },
+    },
+    // เครดิตของผู้ใช้: บันทึกทุกรายการหัก/เติมเครดิต
+    {
+      name: "o_creditLedger",
+      builder: (table) => {
+        table.text("id").notNullable();
+        table.integer("userId").notNullable();
+        table.integer("delta"); // + เติม, - หัก
+        table.integer("balanceAfter");
+        table.text("reason"); // topup | generation | signupBonus | adminAdjust
+        table.text("refId"); // อ้างอิงถึง order/task ที่เกี่ยวข้อง
+        table.text("note");
+        table.integer("createTime");
+        table.primary(["id"]);
+        table.unique(["id"]);
+      },
+    },
+    // คำสั่งเติมเครดิต (PromptPay + ตรวจสลิป)
+    {
+      name: "o_topupOrder",
+      builder: (table) => {
+        table.text("id").notNullable();
+        table.integer("userId").notNullable();
+        table.integer("amountThb");
+        table.integer("credits");
+        table.text("status"); // pending | paid | rejected | expired
+        table.text("slipImageUrl");
+        table.text("slipRef"); // เลขอ้างอิงจากผู้ให้บริการตรวจสลิป
+        table.text("providerResponse"); // JSON ดิบจาก API ตรวจสลิป (สำหรับตรวจสอบย้อนหลัง)
+        table.integer("createTime");
+        table.integer("verifiedTime");
+        table.primary(["id"]);
+        table.unique(["id"]);
       },
     },
     //项目表

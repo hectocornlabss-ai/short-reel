@@ -1,306 +1,308 @@
 ---
 name: liveaction_urban_character
-description: 真人都市人物基础形象生成 · 约束手册
+description: Live-Action Urban character base image generation · Constraint manual
 metaData: liveaction_urban_art_skills
 ---
 
-# 真人都市人物基础形象生成 · 约束手册
+# Live-Action Urban Character Base Image Generation · Constraint Manual
 
 ---
 
-## 一、选角逻辑——摄影机前的人
+## 1. Casting Logic — the Person in Front of the Camera
 
-> 3D角色的起点是"建一个模型"；真人都市的起点是"选一个人站在摄影机前"。以下原则不从建模出发，而从选角和拍摄出发。
+> A 3D character's starting point is "build a model"; Live-Action Urban's starting point is "cast a person to stand in front of the camera." The following principles proceed not from modeling, but from casting and shooting.
 
-1. **面孔即叙事** — 一张脸就是一部未被写出的故事。真人都市不追求"完美的五官"，而追求"值得被注视的五官"——有辨识度的不对称、有故事感的微瑕疵、能被摄影机凝视的面孔
-2. **素人感优先于明星感** — 都市叙事需要的是"看起来像你每天在地铁里会遇到的人"，而非"看起来像刚从杂志封面走下来的人"。素颜状态下的真实面容优先于精致妆造
-3. **体态说真话** — 真实的站姿不是对称的——重心偏一条腿、肩膀微斜、脖子自然前倾或后仰。杜绝模特式对称站姿和军人式立正体态
-4. **同一人物跨角度可辨认** — 正面/侧面/背面/特写四角度必须呈现为同一个人的摄影记录，而非四个相似的人。核心识别点：颌骨轮廓、鼻梁转折、耳廓形状、发际线走向
-
----
-
-## 二、女性面容——摄影机凝视下的五种面孔
-
-> 不按"脸型/眼型/鼻型"的解剖分类，而是按摄影机如何阅读一张脸来组织。
-
-### 类型A：清冷克制型
-
-| 摄影特征 | 描述 | 提示词 |
-|---|---|---|
-| 面部结构 | 骨感清晰，颧骨可见但不外扩，下颌线干净流畅，面中偏平（亚洲特征），不追求西式立体感 | 骨感清晰的面部结构、柔和颧骨、干净下颌线、亚洲面孔的自然平面感 |
-| 眼神 | 单眼皮或窄内双，眼裂偏长，眼白干净，不刻意睁大，自带疏离感 | 窄内双/单眼皮、偏长眼裂、干净眼白、克制的注视、疏离而不冷漠 |
-| 嘴部 | 唇形薄而轮廓清晰，自然闭合或微启，嘴角不上扬不下垂 | 清晰薄唇、自然闭合、中性唇态 |
-| 皮肤 | 微冷白基调，可见颧骨处自然毛细血管，T区轻微油光，非全脸哑光 | 微冷白肤色、自然面部光泽、T区轻微出油、保留真实皮肤质感 |
-| 摄影关系 | 适合50mm近距离凝视、侧面光勾勒骨感、黑白色调 | — |
-
-### 类型B：温柔治愈型
-
-| 摄影特征 | 描述 | 提示词 |
-|---|---|---|
-| 面部结构 | 线条柔和圆润，脸颊饱满但不下垂，下巴略圆，整体轮廓偏柔和无锐角 | 柔和圆润的面部线条、饱满脸颊、圆润下巴、无锐角的柔和轮廓 |
-| 眼神 | 圆眼/杏眼，眼裂上下开度大，卧蚕明显，眼含笑意但不夸张，瞳孔大而清澈 | 圆润杏眼、明显卧蚕、含笑但克制的眼神、大而清澈的瞳孔 |
-| 嘴部 | 略厚的唇，唇峰圆润，自然状态下嘴角微扬，唇色偏暖粉 | 偏厚唇形、圆润唇峰、自然微扬嘴角、暖粉唇色 |
-| 皮肤 | 暖白基调，通透有血色，面颊自然红晕，光泽柔和 | 暖白通透肤色、自然面颊红晕、柔和皮肤光泽 |
-| 摄影关系 | 适合85mm中长焦拉近、窗光45°侧打、暖调色彩 | — |
-
-### 类型C：都市干练型
-
-| 摄影特征 | 描述 | 提示词 |
-|---|---|---|
-| 面部结构 | 轮廓利落，下颌角清晰但不宽大，面中结构明确，整体呈现—种"被认真对待"的精致感 | 利落面部轮廓、清晰下颌角、结构明确的面中、精干而不失柔和 |
-| 眼神 | 眼型偏长，内眼角尖锐，眼尾微扬但不夸张，注视沉稳有力 | 偏长眼型、尖锐内眼角、微扬眼尾、沉稳有力的注视 |
-| 嘴部 | 唇形清晰，唇线分明，自然状态下嘴唇微抿，呈现克制感 | 轮廓清晰的唇形、分明唇线、自然微抿、克制气质 |
-| 皮肤 | 中性偏冷白基调，肤质细腻但保留自然纹理，光泽感适中 | 中性冷白肤色、细腻但保留纹理的肤质、适中光泽 |
-| 摄影关系 | 适合35mm环境肖像、办公室窗光、冷调但不失温度的色彩 | — |
-
-### 类型D：青春元气型
-
-| 摄影特征 | 描述 | 提示词 |
-|---|---|---|
-| 面部结构 | 脸颊饱满有婴儿肥残留，下巴小巧，轮廓偏圆偏短，面部骨感弱，胶原蛋白感强 | 饱满幼态脸颊、小巧下巴、偏圆偏短轮廓、胶原蛋白饱满感 |
-| 眼神 | 大而圆的眼型，眼裂上下开阔，眼神明亮清澈，像未经世事的直接注视 | 大圆眼型、开阔眼裂、明亮清澈的眼神、直接而不设防的注视 |
-| 嘴部 | 唇形饱满微翘，唇珠明显，自然状态下嘴唇轻微分开，唇色浅粉 | 饱满微翘唇形、明显唇珠、自然微启、浅粉唇色 |
-| 皮肤 | 暖白基底，通透光泽强，几乎无可见毛孔粗大，面颊自然粉嫩 | 暖白通透皮肤、强烈自然光泽、细腻毛孔、粉嫩面颊 |
-| 摄影关系 | 适合35mm近距离、强自然光、高调暖调色彩 | — |
-
-### 类型E：市井烟火型
-
-| 摄影特征 | 描述 | 提示词 |
-|---|---|---|
-| 面部结构 | 轮廓偏宽偏圆，下颌角略宽，颧骨稍高，整体呈现—种"被生活打磨过"的质感 | 偏宽偏圆轮廓、略宽下颌角、稍高颧骨、被生活雕刻的真实面容 |
-| 眼神 | 单眼皮或内双，眼尾微垂或平直，眼神有阅历感——疲惫里有温度，世故里有善意 | 单眼皮/内双、微垂眼尾、饱含阅历的眼神、疲惫中的温度 |
-| 嘴部 | 唇形适中偏薄，唇线不太分明，嘴角可能有细微纹路 | 适中偏薄唇形、柔和唇线、自然的嘴角细纹 |
-| 皮肤 | 偏暖/小麦色基调，可见日晒痕迹、表皮细纹、皮肤质感厚重真实 | 偏暖小麦肤色、可见日晒痕迹、自然细纹、厚重的真实皮肤质感 |
-| 摄影关系 | 适合50mm纪实感、菜市场/巷弄的自然光、低反差真实色彩 | — |
+1. **The face is the narrative** — A face is an unwritten story. Live-Action Urban does not pursue "perfect features," but "features worth being looked at" — recognizable asymmetry, minor imperfections that carry a sense of story, a face the camera can gaze upon
+2. **An everyday feel over a star feel** — Urban storytelling needs someone who "looks like a person you'd run into on the subway every day," not someone who "just stepped off a magazine cover." A genuinely bare-faced look takes priority over polished makeup and styling
+3. **Posture tells the truth** — A real standing stance is not symmetrical — weight shifted to one leg, shoulders slightly uneven, the neck naturally tilted forward or back. No model-style symmetrical stances and no military at-attention posture
+4. **The same character must be recognizable across angles** — The front/side/back/close-up views must present as photographic records of the same person, not four similar-looking people. Core identifying points: jawline contour, nose-bridge break, ear shape, hairline direction
 
 ---
 
-## 三、男性面容——摄影机凝视下的五种面孔
+## 2. Female Faces — Five Faces Under the Camera's Gaze
 
-### 类型A：清冽克制型
+> Not organized by anatomical categories of "face shape/eye shape/nose shape," but by how the camera reads a face.
 
-| 摄影特征 | 描述 | 提示词 |
+### Type A: Cool and Reserved
+
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 面部结构 | 骨感突出，下颌线锋利，颧骨清晰，面中偏平，整体清瘦利落 | 骨感锋利的面部结构、清晰颧骨、利落下颌线、清瘦利落 |
-| 眼神 | 单眼皮或窄内双，眼裂偏长，眼神冷而不凶，带有观察者的距离感 | 单眼皮/窄内双、偏长眼裂、观察者的注视、冷而不凶 |
-| 嘴部 | 唇薄而轮廓清晰，自然闭合，人中明显 | 清晰薄唇、自然闭合、清晰人中 |
-| 皮肤 | 偏冷白基调，T区自然出油，胡茬青影隐约可见 | 冷白基调肤色、自然T区油脂、隐约胡茬青影 |
-| 摄影关系 | 适合50mm正面凝视、侧面硬光勾勒骨感、暗调低饱和 | — |
+| Facial Structure | Clearly bony, cheekbones visible but not flared, clean flowing jawline, a relatively flat midface (an Asian trait), not pursuing Western-style three-dimensionality | Clearly bony facial structure, soft cheekbones, clean jawline, the natural flatness of an Asian face |
+| Eyes | Monolid or narrow double eyelid, elongated eye shape, clean whites of the eyes, not deliberately widened, an inherent sense of detachment | Narrow double eyelid/monolid, elongated eye shape, clean sclera, a restrained gaze, detached but not cold |
+| Mouth | Thin lips with a clear outline, naturally closed or slightly parted, corners of the mouth neither turned up nor down | Clearly defined thin lips, naturally closed, a neutral mouth expression |
+| Skin | A slightly cool-white base tone, natural fine capillaries visible near the cheekbones, slight oiliness in the T-zone, not matte across the whole face | Slightly cool-white skin tone, natural facial sheen, slight T-zone oiliness, genuine skin texture retained |
+| Camera Relationship | Suited to close 50mm gazes, side lighting that carves out bone structure, black-and-white tones | — |
 
-### 类型B：温润内敛型
+### Type B: Gentle and Healing
 
-| 摄影特征 | 描述 | 提示词 |
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 面部结构 | 轮廓柔和但不失棱角，面颊饱满度适中，下巴圆中带方，整体亲切但不软糯 | 柔和不失棱角的轮廓、适中面颊、圆中带方的下巴 |
-| 眼神 | 眼型偏圆，眼裂开阔，眼神温和有光，注视时给人一种"他在认真听"的感觉 | 偏圆眼型、开阔眼裂、温和有光的眼神、认真倾听的注视 |
-| 嘴部 | 唇厚适中，唇线柔和，自然状态下嘴角微扬，微笑感不刻意 | 厚薄适中、柔和唇线、自然微扬嘴角 |
-| 皮肤 | 暖白/中性基调，肤质干净，皮肤纹理自然可见 | 暖白/中性肤色、干净肤质、自然可见的皮肤纹理 |
-| 摄影关系 | 适合85mm中长焦、窗光漫射、暖调柔光 | — |
+| Facial Structure | Soft, rounded lines, full but not sagging cheeks, a slightly round chin, an overall soft contour with no sharp angles | Soft, rounded facial lines, full cheeks, a rounded chin, a soft contour with no sharp angles |
+| Eyes | Round eyes/almond eyes, wide vertical eye opening, prominent under-eye fullness ("aegyo-sal"), a smiling but not exaggerated gaze, large clear pupils | Rounded almond eyes, prominent under-eye fullness, a warm but restrained gaze, large clear pupils |
+| Mouth | Slightly fuller lips, rounded cupid's bow, a natural slight upward turn at the corners, warm pink lip color | Slightly fuller lip shape, rounded cupid's bow, a naturally slight upward turn at the corners, warm pink lip tone |
+| Skin | A warm-white base tone, luminous with good color, natural flush on the cheeks, soft sheen | Warm, luminous white skin tone, natural cheek flush, soft skin sheen |
+| Camera Relationship | Suited to 85mm short-telephoto closeness, 45° window side light, warm color tones | — |
 
-### 类型C：硬朗成熟型
+### Type C: Urban Sharp
 
-| 摄影特征 | 描述 | 提示词 |
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 面部结构 | 轮廓分明，颧骨高，下颌角宽而有力，眉弓突出，面部骨骼感强烈——一张"被风吹过"的脸 | 轮廓分明的硬朗面部、高颧骨、宽而有力的下颌角、突出眉弓、强烈的骨骼感 |
-| 眼神 | 深邃眼窝，眼型偏长，注视沉稳，眼神里有经历但不沉重 | 深邃眼窝、偏长眼型、沉稳有力的注视、有故事但不沉重的眼神 |
-| 嘴部 | 唇形偏薄，唇线清晰，自然闭合状态下嘴唇微抿 | 偏薄清晰唇形、自然微抿 |
-| 皮肤 | 偏暖/小麦色，皮肤纹理明显，可见岁月痕迹（眼角细纹、法令纹初现），毛孔真实可见 | 偏暖小麦肤色、明显的皮肤纹理、自然的岁月痕迹、真实可见的毛孔 |
-| 摄影关系 | 适合35mm环境肖像、侧硬光雕刻轮廓、暗调高对比 | — |
+| Facial Structure | A crisp contour, a clear but not overly wide jaw angle, a well-defined midface, an overall look of "being taken seriously" and refined | Crisp facial contour, clear jaw angle, well-defined midface, sharp yet retaining softness |
+| Eyes | Elongated eye shape, sharp inner corners, slightly upturned outer corners without exaggeration, a steady, forceful gaze | Elongated eye shape, sharp inner corners, slightly upturned outer corners, a steady, forceful gaze |
+| Mouth | Clearly shaped lips, well-defined lip line, naturally slightly pressed together in a restrained manner | Clearly shaped lips, well-defined lip line, naturally pressed together, a restrained air |
+| Skin | A neutral, slightly cool-white base tone, fine skin quality that retains natural texture, moderate sheen | Neutral cool-white skin tone, fine skin texture with natural detail retained, moderate sheen |
+| Camera Relationship | Suited to 35mm environmental portraits, office window light, cool tones that still carry warmth | — |
 
-### 类型D：阳光少年型
+### Type D: Youthful and Energetic
 
-| 摄影特征 | 描述 | 提示词 |
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 面部结构 | 轮廓偏圆偏柔和，骨骼感弱，面颊饱满，下巴略短，尚未完全褪去少年感 | 偏圆柔和轮廓、弱骨骼感、饱满面颊、少年尚未褪尽的面孔 |
-| 眼神 | 大而清澈的眼型，眼裂开阔，眼神明亮直接，毫无防备的注视方式 | 大而清澈的眼型、开阔眼裂、明亮直接的眼神、不设防的注视 |
-| 嘴部 | 嘴唇偏厚，唇线柔和，自然状态下嘴唇微微分开，笑时露齿自然 | 偏厚柔和唇形、自然微启、自然露齿笑 |
-| 皮肤 | 暖白基调，肤质细腻干净，光泽感强，几乎无岁月痕迹 | 暖白肤色、细腻干净肤质、强光泽感 |
-| 摄影关系 | 适合35mm环境肖像、充足自然光、高调明快色彩 | — |
+| Facial Structure | Full cheeks with lingering baby fat, a small chin, a rounder, shorter contour, weak bone definition, a strong sense of collagen fullness | Full, youthful cheeks, a small chin, a rounder, shorter contour, a strong sense of collagen fullness |
+| Eyes | Large, round eye shape, a wide vertical eye opening, a bright, clear gaze, like a direct look untouched by worldly experience | Large round eye shape, wide eye opening, a bright, clear gaze, a direct, unguarded look |
+| Mouth | Full, slightly upturned lips, a pronounced cupid's bow, naturally slightly parted lips, light pink lip color | Full, slightly upturned lip shape, pronounced cupid's bow, naturally slightly parted, light pink lip tone |
+| Skin | A warm-white base, strong natural luminosity, almost no visibly enlarged pores, naturally rosy cheeks | Warm, luminous white skin, strong natural sheen, fine pores, rosy cheeks |
+| Camera Relationship | Suited to close-range 35mm, strong natural light, bright, high-key warm tones | — |
 
-### 类型E：市井江湖型
+### Type E: Streetwise and Down-to-Earth
 
-| 摄影特征 | 描述 | 提示词 |
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 面部结构 | 轮廓偏宽，额头宽阔，下颌宽而有力，面部有"用过"的痕迹——被太阳晒过、被风吹过、被生活磨过 | 偏宽轮廓、宽阔额头、宽而有力的下颌、被生活雕刻的面孔 |
-| 眼神 | 单眼皮/内双，眼型偏小偏长，眼神有市井的精明和江湖的义气，注视直接不躲闪 | 单眼皮/内双、偏小偏长眼型、精明中有义气的眼神、直接不躲闪的注视 |
-| 嘴部 | 唇形偏厚，唇线不太分明，自然状态下嘴唇微张，有抽烟/喝茶留下的生活痕迹 | 偏厚唇形、柔和不分明的唇线、自然微张、日常生活痕迹 |
-| 皮肤 | 小麦/偏深基调，明显的日晒色差（领口/袖口），皮肤纹理厚重，毛孔粗大可见，可能有旧疤痕 | 小麦/偏深肤色、明显日晒色差、真实的厚重皮肤纹理、粗大可见的毛孔、自然旧疤痕 |
-| 摄影关系 | 适合35mm纪实感、街头自然光、真实高反差色彩 | — |
+| Facial Structure | A wider, rounder contour, a slightly wide jaw angle, somewhat high cheekbones, an overall texture "polished by life" | Wider, rounder contour, slightly wide jaw angle, somewhat high cheekbones, a genuine face shaped by life |
+| Eyes | Monolid or double eyelid, slightly drooping or level outer corners, a gaze with a sense of lived experience — warmth within weariness, kindness within worldliness | Monolid/double eyelid, slightly drooping outer corners, a gaze full of lived experience, warmth within weariness |
+| Mouth | Moderately thin lips, a less-defined lip line, possible fine lines at the corners of the mouth | Moderately thin lip shape, soft lip line, natural fine lines at the mouth corners |
+| Skin | A warm/wheat-toned base, visible signs of sun exposure, fine surface lines, a thick, genuine skin texture | Warm, wheat-toned skin, visible sun-exposure marks, natural fine lines, a thick, genuine skin texture |
+| Camera Relationship | Suited to 50mm documentary feel, natural light of markets/alleyways, low-contrast realistic color | — |
 
 ---
 
-## 四、肤感——摄影机下的皮肤
+## 3. Male Faces — Five Faces Under the Camera's Gaze
 
-> 真人都市的肤感不是渲染参数，而是光线在真实皮肤上的行为：反射、透射、散射都取决于皮肤自身的油脂、水分、色素和岁月。
+### Type A: Cold and Reserved
 
-### 女性
-
-| 维度 | 摄影要求 | 提示词 |
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 肤色基调 | 真实亚洲都市女性肤色范围：冷白至暖白，允许轻微肤色不均（颧骨偏红、眼周偏暗），这是真人的证据 | 真实亚洲女性肤色、自然肤色不均、颧骨自然泛红、眼周真人质感 |
-| 表面光泽 | 非哑光非油光——T区自然出油的反光、颧骨高点的自然高光，是皮肤"活着"的迹象 | 自然皮肤光泽、T区真实出油反光、活着而非建模的皮肤 |
-| 纹理可见度 | 在50mm镜头、1米距离的拍摄条件下：颧骨上方毛孔隐约可见、鼻翼两侧毛孔清晰、眉间细纹自然存在 | 可见的真实皮肤毛孔、鼻翼真实纹理、自然的眉间细纹 |
-| 瑕疵保留 | 保留但不强调：零星小痣、浅色雀斑、旧痘印淡痕、表皮微血管——这些是"人"的证据，不是需要修复的bug | 保留真实小痣、自然淡色雀斑、真人肌肤的不完美质感 |
-| 严禁 | 塑料磨皮、蜡像假面、零毛孔硅胶感、全脸均匀哑光、AI感平滑皮肤 | — |
+| Facial Structure | Prominent bone structure, a sharp jawline, clear cheekbones, a relatively flat midface, overall lean and crisp | Sharp, bony facial structure, clear cheekbones, crisp jawline, lean and sharp |
+| Eyes | Monolid or narrow double eyelid, elongated eye shape, a cold but not fierce gaze, carrying an observer's distance | Monolid/narrow double eyelid, elongated eye shape, an observer's gaze, cold but not fierce |
+| Mouth | Thin lips with a clear outline, naturally closed, a pronounced philtrum | Clearly defined thin lips, naturally closed, a pronounced philtrum |
+| Skin | A cool-white base tone, natural T-zone oiliness, faint bluish stubble shadow visible | Cool-white base skin tone, natural T-zone oiliness, faint stubble shadow |
+| Camera Relationship | Suited to 50mm frontal gazes, hard side light that carves out bone structure, dark, low-saturation tones | — |
 
-### 男性
+### Type B: Warm and Reserved
 
-| 维度 | 摄影要求 | 提示词 |
+| Photographic Feature | Description | Prompt |
 |---|---|---|
-| 肤色基调 | 真实亚洲都市男性肤色范围：冷白至健康小麦色，允许日晒色差（面部与颈部肤色自然过渡，T区较深、眼周较暗） | 真实亚洲男性肤色、自然日晒色差、面部与颈部真实肤色过渡 |
-| 表面光泽 | T区出油反光（额头/鼻梁高光）、剃须后下颌的微光泽——男性的皮肤光泽来自油脂而非高光粉 | 自然T区出油光泽、真实剃须后面部质感、真实的而非修饰的皮肤反光 |
-| 纹理可见度 | 在50mm镜头、1米距离的拍摄条件下：毛孔粗大明显可见、眉间纹/抬头纹自然出现、胡茬根部与毛孔纹理清晰 | 粗大可见的真实毛孔、自然的眉间纹/抬头纹、胡茬根部毛孔清晰可见 |
-| 瑕疵保留 | 保留但不强调：旧痘印、浅色疤痕、日晒斑、剃须小伤口痕迹——这些不是缺陷，是"这一个"人的识别特征 | 保留旧痘印/浅色疤痕、真实的日晒斑、人物的不可替代特征 |
-| 严禁 | 过度磨皮至女性化光滑、蜡像假面、零毛孔CG感、胡茬P掉痕迹 | — |
+| Facial Structure | A soft contour that still retains some angularity, moderately full cheeks, a chin that's round yet slightly square, overall approachable but not overly soft | A soft yet angular contour, moderately full cheeks, a chin that's round yet slightly square |
+| Eyes | A rounder eye shape, a wide eye opening, a warm, glowing gaze that feels like "he's listening carefully" | Rounder eye shape, wide eye opening, a warm, glowing gaze, an attentive, listening look |
+| Mouth | Moderately full lips, a soft lip line, a naturally slight upward turn at the corners, an unforced hint of a smile | Moderately full lips, soft lip line, a naturally slight upward turn at the corners |
+| Skin | A warm-white/neutral base tone, clean skin quality, naturally visible skin texture | Warm-white/neutral skin tone, clean skin quality, naturally visible skin texture |
+| Camera Relationship | Suited to 85mm short-telephoto, diffused window light, warm soft light | — |
+
+### Type C: Rugged and Mature
+
+| Photographic Feature | Description | Prompt |
+|---|---|---|
+| Facial Structure | Well-defined contour, high cheekbones, a wide, strong jaw angle, prominent brow ridge, a strongly bony face — one that's "been through the wind" | Well-defined, rugged facial structure, high cheekbones, wide, strong jaw angle, prominent brow ridge, strong bone structure |
+| Eyes | Deep-set eyes, an elongated eye shape, a steady gaze, eyes that have been through things without feeling heavy | Deep-set eyes, elongated eye shape, a steady, forceful gaze, an experienced but not heavy look |
+| Mouth | Relatively thin lips, a clear lip line, naturally pressed together when closed | Relatively thin, clearly defined lips, naturally pressed together |
+| Skin | A warm/wheat-toned base, pronounced skin texture, visible signs of age (fine lines at the eye corners, early nasolabial folds), genuinely visible pores | Warm, wheat-toned skin, pronounced skin texture, natural signs of age, genuinely visible pores |
+| Camera Relationship | Suited to 35mm environmental portraits, hard side light carving out the contour, dark, high-contrast tones | — |
+
+### Type D: Sunny Youth
+
+| Photographic Feature | Description | Prompt |
+|---|---|---|
+| Facial Structure | A rounder, softer contour, weak bone definition, full cheeks, a slightly short chin, still not fully past a boyish look | A rounder, softer contour, weak bone definition, full cheeks, a face still carrying a boyish quality |
+| Eyes | Large, clear eye shape, a wide eye opening, a bright, direct gaze, an utterly unguarded look | Large, clear eye shape, wide eye opening, a bright, direct gaze, an unguarded look |
+| Mouth | Fuller lips, a soft lip line, naturally slightly parted, a natural toothy smile | Fuller, soft lip shape, naturally slightly parted, a natural toothy smile |
+| Skin | A warm-white base tone, fine, clean skin quality, a strong natural sheen, almost no signs of age | Warm-white skin tone, fine, clean skin quality, strong natural sheen |
+| Camera Relationship | Suited to 35mm environmental portraits, ample natural light, bright, crisp tones | — |
+
+### Type E: Streetwise and Worldly
+
+| Photographic Feature | Description | Prompt |
+|---|---|---|
+| Facial Structure | A wider contour, a broad forehead, a wide, strong jaw, a face bearing signs of "wear" — sun-beaten, wind-blown, worn by life | A wider contour, broad forehead, wide, strong jaw, a face shaped by life |
+| Eyes | Monolid/double eyelid, a smaller, elongated eye shape, a gaze mixing street-smart shrewdness with a code of loyalty, direct and unflinching | Monolid/double eyelid, smaller, elongated eye shape, a shrewd yet loyal gaze, direct and unflinching |
+| Mouth | Relatively thick lips, a less-defined lip line, naturally slightly parted, marks of habits like smoking or tea-drinking | Relatively thick lip shape, soft, less-defined lip line, naturally slightly parted, everyday habitual marks |
+| Skin | A wheat-toned/darker base, a noticeable tan line (collar/cuffs), thick skin texture, visibly enlarged pores, possible old scars | Wheat-toned/darker skin, noticeable tan lines, genuinely thick skin texture, visibly enlarged pores, natural old scars |
+| Camera Relationship | Suited to a 35mm documentary feel, natural street light, real, high-contrast color | — |
 
 ---
 
-## 五、身体——站姿、体态与摄影机的关系
+## 4. Skin Texture — Skin Under the Camera
 
-### 女性
+> Live-Action Urban's skin texture is not a render parameter, but light's behavior on real skin: reflection, transmission, and scattering all depend on the skin's own oil, moisture, pigment, and age.
 
-| 维度 | 摄影要求 | 提示词 |
+### Female
+
+| Dimension | Photographic Requirement | Prompt |
 |---|---|---|
-| 身高 | 角色设定指定，默认范围158-172cm（涵盖中国都市女性主流身高区间） | {身高}cm tall、{身高对应的自然身体比例} |
-| 身体比例 | 真实亚洲女性身体比例，不过度拉长腿部，头身比接近现实（约6.5-7.5头身） | 真实的亚洲女性身体比例、自然的头身比、不拉长不缩小的写实身形 |
-| 站姿 | "被拍到时"的自然站姿——重心偏一条腿、骨盆轻微倾斜、肩膀不完全水平、手臂自然垂落或微曲——杜绝模特对称站姿 | 重心偏移的自然站姿、骨盆轻微倾斜、真实的而非摆拍的站立姿态 |
-| 肩颈 | 自然肩颈线条，有斜方肌的自然存在，锁骨清晰但不过分突出，颈部前倾角度符合日常体态 | 自然肩颈线条、真实斜方肌、自然颈部体态、真实的锁骨 |
-| 手部 | 自然手型，指关节可见，指甲干净无需美甲，手掌有真实纹路，手背可见浅表血管 | 自然手型、可见指关节、真实手掌纹路、自然手背 |
-| 严禁 | 模特对称站姿、过度拉长腿部、直角肩、天鹅颈过度美化、手指纤细至失真 | — |
+| Skin Tone Base | The real range of Asian urban women's skin tones: cool-white to warm-white, allowing slight unevenness (redness at the cheekbones, darkness around the eyes) — this is evidence of a real person | Genuine Asian female skin tone, natural skin-tone unevenness, natural redness at the cheekbones, real-life quality around the eyes |
+| Surface Sheen | Neither matte nor oily — the natural reflective sheen of T-zone oiliness, natural highlights at the high point of the cheekbones, are signs that the skin is "alive" | Natural skin sheen, genuine T-zone oil reflection, skin that looks alive rather than modeled |
+| Texture Visibility | Under 50mm lens, 1-meter shooting conditions: faintly visible pores above the cheekbones, clearly visible pores beside the nose, naturally present fine lines between the brows | Visible genuine skin pores, real texture beside the nose, natural fine lines between the brows |
+| Imperfections Retained | Retained but not emphasized: scattered small moles, light freckles, faint traces of old acne marks, fine surface capillaries — these are evidence of "being human," not bugs to be fixed | Genuine small moles retained, natural light freckles, the imperfect texture of real skin |
+| Strictly Prohibited | Plastic-smooth retouching, wax-figure mask look, pore-less silicone feel, uniform matte across the whole face, AI-looking smooth skin | — |
 
-### 男性
+### Male
 
-| 维度 | 摄影要求 | 提示词 |
+| Dimension | Photographic Requirement | Prompt |
 |---|---|---|
-| 身高 | 角色设定指定，默认范围170-185cm（涵盖中国都市男性主流身高区间） | {身高}cm tall、{身高对应的自然身体比例} |
-| 身体比例 | 真实亚洲男性身体比例，不过度拉长腿部，头身比接近现实（约7-7.5头身） | 真实的亚洲男性身体比例、自然的头身比、写实而非漫画身形 |
-| 站姿 | "被叫住回头"那一刻的自然体态——重心偏一条腿、肩线微微倾斜、手臂自然下垂或在口袋/叉腰（非摆拍） | 被叫住回头的自然体态、重心自然偏移、真实的日常站姿 |
-| 肩颈 | 肩宽自然（不故意展肩），斜方肌自然存在，颈部前倾角在日常范围内，喉结可见 | 自然肩宽不做作、真实斜方肌、日常颈部体态、可见喉结 |
-| 手部 | 骨节分明，手指比例自然，指甲短而干净，手掌有使用痕迹（握笔茧、劳动痕迹），手背血管可见 | 骨节分明的自然手型、真实手掌使用痕迹、可见手背血管 |
-| 严禁 | 健美式展背、军人式立正站姿、过度拉长腿部比例、手指粗短或细长至失真 | — |
+| Skin Tone Base | The real range of Asian urban men's skin tones: cool-white to healthy wheat tone, allowing tan-line contrast (a natural transition between face and neck tone, a darker T-zone, darker around the eyes) | Genuine Asian male skin tone, natural tan-line contrast, real tone transition between face and neck |
+| Surface Sheen | T-zone oily reflection (highlights on forehead/nose bridge), a faint sheen on a freshly shaved jaw — a man's skin sheen comes from natural oil, not highlighter powder | Natural T-zone oily sheen, genuine freshly-shaved jaw texture, real, unretouched skin reflection |
+| Texture Visibility | Under 50mm lens, 1-meter shooting conditions: clearly visible enlarged pores, natural frown lines/forehead lines, clearly visible stubble roots and pore texture | Clearly visible, genuine enlarged pores, natural frown lines/forehead lines, clearly visible stubble roots and pore texture |
+| Imperfections Retained | Retained but not emphasized: old acne marks, light scars, sun spots, traces of minor shaving nicks — these are not flaws, but identifying features of "this one" person | Old acne marks/light scars retained, genuine sun spots, the character's irreplaceable identifying features |
+| Strictly Prohibited | Over-smoothing to a feminine glossiness, wax-figure mask look, pore-less CG feel, digitally erased stubble | — |
 
 ---
 
-## 六、发型——真实的头发在镜头前
+## 5. Body — the Relationship Between Stance, Posture, and Camera
 
-> 真人都市的头发不是建模发丝，而是有重量、有油脂、会被风吹乱、会贴在出汗的额头上、会在逆光中变成碎金色轮廓线的真实头发。
+### Female
 
-### 女性
-
-| 维度 | 摄影要求 | 提示词 |
+| Dimension | Photographic Requirement | Prompt |
 |---|---|---|
-| 发色 | 自然黑/深棕/栗棕，允许阳光下的自然棕红色反光，禁止非自然染色 | 自然黑发/深棕发、阳光下的暖棕反光、原生健康发色 |
-| 发长与造型 | 按角色设定指定：齐耳短发/锁骨发/中长发/及腰长发/高马尾/低马尾/丸子头/慵懒盘发。基础状态为自然垂落，不加发饰、不编发 | {发长}、自然垂落/束起、无发饰、无编发、无夸张造型 |
-| 发质与纹理 | 真实的头发纹理——不是根根分明的CG发丝，而是：发缕有自然的聚合与分离、碎发飘散在脸颊和颈后、发尾有自然分叉和毛躁、被光照射时呈半透明暖色轮廓 | 真实发缕的聚合与分离、自然飘散的碎发、发尾自然毛躁、逆光下的碎发轮廓光 |
-| 头皮可见 | 分缝处自然可见头皮，发际线有婴儿碎发，不是假发套的整齐边界 | 分缝处自然头皮可见、发际线的婴儿碎发、真实的而非假发套的发际线 |
-| 严禁 | CG发丝根根分明、假发套般整齐划一、无碎发、无风感僵硬、荧光染发 | — |
+| Height | Specified by the character setting, default range 158-172cm (covering the mainstream height range of Chinese urban women) | {height}cm tall, {natural body proportions corresponding to the height} |
+| Body Proportions | Genuine Asian female body proportions, legs not exaggeratedly elongated, a realistic head-to-body ratio (approx. 6.5-7.5 heads) | Genuine Asian female body proportions, a natural head-to-body ratio, a realistic body shape neither elongated nor shrunk |
+| Stance | A natural stance as if "caught by the camera" — weight shifted to one leg, the pelvis slightly tilted, shoulders not perfectly level, arms hanging naturally or slightly bent — no model-style symmetrical stances | A natural, weight-shifted stance, a slightly tilted pelvis, a genuine rather than posed standing posture |
+| Shoulders/Neck | A natural shoulder-and-neck line, natural presence of the trapezius muscle, a clearly visible but not overly prominent collarbone, a neck-forward angle consistent with everyday posture | Natural shoulder-and-neck line, genuine trapezius muscle, natural neck posture, genuine collarbone |
+| Hands | Natural hand shape, visible knuckles, clean unmanicured nails, real palm lines, faint visible veins on the back of the hand | Natural hand shape, visible knuckles, genuine palm lines, natural back of the hand |
+| Strictly Prohibited | Model-style symmetrical stances, exaggeratedly elongated legs, perfectly square shoulders, an overly idealized swan neck, fingers thinned to the point of unreality | — |
 
-### 男性
+### Male
 
-| 维度 | 摄影要求 | 提示词 |
+| Dimension | Photographic Requirement | Prompt |
 |---|---|---|
-| 发色 | 自然黑/深棕，允许阳光下暖棕反光，允许两鬓自然斑白（中年角色），禁止非自然染色 | 自然黑发/深棕发、阳光下的暖棕反光、自然两鬓斑白（如需） |
-| 发长与造型 | 按角色设定指定：板寸/利落短发/微分碎盖/中短发/及肩发。基础状态为自然发型，不用发胶硬定型 | {发长}、自然发型、无明显发胶定型痕迹、无夸张造型 |
-| 发质与纹理 | 真实的男性头发纹理——短发状态下头皮隐约可见、发丝有自然走向（发旋方向）、鬓角与胡茬自然过渡、额头碎发自然散落 | 真实短发纹理、头发自然走向、鬓角与胡茬的自然过渡、额头自然碎发 |
-| 头皮可见 | 短发/板寸状态下头皮清晰可见，发际线自然（可能有轻微后退），头顶发旋自然 | 短发状态下头皮可见、自然发际线、真实发旋 |
-| 严禁 | CG发丝根根分明、假发感、发胶硬壳感、不自然的整齐边界 | — |
+| Height | Specified by the character setting, default range 170-185cm (covering the mainstream height range of Chinese urban men) | {height}cm tall, {natural body proportions corresponding to the height} |
+| Body Proportions | Genuine Asian male body proportions, legs not exaggeratedly elongated, a realistic head-to-body ratio (approx. 7-7.5 heads) | Genuine Asian male body proportions, a natural head-to-body ratio, a realistic rather than cartoonish body shape |
+| Stance | The natural posture of "turning around when called" — weight shifted to one leg, a slightly tilted shoulder line, arms hanging naturally or in pockets/on hips (not posed) | The natural posture of turning around when called, a naturally shifted weight, a genuine everyday stance |
+| Shoulders/Neck | Naturally proportioned shoulder width (not deliberately broadened), natural presence of the trapezius muscle, a neck-forward angle within an everyday range, a visible Adam's apple | Naturally proportioned, unforced shoulder width, genuine trapezius muscle, everyday neck posture, visible Adam's apple |
+| Hands | Well-defined knuckles, naturally proportioned fingers, short, clean nails, palms showing signs of use (pen calluses, work marks), visible veins on the back of the hand | Well-defined, natural hand shape, genuine signs of palm use, visible veins on the back of the hand |
+| Strictly Prohibited | Bodybuilder-style flexed-back poses, military at-attention stances, exaggeratedly elongated leg proportions, fingers unrealistically thick/short or thin/long | — |
 
 ---
 
-## 七、基础服装——被穿过的那一件
+## 6. Hairstyle — Real Hair in Front of the Lens
 
-> 真人都市的基础服装不是"打底款"，而是"挂在椅背上、穿过好几次、有身体记忆的那件衣服"。
+> Live-Action Urban's hair is not modeled hair strands, but real hair that has weight and oil, gets tousled by the wind, sticks to a sweaty forehead, and turns into a rim of scattered gold in backlight.
 
-### 女性基础服装
+### Female
 
-素色基础款上衣（圆领T恤/棉质衬衫/针织开衫）+ 基础款下装（直筒牛仔裤/棉质长裤/及膝半裙），颜色以黑/白/灰/米/藏蓝/卡其等都市日常基础色为主。面料可见自然纹理（棉的柔软褶皱、牛仔的斜纹肌理、针织的线圈纹理）。无品牌标识、无大面积印花、无装饰性设计。
+| Dimension | Photographic Requirement | Prompt |
+|---|---|---|
+| Hair Color | Natural black/dark brown/chestnut brown, allowing a natural warm reddish-brown reflection in sunlight, no unnatural dye colors | Natural black hair/dark brown hair, warm brown reflection in sunlight, natural undyed hair color |
+| Length and Style | As specified by the character setting: ear-length bob/collarbone-length/medium-long/waist-length/high ponytail/low ponytail/bun/loose updo. The base state is natural loose hair, no hair accessories, no braids | {hair length}, worn loose/tied up, no hair accessories, no braids, no exaggerated styling |
+| Hair Quality and Texture | Genuine hair texture — not CG hair with every strand distinct, but: strands naturally clumping and separating, loose strands scattered on the cheeks and back of the neck, natural split ends and frizz at the tips, a translucent, warm-toned rim when lit from behind | Natural clumping and separation of hair strands, naturally scattered loose strands, natural frizz at the tips, backlit rim light on loose hair |
+| Scalp Visibility | The scalp naturally visible at the part, baby hairs naturally present at the hairline — not the neat boundary of a wig | Scalp naturally visible at the part, baby hairs at the hairline, a genuine hairline rather than a wig-like one |
+| Strictly Prohibited | CG hair with every strand distinct, wig-like uniformity, no loose strands, stiff hair with no sense of wind, fluorescent dye colors | — |
 
-### 男性基础服装
+### Male
 
-素色基础款上衣（圆领T恤/亨利领长袖/棉质衬衫）+ 基础款下装（直筒牛仔裤/棉质休闲裤），颜色以黑/白/灰/藏蓝/卡其等都市日常基础色为主。面料可见自然纹理（棉质的洗涤后微皱、牛仔的落色与磨损、衬衫领口的自然卷曲）。无品牌标识、无大面积印花、无装饰性设计。
-
-### 着装统一规则
-
-- 基础服装不是"打底"——它自身就是完整的日常穿着，只是去除了一切装饰性元素
-- 服装有"穿过"的痕迹：衣摆自然微皱、袖口有穿脱痕迹、膝盖/手肘处有轻微的拉伸纹理
-- 覆盖范围：除面部/颈部/手部外基本覆盖，日常都市着装覆盖度，无过度裸露
-- 四角度服装款式、颜色、质地完全一致，呈现为同一件衣服在不同角度下的摄影记录
+| Dimension | Photographic Requirement | Prompt |
+|---|---|---|
+| Hair Color | Natural black/dark brown, allowing a natural warm brown reflection in sunlight, allowing natural graying at the temples (for middle-aged characters), no unnatural dye colors | Natural black hair/dark brown hair, warm brown reflection in sunlight, natural graying at the temples (if applicable) |
+| Length and Style | As specified by the character setting: buzz cut/crisp short hair/slightly parted fringe/medium-short hair/shoulder-length hair. The base state is a natural hairstyle, no stiff gel styling | {hair length}, a natural hairstyle, no obvious gel-styling traces, no exaggerated styling |
+| Hair Quality and Texture | Genuine male hair texture — the scalp faintly visible in short hair, natural hair-growth direction (the crown's whorl direction), a natural transition between sideburns and stubble, natural loose strands falling on the forehead | Genuine short-hair texture, natural hair-growth direction, natural transition between sideburns and stubble, natural loose strands on the forehead |
+| Scalp Visibility | The scalp clearly visible in short hair/buzz-cut states, a natural hairline (possibly slightly receding), a natural crown whorl | Scalp visible in short hair, natural hairline, genuine crown whorl |
+| Strictly Prohibited | CG hair with every strand distinct, a wig-like feel, a stiff gel-shell look, unnaturally neat boundaries | — |
 
 ---
 
-## 八、人物肖像系列——四角度摄影规范
+## 7. Base Clothing — the Garment That's Been Worn
 
-> 以下不是3D建模的"四视图turnaround"，而是同一人物在**同一次棚拍**中的四个摄影角度。光影、服装、被摄者状态必须呈现为连续的拍摄记录。
+> Live-Action Urban's base clothing is not a "base layer," but "the garment that's hung on the back of a chair, been worn many times, and carries the body's memory."
 
-### 视图定义
+### Female Base Clothing
 
-| 位置 | 角度 | 景别 | 摄影要求 | 提示词 |
+A plain-colored base top (crew-neck T-shirt/cotton shirt/knit cardigan) + a base bottom (straight-leg jeans/cotton trousers/knee-length skirt), in urban everyday base colors such as black/white/gray/beige/navy/khaki. The fabric shows natural texture (the soft creasing of cotton, the twill texture of denim, the loop texture of knitwear). No brand markings, no large-scale prints, no decorative design.
+
+### Male Base Clothing
+
+A plain-colored base top (crew-neck T-shirt/Henley long sleeve/cotton shirt) + a base bottom (straight-leg jeans/cotton casual trousers), in urban everyday base colors such as black/white/gray/navy/khaki. The fabric shows natural texture (the slight wrinkling of washed cotton, the fading and wear of denim, the natural curl of a shirt collar). No brand markings, no large-scale prints, no decorative design.
+
+### Clothing Consistency Rules
+
+- Base clothing is not "underlying wear" — it is itself a complete everyday outfit, simply stripped of all decorative elements
+- The clothing shows signs of "having been worn": naturally slightly wrinkled hems, wear marks at the cuffs, slight stretch texture at the knees/elbows
+- Coverage: essentially covers everything except the face/neck/hands, typical everyday urban coverage, no excessive exposure
+- The clothing's style, color, and texture must be fully consistent across all four angles, presenting as a photographic record of the same garment seen from different angles
+
+---
+
+## 8. Character Portrait Series — Four-Angle Photography Specification
+
+> The following is not a 3D-modeling "four-view turnaround," but four photographic angles of the same person from **the same studio shoot**. The lighting, clothing, and subject's condition must present as a continuous shooting record.
+
+### View Definitions
+
+| Position | Angle | Shot Type | Photographic Requirement | Prompt |
 |---|---|---|---|---|
-| 左一 | 正面近景 | 头顶至锁骨上缘 | 面部占据画面60%以上。镜头焦段50mm或85mm，浅景深（f/2.8-f/4），焦点在瞳孔。光影柔和均匀，眼中有自然高光点。完整呈现发际线到锁骨，不裁切头顶 | portrait closeup, head to collarbone, shallow depth of field, eyes in sharp focus, natural catchlight, live-action photography |
-| 左二 | 正面0° | 全身 | 人物正对摄影机，双臂自然下垂或微曲于身侧。镜头焦段35mm或50mm。景深适中（f/5.6-f/8），人物全身清晰，头顶到脚底完整入画 | front view, full body, facing camera, head to toe complete, live-action full body portrait |
-| 右二 | 右侧90° | 全身 | 人物侧对摄影机，呈现纯侧轮廓。鼻梁、唇形、下颌、肩背、腿部的侧面轮廓清晰可辨。头发侧面状态自然。头顶到脚底完整入画 | profile view, full body, side angle 90 degrees, head to toe complete, natural side profile |
-| 右一 | 后方180° | 全身 | 人物背对摄影机。呈现后脑发型、背部体态、脚后跟。后颈发际线、耳后碎发、衣领后侧自然可见。头顶到脚底完整入画 | back view, full body, rear angle 180 degrees, head to toe complete, live-action back portrait |
+| Far Left | Front close-up | Top of head to upper collarbone | The face occupies 60%+ of the frame. Lens focal length 50mm or 85mm, shallow depth of field (f/2.8-f/4), focus on the pupils. Soft, even lighting, a natural catchlight in the eyes. Fully shown from hairline to collarbone, no cropping of the top of the head | portrait closeup, head to collarbone, shallow depth of field, eyes in sharp focus, natural catchlight, live-action photography |
+| Second Left | Front 0° | Full body | The subject faces the camera directly, arms hanging naturally or slightly bent at the sides. Lens focal length 35mm or 50mm. Moderate depth of field (f/5.6-f/8), the whole body in sharp focus, fully shown from head to toe | front view, full body, facing camera, head to toe complete, live-action full body portrait |
+| Second Right | Right 90° | Full body | The subject stands sideways to the camera, presenting a pure profile silhouette. The side profile of the nose bridge, lip shape, jaw, back and shoulders, and legs is clearly discernible. The hair's side profile is natural. Fully shown from head to toe | profile view, full body, side angle 90 degrees, head to toe complete, natural side profile |
+| Far Right | Rear 180° | Full body | The subject faces away from the camera. Shows the back-of-head hairstyle, back posture, and heels. The nape hairline, loose strands behind the ears, and the back of the collar are naturally visible. Fully shown from head to toe | back view, full body, rear angle 180 degrees, head to toe complete, live-action back portrait |
 
-### 画面规范
+### Frame Specification
 
-| 项目 | 摄影要求 |
+| Item | Photographic Requirement |
 |---|---|
-| 布局 | 同一画面从左至右并排四个角度，间距均匀，无重叠。呈现为一张"选角照/人物参考板"的摄影排版 |
-| 背景 | 中灰无缝背景纸，色值约 #B0B0B0，无接缝、无渐变、无光斑、无投影。背景纸的轻微肌理可见，证明这是实拍而非渲染 |
-| 站姿 | "被摄影师要求'站直，自然一点'"的站姿——不是立正，不是模特pose，而是日常站立时被突然要求不动的瞬间 |
-| 一致性 | 同一人物、同一次拍摄、同一服装、同一光影条件——四个角度呈现的是同一个人的连续摄影记录。识别锚点：颌骨轮廓、耳廓形状、发际线走向、站姿习惯 |
-| 面部表情 | 中性微表情——被拍摄者面对摄影机时的自然状态，不刻意微笑、不刻意严肃。眼睛里有"看镜头"的微弱自觉 |
-| 光线 | 摄影棚标准柔光设置：前方大型柔光箱主光 + 双侧补光板反射。光影柔和、方向明确、无硬阴影、无阴阳脸。光比约1:2至1:3，保留面部立体感 |
-| 画面比例 | 建议 4:1 或 16:4 宽幅 |
+| Layout | The four angles arranged side by side left to right in the same frame, evenly spaced, no overlap. Presented as the photographic layout of a "casting photo/character reference sheet" |
+| Background | Neutral gray seamless backdrop paper, approx. #B0B0B0, no seams, no gradient, no light flares, no cast shadows. The paper's slight texture is visible, proving this is a real shoot rather than a render |
+| Stance | The stance of "being told by the photographer to 'stand up straight, be natural'" — not at attention, not a model pose, but the moment of being asked to hold still during ordinary standing |
+| Consistency | The same person, the same shoot, the same clothing, the same lighting conditions — the four angles present a continuous photographic record of the same person. Identification anchors: jawline contour, ear shape, hairline direction, habitual stance |
+| Facial Expression | A neutral micro-expression — the subject's natural state when facing the camera, neither a deliberate smile nor deliberate seriousness. A faint self-awareness of "looking at the camera" in the eyes |
+| Lighting | Standard studio soft-light setup: a large soft-box key light from the front + dual side fill reflector panels. Soft, directionally clear lighting, no harsh shadows, no split lighting. A lighting ratio of about 1:2 to 1:3, retaining facial dimensionality |
+| Aspect Ratio | Recommend 4:1 or 16:4 widescreen |
 
 ---
 
-## 九、提示词模板
+## 9. Prompt Template
 
-{性别}真人都市人物肖像系列，真人实拍摄影，棚拍柔光，中灰无缝背景纸，人物参考板排版，
+```
+{gender} live-action urban character portrait series, live-action photography, studio soft lighting, seamless grey backdrop, character reference sheet,
 character portrait series, live-action photography, studio soft lighting, seamless grey backdrop, character reference sheet,
-同一画面从左至右并排：近景特写+正面全身+侧面全身+背面全身，
-{面孔类型描述：脸型、眼型、鼻型、唇型、整体气质}、原生素颜状态、无妆容痕迹或仅极淡日常妆、
-{肤色描述}、真人皮肤质感、真实皮肤毛孔纹理、自然皮肤光泽、非磨皮非硅胶感、
-{身高描述}、真实亚洲{男/女}性身体比例、自然的头身比、真实日常站姿、重心偏移而非立正、
-{发型描述}、真实发质纹理、自然碎发与发缕、发际线自然过渡、逆光下发丝半透明感、
-{基础服装描述：素色基础款上衣+基础款下装}、{颜色}、面料真实纹理可见、自然的衣物穿着褶皱、无logo无印花无装饰、
-四角度呈现同一人物的连续棚拍摄影记录、
-中灰无缝背景纸 #B0B0B0、均匀棚拍柔光、光比柔和、无硬阴影、无死黑、
-画面干净无文字无水印无签名无边框、
-真人写实摄影画质、35mm全画幅摄影质感、非3D非渲染非CG非手绘
+same frame arranged left to right: close-up + front full body + side full body + back full body,
+{face-type description: face shape, eye shape, nose shape, lip shape, overall temperament}, a genuinely bare-faced state, no makeup or only extremely light everyday makeup,
+{skin-tone description}, genuine skin texture, real visible skin pores, natural skin sheen, not smoothed, not silicone-looking,
+{height description}, genuine Asian {male/female} body proportions, a natural head-to-body ratio, a genuine everyday stance, weight-shifted rather than at attention,
+{hairstyle description}, genuine hair texture, natural loose strands and hair clumps, a naturally transitioning hairline, a translucent rim on backlit hair,
+{base clothing description: plain-colored base top + base bottom}, {color}, genuine visible fabric texture, natural wear creases in the clothing, no logos, no prints, no decoration,
+four angles presenting a continuous studio photography record of the same person,
+neutral gray seamless backdrop paper #B0B0B0, even studio soft lighting, a soft lighting ratio, no harsh shadows, no crushed blacks,
+a clean frame with no text, no watermark, no signature, no border,
+live-action realistic photography quality, 35mm full-frame photographic texture, not 3D, not rendered, not CG, not hand-drawn
+```
 
 ---
 
-## 十、约束规则
+## 10. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 必须是「原生素颜状态」或仅极淡日常妆（无色唇膏、透明眉胶级别），禁止可见妆容 |
-| R2 | 必须声明基础服装为「素色基础款日常着装」，无任何品牌标识、印花、图案、装饰性设计 |
-| R3 | 必须声明「无发饰、无配饰、无首饰、无头饰、无纹身贴纸」 |
-| R4 | 必须指定「中灰无缝背景纸，无场景、无光斑、无渐变」 |
-| R5 | 必须指定「四角度为同一人物的连续摄影记录」，面容/体型/发型/服装/光影完全呈现为同一次拍摄 |
-| R6 | 全身角度必须从头顶到脚底完整入画，严禁裁切身体任何部位 |
-| R7 | 近景特写必须从头顶到锁骨上缘完整入画，严禁裁切头顶 |
-| R8 | 必须声明「真人实拍摄影 + 非3D非渲染非CG」核心锚定 |
-| R9 | 必须声明「真实皮肤质感 + 非磨皮 + 非硅胶假面」 |
-| R10 | 站姿必须声明为「真实日常体态 + 重心偏移的非对称站姿」 |
+| R1 | Must be in a "genuinely bare-faced state" or only extremely light everyday makeup (at the level of colorless lip balm or clear brow gel); visible makeup is prohibited |
+| R2 | Must declare the base clothing as "plain-colored, basic everyday wear," with no brand markings, prints, patterns, or decorative design of any kind |
+| R3 | Must declare "no hair accessories, no accessories, no jewelry, no headwear, no temporary tattoos" |
+| R4 | Must specify "a neutral gray seamless backdrop, no set, no light flares, no gradient" |
+| R5 | Must specify that "the four angles are a continuous photographic record of the same person," with face/body type/hairstyle/clothing/lighting all presenting as the same shoot |
+| R6 | Full-body angles must be fully shown from the top of the head to the soles of the feet; cropping any part of the body is strictly prohibited |
+| R7 | The close-up must be fully shown from the top of the head to the upper collarbone; cropping the top of the head is strictly prohibited |
+| R8 | Must declare the core anchor of "live-action photography + not 3D, not rendered, not CG" |
+| R9 | Must declare "genuine skin texture + not smoothed + not a silicone-like mask" |
+| R10 | The stance must be declared as "a genuine everyday posture + an asymmetrical stance with shifted weight" |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 严禁「3D渲染 / 3D建模 / CG / UE引擎 / Blender / PBR材质 / 次世代建模 / 8K建模」等一切CG术语 |
-| X2 | 严禁「2D手绘 / 插画 / 动画 / 二次元 / 漫画 / Q版」等一切非摄影媒介 |
-| X3 | 严禁「过度磨皮 / 塑料假面 / 零毛孔硅胶脸 / 全脸均匀哑光 / AI感平滑皮肤」 |
-| X4 | 严禁「模特对称站姿 / 军人式立正 / 走秀pose / 夸张动态 / 大幅度肢体动作」 |
-| X5 | 严禁「浓妆 / 彩妆 / 烟熏妆 / 红唇 / 假睫毛 / 美瞳 / 修容过度」 |
-| X6 | 严禁「复杂场景 / 户外背景 / 渐变背景 / 图案背景 / 道具干扰」 |
-| X7 | 严禁「过度拉长腿部 / 漫画式头身比 / 不真实的瘦身效果」 |
-| X8 | 严禁「古风 / 古装 / 汉服 / 仙侠 / 武侠 / 民国 / 赛博朋克 / 科幻」等非当代都市元素 |
-| X9 | 严禁「裸体 / 暴露 / 透视 / 低俗暗示 / 擦边 / 暴力血腥」 |
-| X10 | 严禁「水印 / 文字 / 签名 / LOGO / 边框 / AI生成工具痕迹」 |
-| X11 | 严禁「非真人质感的皮肤与面部——这是真人都市风格的最高红线」 |
+| X1 | Strictly prohibit all CG terminology such as "3D rendering / 3D modeling / CG / UE engine / Blender / PBR materials / next-gen modeling / 8K modeling" |
+| X2 | Strictly prohibit all non-photographic media such as "2D hand-drawn / illustration / animation / anime / manga / chibi" |
+| X3 | Strictly prohibit "over-smoothed skin / plastic mask look / pore-less silicone face / uniform matte across the whole face / AI-looking smooth skin" |
+| X4 | Strictly prohibit "model-style symmetrical stances / military at-attention / runway poses / exaggerated dynamics / large-scale body movement" |
+| X5 | Strictly prohibit "heavy makeup / color cosmetics / smoky eye makeup / red lips / false eyelashes / colored contacts / over-contouring" |
+| X6 | Strictly prohibit "complex scenes / outdoor backgrounds / gradient backgrounds / patterned backgrounds / distracting props" |
+| X7 | Strictly prohibit "exaggeratedly elongated legs / manga-style head-to-body ratio / unrealistic slimming effects" |
+| X8 | Strictly prohibit non-contemporary-urban elements such as "ancient style / period costume / hanfu / xianxia / wuxia / Republic-era / cyberpunk / sci-fi" |
+| X9 | Strictly prohibit "nudity / exposure / see-through clothing / vulgar suggestiveness / borderline content / violence and gore" |
+| X10 | Strictly prohibit "watermarks / text / signatures / logos / borders / traces of AI generation tools" |
+| X11 | Strictly prohibit "skin and faces that don't feel like real people — this is the highest red line of the Live-Action Urban style" |

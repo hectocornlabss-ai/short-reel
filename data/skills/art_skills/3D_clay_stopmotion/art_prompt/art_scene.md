@@ -1,153 +1,153 @@
-# 黏土定格动画场景图生成 · 约束手册
+# Claymation Stop-Motion Scene Image Generation · Constraint Handbook
 
 ---
 
-## 一、场景美学原则
+## 1. Scene Aesthetic Principles
 
-1. **空间叙事** — 场景承载情绪与叙事功能
-2. **层次纵深** — 所有场景必须具备前/中/后景，杜绝扁平
-3. **黏土质感至上** — 材质纹理必须清晰可辨（木质/石质/布料/水面）
-4. **定格为锚** — 一切画面以定格动画黏土风格为标准，拒绝真人写实；追求定格摄影特征（景深虚化、镜头光斑、定格颗粒感）与暖调光影
+1. **Spatial storytelling** — Scenes carry emotional and narrative function
+2. **Layered depth** — Every scene must have foreground/midground/background layers; flatness is prohibited
+3. **Clay texture above all** — Material texture must be clearly distinguishable (wood/stone/fabric/water)
+4. **Stop-motion as anchor** — Every frame follows the stop-motion claymation style standard, rejecting live-action realism; pursue stop-motion photography traits (shallow depth of field, lens bokeh, stop-motion grain) with warm-toned lighting
 
 ---
 
-## 二、季节色调映射
+## 2. Seasonal Color Mapping
 
-| 季节 | 主色调 | 辅色调 | 提示词 |
+| Season | Primary Tone | Secondary Tone | Prompt Fragment |
 |---|---|---|---|
-| 春 | 暖绿 + 桃粉 | 米白、鹅黄 | 春色暖绿、桃花粉色 |
-| 夏 | 翠绿 + 荷粉 | 天青、莲白 | 夏荷翠绿、浓荫暖意 |
-| 秋 | 暖红 + 金黄 | 橙黄、暖灰 | 秋枫暖红、金叶暖阳 |
-| 冬 | 柔和白 + 霜灰 | 暖木色、冰蓝 | 冬雪柔和、枯枝暖调 |
+| Spring | Warm green + peach pink | Cream white, pale yellow | spring warm green, peach blossom pink |
+| Summer | Emerald green + lotus pink | Sky blue, lotus white | summer lotus emerald, lush warm shade |
+| Autumn | Warm red + golden yellow | Orange yellow, warm gray | autumn maple warm red, golden leaves warm sun |
+| Winter | Soft white + frost gray | Warm wood tone, ice blue | soft winter snow, bare branches warm tone |
 
 ---
 
-## 三、室内场景
+## 3. Indoor Scenes
 
-### 空间规范
+### Spatial Specification
 
-| 维度 | 约束 | 提示词 |
+| Dimension | Constraint | Prompt Fragment |
 |---|---|---|
-| 风格 | 古代宅邸/宫殿/书房/闺阁，温馨复古 | 古代{朝代}风格、温馨复古 |
-| 材质 | 黏土塑形木质为主、石/玉/绢/纱为辅 | 黏土木质家具、玉石屏风 |
-| 色调 | 低饱和暖木色 + 米白纱幔 + 青瓷 | 暖木色调、温馨陈设 |
-| 纵深 | 前/中/后景层次 | 前景{元素}、中景{元素}、后景{元素} |
-| 质感 | 木纹/布料垂感/瓷器光泽可辨 | 纹理清晰、质感黏土 |
-| 光照 | 暖调柔光为主（窗光/烛光），光线漫射 | 暖光漫射、烛光温馨 |
-| 镜头感 | 柔和浅景深虚化、自然光斑、定格颗粒感 | shallow depth of field、bokeh、定格感 |
-| 瑕疵感 | 木面有使用痕迹、石面有风化纹、布料有自然褶皱 | 岁月痕迹、自然磨损、布料自然垂褶 |
+| Style | Ancient-style residence/palace/study/boudoir, warm and vintage | Ancient-style {dynasty}, warm and vintage |
+| Material | Clay-sculpted wood-dominant, stone/jade/silk/gauze as accents | clay wooden furniture, jade screen |
+| Tone | Low-saturation warm wood + cream gauze + celadon | warm wood tone, warm furnishings |
+| Depth | Foreground/midground/background layering | foreground {element}, midground {element}, background {element} |
+| Texture | Wood grain/fabric drape/porcelain sheen must be distinguishable | clear texture, clay material feel |
+| Lighting | Warm soft light dominant (window light/candlelight), diffused light | warm diffused light, cozy candlelight |
+| Lens feel | Soft shallow depth of field, natural bokeh, stop-motion grain | shallow depth of field, bokeh, stop-motion feel |
+| Imperfections | Wear marks on wood surfaces, weathering on stone, natural fabric creases | traces of time, natural wear, natural fabric drape |
 
-### 室内类型速查
+### Indoor Type Quick Reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core Elements | Mood Words |
 |---|---|---|
-| 闺阁/卧房 | 纱帐、梳妆台、铜镜、花瓶 | 温馨私密、纱幔轻垂 |
-| 书房/书斋 | 书架、卷轴、笔墨、棋盘 | 幽静雅致、墨香四溢 |
-| 大殿/正厅 | 高柱、匾额、帷幕、烛台 | 庄严华美、气势恢宏 |
-| 庭院回廊 | 廊柱、石栏、花木、灯笼 | 曲径通幽、灯影摇曳 |
-| 厨房/膳堂 | 灶台、蒸笼、食器 | 烟火气息、温馨日常 |
+| Boudoir/bedroom | Gauze curtains, dressing table, bronze mirror, vase | Warm and intimate, gauze draping softly |
+| Study/library | Bookshelf, scrolls, ink and brush, chessboard | Quiet and elegant, filled with ink fragrance |
+| Great hall/main hall | Tall pillars, plaque, drapery, candlestick | Solemn and magnificent, grand atmosphere |
+| Courtyard corridor | Corridor pillars, stone railing, flowers and trees, lanterns | Winding path leading to seclusion, swaying lantern light |
+| Kitchen/dining hall | Stove, steamer, tableware | Homely warmth, everyday coziness |
 
 ---
 
-## 四、室外场景
+## 4. Outdoor Scenes
 
-### 空间规范
+### Spatial Specification
 
-| 维度 | 约束 | 提示词 |
+| Dimension | Constraint | Prompt Fragment |
 |---|---|---|
-| 类型 | 庭院/山林/溪畔/古桥/集市 | {场景}，{季节}，{时间} |
-| 天候 | 晴/阴/薄雾/细雨/飞雪 | 薄雾弥漫、细雨如丝 |
-| 植被 | 梅/竹/松/桃花/柳/荷（须符合季节） | 桃花灼灼、翠竹成林 |
-| 水体 | 溪/湖/瀑布需有光影反射 | 溪水潺潺、湖面如镜 |
-| 建筑 | 飞檐斗拱、青瓦白墙、石桥木亭 | 飞檐翘角、石拱桥 |
-| 空气感 | 必须有空气透视，远处偏暖灰 | 远山如黛、空气透视 |
-| 光照 | 暖调自然光为唯一光源，日光/月光需有体积光 | 暖光漫射、体积光、暖调光斑 |
-| 镜头感 | 柔和浅景深虚化、光斑散景、定格感 | shallow depth of field、bokeh、定格感 |
-| 瑕疵感 | 石面青苔/风化、木面开裂/包浆、瓦片残缺 | 青苔斑驳、风化痕迹、岁月包浆 |
+| Type | Courtyard/mountain forest/streamside/ancient bridge/market | {scene}, {season}, {time} |
+| Weather | Clear/overcast/light mist/light rain/snowfall | mist drifting, fine rain like threads |
+| Vegetation | Plum/bamboo/pine/peach blossom/willow/lotus (must match season) | peach blossoms in bloom, lush bamboo grove |
+| Water | Streams/lakes/waterfalls need light reflections | babbling stream, mirror-like lake surface |
+| Architecture | Upturned eaves and brackets, gray tiles and white walls, stone bridges and wooden pavilions | upturned eaves, stone arch bridge |
+| Atmosphere | Must have aerial perspective, distant areas skew warm gray | distant hills like ink, aerial perspective |
+| Lighting | Warm natural light as the sole light source, sunlight/moonlight need volumetric light | warm diffused light, volumetric light, warm light flares |
+| Lens feel | Soft shallow depth of field, bokeh, stop-motion feel | shallow depth of field, bokeh, stop-motion feel |
+| Imperfections | Moss/weathering on stone, cracking/patina on wood, chipped tiles | mottled moss, weathering traces, aged patina |
 
-### 室外类型速查
+### Outdoor Type Quick Reference
 
-| 类型 | 核心元素 | 氛围词 |
+| Type | Core Elements | Mood Words |
 |---|---|---|
-| 庭院花园 | 假山、池塘、花木、石径 | 花影扶疏、曲径通幽 |
-| 山林竹海 | 古木、竹林、山石、云雾 | 层峦叠嶂、云雾缥缈 |
-| 溪畔湖边 | 溪流、卵石、垂柳、荷花 | 溪水潺潺、柳影婆娑 |
-| 古桥长亭 | 石拱桥、长亭、柳树 | 长亭古道、杨柳依依 |
-| 集市街道 | 酒旗、摊贩、灯笼 | 热闹市井、烟火人间 |
-| 屋顶天台 | 瓦片、飞檐、夜空 | 月下独酌、清风徐来 |
+| Courtyard garden | Rockery, pond, flowers and trees, stone path | Flower shadows swaying, winding path leading to seclusion |
+| Mountain bamboo forest | Ancient trees, bamboo grove, mountain rocks, mist | Ranges upon ranges, drifting mist |
+| Streamside/lakeside | Stream, pebbles, weeping willows, lotus flowers | Babbling stream, swaying willow shadows |
+| Ancient bridge and pavilion | Stone arch bridge, roadside pavilion, willow trees | Ancient road pavilion, swaying willows |
+| Market street | Tavern banners, vendor stalls, lanterns | Bustling marketplace, worldly warmth |
+| Rooftop terrace | Tiles, upturned eaves, night sky | Drinking alone under the moon, gentle breeze |
 
 ---
 
-## 五、主视图规范
+## 5. Hero Shot Specification
 
-### 视图定义
+### View Definition
 
-> 单画面主视图，从场景中最具代表性的角度拍摄，承载空间叙事与构图重心。
+> A single hero shot, captured from the scene's most representative angle, carrying the spatial narrative and compositional focus.
 
-| 项目 | 约束 | 提示词 |
+| Item | Constraint | Prompt Fragment |
 |---|---|---|
-| 视角 | 自然观察视角，构图最能体现场景主体与纵深 | hero shot、representative angle |
-| 视点高度 | 默认人眼平视高度，特殊场景可俯/仰 | eye level（默认） |
-| 构图 | 主体居中或符合三分法，前/中/后景层次清晰 | balanced composition |
+| Angle | Natural observation angle, composition best expresses the scene's subject and depth | hero shot, representative angle |
+| Viewpoint height | Default eye-level height, low/high angle allowed for special scenes | eye level (default) |
+| Composition | Subject centered or following the rule of thirds, clear foreground/midground/background layering | balanced composition |
 
-### 画面规范
+### Frame Specification
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 单画面（非拼图、非多视图、非分屏） |
-| 人物 | **严禁出现任何人物、人影、人体轮廓** |
-| 一致性 | 风格/材质/色调/光线统一 |
-| 光线 | 单一光源逻辑，光影方向一致 |
-| 画面比例 | 默认 16:9（或按调用方设定） |
+| Layout | Single frame (not a collage, not multi-view, not split-screen) |
+| Characters | **Strictly no people, human shadows, or human silhouettes may appear** |
+| Consistency | Unified style/material/tone/lighting |
+| Lighting | Single light-source logic, consistent shadow direction |
+| Aspect ratio | Default 16:9 (or as set by the caller) |
 
 ---
 
-## 六、提示词模板
+## 6. Prompt Template
 
 ```
-黏土定格动画古风场景主视图概念图，定格动画风格，3D卡通渲染，暖调光影，柔和浅景深，
-claymation style，stop-motion aesthetic，warm lighting，
-scene design sheet，environment concept art，no people，no characters，no human figures，
-{室内/室外}，{场景类型}，{朝代风格}，{季节+时间}，
-前景：{元素}，中景：{元素}，后景：{元素}，
-{色调描述}，{天候/氛围元素}，
-{材质描述}，空气透视，纹理细节超清晰，
-材质自然磨损痕迹，岁月包浆，青苔风化，布料自然垂褶，
-暖调柔光漫射，体积光，暖调光斑，浅景深虚化，
-单画面构图，自然观察视角，构图能代表场景主体并展示前/中/后景层次，
-画面中无任何人物
-图中不要有任何文字
+Claymation stop-motion ancient-style scene hero shot concept art, stop-motion animation style, 3D cartoon rendering, warm-toned lighting, soft shallow depth of field,
+claymation style, stop-motion aesthetic, warm lighting,
+scene design sheet, environment concept art, no people, no characters, no human figures,
+{indoor/outdoor}, {scene type}, {dynasty style}, {season + time},
+foreground: {element}, midground: {element}, background: {element},
+{tone description}, {weather/atmosphere elements},
+{material description}, aerial perspective, ultra-clear texture detail,
+natural material wear marks, aged patina, mossy weathering, natural fabric drape,
+warm soft diffused light, volumetric light, warm light flares, shallow depth of field blur,
+single-frame composition, natural observation angle, composition represents the scene's subject and shows foreground/midground/background layering,
+no people of any kind in the frame
+no text of any kind should appear in the image
 ```
 
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 场景必须有「前中后景层次」 |
-| R2 | 室外必须包含「空气透视」 |
-| R3 | 场景图必须为「单画面主视图」，不得拼接多视图/分屏/网格 |
-| R4 | 构图须能代表场景主体并展示前/中/后景层次 |
-| R5 | 场景图中**严禁出现任何人物** |
-| R6 | 必须包含定格动画关键词（claymation / stop-motion） |
-| R7 | 必须包含浅景深关键词（shallow depth of field / bokeh） |
-| R8 | 必须指定「暖调柔光」，无硬阴影 |
-| R9 | 材质必须带有自然磨损/岁月痕迹 |
+| R1 | The scene must have "foreground/midground/background layering" |
+| R2 | Outdoor scenes must include "aerial perspective" |
+| R3 | The scene image must be a "single hero shot"; multi-view collage/split-screen/grid is not allowed |
+| R4 | The composition must represent the scene's subject and show foreground/midground/background layering |
+| R5 | **Strictly no people may appear** in the scene image |
+| R6 | Must include stop-motion animation keywords (claymation / stop-motion) |
+| R7 | Must include shallow-depth-of-field keywords (shallow depth of field / bokeh) |
+| R8 | Must specify "warm soft light," no hard shadows |
+| R9 | Materials must carry natural wear/traces of time |
 
-### 严禁
+### Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 背景纯白/纯黑/无场景 |
-| X2 | 极端天候（暴风雨/雷电/暴雪） |
-| X3 | 场景无纵深/无层次 |
-| X4 | 植被/天候与季节矛盾 |
-| X5 | 出现任何人物、人影、人体剪影 |
-| X6 | 画面被拼接成多视图/网格/分屏布局 |
-| X7 | 真人写实摄影/3D渲染/CG动画质感 |
-| X8 | 材质过于干净完美、无任何使用痕迹 |
-| X9 | 冷硬光线/强对比度/硬阴影 |
+| X1 | Pure white/pure black background, or no scene at all |
+| X2 | Extreme weather (storms/thunder and lightning/blizzard) |
+| X3 | Scene lacking depth/layering |
+| X4 | Vegetation/weather contradicting the season |
+| X5 | Any person, human shadow, or human silhouette appearing |
+| X6 | The frame being collaged into a multi-view/grid/split-screen layout |
+| X7 | Live-action realistic photography/3D rendering/CG animation feel |
+| X8 | Materials being overly clean and perfect, with no wear traces at all |
+| X9 | Cold hard lighting/strong contrast/hard shadows |

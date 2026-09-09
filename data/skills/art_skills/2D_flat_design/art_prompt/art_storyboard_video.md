@@ -1,11 +1,10 @@
-# 视频提示词 · 视觉风格约束
+# Video Prompt · Visual Style Constraints
 
-生成视频提示词时，必须注入以下视觉风格标签：
+When generating a video prompt, the following visual style tags must be injected:
 
-| 模式 | 风格标签 |
+| Mode | Style tags |
 |------|----------|
-| **通用多参模式（英文）** | `2D flat design, geometric shapes, solid color blocks, minimal shadows, clean lines, modern aesthetic` |
-| **通用首尾帧模式（英文）** | `2D flat design, geometric shapes, solid color blocks, minimal shadows, clean lines, modern aesthetic, shallow depth of field` |
-| **Seedance 2.0（中文）** | `2D扁平风格，几何造型，纯色色块，无阴影，简洁线条，现代简约` |
-
+| **General multi-parameter mode (English)** | `2D flat design, geometric shapes, solid color blocks, minimal shadows, clean lines, modern aesthetic` |
+| **General first/last-frame mode (English)** | `2D flat design, geometric shapes, solid color blocks, minimal shadows, clean lines, modern aesthetic, shallow depth of field` |
+| **Seedance 2.0 (Chinese)** | `2D扁平风格，几何造型，纯色色块，无阴影，简洁线条，现代简约` |
 

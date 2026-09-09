@@ -1,85 +1,85 @@
 ---
 name: director_planning_style
-description: 扁平风约束 — 定义2D扁平风在色调体系、色块方案、质感方向、场景空间元素、乐器选择与环境音上的全局约束。适用于任何叙事类型。
+description: Flat-style constraints — defines the global constraints of 2D flat design in terms of color-tone system, color-block schemes, texture direction, scene spatial elements, instrument selection, and ambient sound. Applicable to any narrative genre.
 metaData: director_skills
 ---
 
-# 扁平风约束 · 2D扁平风（Flat Design） · 技法参考
+# Flat Style Constraints · 2D Flat Design · Technique Reference
 
 ---
 
-## 一、色调体系与画面基调
+## 1. Color-Tone System and Overall Look
 
-- **色调基底** — 全片以明快蓝（C1）、活力橙（C2）、米白（C9）为基底色，整体色温中性（5500-6500K），饱和度中高（70-90%），呈现现代扁平风的清新简洁感
-- **冷暖叙事对比** — 暖色（活力橙 C2、暖粉 C7）作为情感升温的视觉信号，用于心动、浪漫段落局部强化。冷色（明快蓝 C1、淡紫 C6）用于日常、夜晚段落。冷暖切换应与故事弧线同步，而非随意混用
-- **冷暖分配策略** — 日常/办公段落保持中性偏冷色调基底；暖色仅在情感升温后释放，用冷暖对比做叙事转折
-- **色盘先行原则** — 段落规划需先绑定情绪场景（日常/心动/浪漫/回忆等），再确定主色+辅色与色块方案，避免"剧情对了但情绪不对色"
-- **禁用色域** — 高饱和荧光色、霓虹色、3D 渲染色彩体系均与本风格不兼容
+- **Base tone** — the whole piece is grounded in bright blue (C1), vibrant orange (C2), and cream white (C9) as base colors, with an overall neutral color temperature (5500-6500K) and mid-to-high saturation (70-90%), presenting the fresh, clean feel of modern flat design
+- **Warm/cool narrative contrast** — warm colors (vibrant orange C2, warm pink C7) act as a visual signal of rising emotion, used to locally intensify heartbeat/romance passages. Cool colors (bright blue C1, pale purple C6) are used for everyday/night passages. Warm/cool switching should sync with the story arc rather than being mixed arbitrarily
+- **Warm/cool allocation strategy** — everyday/office passages keep a neutral-to-cool base tone; warm colors are only released after emotion rises, using warm/cool contrast to mark narrative turning points
+- **Palette-first principle** — sequence planning should first bind the emotional scene (everyday/heartbeat/romance/flashback, etc.), then determine the primary + secondary colors and color-block scheme, avoiding a mismatch where "the plot is right but the color mood is wrong"
+- **Prohibited color range** — high-saturation fluorescent colors, neon colors, and 3D-rendered color systems are all incompatible with this style
 
 ---
 
-## 二、色块方案体系
+## 2. Color-Block Scheme System
 
-- **色块即叙事** — 6 套色块方案对应不同情绪段落，导演规划阶段应在段落层面确定色块基调方向，而非逐镜指定
-- **扁平风格无传统光影** — 通过色块明度差异制造"伪光影"，不使用光源角度
+- **Color blocks are the narrative** — 6 color-block schemes correspond to different emotional passages; the director's planning stage should determine the color-block tone direction at the sequence level, not shot by shot
+- **Flat style has no traditional lighting** — "pseudo-lighting" is created through differences in color-block brightness, not through light-source angles
 
-| 色块方案 | 方案名 | 色调倾向 | 适用情绪 |
+| Color-block scheme | Scheme name | Tone tendency | Applicable mood |
 |---|---|---|---|
-| A | 纯色块 | 暖橙 + 米白 + 浅蓝 | 日常温馨 |
-| B | 色块对比 | 暖粉 + 暖橙对比 | 心动瞬间、升温段 |
-| C | 冷色调 | 冷蓝 + 灰色 + 白色 | 办公/学习、冷静段 |
-| D | 暖调主导 | 暖橙 + 暖粉 + 浅黄 | 浪漫场景、甜蜜段 |
-| E | 冷色主导 | 深蓝 + 紫色 + 暖黄点缀 | 夜晚静谧 |
-| F | 低饱和 | 浅黄 + 浅灰 + 暖粉 | 回忆/闪回 |
+| A | Solid color blocks | Warm orange + cream white + light blue | Everyday warmth |
+| B | Color block contrast | Warm pink + warm orange contrast | Heartbeat moment, rising emotion |
+| C | Cool tone | Cool blue + gray + white | Office/study, composed mood |
+| D | Warm-dominant | Warm orange + warm pink + light yellow | Romantic scene, sweet moment |
+| E | Cool-dominant | Deep blue + purple + warm yellow accent | Quiet night |
+| F | Low saturation | Light yellow + light gray + warm pink | Memory/flashback |
 
-- **冷暖色分配** — 暖色块（活力橙/暖粉）适用于情感升温段落；冷静/夜晚段落用冷色块。导演可根据叙事需要调整冷暖切换点
-- **氛围方向映射** — 每场戏的氛围方向应能映射到上述色块方案（A-F）的某一方向，确保视觉一致性
-
----
-
-## 三、质感方向
-
-- **几何极简感** — 扁平设计的核心：纯色色块、清晰轮廓、无阴影无渐变、色块边界明确
-- **简洁线条 + 纯净色彩** — 这是画面质感的锚点。不是写实渲染，不是复杂细节，是几何化的极简表达
-- **禁止写实元素** — 所有视觉元素必须符合扁平风格：无阴影、无渐变、无纹理、无光影。禁止"3D感"和"写实感"
-- **色块对比清晰** — 色块间边界分明，主色与辅色对比明确，避免模糊过渡
-- **扁平不等于单调** — 通过色彩对比与构图设计传递情感，而非依赖写实细节。用色块大小、色相变化制造视觉层次
+- **Warm/cool color allocation** — warm color blocks (vibrant orange/warm pink) apply to emotion-rising passages; composed/night passages use cool color blocks. The director may adjust the warm/cool switch point according to narrative needs
+- **Mood-direction mapping** — the mood direction of each scene should map to one of the above color-block schemes (A-F), ensuring visual consistency
 
 ---
 
-## 四、扁平场景空间元素
+## 3. Texture Direction
 
-扁平风格特有的场景元素及其视觉叙事功能：
-
-- **纯色背景/色块分区** — 天然的构图载体，用色块区域划分空间层次，制造简洁的空间感与画面纵深
-- **几何形状/图标符号** — 扁平风格的表意工具，圆形 = 温暖/完整、三角 = 动态/冲突、方形 = 稳定/日常
-- **留白区域** — 扁平风格的重要情感手段。大面积留白 = 聚焦、满色块 = 充实、局部留白 = 呼吸感
-- **段落间用纯色过渡** — 本风格有丰富的色块资产（不同色相/明度变体），段落衔接建议用纯色块做情绪缓冲，不要硬切
-- **转折点用色块变化** — 优先使用画面手段（明度变化、色相变化、色块对比突变）而非依赖对白解释
+- **Geometric minimalism** — the core of flat design: solid color blocks, clear outlines, no shadow/no gradient, clearly defined color-block boundaries
+- **Clean lines + pure color** — this is the anchor point of the visual texture. Not photorealistic rendering, not complex detail, but geometric, minimalist expression
+- **Photorealistic elements prohibited** — every visual element must conform to the flat style: no shadow, no gradient, no texture, no lighting. "3D feel" and "photorealistic feel" are prohibited
+- **Clear color-block contrast** — boundaries between color blocks are distinct, with clear contrast between primary and secondary colors, avoiding blurred transitions
+- **Flat does not mean monotonous** — convey emotion through color contrast and composition design rather than relying on photorealistic detail. Use color-block size and hue variation to create visual layering
 
 ---
 
-## 五、扁平风乐器与环境音
+## 4. Flat Scene Spatial Elements
 
-扁平风格下的声音元素约束：
+Scene elements unique to the flat style and their visual narrative function:
 
-### 乐器选择
+- **Solid-color background/color-block zoning** — a natural compositional carrier; use color-block regions to divide spatial layers, creating a simple sense of space and depth
+- **Geometric shapes/icon symbols** — the flat style's expressive tool: circle = warmth/completeness, triangle = motion/conflict, square = stability/everyday life
+- **Negative space** — an important emotional device in the flat style. Large areas of negative space = focus, full color blocks = fullness, partial negative space = breathing room
+- **Use solid-color transitions between sequences** — this style has a rich set of color-block assets (variants of different hues/brightness); sequence transitions should use solid color blocks as an emotional buffer rather than hard cuts
+- **Use color-block changes at turning points** — prioritize visual means (brightness change, hue change, abrupt color-block contrast) over dialogue explanation
 
-- **电子合成器** — 日常/温馨/现代段落的核心乐器，最能表现扁平风格的简洁感
-- **钢琴** — 浪漫/情感段落，干净的音色适合简约氛围
-- **轻快节奏** — 明亮/活力段落，适合快节奏场景
-- **弦乐** — 情绪升华段落的铺底，不宜喧宾夺主
+---
 
-### 乐器组合策略
+## 5. Flat-Style Instruments and Ambient Sound
 
-| 情绪阶段 | 乐器组合 |
+Sound element constraints for the flat style:
+
+### Instrument selection
+
+- **Electronic synthesizer** — the core instrument for everyday/cozy/modern passages, best expressing the flat style's clean feel
+- **Piano** — for romantic/emotional passages; its clean timbre suits a minimalist mood
+- **Upbeat rhythm** — for bright/energetic passages, suited to fast-paced scenes
+- **Strings** — a bed for passages of emotional elevation; should not overpower the mix
+
+### Instrument combination strategy
+
+| Emotional stage | Instrument combination |
 |---|---|
-| 平稳/开场/收尾 | 电子音效独奏 |
-| 日常温馨 | 合成器 + 轻钢琴 |
-| 情绪升华/浪漫 | 钢琴 + 弦乐 |
-| 关键情感瞬间 | 纯环境音（去掉配乐） |
+| Calm/opening/closing | Solo electronic sound effect |
+| Everyday warmth | Synthesizer + light piano |
+| Emotional elevation/romance | Piano + strings |
+| Key emotional moment | Pure ambient sound (no score) |
 
-### 扁平风环境音
+### Flat-style ambient sound
 
-- **典型环境音层次** — 城市交通声 / 办公室键盘声 / 咖啡厅背景音 / 风吹窗帘声 / 人群低语声 / 鼠标点击声
-- **每场戏标注 1-2 个核心环境音**，帮助后续音效设计。环境音层次越丰富，场景越有沉浸感
+- **Typical ambient sound layers** — city traffic sound / office keyboard sound / cafe background noise / wind through curtains / crowd murmur / mouse click
+- **Label 1-2 core ambient sounds per scene** to support later sound design. The richer the ambient sound layering, the more immersive the scene

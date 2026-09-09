@@ -1,9 +1,18 @@
 import { Request, Response, NextFunction } from "express";
 import { z, ZodTypeAny } from "zod";
+import u from "@/utils";
 
 import { zhCN } from "zod/locales";
 
 z.config(zhCN());
+
+// อนุญาตเฉพาะแอดมิน (ใช้กับ endpoint ตั้งค่า vendor/agent ที่ผู้ใช้ทั่วไปไม่ควรแตะ)
+export async function requireAdmin(req: Request, res: Response, next: NextFunction) {
+  const userId = (req as any).user?.id;
+  const user = userId ? await u.db("o_user").where("id", userId).first() : null;
+  if (!user?.isAdmin) return res.status(403).json({ message: "เฉพาะแอดมินเท่านั้น" });
+  next();
+}
 
 export function validateFields(
   shape: Record<string, ZodTypeAny>,

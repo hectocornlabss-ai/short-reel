@@ -1,122 +1,121 @@
-# 道具衍生状态生成 · 扁平风约束手册
+# Prop Derivative State Generation · Flat Style Constraint Manual
 
 ---
 
-## 一、衍生原则
+## 1. Derivative Principles
 
-1. **轮廓锚定** — 道具核心造型/轮廓在所有状态中可识别
-2. **状态可读** — 状态差异必须一目了然，观众能立即区分
-3. **叙事服务** — 每种状态变体服务于特定剧情节点
-4. **渐进退化** — 损伤/老化状态应有合理的物理逻辑
-5. **纯道具独立展示** — 画面中只能出现道具本身，严禁出现任何人物、手部、肢体，道具不可处于被持有/佩戴/握持状态，必须以静物陈列方式独立呈现
-
----
-
-## 二、状态类型
-
-### 2.1 使用状态
-
-| 状态 | 描述 | 适用道具 | 提示词 |
-|---|---|---|---|
-| 崭新 | 完好无损、纯色如新 | 所有道具 | 扁平崭新、完好无损、纯色如新 |
-| 日常使用 | 微磨损、简单色块变化 | 兵器/器物/饰品 | 扁平使用痕迹、简单磨损 |
-| 陈旧 | 明显年代感、颜色暗淡 | 器物/信物/卷轴 | 扁平陈旧、年代感、颜色暗沉 |
-
-### 2.2 损伤状态
-
-| 状态 | 描述 | 适用道具 | 提示词 |
-|---|---|---|---|
-| 微损 | 小裂纹/小缺口/轻微磨损 | 瓷器/玉佩/兵器 | 扁平微损、简单裂纹 |
-| 破损 | 明显裂缝/断裂/破碎 | 瓷器/饰品/兵器 | 扁平破损、简单断裂 |
-| 残片 | 仅剩部分/碎片 | 瓷器/玉佩/信物 | 扁平残片、简单碎片 |
-
-### 2.3 特殊状态
-
-| 状态 | 描述 | 适用道具 | 提示词 |
-|---|---|---|---|
-| 染血 | 红色色块附着 | 兵器/衣物/信物 | 扁平染血、红色痕迹 |
-| 浸水/湿润 | 颜色晕染、湿润感 | 卷轴/信物/衣物 | 扁平浸水、颜色晕染 |
-| 燃烧/焦损 | 黑色边缘、扁平火烧痕迹 | 卷轴/信物/木质品 | 扁平焦黑、简单火烧 |
-| 发光/激活 | 简单发光色块、简单光芒 | 信物/法器/玉石 | 扁平发光、简单光芒 |
-| 包裹/封存 | 用布/盒子包裹 | 信物/饰品/秘物 | 扁平包裹、简单封装 |
+1. **Silhouette anchoring** — the prop's core form/silhouette must remain recognizable across all states
+2. **State must read clearly** — differences between states must be obvious at a glance, instantly distinguishable to the viewer
+3. **Serves the narrative** — each state variant serves a specific story beat
+4. **Progressive degradation** — damage/aging states should follow sound physical logic
+5. **Pure prop, shown independently** — only the prop itself may appear in frame; no person, hand, or body part of any kind is allowed; the prop must not be shown held/worn/gripped, and must be presented independently as a still-life display
 
 ---
 
-## 三、状态变体画面规范
+## 2. State Types
 
-### 单状态图
+### 2.1 Usage States
 
-| 项目 | 约束 |
+| State | Description | Applicable props | Prompt |
+|---|---|---|---|
+| Brand new | Undamaged, solid color as new | All props | flat brand new, undamaged, solid color as new |
+| Everyday use | Slight wear, simple color block change | Weapons/objects/jewelry | flat usage marks, simple wear |
+| Aged | Clear signs of age, dull colors | Objects/keepsakes/scrolls | flat aged, sense of age, dull colors |
+
+### 2.2 Damage States
+
+| State | Description | Applicable props | Prompt |
+|---|---|---|---|
+| Slight damage | Small cracks/small chips/light wear | Porcelain/jade pendant/weapons | flat slight damage, simple cracks |
+| Broken | Clear cracks/fractures/shattered | Porcelain/jewelry/weapons | flat broken, simple fracture |
+| Fragment | Only a portion/fragment remains | Porcelain/jade pendant/keepsake | flat fragment, simple fragment |
+
+### 2.3 Special States
+
+| State | Description | Applicable props | Prompt |
+|---|---|---|---|
+| Bloodstained | Red color block attached | Weapons/clothing/keepsake | flat bloodstained, red marks |
+| Soaked/wet | Color bleeding, wet feel | Scroll/keepsake/clothing | flat soaked, color bleeding |
+| Burned/charred | Black edges, flat burn marks | Scroll/keepsake/wooden item | flat charred, simple burn marks |
+| Glowing/activated | Simple glowing color block, simple radiance | Keepsake/magic item/jade | flat glowing, simple radiance |
+| Wrapped/sealed | Wrapped in cloth/box | Keepsake/jewelry/secret item | flat wrapped, simple packaging |
+
+---
+
+## 3. State Variant Frame Specifications
+
+### Single-state image
+
+| Item | Constraint |
 |---|---|
-| 背景 | 纯净中性灰 #E8E8E8（与设定图一致） |
-| 光线 | 无光影，纯平涂色块 |
-| 角度 | 与原设定图正面图一致 |
-| 比例 | 道具占画面主体 70%+ |
+| Background | Clean neutral gray #E8E8E8 (matching the reference sheet) |
+| Lighting | No lighting effects, purely flat-colored blocks |
+| Angle | Matches the front view of the original reference sheet |
+| Proportion | The prop occupies 70%+ of the frame |
 
-### 状态对比图
+### State comparison image
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 布局 | 同一画面并排展示 2-3 种状态 |
-| 标注 | 每种状态下方标注状态名 |
-| 一致性 | 角度/光线/背景完全一致，仅状态不同 |
+| Layout | 2-3 states shown side by side in the same frame |
+| Labeling | State name labeled beneath each state |
+| Consistency | Angle/lighting/background fully consistent; only the state differs |
 
 ---
 
-## 四、材质状态变化规则
+## 4. Material State Change Rules
 
-| 材质 | 崭新 → 日常 | 日常 → 陈旧 | 损伤表现 |
+| Material | Brand new → everyday | Everyday → aged | Damage expression |
 |---|---|---|---|
-| 金属 | 纯色 → 简单包浆色块 | 包浆 → 简单锈蚀色块 | 简单缺口/卷刃/断裂 |
-| 玉石 | 纯色 → 简单磨损色块 | 磨损 → 表面简单裂纹 | 简单裂纹/碎裂/缺角 |
-| 木质 | 纯色 → 简单包浆色块 | 包浆 → 色泽暗沉 | 简单开裂/断裂/虫蛀 |
-| 瓷器 | 纯色 → 简单划痕色块 | 划痕 → 釉面暗淡色块 | 简单裂纹/碎裂/缺口 |
-| 布/纸 | 纯色平整 → 简单皱折色块 | 皱折 → 发黄变脆色块 | 简单撕裂/焦损/晕染 |
+| Metal | Solid color → simple patina color block | Patina → simple rust color block | Simple chip/curled edge/fracture |
+| Jade | Solid color → simple wear color block | Wear → simple surface cracks | Simple cracks/shattering/chipped corner |
+| Wood | Solid color → simple patina color block | Patina → dull tone | Simple cracking/fracture/worm damage |
+| Porcelain | Solid color → simple scratch color block | Scratches → dull glaze color block | Simple cracks/shattering/chips |
+| Fabric/paper | Smooth solid color → simple crease color block | Creases → yellowed, brittle color block | Simple tearing/charring/bleeding |
 
 ---
 
-## 五、提示词模板
+## 5. Prompt Template
 
-### 单状态变体
+### Single-state variant
 
 ```
-基于{道具名}设定图，
-2d flat design，vector art，flat illustration，
-minimalist，clean lines，solid colors，
-{道具类型}，{材质描述}，
-当前状态：{状态名}，{状态视觉描述}，
-{材质表面变化描述}，
-纯道具静物展示，道具独立陈列，无人持有，无人佩戴，
-同一画面四宫格（2×2）：左上正面图(front view)+右上侧面图(side view)+左下背面图(back view)+右下细节特写(detail closeup)，
-纯净中性灰背景，无光影，无渐变，
-线条清晰，色块分明，状态细节可辨
-图中不要有任何文字，
-画面中不能出现任何人物、手部、手指、肢体，道具不可处于被握持或佩戴状态
+based on the {prop name} reference sheet,
+2d flat design, vector art, flat illustration,
+minimalist, clean lines, solid colors,
+{prop type}, {material description},
+current state: {state name}, {state visual description},
+{material surface change description},
+pure prop still-life display, prop shown independently, not held by anyone, not worn by anyone,
+same frame 2x2 grid: top left front view + top right side view + bottom left back view + bottom right detail closeup,
+clean neutral gray background, no lighting effects, no gradients,
+clean lines, distinct color blocks, state details distinguishable
+no text of any kind in the image,
+no person, hand, finger, or body part of any kind may appear in the frame, the prop must not be held or worn
 ```
-
 
 ---
 
-## 六、约束规则
+## 6. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 道具核心造型/轮廓在所有状态中可识别 |
-| R2 | 状态变化须符合物理逻辑 |
-| R3 | 必须使用四宫格（2×2）布局：左上正面图+右上侧面图+左下背面图+右下细节特写 |
-| R4 | 必须指定「纯净中性灰背景」，无光影，无渐变 |
+| R1 | The prop's core form/silhouette must remain recognizable across all states |
+| R2 | State changes must follow sound physical logic |
+| R3 | Must use a 2x2 grid layout: top left front view + top right side view + bottom left back view + bottom right detail closeup |
+| R4 | Must specify a "clean neutral gray background", no lighting effects, no gradients |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 状态变化后道具不可识别 |
-| X2 | 违反物理逻辑的损伤（玉石生锈等） |
-| X3 | 过度血腥/恐怖的损伤描绘 |
-| X4 | 出现任何人物形象，包括全身、半身、局部（手、手指、手臂等肢体） |
-| X5 | 道具处于被持有、握持、佩戴、使用中的状态 |
-| X6 | 出现暗示人物存在的元素（如手持痕迹、佩戴视角、使用姿态） |
-| X7 | 添加渐变/阴影/高光/立体感效果 |
-| X8 | 状态变化过于复杂、色块区分不清 |
+| X1 | The prop becomes unrecognizable after the state change |
+| X2 | Damage that violates physical logic (e.g., jade rusting) |
+| X3 | Excessively gory/horrific damage depiction |
+| X4 | Any human figure appearing, including full body, half body, or partial body parts (hand, fingers, arm, etc.) |
+| X5 | The prop being held, gripped, worn, or in use |
+| X6 | Any element implying a person's presence (e.g., handling marks, a wearer's viewpoint, a usage pose) |
+| X7 | Adding gradient/shadow/highlight/3D effects |
+| X8 | State changes that are overly complex or color blocks that are not clearly differentiated |

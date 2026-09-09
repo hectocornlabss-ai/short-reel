@@ -1,45 +1,45 @@
 ---
 name: director_storyboard_table_style
-description: 分镜表粘土约束 — 定义定格动画黏土在分镜表中的光影氛围规范、光源角度、动作节奏、环境动态、运镜禁忌与转场禁忌。适用于任何叙事类型。
+description: Storyboard-table clay constraints — defines the lighting/mood specification, light-source angle, action pacing, environmental motion, camera-move taboos, and transition taboos for stop-motion claymation within the storyboard table. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 分镜表粘土约束 · 定格动画黏土 · 技法参考
+# Storyboard-Table Clay Constraints · Stop-Motion Claymation · Technique Reference
 
 ---
 
-## 一、分镜表定位
+## 1. Positioning of the Storyboard Table
 
-分镜表是导演将剧本转化为镜头语言的核心工具。以下仅提供定格动画黏土风格在分镜表层面的约束规范。
-
----
-
-## 二、光影与氛围
-
-- **同场戏光影统一** — 一场戏内不应出现两种以上光影方案，除非有明确的叙事转折（如关台灯→月光冷辉）
-- **情绪色盘绑定** — 每场戏至少绑定 1 个情绪场景（如相遇心动/日常温馨/离别感伤），并在镜头组内保持主色+辅色连续性
-- **光源角度规范** — 默认 30-45° 侧光，模拟小剧场灯光效果。描述光影时须区分正给/侧给的角度差异
-- **冷暖色调与叙事阶段匹配** — 前半段（日常/工作/学习）保持暖色调，冷色调（冷蓝+暖色对比）在夜晚或情绪转折后使用
-- **光影转场是高级手段** — 从自然光（A）渐变到室内暖光（C）= 日转夜的时间流逝。在分镜表中标注光影变化点
+The storyboard table is the director's core tool for translating a script into shot language. The following provides only the constraint specification for the stop-motion claymation style at the storyboard-table level.
 
 ---
 
-## 三、环境动态
+## 2. Lighting and Mood
 
-- **环境动态增加画面呼吸感** — 树叶飘动、烛光摇曳、窗帘轻摆、雨滴落下、魔法光点。每 3-4 个镜头至少安排一个有环境动态的镜头，避免画面"死"掉
-- **粘土风环境元素优先** — 环境动态应选用粘土风世界观内的元素：树叶飘动、烛光摇曳、窗帘轻摆、小道具微动、魔法光点，体现手工质感和微缩世界的动态
-
----
-
-## 四、粘土风动作节奏
-
-- **定格动画动作要慢** — 所有人物动作默认自然缓慢节奏。起身、转身、抬手都应标注"自然"或"轻缓"
-- **黏土质感动态** — 黏土角色的动作自带"笨拙可爱"属性，可在画面描述中加入手指触碰、微倾头等细微动作，增加画面的"活"感
-- **甜宠互动用暗示** — 目光交汇、手指轻微触碰、递东西时的指尖接触。不要写大幅度双人交互，拆成暗示性的局部镜头
+- **Unified lighting within the same scene** — A single scene should not use more than one lighting scheme, unless there is a clear narrative turning point (e.g., turning off a lamp → shifting to cool moonlight)
+- **Emotional palette binding** — Each scene should bind at least 1 emotional setting (e.g., meeting/infatuation, everyday warmth, sorrowful farewell), and maintain continuity of primary + secondary color within the shot group
+- **Light-source angle specification** — Default 30-45° side light, simulating small-theater stage lighting. When describing lighting, distinguish between front-lit and side-lit angle differences
+- **Warm/cool tone matched to narrative stage** — The first half (daily life/work/study) maintains a warm tone; cool tones (cool blue + warm contrast) are used at night or after an emotional turning point
+- **Lighting transitions are an advanced technique** — A gradual shift from natural light (A) to indoor warm light (C) = the passage of time from day to night. Mark lighting change points in the storyboard table
 
 ---
 
-## 五、运镜禁忌
+## 3. Environmental Motion
 
-- **禁用快速运镜** — 甩镜、急推、快速切换与定格动画黏土风的气质冲突
-- **禁用花式转场** — 划屏、旋转、百叶窗等与本风格不兼容
+- **Environmental motion adds a sense of breath to the frame** — Fluttering leaves, flickering candlelight, gently swaying curtains, falling raindrops, magical light spots. Arrange at least one shot with environmental motion every 3-4 shots to avoid the frame feeling "dead"
+- **Prioritize clay-style environmental elements** — Environmental motion should draw on elements native to the clay-style world: fluttering leaves, flickering candlelight, gently swaying curtains, small props with subtle motion, magical light spots — expressing the handcrafted texture and dynamism of the miniature world
+
+---
+
+## 4. Clay-Style Action Pacing
+
+- **Stop-motion actions should be slow** — All character actions default to a natural, slow pace. Standing up, turning around, raising a hand should all be annotated as "natural" or "gentle"
+- **Clay-texture motion** — Clay characters' actions carry an inherent "clumsy cuteness"; add subtle actions like finger touches, slight head tilts to the frame description to increase the "aliveness" of the image
+- **Use implication for sweet/romantic interaction** — Meeting gazes, a light touch of fingers, fingertip contact when handing something over. Do not write large-scale two-person interactions — break them into suggestive, localized shots
+
+---
+
+## 5. Camera-Move Taboos
+
+- **No fast camera moves** — Whip pans, quick push-ins, and rapid cuts clash with the temperament of the stop-motion claymation style
+- **No flashy transitions** — Screen wipes, spins, venetian blinds, and similar effects are incompatible with this style

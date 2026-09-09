@@ -1,45 +1,45 @@
 ---
 name: director_storyboard_table_style
-description: 分镜表古风约束 — 定义真人古风写实在分镜表中的光影氛围规范、光源角度、动作节奏、环境动态、运镜禁忌与转场禁忌。适用于任何叙事类型。
+description: Storyboard table ancient-style constraints — defines photorealistic ancient Chinese's lighting/mood conventions, light-source angle, action pacing, environmental motion, camera-movement taboos, and transition taboos within the storyboard table. Applicable to any narrative type.
 metaData: director_skills
 ---
 
-# 分镜表古风约束 · 真人古风写实 · 技法参考
+# Storyboard Table Ancient-Style Constraints · Photorealistic Ancient Chinese · Technique Reference
 
 ---
 
-## 一、分镜表定位
+## 1. Purpose of the Storyboard Table
 
-分镜表是导演将剧本转化为镜头语言的核心工具。以下仅提供真人古风写实风格在分镜表层面的约束规范。
-
----
-
-## 二、光影与氛围
-
-- **同场戏光影统一** — 一场戏内不应出现两种以上光影方案，除非有明确的叙事转折（如烛光被吹灭→月光冷辉）
-- **情绪色盘绑定** — 每场戏至少绑定 1 个情绪场景（如初见心动/分离误会/重逢释怀），并在镜头组内保持主色+辅色连续性
-- **光源角度规范** — 正给镜头光源默认 38.5° 斜射（非笼统的 45°），侧给镜头根据画面需要调整。描述光影时须区分正给/侧给的角度差异
-- **冷暖色调与叙事阶段匹配** — 悲戚/孤绝/被弃段落严格使用冷光（青黛冷白），禁用暖橙/琥珀；暖色调（暖橙+冷蓝背景对比）仅在情感回暖后使用
-- **光影转场是高级手段** — 从窗纱透光（E）渐变到烛光暖影（C）= 日转夜的时间流逝。在分镜表中标注光影变化点
+The storyboard table is the director's core tool for translating the script into shot language. The following only provides the photorealistic ancient Chinese style's constraints at the storyboard-table level.
 
 ---
 
-## 三、环境动态
+## 2. Lighting and Mood
 
-- **环境动态增加画面呼吸感** — 花瓣飘落、烟雾升腾、水波荡漾、纱帘飘动。每 3-4 个镜头至少安排一个有环境动态的镜头，避免画面"死"掉
-- **古风环境元素优先** — 环境动态应选用古风世界观内的元素：落花、飞絮、轻烟、流水、风过竹林、烛火摇曳，禁止出现现代元素
-
----
-
-## 四、古风动作节奏
-
-- **古风动作要慢** — 所有人物动作默认慢速。起身、转身、抬手都应标注"缓慢"
-- **服饰动态** — 古风服饰（宽袖、裙摆、披帛）的飘动是天然的动态资产，可在画面描述中加入衣袂/裙摆的动态，增加画面的"活"感
-- **仪态约束** — 古风人物的举止应符合时代气质：行走稳缓、举手投足含蓄内敛、不出现现代化的肢体语言（如耸肩、摊手）
+- **Unified lighting within a scene** — A single scene should not contain more than one lighting scheme, unless there is a clear narrative turning point (e.g. candlelight being blown out → cold moonlight)
+- **Emotional palette binding** — Each scene should bind to at least 1 emotional setting (e.g. a heart-fluttering first meeting / a sorrowful parting misunderstanding / a reunion and release), maintaining continuity of primary + accent color within the shot group
+- **Light-source angle convention** — Default 38.5° oblique light for front-facing shots (not a generic 45°); side-lit shots are adjusted as the frame requires. When describing lighting, distinguish between front-lit and side-lit angle differences
+- **Warm/cool tone matched to narrative stage** — Sorrowful/isolated/abandoned passages strictly use cool light (slate blue-black cool white), with warm orange/amber prohibited; warm tone (warm orange contrasted against a cool blue background) is used only after the emotion warms
+- **Lighting transitions are an advanced technique** — A gradual shift from gauze-filtered light (E) to candlelit warm shadow (C) = the passage of time from day to night. Mark lighting change points in the storyboard table
 
 ---
 
-## 五、运镜禁忌
+## 3. Environmental Motion
 
-- **禁用快速运镜** — 甩镜、急推、手持晃动与真人古风写实的气质冲突
-- **禁用花式转场** — 划屏、旋转、百叶窗等与本风格不兼容
+- **Environmental motion adds a sense of breathing to the frame** — Petals drifting down, smoke rising, ripples on water, gauze curtains swaying. Arrange at least one shot with environmental motion every 3-4 shots to avoid the image feeling "dead"
+- **Prioritize ancient-style environmental elements** — Environmental motion should draw on elements within the ancient-style worldview: falling flowers, drifting catkins, thin wisps of smoke, flowing water, wind through bamboo, flickering candlelight; modern elements are prohibited
+
+---
+
+## 4. Ancient-Style Action Pacing
+
+- **Ancient-style actions should be slow** — All character actions default to a slow pace. Rising, turning, and raising a hand should all be marked "slowly"
+- **Clothing dynamics** — The flutter of ancient-style clothing (wide sleeves, skirt hems, silk shawls) is a natural source of motion; add the movement of robe sleeves/skirt hems into the visual description to give the frame a sense of "life"
+- **Bearing constraints** — Ancient-style characters' conduct should fit the era's temperament: walking steady and unhurried, gestures and bearing reserved and restrained, no modern body language (such as shrugging or throwing up the hands)
+
+---
+
+## 5. Camera-Movement Taboos
+
+- **No fast camera movement** — Whip pans, sudden push-ins, and handheld shake conflict with the temperament of photorealistic ancient style
+- **No flashy transitions** — Wipes, spins, venetian blinds, and similar effects are incompatible with this style

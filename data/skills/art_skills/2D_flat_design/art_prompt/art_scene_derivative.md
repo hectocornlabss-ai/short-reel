@@ -1,164 +1,164 @@
-# 场景衍生资产生成 · 扁平风约束手册
+# Scene Derivative Asset Generation · Flat Style Constraint Manual
 
 ---
 
-## 一、衍生原则
+## 1. Derivative Principles
 
-1. **空间一致** — 建筑结构/布局/材质在所有变体中保持一致
-2. **景别驱动** — 同一场景通过不同景别展示不同叙事功能
-3. **时段切换** — 同一空间在不同时间段呈现不同色调色块
-4. **天候变化** — 同一空间在不同天气下呈现不同色彩氛围
-5. **扁平为锚** — 所有变体必须保持扁平矢量插画质感，拒绝 3D 渲染/CG 动画感；保持简洁线条、纯色填充
+1. **Spatial consistency** — architectural structure/layout/material must remain consistent across all variants
+2. **Shot-size driven** — the same scene shows different narrative functions through different shot sizes
+3. **Time-of-day switching** — the same space presents different color-block tones at different times of day
+4. **Weather variation** — the same space presents different color moods under different weather
+5. **Flat as the anchor** — all variants must maintain a flat vector illustration texture, rejecting 3D rendering/CG animation feel; keep clean lines and solid color fill
 
 ---
 
-## 二、景别变体
+## 2. Shot-Size Variants
 
-### 景别定义
+### Shot-size definitions
 
-| 景别 | 范围 | 叙事功能 | 提示词 |
+| Shot size | Scope | Narrative function | Prompt |
 |---|---|---|---|
-| 大全景 | 场景全貌 + 周围环境 | 建立空间感、定位 | extreme wide shot、大全景、flat extreme wide |
-| 全景 | 场景完整呈现 | 展示空间结构 | wide shot、全景、flat wide |
-| 中景 | 场景局部区域 | 聚焦功能区 | medium shot、中景、flat medium |
-| 近景 | 场景细部 | 色块/氛围道具特写 | close shot、近景、flat close |
-| 特写 | 极局部细节 | 色块纹理/关键道具 | extreme closeup、特写、flat extreme close |
+| Extreme wide shot | Full scene + surrounding environment | Establishes sense of space, orientation | extreme wide shot, extreme wide, flat extreme wide |
+| Wide shot | Complete scene presentation | Shows spatial structure | wide shot, wide, flat wide |
+| Medium shot | Partial area of the scene | Focuses on a functional area | medium shot, medium, flat medium |
+| Close shot | Scene detail | Color block/mood prop closeup | close shot, close, flat close |
+| Extreme closeup | Extremely localized detail | Color block texture/key prop | extreme closeup, extreme close, flat extreme close |
 
-### 景别衍生规范
+### Shot-size derivation rules
 
-| 从基准图衍生 | 保持不变 | 允许变化 |
+| Deriving from base image | Kept unchanged | Allowed to change |
 |---|---|---|
-| 大全景 → 全景 | 建筑外观、整体布局 | 视角收窄、前景增加色块 |
-| 全景 → 中景 | 材质、色调、光线 | 裁切聚焦、纯色变化 |
-| 中景 → 近景 | 材质、色调 | 纯色聚焦、背景色块 |
-| 近景 → 特写 | 色块纹理 | 纯色聚焦、微距色块 |
+| Extreme wide → wide | Building exterior, overall layout | Narrower angle, added foreground color blocks |
+| Wide → medium | Material, tone, lighting | Cropped focus, solid color changes |
+| Medium → close | Material, tone | Solid color focus, background color blocks |
+| Close → extreme close | Color block texture | Solid color focus, macro color blocks |
 
 ---
 
-## 三、时段变体
+## 3. Time-of-Day Variants
 
-### 时段定义
+### Time-of-day definitions
 
-| 时段 | 视觉特征 | 提示词 |
+| Time of day | Visual characteristics | Prompt |
 |---|---|---|
-| 清晨 | 扁平色调、浅色色块 | 扁平清晨、浅色晨色 |
-| 正午 | 扁平明亮、纯色色块 | 扁平正午、纯色明亮 |
-| 黄昏 | 扁平金色、暖色色块 | 扁平黄昏、暖色金辉 |
-| 夜间（月光） | 扁平冷蓝、深色色块 | 扁平月光、冷蓝月色 |
-| 夜间（灯火） | 扁平暖黄、深色背景 | 扁平灯火、暖黄暗底 |
+| Early morning | Flat tone, light-colored blocks | flat early morning, light morning color |
+| Midday | Flat bright, solid color blocks | flat midday, solid color bright |
+| Dusk | Flat gold, warm color blocks | flat dusk, warm golden glow |
+| Night (moonlight) | Flat cool blue, dark color blocks | flat moonlight, cool blue moon color |
+| Night (lamplight) | Flat warm yellow, dark background | flat lamplight, warm yellow dark base |
 
-### 时段衍生规范
+### Time-of-day derivation rules
 
-| 从基准时段衍生 | 保持不变 | 变化项 |
+| Deriving from base time | Kept unchanged | Change item |
 |---|---|---|
-| 日间 → 黄昏 | 建筑/布局/材质 | 天空色块暖化、阴影色块 |
-| 日间 → 夜间 | 建筑/布局/材质 | 整体色块变暗、增加灯火/月色色块 |
-| 室内日间 → 室内夜间 | 空间结构、家具 | 整体色块暖化、增加烛火/灯笼色块 |
+| Daytime → dusk | Building/layout/material | Sky color block warmed, shadow color block |
+| Daytime → nighttime | Building/layout/material | Overall color block darkened, add lamplight/moonlight color block |
+| Indoor daytime → indoor nighttime | Spatial structure, furniture | Overall color block warmed, add candlelight/lantern color block |
 
 ---
 
-## 四、天候变体
+## 4. Weather Variants
 
-### 天候定义
+### Weather definitions
 
-| 天候 | 视觉特征 | 提示词 |
+| Weather | Visual characteristics | Prompt |
 |---|---|---|
-| 晴天 | 扁平明亮、纯色色块 | 扁平晴天、纯色晴日 |
-| 阴天 | 扁平均匀、灰色色块 | 扁平阴天、灰色柔光 |
-| 薄雾 | 扁平朦胧、低饱和色块 | 扁平薄雾、朦胧色块 |
-| 细雨 | 扁平雨丝、湿润色块 | 扁平细雨、湿润色块 |
-| 飞雪 | 扁平白色、覆盖色块 | 扁平飞雪、白色覆盖 |
+| Sunny | Flat bright, solid color blocks | flat sunny, solid color sunny day |
+| Overcast | Flat even, gray color blocks | flat overcast, gray soft light |
+| Light mist | Flat hazy, low-saturation color blocks | flat light mist, hazy color blocks |
+| Light rain | Flat rain streaks, damp color blocks | flat light rain, damp color blocks |
+| Falling snow | Flat white, covering color blocks | flat falling snow, white coverage |
 
-### 天候衍生规范
+### Weather derivation rules
 
-| 从基准天候衍生 | 保持不变 | 变化项 |
+| Deriving from base weather | Kept unchanged | Change item |
 |---|---|---|
-| 晴 → 薄雾 | 建筑/布局 | 增加扁平雾层、远景色块模糊、饱和度降低 |
-| 晴 → 细雨 | 建筑/布局 | 增加扁平雨丝、地面色块、色调偏冷 |
-| 晴 → 飞雪 | 建筑/布局 | 增加扁平积雪、雪花色块、色调偏白 |
-| 植被需随天候逻辑适配 | — | 扁平雨色、扁平雪色 |
+| Sunny → light mist | Building/layout | Add flat mist layer, background color block blurred, saturation lowered |
+| Sunny → light rain | Building/layout | Add flat rain streaks, ground color block, tone shifted cooler |
+| Sunny → falling snow | Building/layout | Add flat snow accumulation, snowflake color block, tone shifted whiter |
+| Vegetation must adapt to weather logic | — | flat rain color, flat snow color |
 
 ---
 
-## 五、角度变体
+## 5. Angle Variants
 
-### 角度定义
+### Angle definitions
 
-> 衍生图相对参考图，可在以下角度维度上进行切换。调用方会传入参考图 + 目标角度描述，本文件只定义角度语汇与一致性约束。
+> Derivative images shift along the following angle dimensions relative to the reference image. The caller supplies the reference image + target angle description; this document only defines the angle vocabulary and consistency constraints.
 
-| 角度 | 描述 | 提示词 |
+| Angle | Description | Prompt |
 |---|---|---|
-| 正面/前视 | 与参考图相比，视线朝向场景正面 | front view、eye level |
-| 侧面（左/右） | 朝场景左/右侧 90° 平视 | left side view / right side view |
-| 背面/后视 | 朝场景背面 180° | back view |
-| 俯视 | 高位俯瞰，呈现整体布局 | high angle、bird's eye view |
-| 仰视 | 低位仰望，强调高大主体 | low angle、worm's eye view |
-| 近景推进 | 同方向但镜头推进，聚焦局部 | push-in、closer angle |
-| 自由角度 | 调用方自定义的任意角度描述 | 按 `{目标角度}` 注入 |
+| Front view | Compared to the reference image, the viewpoint faces the front of the scene | front view, eye level |
+| Side (left/right) | Facing the scene's left/right side at 90°, eye level | left side view / right side view |
+| Back/rear view | Facing the rear of the scene at 180° | back view |
+| High angle | Elevated viewpoint, showing overall layout | high angle, bird's eye view |
+| Low angle | Low viewpoint looking up, emphasizing a tall subject | low angle, worm's eye view |
+| Push-in closeup | Same direction but lens pushed in, focused on a detail | push-in, closer angle |
+| Free angle | Any custom angle description supplied by the caller | injected as `{target angle}` |
 
-### 角度衍生规范
+### Angle derivation rules
 
-| 项目 | 约束 |
+| Item | Constraint |
 |---|---|
-| 参考一致性 | 建筑结构/布局/材质/色调/季节/天候必须与参考图一致 |
-| 视点 | 同一场景中心点，仅角度切换；视线高度可随角度调整 |
-| 光照逻辑 | 保持扁平无光影逻辑，与参考图一致 |
-| 布局 | 单画面（非拼图、非多视图、非分屏） |
-| 人物 | **严禁出现任何人物、人影、人体轮廓** |
-| 画面比例 | 默认 1:1（或按调用方设定） |
+| Reference consistency | Architectural structure/layout/material/tone/season/weather must match the reference image |
+| Viewpoint | Same scene center point, only the angle changes; eye-level height may adjust with the angle |
+| Lighting logic | Keep the flat, no-lighting logic, consistent with the reference image |
+| Layout | Single frame (not a collage, not multi-view, not split-screen) |
+| People | **No person, human silhouette, or human outline of any kind may appear** |
+| Aspect ratio | Default 1:1 (or as set by the caller) |
 
 ---
 
-## 六、提示词模板
+## 6. Prompt Template
 
 ```
-扁平古风衍生场景图，基于参考图，
-2d flat design，vector art，flat illustration，
-minimalist，clean lines，solid colors，
-flat scene derivative，environment concept art，no people，no characters，no human figures，
-保持场景空间结构一致，
-{目标角度（如有）}，{景别视角（如有）}，{时段描述（如有）}，{天候描述（如有）}，
-{前景色块}，{中景色块}，{后景色块}，
-{色调描述}，{色块变化（如有）}，{天空色块变化（如有）}，{氛围调整（如有）}，
-{天候视觉特征（如有）}，{材质色块变化（如有）}，{植被适配描述（如有）}，
-无岁月痕迹，无磨损，扁平完美，
-无光照，无阴影，纯色平涂，
-无透视，纯色填充，
-单画面构图，与参考图保持建筑结构/材质/色调一致，仅按目标角度切换视点，
-画面中无任何人物
-图中不要有任何文字
+flat ancient-style derivative scene image, based on the reference image,
+2d flat design, vector art, flat illustration,
+minimalist, clean lines, solid colors,
+flat scene derivative, environment concept art, no people, no characters, no human figures,
+keep the scene's spatial structure consistent,
+{target angle (if any)}, {shot-size viewpoint (if any)}, {time-of-day description (if any)}, {weather description (if any)},
+{foreground color block}, {midground color block}, {background color block},
+{tone description}, {color block change (if any)}, {sky color block change (if any)}, {mood adjustment (if any)},
+{weather visual characteristics (if any)}, {material color block change (if any)}, {vegetation adaptation description (if any)},
+no signs of age, no wear, flat perfect,
+no lighting, no shadows, flat solid color,
+no perspective, solid color fill,
+single-frame composition, keep architectural structure/material/tone consistent with the reference image, only shift viewpoint per the target angle,
+no people of any kind in the frame
+no text of any kind in the image
 ```
 
-> **使用说明**：根据用户提供的信息自行判断需要应用的变化维度（角度/景别/时段/天候），未提及的维度对应字段留空省略即可。无需为每种变体单独生成模板。
+> **Usage note**: Based on the information the user provides, judge for yourself which dimensions of change to apply (angle/shot size/time of day/weather); leave the field for any unmentioned dimension blank/omitted. No need to generate a separate template for every variant.
 
 ---
 
-## 七、约束规则
+## 7. Constraint Rules
 
-### 必守
+### Mandatory
 
-| 编号 | 规则 |
+| No. | Rule |
 |---|---|
-| R1 | 场景空间结构在所有变体中保持一致 |
-| R2 | 时段变体必须调整色块色调与氛围 |
-| R3 | 天候变体必须适配色块/材质表面 |
-| R4 | 衍生图必须为「单画面」，不得拼接多视图/网格/分屏 |
-| R5 | 衍生图必须与参考图保持建筑结构/材质/色调一致，仅按指定角度切换视点 |
-| R6 | 场景图中**严禁出现任何人物** |
-| R7 | 根据用户提供的信息自行判断变化维度（角度/景别/时段/天候），未提及维度留空省略 |
-| R8 | 必须指定「扁平风格」关键词（2d flat design、vector art） |
-| R9 | 必须指定「无光影无渐变」 |
-| R10 | 材质必须为纯色填充，禁止复杂纹理/岁月感 |
+| R1 | The scene's spatial structure must remain consistent across all variants |
+| R2 | Time-of-day variants must adjust the color block tone and mood |
+| R3 | Weather variants must adapt the color block/material surface |
+| R4 | The derivative image must be a "single frame" — no collaging of multi-view/grid/split-screen |
+| R5 | The derivative image must keep architectural structure/material/tone consistent with the reference image, shifting viewpoint only per the specified angle |
+| R6 | **No person may appear** in the scene image |
+| R7 | Judge for yourself which dimensions to change (angle/shot size/time of day/weather) based on the information provided; leave unmentioned dimensions blank/omitted |
+| R8 | Must specify "flat style" keywords (2d flat design, vector art) |
+| R9 | Must specify "no lighting, no gradients" |
+| R10 | Materials must be solid color fill; complex texture/sense of age is prohibited |
 
-### 严禁
+### Strictly Prohibited
 
-| 编号 | 严禁 |
+| No. | Prohibited |
 |---|---|
-| X1 | 变体间建筑结构/布局不一致 |
-| X2 | 天候与季节矛盾（夏天飞雪等） |
-| X3 | 变体间材质/风格突变 |
-| X4 | 出现任何人物、人影、人体剪影或人体轮廓 |
-| X5 | 画面被拼接成多视图/网格/分屏布局 |
-| X6 | 3D 渲染/CG 动画/卡通/游戏引擎质感（禁用 3D render、CGI、Unreal Engine、Unity 等词） |
-| X7 | 材质过于复杂、色块区分不清 |
-| X8 | 添加光影/阴影/渐变/立体感效果 |
+| X1 | Inconsistent architectural structure/layout between variants |
+| X2 | Weather contradicting the season (e.g., snow falling in summer) |
+| X3 | Abrupt material/style shifts between variants |
+| X4 | Any person, human silhouette, or human outline appearing |
+| X5 | The frame being collaged into multi-view/grid/split-screen layout |
+| X6 | 3D rendering/CG animation/cartoon/game-engine texture (words like 3D render, CGI, Unreal Engine, Unity are prohibited) |
+| X7 | Material that is overly complex or color blocks that are not clearly differentiated |
+| X8 | Adding lighting/shadow/gradient/3D effects |

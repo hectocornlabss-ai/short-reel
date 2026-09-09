@@ -1,11 +1,10 @@
-# 视频提示词 · 视觉风格约束
+# Video Prompt · Visual Style Constraints
 
-生成视频提示词时，必须注入以下视觉风格标签：
+When generating video prompts, the following visual style tags must be injected:
 
-| 模式 | 风格标签 |
+| Mode | Style Tags |
 |------|----------|
-| **通用多参模式（英文）** | `Chinese traditional 3D render, PBR materials, volumetric lighting, oriental aesthetic, elegant and grand, cinematic` |
-| **通用首尾帧模式（英文）** | `Chinese traditional 3D render, PBR materials, volumetric lighting, oriental aesthetic, elegant and grand, cinematic, shallow depth of field` |
-| **Seedance 2.0（中文）** | `国风3D渲染，PBR材质，体积光，东方美学，典雅大气，电影风格` |
-
+| **General multi-parameter mode (English)** | `Chinese traditional 3D render, PBR materials, volumetric lighting, oriental aesthetic, elegant and grand, cinematic` |
+| **General first/last-frame mode (English)** | `Chinese traditional 3D render, PBR materials, volumetric lighting, oriental aesthetic, elegant and grand, cinematic, shallow depth of field` |
+| **Seedance 2.0 (Chinese)** | `国风3D渲染，PBR材质，体积光，东方美学，典雅大气，电影风格` |
 
