@@ -15,8 +15,8 @@ export async function initEmbedding(): Promise<void> {
 
   const modelConfigData = await db("o_setting").whereIn("key", ["modelOnnxFile", "modelDtype"]);
   const modelObj: Record<string, string> = {};
-  Object.entries(modelConfigData).forEach(([key, value]) => {
-    modelObj[key] = value as string;
+  modelConfigData.forEach((row) => {
+    if (row.key) modelObj[row.key] = row.value as string;
   });
   let modelOnnxFile = modelObj?.modelOnnxFile ? JSON.parse(modelObj.modelOnnxFile) : ["all-MiniLM-L6-v2", "onnx", "model_fp16.onnx"]; // 模型文件路径
   let modelDtype = modelObj?.modelDtype ?? ("fp16" as const); // 量化类型：fp32

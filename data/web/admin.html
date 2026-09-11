@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>แผงควบคุมแอดมิน - SekClip</title>
+<style>
+  :root {
+    --teal-1: #0f9b8e;
+    --teal-2: #2dd4bf;
+    --teal-3: #a7f3d0;
+    --bg: #f4faf9;
+    --card: #ffffff;
+    --text: #16211f;
+    --muted: #6b7c79;
+    --border: #e3efec;
+    --danger: #e5484d;
+    --success: #12a150;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", "Noto Sans Thai", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: linear-gradient(135deg, var(--teal-1) 0%, var(--teal-2) 45%, var(--teal-3) 100%);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+  }
+  header .brand { font-size: 1.25rem; font-weight: 700; }
+  main { max-width: 1000px; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.25rem; }
+  h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  th, td { text-align: left; padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  th { color: var(--muted); font-weight: 600; }
+  button {
+    background: var(--teal-1); color: #fff; border: none; border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem; font-size: 0.8125rem; cursor: pointer;
+  }
+  button.danger { background: var(--danger); }
+  button.outline { background: #fff; color: var(--teal-1); border: 1px solid var(--teal-1); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  input[type="number"] { width: 80px; padding: 0.35rem 0.5rem; border: 1px solid var(--border); border-radius: 0.4rem; }
+  .slipThumb { width: 48px; height: 48px; object-fit: cover; border-radius: 0.3rem; cursor: pointer; border: 1px solid var(--border); }
+  .badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 1rem; font-size: 0.75rem; }
+  .badge.admin { background: var(--teal-3); color: var(--teal-1); font-weight: 700; }
+  .empty { color: var(--muted); font-size: 0.875rem; padding: 0.5rem 0; }
+  .denied { text-align: center; padding: 4rem 1rem; color: var(--muted); }
+  .adjustRow { display: flex; gap: 0.35rem; align-items: center; }
+  .modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none;
+    align-items: center; justify-content: center; z-index: 10;
+  }
+  .modal img { max-width: 90vw; max-height: 90vh; border-radius: 0.5rem; }
+</style>
+</head>
+<body>
+
+<header><div class="brand">SekClip · แผงควบคุมแอดมิน</div></header>
+
+<main id="app">
+  <div class="denied" id="denied" style="display:none">ไม่มีสิทธิ์เข้าถึงหน้านี้ (เฉพาะแอดมิน)</div>
+
+  <div id="content" style="display:none">
+    <div class="card">
+      <h2>คำสั่งเติมเครดิตที่รอตรวจสอบ</h2>
+      <table id="pendingTable">
+        <thead><tr><th>วันที่</th><th>ผู้ใช้</th><th>จำนวนเงิน</th><th>เครดิต</th><th>สลิป</th><th>ดำเนินการ</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="pendingEmpty" style="display:none">ไม่มีคำสั่งที่รอตรวจสอบ</div>
+    </div>
+
+    <div class="card">
+      <h2>จัดการผู้ใช้</h2>
+      <table id="userTable">
+        <thead><tr><th>ชื่อ</th><th>เครดิต</th><th>สิทธิ์</th><th>สมัครเมื่อ</th><th>ปรับเครดิต</th><th>บัญชี</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+        <div style="font-weight:600;margin-bottom:0.5rem;font-size:0.875rem">+ เพิ่มผู้ใช้ใหม่</div>
+        <div class="createUserForm" style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
+          <input type="email" id="newUserEmail" placeholder="อีเมล" style="flex:1;min-width:160px;padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:0.4rem" />
+          <input type="text" id="newUserPassword" placeholder="รหัสผ่าน (อย่างน้อย 6 ตัว)" style="flex:1;min-width:160px;padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:0.4rem" />
+          <input type="text" id="newUserDisplayName" placeholder="ชื่อที่แสดง (ไม่บังคับ)" style="flex:1;min-width:140px;padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:0.4rem" />
+          <input type="number" id="newUserCredits" placeholder="เครดิตเริ่มต้น" value="0" style="width:110px;padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:0.4rem" />
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.8125rem;color:var(--muted)">
+            <input type="checkbox" id="newUserIsAdmin" /> แอดมิน
+          </label>
+          <button id="createUserBtn">สร้างผู้ใช้</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ต้นทุน / กำไร / อัตราแลกเปลี่ยนเครดิต</h2>
+      <p style="font-size:0.8125rem;color:var(--muted);margin:0 0 0.75rem">
+        ค่าพวกนี้ใช้คำนวณว่าจะหักกี่เครดิตต่องาน และเติม 1 บาทได้กี่เครดิต ปรับได้ตลอด มีผลทันทีกับงานที่สร้างหลังจากบันทึก
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width:55%">ต้นทุนอ้างอิงต่อ 1 เครดิต (USD) — ราคาจริงจาก OpenRouter หารด้วยค่านี้ = จำนวนเครดิตที่หัก</td>
+            <td><input type="number" step="0.001" id="pricingCreditUsdPerCredit" style="width:120px;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:0.4rem" /></td>
+          </tr>
+          <tr>
+            <td>ตัวคูณกำไร (margin) — 1.5 = บวกกำไร 50% จากต้นทุนจริง</td>
+            <td><input type="number" step="0.01" id="pricingCreditMarginMultiplier" style="width:120px;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:0.4rem" /></td>
+          </tr>
+          <tr>
+            <td>ราคาขาย 1 เครดิต (บาท) — ใช้ตอนคำนวณ QR PromptPay เวลาเติมเงิน</td>
+            <td><input type="number" step="0.01" id="pricingCreditPriceThb" style="width:120px;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:0.4rem" /></td>
+          </tr>
+          <tr>
+            <td>เครดิตแจกฟรีตอนสมัครสมาชิกใหม่</td>
+            <td><input type="number" step="1" id="pricingSignupBonusCredits" style="width:120px;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:0.4rem" /></td>
+          </tr>
+          <tr>
+            <td>จำนวนภาพที่สมมติไว้ต่อ 1 ตอน (ใช้ประเมินเครดิตคร่าวๆ ก่อนสร้างโปรเจกต์)</td>
+            <td><input type="number" step="1" id="pricingEstimateImagesPerEpisode" style="width:120px;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:0.4rem" /></td>
+          </tr>
+          <tr>
+            <td>ความยาววิดีโอรวมที่สมมติไว้ต่อ 1 ตอน (วินาที)</td>
+            <td><input type="number" step="1" id="pricingEstimateVideoSecondsPerEpisode" style="width:120px;padding:0.35rem 0.5rem;border:1px solid var(--border);border-radius:0.4rem" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="savePricingBtn" style="margin-top:0.75rem">บันทึก</button>
+      <span id="pricingSaveMsg" style="margin-left:0.5rem;font-size:0.8125rem;color:var(--success)"></span>
+    </div>
+
+    <div class="card">
+      <h2>API Key / โมเดล</h2>
+      <p style="font-size:0.875rem;color:var(--muted);margin:0">
+        จัดการ API Key และเลือกโมเดลได้ที่หน้า "การตั้งค่า" → "บริการโมเดล" / "การแมปโมเดล" ตามปกติ (ใช้หน้าเดิม ไม่ซ้ำซ้อนที่นี่)
+      </p>
+    </div>
+  </div>
+</main>
+
+<div class="modal" id="slipModal" onclick="this.style.display='none'"><img id="slipModalImg" src="" /></div>
+
+<div class="modal" id="editAccountModal">
+  <div class="card" style="width:360px" onclick="event.stopPropagation()">
+    <h2>แก้ไขบัญชีผู้ใช้ #<span id="editAccountUserId"></span></h2>
+    <div style="display:flex;flex-direction:column;gap:0.6rem">
+      <div>
+        <label style="font-size:0.8125rem;color:var(--muted);display:block;margin-bottom:0.25rem">อีเมลใหม่ (เว้นว่างถ้าไม่เปลี่ยน)</label>
+        <input type="email" id="editAccountEmail" style="width:100%;padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:0.4rem" />
+      </div>
+      <div>
+        <label style="font-size:0.8125rem;color:var(--muted);display:block;margin-bottom:0.25rem">รหัสผ่านใหม่ (เว้นว่างถ้าไม่เปลี่ยน)</label>
+        <input type="text" id="editAccountPassword" placeholder="อย่างน้อย 6 ตัว" style="width:100%;padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:0.4rem" />
+      </div>
+      <div style="display:flex;gap:0.5rem;justify-content:flex-end;margin-top:0.5rem">
+        <button class="outline" id="editAccountCancelBtn">ยกเลิก</button>
+        <button id="editAccountSaveBtn">บันทึก</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  if (window.self !== window.top) {
+    var h = document.querySelector("header");
+    if (h) h.style.display = "none";
+    document.body.style.background = "transparent";
+  }
+  var token = localStorage.getItem("token");
+  if (!token) { document.getElementById("denied").style.display = "block"; document.getElementById("denied").textContent = "ยังไม่ได้เข้าสู่ระบบ"; return; }
+
+  function api(path, options) {
+    options = options || {};
+    options.headers = Object.assign({ Authorization: token, "Content-Type": "application/json" }, options.headers || {});
+    return fetch("/api" + path, options).then(function (res) {
+      return res.json().then(function (json) {
+        if (!res.ok) throw new Error(json.message || "เกิดข้อผิดพลาด");
+        return json.data;
+      });
+    });
+  }
+
+  function fmtDate(ts) { return new Date(ts).toLocaleString("th-TH"); }
+
+  function loadPending() {
+    return api("/credits/adminPendingTopups").then(function (list) {
+      var tbody = document.querySelector("#pendingTable tbody");
+      tbody.innerHTML = "";
+      document.getElementById("pendingEmpty").style.display = list.length ? "none" : "block";
+      list.forEach(function (o) {
+        var tr = document.createElement("tr");
+        var td = function (html) { var d = document.createElement("td"); d.innerHTML = html; return d; };
+        tr.appendChild(td(fmtDate(o.createTime)));
+        tr.appendChild(td((o.userDisplayName || o.userName) + " (#" + o.userId + ")"));
+        tr.appendChild(td(o.amountThb + " บาท"));
+        tr.appendChild(td(o.credits));
+        var slipTd = document.createElement("td");
+        if (o.slipImageUrl) {
+          var img = document.createElement("img");
+          img.src = o.slipImageUrl; img.className = "slipThumb";
+          img.onclick = function () {
+            document.getElementById("slipModalImg").src = o.slipImageUrl;
+            document.getElementById("slipModal").style.display = "flex";
+          };
+          slipTd.appendChild(img);
+        }
+        tr.appendChild(slipTd);
+        var actionTd = document.createElement("td");
+        var approveBtn = document.createElement("button");
+        approveBtn.textContent = "อนุมัติ";
+        approveBtn.onclick = function () { decide(o.id, true, approveBtn, rejectBtn); };
+        var rejectBtn = document.createElement("button");
+        rejectBtn.textContent = "ปฏิเสธ"; rejectBtn.className = "danger"; rejectBtn.style.marginLeft = "0.35rem";
+        rejectBtn.onclick = function () { decide(o.id, false, approveBtn, rejectBtn); };
+        actionTd.appendChild(approveBtn); actionTd.appendChild(rejectBtn);
+        tr.appendChild(actionTd);
+        tbody.appendChild(tr);
+      });
+    });
+  }
+
+  function decide(orderId, approve, btnA, btnB) {
+    btnA.disabled = true; btnB.disabled = true;
+    api("/credits/adminApproveTopup", { method: "POST", body: JSON.stringify({ orderId: orderId, approve: approve }) })
+      .then(function () { loadPending(); loadUsers(); })
+      .catch(function (e) { alert(e.message); btnA.disabled = false; btnB.disabled = false; });
+  }
+
+  function loadUsers() {
+    return api("/credits/adminListUsers").then(function (list) {
+      var tbody = document.querySelector("#userTable tbody");
+      tbody.innerHTML = "";
+      list.forEach(function (u) {
+        var tr = document.createElement("tr");
+        var td = function (html) { var d = document.createElement("td"); d.innerHTML = html; return d; };
+        tr.appendChild(td((u.displayName || u.name) + " (#" + u.id + ")"));
+        tr.appendChild(td(u.credits + " เครดิต"));
+        tr.appendChild(td(u.isAdmin ? '<span class="badge admin">แอดมิน</span>' : '<span class="badge">ผู้ใช้ทั่วไป</span>'));
+        tr.appendChild(td(fmtDate(u.createTime)));
+
+        var adjustTd = document.createElement("td");
+        var wrap = document.createElement("div"); wrap.className = "adjustRow";
+        var input = document.createElement("input"); input.type = "number"; input.placeholder = "±จำนวน";
+        var btn = document.createElement("button"); btn.className = "outline"; btn.textContent = "ปรับ";
+        btn.onclick = function () {
+          var delta = parseInt(input.value, 10);
+          if (!delta) return alert("กรุณากรอกจำนวน (ใส่ - เพื่อหัก)");
+          btn.disabled = true;
+          api("/credits/adminAdjustUserCredits", { method: "POST", body: JSON.stringify({ userId: u.id, delta: delta }) })
+            .then(function () { input.value = ""; loadUsers(); })
+            .catch(function (e) { alert(e.message); })
+            .finally(function () { btn.disabled = false; });
+        };
+        wrap.appendChild(input); wrap.appendChild(btn);
+        adjustTd.appendChild(wrap);
+        tr.appendChild(adjustTd);
+
+        var accountTd = document.createElement("td");
+        var editBtn = document.createElement("button");
+        editBtn.className = "outline";
+        editBtn.textContent = "แก้ไข";
+        editBtn.onclick = function () { openEditAccount(u); };
+        accountTd.appendChild(editBtn);
+        tr.appendChild(accountTd);
+
+        tbody.appendChild(tr);
+      });
+    });
+  }
+
+  var editAccountTargetUserId = null;
+  function openEditAccount(u) {
+    editAccountTargetUserId = u.id;
+    document.getElementById("editAccountUserId").textContent = u.id;
+    document.getElementById("editAccountEmail").value = "";
+    document.getElementById("editAccountPassword").value = "";
+    document.getElementById("editAccountModal").style.display = "flex";
+  }
+  document.getElementById("editAccountCancelBtn").onclick = function () {
+    document.getElementById("editAccountModal").style.display = "none";
+  };
+  document.getElementById("editAccountSaveBtn").onclick = function () {
+    var email = document.getElementById("editAccountEmail").value.trim();
+    var password = document.getElementById("editAccountPassword").value;
+    if (!email && !password) return alert("กรุณากรอกอีเมลหรือรหัสผ่านใหม่อย่างน้อยหนึ่งอย่าง");
+    if (password && password.length < 6) return alert("รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร");
+    var body = { userId: editAccountTargetUserId };
+    if (email) body.email = email;
+    if (password) body.password = password;
+    var btn = this;
+    btn.disabled = true;
+    api("/credits/adminUpdateUserAuth", { method: "POST", body: JSON.stringify(body) })
+      .then(function () {
+        document.getElementById("editAccountModal").style.display = "none";
+        loadUsers();
+      })
+      .catch(function (e) { alert(e.message); })
+      .finally(function () { btn.disabled = false; });
+  };
+
+  var pricingFieldIds = [
+    "creditUsdPerCredit",
+    "creditMarginMultiplier",
+    "creditPriceThb",
+    "signupBonusCredits",
+    "estimateImagesPerEpisode",
+    "estimateVideoSecondsPerEpisode",
+  ];
+
+  function loadPricing() {
+    return api("/credits/adminGetPricingSettings").then(function (data) {
+      pricingFieldIds.forEach(function (key) {
+        var el = document.getElementById("pricing" + key.charAt(0).toUpperCase() + key.slice(1));
+        if (el) el.value = data[key] ?? "";
+      });
+    });
+  }
+
+  document.getElementById("savePricingBtn").onclick = function () {
+    var settings = {};
+    pricingFieldIds.forEach(function (key) {
+      var el = document.getElementById("pricing" + key.charAt(0).toUpperCase() + key.slice(1));
+      if (el && el.value !== "") settings[key] = el.value;
+    });
+    var btn = this;
+    btn.disabled = true;
+    api("/credits/adminUpdatePricingSettings", { method: "POST", body: JSON.stringify({ settings: settings }) })
+      .then(function () {
+        var msg = document.getElementById("pricingSaveMsg");
+        msg.textContent = "บันทึกแล้ว";
+        setTimeout(function () { msg.textContent = ""; }, 2000);
+      })
+      .catch(function (e) { alert(e.message); })
+      .finally(function () { btn.disabled = false; });
+  };
+
+  document.getElementById("createUserBtn").onclick = function () {
+    var email = document.getElementById("newUserEmail").value.trim();
+    var password = document.getElementById("newUserPassword").value;
+    var displayName = document.getElementById("newUserDisplayName").value.trim();
+    var credits = parseInt(document.getElementById("newUserCredits").value, 10) || 0;
+    var isAdmin = document.getElementById("newUserIsAdmin").checked;
+    if (!email || !password) return alert("กรุณากรอกอีเมลและรหัสผ่าน");
+    if (password.length < 6) return alert("รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร");
+    var btn = this;
+    btn.disabled = true;
+    api("/credits/adminCreateUser", {
+      method: "POST",
+      body: JSON.stringify({ email: email, password: password, displayName: displayName || undefined, credits: credits, isAdmin: isAdmin }),
+    })
+      .then(function () {
+        document.getElementById("newUserEmail").value = "";
+        document.getElementById("newUserPassword").value = "";
+        document.getElementById("newUserDisplayName").value = "";
+        document.getElementById("newUserCredits").value = "0";
+        document.getElementById("newUserIsAdmin").checked = false;
+        loadUsers();
+      })
+      .catch(function (e) { alert(e.message); })
+      .finally(function () { btn.disabled = false; });
+  };
+
+  api("/user/me").then(function (me) {
+    if (!me.isAdmin) {
+      document.getElementById("denied").style.display = "block";
+      return;
+    }
+    document.getElementById("content").style.display = "flex";
+    document.getElementById("content").style.flexDirection = "column";
+    document.getElementById("content").style.gap = "1.25rem";
+    loadPending();
+    loadUsers();
+    loadPricing();
+  }).catch(function () {
+    document.getElementById("denied").style.display = "block";
+  });
+})();
+</script>
+
+</body>
+</html>

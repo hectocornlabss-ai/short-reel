@@ -25,9 +25,10 @@ export default router.post(
         });
       }
     });
-    const [insertFlowId] = await u.db("o_imageFlow").insert({
-      flowData: JSON.stringify({ edges, nodes }),
-    });
-    return res.status(200).send(success({ id: insertFlowId }));
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    const flowData = JSON.stringify({ edges, nodes });
+    await u.db("o_imageFlow").insert({ flowData });
+    const inserted = await u.db("o_imageFlow").where({ flowData }).orderBy("id", "desc").first();
+    return res.status(200).send(success({ id: inserted!.id! }));
   },
 );

@@ -1,6 +1,7 @@
 import express from "express";
 import u from "@/utils";
 import { error, success } from "@/lib/responseFormat";
+import { getOwnerUserId } from "@/utils/skillOwnership";
 import fs from "fs";
 import path from "path";
 const router = express.Router();
@@ -8,17 +9,17 @@ const router = express.Router();
 // 字段映射表
 const DATA_MAP: { label: string; value: string; subDir?: string }[] = [
   { label: "README", value: "README" },
-  { label: "前缀", value: "prefix" },
-  { label: "角色", value: "art_character", subDir: "art_prompt" },
-  { label: "角色衍生", value: "art_character_derivative", subDir: "art_prompt" },
-  { label: "道具", value: "art_prop", subDir: "art_prompt" },
-  { label: "道具衍生", value: "art_prop_derivative", subDir: "art_prompt" },
-  { label: "场景", value: "art_scene", subDir: "art_prompt" },
-  { label: "场景衍生", value: "art_scene_derivative", subDir: "art_prompt" },
-  { label: "分镜", value: "director_storyboard", subDir: "driector_skills" },
-  { label: "分镜视频", value: "art_storyboard_video", subDir: "art_prompt" },
-  { label: "技法-导演规划", value: "director_planning_style", subDir: "driector_skills" },
-  { label: "技法-分镜表设计", value: "director_storyboard_table_style", subDir: "driector_skills" },
+  { label: "พรีฟิกซ์", value: "prefix" },
+  { label: "ตัวละคร", value: "art_character", subDir: "art_prompt" },
+  { label: "ตัวละคร (ต่อยอด)", value: "art_character_derivative", subDir: "art_prompt" },
+  { label: "อุปกรณ์", value: "art_prop", subDir: "art_prompt" },
+  { label: "อุปกรณ์ (ต่อยอด)", value: "art_prop_derivative", subDir: "art_prompt" },
+  { label: "ฉาก", value: "art_scene", subDir: "art_prompt" },
+  { label: "ฉาก (ต่อยอด)", value: "art_scene_derivative", subDir: "art_prompt" },
+  { label: "สตอรี่บอร์ด", value: "director_storyboard", subDir: "driector_skills" },
+  { label: "สตอรี่บอร์ดวิดีโอ", value: "art_storyboard_video", subDir: "art_prompt" },
+  { label: "เทคนิค-วางแผนกำกับ", value: "director_planning_style", subDir: "driector_skills" },
+  { label: "เทคนิค-ออกแบบตารางสตอรี่บอร์ด", value: "director_storyboard_table_style", subDir: "driector_skills" },
 ];
 
 // 读取 md 文件内容，文件不存在时返回空字符串
@@ -49,6 +50,7 @@ async function readAllImages(imagesDir: string) {
 // 获取视觉手册
 export default router.post("/", async (req, res) => {
   try {
+    const currentUser = (req as any).user;
     const artPromptsDir = u.getPath(["skills", "art_skills"]);
 
     // 读取所有风格文件夹
@@ -78,11 +80,18 @@ export default router.post("/", async (req, res) => {
           };
         });
 
+        const ownerUserId = await getOwnerUserId("art_skills", styleName);
+        const isSystem = ownerUserId === null;
+        const isOwner = ownerUserId !== null && ownerUserId === currentUser?.id;
+
         return {
           name: firstLine,
           image: images,
           stylePath: styleName,
           data,
+          isSystem,
+          canEdit: !!currentUser?.isAdmin,
+          canDelete: !!currentUser?.isAdmin || isOwner,
         };
       }),
     );

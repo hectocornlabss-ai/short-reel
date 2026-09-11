@@ -11,7 +11,7 @@ import buildRoute from "@/core";
 import path from "path";
 import fs from "fs";
 import u from "@/utils";
-import jwt from "jsonwebtoken";
+import { getSupabaseAnon } from "@/utils/supabaseAuth";
 import socketInit from "@/socket/index";
 import { isEletron } from "@/utils/getPath";
 import { ensureThumbnail, ThumbnailSize } from "@/utils/image";
@@ -150,26 +150,27 @@ export default async function startServe(randomPort: Boolean = false) {
   }
 
   app.use(async (req, res, next) => {
-    const setting = await u.db("o_setting").where("key", "tokenKey").select("value").first();
-    if (!setting) return res.status(444).send({ message: "服务器秘钥未配置，请联系管理员" });
-    const { value: tokenKey } = setting;
     // 从 header 或 query 参数获取 token
     const rawToken = req.headers.authorization || (req.query.token as string) || "";
     const token = rawToken.replace("Bearer ", "");
     // 白名单路径
-    if (req.path === "/api/login/login") return next();
+    if (req.path === "/api/login/login" || req.path === "/api/login/refreshToken") return next();
     if (req.path === "/api/auth/line/login" || req.path === "/api/auth/line/callback") return next();
 
     if (!token) return res.status(401).send({ message: "未提供token" });
     try {
-      const decoded = jwt.verify(token, tokenKey as string) as { id: number; name: string };
-      (req as any).user = decoded;
+      // ยืนยันตัวตนผ่าน Supabase Auth จริง (ไม่ใช่ JWT ที่เซ็นเอง) แล้วผูกกลับมาที่ o_user ภายในของแอป
+      const { data, error: authError } = await getSupabaseAnon().auth.getUser(token);
+      if (authError || !data?.user) return res.status(401).send({ message: "无效的token" });
+
+      const user = await u.db("o_user").where("supabaseUserId", data.user.id).first();
+      if (!user) return res.status(401).send({ message: "ไม่พบบัญชีผู้ใช้ในระบบ" });
+      (req as any).user = { id: user.id, name: user.name, isAdmin: !!user.isAdmin };
 
       // เส้นทางตั้งค่า vendor/agent เป็นของแอดมินเท่านั้น ผู้ใช้ทั่วไป (สมัครผ่าน LINE) ห้ามเข้าถึง
       const adminOnlyPrefixes = ["/api/setting/vendorConfig", "/api/setting/agentDeploy"];
-      if (adminOnlyPrefixes.some((p) => req.path.startsWith(p))) {
-        const user = await u.db("o_user").where("id", decoded.id).first();
-        if (!user?.isAdmin) return res.status(403).send({ message: "เฉพาะแอดมินเท่านั้น" });
+      if (adminOnlyPrefixes.some((p) => req.path.startsWith(p)) && !user.isAdmin) {
+        return res.status(403).send({ message: "เฉพาะแอดมินเท่านั้น" });
       }
 
       next();

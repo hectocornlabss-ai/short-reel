@@ -1,15 +1,32 @@
 import express from "express";
 import u from "@/utils";
 import { success } from "@/lib/responseFormat";
+import { getOwnerUserId } from "@/utils/skillOwnership";
 import fs from "fs";
 import path from "path";
 const router = express.Router();
 
+// จำนวนตอนที่แนะนำต่อแนวเรื่อง (ข้อมูลแนะนำคร่าวๆ เท่านั้น ไม่ผูกกับจำนวนตอนจริงของโปรเจกต์)
+const RECOMMENDED_EPISODES: Record<string, string> = {
+  Comedy_humor: "8-12",
+  Coming_of_age: "12-20",
+  Family_warmth: "15-24",
+  Historical_epic: "24-40",
+  Horror_supernatural: "8-15",
+  Hot_blooded_action: "12-20",
+  Mystery_thriller: "10-16",
+  Psychological_drama: "10-18",
+  Scifi_post_apocalypse: "12-20",
+  Sweet_romance_novel: "15-24",
+  Urban_workplace_drama: "15-24",
+  Xianxia_fantasy: "24-40",
+};
+
 // 字段映射表
 const DATA_MAP: { label: string; value: string; subDir?: string }[] = [
   { label: "README", value: "README" },
-  { label: "导演规划", value: "director_planning_narrative", subDir: "driector_skills" },
-  { label: "分镜表", value: "director_storyboard_table_narrative", subDir: "driector_skills" },
+  { label: "วางแผนกำกับ", value: "director_planning_narrative", subDir: "driector_skills" },
+  { label: "ตารางสตอรี่บอร์ด", value: "director_storyboard_table_narrative", subDir: "driector_skills" },
 ];
 
 // 读取 md 文件内容，文件不存在时返回空字符串
@@ -40,6 +57,7 @@ async function readAllImages(imagesDir: string) {
 // 获取导演手册
 export default router.post("/", async (req, res) => {
   try {
+    const currentUser = (req as any).user;
     const artPromptsDir = u.getPath(["skills", "story_skills"]);
 
     // 读取所有风格文件夹
@@ -54,7 +72,9 @@ export default router.post("/", async (req, res) => {
         const images = await readAllImages(directorManual);
         const readmePath = path.join(styleDir, "README.md");
         const readmeContent = fs.readFileSync(readmePath, "utf-8");
-        const firstLine = readmeContent.split("\n")[0].replace(/--/g, "");
+        let firstLine = readmeContent.split("\n")[0].replace(/--/g, "");
+        const recommendedEpisodes = RECOMMENDED_EPISODES[directorManual];
+        if (recommendedEpisodes) firstLine += ` · แนะนำ ${recommendedEpisodes} ตอน`;
         const data = DATA_MAP.map(({ label, value, subDir }) => {
           let mdPath: string;
           if (subDir) {
@@ -69,11 +89,18 @@ export default router.post("/", async (req, res) => {
           };
         });
 
+        const ownerUserId = await getOwnerUserId("story_skills", directorManual);
+        const isSystem = ownerUserId === null;
+        const isOwner = ownerUserId !== null && ownerUserId === currentUser?.id;
+
         return {
           name: firstLine,
           image: images,
           directorManual: directorManual,
           data,
+          isSystem,
+          canEdit: !!currentUser?.isAdmin,
+          canDelete: !!currentUser?.isAdmin || isOwner,
         };
       }),
     );

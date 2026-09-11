@@ -25,8 +25,12 @@ export default router.post(
   async (req, res) => {
     const { data, scriptId, projectId } = req.body;
     if (!data.length) return res.status(400).send({ success: false, message: "数据不能为空" });
-    for (const item of data) {
-      const [id] = await u.db("o_storyboard").insert({
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    // (บั๊กนี้เคยทำให้แทรกได้แค่แถวแรกแล้ว request พังทั้งหมด แถวที่เหลือหายไปเงียบๆ)
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      const createTime = Date.now() + i;
+      await u.db("o_storyboard").insert({
         prompt: item.prompt,
         duration: String(item.duration),
         state: item.state,
@@ -35,8 +39,10 @@ export default router.post(
         track: item.track,
         videoDesc: item.videoDesc,
         shouldGenerateImage: item.shouldGenerateImage,
-        createTime: Date.now(),
+        createTime,
       });
+      const inserted = await u.db("o_storyboard").where({ scriptId, projectId, track: item.track, createTime }).orderBy("id", "desc").first();
+      const id = inserted!.id!;
       if (item.associateAssetsIds?.length) {
         await u.db("o_assets2Storyboard").insert(
           item.associateAssetsIds.map((assetId: number) => ({
@@ -93,7 +99,7 @@ export default router.post(
     const storyboardData = await Promise.all(
       lastStoryboard.map(async (i) => {
         return {
-          associateAssetsIds: await u.db("o_assets2Storyboard").where("storyboardId", i.id).orderBy("rowid").select("assetId").pluck("assetId"),
+          associateAssetsIds: await u.db("o_assets2Storyboard").where("storyboardId", i.id).orderBy("seq").select("assetId").pluck("assetId"),
           src: i.filePath ? await u.oss.getSmallImageUrl(i.filePath) : "",
           id: i.id,
           trackId: i.trackId,

@@ -81,13 +81,17 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
   if (!project) return res.status(500).send(error("项目为空"));
 
   // 2. 逐条插入 o_image 占位记录，收集 imageId 列表
+  // หมายเหตุ: ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+  // ที่นี่ query ย้อนกลับด้วย assetsId (unique ต่อ item ในลูปนี้) แทน
   const totalNovelId: number[] = [];
   for (const item of items) {
-    const [imageId] = await u.db("o_image").insert({
+    await u.db("o_image").insert({
       type: item.type,
       state: "生成中",
       assetsId: item.id,
     });
+    const inserted = await u.db("o_image").where({ assetsId: item.id, type: item.type, state: "生成中" }).orderBy("id", "desc").first();
+    const imageId = inserted!.id!;
     await u.db("o_assets").where("id", item.id).update({ imageId });
     totalNovelId.push(imageId);
   }

@@ -28,7 +28,7 @@ export default router.post(
         }),
       );
       const storyboardIds = storyboardData.map((item) => item.id);
-      await u.db("o_assets2Storyboard").whereIn("storyboardId", storyboardIds).delete();
+      await u.db("o_assets2Storyboard").whereIn("storyboardId", storyboardIds as any).delete();
     }
     await u.db("o_scriptAssets").whereIn("scriptId", ids).delete();
     await u.db("o_script").whereIn("id", ids).delete();

@@ -16,12 +16,16 @@ export default router.post(
   }),
   async (req, res) => {
     const { name, content, projectId, assets } = req.body;
-    const [scriptId] = await u.db("o_script").insert({
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    const createTime = Date.now();
+    await u.db("o_script").insert({
       name,
       content,
       projectId,
-      createTime: Date.now(),
+      createTime,
     });
+    const scriptRow = await u.db("o_script").where({ name, projectId, createTime }).orderBy("id", "desc").first();
+    const scriptId = scriptRow!.id!;
     if (assets.length) {
       const assetsData = await u.db("o_assets").whereIn("id", assets).select();
       if (assetsData.length) {

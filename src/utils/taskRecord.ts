@@ -38,15 +38,20 @@ export default async function taskRecord(
     }
   }
 
-  const [id] = await db("o_tasks").insert({
+  // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+  // (บั๊กนี้เคยทำให้ทุกงาน generation ที่ผ่าน withTaskRecord พังตั้งแต่ก่อนเรียก AI จริงด้วยซ้ำ)
+  const startTime = Date.now();
+  await db("o_tasks").insert({
     projectId,
     taskClass,
     relatedObjects: opteorContent,
     model: modelName,
     describe,
     state: taskStateMap[0],
-    startTime: Date.now(),
+    startTime,
   });
+  const created = await db("o_tasks").where({ projectId, taskClass, model: modelName, startTime }).orderBy("id", "desc").first();
+  const id = created!.id!;
 
   /** 任务成功时调用 done(1)，失败时调用 done(-1, '原因') */
   return async function done(state: 1 | -1, reason?: string) {

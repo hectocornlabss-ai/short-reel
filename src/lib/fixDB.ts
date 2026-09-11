@@ -31,6 +31,12 @@ export default async (knex: Knex): Promise<void> => {
       });
     }
   };
+  // o_agentWorkData.data เดิมกำหนดเป็น varchar(255) ทำให้บันทึกโครงเรื่อง/กลยุทธ์/บทจริงไม่ได้ (เนื้อหายาวเกิน) ต้องขยายเป็น text
+  await alterColumnType("o_agentWorkData", "data", "text");
+  // o_tasks.relatedObjects เดิมกำหนดเป็น varchar(255) ทำให้ insert task ล้มเหลวทุกครั้งที่พรอมต์ยาวเกิน 255 ตัวอักษร
+  // (บั๊กนี้ทำให้การสร้างภาพสตอรี่บอร์ด/สินทรัพย์ที่มีพรอมต์ยาวไม่เคยสร้าง task record ได้เลยสักครั้ง)
+  await alterColumnType("o_tasks", "relatedObjects", "text");
+
   //矫正因软件异常退出导致的状态不一致问题
   await db("o_novel").where("eventState", 0).update({
     eventState: -1,
@@ -62,20 +68,21 @@ export default async (knex: Knex): Promise<void> => {
   // 添加新字段
   await addColumn("o_agentDeploy", "type", "string");
   // 添加新字段
-  await addColumn("o_agentDeploy", "temperature", "integer");
+  await addColumn("o_agentDeploy", "temperature", "bigInteger");
   // 添加新字段
-  await addColumn("o_agentDeploy", "maxOutputTokens", "integer");
-  await addColumn("o_assets", "audioBindState", "integer");
+  await addColumn("o_agentDeploy", "maxOutputTokens", "bigInteger");
+  await addColumn("o_assets", "audioBindState", "bigInteger");
   await addColumn("o_modelPrompt", "fileName", "string");
   await addColumn("o_modelPrompt", "path", "string");
 
   // ระบบเครดิต + LINE Login
+  await addColumn("o_user", "supabaseUserId", "text");
   await addColumn("o_user", "lineUserId", "text");
   await addColumn("o_user", "displayName", "text");
   await addColumn("o_user", "avatar", "text");
-  await addColumn("o_user", "credits", "integer");
+  await addColumn("o_user", "credits", "bigInteger");
   await addColumn("o_user", "isAdmin", "boolean");
-  await addColumn("o_user", "createTime", "integer");
+  await addColumn("o_user", "createTime", "bigInteger");
   if (!(await knex.schema.hasTable("o_creditLedger"))) {
     await knex.schema.createTable("o_creditLedger", (table) => {
       table.text("id").notNullable();
@@ -108,6 +115,41 @@ export default async (knex: Knex): Promise<void> => {
   }
   // ผู้ใช้เดิม (admin ที่ seed มาก่อนหน้านี้) ให้เป็น isAdmin เสมอ กันตกหล่นจากการอัปเกรด schema
   await knex("o_user").where("id", 1).update({ isAdmin: true });
+  // ผู้ใช้เก่าที่ credits ยังเป็น null (สร้างก่อนมีระบบเครดิต) ให้เป็น 0 แทน
+  await knex("o_user").whereNull("credits").update({ credits: 0 });
+
+  // เพิ่มคอลัมน์ลำดับการแทรกแถวให้ o_assets2Storyboard (ทดแทน "rowid" ของ SQLite ที่ Postgres ไม่มี)
+  if ((await knex.schema.hasTable("o_assets2Storyboard")) && !(await knex.schema.hasColumn("o_assets2Storyboard", "seq"))) {
+    await knex.schema.alterTable("o_assets2Storyboard", (t) => {
+      t.bigIncrements("seq", { primaryKey: false });
+    });
+  }
+
+  // ระบบเจ้าของเทมเพลตคู่มือภาพ/คู่มือกรรมการ (สำหรับติดตั้งเก่าที่ยังไม่มีตารางนี้)
+  if (!(await knex.schema.hasTable("o_skillOwnership"))) {
+    await knex.schema.createTable("o_skillOwnership", (t) => {
+      t.text("path").notNullable();
+      t.bigInteger("createdByUserId");
+      t.bigInteger("createTime");
+      t.primary(["path"]);
+      t.unique(["path"]);
+    });
+  }
+  // ลงทะเบียนโฟลเดอร์เทมเพลตที่มีอยู่แล้วก่อนหน้านี้ (ก่อนมีระบบเจ้าของ) ให้เป็นของระบบ (createdByUserId เป็น null)
+  for (const prefix of ["art_skills", "story_skills"] as const) {
+    try {
+      const dir = u.getPath(["skills", prefix]);
+      const folders = fs
+        .readdirSync(dir, { withFileTypes: true })
+        .filter((d) => d.isDirectory())
+        .map((d) => d.name);
+      for (const folder of folders) {
+        const skillPath = `${prefix}/${folder}`;
+        const exists = await knex("o_skillOwnership").where("path", skillPath).first();
+        if (!exists) await knex("o_skillOwnership").insert({ path: skillPath, createdByUserId: null, createTime: Date.now() });
+      }
+    } catch {}
+  }
 
   // ค่าเริ่มต้นของระบบเครดิต (แอดมินปรับได้ภายหลังผ่านหน้าตั้งค่า)
   const ensureSetting = async (key: string, value: string) => {

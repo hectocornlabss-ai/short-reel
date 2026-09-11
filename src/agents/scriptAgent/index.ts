@@ -62,7 +62,9 @@ export async function runDecisionAI(ctx: AgentContext) {
     `章节数量：${novelData.length}章`,
   ].join("\n");
 
-  const { fullStream } = await u.Ai.Text("scriptAgent:decisionAgent", ctx.thinkConfig.think, ctx.thinkConfig.thinlLevel).stream({
+  await u.Ai.ensureCreditsAvailable(resTool.data.projectId);
+
+  const stream = await u.Ai.Text("scriptAgent:decisionAgent", ctx.thinkConfig.think, ctx.thinkConfig.thinlLevel).stream({
     messages: [
       { role: "system", content: prompt },
       { role: "assistant", content: projectInfo + "\n" + mem },
@@ -78,6 +80,7 @@ export async function runDecisionAI(ctx: AgentContext) {
       await memory.add("assistant:decision", removeAllXmlTags(completion.text));
     },
   });
+  const { fullStream } = stream;
 
   let currentMsg = ctx.msg;
   await consumeFullStream(fullStream, currentMsg, () => {
@@ -86,6 +89,15 @@ export async function runDecisionAI(ctx: AgentContext) {
     currentMsg = ctx.msg;
     return currentMsg;
   });
+
+  const usage = await Promise.resolve(stream.usage).catch(() => undefined);
+  await u.Ai.chargeTextUsage(
+    "scriptAgent:decisionAgent",
+    resTool.data.projectId,
+    `scriptAgent:decision:${isolationKey}:${Date.now()}`,
+    usage,
+    "หักเครดิตค่าใช้งาน Agent เขียนบท-ผู้ประสานงาน",
+  );
 }
 
 function createSubAgent(parentCtx: AgentContext) {
@@ -112,14 +124,26 @@ function createSubAgent(parentCtx: AgentContext) {
     parentCtx.msg.complete();
     const subMsg = resTool.newMessage("assistant", name);
 
-    const { fullStream } = await u.Ai.Text(key, parentCtx.thinkConfig.think, parentCtx.thinkConfig.thinlLevel).stream({
+    await u.Ai.ensureCreditsAvailable(resTool.data.projectId);
+
+    const stream = await u.Ai.Text(key, parentCtx.thinkConfig.think, parentCtx.thinkConfig.thinlLevel).stream({
       system,
       messages: messages ?? [{ role: "user", content: prompt }],
       abortSignal,
       tools: { ...extraTools, ...useTools({ resTool, msg: subMsg }) },
     });
+    const { fullStream } = stream;
 
     const fullResponse = await consumeFullStream(fullStream, subMsg);
+
+    const usage = await Promise.resolve(stream.usage).catch(() => undefined);
+    await u.Ai.chargeTextUsage(
+      key,
+      resTool.data.projectId,
+      `scriptAgent:${memoryKey}:${parentCtx.isolationKey}:${Date.now()}`,
+      usage,
+      `หักเครดิตค่าใช้งาน Agent เขียนบท-${name}`,
+    );
 
     if (fullResponse.trim()) {
       await memory.add(memoryKey, removeAllXmlTags(fullResponse), {
@@ -128,7 +152,7 @@ function createSubAgent(parentCtx: AgentContext) {
       });
     }
 
-    parentCtx.msg = resTool.newMessage("assistant", "视频策划");
+    parentCtx.msg = resTool.newMessage("assistant", "วางแผนวิดีโอ");
     return fullResponse;
   }
 
@@ -145,13 +169,13 @@ function createSubAgent(parentCtx: AgentContext) {
       const skill = path.join(u.getPath("skills"), "script_execution_skeleton.md");
       const systemPrompt = await fs.promises.readFile(skill, "utf-8");
 
-      const formatPrompt = "\n你必须使用如下XML格式写入工作区：\n<storySkeleton>故事骨架内容</storySkeleton>";
+      const formatPrompt = "\nคุณต้องเขียนลงพื้นที่ทำงานด้วยรูปแบบ XML ดังนี้:\n<storySkeleton>เนื้อหาโครงเรื่อง</storySkeleton>";
 
       return runAgent({
         key: "scriptAgent:storySkeletonAgent",
         prompt,
         system: systemPrompt + formatPrompt,
-        name: "编剧",
+        name: "นักเขียนบท",
         memoryKey: "assistant:execution:storySkeleton",
         messages: [{ role: "user", content: prompt + formatPrompt }],
       });
@@ -165,13 +189,13 @@ function createSubAgent(parentCtx: AgentContext) {
       const skill = path.join(u.getPath("skills"), "script_execution_adaptation.md");
       const systemPrompt = await fs.promises.readFile(skill, "utf-8");
 
-      const formatPrompt = "\n你必须使用如下XML格式写入工作区：\n<adaptationStrategy>改编策略内容</adaptationStrategy>";
+      const formatPrompt = "\nคุณต้องเขียนลงพื้นที่ทำงานด้วยรูปแบบ XML ดังนี้:\n<adaptationStrategy>เนื้อหากลยุทธ์การดัดแปลง</adaptationStrategy>";
 
       return runAgent({
         key: "scriptAgent:adaptationStrategyAgent",
         prompt,
         system: systemPrompt + formatPrompt,
-        name: "编剧",
+        name: "นักเขียนบท",
         memoryKey: "assistant:execution:adaptationStrategy",
         messages: [{ role: "user", content: prompt + formatPrompt }],
       });
@@ -192,17 +216,17 @@ function createSubAgent(parentCtx: AgentContext) {
 
       const novelData = await u.db("o_novel").where("projectId", resTool.data.projectId).select("chapterIndex");
 
-      const formatPrompt = `\n你必须使用如下XML格式写入工作区：\nXML不得添加任何额外标签<scriptItem name="剧本名称">剧本内容</scriptItem><scriptItem name="剧本名称">剧本内容</scriptItem><scriptItem name="剧本名称">剧本内容</scriptItem>`;
+      const formatPrompt = `\nคุณต้องเขียนลงพื้นที่ทำงานด้วยรูปแบบ XML ดังนี้:\nห้ามเพิ่มแท็กอื่นใดนอกจากนี้ <scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem><scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem><scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem>`;
 
       return runAgent({
         key: "scriptAgent:scriptAgent",
         prompt,
         system: systemPrompt + formatPrompt,
         messages: [
-          { role: "assistant", content: scriptPrompt + `章节数量：${novelData.length}章` },
+          { role: "assistant", content: scriptPrompt + `จำนวนบท: ${novelData.length} บท` },
           { role: "user", content: prompt + formatPrompt },
         ],
-        name: "编剧",
+        name: "นักเขียนบท",
         memoryKey: "assistant:execution:script",
       });
     },
@@ -219,7 +243,7 @@ function createSubAgent(parentCtx: AgentContext) {
         key: "scriptAgent:supervisionAgent",
         prompt,
         system: systemPrompt,
-        name: "编辑",
+        name: "บรรณาธิการ",
         memoryKey: "assistant:supervision",
       });
     },
@@ -255,12 +279,12 @@ async function consumeFullStream(
       }
       if (chunk.type === "reasoning-start") {
         thinkTime = Date.now();
-        thinking = msg.thinking("思考中...");
+        thinking = msg.thinking("กำลังคิด...");
       } else if (chunk.type === "reasoning-delta") {
         thinking?.append(chunk.text);
       } else if (chunk.type === "reasoning-end") {
         thinkTime = Date.now() - thinkTime;
-        thinking?.updateTitle(`思考完毕（${(thinkTime / 1000).toFixed(1)} 秒）`);
+        thinking?.updateTitle(`คิดเสร็จแล้ว (${(thinkTime / 1000).toFixed(1)} วินาที)`);
         thinking?.complete();
         thinking = null;
       } else if (chunk.type === "text-delta") {

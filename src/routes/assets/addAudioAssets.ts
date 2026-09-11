@@ -44,29 +44,39 @@ export default router.post(
       }),
     );
 
-    const [id] = await u.db("o_assets").insert({
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    const rootStartTime = Date.now();
+    await u.db("o_assets").insert({
       name,
       describe,
       type: "audio",
       projectId,
-      startTime: Date.now(),
+      startTime: rootStartTime,
     });
-    for (const item of assetsItem) {
-      const [assetsId] = await u.db("o_assets").insert({
+    const rootAsset = await u.db("o_assets").where({ name, describe, type: "audio", projectId, startTime: rootStartTime }).orderBy("id", "desc").first();
+    const id = rootAsset!.id!;
+    for (let i = 0; i < assetsItem.length; i++) {
+      const item = assetsItem[i];
+      const startTime = Date.now() + i;
+      await u.db("o_assets").insert({
         prompt: item.prompt,
         assetsId: id,
         type: "audio",
         describe: item.describe,
         name: item.name,
         projectId,
-        startTime: Date.now(),
+        startTime,
       });
-      const [imageId] = await u.db("o_image").insert({
+      const assetsRow = await u.db("o_assets").where({ assetsId: id, name: item.name, projectId, startTime }).orderBy("id", "desc").first();
+      const assetsId = assetsRow!.id!;
+      await u.db("o_image").insert({
         filePath: item.src,
         type: "audio",
         assetsId,
         state: "已完成",
       });
+      const imageRow = await u.db("o_image").where({ assetsId, type: "audio", state: "已完成" }).orderBy("id", "desc").first();
+      const imageId = imageRow!.id!;
       await u.db("o_assets").where("id", assetsId).update({
         imageId,
       });

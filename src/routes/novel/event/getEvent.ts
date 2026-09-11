@@ -1,6 +1,6 @@
 import express from "express";
 import u from "@/utils";
-import { db } from "@/utils/db";
+import { db, isPostgres } from "@/utils/db";
 import { z } from "zod";
 import { success } from "@/lib/responseFormat";
 import { validateFields } from "@/middleware/middleware";
@@ -39,7 +39,15 @@ export default router.post(
     // 分页查询：每个事件对应多个 chapterIndex，用 GROUP_CONCAT 聚合
     const rows = await baseQuery
       .clone()
-      .select("e.id", "e.name as eventName", "e.detail", "e.createTime", db.raw("GROUP_CONCAT(n.chapterIndex) as chapterIndexes"))
+      .select(
+        "e.id",
+        "e.name as eventName",
+        "e.detail",
+        "e.createTime",
+        isPostgres
+          ? db.raw("STRING_AGG(n.chapterIndex::text, ',') as chapterIndexes")
+          : db.raw("GROUP_CONCAT(n.chapterIndex) as chapterIndexes"),
+      )
       .groupBy("e.id")
       .limit(limit)
       .offset(offset);

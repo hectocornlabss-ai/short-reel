@@ -21,6 +21,10 @@ export default router.post(
     if (!order) return res.status(404).send(error("ไม่พบคำสั่งเติมเครดิต"));
     if (order.status !== "pending") return res.status(400).send(error("คำสั่งนี้ถูกดำเนินการไปแล้ว"));
 
+    // ล็อกออเดอร์แบบ atomic (กันยิงอัปโหลดสลิปซ้ำๆ พร้อมกันหลายครั้งจนได้เครดิตซ้ำ)
+    const claimed = await u.db("o_topupOrder").where("id", id).andWhere("status", "pending").update({ status: "processing" });
+    if (claimed !== 1) return res.status(400).send(error("คำสั่งนี้กำลังถูกดำเนินการอยู่ กรุณารอสักครู่"));
+
     const slipPath = `slips/${id}.jpg`;
     await u.oss.writeFile(slipPath, slipImageBase64);
     const slipImageUrl = await u.oss.getFileUrl(slipPath);
@@ -41,16 +45,18 @@ export default router.post(
       );
       const verified = verifyRes.data?.success === true;
       const amountFromSlip = verifyRes.data?.data?.amount;
+      const transRef = verifyRes.data?.data?.transRef ?? null;
 
-      if (verified && amountFromSlip >= (order.amountThb ?? 0)) {
-        await u.db.transaction(async (trx) => {
-          await trx("o_topupOrder").where("id", id).update({
-            status: "paid",
-            slipImageUrl,
-            slipRef: verifyRes.data?.data?.transRef ?? null,
-            providerResponse: JSON.stringify(verifyRes.data),
-            verifiedTime: Date.now(),
-          });
+      // กันสลิปใบเดียวถูกเอาไปใช้ซ้ำหลายออเดอร์ (ทั้งของตัวเองและของคนอื่น)
+      const slipAlreadyUsed = transRef ? await u.db("o_topupOrder").where("slipRef", transRef).whereNot("id", id).first() : null;
+
+      if (verified && !slipAlreadyUsed && amountFromSlip >= (order.amountThb ?? 0)) {
+        await u.db("o_topupOrder").where("id", id).update({
+          status: "paid",
+          slipImageUrl,
+          slipRef: transRef,
+          providerResponse: JSON.stringify(verifyRes.data),
+          verifiedTime: Date.now(),
         });
         await u.credits.adjustCredits(userId, order.credits!, "topup", id, `เติมเครดิต ${order.credits} จากยอดโอน ${order.amountThb} บาท`);
         return res.status(200).send(success({ status: "paid", credits: order.credits }, "ตรวจสอบสลิปสำเร็จ เติมเครดิตให้แล้ว"));
@@ -59,7 +65,8 @@ export default router.post(
       await u.db("o_topupOrder").where("id", id).update({
         status: "pending",
         slipImageUrl,
-        providerResponse: JSON.stringify(verifyRes.data),
+        slipRef: transRef,
+        providerResponse: JSON.stringify(verifyRes.data) + (slipAlreadyUsed ? " [slip ซ้ำกับออเดอร์อื่น]" : ""),
       });
       return res.status(200).send(success({ status: "pending" }, "ตรวจสอบสลิปอัตโนมัติไม่สำเร็จ รอแอดมินตรวจสอบ"));
     } catch (e) {

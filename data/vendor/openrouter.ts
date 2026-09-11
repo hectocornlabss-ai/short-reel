@@ -190,6 +190,12 @@ const vendor: VendorConfig = {
       type: "image",
       mode: ["text", "singleImage", "multiReference"],
     },
+    {
+      name: "GPT-5 Image Mini (OpenRouter, ประหยัดที่สุด)",
+      modelName: "openai/gpt-5-image-mini",
+      type: "image",
+      mode: ["text", "singleImage", "multiReference"],
+    },
     // ===================== Video models =====================
     {
       name: "Seedance 2.0 Mini (OpenRouter)",
@@ -245,9 +251,20 @@ const vendor: VendorConfig = {
       name: "MiniMax Speech 2.8 HD (OpenRouter)",
       modelName: "minimax/speech-2.8-hd",
       type: "tts",
+      // รายชื่อเสียงสำเร็จรูป verified จากเอกสาร MiniMax Speech-02/2.8 จริง (รองรับภาษาไทย)
+      // เก็บ 2 ตัวเดิมไว้เผื่อยังใช้งานได้ พร้อมเพิ่มชุดใหม่ให้เลือกเสียงตรงกับบุคลิกตัวละครได้หลากหลายขึ้น
       voices: [
-        { title: "เสียงชายอบอุ่น", voice: "male-qn-qingse" },
-        { title: "เสียงหญิงนุ่มนวล", voice: "female-tianmei" },
+        { title: "เสียงชายอบอุ่น (เดิม)", voice: "male-qn-qingse" },
+        { title: "เสียงหญิงนุ่มนวล (เดิม)", voice: "female-tianmei" },
+        { title: "หญิงสุขุมมีเหตุผล (Wise Woman)", voice: "Wise_Woman" },
+        { title: "หญิงสงบนิ่ง (Calm Woman)", voice: "Calm_Woman" },
+        { title: "หญิงร่าเริงสดใส (Lively Girl)", voice: "Lively_Girl" },
+        { title: "หญิงน่ารักอ่อนหวาน (Lovely Girl)", voice: "Lovely_Girl" },
+        { title: "ชายเสียงทุ้มลึก (Deep Voice Man)", voice: "Deep_Voice_Man" },
+        { title: "ชายหนุ่มอัศวิน (Young Knight)", voice: "Young_Knight" },
+        { title: "ชายสง่างาม (Elegant Man)", voice: "Elegant_Man" },
+        { title: "ชายมุ่งมั่นแน่วแน่ (Determined Man)", voice: "Determined_Man" },
+        { title: "ชายอาวุโสใจเย็น (Patient Man)", voice: "Patient_Man" },
       ],
     },
   ],

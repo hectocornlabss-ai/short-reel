@@ -53,14 +53,17 @@ export default router.post(
     };
     // 先批量为所有 assets 创建 image 记录并标记为"生成中"
     const imageIdMap: Record<number, number> = {};
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
     for (const item of assetsDataArr) {
-      const [imageId] = await u.db("o_image").insert({
+      await u.db("o_image").insert({
         assetsId: item.id,
         type: item.type,
         state: "生成中",
         resolution: projectSettingData?.imageQuality,
         model: projectSettingData?.imageModel,
       });
+      const inserted = await u.db("o_image").where({ assetsId: item.id, type: item.type, state: "生成中" }).orderBy("id", "desc").first();
+      const imageId = inserted!.id!;
       imageIdMap[item.id!] = imageId;
       await u.db("o_assets").where("id", item.id).update({ imageId: imageId });
     }

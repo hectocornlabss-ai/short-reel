@@ -82,13 +82,16 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
   if (!cfg) return res.status(400).send(error("不支持的类型"));
 
   // 2. 创建图片占位记录
-  const [imageId] = await u.db("o_image").insert({
+  // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+  await u.db("o_image").insert({
     type,
     state: "生成中",
     assetsId: id,
     model: model.split(/:(.+)/)[1],
     resolution,
   });
+  const insertedImage = await u.db("o_image").where({ assetsId: id, type, state: "生成中" }).orderBy("id", "desc").first();
+  const imageId = insertedImage!.id!;
   await u.db("o_assets").where("id", id).update({ imageId });
 
   // 3. 准备生成参数

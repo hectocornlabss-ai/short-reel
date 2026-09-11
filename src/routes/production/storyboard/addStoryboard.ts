@@ -32,7 +32,8 @@ export default router.post(
       scriptId: scriptId,
       projectId,
     });
-    const [id] = await u.db("o_storyboard").insert({
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    await u.db("o_storyboard").insert({
       prompt,
       duration,
       state,
@@ -43,6 +44,8 @@ export default router.post(
       scriptId: scriptId,
       projectId: projectId,
     });
+    const inserted = await u.db("o_storyboard").where({ trackId, scriptId, projectId }).orderBy("id", "desc").first();
+    const id = inserted!.id!;
     return res.status(200).send(success({ id }));
   },
 );

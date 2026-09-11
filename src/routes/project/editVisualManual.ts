@@ -3,13 +3,14 @@ import u from "@/utils";
 import { error, success } from "@/lib/responseFormat";
 import fs from "fs";
 import path from "path";
-import { validateFields } from "@/middleware/middleware";
+import { validateFields, requireAdmin } from "@/middleware/middleware";
 import { z } from "zod";
 const router = express.Router();
 
-// 编辑视觉手册
+// 编辑视觉手册 — เฉพาะแอดมิน (ไม่ว่าเทมเพลตนั้นจะเป็นของระบบหรือของผู้ใช้คนไหนก็ตาม)
 export default router.post(
   "/",
+  requireAdmin,
   validateFields({
     name: z.string(),
     stylePath: z.string(),

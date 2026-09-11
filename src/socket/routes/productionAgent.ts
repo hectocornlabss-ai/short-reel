@@ -1,18 +1,15 @@
-import jwt from "jsonwebtoken";
 import u from "@/utils";
+import { getSupabaseAnon } from "@/utils/supabaseAuth";
 import { Namespace, Socket } from "socket.io";
 import * as agent from "@/agents/productionAgent/index";
 import ResTool from "@/socket/resTool";
 
 async function verifyToken(rawToken: string): Promise<Boolean> {
-  const setting = await u.db("o_setting").where("key", "tokenKey").select("value").first();
-  if (!setting) return false;
-  const { value: tokenKey } = setting;
   if (!rawToken) return false;
   const token = rawToken.replace("Bearer ", "");
   try {
-    jwt.verify(token, tokenKey as string);
-    return true;
+    const { data, error } = await getSupabaseAnon().auth.getUser(token);
+    return !error && !!data?.user;
   } catch (err) {
     return false;
   }
@@ -62,7 +59,7 @@ export default (nsp: Namespace) => {
       abortController = new AbortController();
       const currentController = abortController;
 
-      const msg = resTool.newMessage("assistant", "视频策划");
+      const msg = resTool.newMessage("assistant", "วางแผนวิดีโอ");
       const ctx: agent.AgentContext = {
         socket,
         isolationKey,

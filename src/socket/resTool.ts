@@ -142,7 +142,7 @@ class MessageBuilder {
   }
 
   // 添加思考内容
-  thinking(title = "思考中...") {
+  thinking(title = "กำลังคิด...") {
     const contentId = u.uuid();
     const content: ThinkingContent = {
       type: "thinking",
@@ -522,13 +522,13 @@ class AutoThinkingTextStream extends ContentStream<string> {
   private flushThinking(text: string) {
     if (!text) return;
     this.thinkingBuffer += text;
-    this.ensureThinkingStream().merge({ title: "思考中...", text: this.thinkingBuffer });
+    this.ensureThinkingStream().merge({ title: "กำลังคิด...", text: this.thinkingBuffer });
   }
 
   private ensureThinkingStream() {
     if (!this.thinkingStream) {
       this.thinkingStartTime = Date.now();
-      this.thinkingStream = this.messageBuilder.thinking("思考中...");
+      this.thinkingStream = this.messageBuilder.thinking("กำลังคิด...");
     }
     return this.thinkingStream;
   }
@@ -536,8 +536,8 @@ class AutoThinkingTextStream extends ContentStream<string> {
   private finishThinking() {
     if (this.thinkingStream) {
       const elapsed = ((Date.now() - this.thinkingStartTime) / 1000).toFixed(1);
-      this.thinkingStream.updateTitle(`思考完毕（${elapsed}秒）`);
-      this.thinkingStream.complete({ title: `思考完毕（${elapsed}秒）`, text: this.thinkingBuffer });
+      this.thinkingStream.updateTitle(`คิดเสร็จแล้ว (${elapsed} วินาที)`);
+      this.thinkingStream.complete({ title: `คิดเสร็จแล้ว (${elapsed} วินาที)`, text: this.thinkingBuffer });
       this.thinkingStream = null;
       this.thinkingBuffer = "";
     }

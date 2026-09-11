@@ -4,6 +4,7 @@ import { error, success } from "@/lib/responseFormat";
 import fs from "fs";
 import path from "path";
 import { validateFields } from "@/middleware/middleware";
+import { recordOwnership } from "@/utils/skillOwnership";
 import { z } from "zod";
 const router = express.Router();
 
@@ -96,6 +97,7 @@ export default router.post(
         }
       }
 
+      await recordOwnership("story_skills", directorManual, (req as any).user.id);
       res.status(200).send(success());
     } catch (err) {
       res.status(500).send({ error: String(err) });

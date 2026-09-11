@@ -40,13 +40,13 @@ class CleanNovel {
           {
             role: "user",
             content:
-              "请根据以下小说章节数：" +
+              "กรุณาสรุปเหตุการณ์จากข้อมูลนิยายต่อไปนี้ บทที่: " +
               novel.chapterIndex +
-              "小说章节券：" +
+              " เล่ม: " +
               novel.reel +
-              "小说章节名称：" +
+              " ชื่อบท: " +
               novel.chapter +
-              "、小说章节内容生成事件摘要：\n" +
+              " เนื้อหาในบท:\n" +
               novel.chapterData!,
           },
         ],

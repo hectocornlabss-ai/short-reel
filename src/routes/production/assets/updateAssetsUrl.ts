@@ -15,11 +15,15 @@ export default router.post(
   }),
   async (req, res) => {
     const { id, url, flowId } = req.body;
-    const [imageId] = await u.db("o_image").insert({
-      filePath: u.replaceUrl(url),
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    const filePath = u.replaceUrl(url);
+    await u.db("o_image").insert({
+      filePath,
       state: "已完成",
       assetsId: id,
     });
+    const inserted = await u.db("o_image").where({ filePath, assetsId: id, state: "已完成" }).orderBy("id", "desc").first();
+    const imageId = inserted!.id!;
     await u.db("o_assets").where({ id }).update({ flowId, imageId });
     res.status(200).send(success({ message: "更新提示词成功" }));
   },

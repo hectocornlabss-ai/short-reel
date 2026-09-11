@@ -1,4 +1,4 @@
-import db from "@/utils/db";
+import { db } from "@/utils/db";
 import { v4 as uuid } from "uuid";
 
 export type CreditReason = "topup" | "generation" | "signupBonus" | "adminAdjust" | "refund";

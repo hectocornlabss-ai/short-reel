@@ -1,18 +1,16 @@
 import express from "express";
 import { success, error } from "@/lib/responseFormat";
-import { db } from "@/utils/db";
+import { db, listUserTables } from "@/utils/db";
 
 const router = express.Router();
 
 export default router.get("/", async (req, res) => {
   try {
-    const tables: { name: string }[] = await db.raw(
-      `SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE 'knex_%'`,
-    );
+    const tables = await listUserTables();
 
     const data: Record<string, any[]> = {};
-    for (const table of tables) {
-      data[table.name] = await db.raw(`SELECT * FROM "${table.name}"`);
+    for (const name of tables) {
+      data[name] = await db(name).select("*");
     }
 
     const exportData = {

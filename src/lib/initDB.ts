@@ -1,6 +1,7 @@
 import { Knex } from "knex";
 import { v4 as uuid } from "uuid";
 import { getEmbedding } from "@/utils/agent/embedding";
+import { isPostgres } from "@/utils/db";
 
 interface TableSchema {
   name: string;
@@ -14,22 +15,19 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
     {
       name: "o_user",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.text("name");
-        table.text("password");
+        table.text("password"); // เลิกใช้แล้ว (auth ย้ายไป Supabase Auth ทั้งหมด) เก็บคอลัมน์ไว้เฉยๆ กันโค้ดเก่าพัง
+        table.text("supabaseUserId"); // ผูกกับ auth.users.id ของ Supabase Auth (แหล่งความจริงเรื่องตัวตน)
         table.text("lineUserId");
         table.text("displayName");
         table.text("avatar");
-        table.integer("credits").defaultTo(0);
+        table.bigInteger("credits").defaultTo(0);
         table.boolean("isAdmin").defaultTo(false);
-        table.integer("createTime");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("createTime");
       },
       initData: async (knex) => {
-        await knex("o_user").insert([
-          { id: 1, name: "admin", password: "admin123", isAdmin: true, credits: 0, createTime: Date.now() },
-        ]);
+        await knex("o_user").insert([{ id: 1, name: "admin", isAdmin: true, credits: 0, createTime: Date.now() }]);
       },
     },
     // เครดิตของผู้ใช้: บันทึกทุกรายการหัก/เติมเครดิต
@@ -37,13 +35,13 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
       name: "o_creditLedger",
       builder: (table) => {
         table.text("id").notNullable();
-        table.integer("userId").notNullable();
-        table.integer("delta"); // + เติม, - หัก
-        table.integer("balanceAfter");
+        table.bigInteger("userId").notNullable();
+        table.bigInteger("delta"); // + เติม, - หัก
+        table.bigInteger("balanceAfter");
         table.text("reason"); // topup | generation | signupBonus | adminAdjust
         table.text("refId"); // อ้างอิงถึง order/task ที่เกี่ยวข้อง
         table.text("note");
-        table.integer("createTime");
+        table.bigInteger("createTime");
         table.primary(["id"]);
         table.unique(["id"]);
       },
@@ -53,24 +51,35 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
       name: "o_topupOrder",
       builder: (table) => {
         table.text("id").notNullable();
-        table.integer("userId").notNullable();
-        table.integer("amountThb");
-        table.integer("credits");
+        table.bigInteger("userId").notNullable();
+        table.bigInteger("amountThb");
+        table.bigInteger("credits");
         table.text("status"); // pending | paid | rejected | expired
         table.text("slipImageUrl");
         table.text("slipRef"); // เลขอ้างอิงจากผู้ให้บริการตรวจสลิป
         table.text("providerResponse"); // JSON ดิบจาก API ตรวจสลิป (สำหรับตรวจสอบย้อนหลัง)
-        table.integer("createTime");
-        table.integer("verifiedTime");
+        table.bigInteger("createTime");
+        table.bigInteger("verifiedTime");
         table.primary(["id"]);
         table.unique(["id"]);
+      },
+    },
+    // เจ้าของเทมเพลตคู่มือภาพ/คู่มือกรรมการ (art_skills, story_skills) — null = เทมเพลตของระบบ แก้/ลบได้เฉพาะแอดมิน
+    {
+      name: "o_skillOwnership",
+      builder: (table) => {
+        table.text("path").notNullable(); // เช่น "art_skills/<folder>" หรือ "story_skills/<folder>"
+        table.bigInteger("createdByUserId"); // null = ของระบบ
+        table.bigInteger("createTime");
+        table.primary(["path"]);
+        table.unique(["path"]);
       },
     },
     //项目表
     {
       name: "o_project",
       builder: (table) => {
-        table.integer("id");
+        table.bigIncrements("id");
         table.string("projectType");
         table.string("imageModel");
         table.string("imageQuality");
@@ -82,23 +91,19 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
         table.text("directorManual");
         table.text("mode");
         table.text("videoRatio");
-        table.integer("createTime");
-        table.integer("userId");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("createTime");
+        table.bigInteger("userId");
       },
     },
     //风格表
     {
       name: "o_artStyle",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.string("name");
         table.text("fileUrl");
         table.text("label");
         table.text("prompt");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
       initData: async (knex) => {},
     },
@@ -106,18 +111,16 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
     {
       name: "o_agentDeploy",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.string("model");
         table.string("key");
         table.string("modelName");
         table.text("vendorId");
         table.string("desc");
         table.string("name");
-        table.integer("temperature");
-        table.integer("maxOutputTokens");
+        table.bigInteger("temperature");
+        table.bigInteger("maxOutputTokens");
         table.boolean("disabled").defaultTo(false);
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
       initData: async (knex) => {
         await knex("o_agentDeploy").insert([
@@ -361,17 +364,15 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
     {
       name: "o_tasks",
       builder: (table) => {
-        table.integer("id").notNullable();
-        table.integer("projectId");
+        table.bigIncrements("id");
+        table.bigInteger("projectId");
         table.string("taskClass");
-        table.string("relatedObjects");
+        table.text("relatedObjects");
         table.string("model");
         table.text("describe");
         table.string("state");
-        table.integer("startTime");
+        table.bigInteger("startTime");
         table.text("reason");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
       initData: async (knex) => {},
     },
@@ -379,13 +380,11 @@ export default async (knex: Knex, forceInit: boolean = false): Promise<void> => 
     {
       name: "o_prompt",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.string("name");
         table.string("type");
         table.text("data");
         table.text("useData");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
       initData: async (knex) => {
         await knex("o_prompt").insert([
@@ -1019,13 +1018,11 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_modelPrompt",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.string("vendorId");
         table.string("model");
         table.text("fileName");
         table.text("path");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
       initData: async (knex) => {},
     },
@@ -1033,79 +1030,69 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_novel",
       builder: (table) => {
-        table.integer("id").notNullable();
-        table.integer("chapterIndex");
+        table.bigIncrements("id");
+        table.bigInteger("chapterIndex");
         table.text("reel");
         table.text("chapter");
         table.text("chapterData");
-        table.integer("projectId");
-        table.integer("eventState");
+        table.bigInteger("projectId");
+        table.bigInteger("eventState");
         table.text("event");
         table.text("errorReason");
-        table.integer("createTime");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("createTime");
       },
     },
     //小说事件表
     {
       name: "o_event",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.string("name");
         table.string("detail");
-        table.integer("createTime");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("createTime");
       },
     },
     //事件-章节表
     {
       name: "o_eventChapter",
       builder: (table) => {
-        table.integer("id").notNullable();
-        table.integer("eventId").unsigned().references("id").inTable("o_event");
-        table.integer("novelId").unsigned().references("id").inTable("o_novel");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigIncrements("id");
+        table.bigInteger("eventId").unsigned();
+        table.bigInteger("novelId").unsigned();
       },
     },
     //剧本
     {
       name: "o_script",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.text("name");
         table.text("content");
-        table.integer("projectId");
-        table.integer("extractState");
-        table.integer("createTime");
+        table.bigInteger("projectId");
+        table.bigInteger("extractState");
+        table.bigInteger("createTime");
         table.text("errorReason");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
     },
     //资产表
     {
       name: "o_assets",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.text("name");
         table.text("prompt");
         table.text("remark");
         table.text("type");
         table.text("describe");
-        table.integer("scriptId"); //剧本id
-        table.integer("imageId").unsigned().references("id").inTable("o_image");
-        table.integer("assetsId");
-        table.integer("projectId");
-        table.integer("flowId"); //工作流id
-        table.integer("startTime");
+        table.bigInteger("scriptId"); //剧本id
+        table.bigInteger("imageId").unsigned();
+        table.bigInteger("assetsId");
+        table.bigInteger("projectId");
+        table.bigInteger("flowId"); //工作流id
+        table.bigInteger("startTime");
         table.string("promptState");
-        table.integer("audioBindState");
+        table.bigInteger("audioBindState");
         table.text("promptErrorReason");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
       initData: async (knex) => {},
     },
@@ -1113,87 +1100,77 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_image",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.text("filePath");
         table.text("type");
-        table.integer("assetsId");
+        table.bigInteger("assetsId");
         table.text("model");
         table.text("resolution");
         table.text("state");
         table.text("errorReason");
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
     },
     //分镜
     {
       name: "o_storyboard",
       builder: (table) => {
-        table.integer("id").notNullable();
-        table.integer("scriptId");
+        table.bigIncrements("id");
+        table.bigInteger("scriptId");
         table.text("prompt");
         table.text("filePath");
         table.text("duration");
         table.text("state");
-        table.integer("trackId");
+        table.bigInteger("trackId");
         table.text("reason");
         table.text("track");
         table.text("videoDesc");
-        table.integer("shouldGenerateImage"); // 0 否  1 是
-        table.integer("projectId");
-        table.integer("flowId"); //工作流id
-        table.integer("index");
-        table.integer("createTime");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("shouldGenerateImage"); // 0 否  1 是
+        table.bigInteger("projectId");
+        table.bigInteger("flowId"); //工作流id
+        table.bigInteger("index");
+        table.bigInteger("createTime");
       },
     },
     //flowData-剧本
     {
       name: "o_agentWorkData",
       builder: (table) => {
-        table.integer("id").notNullable();
-        table.integer("projectId");
-        table.integer("episodesId");
+        table.bigIncrements("id");
+        table.bigInteger("projectId");
+        table.bigInteger("episodesId");
         table.string("key"); //用户其他方式索引
-        table.string("data");
-        table.integer("createTime");
-        table.integer("updateTime");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.text("data");
+        table.bigInteger("createTime");
+        table.bigInteger("updateTime");
       },
     },
     //视频
     {
       name: "o_video",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.text("filePath");
         table.text("errorReason");
-        table.integer("time");
+        table.bigInteger("time");
         table.text("state");
-        table.integer("scriptId");
-        table.integer("projectId");
-        table.integer("videoTrackId");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("scriptId");
+        table.bigInteger("projectId");
+        table.bigInteger("videoTrackId");
       },
     },
     // 视频轨道
     {
       name: "o_videoTrack",
       builder: (table) => {
-        table.integer("id").notNullable();
-        table.integer("videoId");
-        table.integer("projectId");
-        table.integer("scriptId");
+        table.bigIncrements("id");
+        table.bigInteger("videoId");
+        table.bigInteger("projectId");
+        table.bigInteger("scriptId");
         table.text("state");
         table.text("reason");
         table.text("prompt");
-        table.integer("selectVideoId");
-        table.integer("duration");
-        table.primary(["id"]);
-        table.unique(["id"]);
+        table.bigInteger("selectVideoId");
+        table.bigInteger("duration");
       },
     },
     //供应商配置表
@@ -1203,7 +1180,7 @@ A medium tracking shot follows the woman from behind as she ascends and approach
         table.string("id").notNullable();
         table.text("inputValues"); // 输入项值 JSON
         table.text("models"); // 模型配置 JSON
-        table.integer("enable"); //是否启用供应商
+        table.bigInteger("enable"); //是否启用供应商
         table.primary(["id"]);
         table.unique(["id"]);
       },
@@ -1264,17 +1241,17 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_imageFlow",
       builder: (table) => {
-        table.integer("id").notNullable();
+        table.bigIncrements("id");
         table.text("flowData").notNullable();
-        table.primary(["id"]);
-        table.unique(["id"]);
       },
     },
     {
       name: "o_assets2Storyboard",
       builder: (table) => {
-        table.integer("storyboardId").notNullable();
-        table.integer("assetId").notNullable();
+        table.bigInteger("storyboardId").notNullable();
+        table.bigInteger("assetId").notNullable();
+        // ลำดับการแทรกแถว (ทดแทน "rowid" ของ SQLite ที่ Postgres ไม่มี) ใช้เรียงลำดับ asset ตามที่ผูกไว้จริง
+        table.bigIncrements("seq", { primaryKey: false });
         table.primary(["storyboardId", "assetId"]);
         table.unique(["storyboardId", "assetId"]);
       },
@@ -1282,8 +1259,8 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_scriptAssets",
       builder: (table) => {
-        table.integer("scriptId").notNullable();
-        table.integer("assetId").notNullable();
+        table.bigInteger("scriptId").notNullable();
+        table.bigInteger("assetId").notNullable();
         table.primary(["scriptId", "assetId"]);
         table.unique(["scriptId", "assetId"]);
       },
@@ -1298,9 +1275,9 @@ A medium tracking shot follows the woman from behind as she ascends and approach
         table.text("description").notNullable(); //描述
         table.text("embedding"); // 向量嵌入 JSON
         table.text("type").notNullable(); // "main" | "references"
-        table.integer("createTime").notNullable();
-        table.integer("updateTime").notNullable();
-        table.integer("state").notNullable(); // 1正常，0正在生成description，-1description为空。-2归属为空,-3md5变动，-4文件不存在
+        table.bigInteger("createTime").notNullable();
+        table.bigInteger("updateTime").notNullable();
+        table.bigInteger("state").notNullable(); // 1正常，0正在生成description，-1description为空。-2归属为空,-3md5变动，-4文件不存在
         table.primary(["id"]);
       },
       initData: async (knex) => {
@@ -1584,7 +1561,7 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_skillAttribution",
       builder: (table) => {
-        table.text("skillId").notNullable().references("id").inTable("o_skillList").onDelete("CASCADE");
+        table.text("skillId").notNullable();
         table.text("attribution").notNullable(); // "production_agent_decision.md" | "production_agent_execution.md" | "production_agent_supervision.md" | "script_agent_decision.md" | "script_agent_execution.md" | "script_agent_supervision.md" | "universal_agent.md"
         table.primary(["skillId", "attribution"]);
         table.index(["attribution"]);
@@ -1662,8 +1639,8 @@ A medium tracking shot follows the woman from behind as she ascends and approach
         table.text("content").notNullable();
         table.text("embedding"); // 向量嵌入 JSON
         table.text("relatedMessageIds"); // summary关联的message id列表 JSON
-        table.integer("summarized").defaultTo(0); // message是否已被总结 0/1
-        table.integer("createTime").notNullable();
+        table.bigInteger("summarized").defaultTo(0); // message是否已被总结 0/1
+        table.bigInteger("createTime").notNullable();
         table.primary(["id"]);
         table.index(["isolationKey", "type"]);
         table.index(["isolationKey", "summarized"]);
@@ -1672,14 +1649,15 @@ A medium tracking shot follows the woman from behind as she ascends and approach
     {
       name: "o_assetsRole2Audio",
       builder: (table) => {
-        table.integer("assetsRoleId").notNullable();
-        table.integer("assetsAudioId").notNullable();
+        table.bigInteger("assetsRoleId").notNullable();
+        table.bigInteger("assetsAudioId").notNullable();
         table.primary(["assetsAudioId", "assetsRoleId"]);
         table.unique(["assetsAudioId", "assetsRoleId"]);
       },
     },
   ];
 
+  const newlyCreated = new Set<string>();
   for (const t of tables) {
     const tableExists = await knex.schema.hasTable(t.name);
     if (!tableExists || forceInit) {
@@ -1690,10 +1668,40 @@ A medium tracking shot follows the woman from behind as she ascends and approach
         console.log("[初始化数据库] 创建数据表:", t.name);
       }
       await knex.schema.createTable(t.name, t.builder);
+      newlyCreated.add(t.name);
       if (t.initData) {
         await t.initData(knex);
         console.log("[初始化数据库] 表数据初始化:", t.name);
       }
+    }
+  }
+
+  // เพิ่ม foreign key ทีหลังสุด (หลังตารางทุกตัวมีอยู่แล้ว) กัน error "ตารางที่อ้างอิงยังไม่มี"
+  // ตอน Postgres สร้างตารางตามลำดับใน array ซึ่งบางตารางอ้างอิงตารางที่นิยามไว้ทีหลัง
+  const foreignKeys: { table: string; column: string; refTable: string; refColumn: string; onDelete?: string }[] = [
+    { table: "o_eventChapter", column: "eventId", refTable: "o_event", refColumn: "id" },
+    { table: "o_eventChapter", column: "novelId", refTable: "o_novel", refColumn: "id" },
+    { table: "o_assets", column: "imageId", refTable: "o_image", refColumn: "id" },
+    { table: "o_skillAttribution", column: "skillId", refTable: "o_skillList", refColumn: "id", onDelete: "CASCADE" },
+  ];
+  for (const fk of foreignKeys) {
+    if (!newlyCreated.has(fk.table)) continue; // ตารางเก่ามีอยู่แล้วต้องมี constraint นี้อยู่แล้ว ไม่ต้องเพิ่มซ้ำ
+    await knex.schema.alterTable(fk.table, (table) => {
+      const builder = table.foreign(fk.column).references(fk.refColumn).inTable(fk.refTable);
+      if (fk.onDelete) builder.onDelete(fk.onDelete);
+    });
+  }
+
+  // Postgres: ตารางที่ seed ข้อมูลด้วย id ที่ระบุเอง (เช่น admin id=1) ทำให้ sequence ของคอลัมน์ bigIncrements ไม่รู้ว่าเลขนี้ถูกใช้แล้ว
+  // ต้อง sync sequence ให้ตรงกับ MAX(id) จริง ไม่งั้น insert แถวถัดไปแบบไม่ระบุ id จะชนกับ id ที่ seed ไว้
+  if (isPostgres) {
+    const bigIncrementsTables = tables.filter((t) => t.initData);
+    for (const t of bigIncrementsTables) {
+      try {
+        await knex.raw(
+          `SELECT setval(pg_get_serial_sequence('"${t.name}"', 'id'), COALESCE((SELECT MAX(id) FROM "${t.name}"), 1))`,
+        );
+      } catch {}
     }
   }
 };

@@ -27,17 +27,21 @@ export default router.post(
     if (getLastChapterIndex) {
       lastChapterIndex = getLastChapterIndex.chapterIndex!;
     }
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    // (บั๊กนี้เคยทำให้แทรกได้แค่บทแรกแล้ว request พังทั้งหมด บทที่เหลือหายไปเงียบๆ)
     for (const item of data) {
-      const [id] = await u.db("o_novel").insert({
+      const chapterIndex = ++lastChapterIndex;
+      await u.db("o_novel").insert({
         projectId,
-        chapterIndex: ++lastChapterIndex,
+        chapterIndex,
         reel: item.reel,
         chapter: item.chapter,
         chapterData: item.chapterData,
         createTime: Date.now(),
         eventState: 0,
       });
-      totalNovelId.push(id);
+      const inserted = await u.db("o_novel").where({ projectId, chapterIndex }).orderBy("id", "desc").first();
+      totalNovelId.push(inserted!.id!);
     }
     const chapterAllList = await u.db("o_novel").where("projectId", projectId).whereIn("id", totalNovelId);
     const novelClass = new u.cleanNovel();

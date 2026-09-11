@@ -40,18 +40,24 @@ export default router.post(
     const savePath = `/${projectId}/assets/${uuid()}.${ext}`;
 
     await u.oss.writeFile(savePath, Buffer.from(base64Data.match(/base64,([A-Za-z0-9+/=]+)/)[1] ?? "", "base64"));
-    const [id] = await u.db("o_assets").insert({
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    const startTime = Date.now();
+    await u.db("o_assets").insert({
       type: type,
       projectId: projectId,
       name,
-      startTime: Date.now(),
+      startTime,
     });
-    const [imageId] = await u.db("o_image").insert({
+    const assetsRow = await u.db("o_assets").where({ type, projectId, name, startTime }).orderBy("id", "desc").first();
+    const id = assetsRow!.id!;
+    await u.db("o_image").insert({
       filePath: savePath,
       type,
       assetsId: id,
       state: "已完成",
     });
+    const imageRow = await u.db("o_image").where({ filePath: savePath, type, assetsId: id, state: "已完成" }).orderBy("id", "desc").first();
+    const imageId = imageRow!.id!;
     await u.db("o_assets").where("id", id).update({
       imageId: imageId,
     });

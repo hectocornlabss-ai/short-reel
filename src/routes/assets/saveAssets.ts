@@ -29,12 +29,15 @@ export default router.post(
       // 写入文件
       await u.oss.writeFile(savePath, Buffer.from(realBase64, "base64"));
       // 插入图片表
-      const [idData] = await u.db("o_image").insert({
+      // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+      await u.db("o_image").insert({
         assetsId: id,
         filePath: savePath,
         type: type,
         state: "已完成",
       });
+      const insertedImage = await u.db("o_image").where({ assetsId: id, filePath: savePath, type, state: "已完成" }).orderBy("id", "desc").first();
+      const idData = insertedImage!.id!;
       // 更新资产表图片为新图片
       await u
         .db("o_assets")

@@ -153,10 +153,10 @@ async function withTaskRecord<T>(
   try {
     const result = await fn(modelName, false, 0);
 
-    taskRecord(1);
+    await taskRecord(1);
     return result;
   } catch (e) {
-    taskRecord(-1, u.error(e).message);
+    await taskRecord(-1, u.error(e).message);
     throw new Error(u.error(e).message);
   }
 }
@@ -167,17 +167,57 @@ async function getUserIdForProject(projectId?: number): Promise<number | null> {
   return project?.userId ?? null;
 }
 
-// เช็คเครดิตก่อนยิงงานจริง (กันเปลืองต้นทุนถ้าเครดิตไม่พอ) แล้วหักหลังงานสำเร็จ
-async function chargeCredits(taskRecord: TaskRecord | undefined, estimateCredits: () => Promise<number>, refId: string): Promise<() => Promise<void>> {
+// หักเครดิตล่วงหน้าแบบ atomic ก่อนยิงงานจริงเสมอ (กันช่องโหว่ยิงพร้อมกันหลายคำขอตอนเครดิตใกล้หมดแล้วได้งานฟรี)
+// ถ้างานล้มเหลวค่อยคืนเครดิตให้ทีหลัง — ต้องหักก่อนเรียก vendor ไม่ใช่หักหลังสำเร็จ เพราะ "เช็คก่อน หักทีหลัง" มี race condition
+async function chargeCredits(
+  taskRecord: TaskRecord | undefined,
+  estimateCredits: () => Promise<number>,
+  refId: string,
+): Promise<(success: boolean) => Promise<void>> {
   const userId = await getUserIdForProject(taskRecord?.projectId);
   if (!userId) return async () => {}; // ไม่มีผู้ใช้ที่ระบุได้ (เช่นเรียกตรงไม่ผ่าน taskRecord) ข้ามระบบเครดิต
   const cost = await estimateCredits().catch(() => 0);
-  if (cost > 0 && !(await u.credits.hasEnoughCredits(userId, cost))) {
-    throw new Error("เครดิตไม่เพียงพอ กรุณาเติมเครดิตก่อนใช้งาน");
+  if (cost > 0) {
+    try {
+      await u.credits.adjustCredits(userId, -cost, "generation", refId, "หักล่วงหน้าก่อนสร้างงาน");
+    } catch {
+      throw new Error("เครดิตไม่เพียงพอ กรุณาเติมเครดิตก่อนใช้งาน");
+    }
   }
-  return async () => {
-    if (cost > 0) await u.credits.adjustCredits(userId, -cost, "generation", refId, undefined).catch(() => {});
+  return async (success: boolean) => {
+    if (cost > 0 && !success) await u.credits.adjustCredits(userId, cost, "refund", refId, "คืนเครดิตเนื่องจากสร้างงานล้มเหลว").catch(() => {});
   };
+}
+
+// เช็คก่อนเริ่มแชท/สั่งงาน Agent (text): กันผู้ใช้เครดิตหมด/ติดลบเริ่มงานใหม่ที่มีต้นทุนจริง
+// หมายเหตุ: การหักเครดิตจริงของฝั่ง text ทำแบบ "รู้ยอดใช้จริงจาก AI ก่อนค่อยหัก" (chargeTextUsage)
+// เพราะความยาวคำตอบไม่รู้ล่วงหน้า ต่างจากภาพ/วิดีโอที่คิดราคาต่อหน่วยได้แน่นอนล่วงหน้า
+async function ensureCreditsAvailable(projectId?: number) {
+  const userId = await getUserIdForProject(projectId);
+  if (!userId) return; // ไม่มีผู้ใช้ที่ระบุได้ ข้ามการเช็ค
+  const balance = await u.credits.getBalance(userId);
+  if (balance <= 0) throw new Error("เครดิตไม่เพียงพอ กรุณาเติมเครดิตก่อนใช้งาน");
+}
+
+// หักเครดิตของการเรียก AI แบบ text (chat/agent) ตามยอดใช้จริงหลังเรียกเสร็จ (input/output tokens จาก usage ของ AI SDK)
+// ราคาอิงต้นทุนจริงจาก OpenRouter + margin ที่ตั้งไว้ (เหมือนภาพ/วิดีโอ) ผ่าน u.pricing.creditsForText
+async function chargeTextUsage(
+  modelKey: AiType | `${string}:${string}`,
+  projectId: number | undefined,
+  refId: string,
+  usage: { inputTokens?: number; outputTokens?: number } | undefined,
+  note = "หักเครดิตค่าใช้งาน AI",
+) {
+  try {
+    const userId = await getUserIdForProject(projectId);
+    if (!userId) return;
+    const modelName = await resolveModelName(modelKey);
+    const modelSlug = modelName.split(/:(.+)/)[1];
+    const cost = await u.pricing.creditsForText(modelSlug, usage?.inputTokens ?? 0, usage?.outputTokens ?? 0);
+    if (cost > 0) await u.credits.adjustCredits(userId, -cost, "generation", refId, note);
+  } catch (e) {
+    console.error("[chargeTextUsage] หักเครดิตล้มเหลว:", u.error(e).message);
+  }
 }
 
 async function urlToBase64(url: string, retries = 3, delay = 1000): Promise<string> {
@@ -217,7 +257,9 @@ class AiText {
     const config = await getModelConfig(this.AiType);
 
     return generateText({
-      ...(input.tools && { stopWhen: stepCountIs(Object.keys(input.tools).length * 50) }),
+      // จำกัดจำนวนสเต็ปสูงสุดต่อการเรียกหนึ่งครั้งไว้ที่ 30 (เดิม tools×50 ซึ่งอาจสูงถึงหลักร้อย)
+      // กันกรณีโมเดลวนเรียกเครื่องมือเดิมซ้ำๆ (เช่น run_supervision_agent) จนกินเครดิต/ต้นทุนจริงแบบไม่จำเป็น
+      ...(input.tools && { stopWhen: stepCountIs(Math.min(Object.keys(input.tools).length * 10, 30)) }),
       ...input,
       model: await this.resolveModel(),
       ...(config?.temperature && { temperature: config.temperature }),
@@ -228,7 +270,9 @@ class AiText {
     const config = await getModelConfig(this.AiType);
 
     return streamText({
-      ...(input.tools && { stopWhen: stepCountIs(Object.keys(input.tools).length * 50) }),
+      // จำกัดจำนวนสเต็ปสูงสุดต่อการเรียกหนึ่งครั้งไว้ที่ 30 (เดิม tools×50 ซึ่งอาจสูงถึงหลักร้อย)
+      // กันกรณีโมเดลวนเรียกเครื่องมือเดิมซ้ำๆ (เช่น run_supervision_agent) จนกินเครดิต/ต้นทุนจริงแบบไม่จำเป็น
+      ...(input.tools && { stopWhen: stepCountIs(Math.min(Object.keys(input.tools).length * 10, 30)) }),
       ...input,
       model: await this.resolveModel(extractReasoningMiddleware({ tagName: "reasoning_content", separator: "\n" })),
       ...(config?.temperature && { temperature: config.temperature }),
@@ -278,14 +322,18 @@ class AiImage {
       if (this.result.startsWith("http")) this.result = await urlToBase64(this.result);
       return this;
     };
-    if (taskRecord) {
-      await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
-      await settle();
+    try {
+      if (taskRecord) {
+        await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
+      } else {
+        await exec(modelName);
+      }
+      await settle(true);
       return this;
+    } catch (e) {
+      await settle(false);
+      throw e;
     }
-    await exec(modelName);
-    await settle();
-    return this;
   }
   async save(path: string) {
     await u.oss.writeFile(path, this.result);
@@ -335,13 +383,13 @@ class AiVideo {
       };
       if (taskRecord) {
         await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
-        await settle();
-        return this;
+      } else {
+        await exec(modelName);
       }
-      await exec(modelName);
-      await settle();
+      await settle(true);
       return this;
     } catch (e) {
+      await settle(false);
       throw e;
     }
   }
@@ -350,37 +398,47 @@ class AiVideo {
     return this;
   }
 }
+interface TtsConfig {
+  text: string;
+  voice: string;
+  speechRate?: number;
+  pitchRate?: number;
+  volume?: number;
+  referenceList?: ReferenceList[];
+}
+
 class AiAudio {
   private key: `${string}:${string}`;
   private result: string = "";
   constructor(key: `${string}:${string}`) {
     this.key = key;
   }
-  async run(input: VideoConfig, taskRecord?: TaskRecord) {
+  async run(input: TtsConfig, taskRecord?: TaskRecord) {
     const modelName = await resolveModelName(this.key);
+    // แก้บั๊กเดิม: คำนวณราคาจาก input.prompt (ไม่มีจริงใน TTS) ทำให้หักเครดิตเป็น 0 เสมอ
+    // ต้องใช้ความยาวข้อความจริง (input.text) มาคำนวณราคาต่อตัวอักษร
     const settle = await chargeCredits(
       taskRecord,
-      () => u.pricing.creditsForTts(modelName.split(/:(.+)/)[1], input.prompt?.length ?? 0),
+      () => u.pricing.creditsForTts(modelName.split(/:(.+)/)[1], input.text?.length ?? 0),
       modelName,
     );
     const exec = async (mn: `${string}:${string}`) => {
-      try {
-        const fn = await getVendorTemplateFn("ttsRequest", mn);
-        await referenceList2imageBase642(mn.split(/:(.+)/)[0], input);
-        this.result = await fn(input);
-
-        if (this.result.startsWith("http")) this.result = await urlToBase64(this.result);
-        return this;
-      } catch (e) {}
+      const fn = await getVendorTemplateFn("ttsRequest", mn);
+      await referenceList2imageBase642(mn.split(/:(.+)/)[0], input);
+      this.result = await fn(input);
+      if (this.result.startsWith("http")) this.result = await urlToBase64(this.result);
+      return this;
     };
-    if (taskRecord) {
-      const r = await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec);
-      await settle();
+    try {
+      const r = taskRecord
+        ? await withTaskRecord(this.key, taskRecord.taskClass, taskRecord.describe, taskRecord.relatedObjects, taskRecord.projectId, exec)
+        : await exec(modelName);
+      await settle(true);
       return r;
+    } catch (e) {
+      await settle(false);
+      return undefined;
     }
-    const r = await exec(modelName);
-    await settle();
-    return r;
   }
   async save(path: string) {
     await u.oss.writeFile(path, this.result);
@@ -393,4 +451,6 @@ export default {
   Image: (key: `${string}:${string}`) => new AiImage(key),
   Video: (key: `${string}:${string}`) => new AiVideo(key),
   Audio: (key: `${string}:${string}`) => new AiAudio(key),
+  ensureCreditsAvailable,
+  chargeTextUsage,
 };

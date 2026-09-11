@@ -68,7 +68,9 @@ export async function runDecisionAI(ctx: AgentContext) {
 
   const mem = buildMemPrompt(await memory.get(text));
 
-  const { fullStream } = await u.Ai.Text("productionAgent:decisionAgent", ctx.thinkConfig.think, ctx.thinkConfig.thinlLevel).stream({
+  await u.Ai.ensureCreditsAvailable(ctx.resTool.data.projectId);
+
+  const stream = await u.Ai.Text("productionAgent:decisionAgent", ctx.thinkConfig.think, ctx.thinkConfig.thinlLevel).stream({
     messages: [
       { role: "system", content: prompt },
       { role: "assistant", content: mem + "\n" + modelInfo },
@@ -84,6 +86,7 @@ export async function runDecisionAI(ctx: AgentContext) {
       await memory.add("assistant:decision", removeAllXmlTags(completion.text));
     },
   });
+  const { fullStream } = stream;
 
   let currentMsg = ctx.msg;
   await consumeFullStream(fullStream, currentMsg, () => {
@@ -92,6 +95,15 @@ export async function runDecisionAI(ctx: AgentContext) {
     currentMsg = ctx.msg;
     return currentMsg;
   });
+
+  const usage = await Promise.resolve(stream.usage).catch(() => undefined);
+  await u.Ai.chargeTextUsage(
+    "productionAgent:decisionAgent",
+    ctx.resTool.data.projectId,
+    `productionAgent:decision:${isolationKey}:${Date.now()}`,
+    usage,
+    "หักเครดิตค่าใช้งาน Agent งานผลิต-ผู้ประสานงาน",
+  );
 }
 
 async function createSubAgent(parentCtx: AgentContext) {
@@ -117,14 +129,26 @@ async function createSubAgent(parentCtx: AgentContext) {
     parentCtx.msg.complete();
     const subMsg = resTool.newMessage("assistant", name);
 
-    const { fullStream } = await u.Ai.Text(key, parentCtx.thinkConfig.think, parentCtx.thinkConfig.thinlLevel).stream({
+    await u.Ai.ensureCreditsAvailable(resTool.data.projectId);
+
+    const stream = await u.Ai.Text(key, parentCtx.thinkConfig.think, parentCtx.thinkConfig.thinlLevel).stream({
       system,
       messages: messages ?? [{ role: "user", content: prompt }],
       abortSignal,
       tools: { ...extraTools, ...useTools({ resTool, msg: subMsg }) },
     });
+    const { fullStream } = stream;
 
     const fullResponse = await consumeFullStream(fullStream, subMsg);
+
+    const usage = await Promise.resolve(stream.usage).catch(() => undefined);
+    await u.Ai.chargeTextUsage(
+      key,
+      resTool.data.projectId,
+      `productionAgent:${memoryKey}:${parentCtx.isolationKey}:${Date.now()}`,
+      usage,
+      `หักเครดิตค่าใช้งาน Agent งานผลิต-${name}`,
+    );
 
     if (fullResponse.trim()) {
       await memory.add(memoryKey, removeAllXmlTags(fullResponse), {
@@ -133,7 +157,7 @@ async function createSubAgent(parentCtx: AgentContext) {
       });
     }
 
-    parentCtx.msg = resTool.newMessage("assistant", "视频策划");
+    parentCtx.msg = resTool.newMessage("assistant", "วางแผนวิดีโอ");
     return fullResponse;
   }
 
@@ -204,7 +228,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:deriveAssetsAgent",
         prompt,
         system: systemPrompt,
-        name: "执行导演",
+        name: "ผู้กำกับบริหาร",
         memoryKey: "assistant:execution",
         messages: [
           { role: "assistant", content: artSkills.prompt + `\n${modelInfo}` },
@@ -226,7 +250,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:generateAssetsAgent",
         prompt,
         system: systemPrompt,
-        name: "执行导演",
+        name: "ผู้กำกับบริหาร",
         memoryKey: "assistant:execution",
         messages: [
           { role: "assistant", content: artSkills.prompt + `\n${modelInfo}` },
@@ -251,7 +275,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:directorPlanAgent",
         prompt,
         system: systemPrompt + addPrompt,
-        name: "执行导演",
+        name: "ผู้กำกับบริหาร",
         memoryKey: "assistant:execution",
         messages: [
           { role: "assistant", content: artSkills.prompt + `\n${modelInfo}` },
@@ -273,7 +297,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:storyboardGenAgent",
         prompt,
         system: systemPrompt,
-        name: "执行导演",
+        name: "ผู้กำกับบริหาร",
         memoryKey: "assistant:execution",
         messages: [
           { role: "assistant", content: artSkills.prompt + `\n${modelInfo}` },
@@ -311,7 +335,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:storyboardPanelAgent",
         prompt,
         system: systemPrompt + addPrompt,
-        name: "执行导演",
+        name: "ผู้กำกับบริหาร",
         memoryKey: "assistant:execution",
         messages: [
           { role: "assistant", content: productionSkills.prompt + `\n${modelInfo}` },
@@ -336,7 +360,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:storyboardTableAgent",
         prompt,
         system: systemPrompt + addPrompt,
-        name: "执行导演",
+        name: "ผู้กำกับบริหาร",
         memoryKey: "assistant:execution",
         messages: [
           { role: "assistant", content: productionSkills.prompt + `\n${modelInfo}` },
@@ -357,7 +381,7 @@ async function createSubAgent(parentCtx: AgentContext) {
         key: "productionAgent:supervisionAgent",
         prompt,
         system: systemPrompt,
-        name: "监制",
+        name: "โปรดิวเซอร์ควบคุม",
         memoryKey: "assistant:supervision",
       });
     },
@@ -416,12 +440,12 @@ async function consumeFullStream(
       }
       if (chunk.type === "reasoning-start") {
         thinkTime = Date.now();
-        thinking = msg.thinking("思考中...");
+        thinking = msg.thinking("กำลังคิด...");
       } else if (chunk.type === "reasoning-delta") {
         thinking?.append(chunk.text);
       } else if (chunk.type === "reasoning-end") {
         thinkTime = Date.now() - thinkTime;
-        thinking?.updateTitle(`思考完毕（${(thinkTime / 1000).toFixed(1)} 秒）`);
+        thinking?.updateTitle(`คิดเสร็จแล้ว (${(thinkTime / 1000).toFixed(1)} วินาที)`);
         thinking?.complete();
         thinking = null;
       } else if (chunk.type === "text-delta") {

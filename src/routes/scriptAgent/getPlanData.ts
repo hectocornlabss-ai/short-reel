@@ -16,7 +16,8 @@ export default router.post(
     const row = await u.db("o_agentWorkData").where({ projectId: projectId, key: agentType }).first();
 
     if (!row) {
-      const [id] = await u.db("o_agentWorkData").insert({
+      // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+      await u.db("o_agentWorkData").insert({
         projectId: projectId,
         key: agentType,
         data: JSON.stringify({
@@ -24,6 +25,8 @@ export default router.post(
           adaptationStrategy: "",
         }),
       });
+      const inserted = await u.db("o_agentWorkData").where({ projectId, key: agentType }).orderBy("id", "desc").first();
+      const id = inserted!.id!;
       return res.status(200).send(
         success({
           data: {

@@ -12,27 +12,72 @@ import fixDB from "@/lib/fixDB";
 type TableName = keyof DB & string;
 type RowType<TName extends TableName> = DB[TName];
 
-const dbPath = getPath("db2.sqlite");
-console.log("数据库目录:", dbPath);
-const dbDir = path.dirname(dbPath);
+// ถ้าตั้ง SUPABASE_DB_URL ไว้ ใช้ Postgres (Supabase) เป็นฐานข้อมูลหลักแทน SQLite local
+export const isPostgres = !!process.env.SUPABASE_DB_URL;
 
-// 确保数据库目录存在
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
+let db: ReturnType<typeof knex>;
+if (isPostgres) {
+  console.log("数据库: Supabase Postgres");
+  // pg คืนค่า BIGINT (OID 20) เป็น string เสมอ (กันตัวเลขเกิน Number.MAX_SAFE_INTEGER)
+  // แต่แอปนี้ใช้ bigint กับ id/timestamp/credits ที่ไม่มีทางเกิน safe integer จริง จึงสั่งให้ parse เป็น number ตรงๆ
+  // กันบั๊กเงียบๆ เช่น "500" + (-100) กลายเป็น string concat แทนการลบเลขจริง
+  const { types } = require("pg");
+  types.setTypeParser(20, (val: string) => parseInt(val, 10));
+  db = knex({
+    client: "pg",
+    connection: process.env.SUPABASE_DB_URL,
+    pool: { min: 0, max: 10 },
+  });
+} else {
+  const dbPath = getPath("db2.sqlite");
+  console.log("数据库目录:", dbPath);
+  const dbDir = path.dirname(dbPath);
+
+  // 确保数据库目录存在
+  if (!fs.existsSync(dbDir)) {
+    fs.mkdirSync(dbDir, { recursive: true });
+  }
+
+  // 创建空数据库文件
+  if (!fs.existsSync(dbPath)) {
+    fs.writeFileSync(dbPath, "");
+  }
+
+  db = knex({
+    client: "better-sqlite3",
+    connection: {
+      filename: dbPath,
+    },
+    useNullAsDefault: true,
+  });
 }
 
-// 创建空数据库文件
-if (!fs.existsSync(dbPath)) {
-  fs.writeFileSync(dbPath, "");
+// db.raw() คืนค่าไม่เหมือนกันระหว่าง dialect: better-sqlite3 คืน array ตรงๆ, pg คืน {rows:[...]}
+export async function rawRows<T = any>(sql: string): Promise<T[]> {
+  const result = await db.raw(sql);
+  return isPostgres ? result.rows : result;
 }
 
-const db = knex({
-  client: "better-sqlite3",
-  connection: {
-    filename: dbPath,
-  },
-  useNullAsDefault: true,
-});
+// ดึงรายชื่อตารางของแอป (ไม่รวมตารางระบบของ sqlite/knex) รองรับทั้งสอง dialect
+export async function listUserTables(): Promise<string[]> {
+  if (isPostgres) {
+    const rows = await rawRows<{ table_name: string }>(
+      `SELECT table_name FROM information_schema.tables WHERE table_schema='public' AND table_name NOT LIKE 'knex_%'`,
+    );
+    return rows.map((r) => r.table_name);
+  }
+  const rows = await rawRows<{ name: string }>(`SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE 'knex_%'`);
+  return rows.map((r) => r.name);
+}
+
+// ปิด/เปิดการเช็ค foreign key ชั่วคราว (ใช้ตอนล้าง/นำเข้าข้อมูลทั้งฐาน) — วิธีทำต่างกันระหว่าง dialect
+export async function setForeignKeyChecks(enabled: boolean): Promise<void> {
+  if (isPostgres) {
+    await db.raw(`SET session_replication_role = '${enabled ? "origin" : "replica"}'`);
+  } else {
+    await db.raw(`PRAGMA foreign_keys = ${enabled ? "ON" : "OFF"}`);
+  }
+}
 
 (async () => {
   await initDB(db);
@@ -52,7 +97,7 @@ async function initKnexType(knexDb: any) {
   const dbClient = Client.fromConfig({
     interfaceNameFormat: "${table}",
     typeMap: {
-      number: ["bigint"],
+      number: ["bigint", "int8", "int4", "integer"],
       string: ["text", "varchar", "char"],
     },
   }).fetchDatabase(knexDb);

@@ -75,14 +75,18 @@ export default router.post(
       }),
     );
     //新增
-    const [videoId] = await u.db("o_video").insert({
+    // ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
+    const insertTime = Date.now();
+    await u.db("o_video").insert({
       filePath: videoPath,
-      time: Date.now(),
+      time: insertTime,
       state: "生成中",
       scriptId,
       projectId,
       videoTrackId: trackId,
     });
+    const insertedVideo = await u.db("o_video").where({ scriptId, projectId, videoTrackId: trackId, time: insertTime }).orderBy("id", "desc").first();
+    const videoId = insertedVideo!.id!;
     res.status(200).send(success(videoId));
     const relatedObjects = {
       projectId,
