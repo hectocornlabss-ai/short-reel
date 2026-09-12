@@ -20,8 +20,8 @@ export default router.get("/", async (req, res) => {
     // 重新初始化数据库
     await initDB(db as any);
 
-    res.status(200).send(success("数据库已清空并重新初始化"));
+    res.status(200).send(success("ล้างฐานข้อมูลและเริ่มต้นใหม่เรียบร้อยแล้ว"));
   } catch (err: any) {
-    res.status(500).send(error(err?.message || "清除失败"));
+    res.status(500).send(error(err?.message || "ล้างข้อมูลไม่สำเร็จ"));
   }
 });

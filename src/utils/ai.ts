@@ -51,14 +51,14 @@ async function resolveModelName(value: AiType | `${string}:${string}`): Promise<
     //高级配置
     if (agentUseModeVal?.value == "1") {
       const agentDeployData = await u.db("o_agentDeploy").where("key", value).first();
-      if (!agentDeployData?.modelName) throw new Error(`高级配置模式下，未找到对应的模型配置 ${value}`);
+      if (!agentDeployData?.modelName) throw new Error(`ไม่พบการตั้งค่าโมเดลที่ตรงกันในโหมดตั้งค่าขั้นสูง ${value}`);
       return agentDeployData?.modelName as `${number}:${string}`;
     }
     //简易配置
     if (agentUseModeVal?.value == "0") {
       const [mainly] = value!.split(/:(.+)/);
       const mainlyData = await u.db("o_agentDeploy").where("key", mainly).first();
-      if (!mainlyData?.modelName) throw new Error(`简易配置模式下，未找到部署配置 ${value}`);
+      if (!mainlyData?.modelName) throw new Error(`ไม่พบการตั้งค่า deploy ในโหมดตั้งค่าอย่างง่าย ${value}`);
       return mainlyData?.modelName as `${number}:${string}`;
     }
 
@@ -69,7 +69,7 @@ async function resolveModelName(value: AiType | `${string}:${string}`): Promise<
     if (!agentDeployData?.modelName) {
       const [mainly] = agentDeployData!.key!.split(/:(.+)/);
       const mainlyData = await u.db("o_agentDeploy").where("key", mainly).first();
-      if (!mainlyData?.modelName) throw new Error(`未找到部署配置 ${value}`);
+      if (!mainlyData?.modelName) throw new Error(`ไม่พบการตั้งค่า deploy ${value}`);
       modelName = mainlyData.modelName;
     }
     modelName = agentDeployData?.modelName || modelName;
@@ -85,14 +85,14 @@ async function getModelConfig(value: AiType | `${string}:${string}`) {
     //高级配置
     if (agentUseModeVal?.value == "1") {
       const agentDeployData = await u.db("o_agentDeploy").where("key", value).first();
-      if (!agentDeployData?.modelName) throw new Error(`高级配置模式下，未找到对应的模型配置 ${value}`);
+      if (!agentDeployData?.modelName) throw new Error(`ไม่พบการตั้งค่าโมเดลที่ตรงกันในโหมดตั้งค่าขั้นสูง ${value}`);
       return agentDeployData;
     }
     //简易配置
     if (agentUseModeVal?.value == "0") {
       const [mainly] = value!.split(/:(.+)/);
       const mainlyData = await u.db("o_agentDeploy").where("key", mainly).first();
-      if (!mainlyData?.modelName) throw new Error(`简易配置模式下，未找到部署配置 ${value}`);
+      if (!mainlyData?.modelName) throw new Error(`ไม่พบการตั้งค่า deploy ในโหมดตั้งค่าอย่างง่าย ${value}`);
       return mainlyData;
     }
 
@@ -102,7 +102,7 @@ async function getModelConfig(value: AiType | `${string}:${string}`) {
     if (!agentDeployData?.modelName) {
       const [mainly] = agentDeployData!.key!.split(/:(.+)/);
       const mainlyData = await u.db("o_agentDeploy").where("key", mainly).first();
-      if (!mainlyData?.modelName) throw new Error(`未找到部署配置 ${value}`);
+      if (!mainlyData?.modelName) throw new Error(`ไม่พบการตั้งค่า deploy ${value}`);
       return mainlyData;
     }
     return agentDeployData;
@@ -118,10 +118,10 @@ async function getVendorTemplateFn(fnName: Exclude<FnName, "textRequest">, model
 async function getVendorTemplateFn(fnName: FnName, modelName: `${string}:${string}`): Promise<any> {
   const [id, name] = modelName.split(/:(.+)/);
   const vendorConfigData = await u.db("o_vendorConfig").where("id", id).first();
-  if (!vendorConfigData) throw new Error(`未找到供应商配置 id=${id}`);
+  if (!vendorConfigData) throw new Error(`ไม่พบการตั้งค่าผู้ให้บริการ id=${id}`);
   const modelList = await u.vendor.getModelList(id);
   const selectedModel = modelList.find((i: any) => i.modelName == name);
-  if (!selectedModel) throw new Error(`未找到模型 ${name} id=${id}`);
+  if (!selectedModel) throw new Error(`ไม่พบโมเดล ${name} id=${id}`);
   const code = u.vendor.getCode(id);
   const jsCode = transform(code, { transforms: ["typescript"] }).code;
   const running = u.vm(jsCode);
@@ -130,7 +130,7 @@ async function getVendorTemplateFn(fnName: FnName, modelName: `${string}:${strin
     running.vendor.models = modelList;
   }
   const fn = running[fnName];
-  if (!fn) throw new Error(`未找到供应商配置中的函数 ${fnName} id=${id}`);
+  if (!fn) throw new Error(`ไม่พบฟังก์ชัน ${fnName} ในการตั้งค่าผู้ให้บริการ id=${id}`);
   if (fnName == "textRequest")
     return (think?: boolean, thinkLevel: 0 | 1 | 2 | 3 = 0) => {
       const effectiveThink = think ?? !!selectedModel.think;

@@ -27,6 +27,6 @@ export default router.post(
       projectType,
     });
 
-    res.status(200).send(success({ message: "修改成功" }));
+    res.status(200).send(success({ message: "แก้ไขสำเร็จ" }));
   },
 );

@@ -43,8 +43,8 @@ export default router.post(
           aspectRatio: ratio,
         },
         {
-          taskClass: "工作流图片生成",
-          describe: "工作流图片生成",
+          taskClass: "สร้างรูปเวิร์กโฟลว์",
+          describe: "สร้างรูปเวิร์กโฟลว์",
           relatedObjects: JSON.stringify(req.body),
           projectId: projectId,
         },

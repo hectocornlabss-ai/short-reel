@@ -20,22 +20,22 @@ interface AssetTypeConfig {
 
 const assetTypeConfig: Record<AssetType, AssetTypeConfig> = {
   role: {
-    label: "角色",
-    taskClass: "角色图生成",
+    label: "ตัวละคร",
+    taskClass: "สร้างรูปตัวละคร",
     dir: "role",
     promptTitle: "角色标准四视图",
     promptEnd: "人物角色四视图",
   },
   scene: {
-    label: "场景",
-    taskClass: "场景图生成",
+    label: "ฉาก",
+    taskClass: "สร้างรูปฉาก",
     dir: "scene",
     promptTitle: "标准场景图",
     promptEnd: "标准场景图",
   },
   tool: {
-    label: "道具",
-    taskClass: "道具图生成",
+    label: "ของประกอบ",
+    taskClass: "สร้างรูปของประกอบ",
     dir: "props",
     promptTitle: "标准道具图",
     promptEnd: "标准道具图",
@@ -78,7 +78,7 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
 
   // 1. 查询项目
   const project = await u.db("o_project").where("id", projectId).select("artStyle", "type", "intro").first();
-  if (!project) return res.status(500).send(error("项目为空"));
+  if (!project) return res.status(500).send(error("โปรเจกต์ว่างเปล่า"));
 
   // 2. 逐条插入 o_image 占位记录，收集 imageId 列表
   // หมายเหตุ: ไม่ใช้ .returning("id")/destructure ตรงๆ เพราะ Postgres ไม่รับประกันพฤติกรรมเดียวกับ SQLite
@@ -113,7 +113,7 @@ export default router.post("/", validateFields(requestSchema), async (req, res) 
 
       const imagePath = `/${projectId}/${cfg.dir}/${uuidv4()}.jpg`;
       const userPrompt = buildPrompt(cfg, project.artStyle ?? "", item.name, item.prompt);
-      const describe = `生成${cfg.label}图，名称：${item.name}，提示词：${item.prompt}`;
+      const describe = `สร้างรูป${cfg.label} ชื่อ: ${item.name}, พรอมต์: ${item.prompt}`;
       const relatedObjects = { id: item.id, projectId, type: cfg.label };
       try {
         const aiImage = u.Ai.Image(model);

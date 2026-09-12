@@ -44,7 +44,7 @@ function ensureNonEmptyBody(body: string, fallback: string): string {
 export function parseFrontmatter(content: string): { name: string; description: string } {
   const match = content.match(/^\uFEFF?---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/);
   if (!match?.[1]) {
-    throw new Error(`技能文件缺少有效的 frontmatter，确保以 --- 包裹并包含 name 和 description 字段。${content}`);
+    throw new Error(`ไฟล์สกิลไม่มี frontmatter ที่ถูกต้อง ต้องครอบด้วย --- และมีฟิลด์ name กับ description ${content}`);
   }
 
   const result: Record<string, string> = {};
@@ -112,7 +112,7 @@ export function parseFrontmatter(content: string): { name: string; description: 
   }
 
   if (!result.name || !result.description) {
-    throw new Error(`技能文件缺少必要字段: name 或 description，确保 frontmatter 包含这两个字段。${content}`);
+    throw new Error(`ไฟล์สกิลขาดฟิลด์ที่จำเป็น: name หรือ description กรุณาตรวจสอบว่า frontmatter มีฟิลด์ทั้งสองนี้ ${content}`);
   }
 
   return { name: result.name, description: result.description };
@@ -126,8 +126,8 @@ export async function useSkill(input: SkillInput) {
   const mainSkills: { path: string; name: string; description: string }[] = [];
   for (const skill of mainSkill) {
     const skillPath = path.join(rootDir, skill + ".md");
-    if (!fs.existsSync(skillPath)) throw new Error(`主技能文件不存在: ${skillPath}`);
-    if (!isPathInside(skillPath, normalizedRootDir)) throw new Error(`技能名称无效：检测到路径穿越。${skillPath}`);
+    if (!fs.existsSync(skillPath)) throw new Error(`ไม่พบไฟล์สกิลหลัก: ${skillPath}`);
+    if (!isPathInside(skillPath, normalizedRootDir)) throw new Error(`ชื่อสกิลไม่ถูกต้อง: ตรวจพบการพยายามเข้าถึงนอกเส้นทางที่อนุญาต (path traversal) ${skillPath}`);
     const content = await fs.promises.readFile(skillPath, "utf-8");
     const parsed = parseFrontmatter(content);
     mainSkills.push({ path: skillPath, ...parsed });
@@ -195,10 +195,10 @@ export function createSkillTools(skills: { name: string; description: string }[]
       execute: async ({ name }) => {
         if (activated.has(name)) {
           console.log(`⚡[主技能] ℹ️ 技能 "${name}" 已激活，跳过重复注入`);
-          return { alreadyActive: true, message: `技能 "${name}" 已激活，无需重复加载` };
+          return { alreadyActive: true, message: `สกิล "${name}" เปิดใช้งานอยู่แล้ว ไม่ต้องโหลดซ้ำ` };
         }
         const matched = skillMap.get(name);
-        if (!matched) return { error: `未找到技能 "${name}"` };
+        if (!matched) return { error: `ไม่พบสกิล "${name}"` };
         let raw = "";
         try {
           raw = await fs.promises.readFile(matched.path, "utf-8");
@@ -237,7 +237,7 @@ export function createSkillTools(skills: { name: string; description: string }[]
         const normalizedInputPath = toUnixPath(filePath).trim();
         if (!normalizedInputPath) {
           console.log(`📖[技法文件] ✗ filePath 不能为空`);
-          return { error: "filePath 不能为空" };
+          return { error: "filePath ต้องไม่ว่างเปล่า" };
         }
 
         const fullPath = path.resolve(path.join(skillsRootDir, normalizedInputPath));

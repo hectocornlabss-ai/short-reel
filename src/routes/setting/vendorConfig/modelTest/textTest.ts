@@ -25,8 +25,8 @@ export default router.post(
     try {
       const vendorConfigData = await u.db("o_vendorConfig").where("id", id).first();
 
-      if (!vendorConfigData) return res.status(500).send(error("未找到该供应商配置"));
-      if (!vendorConfigData.models) return res.status(500).send(error("未找到模型列表"));
+      if (!vendorConfigData) return res.status(500).send(error("ไม่พบการตั้งค่าผู้ให้บริการนี้"));
+      if (!vendorConfigData.models) return res.status(500).send(error("ไม่พบรายการโมเดล"));
 
       const modelList = await u.vendor.getModelList(vendorConfigData.id!);
 
@@ -52,7 +52,7 @@ export default router.post(
         tools: { getWeatherTool },
       });
       console.log("%c Line:46 🍐 data", "background:#6ec1c2", data);
-      if (!data) return res.status(500).send(error("模型未返回结果"));
+      if (!data) return res.status(500).send(error("โมเดลไม่ส่งผลลัพธ์กลับมา"));
       res.status(200).send(success({ thinking: data.reasoningText, content: data.text }));
     } catch (err) {
       console.error(err);

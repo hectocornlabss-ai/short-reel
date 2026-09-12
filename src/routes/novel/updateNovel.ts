@@ -27,6 +27,6 @@ export default router.post(
       event: event,
     });
 
-    res.status(200).send(success({ message: "更新原文成功" }));
+    res.status(200).send(success({ message: "อัปเดตต้นฉบับสำเร็จ" }));
   },
 );

@@ -25,6 +25,6 @@ export default router.post(
     const inserted = await u.db("o_image").where({ filePath, assetsId: id, state: "已完成" }).orderBy("id", "desc").first();
     const imageId = inserted!.id!;
     await u.db("o_assets").where({ id }).update({ flowId, imageId });
-    res.status(200).send(success({ message: "更新提示词成功" }));
+    res.status(200).send(success({ message: "อัปเดตพรอมต์สำเร็จ" }));
   },
 );

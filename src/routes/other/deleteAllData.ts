@@ -9,6 +9,6 @@ export default router.post(
     "/",
     async (req, res) => {
         await initDB(db, true);
-        res.status(200).send(success({ message: "清空数据表成功" }));
+        res.status(200).send(success({ message: "ล้างตารางข้อมูลสำเร็จ" }));
     },
 );

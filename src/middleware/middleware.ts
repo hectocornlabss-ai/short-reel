@@ -21,9 +21,9 @@ export function validateFields(
     const data = req[source];
     const parseResult = schema.safeParse(data);
     if (!parseResult.success) {
-      const errors = parseResult.error.issues.map((issue) => `字段 ${issue.path.join(".")} ${issue.message}`);
+      const errors = parseResult.error.issues.map((issue) => `ฟิลด์ ${issue.path.join(".")} ${issue.message}`);
       console.error(errors);
-      return res.status(400).json({ message: "参数错误", errors });
+      return res.status(400).json({ message: "พารามิเตอร์ไม่ถูกต้อง", errors });
     }
     next();
   };

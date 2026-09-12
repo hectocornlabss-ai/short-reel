@@ -140,6 +140,12 @@ export default async function startServe(randomPort: Boolean = false) {
   console.log("文件目录:", assetsDir);
   app.use("/assets", express.static(assetsDir, { acceptRanges: false }));
 
+  // ไฟล์ที่หาไม่เจอใต้ /oss, /skills, /assets (เช่นไฟล์วิดีโอที่ยังสร้างไม่เสร็จ) ต้องตอบ 404 ตรงนี้เลย
+  // ไม่งั้นจะไหลต่อไปโดน middleware auth ด้านล่างจับ แล้วตอบ 401 ซึ่งหลอกว่าเป็นปัญหาสิทธิ์เข้าถึงทั้งที่จริงๆ คือไฟล์ไม่มี
+  app.use(["/oss", "/skills", "/assets"], (_, res) => {
+    res.status(404).send({ message: "ไม่พบไฟล์" });
+  });
+
   // data/web 静态网站
   const webDir = u.getPath("web");
   if (fs.existsSync(webDir)) {
@@ -157,11 +163,11 @@ export default async function startServe(randomPort: Boolean = false) {
     if (req.path === "/api/login/login" || req.path === "/api/login/refreshToken") return next();
     if (req.path === "/api/auth/line/login" || req.path === "/api/auth/line/callback") return next();
 
-    if (!token) return res.status(401).send({ message: "未提供token" });
+    if (!token) return res.status(401).send({ message: "ไม่ได้ส่ง token มาด้วย" });
     try {
       // ยืนยันตัวตนผ่าน Supabase Auth จริง (ไม่ใช่ JWT ที่เซ็นเอง) แล้วผูกกลับมาที่ o_user ภายในของแอป
       const { data, error: authError } = await getSupabaseAnon().auth.getUser(token);
-      if (authError || !data?.user) return res.status(401).send({ message: "无效的token" });
+      if (authError || !data?.user) return res.status(401).send({ message: "token ไม่ถูกต้อง" });
 
       const user = await u.db("o_user").where("supabaseUserId", data.user.id).first();
       if (!user) return res.status(401).send({ message: "ไม่พบบัญชีผู้ใช้ในระบบ" });
@@ -175,7 +181,7 @@ export default async function startServe(randomPort: Boolean = false) {
 
       next();
     } catch (err) {
-      return res.status(401).send({ message: "无效的token" });
+      return res.status(401).send({ message: "token ไม่ถูกต้อง" });
     }
   });
 

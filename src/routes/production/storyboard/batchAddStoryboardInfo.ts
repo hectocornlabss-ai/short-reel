@@ -54,7 +54,7 @@ export default router.post(
       item.id = id;
     }
     const lastStoryboard = await u.db("o_storyboard").where("scriptId", scriptId);
-    if (!lastStoryboard || !lastStoryboard.length) return res.status(400).send(error("未查到分镜数据"));
+    if (!lastStoryboard || !lastStoryboard.length) return res.status(400).send(error("ไม่พบข้อมูลสตอรี่บอร์ด"));
     //根据track分组
     const storyboardGroupByTrack: Record<string, number[]> = {};
     lastStoryboard.forEach((item: any) => {

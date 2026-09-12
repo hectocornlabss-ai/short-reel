@@ -9,7 +9,7 @@ export default router.post("/", async (req, res) => {
   try {
     const { tables: importTables } = req.body;
     if (!importTables || typeof importTables !== "object") {
-      return res.status(400).send(error("无效的导入数据格式"));
+      return res.status(400).send(error("รูปแบบข้อมูลนำเข้าไม่ถูกต้อง"));
     }
 
     // 删除所有现有表
@@ -42,8 +42,8 @@ export default router.post("/", async (req, res) => {
     }
     await setForeignKeyChecks(true);
 
-    res.status(200).send(success("数据库导入成功"));
+    res.status(200).send(success("นำเข้าฐานข้อมูลสำเร็จ"));
   } catch (err: any) {
-    res.status(500).send(error(err?.message || "导入失败"));
+    res.status(500).send(error(err?.message || "นำเข้าไม่สำเร็จ"));
   }
 });

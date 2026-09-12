@@ -1,4 +1,4 @@
-// @db-hash 15e6bf20ad5ccb422007e6e52a605954
+// @db-hash 9ac4a3c576d542b4f1f32d0e3539346f
 //该文件由脚本自动生成，请勿手动修改
 
 /* Auth: Audit trail for user actions. */
@@ -139,6 +139,14 @@ export interface oauth_authorizations {
   'status'?: oauth_authorization_status;
   'user_id'?: string | null;
 }
+
+/** Stores OAuth states for third-party provider authentication flows where Supabase acts as the OAuth client. */
+export interface oauth_client_states {
+  'code_verifier'?: string | null;
+  'created_at': Date;
+  'id': string;
+  'provider_type': string;
+}
 export interface oauth_clients {
   'client_name'?: string | null;
   'client_secret_hash'?: string | null;
@@ -153,14 +161,6 @@ export interface oauth_clients {
   'registration_type': oauth_registration_type;
   'token_endpoint_auth_method': string;
   'updated_at'?: Date;
-}
-
-/** Stores OAuth states for third-party provider authentication flows where Supabase acts as the OAuth client. */
-export interface oauth_client_states {
-  'code_verifier'?: string | null;
-  'created_at': Date;
-  'id': string;
-  'provider_type': string;
 }
 export interface oauth_consents {
   'client_id': string;
@@ -234,13 +234,13 @@ export interface sessions {
   /** Auth: Not after is a nullable column that contains a timestamp after which the session should be regarded as expired. */
   'not_after'?: Date | null;
   'oauth_client_id'?: string | null;
-  'refreshed_at'?: Date | null;
   
   /** Holds the ID (counter) of the last issued refresh token. */
   'refresh_token_counter'?: number | null;
   
   /** Holds a HMAC-SHA256 key used to sign refresh tokens for this session. */
   'refresh_token_hmac_key'?: string | null;
+  'refreshed_at'?: Date | null;
   'scopes'?: string | null;
   'tag'?: string | null;
   'updated_at'?: Date | null;
@@ -494,6 +494,29 @@ export interface secrets {
   'secret': string;
   'updated_at'?: Date;
 }
+export interface job {
+  'active'?: boolean;
+  'command': string;
+  'database'?: string;
+  'jobid'?: number;
+  'jobname'?: string | null;
+  'nodename'?: string;
+  'nodeport'?: number;
+  'schedule': string;
+  'username'?: string;
+}
+export interface job_run_details {
+  'command'?: string | null;
+  'database'?: string | null;
+  'end_time'?: Date | null;
+  'job_pid'?: number | null;
+  'jobid'?: number | null;
+  'return_message'?: string | null;
+  'runid'?: number;
+  'start_time'?: Date | null;
+  'status'?: string | null;
+  'username'?: string | null;
+}
 export interface memories {
   'content': string;
   'createTime': number;
@@ -581,6 +604,16 @@ export interface o_eventChapter {
   'eventId'?: number | null;
   'id'?: number;
   'novelId'?: number | null;
+}
+export interface o_finalVideo {
+  'createTime'?: number | null;
+  'errorReason'?: string | null;
+  'filePath'?: string | null;
+  'id'?: number;
+  'projectId': number;
+  'scriptId': number;
+  'state'?: string | null;
+  'updateTime'?: number | null;
 }
 export interface o_image {
   'assetsId'?: number | null;
@@ -818,35 +851,35 @@ export interface pg_stat_statements {
   'jit_optimization_count'?: number | null;
   'jit_optimization_time'?: number | null;
   'local_blk_read_time'?: number | null;
+  'local_blk_write_time'?: number | null;
   'local_blks_dirtied'?: number | null;
   'local_blks_hit'?: number | null;
   'local_blks_read'?: number | null;
   'local_blks_written'?: number | null;
-  'local_blk_write_time'?: number | null;
   'max_exec_time'?: number | null;
   'max_plan_time'?: number | null;
   'mean_exec_time'?: number | null;
   'mean_plan_time'?: number | null;
   'min_exec_time'?: number | null;
-  'minmax_stats_since'?: Date | null;
   'min_plan_time'?: number | null;
+  'minmax_stats_since'?: Date | null;
   'plans'?: number | null;
   'query'?: string | null;
   'queryid'?: number | null;
   'rows'?: number | null;
   'shared_blk_read_time'?: number | null;
+  'shared_blk_write_time'?: number | null;
   'shared_blks_dirtied'?: number | null;
   'shared_blks_hit'?: number | null;
   'shared_blks_read'?: number | null;
   'shared_blks_written'?: number | null;
-  'shared_blk_write_time'?: number | null;
   'stats_since'?: Date | null;
   'stddev_exec_time'?: number | null;
   'stddev_plan_time'?: number | null;
   'temp_blk_read_time'?: number | null;
+  'temp_blk_write_time'?: number | null;
   'temp_blks_read'?: number | null;
   'temp_blks_written'?: number | null;
-  'temp_blk_write_time'?: number | null;
   'toplevel'?: boolean | null;
   'total_exec_time'?: number | null;
   'total_plan_time'?: number | null;
@@ -870,8 +903,8 @@ export interface DB {
   "mfa_challenges": mfa_challenges;
   "mfa_factors": mfa_factors;
   "oauth_authorizations": oauth_authorizations;
-  "oauth_clients": oauth_clients;
   "oauth_client_states": oauth_client_states;
+  "oauth_clients": oauth_clients;
   "oauth_consents": oauth_consents;
   "one_time_tokens": one_time_tokens;
   "refresh_tokens": refresh_tokens;
@@ -894,6 +927,8 @@ export interface DB {
   "vector_indexes": vector_indexes;
   "decrypted_secrets": decrypted_secrets;
   "secrets": secrets;
+  "job": job;
+  "job_run_details": job_run_details;
   "memories": memories;
   "o_agentDeploy": o_agentDeploy;
   "o_agentWorkData": o_agentWorkData;
@@ -904,6 +939,7 @@ export interface DB {
   "o_creditLedger": o_creditLedger;
   "o_event": o_event;
   "o_eventChapter": o_eventChapter;
+  "o_finalVideo": o_finalVideo;
   "o_image": o_image;
   "o_imageFlow": o_imageFlow;
   "o_modelPrompt": o_modelPrompt;

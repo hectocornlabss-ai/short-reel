@@ -63,7 +63,7 @@ export default router.post(
   async (req, res) => {
     const { scriptIds, projectId, groupSize = 5 } = req.body;
 
-    if (!scriptIds.length) return res.status(400).send(error("请先选择剧本"));
+    if (!scriptIds.length) return res.status(400).send(error("กรุณาเลือกบทก่อน"));
     const scripts = await u.db("o_script").whereIn("id", scriptIds);
 
     // 构建 scriptId -> script 内容的映射
@@ -145,7 +145,7 @@ export default router.post(
         errorReason: null,
       });
     }
-    res.send(success("开始提取资产"));
+    res.send(success("เริ่มดึงสินทรัพย์แล้ว"));
 
     function processGroup(group: number[][][]) {
       group.map(async (itemIds) => {

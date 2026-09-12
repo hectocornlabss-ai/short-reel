@@ -32,12 +32,12 @@ export default router.post(
       concurrentCount: number;
       compulsory: boolean;
     } = req.body;
-    if (!storyboardIds || storyboardIds.length === 0) return res.status(400).send(error("storyboardIds不能为空"));
+    if (!storyboardIds || storyboardIds.length === 0) return res.status(400).send(error("storyboardIds ต้องไม่ว่างเปล่า"));
     // 当没有 storyboardIds 时，通过 AI 生成新的分镜面板数据
     let finalStoryboardIds: number[] = storyboardIds || [];
     // shouldGenerateImage === 0 的分镜标记为「未生成」，其余标记为「生成中」
     const storyboardData = await u.db("o_storyboard").where("scriptId", scriptId).where("projectId", projectId).whereIn("id", finalStoryboardIds);
-    if (!storyboardData.length) return res.status(500).send(error("未查到分镜数据"));
+    if (!storyboardData.length) return res.status(500).send(error("ไม่พบข้อมูลสตอรี่บอร์ด"));
     const storyIds = storyboardData.map((i) => i.id);
     if (compulsory) {
       await u.db("o_storyboard").whereIn("id", storyIds).where("scriptId", scriptId).update({ state: "生成中", shouldGenerateImage: 1 });
@@ -104,8 +104,8 @@ export default router.post(
             ...repeloadObj,
           },
           {
-            taskClass: "生成分镜图片",
-            describe: "分镜图片生成",
+            taskClass: "สร้างรูปสตอรี่บอร์ด",
+            describe: "สร้างรูปสตอรี่บอร์ด",
             relatedObjects: JSON.stringify(repeloadObj),
             projectId: projectId,
           },

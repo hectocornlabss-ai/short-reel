@@ -15,6 +15,6 @@ export default router.post(
   async (req, res) => {
     const { id } = req.body;
     await u.db("o_assets").whereIn("id", id).delete();
-    res.status(200).send(success({ message: "删除资产成功" }));
+    res.status(200).send(success({ message: "ลบสินทรัพย์สำเร็จ" }));
   },
 );

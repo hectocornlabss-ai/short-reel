@@ -20,7 +20,7 @@ export default router.post(
 
       // 安全校验：不允许包含路径分隔符、纯数字，防止越级删除或误删项目目录
       if (name.includes("/") || name.includes("\\") || name === "." || name === ".." || /^\d+$/.test(name)) {
-        res.status(400).send(error("名称不能包含路径分隔符或为纯数字"));
+        res.status(400).send(error("ชื่อต้องไม่มีตัวคั่นเส้นทางหรือเป็นตัวเลขล้วน"));
         return;
       }
 
@@ -33,16 +33,16 @@ export default router.post(
       try {
         const stat = await fs.stat(artPromptsDir);
         if (!stat.isDirectory()) {
-          throw new Error(`${artPromptsDir} 不是文件夹`);
+          throw new Error(`${artPromptsDir} ไม่ใช่โฟลเดอร์`);
         }
         await fs.rm(artPromptsDir, { recursive: true, force: true });
       } catch (e) {
         console.error("[删除视觉手册] 删除失败:", artPromptsDir, e);
       }
       await removeOwnership("art_skills", name);
-      res.status(200).send(success({ message: "删除成功" }));
+      res.status(200).send(success({ message: "ลบสำเร็จ" }));
     } catch (err) {
-      res.status(500).send(error(u.error(err).message || "删除失败"));
+      res.status(500).send(error(u.error(err).message || "ลบไม่สำเร็จ"));
     }
   },
 );

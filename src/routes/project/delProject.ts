@@ -58,6 +58,6 @@ export default router.post(
       console.log(`项目 ${id} 没有对应的OSS文件夹，跳过删除`);
     }
 
-    res.status(200).send(success({ message: "删除项目成功" }));
+    res.status(200).send(success({ message: "ลบโปรเจกต์สำเร็จ" }));
   },
 );

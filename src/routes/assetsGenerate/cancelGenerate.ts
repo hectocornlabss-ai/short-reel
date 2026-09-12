@@ -16,6 +16,6 @@ export default router.post(
     await u.db("o_image").where("id", id).update({
       state: "生成失败",
     });
-    res.status(200).send(success({ message: "取消成功" }));
+    res.status(200).send(success({ message: "ยกเลิกสำเร็จ" }));
   },
 );

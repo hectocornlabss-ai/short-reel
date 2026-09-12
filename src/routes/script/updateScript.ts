@@ -34,6 +34,6 @@ export default router.post(
       }
     }
 
-    res.status(200).send(success({ message: "编辑剧本成功" }));
+    res.status(200).send(success({ message: "แก้ไขบทสำเร็จ" }));
   },
 );

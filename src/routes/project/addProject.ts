@@ -41,6 +41,6 @@ export default router.post(
       mode,
     });
 
-    res.status(200).send(success({ message: "新增项目成功" }));
+    res.status(200).send(success({ message: "เพิ่มโปรเจกต์สำเร็จ" }));
   },
 );

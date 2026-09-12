@@ -216,7 +216,7 @@ function createSubAgent(parentCtx: AgentContext) {
 
       const novelData = await u.db("o_novel").where("projectId", resTool.data.projectId).select("chapterIndex");
 
-      const formatPrompt = `\nคุณต้องเขียนลงพื้นที่ทำงานด้วยรูปแบบ XML ดังนี้:\nห้ามเพิ่มแท็กอื่นใดนอกจากนี้ <scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem><scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem><scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem>`;
+      const formatPrompt = `\nคุณต้องเขียนลงพื้นที่ทำงานด้วยรูปแบบ XML ดังนี้ ห้ามเพิ่มแท็กอื่นใดนอกจากนี้: <scriptItem name="ชื่อบทภาพยนตร์">เนื้อหาบทภาพยนตร์</scriptItem>\nจำนวนแท็ก <scriptItem> ต้องเท่ากับจำนวนตอน/บทที่ระบุเป๊ะๆ เท่านั้น ห้ามเขียนซ้ำเกินจำนวนตอนจริงโดยเด็ดขาด (เช่น ถ้ามี 1 ตอน ให้เขียนแค่ 1 แท็ก, ถ้ามี 3 ตอน ให้เขียน 3 แท็ก)`;
 
       return runAgent({
         key: "scriptAgent:scriptAgent",

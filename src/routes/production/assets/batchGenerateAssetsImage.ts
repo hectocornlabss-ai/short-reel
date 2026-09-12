@@ -69,7 +69,7 @@ export default router.post(
     }
 
     const imageData: { id: number; state: string; src: string }[] = [];
-    res.status(200).send(success("开始生成资产图片"));
+    res.status(200).send(success("เริ่มสร้างรูปสินทรัพย์แล้ว"));
     const generateSingleAsset = async (item: any) => {
       const imageId = imageIdMap[item.id!];
       const typeConfig = promptRecord[item.type!] || promptRecord["role"];
@@ -100,8 +100,8 @@ export default router.post(
             ...repeloadObj,
           },
           {
-            taskClass: "生成图片",
-            describe: "资产图片生成",
+            taskClass: "สร้างรูปภาพ",
+            describe: "สร้างรูปสินทรัพย์",
             relatedObjects: JSON.stringify(repeloadObj),
             projectId: projectId,
           },

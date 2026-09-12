@@ -34,13 +34,13 @@ export default router.post(
 
       // 安全校验：不允许包含路径分隔符、纯数字，防止越级删除或误删项目目录
       if (name.includes("/") || name.includes("\\") || name === "." || name === ".." || /^\d+$/.test(name)) {
-        res.status(400).send(error("名称不能包含路径分隔符或为纯数字"));
+        res.status(400).send(error("ชื่อต้องไม่มีตัวคั่นเส้นทางหรือเป็นตัวเลขล้วน"));
         return;
       }
 
       const mainPath = u.getPath(["skills", "art_skills", stylePath]);
       if (!fs.existsSync(mainPath)) {
-        return res.status(400).send(error("视觉手册不存在"));
+        return res.status(400).send(error("ไม่พบคู่มือภาพ"));
       }
       // 字段映射表（与 getVisualManual 保持一致）
       const DATA_MAP: { value: string; subDir?: string }[] = [

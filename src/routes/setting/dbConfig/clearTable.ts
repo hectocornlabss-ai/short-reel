@@ -8,18 +8,18 @@ export default router.post("/", async (req, res) => {
   try {
     const { tableName } = req.body;
     if (!tableName || typeof tableName !== "string") {
-      return res.status(400).send(error("请提供有效的表名"));
+      return res.status(400).send(error("กรุณาระบุชื่อตารางที่ถูกต้อง"));
     }
 
     // 验证表名存在（防止SQL注入）
     if (!(await db.schema.hasTable(tableName))) {
-      return res.status(400).send(error("表不存在"));
+      return res.status(400).send(error("ไม่พบตารางนี้"));
     }
 
     await db(tableName).del();
 
-    res.status(200).send(success(`表 ${tableName} 已清空`));
+    res.status(200).send(success(`ล้างตาราง ${tableName} เรียบร้อยแล้ว`));
   } catch (err: any) {
-    res.status(500).send(error(err?.message || "清空表失败"));
+    res.status(500).send(error(err?.message || "ล้างตารางไม่สำเร็จ"));
   }
 });

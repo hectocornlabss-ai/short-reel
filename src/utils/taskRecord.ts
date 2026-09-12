@@ -1,9 +1,9 @@
 import db from "@/utils/db";
 
 const taskStateMap = {
-  "0": "进行中",
-  "1": "已完成",
-  "-1": "生成失败",
+  "0": "กำลังดำเนินการ",
+  "1": "เสร็จสมบูรณ์",
+  "-1": "สร้างล้มเหลว",
 };
 /**
  * 记录任务并返回结束函数
@@ -29,7 +29,7 @@ export default async function taskRecord(
   } else if (typeof content === "string") {
     opteorContent = content;
   } else if (typeof content === "function") {
-    throw new Error("不支持的类型");
+    throw new Error("ประเภทที่ไม่รองรับ");
   } else {
     try {
       opteorContent = JSON.stringify(content);

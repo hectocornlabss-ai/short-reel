@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { success } from "@/lib/responseFormat";
 import { validateFields } from "@/middleware/middleware";
 import { ReferenceList } from "@/utils/ai";
+import { generateFinalMergedVideo } from "@/utils/finalVideo";
 const router = express.Router();
 
 type Type = "imageReference" | "startImage" | "endImage" | "videoReference" | "audioReference";
@@ -98,17 +99,18 @@ export default router.post(
     );
 
     res.status(200).send(success(tasks.map((t) => ({ videoId: t.videoId, trackId: t.trackId }))));
-    for (const { videoId, videoPath, prompt, duration, images } of tasks) {
-      // 所有任务全部并发后台执行，完全不阻塞任何进程
+    // ทุกงานรันพร้อมกันเบื้องหลัง ไม่บล็อก response — แต่เก็บ promise ไว้เพื่อรู้ว่า "ครบทุกงานแล้ว" เมื่อไหร่
+    // เพื่อ trigger การต่อวิดีโอ+มิกซ์เสียงพากย์เป็นไฟล์เดียวอัตโนมัติทันทีที่ทุกช็อตเสร็จ ไม่ต้องให้ผู้ใช้กดเพิ่ม
+    const taskPromises = tasks.map(async ({ videoId, videoPath, prompt, duration, images }) => {
       const base64 = await Promise.all(
         images.map(async (item) => {
           if (!item) return null;
           return { base64: await u.oss.getImageBase64(item.path), type: item.sources == "audio" ? "audio" : "image" };
         }),
       );
-      const relatedObjects = { projectId, videoId, scriptId, type: "视频" };
+      const relatedObjects = { projectId, videoId, scriptId, type: "วิดีโอ" };
       const aiVideo = u.Ai.Video(model);
-      aiVideo
+      await aiVideo
         .run(
           {
             prompt,
@@ -121,8 +123,8 @@ export default router.post(
           },
           {
             projectId,
-            taskClass: "视频生成",
-            describe: "根据提示词生成视频",
+            taskClass: "สร้างวิดีโอ",
+            describe: "สร้างวิดีโอตามพรอมต์",
             relatedObjects: JSON.stringify(relatedObjects),
           },
         )
@@ -137,6 +139,13 @@ export default router.post(
               errorReason: u.error(error).message,
             });
         });
+    });
+
+    await Promise.allSettled(taskPromises);
+    // มีอย่างน้อย 1 ช็อตสร้างสำเร็จก็ลองต่อวิดีโอฉบับรวมได้ (ช็อตที่พังจะถูกข้ามไปเองใน generateFinalMergedVideo)
+    const anySucceeded = await u.db("o_video").whereIn("id", tasks.map((t) => t.videoId)).where("state", "生成成功").first();
+    if (anySucceeded) {
+      generateFinalMergedVideo(projectId, scriptId).catch((e) => console.error("[batchGenerateVideo] ต่อวิดีโอฉบับรวมล้มเหลว:", u.error(e).message));
     }
   },
 );

@@ -20,6 +20,6 @@ export default router.post(
     if (eventIds.length) await u.db("o_event").whereIn("id", eventIds).delete();
     await u.db("o_novel").where("id", id).del();
 
-    res.status(200).send(success({ message: "删除原文成功" }));
+    res.status(200).send(success({ message: "ลบต้นฉบับสำเร็จ" }));
   },
 );

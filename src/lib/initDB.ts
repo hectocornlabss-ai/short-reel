@@ -1173,6 +1173,20 @@ A medium tracking shot follows the woman from behind as she ascends and approach
         table.bigInteger("duration");
       },
     },
+    // วิดีโอฉบับรวม (ต่อทุกช็อตของบทเป็นคลิปเดียว + มิกซ์เสียงพากย์ตัวละครเข้าไปด้วย)
+    {
+      name: "o_finalVideo",
+      builder: (table) => {
+        table.bigIncrements("id");
+        table.bigInteger("projectId").notNullable();
+        table.bigInteger("scriptId").notNullable();
+        table.text("filePath");
+        table.text("state"); // pending | generating | success | failed
+        table.text("errorReason");
+        table.bigInteger("createTime");
+        table.bigInteger("updateTime");
+      },
+    },
     //供应商配置表
     {
       name: "o_vendorConfig",

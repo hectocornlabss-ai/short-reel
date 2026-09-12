@@ -24,6 +24,6 @@ export default router.post(
         state: "已完成",
         shouldGenerateImage:url ? 1 : 0
       });
-    res.status(200).send(success({ message: "更新分镜成功" }));
+    res.status(200).send(success({ message: "อัปเดตสตอรี่บอร์ดสำเร็จ" }));
   },
 );

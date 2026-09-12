@@ -204,7 +204,7 @@ export default router.post(
 
       // 后台执行，不等待结果
       Promise.all(tasks);
-      res.status(200).send(success("开始生成提示词"));
+      res.status(200).send(success("เริ่มสร้างพรอมต์แล้ว"));
     } catch (e) {
       res.status(400).send(error(u.error(e).message));
     }

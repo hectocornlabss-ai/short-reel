@@ -24,6 +24,6 @@ export default router.post(
       remark,
       prompt,
     });
-    res.status(200).send(success({ message: "更新资产成功" }));
+    res.status(200).send(success({ message: "อัปเดตสินทรัพย์สำเร็จ" }));
   },
 );

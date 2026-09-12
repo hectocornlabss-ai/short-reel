@@ -15,7 +15,7 @@ export default router.post(
   }),
   async (req, res) => {
     if (!isEletron()) {
-      return res.status(400).send(error("仅支持客户端打开文件夹"));
+      return res.status(400).send(error("รองรับเฉพาะการเปิดโฟลเดอร์จากฝั่งไคลเอนต์เท่านั้น"));
     }
     const { path: folderPath } = req.body;
     const platform = process.platform;
@@ -25,7 +25,7 @@ export default router.post(
       if (err) {
         return res.status(200).send(error(err.message));
       }
-      res.status(200).send(success("打开文件夹成功"));
+      res.status(200).send(success("เปิดโฟลเดอร์สำเร็จ"));
     });
   },
 );

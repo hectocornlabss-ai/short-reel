@@ -198,3 +198,52 @@ export async function generateCharacterDubbing(
     voiceId: voice.voiceId,
   };
 }
+
+interface ShotDialogueLine {
+  characterName: string;
+  line: string;
+}
+
+/**
+ * ดึงบทพูดจริงของแต่ละช็อต จาก videoDesc (ข้อความดิบของสตอรี่บอร์ด) โดยให้ AI ช่วยแยกออกมาเป็นรายการ
+ * (แยกด้วย AI แทน regex เพราะรูปแบบข้อความ videoDesc ไม่ตายตัว 100% ความยืดหยุ่นของ AI แม่นยำกว่า)
+ * คืนค่าเป็น array ว่างถ้าช็อตนั้นไม่มีบทพูดเลย
+ */
+export async function extractDialogueFromShot(videoDesc: string, knownCharacterNames: string[]): Promise<ShotDialogueLine[]> {
+  if (!videoDesc?.trim() || knownCharacterNames.length === 0) return [];
+  const system = [
+    "คุณคือผู้ช่วยแยกบทพูดจากข้อมูลสตอรี่บอร์ดดิบ",
+    "หน้าที่: อ่านข้อความที่ได้รับ (บรรยายฉาก/การกระทำ/บทพูด/เสียงประกอบของช็อตวิดีโอ ปนกันอยู่) แล้วดึงเฉพาะ 'บทพูดจริงที่ตัวละครพูดออกมา' เท่านั้น",
+    `รายชื่อตัวละครที่มีอยู่จริง: ${knownCharacterNames.join(", ")}`,
+    "กฎ:",
+    "1. ดึงเฉพาะบทพูด (คำพูดที่ตัวละครพูดออกเสียง) ไม่เอาคำบรรยายฉาก, การกระทำ, เสียงประกอบ, หรือความคิดในใจที่ไม่ได้พูดออกมา",
+    "2. ต้องระบุชื่อตัวละครที่พูดให้ตรงกับรายชื่อที่ให้มาเป๊ะๆ เท่านั้น ถ้าระบุไม่ได้ชัดเจนว่าใครพูด ให้ข้ามบรรทัดนั้นไป",
+    "3. ถ้าไม่มีบทพูดเลยในข้อความ ให้ตอบกลับคำว่า 'ไม่มี' คำเดียวเท่านั้น",
+    "4. ถ้ามีบทพูด ให้ตอบกลับทีละบรรทัด รูปแบบ: ชื่อตัวละคร|เนื้อหาบทพูด (ห้ามมีคำอธิบายอื่นปนมา ห้ามมีเลขลำดับนำหน้า)",
+  ].join("\n");
+
+  try {
+    const res = await u.Ai.Text("universalAi").invoke({
+      system,
+      messages: [{ role: "user", content: videoDesc }],
+    });
+    const text = res.text?.trim() ?? "";
+    if (!text || text === "ไม่มี") return [];
+    const lines: ShotDialogueLine[] = [];
+    for (const raw of text.split("\n")) {
+      const line = raw.trim();
+      if (!line) continue;
+      const sepIdx = line.indexOf("|");
+      if (sepIdx === -1) continue;
+      const characterName = line.slice(0, sepIdx).trim();
+      const content = line.slice(sepIdx + 1).trim();
+      if (!characterName || !content) continue;
+      if (!knownCharacterNames.includes(characterName)) continue;
+      lines.push({ characterName, line: content });
+    }
+    return lines;
+  } catch (e) {
+    console.error("[dubbing] extractDialogueFromShot ล้มเหลว ข้ามช็อตนี้:", u.error(e).message);
+    return [];
+  }
+}

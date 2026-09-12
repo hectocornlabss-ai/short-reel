@@ -39,6 +39,6 @@ export default router.post(
       mode,
     });
 
-    res.status(200).send(success({ message: "编辑项目成功" }));
+    res.status(200).send(success({ message: "แก้ไขโปรเจกต์สำเร็จ" }));
   },
 );

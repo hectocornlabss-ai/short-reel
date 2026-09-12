@@ -35,7 +35,7 @@ export default router.post(
     }
     const ext = getExtFromBase64(base64Data);
     if (!["jpeg", "jpg", "png"].includes(ext)) {
-      return res.status(400).send(error("不支持的文件类型"));
+      return res.status(400).send(error("ไม่รองรับประเภทไฟล์นี้"));
     }
     const savePath = `/${projectId}/imageFlow/${scriptId}/${uuid()}.${ext}`;
 

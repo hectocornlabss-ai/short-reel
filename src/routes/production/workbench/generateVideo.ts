@@ -92,7 +92,7 @@ export default router.post(
       projectId,
       videoId,
       scriptId,
-      type: "视频",
+      type: "วิดีโอ",
     };
     const aiVideo = u.Ai.Video(model);
     aiVideo
@@ -108,8 +108,8 @@ export default router.post(
         },
         {
           projectId,
-          taskClass: "视频生成",
-          describe: "根据提示词生成视频",
+          taskClass: "สร้างวิดีโอ",
+          describe: "สร้างวิดีโอตามพรอมต์",
           relatedObjects: JSON.stringify(relatedObjects),
         },
       )

@@ -34,6 +34,6 @@ export default router.post(
     await u.db("o_script").whereIn("id", ids).delete();
     await u.db("o_storyboard").whereIn("scriptId", ids).delete();
     await u.db("o_video").whereIn("scriptId", ids).delete();
-    res.status(200).send(success({ message: "删除剧本成功" }));
+    res.status(200).send(success({ message: "ลบบทสำเร็จ" }));
   },
 );

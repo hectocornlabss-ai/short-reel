@@ -23,7 +23,7 @@ export default router.post(
     //获取风格
     const project = await u.db("o_project").where("id", projectId).select("artStyle", "type", "intro").first();
     //如果没有找到对应的项目，返回错误
-    if (!project) return res.status(500).send(success({ message: "项目为空" }));
+    if (!project) return res.status(500).send(success({ message: "โปรเจกต์ว่างเปล่า" }));
 
     await u.db("o_assets").where("id", assetsId).update({ promptState: "生成中" });
 
@@ -55,11 +55,11 @@ export default router.post(
     };
 
     const config = typeConfig[type];
-    if (!config) return res.status(500).send(error("不支持的类型"));
-    if (!config.visualManual) return res.status(500).send(error("视觉手册未定义"));
+    if (!config) return res.status(500).send(error("ประเภทที่ไม่รองรับ"));
+    if (!config.visualManual) return res.status(500).send(error("ยังไม่ได้กำหนดคู่มือภาพ"));
     //获取到视觉手册
     const visualManual = await u.getArtPrompt(project.artStyle as string, "art_skills", config.visualManual);
-    if (!visualManual) return res.status(500).send(error("视觉手册未定义"));
+    if (!visualManual) return res.status(500).send(error("ยังไม่ได้กำหนดคู่มือภาพ"));
     const systemPrompt = visualManual;
     try {
       const { _output } = (await u.Ai.Text("universalAi").invoke({
@@ -84,7 +84,7 @@ export default router.post(
         .db("o_assets")
         .where("id", assetsId)
         .update({ promptState: "失败", promptErrorReason: u.error(e).message });
-      return res.status(500).send(error(e?.data?.error?.message ?? e?.message ?? "生成失败"));
+      return res.status(500).send(error(e?.data?.error?.message ?? e?.message ?? "สร้างไม่สำเร็จ"));
     }
   },
 );

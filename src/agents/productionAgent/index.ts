@@ -49,11 +49,11 @@ export async function runDecisionAI(ctx: AgentContext) {
   const prompt = await fs.promises.readFile(skill, "utf-8");
 
   const projectInfo = await u.db("o_project").where("id", ctx.resTool.data.projectId).first();
-  if (!projectInfo) throw new Error(`项目不存在，ID: ${ctx.resTool.data.projectId}`);
+  if (!projectInfo) throw new Error(`ไม่พบโปรเจกต์ ID: ${ctx.resTool.data.projectId}`);
   const [_, imageModelName] = projectInfo.imageModel!.split(/:(.+)/);
   const [id, videoModelName] = projectInfo.videoModel!.split(/:(.+)/);
   const models = await u.vendor.getModelList(id);
-  if (!models.length) throw new Error(`项目使用的模型不存在，ID: ${projectInfo.videoModel}`);
+  if (!models.length) throw new Error(`ไม่พบโมเดลที่โปรเจกต์ใช้งาน ID: ${projectInfo.videoModel}`);
   let videoMode = "";
   try {
     videoMode = JSON.parse(projectInfo.mode ?? "");
@@ -168,13 +168,13 @@ async function createSubAgent(parentCtx: AgentContext) {
     .toJSONSchema();
 
   const projectInfo = await u.db("o_project").where("id", resTool.data.projectId).first();
-  if (!projectInfo) throw new Error(`项目不存在，ID: ${resTool.data.projectId}`);
+  if (!projectInfo) throw new Error(`ไม่พบโปรเจกต์ ID: ${resTool.data.projectId}`);
   const artSkills = await createArtSkills(projectInfo?.artStyle!, projectInfo?.directorManual!);
 
   const [_, imageModelName] = projectInfo.imageModel!.split(/:(.+)/);
   const [id, videoModelName] = projectInfo.videoModel!.split(/:(.+)/);
   const models = await u.vendor.getModelList(id);
-  if (!models.length) throw new Error(`项目使用的模型不存在，ID: ${projectInfo.videoModel}`);
+  if (!models.length) throw new Error(`ไม่พบโมเดลที่โปรเจกต์ใช้งาน ID: ${projectInfo.videoModel}`);
   // const findData = models.find((i: any) => i.modelName == videoModelName);
   //
   let videoMode = "";
@@ -311,7 +311,7 @@ async function createSubAgent(parentCtx: AgentContext) {
   // const mainSkills: { path: string; name: string; description: string }[] = [];
   // for (const skill of mainSkill) {
   //   const skillPath = path.join(rootDir, skill + ".md");
-  //   if (!fs.existsSync(skillPath)) throw new Error(`主技能文件不存在: ${skillPath}`);
+  //   if (!fs.existsSync(skillPath)) throw new Error(`ไม่พบไฟล์สกิลหลัก: ${skillPath}`);
   //   if (!isPathInside(skillPath, normalizedRootDir)) throw new Error(`技能名称无效：检测到路径穿越。${skillPath}`);
   //   const content = await fs.promises.readFile(skillPath, "utf-8");
   //   const parsed = parseFrontmatter(content);
@@ -404,7 +404,7 @@ async function createArtSkills(artName: string, storyName: string) {
   const skillList = [...(await scanSkills(artWorkerPath + "/*.md")), ...(await scanSkills(storyWorkerPath + "/*.md"))];
   const mainSkills: { path: string; name: string; description: string }[] = [];
   for (const skillPath of skillList) {
-    if (!fs.existsSync(skillPath)) throw new Error(`主技能文件不存在: ${skillPath}`);
+    if (!fs.existsSync(skillPath)) throw new Error(`ไม่พบไฟล์สกิลหลัก: ${skillPath}`);
     const content = await fs.promises.readFile(skillPath, "utf-8");
     const parsed = parseFrontmatter(content);
     mainSkills.push({ path: skillPath, ...parsed });
@@ -498,7 +498,7 @@ async function useProductionSkills(artName: string, storyName: string) {
   ];
   const mainSkills: { path: string; name: string; description: string }[] = [];
   for (const skillPath of skillList) {
-    if (!fs.existsSync(skillPath)) throw new Error(`主技能文件不存在: ${skillPath}`);
+    if (!fs.existsSync(skillPath)) throw new Error(`ไม่พบไฟล์สกิลหลัก: ${skillPath}`);
     const content = await fs.promises.readFile(skillPath, "utf-8");
     const parsed = parseFrontmatter(content);
     mainSkills.push({ path: skillPath, ...parsed });

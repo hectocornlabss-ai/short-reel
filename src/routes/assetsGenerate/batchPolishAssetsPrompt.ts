@@ -48,13 +48,13 @@ export default router.post(
     //获取风格
     const project = await u.db("o_project").where("id", projectId).select("artStyle", "type", "intro").first();
     //如果没有找到对应的项目，返回错误
-    if (!project) return res.status(500).send(success({ message: "项目为空" }));
+    if (!project) return res.status(500).send(success({ message: "โปรเจกต์ว่างเปล่า" }));
 
     // 预加载公共数据
     const assetsIds = items.map((item: { assetsId: number }) => item.assetsId);
     //查询所有资产，用于判断每个资产是否是衍生资产
     const assetsDataList = await u.db("o_assets").whereIn("id", assetsIds).select("id", "assetsId");
-    if (!assetsDataList || assetsDataList.length === 0) return res.status(500).send(error("资产不存在"));
+    if (!assetsDataList || assetsDataList.length === 0) return res.status(500).send(error("ไม่พบสินทรัพย์"));
     const assetsDataMap = new Map(assetsDataList.map((a: any) => [a.id, a]));
     // 所有前置检测通过后，再批量更新状态为生成中
     await u.db("o_assets").whereIn("id", assetsIds).update({ promptState: "生成中" });

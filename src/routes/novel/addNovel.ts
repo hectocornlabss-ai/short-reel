@@ -53,6 +53,6 @@ export default router.post(
     });
     novelClass.start(chapterAllList, projectId);
 
-    res.status(200).send(success({ message: "新增原文成功" }));
+    res.status(200).send(success({ message: "เพิ่มต้นฉบับสำเร็จ" }));
   },
 );

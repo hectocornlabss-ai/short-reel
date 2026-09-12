@@ -67,11 +67,11 @@ export default router.post(
     const { tsCode } = req.body;
     const jsCode = transform(tsCode, { transforms: ["typescript"] }).code;
     const exports = u.vm(jsCode);
-    if (!exports) return res.status(400).send(success("脚本文件必须导出对象"));
-    if (!exports.textRequest) return res.status(400).send(success("脚本文件必须导出文本请求对象"));
-    if (!exports.imageRequest) return res.status(400).send(success("脚本文件必须导出图像请求对象"));
-    if (!exports.videoRequest) return res.status(400).send(success("脚本文件必须导出视频请求对象"));
-    if (!exports.vendor) return res.status(400).send(success("脚本文件必须导出vendor对象"));
+    if (!exports) return res.status(400).send(success("ไฟล์สคริปต์ต้อง export เป็น object"));
+    if (!exports.textRequest) return res.status(400).send(success("ไฟล์สคริปต์ต้อง export object สำหรับคำขอข้อความ (textRequest)"));
+    if (!exports.imageRequest) return res.status(400).send(success("ไฟล์สคริปต์ต้อง export object สำหรับคำขอรูปภาพ (imageRequest)"));
+    if (!exports.videoRequest) return res.status(400).send(success("ไฟล์สคริปต์ต้อง export object สำหรับคำขอวิดีโอ (videoRequest)"));
+    if (!exports.vendor) return res.status(400).send(success("ไฟล์สคริปต์ต้อง export object vendor"));
     const vendor = exports.vendor;
     const result = vendorConfigSchema.safeParse(vendor);
     if (!result.success) {
@@ -95,12 +95,12 @@ export default router.post(
         return `${index + 1}. ${path}: ${detail}`;
       });
 
-      return res.status(400).send(error(`vendor配置校验失败，共 ${issueLines.length} 处:\n${issueLines.join("\n")}`));
+      return res.status(400).send(error(`ตรวจสอบการตั้งค่า vendor ไม่ผ่าน พบ ${issueLines.length} จุด:\n${issueLines.join("\n")}`));
     }
 
-    if ((vendor.id as string).includes(":")) return res.status(400).send(error("id不能包含英文冒号"));
+    if ((vendor.id as string).includes(":")) return res.status(400).send(error("id ต้องไม่มีเครื่องหมายโคลอน (:)"));
     const data = await u.db("o_vendorConfig").where("id", vendor.id).first();
-    if (data) return res.status(500).send(error("供应商id已存在"));
+    if (data) return res.status(500).send(error("id ผู้ให้บริการนี้มีอยู่แล้ว"));
     await u.db("o_vendorConfig").insert({
       id: vendor.id,
       inputValues: JSON.stringify(vendor.inputValues ?? {}),

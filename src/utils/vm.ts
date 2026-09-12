@@ -31,6 +31,7 @@ export default function runCode(code: string, vendor?: Record<string, any>) {
     zipImage,
     zipImageResolution,
     urlToBase64,
+    fetchBinaryAsBase64,
     mergeImages,
     pollTask,
     fetch: fetch,
@@ -87,6 +88,28 @@ export async function urlToBase64(url: string): Promise<string> {
   return `data:${mime};base64,${b64}`;
 }
 
+// เรียก HTTP request ที่ผลลัพธ์เป็นไฟล์ไบนารี (เสียง/วิดีโอ) แนบ header/method/body เองได้ แล้วแปลงเป็น base64 ล้วนๆ (ไม่มี data: prefix)
+// ต้องทำทั้งหมดนอกแซนด์บ็อกซ์ vm2 แล้วส่งกลับแค่ string เพราะ ArrayBuffer/Uint8Array ที่ข้าม context ของ vm2
+// (เช่นจาก fetch().arrayBuffer() ที่เรียกจากในโค้ด vendor) จะกลายเป็นข้อมูลว่างเปล่าแบบเงียบๆ ไม่มี error ใดๆ เลย
+export async function fetchBinaryAsBase64(
+  url: string,
+  opts?: { method?: string; headers?: Record<string, string>; body?: any },
+): Promise<string> {
+  const res = await axios.request({
+    url,
+    method: opts?.method ?? "GET",
+    headers: opts?.headers,
+    data: opts?.body,
+    responseType: "arraybuffer",
+    validateStatus: () => true,
+  });
+  if (res.status < 200 || res.status >= 300) {
+    const bodyText = Buffer.isBuffer(res.data) ? res.data.toString("utf-8") : String(res.data);
+    throw new Error(`คำขอล้มเหลว (${res.status}): ${bodyText.slice(0, 500)}`);
+  }
+  return Buffer.from(res.data).toString("base64");
+}
+
 export async function pollTask(
   fn: () => Promise<{ completed: boolean; data?: string; error?: string }>,
   interval = 3000,
@@ -114,7 +137,7 @@ export async function pollTask(
  */
 export async function mergeImages(imageBase64List: string[], maxSize = "10mb"): Promise<string> {
   if (imageBase64List.length === 0) {
-    throw new Error("图片列表不能为空");
+    throw new Error("รายการรูปภาพต้องไม่ว่างเปล่า");
   }
 
   const maxBytes = parseSize(maxSize);
@@ -166,7 +189,7 @@ export async function mergeImages(imageBase64List: string[], maxSize = "10mb"): 
 function parseSize(size: string): number {
   const match = size.toLowerCase().match(/^(\d+(?:\.\d+)?)\s*(kb|mb|gb|b)?$/);
   if (!match) {
-    throw new Error(`无效的大小格式: ${size}`);
+    throw new Error(`รูปแบบขนาดไม่ถูกต้อง: ${size}`);
   }
   const value = parseFloat(match[1]);
   const unit = match[2] || "b";

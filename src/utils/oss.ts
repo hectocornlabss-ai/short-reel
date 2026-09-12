@@ -18,7 +18,7 @@ function resolveSafeLocalPath(userPath: string, rootDir: string): string {
   const safePath = normalizeUserPath(userPath);
   const absPath = path.join(rootDir, safePath);
   if (!isPathInside(absPath, rootDir)) {
-    throw new Error(`${userPath} 不在 OSS 根目录内`);
+    throw new Error(`${userPath} ไม่ได้อยู่ภายในไดเรกทอรีราก OSS`);
   }
   return absPath;
 }
@@ -70,6 +70,16 @@ class OSS {
   }
 
   /**
+   * แปลงเส้นทางสัมพัทธ์ของ OSS เป็นเส้นทางไฟล์จริงบนดิสก์ (absolute path)
+   * ใช้สำหรับเครื่องมือภายนอกที่ต้องการเส้นทางไฟล์จริง เช่น ffmpeg (ไม่รองรับการอ่านผ่าน Buffer/stream โดยตรงในบาง operation)
+   * @param userRelPath เส้นทางสัมพัทธ์ที่ผู้ใช้ส่งมา (ใช้ / เป็นตัวคั่น)
+   * @returns เส้นทางไฟล์จริงแบบ absolute บนดิสก์
+   */
+  getAbsolutePath(userRelPath: string): string {
+    return resolveSafeLocalPath(userRelPath, this.rootDir);
+  }
+
+  /**
    * 读取图片文件并转换为 base64 编码的 Data URL。
    * @param userRelPath 用户传入的相对文件路径（使用 / 作为分隔符）
    * @returns base64 编码的 Data URL (例如: data:image/png;base64,iVBORw0KGgo...)
@@ -82,7 +92,7 @@ class OSS {
     // 检查文件是否存在且为文件
     const stat = await fs.stat(absPath);
     if (!stat.isFile()) {
-      throw new Error(`${userRelPath} 不是文件`);
+      throw new Error(`${userRelPath} ไม่ใช่ไฟล์`);
     }
 
     // 获取文件扩展名并确定 MIME 类型
@@ -104,7 +114,7 @@ class OSS {
 
     const mimeType = mimeTypes[ext];
     if (!mimeType) {
-      throw new Error(`不支持的图片格式: ${ext}。支持的格式: ${Object.keys(mimeTypes).join(", ")}`);
+      throw new Error(`รูปแบบภาพที่ไม่รองรับ: ${ext} รูปแบบที่รองรับ: ${Object.keys(mimeTypes).join(", ")}`);
     }
 
     // 读取文件并转换为 base64
@@ -133,7 +143,7 @@ class OSS {
     const absPath = resolveSafeLocalPath(userRelPath, this.rootDir);
     const stat = await fs.stat(absPath);
     if (!stat.isDirectory()) {
-      throw new Error(`${userRelPath} 不是文件夹`);
+      throw new Error(`${userRelPath} ไม่ใช่โฟลเดอร์`);
     }
     await fs.rm(absPath, { recursive: true, force: true });
   }

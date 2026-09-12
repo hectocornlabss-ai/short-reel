@@ -61,6 +61,6 @@ export default router.post(
     await u.db("o_assets").where("id", id).update({
       imageId: imageId,
     });
-    res.status(200).send(success("上传成功"));
+    res.status(200).send(success("อัปโหลดสำเร็จ"));
   },
 );

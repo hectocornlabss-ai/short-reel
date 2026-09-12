@@ -55,6 +55,6 @@ export default router.post(
           imageId: imageId,
         });
     }
-    res.status(200).send(success({ message: "保存资产图片成功" }));
+    res.status(200).send(success({ message: "บันทึกรูปสินทรัพย์สำเร็จ" }));
   },
 );

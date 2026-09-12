@@ -40,7 +40,7 @@ export default router.post(
     const projectData = await u.db("o_project").where("id", projectId).select("id", "videoModel", "mode").first();
 
     if (!projectData?.videoModel) {
-      return res.status(400).json(success("项目未配置视频模型"));
+      return res.status(400).json(success("โปรเจกต์ยังไม่ได้ตั้งค่าโมเดลวิดีโอ"));
     }
     let videoMode = "";
     try {

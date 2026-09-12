@@ -25,7 +25,7 @@ export default router.post(
       .andWhere("projectId", projectId)
       .select("id", "name", "describe");
 
-    if (!audioData.length) return res.status(400).send(error("暂无设置音频，请先前往资产中心上传音频"));
+    if (!audioData.length) return res.status(400).send(error("ยังไม่ได้ตั้งค่าเสียง กรุณาไปอัปโหลดเสียงที่ศูนย์สินทรัพย์ก่อน"));
 
     const batchSize = concurrentCount ?? 1;
 

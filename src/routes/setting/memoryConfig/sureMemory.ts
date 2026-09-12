@@ -40,6 +40,6 @@ export default router.post(
     await upsert("modelOnnxFile", JSON.stringify(modelOnnxFile));
     await upsert("modelDtype", modelDtype);
 
-    res.status(200).send(success("保存设置成功"));
+    res.status(200).send(success("บันทึกการตั้งค่าสำเร็จ"));
   },
 );

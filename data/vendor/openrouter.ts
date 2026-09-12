@@ -111,6 +111,7 @@ declare const zipImage: (base64: string, size: number) => Promise<string>;
 declare const zipImageResolution: (base64: string, w: number, h: number) => Promise<string>;
 declare const mergeImages: (base64Arr: string[], maxSize?: string) => Promise<string>;
 declare const urlToBase64: (url: string) => Promise<string>;
+declare const fetchBinaryAsBase64: (url: string, opts?: { method?: string; headers?: Record<string, string>; body?: any }) => Promise<string>;
 declare const pollTask: (fn: () => Promise<PollResult>, interval?: number, timeout?: number) => Promise<PollResult>;
 declare const createOpenAI: any;
 declare const createDeepSeek: any;
@@ -198,18 +199,23 @@ const vendor: VendorConfig = {
     },
     // ===================== Video models =====================
     {
+      // ยืนยันจากเอกสาร OpenRouter แล้วว่า Seedance 2.0 Mini รองรับ input_references จริง (ไม่ใช่แค่รุ่น 2.5)
+      // ราคาถูกกว่า 2.5 ประมาณ 3 เท่า (~$0.034/วินาที เทียบ ~$0.103/วินาที) จึงคุ้มค่าที่สุดสำหรับอ้างอิงหลายรูป
+      // เหลือโหมดเดียว (อ้างอิงหลายรูป) ตามที่ผู้ใช้ต้องการความง่าย — ดึงตัวละคร/ฉาก/ของประกอบที่ผูกไว้กับช็อตมาใช้เสมอ
+      // ถ้าช็อตไหนไม่มีรูปอ้างอิงเลย โค้ดฝั่ง videoRequest จะ fallback เป็น text-to-video ธรรมดาให้เองอัตโนมัติ ไม่พังแน่นอน
       name: "Seedance 2.0 Mini (OpenRouter)",
       modelName: "bytedance/seedance-2.0-mini",
       type: "video",
-      mode: ["text", "singleImage", "startEndRequired"],
+      mode: [["imageReference:9", "videoReference:3", "audioReference:3"]],
       audio: "optional",
       durationResolutionMap: [{ duration: [4, 5, 6, 8, 10], resolution: ["720p", "1080p"] }],
     },
     {
+      // Seedance 2.5 คุณภาพสูงกว่า Mini แต่แพงกว่า ~3 เท่า รองรับ input_references เหมือนกัน (ยืนยันจากเอกสาร OpenRouter)
       name: "Seedance 2.5 (OpenRouter)",
       modelName: "bytedance/seedance-2.5",
       type: "video",
-      mode: ["text", "singleImage", "startEndRequired"],
+      mode: [["imageReference:9", "videoReference:3", "audioReference:3"]],
       audio: "optional",
       durationResolutionMap: [{ duration: [4, 5, 6, 8, 10], resolution: ["720p", "1080p"] }],
     },
@@ -444,7 +450,12 @@ const videoRequest = async (config: VideoConfig, model: VideoModel): Promise<str
 
   if (pollResult.error) throw new Error(pollResult.error);
   if (!pollResult.data) throw new Error("สร้างวิดีโอล้มเหลว: การตรวจสอบสถานะไม่พบข้อมูล");
-  return await urlToBase64(pollResult.data);
+
+  // ดาวน์โหลดวิดีโอที่สร้างเสร็จแล้วเอง แทนการใช้ urlToBase64 กลางที่ไม่แนบ header —
+  // URL ผลลัพธ์ของ OpenRouter ต้องใช้ Authorization header เดียวกับตอนยื่นงานถึงจะดาวน์โหลดได้ (ไม่งั้นได้ 401)
+  // ใช้ fetchBinaryAsBase64 (ทำงานนอกแซนด์บ็อกซ์ทั้งหมด) แทน fetch().arrayBuffer() ตรงๆ ในนี้
+  // เพราะ ArrayBuffer ที่ข้าม context ของ vm2 จะกลายเป็นข้อมูลว่างเปล่าแบบเงียบๆ (ทดสอบแล้วเจอปัญหานี้จริง)
+  return await fetchBinaryAsBase64(pollResult.data, { method: "GET", headers });
 };
 
 const ttsRequest = async (config: TTSConfig, model: TTSModel): Promise<string> => {
@@ -460,19 +471,14 @@ const ttsRequest = async (config: TTSConfig, model: TTSModel): Promise<string> =
   };
 
   logger(`[OpenRouter เสียงพากย์] เรียกโมเดล: ${model.modelName}, เสียง: ${config.voice}`);
-  const resp = await fetch(`${baseUrl}/audio/speech`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-  });
-
-  if (!resp.ok) {
-    const errorText = await resp.text();
-    throw new Error(`คำขอสังเคราะห์เสียงล้มเหลว: ${errorText}`);
+  // ใช้ fetchBinaryAsBase64 (ทำงานนอกแซนด์บ็อกซ์ทั้งหมด) แทน fetch().arrayBuffer() ตรงๆ ในนี้
+  // เพราะ ArrayBuffer ที่ข้าม context ของ vm2 จะกลายเป็นข้อมูลว่างเปล่าแบบเงียบๆ ไม่ error (ทดสอบแล้วเจอปัญหานี้จริง — เสียงออกมา 0 ไบต์)
+  let base64: string;
+  try {
+    base64 = await fetchBinaryAsBase64(`${baseUrl}/audio/speech`, { method: "POST", headers, body: JSON.stringify(body) });
+  } catch (e: any) {
+    throw new Error(`คำขอสังเคราะห์เสียงล้มเหลว: ${e?.message ?? String(e)}`);
   }
-
-  const arrayBuffer = await resp.arrayBuffer();
-  const base64 = bytesToBase64(new Uint8Array(arrayBuffer));
   return `data:audio/mpeg;base64,${base64}`;
 };
 

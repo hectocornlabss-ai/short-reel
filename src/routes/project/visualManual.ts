@@ -33,7 +33,7 @@ export default router.post(
     };
     const filePath = findFile(basePath, `${type}.md`);
     if (!filePath) {
-      res.status(404).json({ error: `未找到对应的文件: ${type}.md` });
+      res.status(404).json({ error: `ไม่พบไฟล์: ${type}.md` });
       return;
     }
     const content = fs.readFileSync(filePath, "utf-8");
